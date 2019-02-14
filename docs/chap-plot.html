@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Lección 7 Gráficos I | AprendeR: Parte I</title>
+  <meta name="description" content="Apuntes AprendeR bookdown::gitbook.">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="Lección 7 Gráficos I | AprendeR: Parte I" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Apuntes AprendeR bookdown::gitbook." />
+  <meta name="github-repo" content="RicUIB/AprendeR" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Lección 7 Gráficos I | AprendeR: Parte I" />
+  
+  <meta name="twitter:description" content="Apuntes AprendeR bookdown::gitbook." />
+  
+
+<meta name="author" content="The AprendeR team">
+
+
+<meta name="date" content="2019-02-14">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="chap-df.html">
+<link rel="next" href="chap-edqual.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">AprendeR: Parte I</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Presentación</a></li>
+<li class="chapter" data-level="1" data-path="chap-0.html"><a href="chap-0.html"><i class="fa fa-check"></i><b>1</b> Logística de <code>R</code></a><ul>
+<li class="chapter" data-level="1.1" data-path="chap-0.html"><a href="chap-0.html#como-instalar-r-y-rstudio"><i class="fa fa-check"></i><b>1.1</b> Cómo instalar <code>R</code> y <em>Rstudio</em></a></li>
+<li class="chapter" data-level="1.2" data-path="chap-0.html"><a href="chap-0.html#sec:guardar"><i class="fa fa-check"></i><b>1.2</b> Cómo guardar el trabajo realizado</a></li>
+<li class="chapter" data-level="1.3" data-path="chap-0.html"><a href="chap-0.html#sec:guiones"><i class="fa fa-check"></i><b>1.3</b> Cómo trabajar con guiones y otros ficheros</a></li>
+<li class="chapter" data-level="1.4" data-path="chap-0.html"><a href="chap-0.html#sec:help"><i class="fa fa-check"></i><b>1.4</b> Cómo obtener ayuda</a></li>
+<li class="chapter" data-level="1.5" data-path="chap-0.html"><a href="chap-0.html#sec:paquetes"><i class="fa fa-check"></i><b>1.5</b> Cómo instalar y cargar paquetes</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="chap-calc.html"><a href="chap-calc.html"><i class="fa fa-check"></i><b>2</b> La calculadora</a><ul>
+<li class="chapter" data-level="2.1" data-path="chap-calc.html"><a href="chap-calc.html#numeros-reales-operaciones-y-funciones-basicas"><i class="fa fa-check"></i><b>2.1</b> Números reales: operaciones y funciones básicas</a></li>
+<li class="chapter" data-level="2.2" data-path="chap-calc.html"><a href="chap-calc.html#cifras-significativas-y-redondeos"><i class="fa fa-check"></i><b>2.2</b> Cifras significativas y redondeos</a></li>
+<li class="chapter" data-level="2.3" data-path="chap-calc.html"><a href="chap-calc.html#definicion-de-variables"><i class="fa fa-check"></i><b>2.3</b> Definición de variables</a></li>
+<li class="chapter" data-level="2.4" data-path="chap-calc.html"><a href="chap-calc.html#definicion-de-funciones"><i class="fa fa-check"></i><b>2.4</b> Definición de funciones</a></li>
+<li class="chapter" data-level="2.5" data-path="chap-calc.html"><a href="chap-calc.html#numeros-complejos-opcional"><i class="fa fa-check"></i><b>2.5</b> Números complejos (opcional)</a></li>
+<li class="chapter" data-level="2.6" data-path="chap-calc.html"><a href="chap-calc.html#guia-rapida"><i class="fa fa-check"></i><b>2.6</b> Guía rápida</a></li>
+<li class="chapter" data-level="2.7" data-path="chap-calc.html"><a href="chap-calc.html#ejercicio"><i class="fa fa-check"></i><b>2.7</b> Ejercicio</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="chap-lm.html"><a href="chap-lm.html"><i class="fa fa-check"></i><b>3</b> Un aperitivo: Introducción a la regresión lineal</a><ul>
+<li class="chapter" data-level="3.1" data-path="chap-lm.html"><a href="chap-lm.html#calculo-de-rectas-de-regresion"><i class="fa fa-check"></i><b>3.1</b> Cálculo de rectas de regresión</a></li>
+<li class="chapter" data-level="3.2" data-path="chap-lm.html"><a href="chap-lm.html#rectas-de-regresion-y-transformaciones-logaritmicas"><i class="fa fa-check"></i><b>3.2</b> Rectas de regresión y transformaciones logarítmicas</a></li>
+<li class="chapter" data-level="3.3" data-path="chap-lm.html"><a href="chap-lm.html#guia-rapida-1"><i class="fa fa-check"></i><b>3.3</b> Guía rápida</a></li>
+<li class="chapter" data-level="3.4" data-path="chap-lm.html"><a href="chap-lm.html#ejercicio-1"><i class="fa fa-check"></i><b>3.4</b> Ejercicio</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="chap-vect.html"><a href="chap-vect.html"><i class="fa fa-check"></i><b>4</b> Vectores y otros tipos de listas</a><ul>
+<li class="chapter" data-level="4.1" data-path="chap-vect.html"><a href="chap-vect.html#construccion-de-vectores"><i class="fa fa-check"></i><b>4.1</b> Construcción de vectores</a></li>
+<li class="chapter" data-level="4.2" data-path="chap-vect.html"><a href="chap-vect.html#operaciones-con-vectores"><i class="fa fa-check"></i><b>4.2</b> Operaciones con vectores</a></li>
+<li class="chapter" data-level="4.3" data-path="chap-vect.html"><a href="chap-vect.html#entradas-y-trozos-de-vectores"><i class="fa fa-check"></i><b>4.3</b> Entradas y trozos de vectores</a></li>
+<li class="chapter" data-level="4.4" data-path="chap-vect.html"><a href="chap-vect.html#subsec:factor"><i class="fa fa-check"></i><b>4.4</b> Factores</a></li>
+<li class="chapter" data-level="4.5" data-path="chap-vect.html"><a href="chap-vect.html#sec:lists"><i class="fa fa-check"></i><b>4.5</b> Listas heterogéneas</a></li>
+<li class="chapter" data-level="4.6" data-path="chap-vect.html"><a href="chap-vect.html#guia-rapida-de-funciones"><i class="fa fa-check"></i><b>4.6</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="4.7" data-path="chap-vect.html"><a href="chap-vect.html#ejercicio-2"><i class="fa fa-check"></i><b>4.7</b> Ejercicio</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="chap-matrix.html"><a href="chap-matrix.html"><i class="fa fa-check"></i><b>5</b> Matrices</a><ul>
+<li class="chapter" data-level="5.1" data-path="chap-matrix.html"><a href="chap-matrix.html#construccion-de-matrices"><i class="fa fa-check"></i><b>5.1</b> Construcción de matrices</a></li>
+<li class="chapter" data-level="5.2" data-path="chap-matrix.html"><a href="chap-matrix.html#acceso-a-entradas-y-submatrices"><i class="fa fa-check"></i><b>5.2</b> Acceso a entradas y submatrices</a></li>
+<li class="chapter" data-level="5.3" data-path="chap-matrix.html"><a href="chap-matrix.html#algunas-funciones-para-matrices"><i class="fa fa-check"></i><b>5.3</b> Algunas funciones para matrices</a></li>
+<li class="chapter" data-level="5.4" data-path="chap-matrix.html"><a href="chap-matrix.html#calculo-matricial-opcional"><i class="fa fa-check"></i><b>5.4</b> Cálculo matricial (opcional)</a></li>
+<li class="chapter" data-level="5.5" data-path="chap-matrix.html"><a href="chap-matrix.html#valores-y-vectores-propios-opcional"><i class="fa fa-check"></i><b>5.5</b> Valores y vectores propios (opcional)</a></li>
+<li class="chapter" data-level="5.6" data-path="chap-matrix.html"><a href="chap-matrix.html#matrices-complejas-opcional"><i class="fa fa-check"></i><b>5.6</b> Matrices complejas (opcional)</a></li>
+<li class="chapter" data-level="5.7" data-path="chap-matrix.html"><a href="chap-matrix.html#guia-rapida-de-funciones-1"><i class="fa fa-check"></i><b>5.7</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="5.8" data-path="chap-matrix.html"><a href="chap-matrix.html#ejercicio-opcional"><i class="fa fa-check"></i><b>5.8</b> Ejercicio (opcional)</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="chap-df.html"><a href="chap-df.html"><i class="fa fa-check"></i><b>6</b> <em>Data frames</em></a><ul>
+<li class="chapter" data-level="6.1" data-path="chap-df.html"><a href="chap-df.html#estructura-de-un-data-frame"><i class="fa fa-check"></i><b>6.1</b> Estructura de un <em>data frame</em></a></li>
+<li class="chapter" data-level="6.2" data-path="chap-df.html"><a href="chap-df.html#como-importar-y-exportar-data-frames"><i class="fa fa-check"></i><b>6.2</b> Cómo importar y exportar <em>data frames</em></a></li>
+<li class="chapter" data-level="6.3" data-path="chap-df.html"><a href="chap-df.html#como-crear-data-frames"><i class="fa fa-check"></i><b>6.3</b> Cómo crear <em>data frames</em></a></li>
+<li class="chapter" data-level="6.4" data-path="chap-df.html"><a href="chap-df.html#sec:moddf"><i class="fa fa-check"></i><b>6.4</b> Cómo modificar un <em>data frame</em></a></li>
+<li class="chapter" data-level="6.5" data-path="chap-df.html"><a href="chap-df.html#sec:dfaf"><i class="fa fa-check"></i><b>6.5</b> Cómo añadir filas y columnas a un <em>data frame</em></a></li>
+<li class="chapter" data-level="6.6" data-path="chap-df.html"><a href="chap-df.html#como-seleccionar-trozos-de-un-data-frame"><i class="fa fa-check"></i><b>6.6</b> Cómo seleccionar trozos de un <em>data frame</em></a></li>
+<li class="chapter" data-level="6.7" data-path="chap-df.html"><a href="chap-df.html#como-aplicar-una-funcion-a-las-variables-de-un-data-frame"><i class="fa fa-check"></i><b>6.7</b> Cómo aplicar una función a las variables de un <em>data frame</em></a></li>
+<li class="chapter" data-level="6.8" data-path="chap-df.html"><a href="chap-df.html#sub:attach"><i class="fa fa-check"></i><b>6.8</b> Cómo añadir las variables de un <em>data frame</em> al entorno global</a></li>
+<li class="chapter" data-level="6.9" data-path="chap-df.html"><a href="chap-df.html#big-data-frames-con-data.table-opcional."><i class="fa fa-check"></i><b>6.9</b> &lt;&lt;<em>Big data</em>&gt;&gt; <em>frames</em> con <code>data.table</code> (opcional).</a></li>
+<li class="chapter" data-level="6.10" data-path="chap-df.html"><a href="chap-df.html#guia-rapida-de-funciones-2"><i class="fa fa-check"></i><b>6.10</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="6.11" data-path="chap-df.html"><a href="chap-df.html#ejercicio-3"><i class="fa fa-check"></i><b>6.11</b> Ejercicio</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="chap-plot.html"><a href="chap-plot.html"><i class="fa fa-check"></i><b>7</b> Gráficos I</a><ul>
+<li class="chapter" data-level="7.1" data-path="chap-plot.html"><a href="chap-plot.html#la-funcion-plot"><i class="fa fa-check"></i><b>7.1</b> La función <code>plot</code></a></li>
+<li class="chapter" data-level="7.2" data-path="chap-plot.html"><a href="chap-plot.html#parametros-de-plot"><i class="fa fa-check"></i><b>7.2</b> Parámetros de <code>plot</code></a></li>
+<li class="chapter" data-level="7.3" data-path="chap-plot.html"><a href="chap-plot.html#como-anadir-elementos-a-un-grafico"><i class="fa fa-check"></i><b>7.3</b> Cómo añadir elementos a un gráfico</a></li>
+<li class="chapter" data-level="7.4" data-path="chap-plot.html"><a href="chap-plot.html#guia-rapida-2"><i class="fa fa-check"></i><b>7.4</b> Guía rápida</a><ul>
+<li class="chapter" data-level="7.4.1" data-path="chap-plot.html"><a href="chap-plot.html#ejercicio-4"><i class="fa fa-check"></i><b>7.4.1</b> Ejercicio</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="chap-edqual.html"><a href="chap-edqual.html"><i class="fa fa-check"></i><b>8</b> Descripción de datos cualitativos</a><ul>
+<li class="chapter" data-level="8.1" data-path="chap-edqual.html"><a href="chap-edqual.html#frecuencias"><i class="fa fa-check"></i><b>8.1</b> Frecuencias</a></li>
+<li class="chapter" data-level="8.2" data-path="chap-edqual.html"><a href="chap-edqual.html#tablas-unidimensionales-de-frecuencias"><i class="fa fa-check"></i><b>8.2</b> Tablas unidimensionales de frecuencias</a></li>
+<li class="chapter" data-level="8.3" data-path="chap-edqual.html"><a href="chap-edqual.html#tablas-bidimensionales-de-frecuencias"><i class="fa fa-check"></i><b>8.3</b> Tablas bidimensionales de frecuencias</a></li>
+<li class="chapter" data-level="8.4" data-path="chap-edqual.html"><a href="chap-edqual.html#tablas-multidimensionales-de-frecuencias"><i class="fa fa-check"></i><b>8.4</b> Tablas multidimensionales de frecuencias</a></li>
+<li class="chapter" data-level="8.5" data-path="chap-edqual.html"><a href="chap-edqual.html#tablas-a-partir-de-dta-frames-de-de-variables-cualitativas"><i class="fa fa-check"></i><b>8.5</b> Tablas a partir de <em>dta frames</em> de de variables cualitativas</a></li>
+<li class="chapter" data-level="8.6" data-path="chap-edqual.html"><a href="chap-edqual.html#diagramas-de-barras"><i class="fa fa-check"></i><b>8.6</b> Diagramas de barras</a></li>
+<li class="chapter" data-level="8.7" data-path="chap-edqual.html"><a href="chap-edqual.html#otros-graficos-para-datos-cualitativos"><i class="fa fa-check"></i><b>8.7</b> Otros gráficos para datos cualitativos</a><ul>
+<li class="chapter" data-level="8.7.1" data-path="chap-edqual.html"><a href="chap-edqual.html#sec:exqual"><i class="fa fa-check"></i><b>8.7.1</b> Un ejemplo completo</a></li>
+</ul></li>
+<li class="chapter" data-level="8.8" data-path="chap-edqual.html"><a href="chap-edqual.html#guia-rapida-de-funciones-3"><i class="fa fa-check"></i><b>8.8</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="8.9" data-path="chap-edqual.html"><a href="chap-edqual.html#ejercicio-5"><i class="fa fa-check"></i><b>8.9</b> Ejercicio</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="chap-ord.html"><a href="chap-ord.html"><i class="fa fa-check"></i><b>9</b> Descripción de datos ordinales</a><ul>
+<li class="chapter" data-level="9.1" data-path="chap-ord.html"><a href="chap-ord.html#frecuencias-para-datos-ordinales"><i class="fa fa-check"></i><b>9.1</b> Frecuencias para datos ordinales</a></li>
+<li class="chapter" data-level="9.2" data-path="chap-ord.html"><a href="chap-ord.html#descripcion-de-datos-ordinales-con-r"><i class="fa fa-check"></i><b>9.2</b> Descripción de datos ordinales con <code>R</code></a></li>
+<li class="chapter" data-level="9.3" data-path="chap-ord.html"><a href="chap-ord.html#guia-rapida-de-funciones-4"><i class="fa fa-check"></i><b>9.3</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="9.4" data-path="chap-ord.html"><a href="chap-ord.html#ejercicio-6"><i class="fa fa-check"></i><b>9.4</b> Ejercicio</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/RicUIB/AprendeR2.1" target="blank">Publicado con  bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">AprendeR: Parte I</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="chap:plot" class="section level1">
+<h1><span class="header-section-number">Lección 7</span> Gráficos I</h1>
+<p>El objetivo de esta lección es introducir los aspectos básicos de los gráficos que se obtienen por medio de la función <code>plot</code>. Muchos de los parámetros y funciones auxiliares que explicamos en esta lección se podrán usar más adelante en otras funciones que producen tipos específicos de gráficos en estadística descriptiva.</p>
+<div id="la-funcion-plot" class="section level2">
+<h2><span class="header-section-number">7.1</span> La función <code>plot</code></h2>
+<p>Dada una familia de puntos <span class="math display">\[
+(x_1, y_1), \ldots, (x_n, y_n),
+\]</span> podemos usar la función <code>plot</code> para dibujar su gráfico. La construcción básica para hacerlo es</p>
+<p><code>plot(</code><span class="math inline">\(x\)</span><code>,</code><span class="math inline">\(y\)</span><code>)</code>,</p>
+<p>donde <span class="math inline">\(x=(x_1, \ldots, x_n)\)</span> es el vector de sus primeras coordenadas e <span class="math inline">\((y_1, \ldots, y_n)\)</span> el vector de sus segundas coordenadas. Por ejemplo, para dibujar el gráfico de los puntos <span class="math display">\[
+(2,1), (5, 7), (6, 3), (3, 2), (4, 1), 
+\]</span> basta entrar</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x=<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">3</span>,<span class="dv">4</span>)
+y=<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">7</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(x,y)</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:F501"></span>
+<img src="AprendeR-Parte-I_files/figure-html/F501-1.png" alt="Gráfico básico de los puntos $(2, 1)$, $(5, 7)$, $(6, 3)$, $(3, 2)$, $(4, 1)$." width="480" />
+<p class="caption">
+Figura 7.1: Gráfico básico de los puntos <span class="math inline">\((2, 1)\)</span>, <span class="math inline">\((5, 7)\)</span>, <span class="math inline">\((6, 3)\)</span>, <span class="math inline">\((3, 2)\)</span>, <span class="math inline">\((4, 1)\)</span>.
+</p>
+</div>
+<p>y obtenemos la Figura <a href="chap-plot.html#fig:F501">7.1</a>. <!--
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{ex1.pdf}
+\end{center}
+\caption{Gráfico básico de los puntos $(2, 1)$, $(5, 7)$, $(6, 3)$, $(3, 2)$, $(4, 1)$.}\label{fig:5.1}  
+\end{figure}
+--></p>
+<p>Cuando aplicamos <code>plot</code> a un solo vector <span class="math inline">\((x_1, \ldots, x_n)\)</span>, <code>R</code> produce el gráfico de los puntos <span class="math display">\[
+(1, x_1), \ldots, (n, x_n).
+\]</span> Es decir, si el vector tiene longitud <span class="math inline">\(n\)</span>, <code>plot(x)</code> es una abreviatura de <code>plot(1:n, x)</code>. Así, la Figura <a href="chap-plot.html#fig:F50105">7.2</a> se obtiene con la siguiente instrucción:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="dv">2</span><span class="op">^</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>))</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:F50105"></span>
+<img src="AprendeR-Parte-I_files/figure-html/F50105-1.png" alt="Gráfico básico de los valores $(2^n)_{n=1, \ldots, 5}$." width="480" />
+<p class="caption">
+Figura 7.2: Gráfico básico de los valores <span class="math inline">\((2^n)_{n=1, \ldots, 5}\)</span>.
+</p>
+</div>
+<!--
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{ex15.pdf}
+\end{center}
+\caption{Gráfico básico de los valores $(2^n)_{n=1, \ldots, 5}$.}\label{fig:5.1.5}  
+\end{figure}
+-->
+<p>La función <code>plot</code> también sirve para dibujar el gráfico de una función definida mediante <code>function</code>. Por ejemplo, la gráfica de la función <span class="math inline">\(y=x^2\)</span> entre <span class="math inline">\(x=0\)</span> y <span class="math inline">\(x=1\)</span> de la Figura <a href="chap-plot.html#fig:x2">7.3</a> se obtiene con el código siguiente:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">f=<span class="cf">function</span>(x){x<span class="op">^</span><span class="dv">2</span>}</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(f)</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:x2"></span>
+<img src="AprendeR-Parte-I_files/figure-html/x2-1.png" alt="Gráfico básico de la función $y=x^2$." width="480" />
+<p class="caption">
+Figura 7.3: Gráfico básico de la función <span class="math inline">\(y=x^2\)</span>.
+</p>
+</div>
+<!--
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{ex-x2.pdf}
+\end{center}
+\caption{Gráfico básico de la función $y=x^2$.}\label{fig:x2}  
+\end{figure}
+-->
+</div>
+<div id="parametros-de-plot" class="section level2">
+<h2><span class="header-section-number">7.2</span> Parámetros de <code>plot</code></h2>
+<p>El aspecto de los gráficos que produce <code>plot</code> se puede modificar especificando parámetros en su argumento. Por ejemplo, ya vimos en la Lección <a href="chap-lm.html#chap:lm">3</a> el parámetro <code>log</code>, que sirve para indicar si queremos algún eje en escala logarítmica.</p>
+<p>Un primer grupo de parámetros permiten modificar el aspecto &lt;<exterior>&gt; del gráfico:</p>
+<ul>
+<li>Para poner un título al gráfico, tenemos que emplear <code>main=&quot;</code><em>título</em><code>&quot;</code>.</li>
+<li>Para modificar las etiquetas de los ejes de coordenadas, tenemos que usar <code>xlab=&quot;</code><em>etiqueta</em><code>&quot;</code> e <code>ylab=&quot;</code><em>etiqueta</em><code>&quot;</code>.</li>
+</ul>
+<p>Los valores de estos parámetros se tienen que entrar entre comillas o, si son fórmulas matemáticas, aplicarles la función <code>expression( )</code>, para que aparezcan en un formato matemático más adecuado. Por ejemplo, suponemos que conocéis la sucesión <span class="math inline">\((F_n)_{n\geq 0}\)</span> de los números de Fibonacci</p>
+<p><span class="math display">\[
+1, 1, 2, 3, 5, 8, 13, 21, \ldots, 
+\]</span></p>
+<p>que empieza con <span class="math inline">\(F_0=F_1=1\)</span> y a partir de aquí cada término es la suma de los dos anteriores. Esta sucesión está definida por la fórmula</p>
+<p><span class="math display">\[
+F_n=\frac{1}{\sqrt{5}}\cdot
+\Bigl(\frac{1+\sqrt{5}}{2}\Bigr)^{n+1}-\frac{1}{\sqrt{5}}\cdot
+\Bigl(\frac{1-\sqrt{5}}{2}\Bigr)^{n+1}\quad \mbox{para todo $n\geq 0$}.
+\]</span> Para comprobarlo para algunos valores, vamos a generar la parte inicial <span class="math inline">\((F_n)_{n=0, \ldots, 30}\)</span> de la sucesión definida por esta fórmula.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">n=<span class="dv">0</span><span class="op">:</span><span class="dv">30</span>
+Fib=(<span class="dv">1</span><span class="op">/</span><span class="kw">sqrt</span>(<span class="dv">5</span>))<span class="op">*</span>((<span class="dv">1</span><span class="op">+</span><span class="kw">sqrt</span>(<span class="dv">5</span>))<span class="op">/</span><span class="dv">2</span>)<span class="op">^</span>(n<span class="op">+</span><span class="dv">1</span>)<span class="op">-</span>
+<span class="st">   </span>(<span class="dv">1</span><span class="op">/</span><span class="kw">sqrt</span>(<span class="dv">5</span>))<span class="op">*</span>((<span class="dv">1</span><span class="op">-</span><span class="kw">sqrt</span>(<span class="dv">5</span>))<span class="op">/</span><span class="dv">2</span>)<span class="op">^</span>(n<span class="op">+</span><span class="dv">1</span>)
+Fib</code></pre></div>
+<pre><code>##  [1]       1       1       2       3       5       8      13      21
+##  [9]      34      55      89     144     233     377     610     987
+## [17]    1597    2584    4181    6765   10946   17711   28657   46368
+## [25]   75025  121393  196418  317811  514229  832040 1346269</code></pre>
+<p>Para dibujar los pares <span class="math inline">\((n, F_n)_{n=0, \ldots, 30}\)</span> en un gráfico titulado &lt;<Números de Fibonacci>&gt;, con el eje de abscisas etiquetado con <span class="math inline">\(n\)</span> y el eje de ordenadas etiquetado con <span class="math inline">\(F_n\)</span> igualado a su fórmula explícita, podemos entrar la instrucción siguiente:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(n, Fib, <span class="dt">xlab=</span><span class="st">&quot;n&quot;</span>, <span class="dt">main=</span><span class="st">&quot;Números de Fibonacci&quot;</span>,
+  <span class="dt">ylab=</span><span class="kw">expression</span>(F[n]<span class="op">==</span>(<span class="dv">1</span><span class="op">/</span><span class="kw">sqrt</span>(<span class="dv">5</span>))<span class="op">*</span>((<span class="dv">1</span><span class="op">+</span><span class="kw">sqrt</span>(<span class="dv">5</span>))<span class="op">/</span><span class="dv">2</span>)<span class="op">^</span>(n<span class="op">+</span><span class="dv">1</span>)
+    <span class="op">-</span>(<span class="dv">1</span><span class="op">/</span><span class="kw">sqrt</span>(<span class="dv">5</span>))<span class="op">*</span>((<span class="dv">1</span><span class="op">-</span><span class="kw">sqrt</span>(<span class="dv">5</span>))<span class="op">/</span><span class="dv">2</span>)<span class="op">^</span>(n<span class="op">+</span><span class="dv">1</span>)))</code></pre></div>
+<p><img src="AprendeR-Parte-I_files/figure-html/falsoplot-1.png" width="480" style="display: block; margin: auto;" /></p>
+<div class="figure" style="text-align: center"><span id="fig:F402"></span>
+<img src="AprendeR-Parte-I_files/figure-html/F402-1.png" alt="Gráfico de los 31 valores iniciales $F_n$ de la sucesión de Fibonacci." width="480" />
+<p class="caption">
+Figura 7.4: Gráfico de los 31 valores iniciales <span class="math inline">\(F_n\)</span> de la sucesión de Fibonacci.
+</p>
+</div>
+<p>El resultado es la Figura @ref(fig:F402}. Si os interesa información sobre cómo escribir las fórmulas dentro de <code>expression</code>, podéis consultar la Ayuda de <code>plotmath</code> <!--
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{Fplot3.pdf}
+\end{center}
+\caption{Gráfico de los 31 valores iniciales $F_n$ de la sucesión de Fibonacci.}\label{fig:4.2} 
+\end{figure}
+--> Vale, hemos hecho trampa. Si habéis ejecutado la instrucción anterior tal cual, la etiqueta del eje de ordenadas os habrá quedado demasiado cerca del borde, y, por ejemplo, no se verá la línea horizontal superior de las raíces cuadradas. Para solucionarlo, hemos modificado los márgenes de la figura. Estos márgenes, especificados en números de líneas, se controlan con el parámetro <code>mar</code>, pero este parámetro no se puede especificar dentro de <code>plot</code>, sino antes, como argumento de la función <code>par</code>, que sirve para modificar el aspecto general de los gráficos. Así que en realidad, las instrucciones que han producido el gráfico han sido:</p>
+<pre><code>viejo.par=par() #Guardamos los valores antiguos de par
+par(mar=c(5,4.5,4,2)+0.1)  #Modificamos los márgenes
+plot(n, Fib, xlab=&quot;n&quot;, main=&quot;Números de Fibonacci&quot;,
+     ylab=expression(F[n]==(1/sqrt(5))*((1+sqrt(5))/2)^(n+1)
+                     -(1/sqrt(5))*((1-sqrt(5))/2)^(n+1)))
+par=viejo.par  #Volvemos a los valores anteriores de par</code></pre>
+<p>Consultad la Ayuda de <code>par</code> para conocer cómo modificar otros parámetros gráficos.</p>
+<p>Cómo podéis ver, por defecto <code>plot</code> dibuja los puntos como círculos vacíos. Esto se puede cambiar especificando el signo con el parámetro <code>pch</code>, que puede tomar como valor cualquier número natural entre 0 y 25. Con <code>pch=0</code> obtenemos cuadrados, <code>pch=1</code> produce los círculos que ya habéis visto (es el valor por defecto), <code>pch=2</code> produce triángulos, etc. La Figura <a href="chap-plot.html#fig:F403">7.5</a> muestra los signos correspondientes a los valores de <code>pch</code>. También se pueden usar letras para representar los puntos: hay que especificarlo igualando el parámetro <code>pch</code> a la letra entre comillas.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;images/pchh.png&quot;</span>,)</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:F403"></span>
+<img src="images/pchh.png" alt="Signos correspondientes a los diferentes valores de `pch`."  />
+<p class="caption">
+Figura 7.5: Signos correspondientes a los diferentes valores de <code>pch</code>.
+</p>
+</div>
+<!--
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{pchh.pdf}
+\end{center}
+\caption{Signos correspondientes a los diferentes valores de `pch`.}\label{fig:4.3}
+\end{figure}
+-->
+<p>El tamaño de estos signos se puede modificar mediante el parámetro <code>cex</code> igualado al factor de escalado: <code>cex=2</code> produce signos el doble de grandes que los que obtenemos por defecto, <code>cex=0.5</code> produce signos de la mitad de tamaño, etc. Por ejemplo, el siguiente código produce la Figura <a href="chap-plot.html#fig:cex">7.6</a>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x=<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">3</span>,<span class="dv">4</span>); y=<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">7</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>)
+<span class="kw">plot</span>(x, y, <span class="dt">pch=</span><span class="dv">20</span>, <span class="dt">cex=</span><span class="dv">3</span>)</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:cex"></span>
+<img src="AprendeR-Parte-I_files/figure-html/cex-1.png" alt="Gráfico de los puntos $(2, 1)$, $(5, 7)$, $(6, 3)$, $(3, 2)$, $(4, 1)$ con puntos de tamaño triple." width="480" />
+<p class="caption">
+Figura 7.6: Gráfico de los puntos <span class="math inline">\((2, 1)\)</span>, <span class="math inline">\((5, 7)\)</span>, <span class="math inline">\((6, 3)\)</span>, <span class="math inline">\((3, 2)\)</span>, <span class="math inline">\((4, 1)\)</span> con puntos de tamaño triple.
+</p>
+</div>
+<!--
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{plotcex.pdf}
+\end{center}
+\caption{Gráfico de los puntos $(2, 1)$, $(5, 7)$, $(6, 3)$, $(3, 2)$, $(4, 1)$ con puntos de tamaño triple.}\label{fig:cex}
+\end{figure}
+-->
+<p>El color de los puntos se puede especificar mediante el parámetro <code>col</code> igualado al nombre del color en inglés. La paleta de colores de <code>R</code> consta de 502 colores diferentes. Podéis encontrar una presentación muy clara de esta paleta en el documento <code>Rcolor.pdf</code> que encontraréis en el repositorio del curso o en su <code>url</code> original</p>
+<p><a href="http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf" class="uri">http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf</a></p>
+<p>Así, por ejemplo,</p>
+<pre><code>#Con los últimos valores de x e y
+plot(x, y, col=&quot;red&quot;, pch=15)</code></pre>
+<p>produce el gráfico de la izquierda de la Figura <a href="chap-plot.html#fig:F40205">7.7</a>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="kw">c</span>(<span class="st">&quot;images/Plotcol1.png&quot;</span>,<span class="st">&quot;images/Plotbg.png&quot;</span>))</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:F40205"></span>
+<img src="images/Plotcol1.png" alt="Dos gráficos de los puntos $(2, 1)$, $(5, 7)$, $(6, 3)$, $(3, 2)$, $(4, 1)$."  /><img src="images/Plotbg.png" alt="Dos gráficos de los puntos $(2, 1)$, $(5, 7)$, $(6, 3)$, $(3, 2)$, $(4, 1)$."  />
+<p class="caption">
+Figura 7.7: Dos gráficos de los puntos <span class="math inline">\((2, 1)\)</span>, <span class="math inline">\((5, 7)\)</span>, <span class="math inline">\((6, 3)\)</span>, <span class="math inline">\((3, 2)\)</span>, <span class="math inline">\((4, 1)\)</span>.
+</p>
+</div>
+<!--
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{Plotcol1.pdf}\
+\includegraphics[width=0.45\textwidth]{Plotbg.pdf}
+\end{center}
+\caption{Dos gráficos de los puntos $(2, 1)$, $(5, 7)$, $(6, 3)$, $(3, 2)$, $(4, 1)$.}\label{fig:4.2.5} 
+\end{figure}
+-->
+<p>Los puntos que se obtienen con <code>pch</code> de 21 a 25 admiten un color para el borde (que se especifica con <code>col</code>) y uno de diferente para el relleno, que se especifica con <code>bg</code>. A modo de ejemplo, el gráfico de la derecha de la Figura <a href="chap-plot.html#fig:F40205">7.7</a> se obtiene con el código siguiente:</p>
+<pre><code>&gt; #Con los últimos valores de x e y
+&gt; plot(x, y, pch=21, col=&quot;blue&quot;, bg=&quot;red&quot;, cex=2)</code></pre>
+<p>El parámetro <code>type</code> permite indicar el tipo de gráfico que queremos producir. El valor del parámetro se tiene que entrar entre comillas y puede ser:</p>
+<ul>
+<li><code>&quot;p&quot;</code>, para dibujar los puntos como simples puntos, como hasta ahora; es el valor por defecto.¡</li>
+<li><code>&quot;{</code>l“}, para dibujar los puntos unidos por líneas rectas sin que se vean los puntos.</li>
+<li><code>&quot;b&quot;</code>, para dibujar los puntos unidos por líneas rectas de manera que se vean los puntos (los dibuja ambos, <em>both</em>: rectas y puntos), pero sin que las rectas entren dentro de los signos que representan los puntos.</li>
+<li><code>&quot;{</code>o“}, que es como <code>&quot;b&quot;</code>, pero ahora las rectas sí que entran dentro de los puntos.</li>
+<li><code>&quot;h&quot;</code>, para dibujar líneas verticales desde el eje de abscisas a cada punto (un <code>histograma de líneas</code> ).</li>
+<li><code>&quot;s&quot;</code>, para dibujar un diagrama de escalones.</li>
+<li><code>&quot;n&quot;</code>, para no dibujar los puntos, sólo el exterior del gráfico (ejes, título, etc.).</li>
+</ul>
+<p>Veamos un ejemplo sencillo. Con el código se obtienen los gráficos de la Figura <a href="chap-plot.html#fig:F502">7.8</a>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x=<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">11</span>)
+y=<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">8</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">3</span>)
+<span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">2</span>))
+<span class="kw">plot</span>(x, y, <span class="dt">main=</span><span class="st">&quot;con p&quot;</span>)
+<span class="kw">plot</span>(x, y, <span class="dt">type=</span><span class="st">&quot;l&quot;</span>, <span class="dt">main=</span><span class="st">&quot;con l&quot;</span>)
+<span class="kw">plot</span>(x, y, <span class="dt">type=</span><span class="st">&quot;b&quot;</span>, <span class="dt">main=</span><span class="st">&quot;con b&quot;</span>)
+<span class="kw">plot</span>(x, y, <span class="dt">type=</span><span class="st">&quot;o&quot;</span>, <span class="dt">main=</span><span class="st">&quot;con o&quot;</span>)
+<span class="kw">plot</span>(x, y, <span class="dt">type=</span><span class="st">&quot;h&quot;</span>, <span class="dt">main=</span><span class="st">&quot;con h&quot;</span>)
+<span class="kw">plot</span>(x, y, <span class="dt">type=</span><span class="st">&quot;s&quot;</span>, <span class="dt">main=</span><span class="st">&quot;con s&quot;</span>)
+<span class="kw">plot</span>(x, y, <span class="dt">type=</span><span class="st">&quot;n&quot;</span>, <span class="dt">main=</span><span class="st">&quot;con n&quot;</span>)
+<span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:F502"></span>
+<img src="AprendeR-Parte-I_files/figure-html/F502-1.png" alt="Gráficos de los puntos $(1,2)$, $(3,8)$, $(5,4)$, $(7,6)$, $(11,3)$ con los distintos valores del parámetro `type`." width="480" /><img src="AprendeR-Parte-I_files/figure-html/F502-2.png" alt="Gráficos de los puntos $(1,2)$, $(3,8)$, $(5,4)$, $(7,6)$, $(11,3)$ con los distintos valores del parámetro `type`." width="480" />
+<p class="caption">
+Figura 7.8: Gráficos de los puntos <span class="math inline">\((1,2)\)</span>, <span class="math inline">\((3,8)\)</span>, <span class="math inline">\((5,4)\)</span>, <span class="math inline">\((7,6)\)</span>, <span class="math inline">\((11,3)\)</span> con los distintos valores del parámetro <code>type</code>.
+</p>
+</div>
+<!--
+\begin{figure}[p]
+\begin{center}
+\includegraphics[width=0.35\linewidth]{plot-p.pdf}\
+\includegraphics[width=0.35\linewidth]{plot-l.pdf}\\[-2ex]
+\includegraphics[width=0.35\linewidth]{plot-b.pdf}\
+\includegraphics[width=0.35\linewidth]{plot-o.pdf}\\[-2ex]
+\includegraphics[width=0.35\linewidth]{plot-h.pdf}\
+\includegraphics[width=0.35\linewidth]{plot-s.pdf}\\[-2ex]
+\includegraphics[width=0.35\linewidth]{plot-n.pdf}
+\end{center}
+\caption{Gráficos de los puntos $(1,2)$, $(3,8)$, $(5,4)$, $(7,6)$,  $(11,3)$ con los distintos valores del parámetro `type`.}\label{fig:5.2} 
+\end{figure}
+-->
+<p>La función <code>plot</code> aplicada a una función <span class="math inline">\(f\)</span> en realidad produce el gráfico de tipo <code>&quot;l&quot;</code> de una familia de puntos <span class="math inline">\((x, f(x))\)</span> (por defecto, 101 puntos distribuidos uniformemente a lo largo del dominio; este valor se puede modificar con el parámetro <code>n</code>).</p>
+<p>El estilo de las líneas usadas por <code>plot</code> se puede modificar con los parámetros siguientes:</p>
+<ul>
+<li>El parámetro <code>col</code> especifica el color tanto de los puntos como de las líneas.</li>
+<li>El tipo de línea se puede especificar con el parámetro <code>lty</code> igualado a uno de los valores siguientes: <code>&quot;solid&quot;</code>, o <code>1</code>, (el valor por defecto, que produce una línea continua); <code>&quot;dashed&quot;</code>, o <code>2</code>, (que produce una línea discontinua); <code>&quot;dotted&quot;</code>, o <code>3</code>, (que produce una línea de puntos); <code>&quot;dotdash&quot;</code>, o <code>4</code>, (que produce una línea que alterna puntos y rayas).</li>
+<li>El grosor se puede especificar con el parámetro <code>lwd</code>. Con <code>lwd=</code><span class="math inline">\(x\)</span> imponemos que el grosor de las líneas sea <span class="math inline">\(x\)</span> veces su valor por defecto.</li>
+</ul>
+<p>Así, los dos gráficos de la Figura <a href="chap-plot.html#fig:lwd">7.9</a> se obtienen con el código siguiente:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))
+x=<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">11</span>)
+y=<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">8</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">3</span>)
+<span class="kw">plot</span>(x, y, <span class="dt">type=</span><span class="st">&quot;o&quot;</span>, <span class="dt">pch=</span><span class="dv">19</span>, <span class="dt">lty=</span><span class="st">&quot;dotted&quot;</span>)
+<span class="kw">plot</span>(x, y, <span class="dt">type=</span><span class="st">&quot;o&quot;</span>, <span class="dt">pch=</span><span class="dv">19</span>, <span class="dt">lty=</span><span class="st">&quot;dashed&quot;</span>, <span class="dt">lwd=</span><span class="dv">2</span>)
+<span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:lwd"></span>
+<img src="AprendeR-Parte-I_files/figure-html/lwd-1.png" alt="Gráficos de los puntos $(1,2)$, $(3,8)$, $(5,4)$, $(7,6)$, $(11,3)$ con distintos valores de los parámetros `lty` y `lwd`" width="480" />
+<p class="caption">
+Figura 7.9: Gráficos de los puntos <span class="math inline">\((1,2)\)</span>, <span class="math inline">\((3,8)\)</span>, <span class="math inline">\((5,4)\)</span>, <span class="math inline">\((7,6)\)</span>, <span class="math inline">\((11,3)\)</span> con distintos valores de los parámetros <code>lty</code> y <code>lwd</code>
+</p>
+</div>
+<!--
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{plotlty1.pdf}\quad
+\includegraphics[width=0.45\textwidth]{plotlty2.pdf}\
+\end{center}
+\caption{Gráficos de los puntos $(1,2)$, $(3,8)$, $(5,4)$, $(7,6)$,  $(11,3)$ con distintos valores de los parámetros `lty` y  `lwd`.}\label{fig:lwd} 
+\end{figure}
+-->
+<p>Si el argumento de <code>plot</code> son dos vectores, por norma general los rangos de los ejes de coordenadas van, por defecto, del mínimo al máximo de los vectores correspondientes. Si su argumento es una función <span class="math inline">\(f\)</span>, por defecto el rango del eje de abscisas es el intervalo <span class="math inline">\([0,1]\)</span> y el rango del eje de ordenadas va del valor mínimo de <span class="math inline">\(f\)</span> sobre el rango de las abscisas al máximo. Si queremos modificar estos rangos, tenemos que usar los parámetros <code>xlim</code> e <code>ylim</code>, igualados cada uno a un vector de entradas los extremos del rango.</p>
+<p>Veamos un ejemplo de uso de estos parámetros:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>))
+f=<span class="cf">function</span>(x){x<span class="op">*</span><span class="kw">log</span>(x)}
+<span class="kw">plot</span>(f)   <span class="co">#Rangos por defecto</span>
+<span class="kw">plot</span>(f, <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">10</span>))   <span class="co">#Fijamos el rango de x</span>
+<span class="kw">plot</span>(f, <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">10</span>), <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">50</span>)) <span class="co">#Fijamos los rangos de x e y</span>
+<span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:xlim"></span>
+<img src="AprendeR-Parte-I_files/figure-html/xlim-1.png" alt="Gráficas de la función $f(x)=x\log{x}$ con diferentes rangos de coordenadas de los ejes." width="480" />
+<p class="caption">
+Figura 7.10: Gráficas de la función <span class="math inline">\(f(x)=x\log{x}\)</span> con diferentes rangos de coordenadas de los ejes.
+</p>
+</div>
+<p>Estas instrucciones producen, respectivamente, los tres gráficos de la Figura <a href="chap-plot.html#fig:xlim">7.10</a>. <!--
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=0.32\linewidth]{ylim1.pdf}\
+\includegraphics[width=0.32\linewidth]{ylim2.pdf}\
+\includegraphics[width=0.32\linewidth]{ylim3.pdf}\
+\end{center}
+\caption{Gráficas de la función $f(x)=x\log{x}$ con diferentes rangos de coordenadas de los ejes.}\label{fig:xlim} 
+\end{figure}
+--> Para modificar las posiciones de las marcas en los ejes de abscisas y ordenadas podemos usar los parámetros <code>xaxp</code> e <code>yaxp</code>, respectivamente. Mediante la expresión <code>xaxp=c(</code><span class="math inline">\(n_1\)</span><code>,</code><span class="math inline">\(n_2\)</span><code>,</code><span class="math inline">\(m\)</span><code>)</code>, imponemos que <code>R</code> dibuje <span class="math inline">\(m+1\)</span> marcas igualmente espaciadas entre los puntos <span class="math inline">\(n_1\)</span> y <span class="math inline">\(n_2\)</span> del eje de abscisas. La sintaxis para <code>yaxp</code> es la misma. Estas instrucciones no definen los rangos de los ejes de coordenadas, que se han de especificar con <code>xlim</code> e <code>ylim</code> si se quieren modificar. Por ejemplo,</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>))
+f=<span class="cf">function</span>(x){x<span class="op">*</span><span class="kw">log</span>(x)}
+<span class="kw">plot</span>(f, <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">10</span>))
+<span class="kw">plot</span>(f, <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">10</span>), <span class="dt">xaxp=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">10</span>,<span class="dv">9</span>))
+<span class="kw">plot</span>(f, <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">10</span>), <span class="dt">xaxp=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">10</span>,<span class="dv">9</span>), <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">25</span>), 
+  <span class="dt">yaxp=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">25</span>,<span class="dv">10</span>))
+<span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:xaxp"></span>
+<img src="AprendeR-Parte-I_files/figure-html/xaxp-1.png" alt="Gráficas de la función $f(x)=x\log{x}$ con diferentes posiciones de las marcas en los ejes." width="480" />
+<p class="caption">
+Figura 7.11: Gráficas de la función <span class="math inline">\(f(x)=x\log{x}\)</span> con diferentes posiciones de las marcas en los ejes.
+</p>
+</div>
+<p>producen, respectivamente, los tres gráficos de la Figura <a href="chap-plot.html#fig:xaxp">7.11</a>. <!--
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=0.32\linewidth]{ylim2.pdf}\
+\includegraphics[width=0.32\linewidth]{xaxp1.pdf}\
+\includegraphics[width=0.32\linewidth]{xaxp2.pdf}\
+\end{center}
+\caption{Gráficas de la función $f(x)=x\log{x}$ con diferentes posiciones de las marcas en los ejes.}\label{fig:xaxp}  
+\end{figure}
+--></p>
+<p>La función <code>plot</code> dispone de muchos otros parámetros, que podéis consultar en la Ayuda de <code>plot</code> y las de las funciones que se citan en su sección <code>See Also</code>. Son especialmente útiles los parámetros que se explican en la Ayuda de <code>par</code>.</p>
+</div>
+<div id="como-anadir-elementos-a-un-grafico" class="section level2">
+<h2><span class="header-section-number">7.3</span> Cómo añadir elementos a un gráfico</h2>
+<p>La función <code>plot</code> permite dibujar una sola cosa (una familia de puntos o una función) con un único estilo. Si queremos dibujar varios objetos en un gráfico, los tenemos que añadir uno a uno, usando las funciones adecuadas. En esta sección veremos algunas funciones que permiten añadir elementos a un gráfico.</p>
+<p>Antes de empezar, queremos avisaros de algo muy importante. Cuando añadimos objetos a un gráfico, ya no podemos modificar su diseño general. Por ejemplo, los rangos de coordenadas de los ejes del gráfico final o sus etiquetas serán los del primer gráfico, aunque especifiquemos valores nuevos en el argumento de las funciones que usemos para añadir objetos.</p>
+<p>La instrucción <code>points(</code><span class="math inline">\(x\)</span><code>,</code><span class="math inline">\(y\)</span><code>)</code> añade un punto de coordenadas <span class="math inline">\((x, y)\)</span> al gráfico activo. Podemos declarar el color, el signo etc., de este punto mediante los parámetros usuales. (<strong>¡Atención!</strong> La instrucción es <code>points,</code> no <code>point</code>.) Por ejemplo,</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">f=<span class="cf">function</span>(x){x<span class="op">^</span><span class="dv">2</span>}
+<span class="kw">plot</span>(f, <span class="dt">xlim=</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">3</span>,<span class="dv">3</span>))
+<span class="kw">points</span>(<span class="dv">0</span>,<span class="dv">0</span>, <span class="dt">pch=</span><span class="dv">19</span>)</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:ex1punt"></span>
+<img src="AprendeR-Parte-I_files/figure-html/ex1punt-1.png" alt="Gráfica de la función $f(x)=x^2$ con su vértice marcado." width="480" />
+<p class="caption">
+Figura 7.12: Gráfica de la función <span class="math inline">\(f(x)=x^2\)</span> con su vértice marcado.
+</p>
+</div>
+<p>produce la Figura <a href="chap-plot.html#fig:ex1punt">7.12</a>, en la que hemos dibujado la parábola <span class="math inline">\(y=x^2\)</span> y hemos marcado su vértice con un punto. <!--
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{ex2.pdf}
+\end{center}
+\caption{Gráfica de la función $f(x)=x^2$ con su vértice marcado.}\label{fig:ex1punt}  
+\end{figure}
+--></p>
+<p>La función <code>points</code> también sirve para añadir una familia de puntos. En este caso, hay que entrar en el argumento de <code>points(</code><span class="math inline">\(x\)</span><code>,</code><span class="math inline">\(y\)</span><code>)</code> la lista <span class="math inline">\(x\)</span> de sus primeras coordenadas y la lista <span class="math inline">\(y\)</span> de sus segundas coordenadas, como lo haríamos en <code>plot</code>. Veamos algunos ejemplos:</p>
+<pre><code>f=function(x){x^2}
+plot(f, xlim=c(0,10))
+points(0:10,(0:10)^2, pch=19)</code></pre>
+<p>dibuja un trozo de la parábola <span class="math inline">\(y=x^2\)</span> y añade los puntos <span class="math inline">\((n, n^2)_{n=0, \ldots, 10}\)</span>, produciendo la Figura <a href="chap-plot.html#fig:expoints">7.13</a>.(a), y el código</p>
+<pre><code>&gt; n=0:20
+&gt; x=1.3^n-2*0.8^n
+&gt; y=0.2*1.3^n+1.7*0.8^n
+&gt; plot(n,x, col=&quot;blue&quot;)
+&gt; points(n,y, pch=19, col=&quot;red&quot;)</code></pre>
+<p>primero dibuja los puntos <span class="math inline">\((n, 1.3^n-2\cdot 0.8^n)_{n=0, \ldots, 20}\)</span> como circulitos azules vacíos, y después añade los puntos <span class="math inline">\((n, 0.2\cdot 1.3^n+1.7 \cdot 0.8^n)_{n=0, \ldots, 20}\)</span> como circulitos rojos llenos, produciendo la Figura <a href="chap-plot.html#fig:expoints">7.13</a>.(b).</p>
+<div class="figure" style="text-align: center"><span id="fig:expoints"></span>
+<img src="AprendeR-Parte-I_files/figure-html/expoints-1.png" alt="(a) Gráfico de la función $y=x^2$ y los puntos $(n,n^2)_{n=0, \ldots, 10}$; (b) Gráfico de las familias de puntos $(n, 1.3^n-2\cdot 0.8^n)_{n=0, \ldots, 20}$ y $(n, 0.2\cdot 1.3^n+1.7 \cdot 0.8^n)_{n=0, \ldots, 20}$ usando diferentes signos para cada familia." width="480" />
+<p class="caption">
+Figura 7.13: (a) Gráfico de la función <span class="math inline">\(y=x^2\)</span> y los puntos <span class="math inline">\((n,n^2)_{n=0, \ldots, 10}\)</span>; (b) Gráfico de las familias de puntos <span class="math inline">\((n, 1.3^n-2\cdot 0.8^n)_{n=0, \ldots, 20}\)</span> y <span class="math inline">\((n, 0.2\cdot 1.3^n+1.7 \cdot 0.8^n)_{n=0, \ldots, 20}\)</span> usando diferentes signos para cada familia.
+</p>
+</div>
+<!--
+\begin{figure}[htb]
+\abovecaptionskip=-1ex
+\begin{center}
+\begin{tabular}{cc}
+\includegraphics[width=0.45\textwidth]{expoints1.pdf} &
+\includegraphics[width=0.45\textwidth]{expoints2.pdf}\\
+(a) & (b)
+\end{tabular}
+\end{center}
+\caption{(a) Gráfico de la función $y=x^2$ y los puntos $(n,n^2)_{n=0, \ldots, 10}$; (b) Gráfico de las familias de puntos $(n, 1.3^n-2\cdot 0.8^n)_{n=0, \ldots, 20}$ y $(n, 0.2\cdot 1.3^n+1.7 \cdot 0.8^n)_{n=0, \ldots, 20}$ usando diferentes signos para cada familia.}\label{fig:expoints} 
+\end{figure}
+-->
+<p>La función <code>abline</code> sirve para añadir una recta; ya la usamos en la Lección <a href="chap-lm.html#chap:lm">3</a> para añadir a un gráfico una recta de regresión calculada con <code>lm</code>. Esta función tiene tres variantes:</p>
+<ul>
+<li><code>abline(</code><span class="math inline">\(a\)</span><code>,</code><span class="math inline">\(b\)</span><code>)</code> añade la recta <span class="math inline">\(y=a+bx\)</span>.</li>
+<li><code>abline(v=</code><span class="math inline">\(x_0\)</span><code>)</code> añade la recta vertical <span class="math inline">\(x=x_0\)</span>.</li>
+<li><code>abline(h=</code><span class="math inline">\(y_0\)</span><code>)</code> añade la recta horizontal <span class="math inline">\(y=y_0\)</span>.</li>
+</ul>
+<p>Podemos especificar las características de estas rectas, como su grosor, su estilo o su color, mediante los parámetros pertinentes. Por ejemplo,</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">f=<span class="cf">function</span>(x){x<span class="op">^</span><span class="dv">2</span>}
+<span class="kw">plot</span>(f, <span class="dt">xlim=</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">3</span>,<span class="dv">3</span>), <span class="dt">col=</span><span class="st">&quot;red&quot;</span>)
+<span class="kw">points</span>(<span class="dv">0</span>,<span class="dv">0</span>, <span class="dt">pch=</span><span class="dv">19</span>, <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)
+<span class="kw">points</span>(<span class="dv">1</span>,<span class="dv">1</span>, <span class="dt">pch=</span><span class="dv">19</span>, <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>)
+<span class="kw">abline</span>(<span class="dt">v=</span><span class="dv">1</span>, <span class="dt">lty=</span><span class="st">&quot;dashed&quot;</span>)
+<span class="kw">abline</span>(<span class="dt">h=</span><span class="dv">0</span>, <span class="dt">lty=</span><span class="st">&quot;dotted&quot;</span>)
+<span class="kw">abline</span>(<span class="op">-</span><span class="dv">1</span>,<span class="dv">2</span>, <span class="dt">lty=</span><span class="st">&quot;dotdash&quot;</span>)</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:F10014"></span>
+<img src="AprendeR-Parte-I_files/figure-html/F10014-1.png" alt="Gráfica de la función $f(x)=x^2$, los puntos $(0, 0)$ y $(1, 1)$ y  las rectas $x=1$, $y=0$ e $y=2x-1$." width="480" />
+<p class="caption">
+Figura 7.14: Gráfica de la función <span class="math inline">\(f(x)=x^2\)</span>, los puntos <span class="math inline">\((0, 0)\)</span> y <span class="math inline">\((1, 1)\)</span> y las rectas <span class="math inline">\(x=1\)</span>, <span class="math inline">\(y=0\)</span> e <span class="math inline">\(y=2x-1\)</span>.
+</p>
+</div>
+<p>produce la Figura <a href="chap-plot.html#fig:F10014">7.14</a>. En este caso, hemos añadido a la gráfica de la parábola <span class="math inline">\(y=x^2\)</span>, dos puntos en <span class="math inline">\((0, 0)\)</span> y <span class="math inline">\((1, 1)\)</span>, la recta horizontal <span class="math inline">\(y=0\)</span> de puntos, la recta vertical <span class="math inline">\(x=1\)</span> discontinua y la recta <span class="math inline">\(y=-1+2x\)</span> de puntos y rayas. <!--
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{ex3.pdf}
+\end{center}
+\caption{Gráfica de la función $f(x)=x^2$, los puntos $(0, 0)$ y $(1, 1)$ y  las rectas $x=1$, $y=0$ e $y=2x-1$.}\label{fig:10.14}  
+\end{figure}
+--></p>
+<p>Los parámetros <code>v</code> y <code>h</code> de <code>abline</code> se pueden igualar a vectores numéricos, en cuyo caso la instrucción añade en un solo paso todas las rectas verticales u horizontales correspondientes, todas del mismo estilo. Incluso se pueden combinar los parámetros <code>v</code> y <code>h</code> en una misma función:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">f=<span class="cf">function</span>(x){x<span class="op">^</span><span class="dv">2</span>}
+<span class="kw">plot</span>(f, <span class="dt">xlim=</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">3</span>,<span class="dv">3</span>), <span class="dt">col=</span><span class="st">&quot;red&quot;</span>)
+<span class="kw">abline</span>(<span class="dt">h=</span><span class="dv">0</span><span class="op">:</span><span class="dv">9</span>, <span class="dt">v=</span><span class="op">-</span><span class="dv">3</span><span class="op">:</span><span class="dv">3</span>,  <span class="dt">lty=</span><span class="st">&quot;dotted&quot;</span>)</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:multivh"></span>
+<img src="AprendeR-Parte-I_files/figure-html/multivh-1.png" alt="Gráfica de la función $f(x)=x^2$ y una rejilla de rectas horizontales y verticales." width="480" />
+<p class="caption">
+Figura 7.15: Gráfica de la función <span class="math inline">\(f(x)=x^2\)</span> y una rejilla de rectas horizontales y verticales.
+</p>
+</div>
+<p>produce la Figura <a href="chap-plot.html#fig:multivh">7.15</a>. <!--
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{multivh.pdf}
+\end{center}
+\caption{Gráfica de la función $f(x)=x^2$ y una rejilla de rectas horizontales y verticales.}\label{fig:multivh}  
+\end{figure}
+--></p>
+<p>La instrucción <code>text(</code><span class="math inline">\(x\)</span>,<span class="math inline">\(y\)</span>, <code>labels=</code>…<code>)</code></p>
+<p>añade en el punto de coordenadas <span class="math inline">\((x, y)\)</span> el texto especificado como argumento de <code>labels</code>. El texto se puede entrar entre comillas o en una <code>expression</code>. Esta instrucción admite un parámetro opcional, <code>pos</code>, que puede tomar valores 1, 2, 3 o 4 y permite indicar la posición del texto alrededor de las coordenadas <span class="math inline">\((x, y)\)</span>: 1 significa abajo, 2 a la izquierda, 3 arriba y 4 a la derecha. Sin especificar <code>pos</code> (o, equivalentemente, especificando <code>pos=NULL</code>, que es su valor por defecto), el texto se sitúa centrado en el punto <span class="math inline">\((x, y)\)</span>. El efecto de <code>pos</code> se ilustra en la Figura <a href="chap-plot.html#fig:F10015">7.16</a>, producida con el código siguiente:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="dv">0</span>,<span class="dv">0</span>, <span class="dt">pch=</span><span class="dv">19</span>, <span class="dt">xlab=</span><span class="st">&quot;&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;&quot;</span>)
+<span class="kw">text</span>(<span class="dv">0</span>,<span class="dv">0</span>, <span class="dt">labels=</span><span class="st">&quot;pos 1&quot;</span>, <span class="dt">pos=</span><span class="dv">1</span>)
+<span class="kw">text</span>(<span class="dv">0</span>,<span class="dv">0</span>, <span class="dt">labels=</span><span class="st">&quot;pos 2&quot;</span>, <span class="dt">pos=</span><span class="dv">2</span>)
+<span class="kw">text</span>(<span class="dv">0</span>,<span class="dv">0</span>, <span class="dt">labels=</span><span class="st">&quot;pos 3&quot;</span>, <span class="dt">pos=</span><span class="dv">3</span>)
+<span class="kw">text</span>(<span class="dv">0</span>,<span class="dv">0</span>, <span class="dt">labels=</span><span class="st">&quot;pos 4&quot;</span>, <span class="dt">pos=</span><span class="dv">4</span>)
+<span class="kw">points</span>(<span class="dv">0</span>,<span class="fl">0.5</span>, <span class="dt">pch=</span><span class="dv">19</span>)
+<span class="kw">text</span>(<span class="dv">0</span>,<span class="fl">0.5</span>, <span class="dt">labels=</span><span class="st">&quot;no pos&quot;</span>)</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:F10015"></span>
+<img src="AprendeR-Parte-I_files/figure-html/F10015-1.png" alt="Significado del parámetro `pos` de la función `text`." width="480" />
+<p class="caption">
+Figura 7.16: Significado del parámetro <code>pos</code> de la función <code>text</code>.
+</p>
+</div>
+<!--
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{ex4.pdf}
+\end{center}
+\caption{Significado del parámetro `pos` de la función `text`.}\label{fig:10.15} 
+\end{figure}
+-->
+<p>La función <code>text</code> se puede usar para añadir varios textos en un solo paso. En este caso, <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> han de ser los vectores de abscisas y ordenadas de los puntos donde se añadirán los textos, <code>labels</code> el vector de textos, y <code>pos</code> el vector de sus posiciones; en este vector, los textos que queremos centrados en su posición se han de indicar con <code>NULL</code>. Así, la Figura <a href="chap-plot.html#fig:F10015">7.16</a> también se hubiera podido obtener con el código siguiente, como podréis comprobar si lo ejecutáis:</p>
+<pre><code>plot(0,0, pch=19, xlab=&quot;&quot;, ylab=&quot;&quot;)
+points(0,0.5, pch=19)
+text(rep(0,5),c(rep(0,4),0.5), pos=c(1,2,3,4,NULL),
+     labels=c(&quot;pos 1&quot;,&quot;pos 2&quot;,&quot;pos 3&quot;,&quot;pos 4&quot;,&quot;no pos&quot;))</code></pre>
+<p>La instrucción <code>lines(</code><span class="math inline">\(x\)</span><code>,</code><span class="math inline">\(y\)</span><code>)</code>, donde <span class="math inline">\(x=(x_i)_{i=1, \ldots, n}\)</span> e <span class="math inline">\(y=(y_i)_{i=1, \ldots, n}\)</span> son dos vectores numéricos de la misma longitud, añade al gráfico una línea poligonal que une los puntos <span class="math inline">\((x_i, y_i)\)</span> sucesivos. El efecto es como si añadiéramos un <code>plot(</code><span class="math inline">\(x\)</span><code>,</code><span class="math inline">\(y\)</span><code>, type=l)</code>. Naturalmente, la apariencia de las líneas la podemos modificar con los parámetros usuales de grosor, color, estilo, etc. A modo de ejemplo, la Figura <a href="chap-plot.html#fig:F10016">7.17</a> se obtiene con el código:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">f=<span class="cf">function</span>(x){x<span class="op">^</span><span class="dv">2</span>}
+<span class="kw">plot</span>(f, <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">10</span>))
+<span class="kw">lines</span>(<span class="fl">3.33</span><span class="op">*</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">3</span>), (<span class="fl">3.33</span><span class="op">*</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">3</span>))<span class="op">^</span><span class="dv">2</span>, <span class="dt">lwd=</span><span class="dv">2</span>, <span class="dt">lty=</span><span class="st">&quot;dashed&quot;</span>)</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:F10016"></span>
+<img src="AprendeR-Parte-I_files/figure-html/F10016-1.png" alt="Gráfica de la función $f(x)=x^2$ junto a la línea poligonal que une los puntos $(3.33n, (3.33n)^2)_{n=0, \ldots, 3}$" width="480" />
+<p class="caption">
+Figura 7.17: Gráfica de la función <span class="math inline">\(f(x)=x^2\)</span> junto a la línea poligonal que une los puntos <span class="math inline">\((3.33n, (3.33n)^2)_{n=0, \ldots, 3}\)</span>
+</p>
+</div>
+<!--
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{exlines.pdf}
+\end{center}
+\caption{Gráfica de la función $f(x)=x^2$ junto a la línea poligonal que une los puntos $(3.33n, (3.33n)^2)_{n=0, \ldots, 3}$.}\label{fig:10.16} 
+\end{figure}
+-->
+<p>La instrucción <code>curve</code> con el parámetro <code>add=TRUE</code> permite añadir la gráfica de una curva a un gráfico anterior. La curva se puede especificar mediante una expresión algebraica con variable <span class="math inline">\(x\)</span>, o mediante su nombre si la hemos definido antes. Por ejemplo, así podemos producir el gráfico de la Figura <a href="chap-plot.html#fig:mons">7.18</a>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">f=<span class="cf">function</span>(x){x<span class="op">^</span><span class="dv">2</span>}
+<span class="kw">plot</span>(f, <span class="dt">xlim=</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">10</span>,<span class="dv">10</span>), <span class="dt">xlab=</span><span class="st">&quot;x&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;y&quot;</span>, <span class="dt">main=</span><span class="st">&quot;monomios&quot;</span>)
+<span class="kw">curve</span>(x<span class="op">^</span><span class="dv">3</span>, <span class="dt">lty=</span><span class="st">&quot;dashed&quot;</span>, <span class="dt">add=</span><span class="ot">TRUE</span>)
+<span class="kw">curve</span>(x<span class="op">^</span><span class="dv">4</span>, <span class="dt">lty=</span><span class="st">&quot;dotted&quot;</span>, <span class="dt">add=</span><span class="ot">TRUE</span>) </code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:mons"></span>
+<img src="AprendeR-Parte-I_files/figure-html/mons-1.png" alt="Gráficas de diferentes monomios." width="480" />
+<p class="caption">
+Figura 7.18: Gráficas de diferentes monomios.
+</p>
+</div>
+<p>produce el gráfico de la Figura <a href="chap-plot.html#fig:mons">7.18</a>. <!--
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{monomis.pdf}
+\end{center}
+\caption{Gráficas de diferentes monomios.}\label{fig:mons} 
+\end{figure}
+--> Las funciones <code>points</code>, <code>abline</code>, <code>lines</code> o <code>text</code> sólo sirven para <code>añadir</code> elementos a un gráfico. En cambio, la función <code>curve</code> también se puede usar para producir la gráfica de una función, como <code>plot</code>, con la ventaja sobre esta última que no sólo se puede aplicar a una función definida con <code>function</code>, sino también a una expresión algebraica. Además, la función <code>curve</code> admite todos los parámetros de <code>plot</code>. Así, el gráfico de la Figura <a href="chap-plot.html#fig:mons">7.18</a> también se obtiene con</p>
+<pre><code>curve(x^2, xlim=c(-10,10), xlab=&quot;x&quot;, ylab=&quot;y&quot;, main=&quot;monomios&quot;)
+curve(x^3, lty=&quot;dashed&quot;, add=TRUE)
+curve(x^4, lty=&quot;dotted&quot;, add=TRUE) </code></pre>
+<p>Cuando dibujamos varias funciones en un gráfico, como el de la Figura <a href="chap-plot.html#fig:mons">7.18</a>, es conveniente usar una <code>leyenda</code> para distinguirlas. Para añadirla, se ha de usar la instrucción <code>legend(</code><em>posición</em><code>, legend=c(</code><em>vector de nombres de las curvas</em><code>),</code> parámetro<code>=c(</code> <em>vector de valores del parámetro</em><code>),</code> …<code>,</code> parámetro <code>=c(</code> <em>vector de valores del parámetro</em> <code>))</code>, donde:</p>
+<ul>
+<li>La <em>posición</em> indica donde queremos situar la leyenda, y puede ser o bien dos números para especificar las coordenadas de su esquina superior izquierda, o bien una de las palabras siguientes: <code>&quot;bottomright&quot;</code> (esquina inferior derecha), <code>&quot;bottom&quot;</code> (centrada abajo), <code>&quot;bottomleft&quot;</code> (esquina inferior izquierda), <code>&quot;left&quot;</code> (centrada a la izquierda), <code>&quot;topleft&quot;</code> (esquina superior izquierda), <code>&quot;top&quot;</code> (centrada arriba), <code>&quot;topright&quot;</code> (esquina superior derecha), <code>&quot;right&quot;</code> (centrada a la derecha) o <code>&quot;center&quot;</code> (en el centro del gráfico).</li>
+<li>El vector <code>legend</code> contiene los nombres (entre comillas o aplicándoles<br />
+<code>expression</code>) con los que queremos identificar las curvas dentro de la leyenda.</li>
+<li>Cada <em>parámetro</em> se usará para especificar el vector de sus valores sobre las diferentes curvas, en el orden en el que aparecen en el vector <code>legend</code> e incluyendo los valores por defecto. Se pueden usar varios parámetros. Si se quieren distinguir las curvas por su color, obligatoriamente también se ha de especificar algún otro parámetro (si sólo se distinguen por el color, se ha de añadir <code>lty</code> igualado al tipo de línea; por defecto, <code>&quot;solid&quot;</code>).</li>
+</ul>
+<p>Por ejemplo,</p>
+<pre><code>&gt; curve(x^2, xlim=c(-10,10), xlab=&quot;x&quot;, ylab=&quot;y&quot;, main=&quot;monomios&quot;)
+&gt; curve(x^3, lty=&quot;dashed&quot;, add=TRUE)
+&gt; curve(x^4, lty=&quot;dotted&quot;, add=TRUE) 
+&gt; legend(&quot;bottomleft&quot;, legend=c(expression(x^2), expression(x^3), 
+ expression(x^4)), lty=c(&quot;solid&quot;, &quot;dashed&quot;, &quot;dotted&quot;))</code></pre>
+<p>produce el gráfico de la izquierda de la Figura <a href="chap-plot.html#fig:mons2">7.19</a>. Observad que, aunque en el primer <code>curve</code> no hemos especificado el parámetro <code>lty</code>, y ha tomado su valor por defecto, en el parámetro <code>lty</code> del <code>legend</code> sí que hemos especificado su valor para la primera función.</p>
+<p>Veamos otro ejemplo:</p>
+<pre><code>&gt; curve(2*x+3, xlim=c(-10,10), ylab=&quot;&quot;)
+&gt; curve(2*x^2+3, col=&quot;red&quot;, lwd=2, add=TRUE)
+&gt; curve(2*x^3+3, col=&quot;blue&quot;, lwd=3, add=TRUE)
+&gt; legend(&quot;topleft&quot;, legend=c(expression(2*x+3),expression(2*x^2+3), 
+              expression(2*x^3+3)), lwd=c(1,2,3), col=c(&quot;black&quot;,&quot;red&quot;,&quot;blue&quot;))</code></pre>
+<p>produce el gráfico de la derecha de la Figura <a href="chap-plot.html#fig:mons2">7.19</a>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="kw">c</span>(<span class="st">&quot;images/monomis2.png&quot;</span>,<span class="st">&quot;images/legcol.png&quot;</span>))</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:mons2"></span>
+<img src="images/monomis2.png" alt="Gráficas de diferentes funciones usando como leyenda el tipo de línea (izquierda) o el color y el grosor (derecha)."  /><img src="images/legcol.png" alt="Gráficas de diferentes funciones usando como leyenda el tipo de línea (izquierda) o el color y el grosor (derecha)."  />
+<p class="caption">
+Figura 7.19: Gráficas de diferentes funciones usando como leyenda el tipo de línea (izquierda) o el color y el grosor (derecha).
+</p>
+</div>
+<!--
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{monomis2.pdf}\qquad
+\includegraphics[width=0.45\textwidth]{legcol.pdf}\qquad
+\end{center}
+\caption{Gráficas de diferentes funciones usando como leyenda el tipo de línea (izquierda) o el color y el grosor (derecha).}\label{fig:mons2} 
+\end{figure}
+-->
+<p>El código siguiente produce la Figura <a href="chap-plot.html#fig:caca">7.20</a>; en ella podemos observar que si el único parámetro que especificamos dentro del <code>legend</code> es el color, no se ven las líneas dentro de la leyenda.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">curve</span>(<span class="dv">2</span><span class="op">*</span>x<span class="op">+</span><span class="dv">3</span>, <span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>, <span class="dt">ylab=</span><span class="st">&quot;&quot;</span>)
+<span class="kw">curve</span>(<span class="dv">2</span><span class="op">*</span>x<span class="op">^</span><span class="dv">2</span><span class="op">+</span><span class="dv">3</span>, <span class="dt">col=</span><span class="st">&quot;red&quot;</span>, <span class="dt">add=</span><span class="ot">TRUE</span>)
+<span class="kw">curve</span>(<span class="dv">2</span><span class="op">*</span>x<span class="op">^</span><span class="dv">3</span><span class="op">+</span><span class="dv">3</span>, <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>, <span class="dt">add=</span><span class="ot">TRUE</span>)
+<span class="kw">legend</span>(<span class="st">&quot;topleft&quot;</span>, <span class="dt">legend=</span><span class="kw">c</span>(<span class="kw">expression</span>(<span class="dv">2</span><span class="op">*</span>x<span class="op">+</span><span class="dv">3</span>),<span class="kw">expression</span>(<span class="dv">2</span><span class="op">*</span>x<span class="op">^</span><span class="dv">2</span><span class="op">+</span><span class="dv">3</span>),
+                           <span class="kw">expression</span>(<span class="dv">2</span><span class="op">*</span>x<span class="op">^</span><span class="dv">3</span><span class="op">+</span><span class="dv">3</span>)), <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;black&quot;</span>,<span class="st">&quot;red&quot;</span>,<span class="st">&quot;blue&quot;</span>))</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:caca"></span>
+<img src="AprendeR-Parte-I_files/figure-html/caca-1.png" alt="Gráficas de diferentes monomios usando como leyenda el color y su expresión, pero no el tipo de línea." width="480" />
+<p class="caption">
+Figura 7.20: Gráficas de diferentes monomios usando como leyenda el color y su expresión, pero no el tipo de línea.
+</p>
+</div>
+<!--
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{caca.pdf}
+\end{center}
+\caption{Gráficas de diferentes monomios usando como leyenda el color y su expresión, pero no el tipo de línea.}\label{fig:caca} 
+\end{figure}
+-->
+<p>Si os interesan, también disponéis de las funciones <code>segments</code> (para añadir segmentos), <code>arrows</code> (para añadir flechas), <code>symbols</code> (para añadir signos, como estrellas, termómetros, …), <code>polygon</code> (para añadir polígonos cerrados especificando sus vértices), etc. Consultad las Ayudas de estas instrucciones para los detalles sobre cómo se usan.</p>
+</div>
+<div id="guia-rapida-2" class="section level2">
+<h2><span class="header-section-number">7.4</span> Guía rápida</h2>
+<ul>
+<li><code>expression</code> sirve para producir textos matemáticamente bien formateados.</li>
+<li><code>par</code> sirve para modificar el aspecto general de los gráficos. Consultad su Ayuda para conocer todos los parámetros que se pueden especificar en esta función.</li>
+<li><code>plot</code> es la función genérica para producir gráficos. Sus dos usos principales (por el momento) son:</li>
+<li><code>plot(</code><span class="math inline">\(x\)</span><code>,</code><span class="math inline">\(y\)</span><code>)</code>, que dibuja el gráfico de los puntos <span class="math inline">\((x_n, y_n)\)</span>.</li>
+<li><code>plot(``función</code> <code>)</code>, que dibuja la gráfica de la <code>función</code> .</li>
+</ul>
+<p>Algunos parámetros importantes:</p>
+<ul>
+<li><code>main</code>: sirve para especificar el título.</li>
+<li><code>xlab</code> e <code>ylab</code>: sirven para especificar las etiquetas de los ejes de coordenadas.</li>
+<li><code>xlim</code> e <code>ylim</code>: sirven para especificar los rangos de los ejes de coordenadas.</li>
+<li><code>xaxp</code> e <code>yaxp</code>: sirven para especificar las marcas en los ejes de coordenadas.</li>
+<li><code>log</code>: sirve para especificar los ejes de coordenadas que estarán en escala logarítmica.</li>
+<li><code>type</code>: sirve para especificar el tipo de gráfico.</li>
+<li><code>pch</code>: sirve para especificar el estilo de los puntos.</li>
+<li><code>cex</code>: sirve para especificar el tamaño de los puntos.</li>
+<li><code>col</code>: sirve para especificar el color del gráfico.</li>
+<li><code>bg</code>: sirve para especificar el color de relleno de los puntos de estilos <code>pch</code> de 21 a 25.</li>
+<li><code>lty</code>: sirve para especificar el tipo de las líneas.</li>
+<li><code>lwd</code>: sirve para especificar el grosor de la líneas.</li>
+</ul>
+<p>Los parámetros <code>pch</code>, <code>cex</code>, <code>col</code>, <code>bg</code>, <code>type</code>, <code>lty</code> y <code>lwd</code> también se pueden usar en las funciones que siguen.</p>
+<ul>
+<li><code>points</code> añade puntos al gráfico activo.</li>
+<li><code>abline</code> añade una recta al gráfico activo. Algunos parámetros específicos importantes:</li>
+<li><code>v</code>: la abscisa de una recta vertical.</li>
+<li><code>h</code>: la ordenada de una recta horizontal.</li>
+<li><code>lines</code> añade una línea poligonal al gráfico activo.</li>
+<li><code>text</code> añade un texto al gráfico activo.</li>
+</ul>
+<p>Algunos parámetros específicos importantes:</p>
+<ul>
+<li><code>pos</code>: la posición del texto con respecto a sus coordenadas.</li>
+<li><code>labels</code>: el texto.</li>
+<li><code>legend</code> añade una leyenda al gráfico activo.</li>
+<li><code>curve</code>, con el parámetro <code>add=TRUE</code>, sirve para añadir la gráfica de una función al gráfico activo. Esta función admite todos los parámetros de <code>plot</code>.</li>
+</ul>
+<div id="ejercicio-4" class="section level3">
+<h3><span class="header-section-number">7.4.1</span> Ejercicio</h3>
+<p>La <code>función de Gompertz</code> es <span class="math inline">\(G(t)=ae^{-be^{-ct}}\)</span>, con <span class="math inline">\(a, b, c\in \mathbb{R}\)</span> estrictamente positivos, y se usa para modelar el crecimiento de tumores o de poblaciones con recursos limitados. Vamos a analizar gráficamente el efecto de los parámetros <span class="math inline">\(a, b, c\)</span>.</p>
+<ul>
+<li>La recta <span class="math inline">\(y=a\)</span> es una asíntota horizontal de <span class="math inline">\(G(t)\)</span>. Comprobadlo dibujando en un mismo gráfico dos funciones de Gompertz con los mismos valores de <span class="math inline">\(b\)</span> y <span class="math inline">\(c\)</span> y diferentes valores de <span class="math inline">\(a\)</span>, y las rectas horizontales definidas por estos valores de <span class="math inline">\(a\)</span>. Usad colores, tipos de líneas, textos, leyenda, todo lo que consideréis necesario para ayudar a que el gráfico muestre la información que se desea.</li>
+<li>Para estudiar el efecto de <span class="math inline">\(b\)</span>, dibujad en un mismo gráfico tres funciones de Gompertz con los mismos valores de <span class="math inline">\(a\)</span> y <span class="math inline">\(c\)</span> y diferentes valores de <span class="math inline">\(b\)</span>. De nuevo, usad todo lo que consideréis necesario para mejorar la comprensión del gráfico. A partir de este gráfico, ¿qué efecto diríais que tiene el parámetro <span class="math inline">\(b\)</span> sobre la gráfica de la función?</li>
+<li>Para estudiar el efecto de <span class="math inline">\(c\)</span>, dibujad en un mismo gráfico tres funciones de Gompertz con los mismos valores de <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> y diferentes valores de <span class="math inline">\(c\)</span>. De nuevo, usad todo lo que consideréis necesario para mejorar la comprensión del gráfico. A partir de este gráfico, ¿qué efecto diríais que tiene el parámetro <span class="math inline">\(c\)</span> sobre la gráfica de la función?</li>
+</ul>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="chap-df.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="chap-edqual.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/RicUIB/AprendeR2.1/edit/master/07chap06_Graficos_I.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["AprendeR-Parte-I.pdf", "AprendeR-Parte-I.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

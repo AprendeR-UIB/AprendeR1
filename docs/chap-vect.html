@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Lección 4 Vectores y otros tipos de listas | AprendeR: Parte I</title>
+  <meta name="description" content="Apuntes AprendeR bookdown::gitbook.">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="Lección 4 Vectores y otros tipos de listas | AprendeR: Parte I" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Apuntes AprendeR bookdown::gitbook." />
+  <meta name="github-repo" content="RicUIB/AprendeR" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Lección 4 Vectores y otros tipos de listas | AprendeR: Parte I" />
+  
+  <meta name="twitter:description" content="Apuntes AprendeR bookdown::gitbook." />
+  
+
+<meta name="author" content="The AprendeR team">
+
+
+<meta name="date" content="2019-02-14">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="chap-lm.html">
+<link rel="next" href="chap-matrix.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">AprendeR: Parte I</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Presentación</a></li>
+<li class="chapter" data-level="1" data-path="chap-0.html"><a href="chap-0.html"><i class="fa fa-check"></i><b>1</b> Logística de <code>R</code></a><ul>
+<li class="chapter" data-level="1.1" data-path="chap-0.html"><a href="chap-0.html#como-instalar-r-y-rstudio"><i class="fa fa-check"></i><b>1.1</b> Cómo instalar <code>R</code> y <em>Rstudio</em></a></li>
+<li class="chapter" data-level="1.2" data-path="chap-0.html"><a href="chap-0.html#sec:guardar"><i class="fa fa-check"></i><b>1.2</b> Cómo guardar el trabajo realizado</a></li>
+<li class="chapter" data-level="1.3" data-path="chap-0.html"><a href="chap-0.html#sec:guiones"><i class="fa fa-check"></i><b>1.3</b> Cómo trabajar con guiones y otros ficheros</a></li>
+<li class="chapter" data-level="1.4" data-path="chap-0.html"><a href="chap-0.html#sec:help"><i class="fa fa-check"></i><b>1.4</b> Cómo obtener ayuda</a></li>
+<li class="chapter" data-level="1.5" data-path="chap-0.html"><a href="chap-0.html#sec:paquetes"><i class="fa fa-check"></i><b>1.5</b> Cómo instalar y cargar paquetes</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="chap-calc.html"><a href="chap-calc.html"><i class="fa fa-check"></i><b>2</b> La calculadora</a><ul>
+<li class="chapter" data-level="2.1" data-path="chap-calc.html"><a href="chap-calc.html#numeros-reales-operaciones-y-funciones-basicas"><i class="fa fa-check"></i><b>2.1</b> Números reales: operaciones y funciones básicas</a></li>
+<li class="chapter" data-level="2.2" data-path="chap-calc.html"><a href="chap-calc.html#cifras-significativas-y-redondeos"><i class="fa fa-check"></i><b>2.2</b> Cifras significativas y redondeos</a></li>
+<li class="chapter" data-level="2.3" data-path="chap-calc.html"><a href="chap-calc.html#definicion-de-variables"><i class="fa fa-check"></i><b>2.3</b> Definición de variables</a></li>
+<li class="chapter" data-level="2.4" data-path="chap-calc.html"><a href="chap-calc.html#definicion-de-funciones"><i class="fa fa-check"></i><b>2.4</b> Definición de funciones</a></li>
+<li class="chapter" data-level="2.5" data-path="chap-calc.html"><a href="chap-calc.html#numeros-complejos-opcional"><i class="fa fa-check"></i><b>2.5</b> Números complejos (opcional)</a></li>
+<li class="chapter" data-level="2.6" data-path="chap-calc.html"><a href="chap-calc.html#guia-rapida"><i class="fa fa-check"></i><b>2.6</b> Guía rápida</a></li>
+<li class="chapter" data-level="2.7" data-path="chap-calc.html"><a href="chap-calc.html#ejercicio"><i class="fa fa-check"></i><b>2.7</b> Ejercicio</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="chap-lm.html"><a href="chap-lm.html"><i class="fa fa-check"></i><b>3</b> Un aperitivo: Introducción a la regresión lineal</a><ul>
+<li class="chapter" data-level="3.1" data-path="chap-lm.html"><a href="chap-lm.html#calculo-de-rectas-de-regresion"><i class="fa fa-check"></i><b>3.1</b> Cálculo de rectas de regresión</a></li>
+<li class="chapter" data-level="3.2" data-path="chap-lm.html"><a href="chap-lm.html#rectas-de-regresion-y-transformaciones-logaritmicas"><i class="fa fa-check"></i><b>3.2</b> Rectas de regresión y transformaciones logarítmicas</a></li>
+<li class="chapter" data-level="3.3" data-path="chap-lm.html"><a href="chap-lm.html#guia-rapida-1"><i class="fa fa-check"></i><b>3.3</b> Guía rápida</a></li>
+<li class="chapter" data-level="3.4" data-path="chap-lm.html"><a href="chap-lm.html#ejercicio-1"><i class="fa fa-check"></i><b>3.4</b> Ejercicio</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="chap-vect.html"><a href="chap-vect.html"><i class="fa fa-check"></i><b>4</b> Vectores y otros tipos de listas</a><ul>
+<li class="chapter" data-level="4.1" data-path="chap-vect.html"><a href="chap-vect.html#construccion-de-vectores"><i class="fa fa-check"></i><b>4.1</b> Construcción de vectores</a></li>
+<li class="chapter" data-level="4.2" data-path="chap-vect.html"><a href="chap-vect.html#operaciones-con-vectores"><i class="fa fa-check"></i><b>4.2</b> Operaciones con vectores</a></li>
+<li class="chapter" data-level="4.3" data-path="chap-vect.html"><a href="chap-vect.html#entradas-y-trozos-de-vectores"><i class="fa fa-check"></i><b>4.3</b> Entradas y trozos de vectores</a></li>
+<li class="chapter" data-level="4.4" data-path="chap-vect.html"><a href="chap-vect.html#subsec:factor"><i class="fa fa-check"></i><b>4.4</b> Factores</a></li>
+<li class="chapter" data-level="4.5" data-path="chap-vect.html"><a href="chap-vect.html#sec:lists"><i class="fa fa-check"></i><b>4.5</b> Listas heterogéneas</a></li>
+<li class="chapter" data-level="4.6" data-path="chap-vect.html"><a href="chap-vect.html#guia-rapida-de-funciones"><i class="fa fa-check"></i><b>4.6</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="4.7" data-path="chap-vect.html"><a href="chap-vect.html#ejercicio-2"><i class="fa fa-check"></i><b>4.7</b> Ejercicio</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="chap-matrix.html"><a href="chap-matrix.html"><i class="fa fa-check"></i><b>5</b> Matrices</a><ul>
+<li class="chapter" data-level="5.1" data-path="chap-matrix.html"><a href="chap-matrix.html#construccion-de-matrices"><i class="fa fa-check"></i><b>5.1</b> Construcción de matrices</a></li>
+<li class="chapter" data-level="5.2" data-path="chap-matrix.html"><a href="chap-matrix.html#acceso-a-entradas-y-submatrices"><i class="fa fa-check"></i><b>5.2</b> Acceso a entradas y submatrices</a></li>
+<li class="chapter" data-level="5.3" data-path="chap-matrix.html"><a href="chap-matrix.html#algunas-funciones-para-matrices"><i class="fa fa-check"></i><b>5.3</b> Algunas funciones para matrices</a></li>
+<li class="chapter" data-level="5.4" data-path="chap-matrix.html"><a href="chap-matrix.html#calculo-matricial-opcional"><i class="fa fa-check"></i><b>5.4</b> Cálculo matricial (opcional)</a></li>
+<li class="chapter" data-level="5.5" data-path="chap-matrix.html"><a href="chap-matrix.html#valores-y-vectores-propios-opcional"><i class="fa fa-check"></i><b>5.5</b> Valores y vectores propios (opcional)</a></li>
+<li class="chapter" data-level="5.6" data-path="chap-matrix.html"><a href="chap-matrix.html#matrices-complejas-opcional"><i class="fa fa-check"></i><b>5.6</b> Matrices complejas (opcional)</a></li>
+<li class="chapter" data-level="5.7" data-path="chap-matrix.html"><a href="chap-matrix.html#guia-rapida-de-funciones-1"><i class="fa fa-check"></i><b>5.7</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="5.8" data-path="chap-matrix.html"><a href="chap-matrix.html#ejercicio-opcional"><i class="fa fa-check"></i><b>5.8</b> Ejercicio (opcional)</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="chap-df.html"><a href="chap-df.html"><i class="fa fa-check"></i><b>6</b> <em>Data frames</em></a><ul>
+<li class="chapter" data-level="6.1" data-path="chap-df.html"><a href="chap-df.html#estructura-de-un-data-frame"><i class="fa fa-check"></i><b>6.1</b> Estructura de un <em>data frame</em></a></li>
+<li class="chapter" data-level="6.2" data-path="chap-df.html"><a href="chap-df.html#como-importar-y-exportar-data-frames"><i class="fa fa-check"></i><b>6.2</b> Cómo importar y exportar <em>data frames</em></a></li>
+<li class="chapter" data-level="6.3" data-path="chap-df.html"><a href="chap-df.html#como-crear-data-frames"><i class="fa fa-check"></i><b>6.3</b> Cómo crear <em>data frames</em></a></li>
+<li class="chapter" data-level="6.4" data-path="chap-df.html"><a href="chap-df.html#sec:moddf"><i class="fa fa-check"></i><b>6.4</b> Cómo modificar un <em>data frame</em></a></li>
+<li class="chapter" data-level="6.5" data-path="chap-df.html"><a href="chap-df.html#sec:dfaf"><i class="fa fa-check"></i><b>6.5</b> Cómo añadir filas y columnas a un <em>data frame</em></a></li>
+<li class="chapter" data-level="6.6" data-path="chap-df.html"><a href="chap-df.html#como-seleccionar-trozos-de-un-data-frame"><i class="fa fa-check"></i><b>6.6</b> Cómo seleccionar trozos de un <em>data frame</em></a></li>
+<li class="chapter" data-level="6.7" data-path="chap-df.html"><a href="chap-df.html#como-aplicar-una-funcion-a-las-variables-de-un-data-frame"><i class="fa fa-check"></i><b>6.7</b> Cómo aplicar una función a las variables de un <em>data frame</em></a></li>
+<li class="chapter" data-level="6.8" data-path="chap-df.html"><a href="chap-df.html#sub:attach"><i class="fa fa-check"></i><b>6.8</b> Cómo añadir las variables de un <em>data frame</em> al entorno global</a></li>
+<li class="chapter" data-level="6.9" data-path="chap-df.html"><a href="chap-df.html#big-data-frames-con-data.table-opcional."><i class="fa fa-check"></i><b>6.9</b> &lt;&lt;<em>Big data</em>&gt;&gt; <em>frames</em> con <code>data.table</code> (opcional).</a></li>
+<li class="chapter" data-level="6.10" data-path="chap-df.html"><a href="chap-df.html#guia-rapida-de-funciones-2"><i class="fa fa-check"></i><b>6.10</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="6.11" data-path="chap-df.html"><a href="chap-df.html#ejercicio-3"><i class="fa fa-check"></i><b>6.11</b> Ejercicio</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="chap-plot.html"><a href="chap-plot.html"><i class="fa fa-check"></i><b>7</b> Gráficos I</a><ul>
+<li class="chapter" data-level="7.1" data-path="chap-plot.html"><a href="chap-plot.html#la-funcion-plot"><i class="fa fa-check"></i><b>7.1</b> La función <code>plot</code></a></li>
+<li class="chapter" data-level="7.2" data-path="chap-plot.html"><a href="chap-plot.html#parametros-de-plot"><i class="fa fa-check"></i><b>7.2</b> Parámetros de <code>plot</code></a></li>
+<li class="chapter" data-level="7.3" data-path="chap-plot.html"><a href="chap-plot.html#como-anadir-elementos-a-un-grafico"><i class="fa fa-check"></i><b>7.3</b> Cómo añadir elementos a un gráfico</a></li>
+<li class="chapter" data-level="7.4" data-path="chap-plot.html"><a href="chap-plot.html#guia-rapida-2"><i class="fa fa-check"></i><b>7.4</b> Guía rápida</a><ul>
+<li class="chapter" data-level="7.4.1" data-path="chap-plot.html"><a href="chap-plot.html#ejercicio-4"><i class="fa fa-check"></i><b>7.4.1</b> Ejercicio</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="chap-edqual.html"><a href="chap-edqual.html"><i class="fa fa-check"></i><b>8</b> Descripción de datos cualitativos</a><ul>
+<li class="chapter" data-level="8.1" data-path="chap-edqual.html"><a href="chap-edqual.html#frecuencias"><i class="fa fa-check"></i><b>8.1</b> Frecuencias</a></li>
+<li class="chapter" data-level="8.2" data-path="chap-edqual.html"><a href="chap-edqual.html#tablas-unidimensionales-de-frecuencias"><i class="fa fa-check"></i><b>8.2</b> Tablas unidimensionales de frecuencias</a></li>
+<li class="chapter" data-level="8.3" data-path="chap-edqual.html"><a href="chap-edqual.html#tablas-bidimensionales-de-frecuencias"><i class="fa fa-check"></i><b>8.3</b> Tablas bidimensionales de frecuencias</a></li>
+<li class="chapter" data-level="8.4" data-path="chap-edqual.html"><a href="chap-edqual.html#tablas-multidimensionales-de-frecuencias"><i class="fa fa-check"></i><b>8.4</b> Tablas multidimensionales de frecuencias</a></li>
+<li class="chapter" data-level="8.5" data-path="chap-edqual.html"><a href="chap-edqual.html#tablas-a-partir-de-dta-frames-de-de-variables-cualitativas"><i class="fa fa-check"></i><b>8.5</b> Tablas a partir de <em>dta frames</em> de de variables cualitativas</a></li>
+<li class="chapter" data-level="8.6" data-path="chap-edqual.html"><a href="chap-edqual.html#diagramas-de-barras"><i class="fa fa-check"></i><b>8.6</b> Diagramas de barras</a></li>
+<li class="chapter" data-level="8.7" data-path="chap-edqual.html"><a href="chap-edqual.html#otros-graficos-para-datos-cualitativos"><i class="fa fa-check"></i><b>8.7</b> Otros gráficos para datos cualitativos</a><ul>
+<li class="chapter" data-level="8.7.1" data-path="chap-edqual.html"><a href="chap-edqual.html#sec:exqual"><i class="fa fa-check"></i><b>8.7.1</b> Un ejemplo completo</a></li>
+</ul></li>
+<li class="chapter" data-level="8.8" data-path="chap-edqual.html"><a href="chap-edqual.html#guia-rapida-de-funciones-3"><i class="fa fa-check"></i><b>8.8</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="8.9" data-path="chap-edqual.html"><a href="chap-edqual.html#ejercicio-5"><i class="fa fa-check"></i><b>8.9</b> Ejercicio</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="chap-ord.html"><a href="chap-ord.html"><i class="fa fa-check"></i><b>9</b> Descripción de datos ordinales</a><ul>
+<li class="chapter" data-level="9.1" data-path="chap-ord.html"><a href="chap-ord.html#frecuencias-para-datos-ordinales"><i class="fa fa-check"></i><b>9.1</b> Frecuencias para datos ordinales</a></li>
+<li class="chapter" data-level="9.2" data-path="chap-ord.html"><a href="chap-ord.html#descripcion-de-datos-ordinales-con-r"><i class="fa fa-check"></i><b>9.2</b> Descripción de datos ordinales con <code>R</code></a></li>
+<li class="chapter" data-level="9.3" data-path="chap-ord.html"><a href="chap-ord.html#guia-rapida-de-funciones-4"><i class="fa fa-check"></i><b>9.3</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="9.4" data-path="chap-ord.html"><a href="chap-ord.html#ejercicio-6"><i class="fa fa-check"></i><b>9.4</b> Ejercicio</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/RicUIB/AprendeR2.1" target="blank">Publicado con  bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">AprendeR: Parte I</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="chap:vect" class="section level1">
+<h1><span class="header-section-number">Lección 4</span> Vectores y otros tipos de listas</h1>
+<p>Un <code>vector</code> es una secuencia ordenada de datos. <code>R</code> dispone de muchos tipos de datos, entre los que destacamos:</p>
+<ul>
+<li><code>logical</code> (lógicos: <code>TRUE</code>, verdadero, o <code>FALSE</code>, falso)</li>
+<li><code>integer</code> (números enteros)</li>
+<li><code>numeric</code> (números reales)</li>
+<li><code>complex</code> (números complejos)</li>
+<li><code>character</code> (palabras)</li>
+</ul>
+<p>Una restricción fundamental de los vectores en <code>R</code> es que todos sus objetos han de ser del mismo tipo: todos números, todos palabras, etc. Cuando queramos usar vectores formados por objetos de diferentes tipos, tendremos que usar <code>listas heterogéneas</code>, <code>lists</code> en el argot de <code>R</code> (véase la Sección <a href="chap-vect.html#sec:lists">4.5</a>).</p>
+<div id="construccion-de-vectores" class="section level2">
+<h2><span class="header-section-number">4.1</span> Construcción de vectores</h2>
+<p>Para definir un <code>vector</code> con unos elementos dados, por ejemplo</p>
+<pre><code>1, 5, 6, 2, 5, 7, 8, 3, 5, 2, 1, 0, </code></pre>
+<p>podemos aplicar la función <code>c</code> a estos elementos separados por comas.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x=<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>)
+x</code></pre></div>
+<pre><code>##  [1] 1 5 6 2 5 7 8 3 5 2 1 0</code></pre>
+<p>Si queremos crear un vector de palabras con la instrucción <code>c</code>, tenemos que entrarlas obligatoriamente entre comillas. <code>R</code> también nos las muestra entre comillas.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">nombres=<span class="kw">c</span>(<span class="st">&quot;Pep&quot;</span>,<span class="st">&quot;Catalina&quot;</span>,<span class="st">&quot;Joan&quot;</span>,<span class="st">&quot;Pau&quot;</span>)
+nombres</code></pre></div>
+<pre><code>## [1] &quot;Pep&quot;      &quot;Catalina&quot; &quot;Joan&quot;     &quot;Pau&quot;</code></pre>
+<pre><code>&gt; nombres=c(Pep,Catalina,Joan,Pau) #Si nos olvidamos de las comillas...
+Error: objeto &#39;Pep&#39; no encontrado</code></pre>
+<p>Hemos mencionado que todos los elementos de un vector han de ser del mismo tipo. Por este motivo, si concatenamos datos de diferentes tipos en un vector, <code>R</code> automáticamente los convertirá a un tipo que pueda ser común a todos ellos. El orden de conversión entre los tipos que hemos explicado al principio de la lección es: <code>character</code> gana a <code>complex</code>, que gana a <code>numeric</code>, que gana a <code>integer</code>, que gana a <code>logical</code>. Así, cuando alguna entrada de un vector es de tipo palabra, <code>R</code> considera el resto de sus entradas como palabras (y las muestra entre comillas), como se puede ver en el siguiente ejemplo:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">c</span>(<span class="dv">2</span>,<span class="fl">3.5</span>,<span class="ot">TRUE</span>,<span class="st">&quot;casa&quot;</span>)</code></pre></div>
+<pre><code>## [1] &quot;2&quot;    &quot;3.5&quot;  &quot;TRUE&quot; &quot;casa&quot;</code></pre>
+<p>Otra posibilidad para crear un vector es usar la función <code>scan</code>. Si ejecutamos la instrucción <code>scan()</code> (así, con el argumento vacío), <code>R</code> abre en la consola un entorno de diálogo donde podemos ir entrando datos separados por espacios en blanco; cada vez que pulsemos la tecla <em>Entrar</em>, <code>R</code> importará los datos que hayamos escrito desde la vez anterior en que la pulsamos y abrirá una nueva línea donde esperará más datos; cuando hayamos acabado, dejamos la última línea en blanco (pulsando por última vez la tecla <em>Entrar</em>) y <code>R</code> cerrará el vector.</p>
+<p>Por ejemplo, para crear un vector <code>x_scan</code> que contenga dos copias de</p>
+<pre><code>1 5 6 2 5 7 8 3 5 2 1 0, </code></pre>
+<p>podemos hacer lo siguiente:<a href="#fn22" class="footnoteRef" id="fnref22"><sup>22</sup></a></p>
+<pre><code>&gt; x_scan=scan()  #Y pulsamos Entrar
+1: 1 5 6 2 5 7 8 3 5 2 1 0
+13: 1 5 6 2 5 7 8 3 5 2 1 0
+25: 
+Read 24 items</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x_scan</code></pre></div>
+<pre><code>##  [1] 1 5 6 2 5 7 8 3 5 2 1 0 1 5 6 2 5 7 8 3 5 2 1 0</code></pre>
+<p>La función <code>scan</code> también se puede usar para copiar en un vector el contenido de un fichero de texto situado en el directorio de trabajo, o del que conozcamos su dirección en Internet. La manera de hacerlo es aplicando <code>scan</code> al nombre del fichero o a su <em>url</em>, entrados en ambos casos entre comillas. Por ejemplo, para definir un vector llamado <code>notas</code> con las notas de un examen que tenemos guardadas en el fichero <a href="http://aprender.uib.es/Rdir/notas.txt" class="uri">http://aprender.uib.es/Rdir/notas.txt</a> , sólo tenemos que entrar:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">notas=<span class="kw">scan</span>(<span class="st">&quot;http://aprender.uib.es/Rdir/notas.txt&quot;</span>)
+notas</code></pre></div>
+<pre><code>##  [1]  4.1  7.8  5.8  6.5  4.8  6.9  1.3  6.4  4.6  6.9  9.4  3.0  6.8  4.8
+## [15]  5.6  7.7 10.0  4.4  1.7  8.0  6.3  3.0  7.5  3.8  7.2  5.7  7.3  6.0
+## [29]  5.7  4.7  5.1  1.5  7.0  7.0  6.0  6.6  7.2  5.0  3.5  3.3  4.7  5.4
+## [43]  7.1  8.2  6.7  0.1  5.1  6.8  6.9  8.8  4.5  6.6  2.0  3.0  6.7  7.9
+## [57]  7.7  6.4  3.0  5.3  5.1  5.3  5.1  5.4  3.0</code></pre>
+<p>Si primero descargamos este fichero, sin cambiarle el nombre, en el directorio de trabajo de <code>R</code>, para definir el vector anterior bastará entrar:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">notas2=<span class="kw">scan</span>(<span class="st">&quot;notas.txt&quot;</span>)
+notas2</code></pre></div>
+<pre><code>##  [1]  4.1  7.8  5.8  6.5  4.8  6.9  1.3  6.4  4.6  6.9  9.4  3.0  6.8  4.8
+## [15]  5.6  7.7 10.0  4.4  1.7  8.0  6.3  3.0  7.5  3.8  7.2  5.7  7.3  6.0
+## [29]  5.7  4.7  5.1  1.5  7.0  7.0  6.0  6.6  7.2  5.0  3.5  3.3  4.7  5.4
+## [43]  7.1  8.2  6.7  0.1  5.1  6.8  6.9  8.8  4.5  6.6  2.0  3.0  6.7  7.9
+## [57]  7.7  6.4  3.0  5.3  5.1  5.3  5.1  5.4  3.0</code></pre>
+<p>Si usamos el menú &lt;&lt;<em>Import Dataset</em>&gt;&gt; de la pestaña <strong>Environment</strong> para importar un vector contenido en un fichero externo (véase la página  de la Lección <a href="chap-lm.html#chap:lm">3</a>), obtendremos en realidad un <em>data frame</em> de una sola columna, llamada <code>V1</code>. Para construir un vector con esta columna, podemos usar luego la instrucción <code>nombre_del_vector=nombre_del_dataframe$V1</code>.</p>
+<p>Véase la Lección <a href="chap-df.html#chap:df">6</a> para más detalles.</p>
+<p>La función <code>scan</code> dispone de muchos parámetros, que podéis consultar en su Ayuda. Los más útiles en este momento son los siguientes:</p>
+<ul>
+<li><code>sep</code>: sirve para indicar el signo usado para separar entradas consecutivas si no son espacios en blanco. Para ello se ha de igualar <code>sep</code> a este signo, entrecomillado. Por ejemplo, si vamos a entrar las entradas separadas por comas (o si están así en el fichero que vamos a importar), tenemos que especificar <code>sep=&quot;,&quot;</code>.</li>
+</ul>
+<pre><code>&gt; x_scan2=scan()  
+1: 1,5,6,2,5,7,8,3,5
+1: 
+Error in scan(file, what, nmax, sep, dec, quote, skip, nlines, 
+na.strings, :  scan() expected &#39;a real&#39;, got &#39;1,5,6,2,5,7,8,3,5&#39;</code></pre>
+<pre><code>&gt; x_scan2=scan(sep=&quot;,&quot;)
+1: 1,2,3,4
+5: 
+Read 4 items
+&gt; x_scan2
+[1] 1 2 3 4
+&gt; </code></pre>
+<ul>
+<li><code>dec</code>: sirve para indicar el separador decimal cuando no es un punto. Para ello hemos de igualar <code>dec</code> al separador decimal entre comillas. Por ejemplo, si queremos crear con <code>scan</code> un vector formado por los dos números reales 4,5 y 6,2 escritos exactamente de esta manera, tenemos que especificar <code>dec=&quot;,&quot;</code>.</li>
+</ul>
+<pre><code>&gt; x_scan3=scan()
+1: 4,5 6,2
+Error in scan(file, what, nmax, sep, dec, quote, skip, nlines, 
+na.strings, :  scan() expected &#39;a real&#39;, got &#39;4,5&#39;</code></pre>
+<pre><code>x_scan3=scan(dec=&quot;,&quot;)
+1: 4,5 6,2
+
+
+3: 
+Read 2 items
+&gt; x_scan3
+[1] 4.5 6.2</code></pre>
+<ul>
+<li><code>what</code>: sirve para indicar a <code>R</code> de qué tipo tiene que considerar los datos que se le entren. En particular, <code>what=&quot;{</code>character“} especifica que los valores que se van a entrar en la consola o el fichero son palabras, aunque no estén entre comillas (si se entran entre comillas, no hace falta especificarlo).</li>
+</ul>
+<pre><code>&gt; x_scan4=scan(sep=&quot;,&quot;)
+1:  Pep, Catalina, Joan, Pau
+Error in scan(sep = &quot;,&quot;) : scan() esperaba &#39;a real&#39;, obtuvo &#39;Pep&#39;</code></pre>
+<p><code>&gt; x_scan4=scan(what=&quot;character&quot;, sep=&quot;,&quot;) 1: &quot;Pep&quot;,&quot;Catalina&quot;,&quot;Joan&quot; 4:  Read 3 items &gt; x_scan4 [1] &quot;Pep&quot;      &quot;Catalina&quot; &quot;Joan&quot;     &gt;</code></p>
+<ul>
+<li><code>encoding</code>: sirve para indicar la codificación de alfabeto del fichero externo que se va a importar. Sólo es necesario especificarlo si dicho fichero contiene caracteres que no sean de 7 bits; o sea, letras acentuadas o caracteres especiales. En este caso, si su codificación no es la que espera nuestro ordenador y no la especificamos con este parámetro, estos caracteres se importarán mal. Los dos valores posibles que podemos darle son <code>&quot;latin1&quot;</code> y <code>&quot;UTF-8&quot;</code>. Por ejemplo, si sois usuarios de Windows, seguramente vuestro ordenador espere que el fichero a importar esté codificado en <code>latin1</code>; entonces, si está codificado en <code>utf8</code> y contiene letras acentuadas, no las entenderá a no ser que especifiquéis <code>encoding=&quot;UTF-8&quot;</code>. Los ficheros que usaremos en este curso estarán codificados en utf8, pero no contendrán letras acentuadas ni caracteres especiales, por lo que no será necesario usar este parámetro.</li>
+</ul>
+<p>Veamos un ejemplo en sentido contrario: en <a href="http://aprender.uib.es/Rdir/enlatin1.txt" class="uri">http://aprender.uib.es/Rdir/enlatin1.txt</a> hemos guardado algunos nombres con acentos y hemos codificado el fichero en latin1. En la sesión siguiente se puede ver cómo si lo importamos desde un ordenador Mac sin avisar de la codificación, los acentos se traducen mal.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x_scan5=<span class="kw">scan</span>(<span class="st">&quot;http://aprender.uib.es/Rdir/enlatin1.txt&quot;</span>, <span class="dt">what=</span><span class="st">&quot;character&quot;</span>)
+<span class="kw">head</span>(x_scan5, <span class="dv">20</span>)</code></pre></div>
+<pre><code>##  [1] &quot;estudio&quot;        &quot;bebe&quot;           &quot;sexo&quot;           &quot;1&quot;             
+##  [5] &quot;Inform\xe1tica&quot; &quot;No&quot;             &quot;Mujer&quot;          &quot;2&quot;             
+##  [9] &quot;Matem\xe1ticas&quot; &quot;No&quot;             &quot;Hombre&quot;         &quot;3&quot;             
+## [13] &quot;Ing.Industrial&quot; &quot;S\xed&quot;          &quot;Mujer&quot;          &quot;4&quot;             
+## [17] &quot;Inform\xe1tica&quot; &quot;S\xed&quot;          &quot;Hombre&quot;         &quot;5&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x_scan6=<span class="kw">scan</span>(<span class="st">&quot;http://aprender.uib.es/Rdir/enlatin1.txt&quot;</span>, <span class="dt">what=</span><span class="st">&quot;character&quot;</span>, <span class="dt">encoding=</span><span class="st">&quot;latin1&quot;</span>)
+<span class="kw">head</span>(x_scan6, <span class="dv">20</span>)</code></pre></div>
+<pre><code>##  [1] &quot;estudio&quot;        &quot;bebe&quot;           &quot;sexo&quot;           &quot;1&quot;             
+##  [5] &quot;Informática&quot;    &quot;No&quot;             &quot;Mujer&quot;          &quot;2&quot;             
+##  [9] &quot;Matemáticas&quot;    &quot;No&quot;             &quot;Hombre&quot;         &quot;3&quot;             
+## [13] &quot;Ing.Industrial&quot; &quot;Sí&quot;             &quot;Mujer&quot;          &quot;4&quot;             
+## [17] &quot;Informática&quot;    &quot;Sí&quot;             &quot;Hombre&quot;         &quot;5&quot;</code></pre>
+<p>Para definir un vector constante podemos usar la función <code>rep(a, n)</code>, que genera un vector que contiene el valor <span class="math inline">\(a\)</span> repetido <span class="math inline">\(n\)</span> veces.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rep</span>(<span class="dv">1</span>, <span class="dv">6</span>)</code></pre></div>
+<pre><code>## [1] 1 1 1 1 1 1</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rep</span>(<span class="st">&quot;Palma&quot;</span>, <span class="dv">5</span>) <span class="co">#Las palabras, siempre entre comillas</span></code></pre></div>
+<pre><code>## [1] &quot;Palma&quot; &quot;Palma&quot; &quot;Palma&quot; &quot;Palma&quot; &quot;Palma&quot;</code></pre>
+<p>La función <code>rep</code> también se puede usar para repetir vectores. Ahora bien, cuando decimos que queremos repetir cinco veces los valores 1, 2, 3, podemos referirnos a una de las dos construcciones siguientes:</p>
+<p><span class="math display">\[
+1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3 \qquad\mbox{ o }\qquad 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3.
+\]</span> Para especificar el tipo de repetición tenemos que usar el parámetro adecuado en el argumento de <code>rep</code>: si añadimos <code>times=5</code>, repetiremos el vector en bloque cinco veces (en el primer sentido), y si en cambio añadimos <code>each=5</code>, repetiremos cada valor cinco veces (en el segundo sentido).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rep</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="dt">times=</span><span class="dv">5</span>)</code></pre></div>
+<pre><code>##  [1] 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rep</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="dt">each=</span><span class="dv">5</span>)</code></pre></div>
+<pre><code>##  [1] 1 1 1 1 1 2 2 2 2 2 3 3 3 3 3</code></pre>
+<p>Si queremos repetir cada elemento de un vector un número diferente de veces, podemos especificarlo igualando el parámetro <code>times</code> al vector de estas multiplicidades.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rep</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>), <span class="dt">times=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)) </code></pre></div>
+<pre><code>##  [1] 1 1 2 2 2 3 3 3 3 4 4 4 4 4</code></pre>
+<p>Las progresiones aritméticas se pueden especificar de manera compacta usando la función <code>seq</code>. Una primera manera de hacerlo es mediante la instrucción <code>seq(a, b, by=p)</code>, que especifica la progresión aritmética de paso <span class="math inline">\(p\)</span> que empieza en <span class="math inline">\(a\)</span>, <span class="math display">\[
+a, a+p, a+2p, \ldots, 
+\]</span> hasta llegar a <span class="math inline">\(b\)</span>. En concreto, si <span class="math inline">\(a&lt;b\)</span> y <span class="math inline">\(p&gt;0\)</span>, la función <code>seq(a, b, by=p)</code> genera un vector con la secuencia creciente $a, a+p, a+2p, , $ hasta llegar al último valor de esta sucesión menor o igual que <span class="math inline">\(b\)</span>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">seq</span>(<span class="dv">3</span>, <span class="dv">150</span>, <span class="dt">by=</span><span class="fl">4.5</span>)</code></pre></div>
+<pre><code>##  [1]   3.0   7.5  12.0  16.5  21.0  25.5  30.0  34.5  39.0  43.5  48.0
+## [12]  52.5  57.0  61.5  66.0  70.5  75.0  79.5  84.0  88.5  93.0  97.5
+## [23] 102.0 106.5 111.0 115.5 120.0 124.5 129.0 133.5 138.0 142.5 147.0</code></pre>
+<p>Si <span class="math inline">\(a&gt;b\)</span> y <span class="math inline">\(p&lt;0\)</span>, entonces <code>seq(a, b, by=p)</code> genera un vector con la secuencia decreciente $a, a+p, a+2p, , $ hasta parar en el último valor de esta sucesión <code>mayor</code> o igual que~<span class="math inline">\(b\)</span>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">seq</span>(<span class="dv">80</span>, <span class="dv">4</span>, <span class="dt">by=</span><span class="op">-</span><span class="fl">3.5</span>)</code></pre></div>
+<pre><code>##  [1] 80.0 76.5 73.0 69.5 66.0 62.5 59.0 55.5 52.0 48.5 45.0 41.5 38.0 34.5
+## [15] 31.0 27.5 24.0 20.5 17.0 13.5 10.0  6.5</code></pre>
+<p>Si el signo de <span class="math inline">\(p\)</span> no es el correcto, obtenemos un mensaje de error.</p>
+<pre><code>&gt;  seq(80, 4, by=3.5)
+Error in seq.default(80, 4, by = 3.5) : wrong sign in &#39;by&#39; argument</code></pre>
+<p>Como vimos en la lección anterior, la instrucción <code>seq</code> con paso <span class="math inline">\(\pm 1\)</span> se puede abreviar con el signo &lt;&lt;<code>:</code>&gt;&gt;. La instrucción <code>a:b</code> define la secuencia de números consecutivos entre dos números <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span>, es decir, la secuencia <span class="math inline">\(a, a+1, a+2, \ldots\)</span> hasta llegar a <span class="math inline">\(b\)</span> (si <span class="math inline">\(a&lt; b\)</span>), o <span class="math inline">\(a, a-1, a-2, \ldots\)</span> hasta llegar a <span class="math inline">\(b\)</span> (si <span class="math inline">\(a&gt; b\)</span>).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span><span class="op">:</span><span class="dv">15</span></code></pre></div>
+<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="fl">2.3</span><span class="op">:</span><span class="fl">12.5</span></code></pre></div>
+<pre><code>##  [1]  2.3  3.3  4.3  5.3  6.3  7.3  8.3  9.3 10.3 11.3 12.3</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">34</span><span class="op">:-</span><span class="dv">5</span></code></pre></div>
+<pre><code>##  [1] 34 33 32 31 30 29 28 27 26 25 24 23 22 21 20 19 18 17 16 15 14 13 12
+## [24] 11 10  9  8  7  6  5  4  3  2  1  0 -1 -2 -3 -4 -5</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">-</span><span class="dv">3</span><span class="op">:</span><span class="dv">5</span>   <span class="co">#Cuidado con los paréntesis</span></code></pre></div>
+<pre><code>## [1] -3 -2 -1  0  1  2  3  4  5</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">-</span>(<span class="dv">3</span><span class="op">:</span><span class="dv">5</span>)</code></pre></div>
+<pre><code>## [1] -3 -4 -5</code></pre>
+<p>La función <code>seq</code> también se puede usar para definir progresiones aritméticas de otras dos maneras:</p>
+<ul>
+<li><p><code>seq(a, b, length.out=n)</code> define la progresión aritmética de longitud <span class="math inline">\(n\)</span> que va de <span class="math inline">\(a\)</span> a <span class="math inline">\(b\)</span>; su paso es, por lo tanto, <span class="math inline">\(p=(b-a)/(n-1)\)</span> si <span class="math inline">\(n&gt;1\)</span>; si <span class="math inline">\(n=1\)</span> sólo produce el valor <span class="math inline">\(a\)</span>.</p></li>
+<li><p><code>seq(a, by=p, length.out=n)</code> define la progresión aritmética <span class="math display">\[
+a, a+p, a+2p, \ldots, a+(n-1)p
+\]</span> de longitud <span class="math inline">\(n\)</span> y paso <span class="math inline">\(p\)</span> que empieza en <span class="math inline">\(a\)</span>.</p></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">seq</span>(<span class="dv">2</span>, <span class="dv">10</span>, <span class="dt">length.out=</span><span class="dv">10</span>)</code></pre></div>
+<pre><code>##  [1]  2.000000  2.888889  3.777778  4.666667  5.555556  6.444444  7.333333
+##  [8]  8.222222  9.111111 10.000000</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">seq</span>(<span class="dv">2</span>, <span class="dt">by=</span><span class="fl">0.5</span>, <span class="dt">length.out=</span><span class="dv">10</span>)</code></pre></div>
+<pre><code>##  [1] 2.0 2.5 3.0 3.5 4.0 4.5 5.0 5.5 6.0 6.5</code></pre>
+<p>A estas alturas habréis observado que cuando el resultado de una instrucción es un vector, <code>R</code> comienza cada línea del resultado con un número entre corchetes <code>[ ]</code>. Este número indica la posición dentro del vector de la primera entrada de la línea correspondiente. De esta manera, en el resultado de <code>seq(2, 10, length.out=10)</code>, <code>R</code> nos indica que 2.000000 es el primer elemento de este vector y 6.444444 su sexto elemento.</p>
+<p>La función <code>c</code> que hemos usado para crear vectores en realidad concatena sus argumentos en un vector (de ahí viene la <code>c</code>). Si la aplicamos a vectores, crea un nuevo vector concatenando sus elementos. Podemos mezclar vectores y datos en su argumento.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x=<span class="kw">c</span>(<span class="kw">rep</span>(<span class="dv">1</span>, <span class="dv">10</span>), <span class="dv">2</span><span class="op">:</span><span class="dv">10</span>)
+x</code></pre></div>
+<pre><code>##  [1]  1  1  1  1  1  1  1  1  1  1  2  3  4  5  6  7  8  9 10</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x=<span class="kw">c</span>(<span class="dv">0</span>,x,<span class="dv">20</span>,<span class="dv">30</span>)
+x</code></pre></div>
+<pre><code>##  [1]  0  1  1  1  1  1  1  1  1  1  1  2  3  4  5  6  7  8  9 10 20 30</code></pre>
+<p>Esta última construcción, <code>x=c(0,x,20,30)</code>, muestra que la función <code>c</code> se puede usar para añadir valores al principio o al final de un vector sin cambiarle el nombre: en este caso, hemos redefinido <code>x</code> añadiéndole un 0 al principio y 20, 30 al final.</p>
+<p>Un vector se puede modificar fácilmente usando el editor de datos que incorpora <code>Rstudio</code>. Para hacerlo, se aplica la función <code>fix</code> al vector que queremos editar. <code>R</code> abre entonces el vector en una nueva ventana de edición. Mientras esta ventana esté abierta, será la ventana activa de <code>R</code> y no podremos volver a nuestra sesión de <code>R</code> hasta que la cerremos. Los cambios que hagamos en el vector con el editor de datos se guardarán cuando cerremos esta ventana.</p>
+<p>Probadlo. Cread un vector con <code>R</code> y abridlo en el editor. Por ejemplo:</p>
+<pre><code>&gt; x=c(rep(1, 10), 2:10)
+&gt; fix(x)</code></pre>
+<p>Se abrirá entonces una ventana como la que mostramos en la Figura <a href="chap-vect.html#fig:editvect">4.1</a>. Ahora, en esta ventana, podéis añadir, borrar y cambiar los datos que queráis. Por ejemplo, añadid un 0 al principio y 20, 30 al final y guardad el resultado (pulsando &lt;<Save>&gt; en la ventana del editor). El valor de <span class="math inline">\(x\)</span> se habrá modificado, como podréis comprobar entrando <code>x</code> en la consola.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;images/finestres0.jpg&quot;</span>)</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:editvect"></span>
+<img src="images/finestres0.jpg" alt="Ventana del editor de vectores de *RStudio* para Mac OS X."  />
+<p class="caption">
+Figura 4.1: Ventana del editor de vectores de <em>RStudio</em> para Mac OS X.
+</p>
+</div>
+<!--
+\begin{figure}[htb]
+\abovecaptionskip=-1ex
+\begin{center}
+\includegraphics[width=0.6\linewidth]{finestres0}
+\end{center}
+\caption{Ventana del editor de vectores de *RStudio* para Mac OS X.}\label{fig:editvect}
+\end{figure}
+-->
+</div>
+<div id="operaciones-con-vectores" class="section level2">
+<h2><span class="header-section-number">4.2</span> Operaciones con vectores</h2>
+<p>El manejo de vectores con <code>R</code> tiene una propiedad muy útil: podemos aplicar una función a todos los elementos de un vector en un solo paso.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x=<span class="kw">seq</span>(<span class="dv">2</span>, <span class="dv">30</span>, <span class="dt">by=</span><span class="dv">3</span>)
+x</code></pre></div>
+<pre><code>##  [1]  2  5  8 11 14 17 20 23 26 29</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x<span class="op">+</span><span class="fl">2.5</span></code></pre></div>
+<pre><code>##  [1]  4.5  7.5 10.5 13.5 16.5 19.5 22.5 25.5 28.5 31.5</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="fl">2.5</span><span class="op">*</span>x</code></pre></div>
+<pre><code>##  [1]  5.0 12.5 20.0 27.5 35.0 42.5 50.0 57.5 65.0 72.5</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sqrt</span>(x) </code></pre></div>
+<pre><code>##  [1] 1.414214 2.236068 2.828427 3.316625 3.741657 4.123106 4.472136
+##  [8] 4.795832 5.099020 5.385165</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2</span><span class="op">^</span>x</code></pre></div>
+<pre><code>##  [1]         4        32       256      2048     16384    131072   1048576
+##  [8]   8388608  67108864 536870912</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x<span class="op">^</span><span class="dv">2</span></code></pre></div>
+<pre><code>##  [1]   4  25  64 121 196 289 400 529 676 841</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>)<span class="op">^</span><span class="dv">2</span></code></pre></div>
+<pre><code>## [1]  1  4  9 16</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span><span class="op">:</span><span class="dv">4</span><span class="op">^</span><span class="dv">2</span> <span class="co">#Cuidado con los paréntesis</span></code></pre></div>
+<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16</code></pre>
+<p>A veces no es posible aplicar una función concreta a todo un vector entrándolo dentro del argumento de la función, como hemos hecho en los ejemplos anteriores. En estos casos, podemos usar la instrucción <code>sapply(vector, FUN=función)</code>.</p>
+<p>Por ejemplo, dentro de un rato veremos que la función <code>mean</code> calcula la media aritmética de un vector. Supongamos que definimos una función <code>F</code> que, aplicada a un número natural <span class="math inline">\(x\)</span>, calcula la media de los números <span class="math display">\[
+1,2,\ldots,x.
+\]</span></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">F=<span class="cf">function</span>(x){<span class="kw">mean</span>(<span class="dv">1</span><span class="op">:</span>x)}
+<span class="kw">F</span>(<span class="dv">20</span>)</code></pre></div>
+<pre><code>## [1] 10.5</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">F</span>(<span class="dv">30</span>)</code></pre></div>
+<pre><code>## [1] 15.5</code></pre>
+<p>Resulta que no podemos aplicar esta función a todas las entradas de un vector <span class="math inline">\(x\)</span> entrando simplemente <code>F(x)</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">F</span>(<span class="dv">20</span><span class="op">:</span><span class="dv">30</span>)</code></pre></div>
+<pre><code>## [1] 10.5</code></pre>
+<p>En casos como este, siempre podemos recurrir a la función <code>sapply</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sapply</span>(<span class="dv">20</span><span class="op">:</span><span class="dv">30</span>, <span class="dt">FUN=</span>F)</code></pre></div>
+<pre><code>##  [1] 10.5 11.0 11.5 12.0 12.5 13.0 13.5 14.0 14.5 15.0 15.5</code></pre>
+<p>También podemos operar término a término las entradas de dos vectores de la misma longitud.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span><span class="op">:</span><span class="dv">5</span><span class="op">+</span><span class="dv">1</span><span class="op">:</span><span class="dv">5</span> <span class="co">#Suma entrada a entrada</span></code></pre></div>
+<pre><code>## [1]  2  4  6  8 10</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>)<span class="op">*</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>) <span class="co">#Producto entrada a entrada</span></code></pre></div>
+<pre><code>## [1]  1  4  9 16 25</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>)<span class="op">^</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>) <span class="co">#Potencia entrada a entrada</span></code></pre></div>
+<pre><code>## [1]    1    4   27  256 3125</code></pre>
+<p>Esto nos permite calcular fácilmente vectores de la forma <span class="math inline">\((x_n)_{n=p, \ldots, q}\)</span>, formados por los términos <span class="math inline">\(x_p, x_{p+1}, \ldots, x_q\)</span> de una sucesión <span class="math inline">\((x_n)_n\)</span>, a partir de la fórmula explícita de <span class="math inline">\(x_n\)</span> como función del índice <span class="math inline">\(n\)</span>: basta aplicar esta fórmula a <code>p:q</code>. Por ejemplo, para definir el vector <span class="math display">\[
+x=(3\cdot 2^n-20)_{n=1, \ldots, 20}, 
+\]</span> podemos entrar lo siguiente:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">n=<span class="dv">1</span><span class="op">:</span><span class="dv">20</span> <span class="co">#Secuencia 1,...,20, y la llamamos n por comodidad</span>
+x=<span class="dv">3</span><span class="op">*</span><span class="dv">2</span><span class="op">^</span>n<span class="op">-</span><span class="dv">20</span> <span class="co">#Aplicamos la fórmula a n=1,...,20</span>
+x</code></pre></div>
+<pre><code>##  [1]     -14      -8       4      28      76     172     364     748
+##  [9]    1516    3052    6124   12268   24556   49132   98284  196588
+## [17]  393196  786412 1572844 3145708</code></pre>
+<p>De manera similar, para definir el vector <span class="math display">\[
+y=\Big(\dfrac{n}{n^2+1}\Big)_{n=0, \ldots, 20}, 
+\]</span> podemos usar lo siguiente:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">n=<span class="dv">0</span><span class="op">:</span><span class="dv">20</span>
+y=n<span class="op">/</span>(n<span class="op">^</span><span class="dv">2</span><span class="op">+</span><span class="dv">1</span>)
+y</code></pre></div>
+<pre><code>##  [1] 0.00000000 0.50000000 0.40000000 0.30000000 0.23529412 0.19230769
+##  [7] 0.16216216 0.14000000 0.12307692 0.10975610 0.09900990 0.09016393
+## [13] 0.08275862 0.07647059 0.07106599 0.06637168 0.06225681 0.05862069
+## [19] 0.05538462 0.05248619 0.04987531</code></pre>
+<p>En ambos casos, y para facilitar la visualización de la construcción, hemos creado el vector <span class="math inline">\(n\)</span> con los índices de los términos de la sucesión, y después hemos obtenido el trozo de sucesión deseado aplicando la función que la define a <span class="math inline">\(n\)</span>. También habríamos podido generar estos vectores escribiendo directamente la sucesión de índices en la fórmula que los define. Por ejemplo:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(<span class="dv">0</span><span class="op">:</span><span class="dv">20</span>)<span class="op">/</span>((<span class="dv">0</span><span class="op">:</span><span class="dv">20</span>)<span class="op">^</span><span class="dv">2</span><span class="op">+</span><span class="dv">1</span>)</code></pre></div>
+<pre><code>##  [1] 0.00000000 0.50000000 0.40000000 0.30000000 0.23529412 0.19230769
+##  [7] 0.16216216 0.14000000 0.12307692 0.10975610 0.09900990 0.09016393
+## [13] 0.08275862 0.07647059 0.07106599 0.06637168 0.06225681 0.05862069
+## [19] 0.05538462 0.05248619 0.04987531</code></pre>
+<p><code>R</code> dispone de muchas funciones para aplicar a vectores, relacionadas principalmente con la estadística. Veamos algunas que nos pueden ser útiles por el momento, y ya iremos viendo otras a medida que avance el curso:</p>
+<ul>
+<li><code>length</code> calcula la longitud del vector.</li>
+<li><code>max</code> y <code>min</code> calculan sus valores máximo y mínimo, respectivamente.</li>
+<li><code>sum</code> calcula la suma de sus entradas.</li>
+<li><code>prod</code> calcula el producto de sus entradas.</li>
+<li><code>mean</code> calcula la media aritmética de sus entradas.</li>
+<li><code>diff</code> calcula el vector formado por las diferencias sucesivas entre entradas del vector original.</li>
+<li><code>cumsum</code> calcula el vector formado por las <code>sumas acumuladas</code> de las entradas del vector original: cada entrada de <code>cumsum(x)</code> es la suma de las entradas de <code>x</code> hasta su posición.</li>
+<li><code>sort</code> ordena los elementos del vector en el orden natural creciente del tipo de datos que lo forman: el orden numérico, el orden alfabético, etc. Si lo queremos ordenar en orden decreciente, podemos incluir en su argumento el parámetro <code>dec=TRUE</code>.</li>
+<li><code>rev</code> invierte el orden de los elementos del vector; por lo tanto, <code>rev(sort(...))</code> es otra opción para ordenar en orden decreciente.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x=<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>)
+<span class="kw">length</span>(x)</code></pre></div>
+<pre><code>## [1] 12</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">max</span>(x)</code></pre></div>
+<pre><code>## [1] 8</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">min</span>(x)</code></pre></div>
+<pre><code>## [1] 0</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>(x)</code></pre></div>
+<pre><code>## [1] 45</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">prod</span>(x)</code></pre></div>
+<pre><code>## [1] 0</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(x)</code></pre></div>
+<pre><code>## [1] 3.75</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cumsum</span>(x)</code></pre></div>
+<pre><code>##  [1]  1  6 12 14 19 26 34 37 42 44 45 45</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">diff</span>(x)</code></pre></div>
+<pre><code>##  [1]  4  1 -4  3  2  1 -5  2 -3 -1 -1</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sort</span>(x)</code></pre></div>
+<pre><code>##  [1] 0 1 1 2 2 3 5 5 5 6 7 8</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sort</span>(x, <span class="dt">dec=</span><span class="ot">TRUE</span>)</code></pre></div>
+<pre><code>##  [1] 8 7 6 5 5 5 3 2 2 1 1 0</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rev</span>(x)</code></pre></div>
+<pre><code>##  [1] 0 1 2 5 3 8 7 5 2 6 5 1</code></pre>
+<p>La función <code>sum</code> es útil para evaluar sumatorios; por ejemplo, si queremos calcular <span class="math display">\[\displaystyle\sum_{n=0}^{200} \frac{1}{n^2+1}, \]</span> sólo tenemos que entrar:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">n=<span class="dv">0</span><span class="op">:</span><span class="dv">200</span>
+<span class="kw">sum</span>(<span class="dv">1</span><span class="op">/</span>(n<span class="op">^</span><span class="dv">2</span><span class="op">+</span><span class="dv">1</span>))</code></pre></div>
+<pre><code>## [1] 2.071687</code></pre>
+<p>La función <code>cumsum</code> permite definir sucesiones descritas mediante sumatorios; a modo de ejemplo, para definir el vector <span class="math display">\[
+y=\Big(\sum_{i=0}^n 2^{-i}\Big)_{n=0, \ldots, 20},
+\]</span> basta aplicar <code>cumsum</code> al vector <span class="math inline">\(x=(2^{-i})_{i=0, \ldots, 20}\)</span> de la manera siguiente:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">i=<span class="dv">0</span><span class="op">:</span><span class="dv">20</span>
+x=<span class="dv">2</span><span class="op">^</span>(<span class="op">-</span>i)
+y=<span class="kw">cumsum</span>(x)
+y</code></pre></div>
+<pre><code>##  [1] 1.000000 1.500000 1.750000 1.875000 1.937500 1.968750 1.984375
+##  [8] 1.992188 1.996094 1.998047 1.999023 1.999512 1.999756 1.999878
+## [15] 1.999939 1.999969 1.999985 1.999992 1.999996 1.999998 1.999999</code></pre>
+<p>Observamos que esta sucesión tiende a 2, lo que corresponde a la igualdad <span class="math display">\[
+\sum_{k=0}^\infty \frac{1}{2^k}=\frac{1}{1-\frac{1}{2}}=2.
+\]</span></p>
+</div>
+<div id="entradas-y-trozos-de-vectores" class="section level2">
+<h2><span class="header-section-number">4.3</span> Entradas y trozos de vectores</h2>
+<p>Si queremos extraer el valor de una entrada concreta de un vector, o si queremos referirnos a esta entrada para usarla en un cálculo, podemos emplear la construcción <code>vector[i]</code>, que indica la <span class="math inline">\(i\)</span>-ésima entrada del <code>vector</code>. En particular, <code>vector[length(vector)-i]</code> es la <span class="math inline">\((i+1)\)</span>-ésima entrada del <code>vector</code> empezando por el final: su última entrada es <code>vector[length(vector)]</code>, la penúltima es <code>vector[length(vector)-1]</code> y así sucesivamente.</p>
+<p>Observad que para referirnos a elementos de un vector, empleamos corchetes <code>[ ]</code>, y no los paréntesis redondos usuales.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x=<span class="kw">seq</span>(<span class="dv">2</span>, <span class="dv">50</span>, <span class="dt">by=</span><span class="fl">1.5</span>)
+x</code></pre></div>
+<pre><code>##  [1]  2.0  3.5  5.0  6.5  8.0  9.5 11.0 12.5 14.0 15.5 17.0 18.5 20.0 21.5
+## [15] 23.0 24.5 26.0 27.5 29.0 30.5 32.0 33.5 35.0 36.5 38.0 39.5 41.0 42.5
+## [29] 44.0 45.5 47.0 48.5 50.0</code></pre>
+<pre><code>x(3) #¿La tercera entrada del vector?
+Error: could not find function &quot;x&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x[<span class="dv">3</span>] <span class="co">#La tercera entrada del vector, ahora sí</span></code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x[<span class="kw">length</span>(x)]  <span class="co">#La última entrada del vector</span></code></pre></div>
+<pre><code>## [1] 50</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x[<span class="kw">length</span>(x)<span class="op">-</span><span class="dv">5</span>] <span class="co">#La sexta entrada del vector empezando por el final</span></code></pre></div>
+<pre><code>## [1] 42.5</code></pre>
+<p>También podemos extraer subvectores de un vector. Una primera manera de obtener un subvector es especificando los índices de las entradas que lo han de formar:</p>
+<ul>
+<li><code>vector[y]</code>, donde <code>y</code> es un vector (de índices), crea un nuevo vector con las entradas del <code>vector</code> original cuyos índices pertenecen a <code>y</code>.</li>
+<li>En particular, si <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> son dos números naturales, <code>vector[a:b]</code> crea un nuevo vector con las entradas del <code>vector</code> original que van de la <span class="math inline">\(a\)</span>-ésima a la <span class="math inline">\(b\)</span>-ésima.</li>
+<li><code>vector[-y]</code>, donde <code>y</code> es un vector (de índices), es el complementario de <code>vector[y]</code>: sus entradas son las del <code>vector</code> original cuyos índices <code>no</code> pertenecen a <code>y</code>.</li>
+<li>En particular, <code>vector[-i]</code> borra la entrada <span class="math inline">\(i\)</span>-ésima del <code>vector</code> original. Veamos algunos ejemplos:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">n=<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>
+x=<span class="dv">2</span><span class="op">*</span><span class="dv">3</span><span class="op">^</span>n<span class="op">-</span><span class="dv">5</span><span class="op">*</span>n<span class="op">^</span><span class="dv">3</span><span class="op">*</span><span class="dv">2</span><span class="op">^</span>n
+x</code></pre></div>
+<pre><code>##  [1]       -4     -142    -1026    -4958   -19514   -67662  -215146
+##  [8]  -642238 -1826874 -5001902</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x[<span class="op">-</span><span class="dv">3</span>] <span class="co">#x sin la tercera entrada</span></code></pre></div>
+<pre><code>## [1]       -4     -142    -4958   -19514   -67662  -215146  -642238 -1826874
+## [9] -5001902</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x[<span class="dv">3</span><span class="op">:</span><span class="dv">7</span>] <span class="co">#Los elementos tercero a séptimo de x</span></code></pre></div>
+<pre><code>## [1]   -1026   -4958  -19514  -67662 -215146</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x[<span class="dv">7</span><span class="op">:</span><span class="dv">3</span>] <span class="co">#Los elementos séptimo a tercero de x</span></code></pre></div>
+<pre><code>## [1] -215146  -67662  -19514   -4958   -1026</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x[<span class="kw">seq</span>(<span class="dv">1</span>, <span class="kw">length</span>(x), <span class="dt">by=</span><span class="dv">2</span>)] <span class="co">#Los elementos de índice impar de x</span></code></pre></div>
+<pre><code>## [1]       -4    -1026   -19514  -215146 -1826874</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x[<span class="kw">seq</span>(<span class="dv">2</span>, <span class="kw">length</span>(x), <span class="dt">by=</span><span class="dv">2</span>)] <span class="co">#Los elementos de índice par </span></code></pre></div>
+<pre><code>## [1]     -142    -4958   -67662  -642238 -5001902</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x[<span class="op">-</span><span class="kw">seq</span>(<span class="dv">1</span>, <span class="kw">length</span>(x), <span class="dt">by=</span><span class="dv">2</span>)] <span class="co">#Si borramos los elementos de índice impar, quedan los de índice par</span></code></pre></div>
+<pre><code>## [1]     -142    -4958   -67662  -642238 -5001902</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x[(<span class="kw">length</span>(x)<span class="op">-</span><span class="dv">5</span>)<span class="op">:</span><span class="kw">length</span>(x)] <span class="co">#Los últimos 6 elementos de x</span></code></pre></div>
+<pre><code>## [1]   -19514   -67662  -215146  -642238 -1826874 -5001902</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x[<span class="kw">length</span>(x)<span class="op">-</span><span class="dv">5</span><span class="op">:</span><span class="kw">length</span>(x)] <span class="co">#No os dejéis los paréntesis ...</span></code></pre></div>
+<pre><code>## [1] -19514  -4958  -1026   -142     -4</code></pre>
+<p>Fijaos en las dos últimas instrucciones: si <span class="math inline">\(n=\texttt{length(x)}\)</span>, <span class="math inline">\(\texttt{(length(x)-5):length(x)}\)</span> es la secuencia de índices <span class="math display">\[
+n-5, n-4, n-3, n-2, n-1, n;
+\]</span></p>
+<p>en cambio, <span class="math inline">\(\texttt{length(x)-5:length(x)}\)</span> es la secuencia</p>
+<p><span class="math display">\[
+n-(5, 6, 7, \ldots, n)=n-5, n-6, n-7, \ldots, 1, 0.
+\]</span></p>
+<table>
+<caption><span id="tab:opslog">Tabla 4.1: </span> Operadores lógicos</caption>
+<thead>
+<tr class="header">
+<th>Operador</th>
+<th><span class="math inline">\(=\)</span></th>
+<th><span class="math inline">\(\neq\)</span></th>
+<th><span class="math inline">\(&lt;\)</span></th>
+<th><span class="math inline">\(&gt;\)</span></th>
+<th><span class="math inline">\(\leq\)</span></th>
+<th><span class="math inline">\(\geq\)</span></th>
+<th>negación</th>
+<th>conjunción</th>
+<th>disjunción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Signo</td>
+<td><code>==</code></td>
+<td><code>!=</code></td>
+<td><code>&lt;</code></td>
+<td><code>&gt;</code></td>
+<td><code>&lt;=</code></td>
+<td><code>&gt;=</code></td>
+<td><code>!</code></td>
+<td><code>&amp;</code></td>
+<td><code>|</code></td>
+</tr>
+</tbody>
+</table>
+<!--
+\begin{table}[htb]
+\abovecaptionskip=-1ex
+\begin{center}
+\indR{==}\indR{\char33 =}\indR{>}\indR{<=}\indR{>=}\indR{<}\indR{\char33}\indR{\&}\indR{\char124}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+\hline
+Operador \vphantom{$\Big($} & $=$ & $\neq$ & $<$ & $>$ & $\leq$ & $\geq$ & negación & conjunción & disjunción \\ \hline
+Signo \vphantom{$\Big($} & `==` & `!=` & `<` & `>` & `<=`& `>=` & `!` & `\&` & `|` \\
+\hline
+\end{tabular}
+\end{center}
+\caption{\label{tab:opslog} Signos de operadores lógicos}
+\end{table}
+-->
+<p>También podemos extraer las entradas de un vector (o sus índices) que satisfagan alguna condición. Los operadores lógicos que podemos usar para definir estas condiciones son los que damos en la Tabla <a href="chap-vect.html#tab:opslog">4.1</a>. Veamos algunos ejemplos (y observad su sintaxis):</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x=<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>)
+x[x<span class="op">&gt;</span><span class="dv">3</span>] <span class="co">#Elementos mayores que 3</span></code></pre></div>
+<pre><code>## [1] 5 6 5 7 8 5</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x[x<span class="op">&gt;</span><span class="dv">2</span> <span class="op">&amp;</span><span class="st"> </span>x<span class="op">&lt;=</span><span class="dv">5</span>] <span class="co">#Elementos mayores que 2 y menores o iguales que 5</span></code></pre></div>
+<pre><code>## [1] 5 5 3 5</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x[x<span class="op">!=</span><span class="dv">2</span> <span class="op">&amp;</span><span class="st"> </span>x<span class="op">!=</span><span class="dv">5</span>] <span class="co">#Elementos diferentes de 2 y de 5</span></code></pre></div>
+<pre><code>## [1] 1 6 7 8 3 1 0</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x[x<span class="op">&gt;</span><span class="dv">5</span> <span class="op">|</span><span class="st"> </span>x<span class="op">&lt;=</span><span class="dv">2</span>] <span class="co">#Elementos mayores que 5 o menores o iguales que 2</span></code></pre></div>
+<pre><code>## [1] 1 6 2 7 8 2 1 0</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x[x<span class="op">&gt;=</span><span class="dv">4</span>] <span class="co">#Elementos mayores o iguales que 4</span></code></pre></div>
+<pre><code>## [1] 5 6 5 7 8 5</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x[<span class="op">!</span>x<span class="op">&lt;</span><span class="dv">4</span>] <span class="co">#Elementos que NO son menores que 4; es equivalente a la anterior</span></code></pre></div>
+<pre><code>## [1] 5 6 5 7 8 5</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x[x<span class="op">%%</span><span class="dv">4</span><span class="op">==</span><span class="dv">0</span>] <span class="co">#Elementos múltiplos de 4</span></code></pre></div>
+<pre><code>## [1] 8 0</code></pre>
+<p>Analicemos la segunda instrucción, <code>x[x&gt;3]</code>. La construcción <code>x&gt;3</code> define un vector que, en cada posición, contiene un <code>TRUE</code> si el elemento correspondiente del vector <code>x</code> es mayor que 3 y un <code>FALSE</code> si no lo es.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x<span class="op">&gt;</span><span class="dv">3</span></code></pre></div>
+<pre><code>##  [1] FALSE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE FALSE  TRUE FALSE FALSE
+## [12] FALSE</code></pre>
+<p>Entonces <code>x[x&gt;3]</code> lo que nos da son las entradas del vector <code>x</code> correspondientes a los <code>TRUE</code> de este vector de valores lógicos.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x[x<span class="op">&gt;</span><span class="dv">3</span>] </code></pre></div>
+<pre><code>## [1] 5 6 5 7 8 5</code></pre>
+<p>Esta construcción también permite extraer las entradas de un vector cuyos índices sean los de las entradas de otro vector que satisfagan una condición lógica. Por ejemplo:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x=<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>)
+y=<span class="kw">c</span>(<span class="dv">2</span>,<span class="op">-</span><span class="dv">3</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">4</span>,<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">1</span>)
+x[y<span class="op">&gt;</span><span class="dv">0</span>] <span class="co">#Entradas de x correspondientes a entradas positivas de y</span></code></pre></div>
+<pre><code>## [1] 1 2 5 8 2 1 0</code></pre>
+<p>Para obtener los <code>índices</code> de las entradas del vector que satisfacen una condición dada, podemos usar la función <code>which</code>. Esta función, aplicada a un vector de valores lógicos, da los índices de las posiciones de los <code>TRUE</code>. Así, para saber los índices de las entradas de <code>x</code> que son mayores que 3, usamos <code>which(x&gt;3)</code>, que nos dará los índices de las entradas <code>TRUE</code> del vector <code>x&gt;3</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x=<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">1</span>)
+x</code></pre></div>
+<pre><code>##  [1] 1 5 6 2 5 7 8 3 5 2 1</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x[x<span class="op">&gt;</span><span class="dv">3</span>] <span class="co">#Elementos mayores que 3</span></code></pre></div>
+<pre><code>## [1] 5 6 5 7 8 5</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">which</span>(x<span class="op">&gt;</span><span class="dv">3</span>) <span class="co">#Índices de los elementos mayores que 3</span></code></pre></div>
+<pre><code>## [1] 2 3 5 6 7 9</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">which</span>(x<span class="op">&gt;</span><span class="dv">2</span> <span class="op">&amp;</span><span class="st"> </span>x<span class="op">&lt;=</span><span class="dv">5</span>) <span class="co">#Índices de los elementos &gt; 2 y &lt;= 5</span></code></pre></div>
+<pre><code>## [1] 2 5 8 9</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">which</span>(x<span class="op">!=</span><span class="dv">2</span> <span class="op">&amp;</span><span class="st"> </span>x<span class="op">!=</span><span class="dv">5</span>) <span class="co">#Índices de los elementos diferentes de 2 y 5</span></code></pre></div>
+<pre><code>## [1]  1  3  6  7  8 11</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">which</span>(x<span class="op">&gt;</span><span class="dv">5</span> <span class="op">|</span><span class="st"> </span>x<span class="op">&lt;=</span><span class="dv">2</span>) <span class="co">#Índices de los elementos &gt; 5 o &lt;= 2</span></code></pre></div>
+<pre><code>## [1]  1  3  4  6  7 10 11</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">which</span>(x<span class="op">%%</span><span class="dv">2</span><span class="op">==</span><span class="dv">0</span>) <span class="co">#Índices de los elementos pares del vector</span></code></pre></div>
+<pre><code>## [1]  3  4  7 10</code></pre>
+<p>La instrucción <code>which.min(x)</code> nos da la primera posición en la que el vector toma su valor mínimo; <code>which.max(x)</code> hace lo mismo, pero para el máximo. En cambio, con <code>which(x==min(x))</code> obtenemos todas las posiciones en las que el vector toma su valor mínimo y, con <code>which(x==max(x))</code>, aquellas en las que toma su valor máximo.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x</code></pre></div>
+<pre><code>##  [1] 1 5 6 2 5 7 8 3 5 2 1</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">which.min</span>(x)</code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">which</span>(x<span class="op">==</span><span class="kw">min</span>(x))</code></pre></div>
+<pre><code>## [1]  1 11</code></pre>
+<p>Si un vector no contiene ningún término que satisfaga la condición que imponemos, obtenemos como respuesta un vector vacío. <code>R</code> lo indica con <code>numeric(0)</code> si es de números, <code>character(0)</code> si es de palabras, o <code>integer(0)</code> si es de índices de entradas de un vector. Estos vectores vacíos tienen longitud, naturalmente, 0.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x=<span class="dv">2</span><span class="op">^</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">10</span>)
+x</code></pre></div>
+<pre><code>##  [1]    1    2    4    8   16   32   64  128  256  512 1024</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x[<span class="dv">20</span><span class="op">&lt;</span>x <span class="op">&amp;</span><span class="st"> </span>x<span class="op">&lt;</span><span class="dv">30</span>] <span class="co">#Elementos de x estrictamente entre 20 y 30</span></code></pre></div>
+<pre><code>## numeric(0)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">length</span>(x[<span class="dv">20</span><span class="op">&lt;</span>x <span class="op">&amp;</span><span class="st"> </span>x<span class="op">&lt;</span><span class="dv">30</span>]) <span class="co">#¿Cuántas entradas hay entre 20 y 30?</span></code></pre></div>
+<pre><code>## [1] 0</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">which</span>(x<span class="op">&gt;</span><span class="dv">1500</span>) <span class="co">#Índices de elementos mayores que 1500</span></code></pre></div>
+<pre><code>## integer(0)</code></pre>
+<p>Si <code>R</code> no sabe de qué tipo son los datos que faltan en un vector vacío, lo indica con <code>NULL</code>. También podemos usar este valor para definir un vector vacío.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x=<span class="kw">c</span>()
+x</code></pre></div>
+<pre><code>## NULL</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">z=<span class="ot">NULL</span>
+z</code></pre></div>
+<pre><code>## NULL</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">y=<span class="kw">c</span>(x, <span class="dv">2</span>, z)
+y</code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<p>Los operadores lógicos que hemos explicado también se pueden usar para pedir si una condición sobre unos números concretos se satisface o no. Por ejemplo:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">exp</span>(pi)<span class="op">&gt;</span>pi<span class="op">^</span>(<span class="kw">exp</span>(<span class="dv">1</span>)) <span class="co">#¿Es mayor e^pi que pi^e?</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1234567</span><span class="op">%%</span><span class="dv">9</span><span class="op">==</span><span class="dv">0</span> <span class="co">#¿Es 1234567 múltiplo de 9?</span></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<p>Podemos modificar algunas entradas de un vector simplemente declarando sus nuevos valores. Esto se puede hacer entrada a entrada, o para todo un subvector de golpe.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x=<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>
+x</code></pre></div>
+<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x[<span class="dv">3</span>]=<span class="dv">15</span> <span class="co">#En la posición 3 escribimos 15</span>
+x[<span class="dv">11</span>]=<span class="dv">25</span> <span class="co">#Añadimos en la posición 11 un 25</span>
+x</code></pre></div>
+<pre><code>##  [1]  1  2 15  4  5  6  7  8  9 10 25</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x[<span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)]=x[<span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)]<span class="op">+</span><span class="dv">10</span> <span class="co">#Sumamos 10 a las entradas en las posiciones 2, 3 y 4</span>
+x</code></pre></div>
+<pre><code>##  [1]  1 12 25 14  5  6  7  8  9 10 25</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x[(<span class="kw">length</span>(x)<span class="op">-</span><span class="dv">2</span>)<span class="op">:</span><span class="kw">length</span>(x)]=<span class="dv">0</span>   <span class="co">#Igualamos las últimas tres entradas a 0</span>
+x</code></pre></div>
+<pre><code>##  [1]  1 12 25 14  5  6  7  8  0  0  0</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x[<span class="kw">length</span>(x)<span class="op">+</span><span class="dv">3</span>]=<span class="dv">2</span>   
+x</code></pre></div>
+<pre><code>##  [1]  1 12 25 14  5  6  7  8  0  0  0 NA NA  2</code></pre>
+<p>Fijaos en la última instrucción. Hemos añadido al vector <code>x</code> el valor 2 tres posiciones más allá de su última entrada. Entonces, en las posiciones 12 y 13 ha escrito <code>NA</code> antes de añadir en la 14 el 2. Estos <code>NA</code>, de <code>Not Available</code> , indican que las entradas correspondientes del vector no existen.</p>
+<p>Los <code>NA</code> serán muy importantes cuando usemos vectores en estadística descriptiva, donde podrán representar valores desconocidos, errores, etc. Serán importantes porque son molestos, puesto que, por norma general, una función aplicada a un vector que contenga algún <code>NA</code> da <code>NA</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>(x)</code></pre></div>
+<pre><code>## [1] NA</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(x)</code></pre></div>
+<pre><code>## [1] NA</code></pre>
+<p>Afortunadamente, muchas de las funciones para vectores admiten un parámetro <code>na.rm</code> que, igualado a <code>TRUE</code>, hace que la función sólo tenga en cuenta las entradas definidas.}</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>(x, <span class="dt">na.rm=</span><span class="ot">TRUE</span>)</code></pre></div>
+<pre><code>## [1] 80</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(x, <span class="dt">na.rm=</span><span class="ot">TRUE</span>)</code></pre></div>
+<pre><code>## [1] 6.666667</code></pre>
+<p>Para extraer las entradas no definidas de un vector <span class="math inline">\(x\)</span> no podemos usar la condición lógica <code>x==NA</code>, sino la función <code>is.na(x)</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x</code></pre></div>
+<pre><code>##  [1]  1 12 25 14  5  6  7  8  0  0  0 NA NA  2</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">which</span>(x<span class="op">==</span><span class="ot">NA</span>) <span class="co">#¿Índices de entradas NA?</span></code></pre></div>
+<pre><code>## integer(0)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">is.na</span>(x)</code></pre></div>
+<pre><code>##  [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## [12]  TRUE  TRUE FALSE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">which</span>(<span class="kw">is.na</span>(x))   <span class="co">#Índices de entradas NA</span></code></pre></div>
+<pre><code>## [1] 12 13</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">y=x  <span class="co">#Creamos una copia de x y la llamamos y</span>
+y[<span class="kw">is.na</span>(y)]=<span class="kw">mean</span>(y, <span class="dt">na.rm=</span><span class="ot">TRUE</span>) <span class="co">#Cambiamos los NA de y por la media del resto de entradas</span>
+y</code></pre></div>
+<pre><code>##  [1]  1.000000 12.000000 25.000000 14.000000  5.000000  6.000000  7.000000
+##  [8]  8.000000  0.000000  0.000000  0.000000  6.666667  6.666667  2.000000</code></pre>
+<p>Naturalmente, podemos usar la negación de <code>is.na(x)</code> para obtener las entradas definidas de un vector <code>x</code>: formarán el vector <code>x[!is.na(x)]</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x</code></pre></div>
+<pre><code>##  [1]  1 12 25 14  5  6  7  8  0  0  0 NA NA  2</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x[<span class="op">!</span><span class="kw">is.na</span>(x)]</code></pre></div>
+<pre><code>##  [1]  1 12 25 14  5  6  7  8  0  0  0  2</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>(x[<span class="op">!</span><span class="kw">is.na</span>(x)])</code></pre></div>
+<pre><code>## [1] 80</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cumsum</span>(x)</code></pre></div>
+<pre><code>##  [1]  1 13 38 52 57 63 70 78 78 78 78 NA NA NA</code></pre>
+<pre><code>cumsum(x, na.rm=TRUE)  #cumsum no admite na.rm
+Error in cumsum(x, na.rm = TRUE) : 
+  2 arguments passed to &#39;cumsum&#39; which requires 1</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cumsum</span>(x[<span class="op">!</span><span class="kw">is.na</span>(x)])</code></pre></div>
+<pre><code>##  [1]  1 13 38 52 57 63 70 78 78 78 78 80</code></pre>
+<p>Las entradas no definidas de un vector también se pueden borrar aplicándole la función <code>na.omit</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">na.omit</span>(x)</code></pre></div>
+<pre><code>##  [1]  1 12 25 14  5  6  7  8  0  0  0  2
+## attr(,&quot;na.action&quot;)
+## [1] 12 13
+## attr(,&quot;class&quot;)
+## [1] &quot;omit&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>(<span class="kw">na.omit</span>(x))</code></pre></div>
+<pre><code>## [1] 80</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cumsum</span>(<span class="kw">na.omit</span>(x))</code></pre></div>
+<pre><code>##  [1]  1 13 38 52 57 63 70 78 78 78 78 80</code></pre>
+<p>Observad el resultado de <code>na.omit(x)</code>. Contiene un primer vector formado por las entradas del vector original que no son <code>NA</code>, y luego una serie de información extra llamados <code>atributos</code> , e indicados por <code>R</code> con <code>attr</code>: los índices de las entradas que ha eliminado y el tipo de acción que ha llevado a cabo. Como podéis ver, estos atributos no interfieren para nada en las operaciones que se realicen con el primer vector, pero si os molestan, se pueden eliminar: la instrucción <code>attr(objeto , atributo)=NULL</code> borra el <code>atributo</code> del <code>objeto</code> .</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x_sinNA=<span class="kw">na.omit</span>(x)
+x_sinNA</code></pre></div>
+<pre><code>##  [1]  1 12 25 14  5  6  7  8  0  0  0  2
+## attr(,&quot;na.action&quot;)
+## [1] 12 13
+## attr(,&quot;class&quot;)
+## [1] &quot;omit&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">attr</span>(x_sinNA, <span class="st">&quot;na.action&quot;</span>)=<span class="ot">NULL</span>
+<span class="kw">attr</span>(x_sinNA, <span class="st">&quot;class&quot;</span>)=<span class="ot">NULL</span>
+x_sinNA</code></pre></div>
+<pre><code>##  [1]  1 12 25 14  5  6  7  8  0  0  0  2</code></pre>
+</div>
+<div id="subsec:factor" class="section level2">
+<h2><span class="header-section-number">4.4</span> Factores</h2>
+<p>Un <code>factor</code>es como un vector, pero con una estructura interna más rica que permite usarlo para clasificar observaciones. Para ilustrar la diferencia entre vectores y factores, vamos a crear un vector <code>Ciudades</code> con los nombres de algunas ciudades, y a continuación un factor <code>Ciudades.factor</code> con el mismo contenido, aplicando a este vector la función <code>factor</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Ciudades=<span class="kw">c</span>(<span class="st">&quot;Madrid&quot;</span>,<span class="st">&quot;Palma&quot;</span>,<span class="st">&quot;Madrid&quot;</span>,<span class="st">&quot;Madrid&quot;</span>,<span class="st">&quot;Barcelona&quot;</span>,
+  <span class="st">&quot;Palma&quot;</span>,<span class="st">&quot;Madrid&quot;</span>,<span class="st">&quot;Madrid&quot;</span>)   
+Ciudades</code></pre></div>
+<pre><code>## [1] &quot;Madrid&quot;    &quot;Palma&quot;     &quot;Madrid&quot;    &quot;Madrid&quot;    &quot;Barcelona&quot; &quot;Palma&quot;    
+## [7] &quot;Madrid&quot;    &quot;Madrid&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Ciudades.factor=<span class="kw">factor</span>(Ciudades)
+Ciudades.factor</code></pre></div>
+<pre><code>## [1] Madrid    Palma     Madrid    Madrid    Barcelona Palma     Madrid   
+## [8] Madrid   
+## Levels: Barcelona Madrid Palma</code></pre>
+<p>Observad la diferencia. El factor dispone de un atributo especial llamado <code>niveles</code> (<em>levels</em>), y cada elemento del factor es igual a un nivel; de esta manera, los niveles &lt;<clasifican>&gt; las entradas del factor. Podríamos decir, en resumen, que un factor es una lista formada por copias de etiquetas (los niveles), como podrían ser el sexo o la especie de unos individuos.</p>
+<p>Cuando tengamos un vector que queramos usar para clasificar datos, conviene definirlo como un factor y así podremos hacer más cosas con él. Para crear un factor, hemos de definir un vector y transformarlo en factor por medio de una de las funciones <code>factor</code> o <code>as.factor</code>. La diferencia entre estas funciones es que <code>as.factor</code> &lt;<convierte>&gt; el vector en un factor, y toma como sus niveles los diferentes valores que aparecen en el vector, mientras que <code>factor</code> &lt;<define>&gt; un factor a partir del vector, y dispone de algunos parámetros que permiten modificar el factor que se crea, tales como:</p>
+<ul>
+<li><code>levels</code>, que permite especificar los niveles e incluso añadir niveles que no aparecen en el vector.</li>
+<li><code>labels</code>, que permite cambiar los nombres de los niveles.</li>
+</ul>
+<p>De esta manera, con <code>as.factor</code> o con <code>factor</code> sin especificar <code>levels</code>, el factor tendrá como niveles los diferentes valores que toman las entradas del vector, y además aparecerán en su lista de niveles, <code>Levels</code>, ordenados en orden alfabético. Si especificamos el parámetro <code>levels</code> en la función <code>factor</code>, los niveles aparecerán en dicha lista en el orden en el que los entremos en él.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">S=<span class="kw">c</span>(<span class="st">&quot;M&quot;</span>,<span class="st">&quot;M&quot;</span>,<span class="st">&quot;F&quot;</span>,<span class="st">&quot;M&quot;</span>,<span class="st">&quot;F&quot;</span>,<span class="st">&quot;F&quot;</span>,<span class="st">&quot;F&quot;</span>,<span class="st">&quot;M&quot;</span>,<span class="st">&quot;M&quot;</span>,<span class="st">&quot;F&quot;</span>)
+Sex=<span class="kw">as.factor</span>(S)
+Sex</code></pre></div>
+<pre><code>##  [1] M M F M F F F M M F
+## Levels: F M</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Sex2=<span class="kw">factor</span>(S)   <span class="co">#Esto definirá el mismo factor</span>
+Sex2</code></pre></div>
+<pre><code>##  [1] M M F M F F F M M F
+## Levels: F M</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Sex3=<span class="kw">factor</span>(S, <span class="dt">levels=</span><span class="kw">c</span>(<span class="st">&quot;M&quot;</span>,<span class="st">&quot;F&quot;</span>,<span class="st">&quot;B&quot;</span>)) <span class="co">#Si queremos añadir un nuevo nivel &quot;B&quot; y cambiar el orden de los niveles</span>
+Sex3</code></pre></div>
+<pre><code>##  [1] M M F M F F F M M F
+## Levels: M F B</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Sex4=<span class="kw">factor</span>(S, <span class="dt">levels=</span><span class="kw">c</span>(<span class="st">&quot;M&quot;</span>,<span class="st">&quot;F&quot;</span>,<span class="st">&quot;B&quot;</span>), 
+  <span class="dt">labels=</span><span class="kw">c</span>(<span class="st">&quot;Masc&quot;</span>,<span class="st">&quot;Fem&quot;</span>,<span class="st">&quot;Bisex&quot;</span>)) <span class="co">#Si queremos cambiar los nombres</span>
+Sex4</code></pre></div>
+<pre><code>##  [1] Masc Masc Fem  Masc Fem  Fem  Fem  Masc Masc Fem 
+## Levels: Masc Fem Bisex</code></pre>
+<p>Para obtener los niveles de un factor, podemos emplear la función <code>levels</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">levels</span>(Sex)</code></pre></div>
+<pre><code>## [1] &quot;F&quot; &quot;M&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">levels</span>(Sex4)</code></pre></div>
+<pre><code>## [1] &quot;Masc&quot;  &quot;Fem&quot;   &quot;Bisex&quot;</code></pre>
+<p>Esta función <code>levels</code> también permite cambiar los nombres de los niveles de un factor.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Notas=<span class="kw">as.factor</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">2</span>))
+Notas</code></pre></div>
+<pre><code>##  [1] 1 2 2 3 1 3 2 4 2 3 4 2
+## Levels: 1 2 3 4</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">levels</span>(Notas)=<span class="kw">c</span>(<span class="st">&quot;Muy.mal&quot;</span>,<span class="st">&quot;Mal&quot;</span>,<span class="st">&quot;Bien&quot;</span>,<span class="st">&quot;Muy.bien&quot;</span>)
+Notas</code></pre></div>
+<pre><code>##  [1] Muy.mal  Mal      Mal      Bien     Muy.mal  Bien     Mal     
+##  [8] Muy.bien Mal      Bien     Muy.bien Mal     
+## Levels: Muy.mal Mal Bien Muy.bien</code></pre>
+<p>Observad que los niveles han heredado el orden del factor original.</p>
+<p>Con la función <code>levels</code> también podemos agrupar varios niveles de un factor en uno solo, simplemente repitiendo nombres al especificarlos; por ejemplo, en el factor de notas anterior, vamos a agrupar los niveles &lt;<Muy mal>&gt; y &lt;<Mal>&gt; en uno solo, y lo mismo con los niveles &lt;<Muy bien>&gt; y &lt;<Bien>&gt;:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Notas_2niv=Notas
+<span class="kw">levels</span>(Notas_2niv)=<span class="kw">c</span>(<span class="st">&quot;Mal&quot;</span>,<span class="st">&quot;Mal&quot;</span>,<span class="st">&quot;Bien&quot;</span>,<span class="st">&quot;Bien&quot;</span>)
+Notas_2niv</code></pre></div>
+<pre><code>##  [1] Mal  Mal  Mal  Bien Mal  Bien Mal  Bien Mal  Bien Bien Mal 
+## Levels: Mal Bien</code></pre>
+<p>Nos hemos referido varias veces al orden de los niveles. En realidad, hay dos tipos de factores: simples y ordenados. Hasta ahora sólo hemos considerado los <code>factores simples</code>, en los que el orden de los niveles realmente no importa, y si lo modificamos es sólo por razones estéticas o de comprensión de los datos; en este caso, la manera más sencilla de hacerlo es redefiniendo el factor con <code>factor</code> y modificando en el parámetro <code>levels</code> el orden de los niveles. Pero si el orden de los niveles es relevante para analizar los datos, entonces es conveniente definir el factor como <code>ordenado</code> . Esto se lleva a cabo con la función <code>ordered</code>, que dispone de los mismos parámetros que <code>factor</code>. Así, si queremos que nuestro factor <code>Notas</code> sea un factor ordenado, con sus niveles ordenados de &lt;<Muy mal>&gt; a &lt;<Muy bien>&gt;, hay que entrar lo siguiente:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Notas=<span class="kw">ordered</span>(Notas, <span class="dt">levels=</span><span class="kw">c</span>(<span class="st">&quot;Muy.mal&quot;</span>,<span class="st">&quot;Mal&quot;</span>,<span class="st">&quot;Bien&quot;</span>,<span class="st">&quot;Muy.bien&quot;</span>))
+Notas</code></pre></div>
+<pre><code>##  [1] Muy.mal  Mal      Mal      Bien     Muy.mal  Bien     Mal     
+##  [8] Muy.bien Mal      Bien     Muy.bien Mal     
+## Levels: Muy.mal &lt; Mal &lt; Bien &lt; Muy.bien</code></pre>
+<p>Observad que <code>R</code> indica el orden de los niveles de un factor ordenado mediante el signo <code>&lt;</code>.</p>
+<p>Aunque en la instrucción anterior hemos aplicado la función <code>ordered</code> a un factor, también se puede aplicar a un vector, como si usáramos <code>factor</code>.</p>
+</div>
+<div id="sec:lists" class="section level2">
+<h2><span class="header-section-number">4.5</span> Listas heterogéneas</h2>
+<p>Los vectores que hemos estudiado hasta el momento sólo pueden contener datos, y estos datos han de ser de un solo tipo. Por ejemplo, no podemos construir un vector que contenga simultáneamente palabras y números, o cuyas entradas sean a su vez vectores. Este problema se resuelve con las <code>listas heterogéneas</code> ; para abreviar, las llamaremos por su nombre en <code>R</code>:<br />
+<code>list</code>. Una <code>list</code> es una lista formada por objetos que pueden ser de clases diferentes. Así, en una misma <code>list</code> podemos combinar números, palabras, vectores, otras <code>list</code>, etc. En la Lección <a href="chap-lm.html#chap:lm">3</a> ya aparecieron dos objetos de clase <code>list</code>: los resultados de<br />
+<code>lm(...)</code> y <code>summary(lm(...))</code>.</p>
+<p>Supongamos por ejemplo que queremos guardar en una lista un vector, su nombre, su media, y su vector de sumas acumuladas. En este caso, tendríamos que hacerlo en forma de lista heterogénea usando la función <code>list</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x=<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="op">-</span><span class="dv">3</span>,<span class="op">-</span><span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>)
+L=<span class="kw">list</span>(<span class="dt">nombre=</span><span class="st">&quot;x&quot;</span>,<span class="dt">vector=</span>x,<span class="dt">media=</span><span class="kw">mean</span>(x),<span class="dt">sumas=</span><span class="kw">cumsum</span>(x))
+L</code></pre></div>
+<pre><code>## $nombre
+## [1] &quot;x&quot;
+## 
+## $vector
+## [1]  1  2 -3 -4  5  6
+## 
+## $media
+## [1] 1.166667
+## 
+## $sumas
+## [1]  1  3  0 -4  1  7</code></pre>
+<p>Observad la sintaxis de la función <code>list</code>: le hemos entrado como argumento los diferentes objetos que van a formar la lista heterogénea, poniendo a cada uno un nombre adecuado. Este nombre es &lt;<interno>&gt; de la <code>list</code>: por ejemplo, pese a que dentro de la lista hemos definido un objeto llamado <code>sumas</code>, en el entorno de trabajo de <code>R</code> no tenemos definida ninguna variable con ese nombre (a no ser que la hayamos definido previamente durante la sesión).</p>
+<pre><code>&gt; sumas
+Error: object &#39;sumas&#39; not found</code></pre>
+<p>Para obtener una componente concreta de una <code>list</code>, tenemos que añadir al nombre de la <code>list</code> el sufijo formado por un signo <code>$</code> y el nombre de la componente; recordad cómo extraíamos el valor de <span class="math inline">\(R^2\)</span> de un <code>summary(lm(\ldots))</code> o (en el contexto de los <em>data frame</em>) cómo extraíamos una columna de un <em>data frame</em> en la página .</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">L<span class="op">$</span>nombre</code></pre></div>
+<pre><code>## [1] &quot;x&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">L<span class="op">$</span>vector</code></pre></div>
+<pre><code>## [1]  1  2 -3 -4  5  6</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">L<span class="op">$</span>media</code></pre></div>
+<pre><code>## [1] 1.166667</code></pre>
+<p>También podemos indicar el objeto por su posición en la <code>list</code> usando un par de dobles corchetes <code>[[ ]]</code>. Si usamos sólo un par de corchetes, como en los vectores, lo que obtenemos es una <code>list</code> formada por esa única componente, no el objeto que forma la componente.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">L[[<span class="dv">1</span>]]</code></pre></div>
+<pre><code>## [1] &quot;x&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">L[[<span class="dv">4</span>]]  <span class="co">#Esto es un vector</span></code></pre></div>
+<pre><code>## [1]  1  3  0 -4  1  7</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">3</span><span class="op">*</span>L[[<span class="dv">4</span>]] <span class="co">#Y podemos operar con él</span></code></pre></div>
+<pre><code>## [1]   3   9   0 -12   3  21</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">L[<span class="dv">4</span>]   <span class="co">#Esto es una list, no un vector</span></code></pre></div>
+<pre><code>## $sumas
+## [1]  1  3  0 -4  1  7</code></pre>
+<pre><code>&gt; 3*L[4]   #Y NO podemos operar con él
+Error in 3 * L[4] : non-numeric argument to binary operator</code></pre>
+<p>Para conocer la estructura interna de una <code>list</code>, es decir, los nombres de los objetos que la forman y su naturaleza, podemos usar la función <code>str</code>. Si sólo queremos saber sus nombres, podemos usar la función <code>names</code>. Si la <code>list</code> se obtiene con una función de <code>R</code> cuyo resultado sea una estructura de este tipo, como, por ejemplo, <code>lm</code>, es recomendable consultar la Ayuda de la función, ya que probablemente explique el significado de los objetos que la forman.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(L)</code></pre></div>
+<pre><code>## List of 4
+##  $ nombre: chr &quot;x&quot;
+##  $ vector: num [1:6] 1 2 -3 -4 5 6
+##  $ media : num 1.17
+##  $ sumas : num [1:6] 1 3 0 -4 1 7</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">names</span>(L)</code></pre></div>
+<pre><code>## [1] &quot;nombre&quot; &quot;vector&quot; &quot;media&quot;  &quot;sumas&quot;</code></pre>
+</div>
+<div id="guia-rapida-de-funciones" class="section level2">
+<h2><span class="header-section-number">4.6</span> Guía rápida de funciones</h2>
+<ul>
+<li><code>c</code> sirve para definir un vector concatenando elementos o vectores.</li>
+<li><code>scan</code> crea un vector importando datos que se entren en la consola o contenidos en un fichero. Algunos parámetros importantes:</li>
+<li><code>dec</code>: indica el separador decimal.</li>
+<li><code>sep</code>: indica el signo usado para separar las entradas.</li>
+<li><code>what</code>: indica el tipo de datos que se importan.</li>
+<li><code>encoding</code>: indica la codificación de alfabeto del fichero externo; sus dos valores posibles son <code>&quot;latin1&quot;</code> y <code>&quot;UTF-8&quot;</code>.</li>
+<li><code>rep</code> sirve para definir un vector repitiendo un valor o las entradas de otro vector. Algunos parámetros importantes:</li>
+<li><code>each</code>: cuando aplicamos la función a un vector, sirve para indicar cuántas veces queremos repetir cada entrada del vector.</li>
+<li><code>times</code>: cuando aplicamos la función a un vector, sirve para indicar cuántas veces queremos repetir todo el vector en bloque.</li>
+<li><code>seq</code> se puede usar para definir progresiones aritméticas. Algunos parámetros importantes:</li>
+<li><code>by</code>: el paso de la progresión.</li>
+<li><code>length.out</code>: la longitud de la progresión.</li>
+</ul>
+<p>Estos parámetros se pueden usar de las maneras siguientes:</p>
+<ul>
+<li><p><code>seq(a, b, by=p)</code> define la progresión <span class="math display">\[
+a, a+p, a+2p, \ldots, b
+\]</span> (o parándose en el término inmediatamente anterior a <span class="math inline">\(b\)</span>, si <span class="math inline">\(b\)</span> no pertenece a la progresión).</p></li>
+<li><code>seq(a, b, length.out=n)</code> define la progresión <span class="math display">\[
+a, a+p, a+2p, \ldots, b
+\]</span> tomando como paso <span class="math inline">\(p=(b-a)/(n-1)\)</span>.</li>
+<li><p><code>seq(a, by=p, length.out=n)</code> define la progresión <span class="math display">\[
+a, a+p, a+2p, \ldots, a+(n-1)p.
+\]</span></p></li>
+<li><code>a:b</code> es sinónimo de <code>seq(a, b, by=1)</code> (si <span class="math inline">\(a&lt;b\)</span>) o <code>seq(a, b, by=-1)</code> (si <span class="math inline">\(a&gt;b\)</span>).</li>
+<li><code>NULL</code> indica un vector vacío.</li>
+<li><p><code>fix</code> abre un vector (o, en general, un objeto de datos: una matriz, un <em>data frame</em> ) en el editor de datos.</p></li>
+<li><p>Funciones para vectores:</p></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>Función</th>
+<th>longitud</th>
+<th>máximo</th>
+<th>mínimo</th>
+<th>suma</th>
+<th>producto</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>Signo</em></td>
+<td><code>length</code></td>
+<td><code>max</code></td>
+<td><code>min</code></td>
+<td><code>sum</code></td>
+<td><code>prod</code></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th>Función</th>
+<th>media</th>
+<th>sumas acumuladas</th>
+<th>diferencias</th>
+<th>ordenar</th>
+<th>invertir el orden</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>Signo</em></td>
+<td><code>media</code></td>
+<td><code>cumsum</code></td>
+<td><code>diff</code></td>
+<td><code>sort</code></td>
+<td><code>rev</code></td>
+</tr>
+</tbody>
+</table>
+<!--
+```
+\begin{center}
+\hspace*{-1cm}\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+Función & longitud \vphantom{$\Big($} & máximo & mínimo & suma &producto 
+\\ \hline
+Signo & `length`\vphantom{$\Big($} & `max` & `min`& `sum` &  `prod`
+\\ \hline\hline
+\multirow{2}{*}{\begin{minipage}{0.13\textwidth}\begin{center} Función \end{center} \end{minipage}}  &  \multirow{2}{*}{\begin{minipage}{0.13\textwidth}\begin{center} media \end{center} \end{minipage}}  &  \multirow{2}{*}{\begin{minipage}{0.13\textwidth}\begin{center} sumas acumuladas \end{center} \end{minipage}}  & \multirow{2}{*}{\begin{minipage}{0.13\textwidth}\begin{center} diferencias \end{center} \end{minipage}} & \multirow{2}{*}{\begin{minipage}{0.13\textwidth}\begin{center} ordenar \end{center} \end{minipage}} & \multirow{2}{*}{\begin{minipage}{0.13\textwidth}\begin{center} invertir el orden \end{center} \end{minipage}}
+\\[0.5cm] \hline
+Signo & `mean`\vphantom{$\Big($}& `cumsum`& `diff` & `sort` &  `rev`
+\\ \hline
+\end{tabular}
+\end{center}
+-->
+<ul>
+<li>Las funciones <code>max</code>, <code>min</code>, <code>sum</code>, <code>prod</code> y <code>mean</code> admiten el parámetro siguiente: +<code>na.rm</code>: igualado a <code>TRUE</code>, impone que no se tengan en cuenta los valores <code>NA</code> del vector al calcularla.</li>
+<li><code>sapply(``vector</code> <code>, FUN=``función</code> <code>)</code> aplica la <code>función</code> a todas las entradas del <code>vector</code> .</li>
+<li><code>vector[...]</code> se usa para especificar un elemento o un subvector del <code>vector</code> . Las entradas que formarán el subvector pueden especificarse mediante el vector de sus índices o mediante una condición lógica sobre las entradas. Los signos de operadores lógicos que se pueden usar para definir condiciones lógicas son los siguientes:</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>Operador</th>
+<th><span class="math inline">\(=\)</span></th>
+<th><span class="math inline">\(\neq\)</span></th>
+<th><span class="math inline">\(&lt;\)</span></th>
+<th><span class="math inline">\(&gt;\)</span></th>
+<th><span class="math inline">\(\leq\)</span></th>
+<th><span class="math inline">\(\geq\)</span></th>
+<th>negación</th>
+<th>conjunción</th>
+<th>disjunción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Signo</td>
+<td><code>==</code></td>
+<td><code>!=</code></td>
+<td><code>&lt;</code></td>
+<td><code>&gt;</code></td>
+<td><code>&lt;=</code></td>
+<td><code>&gt;=</code></td>
+<td><code>!</code></td>
+<td><code>&amp;</code></td>
+<td><code>|</code></td>
+</tr>
+</tbody>
+</table>
+<!--
+```
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+\hline
+Operador \vphantom{$\Big($} & $=$ & $\neq$ & $<$ & $>$ & $\leq$ & $\geq$ & negación  & conjunción & disjunción \\ \hline
+Signo \vphantom{$\Big($} & `==` & `!=` & `<` & `>` & `<=`& `>=` & `!` & `\&` & `|` \\
+\hline
+\end{tabular}
+\end{center}
+```
+-->
+<ul>
+<li><code>which</code> sirve para obtener los índices de las entradas de un vector que satisfacen una condición lógica.</li>
+<li><code>which.min</code> y <code>which.max</code> dan la primera posición en la que el vector toma su valor mínimo o máximo, respectivamente.</li>
+<li><code>is.na</code> es la alternativa correcta a la condición <code>==NA</code>.</li>
+<li><code>na.omit</code> elimina las entradas <code>NA</code> de un vector.</li>
+<li><code>as.factor</code> transforma un vector en un factor.</li>
+<li><code>factor</code> crea un factor a partir de un vector. Algunos parámetros importantes: +<code>levels</code>: sirve para especificar los niveles. +<code>labels</code>: sirve para cambiar los nombres de los niveles.</li>
+<li><code>ordered</code> crea un factor ordenado a partir de un vector o un factor; sus parámetros son los mismos que los de <code>factor</code>.</li>
+<li><code>levels</code> sirve para obtener los niveles de un factor, y también para cambiar sus nombres.</li>
+<li><code>list</code> construye listas heterogéneas.</li>
+<li><code>str</code> sirve para obtener la estructura de una <code>list</code>.</li>
+<li><code>names</code> sirve para conocer los nombres de las componentes de una <code>list</code>.</li>
+<li><code>list$componente</code> sirve para referirnos al objeto que forma la <code>componente</code> de la <code>list</code>.</li>
+<li><code>list[[i]]</code> sirve para referirnos al objeto que forma la <span class="math inline">\(i\)</span>-ésima componente de la <code>list</code>.</li>
+</ul>
+</div>
+<div id="ejercicio-2" class="section level2">
+<h2><span class="header-section-number">4.7</span> Ejercicio</h2>
+<p>Tenemos las siguientes notas obtenidas por unos estudiantes en un examen:</p>
+<pre><code>7.9, 4.3, 5.5, 7.9, 9.8, 2.7, 4.7, 2.4, 8.3, 7.3, 6.8, 6.3, 4.8, 5.7, 3.8, 6.3,
+5.4, 5.4, 80, 4.2, 8.3, 4.7, 6.0, 6.8, 5.7, 6.5, 4.6, 5.4, 3.7, 7.1, 5.5, 6.0, 6.7, 7.0, 7.3, 3.0, 6.6, 6.1, 2.4, 7.1, 9.4, 3.7, 4.5,
+5.1, 5.9, 4.7, 5.5, 8.9, 8.1, 8.3, 4.3, 7.1, 9.3, 5.1, 6.1, 3.0,
+5.7, 6.8, 3.1, 7.7, 7.3 , 7.0, 6.2, 8.8, 5.3, 4.0.</code></pre>
+<ol style="list-style-type: decimal">
+<li>Cread un vector con estas notas (podéis copiarlas de este documento y pegarlas) y ponedle un nombre adecuado.</li>
+<li>¿Cuántas notas contiene este vector? ¿Cuál es su valor medio?</li>
+<li>¡Vaya! El 80 ha sido un error, tenía que ser un 8.0. Cambiad el 80 del vector anterior por un 8.0, sin volver a entrar el resto de notas. Volved a calcular la media de las notas tras haber corregido este error.</li>
+<li>¿Cuál es la nota mínima obtenida por estos estudiantes? ¿Cuántos estudiantes la han sacado?</li>
+<li>¿Cuántos estudiantes han logrado un notable (entre 7 y 8.9)? ¿Qué porcentaje del total de estudiantes representan?</li>
+<li>¿Qué grupo es más numeroso: el de los estudiantes que han sacado entre 4 y 4.9, o el de los que han sacado entre 5 y 5.9?</li>
+<li>Ordenad en orden creciente estas notas y obtened su <code>mediana</code> : una vez ordenado el vector, si tiene un número impar de entradas, su mediana es el valor central, y si tiene un número par de entradas, su mediana es la media aritmética de los dos valores centrales.</li>
+<li>La mediana de un vector se puede calcular directamente con la función <code>median</code>. Calculad la del vector anterior con esta función. ¿Da lo mismo que el valor obtenido en el punto anterior?</li>
+<li>¿Cuántos notas diferentes hay en esta muestra? (Podéis emplear astutamente algunas funciones explicadas en esta lección, o podéis consultar <code>help.search(&quot;duplicated&quot;)</code> a ver si encontráis una función que elimine las entradas duplicadas de un vector.)</li>
+</ol>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="22">
+<li id="fn22"><p>Con el editor de textos hemos copiado la secuencia, y hemos pulsado <em>Entrar</em> después de cada pegado. Probadlo vosotros.<a href="chap-vect.html#fnref22">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="chap-lm.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="chap-matrix.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/RicUIB/AprendeR2.1/edit/master/04chap03_Vectores.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["AprendeR-Parte-I.pdf", "AprendeR-Parte-I.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Lección 6 Data frames | AprendeR: Parte I</title>
+  <meta name="description" content="Apuntes AprendeR bookdown::gitbook.">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="Lección 6 Data frames | AprendeR: Parte I" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Apuntes AprendeR bookdown::gitbook." />
+  <meta name="github-repo" content="RicUIB/AprendeR" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Lección 6 Data frames | AprendeR: Parte I" />
+  
+  <meta name="twitter:description" content="Apuntes AprendeR bookdown::gitbook." />
+  
+
+<meta name="author" content="The AprendeR team">
+
+
+<meta name="date" content="2019-02-14">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="chap-matrix.html">
+<link rel="next" href="chap-plot.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">AprendeR: Parte I</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Presentación</a></li>
+<li class="chapter" data-level="1" data-path="chap-0.html"><a href="chap-0.html"><i class="fa fa-check"></i><b>1</b> Logística de <code>R</code></a><ul>
+<li class="chapter" data-level="1.1" data-path="chap-0.html"><a href="chap-0.html#como-instalar-r-y-rstudio"><i class="fa fa-check"></i><b>1.1</b> Cómo instalar <code>R</code> y <em>Rstudio</em></a></li>
+<li class="chapter" data-level="1.2" data-path="chap-0.html"><a href="chap-0.html#sec:guardar"><i class="fa fa-check"></i><b>1.2</b> Cómo guardar el trabajo realizado</a></li>
+<li class="chapter" data-level="1.3" data-path="chap-0.html"><a href="chap-0.html#sec:guiones"><i class="fa fa-check"></i><b>1.3</b> Cómo trabajar con guiones y otros ficheros</a></li>
+<li class="chapter" data-level="1.4" data-path="chap-0.html"><a href="chap-0.html#sec:help"><i class="fa fa-check"></i><b>1.4</b> Cómo obtener ayuda</a></li>
+<li class="chapter" data-level="1.5" data-path="chap-0.html"><a href="chap-0.html#sec:paquetes"><i class="fa fa-check"></i><b>1.5</b> Cómo instalar y cargar paquetes</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="chap-calc.html"><a href="chap-calc.html"><i class="fa fa-check"></i><b>2</b> La calculadora</a><ul>
+<li class="chapter" data-level="2.1" data-path="chap-calc.html"><a href="chap-calc.html#numeros-reales-operaciones-y-funciones-basicas"><i class="fa fa-check"></i><b>2.1</b> Números reales: operaciones y funciones básicas</a></li>
+<li class="chapter" data-level="2.2" data-path="chap-calc.html"><a href="chap-calc.html#cifras-significativas-y-redondeos"><i class="fa fa-check"></i><b>2.2</b> Cifras significativas y redondeos</a></li>
+<li class="chapter" data-level="2.3" data-path="chap-calc.html"><a href="chap-calc.html#definicion-de-variables"><i class="fa fa-check"></i><b>2.3</b> Definición de variables</a></li>
+<li class="chapter" data-level="2.4" data-path="chap-calc.html"><a href="chap-calc.html#definicion-de-funciones"><i class="fa fa-check"></i><b>2.4</b> Definición de funciones</a></li>
+<li class="chapter" data-level="2.5" data-path="chap-calc.html"><a href="chap-calc.html#numeros-complejos-opcional"><i class="fa fa-check"></i><b>2.5</b> Números complejos (opcional)</a></li>
+<li class="chapter" data-level="2.6" data-path="chap-calc.html"><a href="chap-calc.html#guia-rapida"><i class="fa fa-check"></i><b>2.6</b> Guía rápida</a></li>
+<li class="chapter" data-level="2.7" data-path="chap-calc.html"><a href="chap-calc.html#ejercicio"><i class="fa fa-check"></i><b>2.7</b> Ejercicio</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="chap-lm.html"><a href="chap-lm.html"><i class="fa fa-check"></i><b>3</b> Un aperitivo: Introducción a la regresión lineal</a><ul>
+<li class="chapter" data-level="3.1" data-path="chap-lm.html"><a href="chap-lm.html#calculo-de-rectas-de-regresion"><i class="fa fa-check"></i><b>3.1</b> Cálculo de rectas de regresión</a></li>
+<li class="chapter" data-level="3.2" data-path="chap-lm.html"><a href="chap-lm.html#rectas-de-regresion-y-transformaciones-logaritmicas"><i class="fa fa-check"></i><b>3.2</b> Rectas de regresión y transformaciones logarítmicas</a></li>
+<li class="chapter" data-level="3.3" data-path="chap-lm.html"><a href="chap-lm.html#guia-rapida-1"><i class="fa fa-check"></i><b>3.3</b> Guía rápida</a></li>
+<li class="chapter" data-level="3.4" data-path="chap-lm.html"><a href="chap-lm.html#ejercicio-1"><i class="fa fa-check"></i><b>3.4</b> Ejercicio</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="chap-vect.html"><a href="chap-vect.html"><i class="fa fa-check"></i><b>4</b> Vectores y otros tipos de listas</a><ul>
+<li class="chapter" data-level="4.1" data-path="chap-vect.html"><a href="chap-vect.html#construccion-de-vectores"><i class="fa fa-check"></i><b>4.1</b> Construcción de vectores</a></li>
+<li class="chapter" data-level="4.2" data-path="chap-vect.html"><a href="chap-vect.html#operaciones-con-vectores"><i class="fa fa-check"></i><b>4.2</b> Operaciones con vectores</a></li>
+<li class="chapter" data-level="4.3" data-path="chap-vect.html"><a href="chap-vect.html#entradas-y-trozos-de-vectores"><i class="fa fa-check"></i><b>4.3</b> Entradas y trozos de vectores</a></li>
+<li class="chapter" data-level="4.4" data-path="chap-vect.html"><a href="chap-vect.html#subsec:factor"><i class="fa fa-check"></i><b>4.4</b> Factores</a></li>
+<li class="chapter" data-level="4.5" data-path="chap-vect.html"><a href="chap-vect.html#sec:lists"><i class="fa fa-check"></i><b>4.5</b> Listas heterogéneas</a></li>
+<li class="chapter" data-level="4.6" data-path="chap-vect.html"><a href="chap-vect.html#guia-rapida-de-funciones"><i class="fa fa-check"></i><b>4.6</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="4.7" data-path="chap-vect.html"><a href="chap-vect.html#ejercicio-2"><i class="fa fa-check"></i><b>4.7</b> Ejercicio</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="chap-matrix.html"><a href="chap-matrix.html"><i class="fa fa-check"></i><b>5</b> Matrices</a><ul>
+<li class="chapter" data-level="5.1" data-path="chap-matrix.html"><a href="chap-matrix.html#construccion-de-matrices"><i class="fa fa-check"></i><b>5.1</b> Construcción de matrices</a></li>
+<li class="chapter" data-level="5.2" data-path="chap-matrix.html"><a href="chap-matrix.html#acceso-a-entradas-y-submatrices"><i class="fa fa-check"></i><b>5.2</b> Acceso a entradas y submatrices</a></li>
+<li class="chapter" data-level="5.3" data-path="chap-matrix.html"><a href="chap-matrix.html#algunas-funciones-para-matrices"><i class="fa fa-check"></i><b>5.3</b> Algunas funciones para matrices</a></li>
+<li class="chapter" data-level="5.4" data-path="chap-matrix.html"><a href="chap-matrix.html#calculo-matricial-opcional"><i class="fa fa-check"></i><b>5.4</b> Cálculo matricial (opcional)</a></li>
+<li class="chapter" data-level="5.5" data-path="chap-matrix.html"><a href="chap-matrix.html#valores-y-vectores-propios-opcional"><i class="fa fa-check"></i><b>5.5</b> Valores y vectores propios (opcional)</a></li>
+<li class="chapter" data-level="5.6" data-path="chap-matrix.html"><a href="chap-matrix.html#matrices-complejas-opcional"><i class="fa fa-check"></i><b>5.6</b> Matrices complejas (opcional)</a></li>
+<li class="chapter" data-level="5.7" data-path="chap-matrix.html"><a href="chap-matrix.html#guia-rapida-de-funciones-1"><i class="fa fa-check"></i><b>5.7</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="5.8" data-path="chap-matrix.html"><a href="chap-matrix.html#ejercicio-opcional"><i class="fa fa-check"></i><b>5.8</b> Ejercicio (opcional)</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="chap-df.html"><a href="chap-df.html"><i class="fa fa-check"></i><b>6</b> <em>Data frames</em></a><ul>
+<li class="chapter" data-level="6.1" data-path="chap-df.html"><a href="chap-df.html#estructura-de-un-data-frame"><i class="fa fa-check"></i><b>6.1</b> Estructura de un <em>data frame</em></a></li>
+<li class="chapter" data-level="6.2" data-path="chap-df.html"><a href="chap-df.html#como-importar-y-exportar-data-frames"><i class="fa fa-check"></i><b>6.2</b> Cómo importar y exportar <em>data frames</em></a></li>
+<li class="chapter" data-level="6.3" data-path="chap-df.html"><a href="chap-df.html#como-crear-data-frames"><i class="fa fa-check"></i><b>6.3</b> Cómo crear <em>data frames</em></a></li>
+<li class="chapter" data-level="6.4" data-path="chap-df.html"><a href="chap-df.html#sec:moddf"><i class="fa fa-check"></i><b>6.4</b> Cómo modificar un <em>data frame</em></a></li>
+<li class="chapter" data-level="6.5" data-path="chap-df.html"><a href="chap-df.html#sec:dfaf"><i class="fa fa-check"></i><b>6.5</b> Cómo añadir filas y columnas a un <em>data frame</em></a></li>
+<li class="chapter" data-level="6.6" data-path="chap-df.html"><a href="chap-df.html#como-seleccionar-trozos-de-un-data-frame"><i class="fa fa-check"></i><b>6.6</b> Cómo seleccionar trozos de un <em>data frame</em></a></li>
+<li class="chapter" data-level="6.7" data-path="chap-df.html"><a href="chap-df.html#como-aplicar-una-funcion-a-las-variables-de-un-data-frame"><i class="fa fa-check"></i><b>6.7</b> Cómo aplicar una función a las variables de un <em>data frame</em></a></li>
+<li class="chapter" data-level="6.8" data-path="chap-df.html"><a href="chap-df.html#sub:attach"><i class="fa fa-check"></i><b>6.8</b> Cómo añadir las variables de un <em>data frame</em> al entorno global</a></li>
+<li class="chapter" data-level="6.9" data-path="chap-df.html"><a href="chap-df.html#big-data-frames-con-data.table-opcional."><i class="fa fa-check"></i><b>6.9</b> &lt;&lt;<em>Big data</em>&gt;&gt; <em>frames</em> con <code>data.table</code> (opcional).</a></li>
+<li class="chapter" data-level="6.10" data-path="chap-df.html"><a href="chap-df.html#guia-rapida-de-funciones-2"><i class="fa fa-check"></i><b>6.10</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="6.11" data-path="chap-df.html"><a href="chap-df.html#ejercicio-3"><i class="fa fa-check"></i><b>6.11</b> Ejercicio</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="chap-plot.html"><a href="chap-plot.html"><i class="fa fa-check"></i><b>7</b> Gráficos I</a><ul>
+<li class="chapter" data-level="7.1" data-path="chap-plot.html"><a href="chap-plot.html#la-funcion-plot"><i class="fa fa-check"></i><b>7.1</b> La función <code>plot</code></a></li>
+<li class="chapter" data-level="7.2" data-path="chap-plot.html"><a href="chap-plot.html#parametros-de-plot"><i class="fa fa-check"></i><b>7.2</b> Parámetros de <code>plot</code></a></li>
+<li class="chapter" data-level="7.3" data-path="chap-plot.html"><a href="chap-plot.html#como-anadir-elementos-a-un-grafico"><i class="fa fa-check"></i><b>7.3</b> Cómo añadir elementos a un gráfico</a></li>
+<li class="chapter" data-level="7.4" data-path="chap-plot.html"><a href="chap-plot.html#guia-rapida-2"><i class="fa fa-check"></i><b>7.4</b> Guía rápida</a><ul>
+<li class="chapter" data-level="7.4.1" data-path="chap-plot.html"><a href="chap-plot.html#ejercicio-4"><i class="fa fa-check"></i><b>7.4.1</b> Ejercicio</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="chap-edqual.html"><a href="chap-edqual.html"><i class="fa fa-check"></i><b>8</b> Descripción de datos cualitativos</a><ul>
+<li class="chapter" data-level="8.1" data-path="chap-edqual.html"><a href="chap-edqual.html#frecuencias"><i class="fa fa-check"></i><b>8.1</b> Frecuencias</a></li>
+<li class="chapter" data-level="8.2" data-path="chap-edqual.html"><a href="chap-edqual.html#tablas-unidimensionales-de-frecuencias"><i class="fa fa-check"></i><b>8.2</b> Tablas unidimensionales de frecuencias</a></li>
+<li class="chapter" data-level="8.3" data-path="chap-edqual.html"><a href="chap-edqual.html#tablas-bidimensionales-de-frecuencias"><i class="fa fa-check"></i><b>8.3</b> Tablas bidimensionales de frecuencias</a></li>
+<li class="chapter" data-level="8.4" data-path="chap-edqual.html"><a href="chap-edqual.html#tablas-multidimensionales-de-frecuencias"><i class="fa fa-check"></i><b>8.4</b> Tablas multidimensionales de frecuencias</a></li>
+<li class="chapter" data-level="8.5" data-path="chap-edqual.html"><a href="chap-edqual.html#tablas-a-partir-de-dta-frames-de-de-variables-cualitativas"><i class="fa fa-check"></i><b>8.5</b> Tablas a partir de <em>dta frames</em> de de variables cualitativas</a></li>
+<li class="chapter" data-level="8.6" data-path="chap-edqual.html"><a href="chap-edqual.html#diagramas-de-barras"><i class="fa fa-check"></i><b>8.6</b> Diagramas de barras</a></li>
+<li class="chapter" data-level="8.7" data-path="chap-edqual.html"><a href="chap-edqual.html#otros-graficos-para-datos-cualitativos"><i class="fa fa-check"></i><b>8.7</b> Otros gráficos para datos cualitativos</a><ul>
+<li class="chapter" data-level="8.7.1" data-path="chap-edqual.html"><a href="chap-edqual.html#sec:exqual"><i class="fa fa-check"></i><b>8.7.1</b> Un ejemplo completo</a></li>
+</ul></li>
+<li class="chapter" data-level="8.8" data-path="chap-edqual.html"><a href="chap-edqual.html#guia-rapida-de-funciones-3"><i class="fa fa-check"></i><b>8.8</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="8.9" data-path="chap-edqual.html"><a href="chap-edqual.html#ejercicio-5"><i class="fa fa-check"></i><b>8.9</b> Ejercicio</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="chap-ord.html"><a href="chap-ord.html"><i class="fa fa-check"></i><b>9</b> Descripción de datos ordinales</a><ul>
+<li class="chapter" data-level="9.1" data-path="chap-ord.html"><a href="chap-ord.html#frecuencias-para-datos-ordinales"><i class="fa fa-check"></i><b>9.1</b> Frecuencias para datos ordinales</a></li>
+<li class="chapter" data-level="9.2" data-path="chap-ord.html"><a href="chap-ord.html#descripcion-de-datos-ordinales-con-r"><i class="fa fa-check"></i><b>9.2</b> Descripción de datos ordinales con <code>R</code></a></li>
+<li class="chapter" data-level="9.3" data-path="chap-ord.html"><a href="chap-ord.html#guia-rapida-de-funciones-4"><i class="fa fa-check"></i><b>9.3</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="9.4" data-path="chap-ord.html"><a href="chap-ord.html#ejercicio-6"><i class="fa fa-check"></i><b>9.4</b> Ejercicio</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/RicUIB/AprendeR2.1" target="blank">Publicado con  bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">AprendeR: Parte I</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="chap:df" class="section level1">
+<h1><span class="header-section-number">Lección 6</span> <em>Data frames</em></h1>
+<p>Habitualmente, dispondremos de una serie de datos que describirán algunos aspectos de un conjunto de individuos, y querremos analizarlos. El análisis estadístico de estos datos puede ser de dos tipos básicos:</p>
+<ul>
+<li><p><strong>Análisis exploratorio</strong> , o <strong>descriptivo</strong> , cuando nuestro objetivo sea resumir, representar y explicar los datos concretos de los que disponemos. La <strong>estadística descriptiva</strong> es el conjunto de técnicas que se usan con este fin.</p></li>
+<li><p><em>Análisis inferencial</em> , si nuestro objetivo es deducir (<strong>inferir</strong>), a partir de estos datos, información significativa sobre el total de la población o las poblaciones de interés. Las técnicas que se usan en este caso forman la <em>estadística inferencial</em>.</p></li>
+</ul>
+<p>En las próximas lecciones explicaremos algunas técnicas básicas de estadística descriptiva orientadas al análisis de datos. Estas técnicas consistirán en una serie de medidas, gráficos y modelos descriptivos que nos permitirán resumir y explorar un conjunto de datos, con el objetivo final de entenderlos lo mejor posible. De todas formas, ambos tipos de análisis estadístico están relacionados. Así, por un lado, cualquier análisis inferencial se suele empezar explorando los datos que se usarán, y por otro, muchas técnicas descriptivas permiten estimar propiedades de la población de la que se ha extraído la muestra. Por citar un ejemplo, la media aritmética de las alturas de una muestra de individuos nos da un valor representativo de esta muestra, pero también <em>estima</em> la media de las alturas del total de la población, si la muestra es aleatoria.</p>
+<p>Los datos de los que disponemos para su análisis suelen ser multidimensionales, en el sentido de que observamos varias características de una serie de individuos. Estos datos se tienen que registrar de alguna manera. Normalmente, los guardaremos en un archivo de ordenador con un formato preestablecido. Los formatos de almacenamiento de datos en un ordenador son diversos: texto simple (codificado en diferentes formatos: ASCII, isolatin, utf8…), hojas de cálculo(archivos de <em>Open Office</em> o <em>Excel</em>), bases de datos, etc. Una de las maneras básicas de almacenar datos es en forma de <code>tablas de datos</code> , pequeñas bases de datos donde se han anotado los valores de algunas variables para una serie de observaciones.</p>
+<p>Como ya comentamos en la Lección <a href="chap-lm.html#chap:lm">3</a>, la manera más conveniente de guardar en <code>R</code> una tabla de datos es en forma de <em>data frame</em>. En concreto, un <em>data frame</em> es una tabla de doble entrada, formada por variables en las columnas y observaciones de estas variables en las filas, de manera que cada fila contiene los valores de las variables para un mismo caso o individuo. En este sentido, un <em>data frame</em> tiene la apariencia de una matriz, pero con la diferencia de que cada columna de un <em>data frame</em> puede contener datos de un tipo diferente, siempre que todos los datos de una misma columna sean del mismo tipo, porque corresponden a observaciones de una misma propiedad: así, una columna puede estar formada por números, por ejemplo, alguna medida; otra, por palabras, por ejemplo, la especie del individuo; otra, por valores lógicos, por ejemplo, que describan si una cierta propiedad está presente o ausente en el individuo; etc. De esta manera, las columnas de un <em>data frame</em> son vectores o factores, mientras que las filas son <code>lists</code>.</p>
+<p>Los tipos de datos que consideramos en este curso son los siguientes:</p>
+<ul>
+<li><p>Datos de tipo <strong>atributo</strong> , o <strong>cualitativos</strong>. Son los que expresan una cualidad del individuo, tales como el sexo, el DNI, la especie… . En <code>R</code>, guardaremos las listas de datos cualitativos en vectores (habitualmente, de palabras), o en factores si vamos a usarlos para clasificar individuos.</p></li>
+<li><p>Datos <strong>ordinales</strong>. Son datos similares a los cualitativos, con la única diferencia de que se pueden ordenar de manera natural. Por ejemplo, los niveles de calidad ambiental de un ecosistema (malo, regular, normal, bueno, muy bueno) o las calificaciones en un examen (suspenso, aprobado, notable,sobresaliente) son datos ordinales. En cambio, no se pueden ordenar de manera significativa los sexos o las especies de los individuos. En <code>R</code>, guardaremos las listas de datos ordinales en factores ordenados.</p></li>
+<li><p>Datos <strong>cuantitativos</strong>. Son datos que se refieren a medidas, tales como edades, longitudes, pesos, tiempos, números de individuos, etc. En <code>R</code>, guardaremos las listas de datos cuantitativos en vectores de números.</p></li>
+</ul>
+<p>El análisis, tanto descriptivo como inferencial, de un conjunto de datos es diferente según su tipo. Así, para datos cualitativos sólo tiene interés estudiar y representar las frecuencias con que aparecen sus diferentes valores, mientras que el análisis de datos cuantitativos suele involucrar el cálculo de medidas estadísticas que evalúen numéricamente sus propiedades.</p>
+<div id="estructura-de-un-data-frame" class="section level2">
+<h2><span class="header-section-number">6.1</span> Estructura de un <em>data frame</em></h2>
+<p>La instalación básica de <code>R</code> lleva predefinidos algunos objetos de datos. Podemos echarles un vistazo entrando la instrucción <code>data()</code>, que abrirá una ventana con la lista de los objetos de datos a los que tenemos acceso en la sesión actual de <code>R</code> (los que lleva la instalación básica de <code>R</code> y los que aportan los paquetes que tengamos cargados). Estos objetos no aparecen cuando hacemos <code>ls()</code> ni se borran con <code>rm(list=ls())</code>, y podemos pedir información sobre cada uno de ellos en la ventana de Ayuda. Al final de la lista que obtenemos con <code>data()</code> se nos indica que si entramos</p>
+<p><code>data(package=.packages(all.available=TRUE))</code>,</p>
+<p>obtendremos la lista de <code>todos</code> los objetos de datos a los que tenemos acceso, incluyendo los de los paquetes instalados pero no cargados en la sesión actual.</p>
+<p>Una de las tablas de datos más populares que lleva <code>R</code> es el llamado <em>iris data set</em>, que contiene la longitud y la anchura de los pétalos y sépalos y la especie de 150 flores iris. El famoso estadístico Sir R. A. Fisher usó este conjunto de datos en su artículo &lt;<The Use of Multiple Measurements in Taxonomic Problems>&gt; (<code>Annals of Eugenics</code> 7 (1936), pp. 179–188).<a href="#fn26" class="footnoteRef" id="fnref26"><sup>26</sup></a> En <code>R</code>, este conjunto de datos de flores iris está recogido en el <em>data frame</em> <code>iris</code>. Para más información sobre estos datos, podéis leer su entrada en la <em>Wikipedia</em>,<a href="#fn27" class="footnoteRef" id="fnref27"><sup>27</sup></a> y para más información específica sobre la tabla <code>iris</code> de <code>R</code>, podéis consultar la Ayuda de <code>iris</code>.</p>
+<p>En esta sección vamos a trabajar con esta tabla de datos, así que lo primero que haremos será copiarla en un nuevo <em>data frame</em> que llamaremos <code>d.f</code>; de este modo trabajaremos sobre la copia <code>d.f</code> y tendremos acceso al <em>data frame</em> <code>iris</code> original si necesitamos volver a él. De todas formas, si trabajamos directamente sobre <code>iris</code> y lo echamos a perder, lo podemos recuperar ejecutando la instrucción <code>data(iris)</code>, que devolverá a este <em>data frame</em> su contenido original.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d.f=iris</code></pre></div>
+<p>Si pidiéramos ahora a <code>R</code> que nos mostrase el objeto <code>d.f</code>,</p>
+<pre><code>&gt; d.f</code></pre>
+<p>obtendríamos el contenido del <em>data frame</em> en la consola: una larga lista de datos formada por las 150 filas de la tabla; naturalmente, no vamos a copiar aquí esta salida. Para echarle un vistazo al <em>data frame</em>, y así poder entender su estructura y conocer los nombres de sus variables, os recomendamos usar la instrucción</p>
+<pre><code>&gt; View(d.f)</code></pre>
+<p>que lo mostrará en la ventana superior izquierda de <em>RStudio</em>. Véase la Figura <a href="chap-df.html#fig:View">6.1</a>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;images/View.jpg&quot;</span>)</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:View"></span>
+<img src="images/View.jpg" alt="Vista de un *data frame* con `View`."  />
+<p class="caption">
+Figura 6.1: Vista de un <em>data frame</em> con <code>View</code>.
+</p>
+</div>
+<!--
+
+\begin{figure}[htb]
+\abovecaptionskip=-1ex
+\begin{center}
+\includegraphics[width=0.7\linewidth]{View}
+\end{center}
+\caption{Vista de un *data frame* con `View`.}\label{fig:View}
+\end{figure}
+-->
+<p>También podemos consultar en la consola las primeras filas del <em>data frame</em>, aplicando la función <code>head</code> al <em>data frame</em> y al número de filas que queremos que muestre; su valor por defecto es 6.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(d.f,<span class="dv">5</span>)  <span class="co">#Las primeras 5 filas</span></code></pre></div>
+<pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+## 2          4.9         3.0          1.4         0.2  setosa
+## 3          4.7         3.2          1.3         0.2  setosa
+## 4          4.6         3.1          1.5         0.2  setosa
+## 5          5.0         3.6          1.4         0.2  setosa</code></pre>
+<p>La función <code>tail</code>, con una estructura similar a <code>head</code>, nos muestra la &lt;<cola>&gt; de la tabla.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tail</span>(d.f,<span class="dv">5</span>)    <span class="co">#Las últimas 5 filas</span></code></pre></div>
+<pre><code>##     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species
+## 146          6.7         3.0          5.2         2.3 virginica
+## 147          6.3         2.5          5.0         1.9 virginica
+## 148          6.5         3.0          5.2         2.0 virginica
+## 149          6.2         3.4          5.4         2.3 virginica
+## 150          5.9         3.0          5.1         1.8 virginica</code></pre>
+<p>Observad que las columnas del <em>data frame</em> tienen <code>nombres</code> (<code>R</code> los llama <code>names</code>) y las filas, que corresponden a individuos, tienen como <code>identificador</code> (<code>R</code> llama a estos identificadores <code>rownames</code>) un número natural correlativo que va del 1 al 150. Podemos comprobar también que, en cada fila, la columna <code>Species</code> contiene una palabra que describe la especie de la flor, mientras que las otras cuatro columnas contienen números que corresponden a medidas. Como veremos, la columna <code>Species</code> no es un vector, sino un factor (con niveles las tres especies de iris: <em>setosa</em>, <em>versicolor</em> y <em>virginica</em>), lo que nos facilita el uso de esta variable para clasificar las flores.</p>
+<p>Si queremos conocer la estructura global de un <em>data frame</em>, podemos usar la función <code>str</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(d.f)</code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    150 obs. of  5 variables:
+##  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
+##  $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
+##  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
+##  $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
+##  $ Species     : Factor w/ 3 levels &quot;setosa&quot;,&quot;versicolor&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...</code></pre>
+<p>El resultado de esta instrucción nos muestra la estructura del objeto <code>d.f</code>. Nos dice que es un <em>data frame</em> formado por 150 observaciones (filas) de 5 variables (columnas), y de cada variable nos da su nombre (precedido de un signo <code>$</code>) y su tipo de datos: las cuatro primeras son variables cuantitativas, formadas por vectores numéricos (<code>num</code>), y la quinta es una variable cualitativa, un factor con (<code>w</code>, de <em>with</em>) 3 niveles que corresponden a las especies. Además, nos muestra los primeros valores de cada variable: en el caso del factor, los unos significan &lt;<setosa>&gt;, su primer nivel.</p>
+<p>Las funciones siguientes nos permiten obtener los nombres de las variables, los identificadores de las filas y las dimensiones de un <em>data frame</em>:</p>
+<ul>
+<li><code>names</code>: Produce un vector con los nombres de las columnas.</li>
+<li><code>rownames</code>: Produce un vector con los identificadores de las filas.</li>
+<li><code>dimnames</code>: Produce una <code>list</code> formada por dos vectores: el de los identificadores de las filas y el de los nombres de las columnas.</li>
+<li><code>dim</code>: Produce un vector con el número de filas y el número de columnas.</li>
+</ul>
+<p>Veamos sus valores sobre nuestro <em>data frame</em>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">names</span>(d.f)</code></pre></div>
+<pre><code>## [1] &quot;Sepal.Length&quot; &quot;Sepal.Width&quot;  &quot;Petal.Length&quot; &quot;Petal.Width&quot; 
+## [5] &quot;Species&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rownames</span>(d.f)</code></pre></div>
+<pre><code>##   [1] &quot;1&quot;   &quot;2&quot;   &quot;3&quot;   &quot;4&quot;   &quot;5&quot;   &quot;6&quot;   &quot;7&quot;   &quot;8&quot;   &quot;9&quot;   &quot;10&quot;  &quot;11&quot; 
+##  [12] &quot;12&quot;  &quot;13&quot;  &quot;14&quot;  &quot;15&quot;  &quot;16&quot;  &quot;17&quot;  &quot;18&quot;  &quot;19&quot;  &quot;20&quot;  &quot;21&quot;  &quot;22&quot; 
+##  [23] &quot;23&quot;  &quot;24&quot;  &quot;25&quot;  &quot;26&quot;  &quot;27&quot;  &quot;28&quot;  &quot;29&quot;  &quot;30&quot;  &quot;31&quot;  &quot;32&quot;  &quot;33&quot; 
+##  [34] &quot;34&quot;  &quot;35&quot;  &quot;36&quot;  &quot;37&quot;  &quot;38&quot;  &quot;39&quot;  &quot;40&quot;  &quot;41&quot;  &quot;42&quot;  &quot;43&quot;  &quot;44&quot; 
+##  [45] &quot;45&quot;  &quot;46&quot;  &quot;47&quot;  &quot;48&quot;  &quot;49&quot;  &quot;50&quot;  &quot;51&quot;  &quot;52&quot;  &quot;53&quot;  &quot;54&quot;  &quot;55&quot; 
+##  [56] &quot;56&quot;  &quot;57&quot;  &quot;58&quot;  &quot;59&quot;  &quot;60&quot;  &quot;61&quot;  &quot;62&quot;  &quot;63&quot;  &quot;64&quot;  &quot;65&quot;  &quot;66&quot; 
+##  [67] &quot;67&quot;  &quot;68&quot;  &quot;69&quot;  &quot;70&quot;  &quot;71&quot;  &quot;72&quot;  &quot;73&quot;  &quot;74&quot;  &quot;75&quot;  &quot;76&quot;  &quot;77&quot; 
+##  [78] &quot;78&quot;  &quot;79&quot;  &quot;80&quot;  &quot;81&quot;  &quot;82&quot;  &quot;83&quot;  &quot;84&quot;  &quot;85&quot;  &quot;86&quot;  &quot;87&quot;  &quot;88&quot; 
+##  [89] &quot;89&quot;  &quot;90&quot;  &quot;91&quot;  &quot;92&quot;  &quot;93&quot;  &quot;94&quot;  &quot;95&quot;  &quot;96&quot;  &quot;97&quot;  &quot;98&quot;  &quot;99&quot; 
+## [100] &quot;100&quot; &quot;101&quot; &quot;102&quot; &quot;103&quot; &quot;104&quot; &quot;105&quot; &quot;106&quot; &quot;107&quot; &quot;108&quot; &quot;109&quot; &quot;110&quot;
+## [111] &quot;111&quot; &quot;112&quot; &quot;113&quot; &quot;114&quot; &quot;115&quot; &quot;116&quot; &quot;117&quot; &quot;118&quot; &quot;119&quot; &quot;120&quot; &quot;121&quot;
+## [122] &quot;122&quot; &quot;123&quot; &quot;124&quot; &quot;125&quot; &quot;126&quot; &quot;127&quot; &quot;128&quot; &quot;129&quot; &quot;130&quot; &quot;131&quot; &quot;132&quot;
+## [133] &quot;133&quot; &quot;134&quot; &quot;135&quot; &quot;136&quot; &quot;137&quot; &quot;138&quot; &quot;139&quot; &quot;140&quot; &quot;141&quot; &quot;142&quot; &quot;143&quot;
+## [144] &quot;144&quot; &quot;145&quot; &quot;146&quot; &quot;147&quot; &quot;148&quot; &quot;149&quot; &quot;150&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dimnames</span>(d.f)</code></pre></div>
+<pre><code>## [[1]]
+##   [1] &quot;1&quot;   &quot;2&quot;   &quot;3&quot;   &quot;4&quot;   &quot;5&quot;   &quot;6&quot;   &quot;7&quot;   &quot;8&quot;   &quot;9&quot;   &quot;10&quot;  &quot;11&quot; 
+##  [12] &quot;12&quot;  &quot;13&quot;  &quot;14&quot;  &quot;15&quot;  &quot;16&quot;  &quot;17&quot;  &quot;18&quot;  &quot;19&quot;  &quot;20&quot;  &quot;21&quot;  &quot;22&quot; 
+##  [23] &quot;23&quot;  &quot;24&quot;  &quot;25&quot;  &quot;26&quot;  &quot;27&quot;  &quot;28&quot;  &quot;29&quot;  &quot;30&quot;  &quot;31&quot;  &quot;32&quot;  &quot;33&quot; 
+##  [34] &quot;34&quot;  &quot;35&quot;  &quot;36&quot;  &quot;37&quot;  &quot;38&quot;  &quot;39&quot;  &quot;40&quot;  &quot;41&quot;  &quot;42&quot;  &quot;43&quot;  &quot;44&quot; 
+##  [45] &quot;45&quot;  &quot;46&quot;  &quot;47&quot;  &quot;48&quot;  &quot;49&quot;  &quot;50&quot;  &quot;51&quot;  &quot;52&quot;  &quot;53&quot;  &quot;54&quot;  &quot;55&quot; 
+##  [56] &quot;56&quot;  &quot;57&quot;  &quot;58&quot;  &quot;59&quot;  &quot;60&quot;  &quot;61&quot;  &quot;62&quot;  &quot;63&quot;  &quot;64&quot;  &quot;65&quot;  &quot;66&quot; 
+##  [67] &quot;67&quot;  &quot;68&quot;  &quot;69&quot;  &quot;70&quot;  &quot;71&quot;  &quot;72&quot;  &quot;73&quot;  &quot;74&quot;  &quot;75&quot;  &quot;76&quot;  &quot;77&quot; 
+##  [78] &quot;78&quot;  &quot;79&quot;  &quot;80&quot;  &quot;81&quot;  &quot;82&quot;  &quot;83&quot;  &quot;84&quot;  &quot;85&quot;  &quot;86&quot;  &quot;87&quot;  &quot;88&quot; 
+##  [89] &quot;89&quot;  &quot;90&quot;  &quot;91&quot;  &quot;92&quot;  &quot;93&quot;  &quot;94&quot;  &quot;95&quot;  &quot;96&quot;  &quot;97&quot;  &quot;98&quot;  &quot;99&quot; 
+## [100] &quot;100&quot; &quot;101&quot; &quot;102&quot; &quot;103&quot; &quot;104&quot; &quot;105&quot; &quot;106&quot; &quot;107&quot; &quot;108&quot; &quot;109&quot; &quot;110&quot;
+## [111] &quot;111&quot; &quot;112&quot; &quot;113&quot; &quot;114&quot; &quot;115&quot; &quot;116&quot; &quot;117&quot; &quot;118&quot; &quot;119&quot; &quot;120&quot; &quot;121&quot;
+## [122] &quot;122&quot; &quot;123&quot; &quot;124&quot; &quot;125&quot; &quot;126&quot; &quot;127&quot; &quot;128&quot; &quot;129&quot; &quot;130&quot; &quot;131&quot; &quot;132&quot;
+## [133] &quot;133&quot; &quot;134&quot; &quot;135&quot; &quot;136&quot; &quot;137&quot; &quot;138&quot; &quot;139&quot; &quot;140&quot; &quot;141&quot; &quot;142&quot; &quot;143&quot;
+## [144] &quot;144&quot; &quot;145&quot; &quot;146&quot; &quot;147&quot; &quot;148&quot; &quot;149&quot; &quot;150&quot;
+## 
+## [[2]]
+## [1] &quot;Sepal.Length&quot; &quot;Sepal.Width&quot;  &quot;Petal.Length&quot; &quot;Petal.Width&quot; 
+## [5] &quot;Species&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dim</span>(d.f)</code></pre></div>
+<pre><code>## [1] 150   5</code></pre>
+<p>Fijaos en que el resultado de <code>rownames</code> son los identificadores de las filas entre comillas, es decir, considerados como palabras; <code>R</code> entiende siempre que estos identificadores son palabras, aunque, como en este caso, sean números.</p>
+<p>Recordaréis que se puede obtener el valor de una componente de una <code>list</code> añadiendo al nombre de esta última un sufijo formado por el signo <code>$</code> seguido del nombre de la componente. De manera similar, para obtener una columna concreta de un <em>data frame</em> basta añadir a su nombre un sufijo formado por el signo<code>$</code>seguido del nombre de la variable; el resultado será un vector o un factor, según cómo esté definida la columna dentro del <em>data frame</em></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d.f<span class="op">$</span>Sepal.Length[<span class="dv">1</span><span class="op">:</span><span class="dv">30</span>]</code></pre></div>
+<pre><code>##  [1] 5.1 4.9 4.7 4.6 5.0 5.4 4.6 5.0 4.4 4.9 5.4 4.8 4.8 4.3 5.8 5.7 5.4
+## [18] 5.1 5.7 5.1 5.4 5.1 4.6 5.1 4.8 5.0 5.0 5.2 5.2 4.7</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d.f<span class="op">$</span>Species[<span class="dv">1</span><span class="op">:</span><span class="dv">30</span>]</code></pre></div>
+<pre><code>##  [1] setosa setosa setosa setosa setosa setosa setosa setosa setosa setosa
+## [11] setosa setosa setosa setosa setosa setosa setosa setosa setosa setosa
+## [21] setosa setosa setosa setosa setosa setosa setosa setosa setosa setosa
+## Levels: setosa versicolor virginica</code></pre>
+<p>Como también pasaba con las componentes de las <code>list</code>, las variables de un <em>data frame</em> son internas, no están definidas en el entorno global de trabajo de <code>R</code>.</p>
+<pre><code>&gt; Sepal.Length 
+Error: object &#39;Sepal.Length&#39; not found</code></pre>
+<p>En la Sección <a href="chap-df.html#sub:attach">6.8</a> explicaremos cómo podemos declarar las variables internas de un <em>data frame</em> como variables globales, y así poder usarlas directamente por su nombre, sin tener que añadirles delante el nombre del <em>data frame</em> y el <code>\$</code>.</p>
+<p>Los <em>data frames</em> comparten con las matrices el uso de los corchetes para extraer trozos por filas y columnas. Los resultados que se obtienen son de nuevo <em>data frames</em>, y tanto los nombres de las columnas como los identificadores de las filas se heredan del <em>data frame</em> original; podemos comprobarlo en los siguientes ejemplos:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d.f[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, ] <span class="co">#La subtabla de las 5 primeras filas  </span></code></pre></div>
+<pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+## 2          4.9         3.0          1.4         0.2  setosa
+## 3          4.7         3.2          1.3         0.2  setosa
+## 4          4.6         3.1          1.5         0.2  setosa
+## 5          5.0         3.6          1.4         0.2  setosa</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d.f[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>]  <span class="co">#La subtabla de las 5 primeras filas y las 3 primeras columnas</span></code></pre></div>
+<pre><code>##   Sepal.Length Sepal.Width Petal.Length
+## 1          5.1         3.5          1.4
+## 2          4.9         3.0          1.4
+## 3          4.7         3.2          1.3
+## 4          4.6         3.1          1.5
+## 5          5.0         3.6          1.4</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d.f[d.f<span class="op">$</span>Species<span class="op">==</span><span class="st">&quot;virginica&quot;</span> <span class="op">&amp;</span><span class="st"> </span>d.f<span class="op">$</span>Sepal.Length<span class="op">&gt;</span><span class="dv">7</span>, ]  <span class="co">#La subtabla de filas con Species=virginica y Sepal.Length&gt;7</span></code></pre></div>
+<pre><code>##     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species
+## 103          7.1         3.0          5.9         2.1 virginica
+## 106          7.6         3.0          6.6         2.1 virginica
+## 108          7.3         2.9          6.3         1.8 virginica
+## 110          7.2         3.6          6.1         2.5 virginica
+## 118          7.7         3.8          6.7         2.2 virginica
+## 119          7.7         2.6          6.9         2.3 virginica
+## 123          7.7         2.8          6.7         2.0 virginica
+## 126          7.2         3.2          6.0         1.8 virginica
+## 130          7.2         3.0          5.8         1.6 virginica
+## 131          7.4         2.8          6.1         1.9 virginica
+## 132          7.9         3.8          6.4         2.0 virginica
+## 136          7.7         3.0          6.1         2.3 virginica</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d.f[d.f<span class="op">$</span>Species<span class="op">==</span><span class="st">&quot;virginica&quot;</span> <span class="op">&amp;</span><span class="st"> </span>d.f<span class="op">$</span>Sepal.Length<span class="op">&gt;</span><span class="dv">7</span>, ][<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>,]  <span class="co">#La subtabla de las 4 primeras filas de la anterior</span></code></pre></div>
+<pre><code>##     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species
+## 103          7.1         3.0          5.9         2.1 virginica
+## 106          7.6         3.0          6.6         2.1 virginica
+## 108          7.3         2.9          6.3         1.8 virginica
+## 110          7.2         3.6          6.1         2.5 virginica</code></pre>
+<p>En todos los casos, obtenemos subtablas del <em>data frame</em> <code>d.f</code> con sus filas y columnas determinadas por las expresiones entre corchetes.</p>
+</div>
+<div id="como-importar-y-exportar-data-frames" class="section level2">
+<h2><span class="header-section-number">6.2</span> Cómo importar y exportar <em>data frames</em></h2>
+<p><code>R</code> dispone de varias instrucciones que permiten importar ficheros externos como objetos de datos; por ejemplo, ya vimos en la Lección <a href="chap-vect.html#chap:vect">4</a> la función <code>scan</code>, que permitía definir un vector con el contenido de un fichero. En esta sección explicaremos cómo podemos definir un <em>data frame</em> a partir de una tabla de datos contenida en un fichero externo. Para ello, usaremos la función <code>read.table</code> o el menú &lt;&lt;<em>Import Dataset</em>&gt;&gt; de la pestaña <strong>Environment</strong> de la ventana superior derecha de <em>RStudio</em>. En ambos casos, el fichero a importar ha de ser de texto simple: nada de ficheros en formato <em>doc</em> o <em>xls</em>, cuya lectura requiere funciones específicas (página ).</p>
+<p>Empecemos con la función <code>read.table</code>. Para crear un <em>data frame</em> a partir de un fichero de texto simple que contenga una tabla de datos, podemos aplicar esta función al nombre del fichero, si está en el directorio de trabajo de <code>R</code>, o a su <code>url</code> , si está en Internet; en ambos casos, entre comillas. Esta función <code>read.table</code> tiene algunos parámetros que evitan errores en la creación del <em>data frame</em>:</p>
+<ul>
+<li><code>sep</code>. Como ya ocurría con la función <code>scan</code>, la función <code>read.table</code> entiende por defecto que las separaciones entre columnas en el fichero están marcadas por espacios en blanco. Si esta separación está marcada por comas, signos de punto y coma, tabuladores o de cualquier otra manera, hay que especificarlo con este parámetro.</li>
+</ul>
+<p>Por ejemplo, tenemos que especificar <code>sep=&quot;,&quot;</code> para indicar que las separaciones entre columnas son comas, <code>sep=&quot;;&quot;</code> para indicar que las separaciones entre columnas son signos de punto y coma, y <code>sep=&quot;\t&quot;</code> para indicar que las separaciones entre columnas son tabuladores.</p>
+<ul>
+<li><p><code>header</code>. Si la tabla que importamos tiene una primera fila con los nombres de las columnas, es conveniente especificarlo con el parámetro <code>header=TRUE</code>; en caso contrario, y según cómo esté formateado el fichero, puede que <code>R</code> entienda la fila de los nombres de las variables como la primera fila de observaciones. Si, en cambio, las columnas de la tabla que importamos no tienen nombre, no hace falta especificar el parámetro <code>header</code> (o usar <code>header=FALSE</code>, que es su valor por defecto), y después ya pondremos nombres a las variables con la función <code>names</code> (véase la Sección <a href="chap-df.html#sec:moddf">6.4</a>).</p></li>
+<li><p><code>dec</code>. Como ya explicamos en la función <code>scan</code>, podemos usar el parámetro <code>dec</code> para especificar el separador decimal, si no es un punto.</p></li>
+<li><p><code>stringsAsFactors</code>. Por defecto, <code>read.table</code> transforma en factores las columnas de palabras de la tabla que importa. Para impedir esta transformación, de manera que los vectores de palabras se importen como tales, podemos usar <code>stringsAsFactors=FALSE</code>.</p></li>
+<li><p><code>encoding</code>. Como también ya explicamos en la función <code>scan</code> (página ), este parámetro sirve para indicar la codificación de alfabeto del fichero que se va a importar, y se ha de usar si dicho fichero contiene palabras con letras acentuadas o caracteres especiales y su codificación no coincide con la que espera nuestro ordenador: lo notaremos porque si importamos el fichero sin especificar este parámetro, los acentos se importan mal. Como los ficheros externos que usamos en este curso están codificados en utf8, los usuarios de Windows de vez en cuando tendrán que usar <code>encoding=&quot;latin1&quot;</code>. Avisaremos cada vez que sea necesario.</p></li>
+</ul>
+<p>Para otros parámetros, podéis consultar la Ayuda de <code>read.table</code>.</p>
+<p>Vamos a ilustrar el uso de esta función. Descargad en vuestro directorio de trabajo de <code>R</code> los dos ficheros siguientes, manteniendo sus nombres y extensiones:</p>
+<p><a href="http://aprender.uib.es/Rdir/NotaHermanos.txt" class="uri">http://aprender.uib.es/Rdir/NotaHermanos.txt</a> <a href="http://aprender.uib.es/Rdir/NotaHermanosc.txt" class="uri">http://aprender.uib.es/Rdir/NotaHermanosc.txt</a></p>
+<p>Ambos ficheros son básicamente la misma tabla de datos, que recoge, para algunos estudiantes de primer curso de la UIB de hace unos años, el grado en el que estaban matriculados (Biología, &lt;<BL>&gt;, o Bioquímica, &lt;<BQ>&gt;), su número de hermanos y la nota que obtuvieron en un determinado examen; la diferencia es que, en el primero, las columnas están separadas por espacios en blanco, y en el segundo, por comas. Ambos ficheros contienen una primera fila con los nombres de las variables. Están codificados en utf8, pero como no contienen letras acentuadas ni caracteres especiales, no tenéis que preocuparos por su codificación.</p>
+<p>Para crear un <em>data frame</em> llamado <code>NH1</code> a partir de la copia local del fichero <code>NotaHermanos.txt</code>, basta aplicar la función <code>read.table</code> a su nombre entre comillas y especificar <code>header=TRUE</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">NH1=<span class="kw">read.table</span>(<span class="st">&quot;NotaHermanos.txt&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>)</code></pre></div>
+<p>Es una buena costumbre, una vez definido un <em>data frame</em> a partir de un fichero externo, comprobar que se ha importado bien. Como una tabla de datos puede tener muchas filas, verla entera en la consola puede ser poco práctico; lo mejor es<br />
+usar las funciones <code>str</code> y <code>View</code> o <code>head</code>. Os aconsejamos que, siempre que vayáis a trabajar con un <em>data frame</em>, le echéis antes un vistazo con estas funciones para comprobar su estructura, los nombres de sus variables, los tipos de sus datos, etc. Esto es especialmente importante cuando se trata de <em>data frames</em> importados, porque si no hemos especificado los parámetros adecuados, puede que en el proceso de lectura y definición del <em>data frame</em> se hayan perdido los nombres de las variables o la estructura de columnas.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(NH1)</code></pre></div>
+<pre><code>##   Grado Hermanos Nota
+## 1    BQ        1   93
+## 2    BL        1   35
+## 3    BL        1   55
+## 4    BL        1   77
+## 5    BL        2   81
+## 6    BQ        0   86</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(NH1)</code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    87 obs. of  3 variables:
+##  $ Grado   : Factor w/ 2 levels &quot;BL&quot;,&quot;BQ&quot;: 2 1 1 1 1 2 2 1 1 1 ...
+##  $ Hermanos: int  1 1 1 1 2 0 1 1 1 1 ...
+##  $ Nota    : int  93 35 55 77 81 86 97 40 16 31 ...</code></pre>
+<p>Si no hubiéramos especificado <code>header=TRUE</code>, el formato del <em>data frame</em> resultante no habría sido el adecuado.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">NH1.mal=<span class="kw">read.table</span>(<span class="st">&quot;NotaHermanos.txt&quot;</span>)
+<span class="kw">str</span>(NH1.mal)</code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    88 obs. of  3 variables:
+##  $ V1: Factor w/ 3 levels &quot;BL&quot;,&quot;BQ&quot;,&quot;Grado&quot;: 3 2 1 1 1 1 2 2 1 1 ...
+##  $ V2: Factor w/ 6 levels &quot;0&quot;,&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,..: 6 2 2 2 2 3 1 2 2 2 ...
+##  $ V3: Factor w/ 50 levels &quot;10&quot;,&quot;100&quot;,&quot;11&quot;,..: 50 48 13 26 38 41 45 49 17 4 ...</code></pre>
+<p>Sin el parámetro <code>header=TRUE</code>, <code>R</code> ha entendido que <code>Grado</code>, <code>Hermanos</code> y <code>Nota</code> son elementos de sus columnas respectivas, y no sus nombres; en consecuencia, por un lado, ha llamado por defecto <code>V1</code>, <code>V2</code> y <code>V3</code> a las columnas del <em>data frame</em>, y por otro, como <code>Grado</code>, <code>Hermanos</code> y <code>Nota</code> son palabras y los datos de cada variable de un <em>data frame</em> han de ser del mismo tipo, ha considerado que todas las entradas de cada columna eran palabras. Finalmente, como, al crear un <em>data frame</em>, <code>R</code> interpreta los vectores de palabras como factores si no especificamos lo contrario, hemos obtenido un <em>data frame</em> formado por tres factores, y hemos perdido la información numérica que contenían las columnas con el número de hermanos y la nota.</p>
+<p>Para importar el fichero <code>NotaHermanosc.txt</code>, donde las columnas están separadas por comas, hay que usar el parámetro <code>sep=&quot;,&quot;</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">NH2=<span class="kw">read.table</span>(<span class="st">&quot;NotaHermanosc.txt&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>, <span class="dt">sep=</span><span class="st">&quot;,&quot;</span>)
+<span class="kw">str</span>(NH2)</code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    87 obs. of  3 variables:
+##  $ Grado   : Factor w/ 2 levels &quot;BL&quot;,&quot;BQ&quot;: 2 1 1 1 1 2 2 1 1 1 ...
+##  $ Hermanos: int  1 1 1 1 2 0 1 1 1 1 ...
+##  $ Nota    : int  93 35 55 77 81 86 97 40 16 31 ...</code></pre>
+<p>Sin este parámetro, <code>R</code> hubiera entendido cada fila como una sola palabra.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">NH2.mal=<span class="kw">read.table</span>(<span class="st">&quot;NotaHermanosc.txt&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>)
+<span class="kw">str</span>(NH2.mal)</code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    87 obs. of  1 variable:
+##  $ Grado.Hermanos.Nota: Factor w/ 71 levels &quot;BL,0,20&quot;,&quot;BL,0,40&quot;,..: 62 12 18 24 38 47 63 15 9 11 ...</code></pre>
+<p>Veamos el efecto de <code>stringsAsFactors=FALSE</code>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">NH3=<span class="kw">read.table</span>(<span class="st">&quot;NotaHermanosc.txt&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>, <span class="dt">sep=</span><span class="st">&quot;,&quot;</span>, <span class="dt">stringsAsFactors=</span><span class="ot">FALSE</span>)
+<span class="kw">str</span>(NH3)</code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    87 obs. of  3 variables:
+##  $ Grado   : chr  &quot;BQ&quot; &quot;BL&quot; &quot;BL&quot; &quot;BL&quot; ...
+##  $ Hermanos: int  1 1 1 1 2 0 1 1 1 1 ...
+##  $ Nota    : int  93 35 55 77 81 86 97 40 16 31 ...</code></pre>
+<p>La variable <code>Grado</code> se ha importado como un vector de palabras: lo indica el <code>chr</code>, de <code>character</code>, en la fila correspondiente del resultado de <code>str</code>.</p>
+<p>Para importar las versiones de Internet de estos ficheros, tendríamos que usar las mismas instrucciones, cambiando el nombre del fichero por su <code>url</code> , siempre entre comillas. Por ejemplo:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">NH4=<span class="kw">read.table</span>(<span class="st">&quot;http://aprender.uib.es/Rdir/NotaHermanos.txt&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>)
+<span class="kw">str</span>(NH4)</code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    87 obs. of  3 variables:
+##  $ Grado   : Factor w/ 2 levels &quot;BL&quot;,&quot;BQ&quot;: 2 1 1 1 1 2 2 1 1 1 ...
+##  $ Hermanos: int  1 1 1 1 2 0 1 1 1 1 ...
+##  $ Nota    : int  93 35 55 77 81 86 97 40 16 31 ...</code></pre>
+<p>Naturalmente, para poder importar un fichero de Internet, hay que estar conectados a Internet, el servidor que aloja el fichero tiene que funcionar, y además no tiene que requerir una palabra clave para acceder.</p>
+<div class="figure" style="text-align: center"><span id="fig:ID"></span>
+<img src="images/figID.png" alt="Importador de tablas de datos del `Rstudio`." width="80%" />
+<p class="caption">
+Figura 6.2: Importador de tablas de datos del <code>Rstudio</code>.
+</p>
+</div>
+<!--
+\begin{figure}[htb]
+\abovecaptionskip=-1ex
+\begin{center}
+\includegraphics[width=0.6\linewidth]{figID}
+\end{center}
+\caption{Importador de tablas de datos del `Rstudio`.}\label{fig:ID}
+\end{figure}
+-->
+<p>El menú &lt;&lt;<em>Import Dataset</em>&gt;&gt;, de la pestaña <strong>Environment</strong> o del menú &lt;&lt;<em>Tools</em>&gt;&gt;, es equivalente a la función <code>read.table</code> para ficheros que contengan tablas de datos de formatos sencillos. Al seleccionar dicho menú, se nos permite entrar un <code>url</code> o navegar por el ordenador para escoger el fichero. Al hacerlo, se abre una ventana como la de la Figura <a href="chap-df.html#fig:ID">6.2</a> donde, entre otras acciones:</p>
+<ul>
+<li>Podemos poner nombre al <em>data frame</em> (en el campo <code>Name</code> ).</li>
+<li>Podemos especificar la codificación de alfabeto del fichero (en el campo <code>Encoding</code> ).</li>
+<li>Podemos indicar si tiene una primera fila con los nombres de las variables (en el campo <code>Heading</code> ).</li>
+<li>Podemos especificar el signo que separa las columnas (en el campo <code>Separator</code> ) y el signo que separa la parte entera de la decimal (en el campo <code>Decimal</code> ).</li>
+<li>Podemos indicar si los vectores de palabras se han de convertir en factores (marcándolo en <code>Strings as factors</code> ).</li>
+</ul>
+<p>La ventaja de este menú es que en su campo superior derecho vemos el fichero original, lo que nos ayuda a rellenar los campos anteriores, y en el inferior derecho vemos el aspecto del <em>data frame</em> que creamos con nuestras elecciones. Su inconveniente es que, si queremos que nuestro análisis de datos sea reproducible por otras personas, es necesario incluir en el guión que publiquemos la función <code>read.table</code> con los parámetros exactos que hemos usado.</p>
+<p>Además de <code>read.table</code>, que sólo sirve para importar tablas en formato texto simple, <code>R</code> dispone de otras instrucciones similares para importar otros tipos de ficheros. Las más útiles son:</p>
+<ul>
+<li><code>read.csv</code>, para importar ficheros en formato CSV.</li>
+<li><code>read.xls</code> y <code>read.xlsx</code>, del paquete <code>xlsx</code>, para importar hojas de cálculo tipo <em>Excel</em> u <em>OpenOffice</em> en formato XLS o XLSX, respectivamente. Estas funciones usan Java; si no lo tenéis instalado y no lo queréis instalar, lo mejor es que guardéis la hoja de cálculo en formato CSV (tanto <em>Excel</em> como <em>OpenOffice</em> o <em>Numbers</em> ofrecen esta posibilidad) y uséis <code>read.csv</code>.</li>
+<li><code>read.mtb</code> y <code>read.spss</code>, del paquete <code>foreign</code>, para importar tablas de datos de Minitab y SPSS, respectivamente.</li>
+</ul>
+<p>Si necesitáis otras funciones de este tipo, entrad <code>help.search(read)</code>, buscad la función que os convenga y consultad su Ayuda.</p>
+<p>Podemos exportar un <em>data frame</em> a un fichero usando la función <code>write.table</code>. Su sintaxis básica es <code>write.table(, file=&quot;nombre del fichero&quot;)</code>.</p>
+<p>Esta función crea un fichero, en el directorio de trabajo de <code>R</code>, que contiene el <em>data frame</em> que hemos especificado en el argumento, y lo llama el nombre que hemos especificado en <code>file</code>. Además, podemos usar el parámetro <code>sep</code> para indicar el signo de separación de columnas en el fichero que creemos y el parámetro <code>dec</code> para indicar el separador decimal; por ejemplo,</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">A=iris[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>]
+A</code></pre></div>
+<pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width
+## 1          5.1         3.5          1.4         0.2
+## 2          4.9         3.0          1.4         0.2
+## 3          4.7         3.2          1.3         0.2
+## 4          4.6         3.1          1.5         0.2
+## 5          5.0         3.6          1.4         0.2</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">write.table</span>(A, <span class="dt">file=</span><span class="st">&quot;trozoiris.txt&quot;</span>)</code></pre></div>
+<p>guarda el <em>data frame</em> <span class="math inline">\(A\)</span> en un fichero llamado <code>trozoiris.txt</code>. Ahora podemos volver a importar este fichero.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">B=<span class="kw">read.table</span>(<span class="st">&quot;trozoiris.txt&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>)   <span class="co">#Importamos la tabla</span>
+B</code></pre></div>
+<pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width
+## 1          5.1         3.5          1.4         0.2
+## 2          4.9         3.0          1.4         0.2
+## 3          4.7         3.2          1.3         0.2
+## 4          4.6         3.1          1.5         0.2
+## 5          5.0         3.6          1.4         0.2</code></pre>
+</div>
+<div id="como-crear-data-frames" class="section level2">
+<h2><span class="header-section-number">6.3</span> Cómo crear <em>data frames</em></h2>
+<p>Además de trabajar con <em>data frames</em> importados o predefinidos, también podemos crearlos; para ello, organizaremos en forma de tabla algunos vectores, cada uno de los cuales contendrá las observaciones de una variable para un conjunto de individuos o casos, y de manera que los datos en todos estos vectores estén en el mismo orden de los individuos: es decir, que la primera entrada de cada vector corresponda a un mismo individuo, la segunda entrada de cada vector corresponda a otro mismo individuo, y así sucesivamente.</p>
+<p>Para construir un <em>data frame</em> a partir de unos vectores, se usa la función <code>data.frame</code> aplicada a los vectores en el orden en el que queramos disponer las columnas de la tabla; de esta manera, las variables tomarán los nombres de los vectores. Estos nombres también se pueden especificar en el argumento de la función <code>data.frame</code>, entrando cada columna con una construcción de la forma</p>
+<p><em>Nombre de la variable</em><code>=</code><em>Vector con el contenido de la variable</em>.</p>
+<p>Vamos a ilustrar esta función con un ejemplo sencillo, que arrastraremos durante buena parte de lo que queda de lección. Vamos a construir un <em>data frame</em> que contenga algunos datos sobre estudiantes; concretamente, este <em>data frame</em> tendrá tres variables: una primera columna con el sexo del estudiante, la segunda columna con su edad en años y la tercera con su número de hermanos.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Sexo=<span class="kw">c</span>(<span class="st">&quot;Hombre&quot;</span>,<span class="st">&quot;Hombre&quot;</span>,<span class="st">&quot;Mujer&quot;</span>,<span class="st">&quot;Hombre&quot;</span>,<span class="st">&quot;Hombre&quot;</span>,
+   <span class="st">&quot;Hombre&quot;</span>,<span class="st">&quot;Mujer&quot;</span>)
+Edad=<span class="kw">c</span>(<span class="dv">17</span>,<span class="dv">18</span>,<span class="dv">20</span>,<span class="dv">18</span>,<span class="dv">18</span>,<span class="dv">18</span>,<span class="dv">19</span>)
+Hermanos=<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>)
+d.f1=<span class="kw">data.frame</span>(Sexo, Edad, Hermanos)
+d.f1</code></pre></div>
+<pre><code>##     Sexo Edad Hermanos
+## 1 Hombre   17        2
+## 2 Hombre   18        0
+## 3  Mujer   20        0
+## 4 Hombre   18        1
+## 5 Hombre   18        1
+## 6 Hombre   18        1
+## 7  Mujer   19        0</code></pre>
+<p>Puesto que iremos modificando este <em>data frame</em>, vamos a guardar una copia de seguridad (un <em>backup</em>) en <code>d.f1bk</code> para poder recuperar su estado original si lo necesitamos.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d.f1bk=d.f1</code></pre></div>
+<p>Es muy prudente y recomendable que guardéis siempre copias de seguridad de los <em>data frames</em> que generéis si vais a manipularlos, porque hay cambios en un <em>data frame</em> que son irreversibles y, por lo tanto, si os arrepentís de haber hecho algún cambio, bien podría ser que no lo pudierais deshacer.</p>
+<p>Vamos a consultar algunas características del <em>data frame</em> <code>d.f1</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(d.f1)</code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    7 obs. of  3 variables:
+##  $ Sexo    : Factor w/ 2 levels &quot;Hombre&quot;,&quot;Mujer&quot;: 1 1 2 1 1 1 2
+##  $ Edad    : num  17 18 20 18 18 18 19
+##  $ Hermanos: num  2 0 0 1 1 1 0</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rownames</span>(d.f1)</code></pre></div>
+<pre><code>## [1] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; &quot;5&quot; &quot;6&quot; &quot;7&quot;</code></pre>
+<p>Vemos que la primera variable es un factor con dos niveles, y las otras dos son vectores numéricos (<code>num</code>). Vemos también que <code>R</code> ha asignado como identificadores de las filas los números del 1 al 7, pero los considera palabras.</p>
+<p>La función <code>data.frame</code> dispone de algunos parámetros que permiten ajustar a nuestras necesidades el <em>data frame</em> que creamos. Los más útiles son los siguientes:</p>
+<ul>
+<li><p><code>row.names</code>. Sirve para especificar los identificadores de las filas.</p></li>
+<li><p><code>stringsAsFactors</code>. Por defecto, <code>data.frame</code> convierte los vectores de palabras en factores. Con <code>stringsAsFactors=FALSE</code>, imponemos que los vectores de palabras se mantengan como tales en el <em>data frame</em></p></li>
+</ul>
+<p>Veamos un ejemplo de aplicación de estos dos parámetros.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d.f2=<span class="kw">data.frame</span>(Sexo, Edad, Hermanos, <span class="dt">stringsAsFactors=</span><span class="ot">FALSE</span>, 
+  <span class="dt">row.names=</span><span class="kw">c</span>(<span class="st">&quot;E1&quot;</span>,<span class="st">&quot;E2&quot;</span>,<span class="st">&quot;E3&quot;</span>,<span class="st">&quot;E4&quot;</span>,<span class="st">&quot;E5&quot;</span>,<span class="st">&quot;E6&quot;</span>,<span class="st">&quot;E7&quot;</span>))
+d.f2</code></pre></div>
+<pre><code>##      Sexo Edad Hermanos
+## E1 Hombre   17        2
+## E2 Hombre   18        0
+## E3  Mujer   20        0
+## E4 Hombre   18        1
+## E5 Hombre   18        1
+## E6 Hombre   18        1
+## E7  Mujer   19        0</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(d.f2)</code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    7 obs. of  3 variables:
+##  $ Sexo    : chr  &quot;Hombre&quot; &quot;Hombre&quot; &quot;Mujer&quot; &quot;Hombre&quot; ...
+##  $ Edad    : num  17 18 20 18 18 18 19
+##  $ Hermanos: num  2 0 0 1 1 1 0</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d.f2<span class="op">$</span>Sexo</code></pre></div>
+<pre><code>## [1] &quot;Hombre&quot; &quot;Hombre&quot; &quot;Mujer&quot;  &quot;Hombre&quot; &quot;Hombre&quot; &quot;Hombre&quot; &quot;Mujer&quot;</code></pre>
+<p>Como vemos, el efecto de <code>stringsAsFactors=FALSE</code> ha sido que la variable <code>sexo</code> es ahora un vector de palabras, y el del parámetro <code>row.names</code> ha sido llamar <code>E1,E2,...,E7</code> a las filas.</p>
+<p>Si hemos asignado identificadores a las filas, podemos usarlos para extraer subtablas del <em>data frame</em> (aunque también podemos seguir usando los números de las filas). Recordad que, si usáis los identificadores, como son palabras, hay que escribirlos entre comillas.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d.f2[<span class="kw">c</span>(<span class="st">&quot;E1&quot;</span>,<span class="st">&quot;E2&quot;</span>), ] <span class="co">#Subtabla con las filas E1 y E2</span></code></pre></div>
+<pre><code>##      Sexo Edad Hermanos
+## E1 Hombre   17        2
+## E2 Hombre   18        0</code></pre>
+<p>Otra manera de crear un <em>data frame</em> con <code>R</code> es usando el editor de datos del que ya hemos hablado en la Lección <a href="chap-vect.html#chap:vect">4</a>.<a href="#fn28" class="footnoteRef" id="fnref28"><sup>28</sup></a><br />
+Recordaréis que, para abrir un objeto de datos con este editor, se le aplica la función <code>fix</code>. <code>R</code> abre entonces el objeto en una nueva ventana de edición. Los cambios que realicemos en un objeto con el editor de datos se guardarán cuando cerremos esta ventana.</p>
+<p>Para crear un <em>data frame</em> con el editor de datos, lo primero que hay que hacer es crear un <em>data frame</em> con la primera fila, y luego abrirlo con el editor para ir añadiendo filas (y columnas, si se desea). La apariencia exacta de esta ventana y la manera de editar el <em>data frame</em> dependen de la interfaz de <code>R</code> que se use; por ejemplo, en el <code>Rstudio</code> de Mac OS X, entraríamos</p>
+<pre><code>d.f3=data.frame(Sexo=c(&quot;Hombre&quot;), Edad=c(17), Hermanos=c(2))
+fix(d.f3)</code></pre>
+<p>y se abriría la ventana que muestra la Figura <a href="chap-df.html#fig:edit">6.3</a>.</p>
+<div class="figure" style="text-align: center"><span id="fig:edit"></span>
+<img src="images/dataeditordf2.png" alt="Editor de *data frames*  de `Rstudio` en  Mac OS X." width="80%" />
+<p class="caption">
+Figura 6.3: Editor de <em>data frames</em> de <code>Rstudio</code> en Mac OS X.
+</p>
+</div>
+<!--
+\begin{figure}[htb]
+\abovecaptionskip=-1ex
+\begin{center}
+\includegraphics[width=0.5\linewidth]{dataeditordf2.pdf}
+\end{center}
+\caption{Editor de *data frames* \ del `Rstudio` de Mac OS X.}\label{fig:edit}
+\end{figure}
+-->
+</div>
+<div id="sec:moddf" class="section level2">
+<h2><span class="header-section-number">6.4</span> Cómo modificar un <em>data frame</em></h2>
+<p>En esta sección veremos la manera de modificar un <em>data frame</em> una vez creado o importado.</p>
+<p>Para cambiar los nombres de las variables, podemos usar la instrucción</p>
+<p><code>names(</code><em>data frame</em><code>)=</code><em>vector con los nombres de las variables</em>.</p>
+<p>Volvamos al <code>d.f1</code>. Tras recordar su estructura, cambiaremos los nombres de sus variables, sustituyéndolos por sus iniciales, y volveremos a consultar su estructura para ver cómo han cambiado estos nombres.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(d.f1)</code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    7 obs. of  3 variables:
+##  $ Sexo    : Factor w/ 2 levels &quot;Hombre&quot;,&quot;Mujer&quot;: 1 1 2 1 1 1 2
+##  $ Edad    : num  17 18 20 18 18 18 19
+##  $ Hermanos: num  2 0 0 1 1 1 0</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">names</span>(d.f1)=<span class="kw">c</span>(<span class="st">&quot;S&quot;</span>,<span class="st">&quot;E&quot;</span>,<span class="st">&quot;H&quot;</span>)
+<span class="kw">str</span>(d.f1)</code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    7 obs. of  3 variables:
+##  $ S: Factor w/ 2 levels &quot;Hombre&quot;,&quot;Mujer&quot;: 1 1 2 1 1 1 2
+##  $ E: num  17 18 20 18 18 18 19
+##  $ H: num  2 0 0 1 1 1 0</code></pre>
+<p>Si sólo queremos cambiar el nombre de algunas variables, basta redefinir el trozo correspondiente del vector <code>names</code>. Así, si en la nueva copia de <code>d.f1</code> queremos volver a cambiar el nombre de la variable <code>E</code> por <code>Edad</code>, podríamos usar una de las dos instrucciones siguientes:</p>
+<p><code>names(d.f1)[2]=&quot;Edad&quot;</code> o <code>names(d.f1)[names(d.f1)==&quot;E&quot;]=&quot;Edad&quot;</code>.</p>
+<p>Con la primera, cambiaríamos el nombre de la segunda variable por <code>Edad</code>; con la segunda, cambiaríamos el nombre de la variable llamada <code>E</code> por <code>Edad</code>.</p>
+<p>Para modificar los identificadores de las filas, podemos usar la instrucción</p>
+<p><code>rownames(</code><em>data frame</em><code>)=</code><em>vector con los nombres de las filas</em>.</p>
+<p>Como cada identificador ha de determinar el individuo al que corresponde la fila, conviene que estos identificadores sean todos diferentes.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rownames</span>(d.f1)=<span class="kw">paste</span>(<span class="st">&quot;Alumno&quot;</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">7</span>, <span class="dt">sep=</span><span class="st">&quot; &quot;</span>)
+d.f1</code></pre></div>
+<pre><code>##               S  E H
+## Alumno 1 Hombre 17 2
+## Alumno 2 Hombre 18 0
+## Alumno 3  Mujer 20 0
+## Alumno 4 Hombre 18 1
+## Alumno 5 Hombre 18 1
+## Alumno 6 Hombre 18 1
+## Alumno 7  Mujer 19 0</code></pre>
+<p>Como podéis deducir de su efecto, la función <code>paste</code> <em>pega</em> vectores, entrada a entrada, usando como separador el valor del parámetro <code>sep</code>; el separador por defecto es un espacio en blanco, por lo que no hubiera hecho falta especificarlo, lo hemos hecho sólo para mostrar el parámetro. Si en lugar de pegar un vector pegamos un elemento, éste se entiende como un vector constante formado por el número adecuado de copias.</p>
+<p>Podemos modificar los nombres de las filas y de las columnas simultáneamente con la instrucción</p>
+<p><code>dimnames(</code><em>dataframe</em><code>)=list(</code><em>vector con los nombres de las filas</em>, <em>vector con los nombres de las columnas</em><code>)</code>.</p>
+<p>Por ejemplo, vamos a cambiar de golpe en <code>d.f1</code> los identificadores de las filas, para que ahora sean números romanos, y los nombres de las variables, para que pasen a ser <code>V1,V2,V3</code>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dimnames</span>(d.f1)=<span class="kw">list</span>(<span class="kw">c</span>(<span class="st">&quot;I&quot;</span>,<span class="st">&quot;II&quot;</span>,<span class="st">&quot;III&quot;</span>,<span class="st">&quot;IV&quot;</span>,<span class="st">&quot;V&quot;</span>,<span class="st">&quot;VI&quot;</span>,<span class="st">&quot;VII&quot;</span>), 
+  <span class="kw">c</span>(<span class="st">&quot;V1&quot;</span>,<span class="st">&quot;V2&quot;</span>,<span class="st">&quot;V3&quot;</span>))
+d.f1</code></pre></div>
+<pre><code>##         V1 V2 V3
+## I   Hombre 17  2
+## II  Hombre 18  0
+## III  Mujer 20  0
+## IV  Hombre 18  1
+## V   Hombre 18  1
+## VI  Hombre 18  1
+## VII  Mujer 19  0</code></pre>
+<p>Para modificar entradas concretas de un <em>data frame</em>, podemos usar el editor de datos que se abre con <code>fix</code>, o podemos usar instrucciones similares a las que usábamos en los vectores y las matrices para modificar entradas.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d.f1=d.f1bk <span class="co">#Volvemos a la copia guardada</span>
+d.f1[<span class="dv">1</span>,<span class="dv">2</span>]=<span class="st">&quot;Joven&quot;</span> <span class="co">#Sustituimos la entrada (1,2) por la palabra   &quot;Joven&quot;</span>
+<span class="kw">str</span>(d.f1)</code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    7 obs. of  3 variables:
+##  $ Sexo    : Factor w/ 2 levels &quot;Hombre&quot;,&quot;Mujer&quot;: 1 1 2 1 1 1 2
+##  $ Edad    : chr  &quot;Joven&quot; &quot;18&quot; &quot;20&quot; &quot;18&quot; ...
+##  $ Hermanos: num  2 0 0 1 1 1 0</code></pre>
+<p>¡Vaya! Al introducir un dato de tipo palabra en la variable <code>Edad</code>, toda la columna ha pasado a ser un vector de palabras: recordemos que <code>R</code> considera del mismo tipo de datos todas las entradas de una columna de un <em>data frame</em>; y ahora ya no lo podemos arreglar volviendo a poner un número:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d.f1[<span class="dv">1</span>,<span class="dv">2</span>]=<span class="dv">17</span>
+<span class="kw">str</span>(d.f1)</code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    7 obs. of  3 variables:
+##  $ Sexo    : Factor w/ 2 levels &quot;Hombre&quot;,&quot;Mujer&quot;: 1 1 2 1 1 1 2
+##  $ Edad    : chr  &quot;17&quot; &quot;18&quot; &quot;20&quot; &quot;18&quot; ...
+##  $ Hermanos: num  2 0 0 1 1 1 0</code></pre>
+<p>Parece que hemos estropeado definitivamente el <em>data frame</em> <code>d.f1</code>. Pero no es así: simplemente tenemos que volver a redefinir la variable <code>Edad</code> como un vector numérico.</p>
+<p>Para modificar una columna entera, hay que igualar su nombre (que, recordemos, se especifica añadiendo al nombre del <em>data frame</em> el sufijo formado por el signo <code>$</code> seguido del nombre de la variable dentro del <em>data frame</em>) a su nuevo valor:</p>
+<p><em>data frame</em><code>$</code><em>variable</em><code>=</code><em>nuevo valor</em>`.</p>
+<p>Este nuevo valor puede ser el resultado de un cambio de tipo de datos aplicado a la variable. <code>R</code> dispone de una serie de funciones de la forma <code>as.tipo_de_objeto</code>, que convierten el objeto al tipo que expresa el nombre de la función. Ya hemos visto en la Sección <a href="chap-vect.html#subsec:factor">4.4</a> la función <code>as.factor</code>, que transforma un vector en un factor. Otras funciones de este estilo son <code>as.character</code>, <code>as.integer</code> o <code>as.numeric</code>, que transforman todos los datos de un objeto en palabras, números enteros o números reales, respectivamente.</p>
+<p>Así, para transformar la variable <code>Edad</code> de la última versión estropeada de <code>d.f1</code> en un vector numérico, basta entrar lo siguiente:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d.f1<span class="op">$</span>Edad=<span class="kw">as.numeric</span>(d.f1<span class="op">$</span>Edad)
+<span class="kw">str</span>(d.f1)</code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    7 obs. of  3 variables:
+##  $ Sexo    : Factor w/ 2 levels &quot;Hombre&quot;,&quot;Mujer&quot;: 1 1 2 1 1 1 2
+##  $ Edad    : num  17 18 20 18 18 18 19
+##  $ Hermanos: num  2 0 0 1 1 1 0</code></pre>
+<p>Un error típico al intentar modificar la variable <code>Edad</code> es entrar sólo <code>as.numeric(d.f1$Edad)</code>; con esta instrucción, obtenemos como resultado el vector <span class="math inline">\(17,18, 20, 18, 18, 18, 19\)</span>, pero no se modifica la variable <code>Edad</code> del <em>data frame</em> Tampoco sirve entrar <code>Edad=as.numeric(d.f1$Edad)</code>, porque esto define un vector llamado <code>Edad</code> de entradas <span class="math inline">\(17,18, 20, 18, 18, 18, 19\)</span>, pero sigue sin modificar la variable <code>Edad</code> del <em>data frame</em> La manera correcta de hacerlo es mediante</p>
+<p><em>data frame</em><code>$</code><em>variable</em> <code>=</code><em>nuevo valor</em> .</p>
+<p>Veamos otros ejemplos. Vamos a convertir la variable <code>Sexo</code> en un vector de palabras:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d.f1<span class="op">$</span>Sexo=<span class="kw">as.character</span>(d.f1<span class="op">$</span>Sexo)
+<span class="kw">str</span>(d.f1)</code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    7 obs. of  3 variables:
+##  $ Sexo    : chr  &quot;Hombre&quot; &quot;Hombre&quot; &quot;Mujer&quot; &quot;Hombre&quot; ...
+##  $ Edad    : num  17 18 20 18 18 18 19
+##  $ Hermanos: num  2 0 0 1 1 1 0</code></pre>
+<p>Y ahora vamos a convertir la variable <code>Hermanos</code> en un factor ordenado:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d.f1<span class="op">$</span>Hermanos=<span class="kw">ordered</span>(d.f1<span class="op">$</span>Hermanos, <span class="dt">levels=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>))
+<span class="kw">str</span>(d.f1)</code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    7 obs. of  3 variables:
+##  $ Sexo    : chr  &quot;Hombre&quot; &quot;Hombre&quot; &quot;Mujer&quot; &quot;Hombre&quot; ...
+##  $ Edad    : num  17 18 20 18 18 18 19
+##  $ Hermanos: Ord.factor w/ 3 levels &quot;0&quot;&lt;&quot;1&quot;&lt;&quot;2&quot;: 3 1 1 2 2 2 1</code></pre>
+<p>Naturalmente, podemos cambiar el contenido de toda una variable de otras maneras que no sea sólo modificar su tipo de datos:<br />
+basta igualarla a su nuevo valor.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d.f1<span class="op">$</span>Edad=<span class="st">&quot;Joven&quot;</span>
+d.f1</code></pre></div>
+<pre><code>##     Sexo  Edad Hermanos
+## 1 Hombre Joven        2
+## 2 Hombre Joven        0
+## 3  Mujer Joven        0
+## 4 Hombre Joven        1
+## 5 Hombre Joven        1
+## 6 Hombre Joven        1
+## 7  Mujer Joven        0</code></pre>
+<p>Al igualar la variable <code>Edad</code> a la palabra &lt;<Joven>&gt;, la ha substituido por el correspondiente vector constante.</p>
+</div>
+<div id="sec:dfaf" class="section level2">
+<h2><span class="header-section-number">6.5</span> Cómo añadir filas y columnas a un <em>data frame</em></h2>
+<p>Podemos añadir filas a un <em>data frame</em> definiéndolas con <em>data frame</em><code>[</code><em>fila</em><code>, ]=c(...)</code>; pero esta construcción no es muy recomendable, porque si no vamos con cuidado puede provocar resultados no deseados:</p>
+<ul>
+<li><p>Las filas que añadimos de esta manera son vectores, y por lo tanto sus entradas han de ser todas del mismo tipo. Por consiguiente, esta opción sólo se puede usar en <em>data frames</em> cuyas variables contengan todas el mismo tipo de datos.</p></li>
+<li><p>Si no añadimos las filas inmediatamente siguientes a la última del <em>data frame</em>, los valores entre su última fila y las que añadimos quedarán no definidos, y aparecerán como <code>NA</code>; esto puede ser un problema a la hora de aplicar funciones al <em>data frame</em> y además estropea los factores.</p></li>
+</ul>
+<p>La mejor manera de añadir filas a un <em>data frame</em> es organizándolas en un nuevo <em>data frame</em> con los mismos nombres de las variables, y a continuación concatenarlas al <em>data frame</em> usando la función <code>rbind</code> que ya usábamos para matrices.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d.f1=d.f1bk  <span class="co">#Volvemos a la copia original</span>
+d.f1</code></pre></div>
+<pre><code>##     Sexo Edad Hermanos
+## 1 Hombre   17        2
+## 2 Hombre   18        0
+## 3  Mujer   20        0
+## 4 Hombre   18        1
+## 5 Hombre   18        1
+## 6 Hombre   18        1
+## 7  Mujer   19        0</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">nuevas.filas=<span class="kw">data.frame</span>(<span class="dt">Sexo=</span><span class="kw">c</span>(<span class="st">&quot;Hombre&quot;</span>,<span class="st">&quot;Hombre&quot;</span>), <span class="dt">Edad=</span><span class="kw">c</span>(<span class="dv">18</span>,<span class="dv">18</span>), 
+  <span class="dt">Hermanos=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))
+d.f1=<span class="kw">rbind</span>(d.f1, nuevas.filas)
+d.f1</code></pre></div>
+<pre><code>##     Sexo Edad Hermanos
+## 1 Hombre   17        2
+## 2 Hombre   18        0
+## 3  Mujer   20        0
+## 4 Hombre   18        1
+## 5 Hombre   18        1
+## 6 Hombre   18        1
+## 7  Mujer   19        0
+## 8 Hombre   18        1
+## 9 Hombre   18        2</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(d.f1)   <span class="co">#Los tipos de las variables no han cambiado</span></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    9 obs. of  3 variables:
+##  $ Sexo    : Factor w/ 2 levels &quot;Hombre&quot;,&quot;Mujer&quot;: 1 1 2 1 1 1 2 1 1
+##  $ Edad    : num  17 18 20 18 18 18 19 18 18
+##  $ Hermanos: num  2 0 0 1 1 1 0 1 2</code></pre>
+<p>Para añadir una variable, basta especificar el valor de la columna correspondiente; por ejemplo, vamos a añadir a <code>d.f1</code> una nueva variable llamada <code>Nueva</code> con el producto de la edad por el número de hermanos:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d.f1<span class="op">$</span>Nueva=d.f1<span class="op">$</span>Edad<span class="op">*</span>d.f1<span class="op">$</span>Hermanos
+d.f1</code></pre></div>
+<pre><code>##     Sexo Edad Hermanos Nueva
+## 1 Hombre   17        2    34
+## 2 Hombre   18        0     0
+## 3  Mujer   20        0     0
+## 4 Hombre   18        1    18
+## 5 Hombre   18        1    18
+## 6 Hombre   18        1    18
+## 7  Mujer   19        0     0
+## 8 Hombre   18        1    18
+## 9 Hombre   18        2    36</code></pre>
+<p>También podemos concatenar columnas a un <em>data frame</em> usando la función <code>cbind</code>; en este caso, se puede añadir directamente la columna, sin necesidad de convertirla previamente en un <em>data frame</em> La variable añadida ha de tener la misma longitud que las variables del <em>data frame</em> original; en caso contrario, se añadirán valores <code>NA</code> a las variables del <em>data frame</em> original o a la variable que añadimos hasta completar la misma longitud.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d.f1=<span class="kw">cbind</span>(d.f1, <span class="dt">Grado=</span><span class="kw">rep</span>(<span class="st">&quot;Biología&quot;</span>,<span class="dv">9</span>))
+d.f1</code></pre></div>
+<pre><code>##     Sexo Edad Hermanos Nueva    Grado
+## 1 Hombre   17        2    34 Biología
+## 2 Hombre   18        0     0 Biología
+## 3  Mujer   20        0     0 Biología
+## 4 Hombre   18        1    18 Biología
+## 5 Hombre   18        1    18 Biología
+## 6 Hombre   18        1    18 Biología
+## 7  Mujer   19        0     0 Biología
+## 8 Hombre   18        1    18 Biología
+## 9 Hombre   18        2    36 Biología</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(d.f1)</code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    9 obs. of  5 variables:
+##  $ Sexo    : Factor w/ 2 levels &quot;Hombre&quot;,&quot;Mujer&quot;: 1 1 2 1 1 1 2 1 1
+##  $ Edad    : num  17 18 20 18 18 18 19 18 18
+##  $ Hermanos: num  2 0 0 1 1 1 0 1 2
+##  $ Nueva   : num  34 0 0 18 18 18 0 18 36
+##  $ Grado   : Factor w/ 1 level &quot;Biología&quot;: 1 1 1 1 1 1 1 1 1</code></pre>
+<p>Finalmente, hay que recordar que también podemos usar el editor de datos para añadir (o eliminar) filas o columnas a un <em>data frame</em></p>
+</div>
+<div id="como-seleccionar-trozos-de-un-data-frame" class="section level2">
+<h2><span class="header-section-number">6.6</span> Cómo seleccionar trozos de un <em>data frame</em></h2>
+<p>Veamos ahora con más detalle cómo podemos extraer trozos de un <em>data frame</em>; el método básico es similar al que usábamos en las matrices. De hecho, para seleccionar un trozo de un <em>data frame</em>, podemos hacerlo exactamente como en las matrices, especificando los índices de las filas y columnas que nos interesen dentro de corchetes <code>[ , ]</code>. Pero como los individuos y las variables tienen nombres, también podemos usarlos para especificar filas y columnas.</p>
+<p>Por ejemplo, supongamos que queremos crear un nuevo <em>data frame</em> formado por las dos primeras filas de <code>d.f1</code>; podríamos hacerlo, al menos, de las tres maneras siguientes:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d.f1=d.f1bk  <span class="co">#Volvemos a la copia original</span>
+d.f1[<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>, ]   <span class="co">#Con los índices de las filas</span></code></pre></div>
+<pre><code>##     Sexo Edad Hermanos
+## 1 Hombre   17        2
+## 2 Hombre   18        0</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d.f1[<span class="kw">c</span>(<span class="st">&quot;1&quot;</span>,<span class="st">&quot;2&quot;</span>), ]   <span class="co">#Con los identificadores de las filas</span></code></pre></div>
+<pre><code>##     Sexo Edad Hermanos
+## 1 Hombre   17        2
+## 2 Hombre   18        0</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d.f1[<span class="kw">rownames</span>(d.f1)[<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>], ]   <span class="co">#Con un subvector del vector de identificadores de las filas</span></code></pre></div>
+<pre><code>##     Sexo Edad Hermanos
+## 1 Hombre   17        2
+## 2 Hombre   18        0</code></pre>
+<p>Podemos usar este tipo de instrucciones para obtener las filas en un orden diferente del que presentan en el <em>data frame</em> original.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d.f1[<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">1</span>), ]</code></pre></div>
+<pre><code>##     Sexo Edad Hermanos
+## 2 Hombre   18        0
+## 3  Mujer   20        0
+## 1 Hombre   17        2</code></pre>
+<p>También podemos seleccionar filas de un <em>data frame</em> mediante una condición lógica; en este caso, nos quedaremos sólo con los individuos que satisfagan esta condición. Por ejemplo, si queremos seleccionar los estudiantes de <code>d.f1</code> de menos de 19 años, podemos usar la construcción siguiente:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d.f1[d.f1<span class="op">$</span>Edad<span class="op">&lt;</span><span class="dv">19</span>, ]</code></pre></div>
+<pre><code>##     Sexo Edad Hermanos
+## 1 Hombre   17        2
+## 2 Hombre   18        0
+## 4 Hombre   18        1
+## 5 Hombre   18        1
+## 6 Hombre   18        1</code></pre>
+<p>Esta condición lógica puede involucrar más de una variable.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d.f1[d.f1<span class="op">$</span>Edad<span class="op">&lt;</span><span class="dv">19</span> <span class="op">&amp;</span><span class="st"> </span>d.f1<span class="op">$</span>Hermanos<span class="op">==</span><span class="dv">1</span>, ]</code></pre></div>
+<pre><code>##     Sexo Edad Hermanos
+## 4 Hombre   18        1
+## 5 Hombre   18        1
+## 6 Hombre   18        1</code></pre>
+<p>En cada caso, hemos obtenido un <em>data frame</em> Vamos a llamar <code>d.f.18</code> al primero.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d.f.<span class="dv">18</span>=d.f1[d.f1<span class="op">$</span>Edad<span class="op">&lt;</span><span class="dv">19</span>, ]
+d.f.<span class="dv">18</span></code></pre></div>
+<pre><code>##     Sexo Edad Hermanos
+## 1 Hombre   17        2
+## 2 Hombre   18        0
+## 4 Hombre   18        1
+## 5 Hombre   18        1
+## 6 Hombre   18        1</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(d.f.<span class="dv">18</span>)</code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    5 obs. of  3 variables:
+##  $ Sexo    : Factor w/ 2 levels &quot;Hombre&quot;,&quot;Mujer&quot;: 1 1 1 1 1
+##  $ Edad    : num  17 18 18 18 18
+##  $ Hermanos: num  2 0 1 1 1</code></pre>
+<p>Como vemos, las columnas que son factores heredan en estos sub <em>data frames</em> todos los niveles del factor original, aunque no aparezcan en el trozo que hemos extraído. Podemos borrar los niveles sobrantes de todos los factores redefiniendo el <em>data frame</em> como el resultado de aplicarle la función <code>droplevels</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d.f.<span class="dv">18</span>=<span class="kw">droplevels</span>(d.f.<span class="dv">18</span>)
+<span class="kw">str</span>(d.f.<span class="dv">18</span>)</code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    5 obs. of  3 variables:
+##  $ Sexo    : Factor w/ 1 level &quot;Hombre&quot;: 1 1 1 1 1
+##  $ Edad    : num  17 18 18 18 18
+##  $ Hermanos: num  2 0 1 1 1</code></pre>
+<p>Naturalmente, el mismo tipo de construcción se puede utilizar para definir un <em>data frame</em> formado sólo por algunas variables de la tabla original, o incluso por sólo algunas filas y columnas. Si sólo queremos definir la subtabla quedándonos con algunas variables, basta aplicar el nombre del <em>data frame</em> al vector de variables (sin necesidad de dejar el espacio en blanco seguido de una coma que serviría para indicar que nos referimos a columnas y no a filas); por ejemplo, con las cuatro instrucciones siguientes obtenemos cada vez el mismo resultado, un <em>data frame</em> formado por las dos primeras variables de <code>d.f1</code>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d.f1[ , <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)]  <span class="co">#Con la coma</span></code></pre></div>
+<pre><code>##     Sexo Edad
+## 1 Hombre   17
+## 2 Hombre   18
+## 3  Mujer   20
+## 4 Hombre   18
+## 5 Hombre   18
+## 6 Hombre   18
+## 7  Mujer   19</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d.f1[<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)]   <span class="co">#Sin la coma</span></code></pre></div>
+<pre><code>##     Sexo Edad
+## 1 Hombre   17
+## 2 Hombre   18
+## 3  Mujer   20
+## 4 Hombre   18
+## 5 Hombre   18
+## 6 Hombre   18
+## 7  Mujer   19</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d.f1[<span class="op">-</span><span class="dv">3</span>]   <span class="co">#Eliminamos la tercera columna</span></code></pre></div>
+<pre><code>##     Sexo Edad
+## 1 Hombre   17
+## 2 Hombre   18
+## 3  Mujer   20
+## 4 Hombre   18
+## 5 Hombre   18
+## 6 Hombre   18
+## 7  Mujer   19</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d.f1[<span class="kw">c</span>(<span class="st">&quot;Sexo&quot;</span>,<span class="st">&quot;Edad&quot;</span>)] <span class="co">#Especificamos los nombres</span></code></pre></div>
+<pre><code>##     Sexo Edad
+## 1 Hombre   17
+## 2 Hombre   18
+## 3  Mujer   20
+## 4 Hombre   18
+## 5 Hombre   18
+## 6 Hombre   18
+## 7  Mujer   19</code></pre>
+<p>Esta construcción se puede usar también para reordenar las columnas de un <em>data frame</em> ; por ejemplo:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d.f1=d.f1[<span class="kw">c</span>(<span class="st">&quot;Edad&quot;</span>,<span class="st">&quot;Hermanos&quot;</span>,<span class="st">&quot;Sexo&quot;</span>)]
+d.f1</code></pre></div>
+<pre><code>##   Edad Hermanos   Sexo
+## 1   17        2 Hombre
+## 2   18        0 Hombre
+## 3   20        0  Mujer
+## 4   18        1 Hombre
+## 5   18        1 Hombre
+## 6   18        1 Hombre
+## 7   19        0  Mujer</code></pre>
+<p>El paquete <code>dplyr</code> incluye la función <code>select</code> que amplía las posibilidades para especificar las variables que queremos extraer de un <em>data frame</em>; por ejemplo:</p>
+<ul>
+<li><code>select(</code><em>data frame</em><code>, starts_with(&quot;x&quot;))</code> extrae del <em>data frame</em> las variables cuyo nombre empieza con la palabra <code>x</code>.</li>
+<li><code>select(</code><em>data frame</em><code>, ends_with(&quot;x&quot;))</code> extrae del <em>data frame</em> las variables cuyo nombre termina con la palabra <code>x</code>.</li>
+<li><code>select(</code><em>data frame</em><code>, contains(&quot;x&quot;))</code> extrae del <em>data frame</em> las variables cuyo nombre contiene en algún sitio la palabra <code>x</code>.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Instalamos y cargamos el paquete &quot;dplyr&quot;</span>
+<span class="co">#...</span>
+<span class="kw">library</span>(dplyr)
+iris_Petal=<span class="kw">select</span>(iris, <span class="kw">starts_with</span>(<span class="st">&quot;Petal&quot;</span>))
+<span class="kw">head</span>(iris_Petal, <span class="dv">4</span>)</code></pre></div>
+<pre><code>##   Petal.Length Petal.Width
+## 1          1.4         0.2
+## 2          1.4         0.2
+## 3          1.3         0.2
+## 4          1.5         0.2</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">iris_Length=<span class="kw">select</span>(iris, <span class="kw">ends_with</span>(<span class="st">&quot;Length&quot;</span>))
+<span class="kw">head</span>(iris_Length, <span class="dv">4</span>)</code></pre></div>
+<pre><code>##   Sepal.Length Petal.Length
+## 1          5.1          1.4
+## 2          4.9          1.4
+## 3          4.7          1.3
+## 4          4.6          1.5</code></pre>
+<p>Para más información sobre otras habilidades de la función <code>select</code>, podéis consultar su Ayuda.</p>
+<p>Como podéis constatar, hay muchas maneras de extraer una misma subtabla de un <em>data frame</em> dado; veamos una última posibilidad, usando la función <code>subset</code>. La instrucción</p>
+<p><code>subset(</code><em>dta frame</em><code>,</code> <em>condición</em> <code>, select=</code> <em>columnas</em> <code>)</code></p>
+<p>extrae del <em>data frame</em> las filas que cumplen la <code>condición</code> y las columnas especificadas en el <code>select</code>; si queremos todas las filas, no hay que especificar ninguna condición, y si queremos todas las columnas, no hace falta especificar el parámetro <code>select</code>. Así, si del <em>data frame</em> <code>iris</code> queremos extraer un <em>data frame</em> formado sólo por las plantas de especie <code>virginica</code>, podemos usar la instrucción siguiente:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">iris.vir=<span class="kw">subset</span>(iris, Species<span class="op">==</span><span class="st">&quot;virginica&quot;</span>)
+<span class="kw">head</span>(iris.vir, <span class="dv">5</span>)</code></pre></div>
+<pre><code>##     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species
+## 101          6.3         3.3          6.0         2.5 virginica
+## 102          5.8         2.7          5.1         1.9 virginica
+## 103          7.1         3.0          5.9         2.1 virginica
+## 104          6.3         2.9          5.6         1.8 virginica
+## 105          6.5         3.0          5.8         2.2 virginica</code></pre>
+<p>Fijaos en que las variables en la <code>condición</code> se especifican con su nombre, sin añadir antes el nombre del <em>data frame</em></p>
+<p>En este <em>data frame</em>, la variable <code>Species</code> es redundante, porque todos los individuos toman el mismo valor; por lo tanto, podríamos haberla eliminado al construirlo.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">iris.vir=<span class="kw">subset</span>(iris, Species<span class="op">==</span><span class="st">&quot;virginica&quot;</span>, <span class="dt">select=</span><span class="dv">1</span><span class="op">:</span><span class="dv">4</span>)
+<span class="kw">head</span>(iris.vir, <span class="dv">5</span>)</code></pre></div>
+<pre><code>##     Sepal.Length Sepal.Width Petal.Length Petal.Width
+## 101          6.3         3.3          6.0         2.5
+## 102          5.8         2.7          5.1         1.9
+## 103          7.1         3.0          5.9         2.1
+## 104          6.3         2.9          5.6         1.8
+## 105          6.5         3.0          5.8         2.2</code></pre>
+<p>Las filas de este <em>data frame</em> han heredado los identificadores del <em>data frame</em> <code>iris</code>. Si esto nos molesta, los podemos cambiar.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rownames</span>(iris.vir)=<span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(<span class="kw">rownames</span>(iris.vir))
+<span class="kw">head</span>(iris.vir, <span class="dv">5</span>)</code></pre></div>
+<pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width
+## 1          6.3         3.3          6.0         2.5
+## 2          5.8         2.7          5.1         1.9
+## 3          7.1         3.0          5.9         2.1
+## 4          6.3         2.9          5.6         1.8
+## 5          6.5         3.0          5.8         2.2</code></pre>
+</div>
+<div id="como-aplicar-una-funcion-a-las-variables-de-un-data-frame" class="section level2">
+<h2><span class="header-section-number">6.7</span> Cómo aplicar una función a las variables de un <em>data frame</em></h2>
+<p>La mejor manera de aplicar una función a todas las columnas de un <em>data frame</em> en un solo paso es por medio de la instrucción</p>
+<p><code>sapply(</code><em>data frame</em><code>, FUN=</code><em>función</em> <code>)</code>.</p>
+<p>A modo de ejemplo, vamos a aplicar algunas funciones a las columnas numéricas del <em>data frame</em> <code>iris</code>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(iris)</code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    150 obs. of  5 variables:
+##  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
+##  $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
+##  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
+##  $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
+##  $ Species     : Factor w/ 3 levels &quot;setosa&quot;,&quot;versicolor&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sapply</span>(iris[ ,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>], <span class="dt">FUN=</span>mean) <span class="co">#Medias de las variables numéricas</span></code></pre></div>
+<pre><code>## Sepal.Length  Sepal.Width Petal.Length  Petal.Width 
+##     5.843333     3.057333     3.758000     1.199333</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sapply</span>(iris[ ,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>], <span class="dt">FUN=</span>sum) <span class="co">#Sumas de las variables numéricas</span></code></pre></div>
+<pre><code>## Sepal.Length  Sepal.Width Petal.Length  Petal.Width 
+##        876.5        458.6        563.7        179.9</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">f=<span class="cf">function</span>(x){<span class="kw">sqrt</span>(<span class="kw">sum</span>(x<span class="op">^</span><span class="dv">2</span>))} 
+<span class="kw">sapply</span>(iris[ ,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>], <span class="dt">FUN=</span>f) <span class="co">#Normas euclídeas de las variables    numéricas</span></code></pre></div>
+<pre><code>## Sepal.Length  Sepal.Width Petal.Length  Petal.Width 
+##     72.27621     37.82063     50.82037     17.38764</code></pre>
+<p>Es conveniente añadir en el argumento de <code>sapply</code> el parámetro <code>na.rm=TRUE</code>, sin el cual el valor que devolverá la función para las columnas que contengan algún <code>NA</code> será <code>NA</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">D=<span class="kw">data.frame</span>(<span class="dt">V1=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="ot">NA</span>,<span class="dv">3</span>), <span class="dt">V2=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="ot">NA</span>))
+D</code></pre></div>
+<pre><code>##   V1 V2
+## 1  1  2
+## 2  2  5
+## 3 NA  2
+## 4  3 NA</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sapply</span>(D, <span class="dt">FUN=</span>mean)</code></pre></div>
+<pre><code>## V1 V2 
+## NA NA</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sapply</span>(D, <span class="dt">FUN=</span>mean, <span class="dt">na.rm=</span><span class="ot">TRUE</span>)</code></pre></div>
+<pre><code>## V1 V2 
+##  2  3</code></pre>
+<p>A menudo querremos aplicar una función a variables de un <em>data frame</em> clasificadas por los niveles de un, o más de un, factor; esto se puede hacer con la instrucción <code>aggregate</code>, cuya sintaxis básica es</p>
+<p><code>aggregate(</code><em>variable(s)</em><code>~</code><em>factor(es)</em><code>, data=</code><em>data frame</em><code>, FUN=</code><em>función</em><code>)</code>.</p>
+<p>El resultado será un <em>data frame</em></p>
+<p>Por ejemplo, si queremos calcular las medias de las longitudes de los pétalos de las flores de cada una de las tres especies representadas en la tabla <code>iris</code>, podemos entrar la instrucción siguiente:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">aggregate</span>(Petal.Length<span class="op">~</span>Species, <span class="dt">data=</span>iris, <span class="dt">FUN=</span>mean, <span class="dt">na.rm=</span><span class="ot">TRUE</span>)</code></pre></div>
+<pre><code>##      Species Petal.Length
+## 1     setosa        1.462
+## 2 versicolor        4.260
+## 3  virginica        5.552</code></pre>
+<p>Hemos añadido <code>na.rm=TRUE</code> dentro del <code>aggregate</code> para que no tenga en cuenta los <code>NA</code> al calcular la media, por si acaso. Observad que el resultado es un <em>data frame</em> con variables <code>Species</code> y <code>Petal.Length</code>. Cada fila corresponde a un nivel del factor <code>Species</code>.</p>
+<p>Si queremos aplicar la función a más de una variable, tenemos que agruparlas a la izquierda de la tilde con <code>cbind</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">aggregate</span>(<span class="kw">cbind</span>(Petal.Length, Petal.Width)<span class="op">~</span>Species, <span class="dt">data=</span>iris,
+          <span class="dt">FUN=</span>mean)</code></pre></div>
+<pre><code>##      Species Petal.Length Petal.Width
+## 1     setosa        1.462       0.246
+## 2 versicolor        4.260       1.326
+## 3  virginica        5.552       2.026</code></pre>
+<p>Si queremos separar las variables mediante más de un factor, tenemos que agruparlos a la derecha de la tilde con signos <code>+</code>: <em>factor1</em><code>+</code><em>factor2</em><code>+</code>… . Veamos un ejemplo. El paquete <code>alr4</code> contiene la tabla de datos <code>Rateprof</code>, con los resultados globales de la evaluación de un grupo de profesores universitarios por parte de sus estudiantes. Algunas de sus variables son: <code>gender</code>, el sexo del profesor; <code>pepper</code>, que indica si en las encuestas se le ha considerado mayoritariamente atractivo o no; y <code>clarity</code> y <code>easiness</code>, que valoran, entre 1 y 5, la claridad de exposición y la accesibilidad del profesor, respectivamente. Vamos a calcular las medias de estas dos últimas variables agrupándolas por sexo y atractivo.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Instalamos y cargamos el paquete &quot;alr4&quot;</span>
+<span class="co">#...</span>
+<span class="kw">library</span>(alr4)
+<span class="kw">aggregate</span>(<span class="kw">cbind</span>(clarity,easiness)<span class="op">~</span>gender<span class="op">+</span>pepper, <span class="dt">data=</span>Rateprof, <span class="dt">FUN=</span>mean)</code></pre></div>
+<pre><code>##   gender pepper  clarity easiness
+## 1 female     no 3.341391 3.147606
+## 2   male     no 3.451456 2.999056
+## 3 female    yes 4.345082 3.599128
+## 4   male    yes 4.371824 3.689741</code></pre>
+<p>Observamos que tanto la claridad como la accesibilidad medias de los profesores atractivos de ambos sexos son considerablemente mayores que las de sus colegas considerados no atractivos. Además, en promedio, se considera a los profesores no atractivos menos accesibles que a las profesoras no atractivas, y a los profesores atractivos <code>más</code> accesibles que a las profesoras atractivas.</p>
+</div>
+<div id="sub:attach" class="section level2">
+<h2><span class="header-section-number">6.8</span> Cómo añadir las variables de un <em>data frame</em> al entorno global</h2>
+<p>Hasta ahora, cada vez que queríamos referirnos a una variable de un <em>data frame</em>, teníamos que escribir el nombre del <em>data frame</em> seguido de <code>$</code> y el nombre de la variable. Aplicando <code>attach</code> a un <em>data frame</em>, hacemos que <code>R</code> entienda sus variables como globales y que las podamos usar por su nombre, sin necesidad de añadir delante el nombre del <em>data frame</em> y el signo <code>$</code>; esto puede ser útil para no tener que escribir mucho.</p>
+<p>A modo de ejemplo, vamos a añadir las variables del <em>data frame</em> <code>iris</code> al entorno global de <code>R</code>:</p>
+<pre><code>&gt; Petal.Length
+Error: objeto &#39;Petal.Length&#39; no encontrado</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">attach</span>(iris)
+Petal.Length[<span class="dv">1</span><span class="op">:</span><span class="dv">30</span>]</code></pre></div>
+<pre><code>##  [1] 1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 1.5 1.6 1.4 1.1 1.2 1.5 1.3
+## [18] 1.4 1.7 1.5 1.7 1.5 1.0 1.7 1.9 1.6 1.6 1.5 1.4 1.6</code></pre>
+<p>Si ya hubiera existido una variable definida con el mismo nombre que una variable del <em>data frame</em> al que aplicamos <code>attach</code>, hubiéramos obtenido un mensaje de error al ejecutar esta función, y no se hubiera reescrito la variable global original.</p>
+<p>La función <code>detach</code> devuelve la situación original, eliminando del entorno global las variables del <em>data frame</em></p>
+<pre><code>&gt; detach(iris)
+&gt; Petal.Length
+Error: object &#39;Petal.Length&#39; not found</code></pre>
+</div>
+<div id="big-data-frames-con-data.table-opcional." class="section level2">
+<h2><span class="header-section-number">6.9</span> &lt;&lt;<em>Big data</em>&gt;&gt; <em>frames</em> con <code>data.table</code> (opcional).</h2>
+<p>Aunque la manera usual de trabajar en <code>R</code> con tablas de datos es en forma de <em>data frame</em>,<br />
+su estructura interna los hace poco eficientes a la hora de manejar las tablas de datos de millones de entradas que empiezan a ser habituales en estos tiempos de proyectos <em>big data</em>. Una solución es usar la clase de objetos para definir tablas de datos que incorpora el paquete <code>data.table</code>; para distinguirlos de los <em>data frame</em>, llamaremos a estos objetos <em>data tables</em>.</p>
+<p>Un <em>data table</em> vendría a ser un <em>data frame</em> enriquecido, con la particularidad de que sus filas no tienen identificadores; en particular se pueden usar con ellos todas las construcciones y funciones para <em>data frames</em> , pero esto no es lo recomendable, puesto que entonces no se gana nada usándolos. Los <em>data tables</em> ofrecen unas construcciones específicas para extraer subtablas, añadir, borrar o modificar variables, y aplicar operaciones a variables, que son mucho más eficientes que las propias de los <em>data frames</em> ; su sintaxis es muy diferente de la usada en matrices o <em>data frames</em> , pero vale la pena &lt;<cambiar el chip>&gt; si necesitáis trabajar con tablas realmente grandes.</p>
+<p>Se puede crear un <em>data table</em> de varias maneras:</p>
+<ul>
+<li>Aplicando la función <code>data.table</code> a un conjunto de vectores, exactamente igual como si usáramos <code>data.frame</code>.</li>
+<li><p>Aplicando la función <code>data.table</code> a un <em>data frame</em> Como hemos comentado, las filas de los <em>data tables</em> no tienen identificadores; si las del <em>data frame</em> tenían identificadores que no fueran números correlativos, se copian como una variable extra llamada <code>rn</code> (de <em>rownames</em>).</p></li>
+<li><p>Importando un fichero externo con la función <code>fread</code>, exactamente igual como si usáramos <code>read.table</code>. Algunas ventajas de <code>fread</code> son que detecta automáticamente los separadores de columnas y si el fichero contiene o no una primera fila con los nombres de las variables, aunque su ventaja principal es la rapidez: tablas de varios Gb, que con <code>read.table</code> tardan varias horas en importarse, con <code>fread</code> tardan pocos minutos. Es importante tener en cuenta que, al contrario que <code>read.table</code>, la función <code>fread</code> importa por defecto las columnas de palabras como tales, y no como factores: esto se puede cambiar añadiendo <code>stringsAsFactors=TRUE</code>.</p></li>
+</ul>
+<p>Vamos a crear un <em>data table</em> para ilustrar su manejo básico.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Instalamos y cargamos el paquete &quot;data.table&quot;</span>
+<span class="co">#...</span>
+<span class="kw">library</span>(data.table)
+Letras=<span class="kw">c</span>(<span class="st">&quot;A&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;A&quot;</span>,<span class="st">&quot;A&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;A&quot;</span>,<span class="st">&quot;C&quot;</span>,<span class="st">&quot;C&quot;</span>,<span class="st">&quot;A&quot;</span>,<span class="st">&quot;A&quot;</span>)
+Var1=<span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">7</span>,<span class="dv">5</span>,<span class="dv">9</span>,<span class="dv">3</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">9</span>)
+Var2=<span class="kw">c</span>(<span class="fl">2.3</span>,<span class="fl">5.2</span>,<span class="fl">6.4</span>,<span class="op">-</span><span class="fl">2.2</span>,<span class="fl">1.6</span>,<span class="fl">7.1</span>,<span class="fl">3.2</span>,<span class="op">-</span><span class="fl">3.5</span>,<span class="op">-</span><span class="fl">2.7</span>,<span class="fl">1.8</span>)
+Var3=<span class="kw">c</span>(<span class="fl">6.8</span>,<span class="fl">6.4</span>,<span class="fl">5.5</span>,<span class="fl">6.2</span>,<span class="fl">5.3</span>,<span class="fl">7.8</span>,<span class="fl">6.3</span>,<span class="fl">6.3</span>,<span class="fl">6.3</span>,<span class="fl">7.5</span>)
+DT=<span class="kw">data.table</span>(Letras,Var1,Var2,Var3)
+DT</code></pre></div>
+<pre><code>##     Letras Var1 Var2 Var3
+##  1:      A    3  2.3  6.8
+##  2:      B    7  5.2  6.4
+##  3:      A    5  6.4  5.5
+##  4:      A    9 -2.2  6.2
+##  5:      B    3  1.6  5.3
+##  6:      A    6  7.1  7.8
+##  7:      C    5  3.2  6.3
+##  8:      C    2 -3.5  6.3
+##  9:      A    4 -2.7  6.3
+## 10:      A    9  1.8  7.5</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(DT)</code></pre></div>
+<pre><code>## Classes &#39;data.table&#39; and &#39;data.frame&#39;:   10 obs. of  4 variables:
+##  $ Letras: chr  &quot;A&quot; &quot;B&quot; &quot;A&quot; &quot;A&quot; ...
+##  $ Var1  : num  3 7 5 9 3 6 5 2 4 9
+##  $ Var2  : num  2.3 5.2 6.4 -2.2 1.6 7.1 3.2 -3.5 -2.7 1.8
+##  $ Var3  : num  6.8 6.4 5.5 6.2 5.3 7.8 6.3 6.3 6.3 7.5
+##  - attr(*, &quot;.internal.selfref&quot;)=&lt;externalptr&gt;</code></pre>
+<p>Una de las operaciones específicas más útiles para <em>data tables</em> es la creación de índices (<em>keys</em>) a partir de una o varias variables; estos índices sirven para identificar las filas y agilizan las búsquedas y extracciones de filas. La manera de indexar un <em>data table</em> es mediante la instrucción</p>
+<p><code>setkey(</code><em>data table</em><code>,</code><em>variable1</em><code>,</code><em>variable2</em><code>, ...)</code>.</p>
+<p>El resultado visible de esta instrucción es que <code>R</code> reordena las filas del <em>data table</em> en orden creciente de la <em>variable1</em> y, en caso de empate, de la <em>variable2</em>, y así sucesivamente; las variables se han de entrar con su nombre sin entrecomillar. Fijaos también en que <code>no igualamos</code> el <em>data table</em> al resultado de <code>setkey</code>, simplemente le aplicamos esta función.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">setkey</span>(DT,Letras,Var3)
+DT</code></pre></div>
+<pre><code>##     Letras Var1 Var2 Var3
+##  1:      A    5  6.4  5.5
+##  2:      A    9 -2.2  6.2
+##  3:      A    4 -2.7  6.3
+##  4:      A    3  2.3  6.8
+##  5:      A    9  1.8  7.5
+##  6:      A    6  7.1  7.8
+##  7:      B    3  1.6  5.3
+##  8:      B    7  5.2  6.4
+##  9:      C    5  3.2  6.3
+## 10:      C    2 -3.5  6.3</code></pre>
+<p>Vemos que las filas se han ordenado según su entrada en la variable <code>Letras</code> y, en los empates, según su entrada en <code>Var3</code>. A partir de ahora, las búsquedas de filas con valores concretos en estas variables se realizaría mediante búsqueda binaria usando esta ordenación. Este método es mucho más eficiente que el que usaría un <em>data frame</em> : visitaría toda la primera variable y generaría un vector de valores lógicos que indicara, para cada entrada, si cumple o no la condición; visitaría toda la segunda variable y generaría un segundo vector de valores lógicos que indicara, para cada entrada, si cumple o no la condición; generaría un tercer vector que tuviera un <code>TRUE</code> en aquellas entradas que lo tuvieran en cada uno de los vectores anteriores; finalmente, daría las filas correspondientes a los <code>TRUE</code> en este último vector.</p>
+<p>Una vez hemos indexado un <em>data table</em>, podemos usar las variables que hemos definido como índices para extraer filas. La conjunción de varias condiciones se indica con la función <code>J</code>; veamos varios ejemplos, observad la sintaxis:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">DT[<span class="st">&quot;B&quot;</span>]   <span class="co">#Filas con una B en Letras</span></code></pre></div>
+<pre><code>##    Letras Var1 Var2 Var3
+## 1:      B    3  1.6  5.3
+## 2:      B    7  5.2  6.4</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">DT[<span class="kw">c</span>(<span class="st">&quot;B&quot;</span>,<span class="st">&quot;C&quot;</span>)]  <span class="co">#Filas con una B o una C en Letras</span></code></pre></div>
+<pre><code>##    Letras Var1 Var2 Var3
+## 1:      B    3  1.6  5.3
+## 2:      B    7  5.2  6.4
+## 3:      C    5  3.2  6.3
+## 4:      C    2 -3.5  6.3</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">DT[Letras<span class="op">&gt;</span><span class="st">&quot;A&quot;</span>]  <span class="co">#Filas con entrada mayor que A en Letras</span></code></pre></div>
+<pre><code>##    Letras Var1 Var2 Var3
+## 1:      B    3  1.6  5.3
+## 2:      B    7  5.2  6.4
+## 3:      C    5  3.2  6.3
+## 4:      C    2 -3.5  6.3</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">DT[<span class="kw">J</span>(<span class="st">&quot;A&quot;</span>,<span class="kw">c</span>(<span class="fl">6.2</span>,<span class="fl">6.3</span>))]  <span class="co">#Filas con A en Letras y 6.2 o 6.3 en Var3</span></code></pre></div>
+<pre><code>##    Letras Var1 Var2 Var3
+## 1:      A    9 -2.2  6.2
+## 2:      A    4 -2.7  6.3</code></pre>
+<p>La construcción <code>[\ ]</code> en los <em>data tables</em> tiene un significado, y, por lo tanto, un uso diferente que en los <em>data frames</em> ; en general, el argumento dentro de los corchetes aplicados a un <em>data table</em> tiene tres partes, separadas por comas:</p>
+<ul>
+<li><p>La primera indica las filas, como ya hemos visto. Normalmente, para que el proceso sea eficiente, impondremos condiciones sobre las filas usando las variables definidas para indexar la tabla. Si dejamos esta posición vacía, se toman todas las filas.</p></li>
+<li><p>La segunda parte indica columnas, o, más en general, expresiones aplicadas a columnas, incluyendo operaciones u otro tipo de funciones: <code>plot</code>, <code>lm</code> Podemos usar los nombres de las variables, sin entrecomillar, o su número de orden: en este último caso, se ha de añadir <code>with=FALSE</code> en la tercera posición. Si queremos extraer varias columnas de un <em>data table</em> o efectuar varias operaciones, hay que especificarlas en esta segunda posición dentro de una <code>list</code>. Si queremos sólo la primera o la última fila de una subtabla, se ha de especificar en esta segunda posición con  o , respectivamente.</p></li>
+<li><p>La tercera precisa la expresión en la segunda posición: por ejemplo, si se ha de aplicar agrupando los datos (con el parámetro <code>by</code>) o cómo se han indicado las variables (con el parámetro <code>with</code>). Si queremos agrupar según una combinación de variables, tenemos que especificarlas en esta tercera posición dentro de una <code>list</code>.</p></li>
+</ul>
+<p>En resumen,</p>
+<p><code>DT[X, Y, by=Z]</code></p>
+<p>equivale a: &lt;<En el *data table* `DT`, extrae las filas `X` y ejecuta  `Y` sobre sus columnas agrupando las filas según `Z`>&gt;.</p>
+<p>Veamos varios ejemplos:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">DT[ ,Var1]  <span class="co">#El contenido de Var1</span></code></pre></div>
+<pre><code>##  [1] 5 9 4 3 9 6 3 7 5 2</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">DT[ ,<span class="dv">2</span>]  <span class="co">#Esto no es la segunda variable</span></code></pre></div>
+<pre><code>##     Var1
+##  1:    5
+##  2:    9
+##  3:    4
+##  4:    3
+##  5:    9
+##  6:    6
+##  7:    3
+##  8:    7
+##  9:    5
+## 10:    2</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">DT[ ,<span class="dv">2</span>,with=<span class="ot">FALSE</span>] <span class="co">#Esto sí</span></code></pre></div>
+<pre><code>##     Var1
+##  1:    5
+##  2:    9
+##  3:    4
+##  4:    3
+##  5:    9
+##  6:    6
+##  7:    3
+##  8:    7
+##  9:    5
+## 10:    2</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">DT[ ,<span class="kw">list</span>(Var1,Var2)]  <span class="co">#Un data table con las variables Var1 y Var2</span></code></pre></div>
+<pre><code>##     Var1 Var2
+##  1:    5  6.4
+##  2:    9 -2.2
+##  3:    4 -2.7
+##  4:    3  2.3
+##  5:    9  1.8
+##  6:    6  7.1
+##  7:    3  1.6
+##  8:    7  5.2
+##  9:    5  3.2
+## 10:    2 -3.5</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">DT[<span class="st">&quot;A&quot;</span>,mult=<span class="st">&quot;first&quot;</span>] <span class="co">#La primera fila con A en Letras</span></code></pre></div>
+<pre><code>##    Letras Var1 Var2 Var3
+## 1:      A    5  6.4  5.5</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">DT[<span class="st">&quot;A&quot;</span>,mult=<span class="st">&quot;last&quot;</span>] <span class="co">#La última fila con A en Letras</span></code></pre></div>
+<pre><code>##    Letras Var1 Var2 Var3
+## 1:      A    6  7.1  7.8</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">DT[<span class="st">&quot;A&quot;</span>,<span class="kw">sum</span>(Var1)]  <span class="co">#Suma de Var1 de las filas con una A en Letras</span></code></pre></div>
+<pre><code>## [1] 36</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">DT[ ,<span class="kw">sum</span>(Var1),by=Letras]  <span class="co">#Suma de Var1 agrupando según el valor de Letras</span></code></pre></div>
+<pre><code>##    Letras V1
+## 1:      A 36
+## 2:      B 10
+## 3:      C  7</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">DT[ ,<span class="kw">list</span>(<span class="dt">sumas1=</span><span class="kw">sum</span>(Var1),<span class="dt">medias1=</span><span class="kw">mean</span>(Var2)), 
+  by=<span class="kw">list</span>(Letras,Var3)] <span class="co">#Suma de Var1 y media de Var2, agrupando según Letras y Var3</span></code></pre></div>
+<pre><code>##    Letras Var3 sumas1 medias1
+## 1:      A  5.5      5    6.40
+## 2:      A  6.2      9   -2.20
+## 3:      A  6.3      4   -2.70
+## 4:      A  6.8      3    2.30
+## 5:      A  7.5      9    1.80
+## 6:      A  7.8      6    7.10
+## 7:      B  5.3      3    1.60
+## 8:      B  6.4      7    5.20
+## 9:      C  6.3      7   -0.15</code></pre>
+<p>Para más ejemplos, consultad <code>example(data.table)</code>.</p>
+<p>Para modificar una variable, o añadir una variable, podemos usar la construcción</p>
+<p><code>nombre</code> <code>:=``valor</code></p>
+<p>en la segunda posición dentro de los corchetes; esta construcción sirve también para eliminar una variable, igualándola a <code>NULL</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">DT[ ,Var4<span class="op">:</span><span class="er">=</span><span class="dv">2</span><span class="op">*</span>Var1<span class="op">+</span>Var2]  <span class="co">#Añadimos esta nueva columna Var4</span>
+DT</code></pre></div>
+<pre><code>##     Letras Var1 Var2 Var3 Var4
+##  1:      A    5  6.4  5.5 16.4
+##  2:      A    9 -2.2  6.2 15.8
+##  3:      A    4 -2.7  6.3  5.3
+##  4:      A    3  2.3  6.8  8.3
+##  5:      A    9  1.8  7.5 19.8
+##  6:      A    6  7.1  7.8 19.1
+##  7:      B    3  1.6  5.3  7.6
+##  8:      B    7  5.2  6.4 19.2
+##  9:      C    5  3.2  6.3 13.2
+## 10:      C    2 -3.5  6.3  0.5</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">DT[<span class="st">&quot;A&quot;</span>,Var5<span class="op">:</span><span class="er">=</span><span class="dv">3</span><span class="op">*</span>Var4]   <span class="co">#Añadimos esta nueva columna Var5, sólo en las filas con una A en Letras</span>
+DT</code></pre></div>
+<pre><code>##     Letras Var1 Var2 Var3 Var4 Var5
+##  1:      A    5  6.4  5.5 16.4 49.2
+##  2:      A    9 -2.2  6.2 15.8 47.4
+##  3:      A    4 -2.7  6.3  5.3 15.9
+##  4:      A    3  2.3  6.8  8.3 24.9
+##  5:      A    9  1.8  7.5 19.8 59.4
+##  6:      A    6  7.1  7.8 19.1 57.3
+##  7:      B    3  1.6  5.3  7.6   NA
+##  8:      B    7  5.2  6.4 19.2   NA
+##  9:      C    5  3.2  6.3 13.2   NA
+## 10:      C    2 -3.5  6.3  0.5   NA</code></pre>
+</div>
+<div id="guia-rapida-de-funciones-2" class="section level2">
+<h2><span class="header-section-number">6.10</span> Guía rápida de funciones</h2>
+<ul>
+<li><code>data()</code> produce una lista con los objetos de datos a los que tenemos acceso.</li>
+<li><code>View</code> muestra el <em>data frame</em> al que se aplica en la ventana superior izquierda de <code>Rstudio</code>.</li>
+<li><code>head</code> aplicado a un <em>data frame</em> y un número <span class="math inline">\(n\)</span>, nos muestra las primeras <span class="math inline">\(n\)</span> filas del <em>data frame</em> (por defecto, 6).</li>
+<li><code>tail</code> aplicado a un <em>data frame</em> y un número <span class="math inline">\(n\)</span>, nos muestra las <span class="math inline">\(n\)</span> últimas filas del <em>data frame</em> (por defecto, 6).</li>
+<li><code>str</code> da la estructura global de un objeto de datos.</li>
+<li><code>names</code> sirve para obtener un vector con los nombres de las columnas de un <em>data frame</em>, y también para modificar estos nombres.</li>
+<li><code>rownames</code> sirve para obtener un vector con los identificadores de las filas de un <em>data frame</em>, y también para modificar estos identificadores.</li>
+<li><code>dimnames</code> sirve para obtener una <code>list</code> formada por el vector de los identificadores de las filas y el vector de los nombres de las columnas de un <em>data frame</em>, y también para modificar estos vectores simultáneamente.</li>
+<li><code>dim</code> da el número de filas y el número de columnas de un <em>data frame</em></li>
+<li><em>data frame</em> <code>\$``variable</code> indica la <code>variable</code> del <em>data frame</em></li>
+<li><code>read.table</code> permite importar un fichero externo en formato texto simple en un <em>data frame</em> Algunos parámetros importantes:</li>
+<li><code>sep</code>: sirve para indicar los separadores de las columnas.</li>
+<li><code>header</code>: sirve para indicar si el fichero a importar tiene una primera fila con los nombres de las variables o no.</li>
+<li><code>dec</code>: sirve para especificar el separador decimal.</li>
+<li><code>stringsAsFactors</code>: igualado a <code>FALSE</code>, impone que las columnas de palabras se importen como tales, y no como factores.</li>
+<li><code>encoding</code>: indica la codificación de alfabeto del fichero externo.</li>
+<li><code>read.csv</code>, <code>read.xls</code>, <code>read.xlsx</code> (ambas del paquete <code>xlsx</code>), <code>read.mtb</code> y <code>read.spss</code> (ambas del paquete <code>foreign</code>) permiten importar en un <em>data frame</em> una tabla de datos en formato CSV, XLS, XLSX, Minitab o SPSS, respectivamente.</li>
+<li><code>write.table(</code><em>data frame</em> <code>,file=&quot;</code><em>fichero</em><code>&quot;)</code> exporta el <em>data frame</em> al <em>fichero</em> externo.</li>
+<li><code>data.frame</code> crea un <em>data frame</em> con los vectores a los que se aplica. Algunos parámetros importantes:</li>
+<li><code>rownames</code>: sirve para especificar los identificadores de las filas.</li>
+<li><code>stringsAsFactors</code>: como en <code>read.table</code>.</li>
+<li><code>fix</code> abre un objeto de datos en el editor de datos.</li>
+<li><code>paste(</code><span class="math inline">\(x_1\)</span><code>,</code><span class="math inline">\(x_2\)</span><code>,...., sep=&quot;*separador*&quot;)</code> pega los vectores <span class="math inline">\(x_1\)</span>, <span class="math inline">\(x_2\)</span>, , entrada a entrada, usando como separador el valor del parámetro <code>sep</code>.</li>
+<li><code>as.character</code>, <code>as.integer</code> y <code>as.numeric</code> transforman todos los datos de un objeto en palabras, números enteros o números reales, respectivamente.</li>
+<li><code>droplevels</code> borra todos los niveles sobrantes de todos los factores de un <em>data frame</em></li>
+<li><code>select</code>, del paquete <code>dplyr</code>, permite definir un <em>data frame</em> con todas las variables de un <em>data frame</em> que empiecen por una secuencia de letras dada (con el parámetro <code>starts_with</code>), que terminen por una secuencia de letras dada (con el parámetro <code>ends_with</code>), o que contengan una secuencia de letras dada (con el parámetro <code>contains</code>).</li>
+<li><code>subset(</code><em>data frame</em> <code>, ``condición</code> <code>, select=``columnas</code> <code>)</code> define un <em>data frame</em> con las filas del <em>data frame</em> que cumplen la <code>condición</code> y las columnas especificadas en el parámetro <code>select</code>.</li>
+<li><code>sapply(</code><em>data frame</em> <code>, FUN=``función</code> <code>)</code> aplica la <code>función</code> a las columnas de un <em>data frame</em></li>
+<li><code>aggregate</code> sirve para aplicar una función a una o varias variables de un <em>data frame</em> agrupando sus entradas por los niveles de uno o varios factores.</li>
+<li><code>attach</code> añade las variables de un <em>data frame</em> al entorno global de <code>R</code>.</li>
+<li><code>detach</code> deshace el efecto de <code>attach</code>.</li>
+<li><code>data.table</code>, del paquete <code>data.table</code>, crea un <em>data table</em> a partir de vectores o de un <em>data frame</em></li>
+<li><code>fread</code>, del paquete <code>data.table</code>, permite importar un fichero externo en un <em>data table</em>.</li>
+<li><code>setkey</code>, del paquete <code>data.table</code>, indexa un <em>data table</em>.</li>
+<li><code>[1, 2, by=3]</code>, aplicado a un <code>data.table</code>, extrae las filas especificadas en la posición <code>1</code> y ejecuta la expresión <code>2</code> sobre sus columnas, agrupando las filas según la condición <code>3</code>.</li>
+</ul>
+</div>
+<div id="ejercicio-3" class="section level2">
+<h2><span class="header-section-number">6.11</span> Ejercicio</h2>
+<p>La tabla de datos <code>pulse.txt</code> que encontraréis en <a href="http://aprender.uib.es/Rdir/pulse.txt" class="uri">http://aprender.uib.es/Rdir/pulse.txt</a> recoge una serie de informaciones de tipo general (altura, peso, sexo, si corren, si fuman y su nivel de actividad física: 1 si es bajo, 2 si es moderado y 3 si es alto) sobre algunos estudiantes matriculados en un curso de estadística de la Universidad Estatal de Pensilvania hace unos años. A estos estudiantes se les pidió que lanzasen una moneda al aire: a los que sacaron cara, se les hizo correr un minuto sin moverse del sitio, y los que sacaron cruz, descansaron un minuto. Todos los estudiantes (tanto los que corrieron como los que no) midieron sus pulsaciones por minuto antes y después de este minuto de ejercicio o descanso, y estas medidas también aparecen en esta tabla (en las variables <code>PuBefor</code> y <code>PuAfter</code>, respectivamente).</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>¿Cuántos estudiantes tomaron parte en este estudio? ¿Cuántos son hombres y cuántas mujeres?</p></li>
+<li><p>Calculad el porcentaje medio de variación en el número de pulsaciones tras el minuto de ejercicio o descanso de los estudiantes que corrieron (se indica con el valor <code>yes</code> en la variable <code>Ran.</code>) y de los que no. ¿Hay mucha diferencia?</p></li>
+<li><p>Calculad el porcentaje medio de incremento en el número de pulsaciones tras el minuto de ejercicio sólo para los estudiantes que corrieron, pero ahora distinguiendo los hombres de las mujeres. ¿Cuál de los dos incrementos medios es mayor?</p></li>
+<li><p>Calculad el porcentaje medio de incremento en el número de pulsaciones tras el minuto de ejercicio para los estudiantes que corrieron, pero ahora distinguiendo los estudiantes que fuman de los que no. ¿Cuál de los dos incrementos medios es mayor?</p></li>
+<li><p>Calculad el número medio de pulsaciones antes del minuto de ejercicio o descanso de todos los estudiantes, separados según su nivel de actividad física. ¿Se observa alguna diferencia significativa?</p></li>
+</ol>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="26">
+<li id="fn26"><p>Se puede descargar de <a href="http://digital.library.adelaide.edu.au/coll/special//fisher/138.pdf" class="uri">http://digital.library.adelaide.edu.au/coll/special//fisher/138.pdf</a> .<a href="chap-df.html#fnref26">↩</a></p></li>
+<li id="fn27"><p><a href="http://en.wikipedia.org/wiki/Iris_flower_data_set" class="uri">http://en.wikipedia.org/wiki/Iris_flower_data_set</a> .<a href="chap-df.html#fnref27">↩</a></p></li>
+<li id="fn28"><p>El uso del editor de <code>Rstudio</code> para manipular <em>data frames</em> posiblemente requiera la instalación de algún programa auxiliar; por ejemplo, en el caso del Mac OS X, se tiene que tener instalada la última versión de <em>XQuartz</em>, que será el programa en el que se abrirá el editor. El instalador de <em>XQuartz</em> se puede descargar de <a href="http://xquartz.macosforge.org" class="uri">http://xquartz.macosforge.org</a>.<a href="chap-df.html#fnref28">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="chap-matrix.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="chap-plot.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/RicUIB/AprendeR2.1/edit/master/06chap05_Data_frames.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["AprendeR-Parte-I.pdf", "AprendeR-Parte-I.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Lección 2 La calculadora | AprendeR: Parte I</title>
+  <meta name="description" content="Apuntes AprendeR bookdown::gitbook.">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="Lección 2 La calculadora | AprendeR: Parte I" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Apuntes AprendeR bookdown::gitbook." />
+  <meta name="github-repo" content="RicUIB/AprendeR" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Lección 2 La calculadora | AprendeR: Parte I" />
+  
+  <meta name="twitter:description" content="Apuntes AprendeR bookdown::gitbook." />
+  
+
+<meta name="author" content="The AprendeR team">
+
+
+<meta name="date" content="2019-02-14">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="chap-0.html">
+<link rel="next" href="chap-lm.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">AprendeR: Parte I</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Presentación</a></li>
+<li class="chapter" data-level="1" data-path="chap-0.html"><a href="chap-0.html"><i class="fa fa-check"></i><b>1</b> Logística de <code>R</code></a><ul>
+<li class="chapter" data-level="1.1" data-path="chap-0.html"><a href="chap-0.html#como-instalar-r-y-rstudio"><i class="fa fa-check"></i><b>1.1</b> Cómo instalar <code>R</code> y <em>Rstudio</em></a></li>
+<li class="chapter" data-level="1.2" data-path="chap-0.html"><a href="chap-0.html#sec:guardar"><i class="fa fa-check"></i><b>1.2</b> Cómo guardar el trabajo realizado</a></li>
+<li class="chapter" data-level="1.3" data-path="chap-0.html"><a href="chap-0.html#sec:guiones"><i class="fa fa-check"></i><b>1.3</b> Cómo trabajar con guiones y otros ficheros</a></li>
+<li class="chapter" data-level="1.4" data-path="chap-0.html"><a href="chap-0.html#sec:help"><i class="fa fa-check"></i><b>1.4</b> Cómo obtener ayuda</a></li>
+<li class="chapter" data-level="1.5" data-path="chap-0.html"><a href="chap-0.html#sec:paquetes"><i class="fa fa-check"></i><b>1.5</b> Cómo instalar y cargar paquetes</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="chap-calc.html"><a href="chap-calc.html"><i class="fa fa-check"></i><b>2</b> La calculadora</a><ul>
+<li class="chapter" data-level="2.1" data-path="chap-calc.html"><a href="chap-calc.html#numeros-reales-operaciones-y-funciones-basicas"><i class="fa fa-check"></i><b>2.1</b> Números reales: operaciones y funciones básicas</a></li>
+<li class="chapter" data-level="2.2" data-path="chap-calc.html"><a href="chap-calc.html#cifras-significativas-y-redondeos"><i class="fa fa-check"></i><b>2.2</b> Cifras significativas y redondeos</a></li>
+<li class="chapter" data-level="2.3" data-path="chap-calc.html"><a href="chap-calc.html#definicion-de-variables"><i class="fa fa-check"></i><b>2.3</b> Definición de variables</a></li>
+<li class="chapter" data-level="2.4" data-path="chap-calc.html"><a href="chap-calc.html#definicion-de-funciones"><i class="fa fa-check"></i><b>2.4</b> Definición de funciones</a></li>
+<li class="chapter" data-level="2.5" data-path="chap-calc.html"><a href="chap-calc.html#numeros-complejos-opcional"><i class="fa fa-check"></i><b>2.5</b> Números complejos (opcional)</a></li>
+<li class="chapter" data-level="2.6" data-path="chap-calc.html"><a href="chap-calc.html#guia-rapida"><i class="fa fa-check"></i><b>2.6</b> Guía rápida</a></li>
+<li class="chapter" data-level="2.7" data-path="chap-calc.html"><a href="chap-calc.html#ejercicio"><i class="fa fa-check"></i><b>2.7</b> Ejercicio</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="chap-lm.html"><a href="chap-lm.html"><i class="fa fa-check"></i><b>3</b> Un aperitivo: Introducción a la regresión lineal</a><ul>
+<li class="chapter" data-level="3.1" data-path="chap-lm.html"><a href="chap-lm.html#calculo-de-rectas-de-regresion"><i class="fa fa-check"></i><b>3.1</b> Cálculo de rectas de regresión</a></li>
+<li class="chapter" data-level="3.2" data-path="chap-lm.html"><a href="chap-lm.html#rectas-de-regresion-y-transformaciones-logaritmicas"><i class="fa fa-check"></i><b>3.2</b> Rectas de regresión y transformaciones logarítmicas</a></li>
+<li class="chapter" data-level="3.3" data-path="chap-lm.html"><a href="chap-lm.html#guia-rapida-1"><i class="fa fa-check"></i><b>3.3</b> Guía rápida</a></li>
+<li class="chapter" data-level="3.4" data-path="chap-lm.html"><a href="chap-lm.html#ejercicio-1"><i class="fa fa-check"></i><b>3.4</b> Ejercicio</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="chap-vect.html"><a href="chap-vect.html"><i class="fa fa-check"></i><b>4</b> Vectores y otros tipos de listas</a><ul>
+<li class="chapter" data-level="4.1" data-path="chap-vect.html"><a href="chap-vect.html#construccion-de-vectores"><i class="fa fa-check"></i><b>4.1</b> Construcción de vectores</a></li>
+<li class="chapter" data-level="4.2" data-path="chap-vect.html"><a href="chap-vect.html#operaciones-con-vectores"><i class="fa fa-check"></i><b>4.2</b> Operaciones con vectores</a></li>
+<li class="chapter" data-level="4.3" data-path="chap-vect.html"><a href="chap-vect.html#entradas-y-trozos-de-vectores"><i class="fa fa-check"></i><b>4.3</b> Entradas y trozos de vectores</a></li>
+<li class="chapter" data-level="4.4" data-path="chap-vect.html"><a href="chap-vect.html#subsec:factor"><i class="fa fa-check"></i><b>4.4</b> Factores</a></li>
+<li class="chapter" data-level="4.5" data-path="chap-vect.html"><a href="chap-vect.html#sec:lists"><i class="fa fa-check"></i><b>4.5</b> Listas heterogéneas</a></li>
+<li class="chapter" data-level="4.6" data-path="chap-vect.html"><a href="chap-vect.html#guia-rapida-de-funciones"><i class="fa fa-check"></i><b>4.6</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="4.7" data-path="chap-vect.html"><a href="chap-vect.html#ejercicio-2"><i class="fa fa-check"></i><b>4.7</b> Ejercicio</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="chap-matrix.html"><a href="chap-matrix.html"><i class="fa fa-check"></i><b>5</b> Matrices</a><ul>
+<li class="chapter" data-level="5.1" data-path="chap-matrix.html"><a href="chap-matrix.html#construccion-de-matrices"><i class="fa fa-check"></i><b>5.1</b> Construcción de matrices</a></li>
+<li class="chapter" data-level="5.2" data-path="chap-matrix.html"><a href="chap-matrix.html#acceso-a-entradas-y-submatrices"><i class="fa fa-check"></i><b>5.2</b> Acceso a entradas y submatrices</a></li>
+<li class="chapter" data-level="5.3" data-path="chap-matrix.html"><a href="chap-matrix.html#algunas-funciones-para-matrices"><i class="fa fa-check"></i><b>5.3</b> Algunas funciones para matrices</a></li>
+<li class="chapter" data-level="5.4" data-path="chap-matrix.html"><a href="chap-matrix.html#calculo-matricial-opcional"><i class="fa fa-check"></i><b>5.4</b> Cálculo matricial (opcional)</a></li>
+<li class="chapter" data-level="5.5" data-path="chap-matrix.html"><a href="chap-matrix.html#valores-y-vectores-propios-opcional"><i class="fa fa-check"></i><b>5.5</b> Valores y vectores propios (opcional)</a></li>
+<li class="chapter" data-level="5.6" data-path="chap-matrix.html"><a href="chap-matrix.html#matrices-complejas-opcional"><i class="fa fa-check"></i><b>5.6</b> Matrices complejas (opcional)</a></li>
+<li class="chapter" data-level="5.7" data-path="chap-matrix.html"><a href="chap-matrix.html#guia-rapida-de-funciones-1"><i class="fa fa-check"></i><b>5.7</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="5.8" data-path="chap-matrix.html"><a href="chap-matrix.html#ejercicio-opcional"><i class="fa fa-check"></i><b>5.8</b> Ejercicio (opcional)</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="chap-df.html"><a href="chap-df.html"><i class="fa fa-check"></i><b>6</b> <em>Data frames</em></a><ul>
+<li class="chapter" data-level="6.1" data-path="chap-df.html"><a href="chap-df.html#estructura-de-un-data-frame"><i class="fa fa-check"></i><b>6.1</b> Estructura de un <em>data frame</em></a></li>
+<li class="chapter" data-level="6.2" data-path="chap-df.html"><a href="chap-df.html#como-importar-y-exportar-data-frames"><i class="fa fa-check"></i><b>6.2</b> Cómo importar y exportar <em>data frames</em></a></li>
+<li class="chapter" data-level="6.3" data-path="chap-df.html"><a href="chap-df.html#como-crear-data-frames"><i class="fa fa-check"></i><b>6.3</b> Cómo crear <em>data frames</em></a></li>
+<li class="chapter" data-level="6.4" data-path="chap-df.html"><a href="chap-df.html#sec:moddf"><i class="fa fa-check"></i><b>6.4</b> Cómo modificar un <em>data frame</em></a></li>
+<li class="chapter" data-level="6.5" data-path="chap-df.html"><a href="chap-df.html#sec:dfaf"><i class="fa fa-check"></i><b>6.5</b> Cómo añadir filas y columnas a un <em>data frame</em></a></li>
+<li class="chapter" data-level="6.6" data-path="chap-df.html"><a href="chap-df.html#como-seleccionar-trozos-de-un-data-frame"><i class="fa fa-check"></i><b>6.6</b> Cómo seleccionar trozos de un <em>data frame</em></a></li>
+<li class="chapter" data-level="6.7" data-path="chap-df.html"><a href="chap-df.html#como-aplicar-una-funcion-a-las-variables-de-un-data-frame"><i class="fa fa-check"></i><b>6.7</b> Cómo aplicar una función a las variables de un <em>data frame</em></a></li>
+<li class="chapter" data-level="6.8" data-path="chap-df.html"><a href="chap-df.html#sub:attach"><i class="fa fa-check"></i><b>6.8</b> Cómo añadir las variables de un <em>data frame</em> al entorno global</a></li>
+<li class="chapter" data-level="6.9" data-path="chap-df.html"><a href="chap-df.html#big-data-frames-con-data.table-opcional."><i class="fa fa-check"></i><b>6.9</b> &lt;&lt;<em>Big data</em>&gt;&gt; <em>frames</em> con <code>data.table</code> (opcional).</a></li>
+<li class="chapter" data-level="6.10" data-path="chap-df.html"><a href="chap-df.html#guia-rapida-de-funciones-2"><i class="fa fa-check"></i><b>6.10</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="6.11" data-path="chap-df.html"><a href="chap-df.html#ejercicio-3"><i class="fa fa-check"></i><b>6.11</b> Ejercicio</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="chap-plot.html"><a href="chap-plot.html"><i class="fa fa-check"></i><b>7</b> Gráficos I</a><ul>
+<li class="chapter" data-level="7.1" data-path="chap-plot.html"><a href="chap-plot.html#la-funcion-plot"><i class="fa fa-check"></i><b>7.1</b> La función <code>plot</code></a></li>
+<li class="chapter" data-level="7.2" data-path="chap-plot.html"><a href="chap-plot.html#parametros-de-plot"><i class="fa fa-check"></i><b>7.2</b> Parámetros de <code>plot</code></a></li>
+<li class="chapter" data-level="7.3" data-path="chap-plot.html"><a href="chap-plot.html#como-anadir-elementos-a-un-grafico"><i class="fa fa-check"></i><b>7.3</b> Cómo añadir elementos a un gráfico</a></li>
+<li class="chapter" data-level="7.4" data-path="chap-plot.html"><a href="chap-plot.html#guia-rapida-2"><i class="fa fa-check"></i><b>7.4</b> Guía rápida</a><ul>
+<li class="chapter" data-level="7.4.1" data-path="chap-plot.html"><a href="chap-plot.html#ejercicio-4"><i class="fa fa-check"></i><b>7.4.1</b> Ejercicio</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="chap-edqual.html"><a href="chap-edqual.html"><i class="fa fa-check"></i><b>8</b> Descripción de datos cualitativos</a><ul>
+<li class="chapter" data-level="8.1" data-path="chap-edqual.html"><a href="chap-edqual.html#frecuencias"><i class="fa fa-check"></i><b>8.1</b> Frecuencias</a></li>
+<li class="chapter" data-level="8.2" data-path="chap-edqual.html"><a href="chap-edqual.html#tablas-unidimensionales-de-frecuencias"><i class="fa fa-check"></i><b>8.2</b> Tablas unidimensionales de frecuencias</a></li>
+<li class="chapter" data-level="8.3" data-path="chap-edqual.html"><a href="chap-edqual.html#tablas-bidimensionales-de-frecuencias"><i class="fa fa-check"></i><b>8.3</b> Tablas bidimensionales de frecuencias</a></li>
+<li class="chapter" data-level="8.4" data-path="chap-edqual.html"><a href="chap-edqual.html#tablas-multidimensionales-de-frecuencias"><i class="fa fa-check"></i><b>8.4</b> Tablas multidimensionales de frecuencias</a></li>
+<li class="chapter" data-level="8.5" data-path="chap-edqual.html"><a href="chap-edqual.html#tablas-a-partir-de-dta-frames-de-de-variables-cualitativas"><i class="fa fa-check"></i><b>8.5</b> Tablas a partir de <em>dta frames</em> de de variables cualitativas</a></li>
+<li class="chapter" data-level="8.6" data-path="chap-edqual.html"><a href="chap-edqual.html#diagramas-de-barras"><i class="fa fa-check"></i><b>8.6</b> Diagramas de barras</a></li>
+<li class="chapter" data-level="8.7" data-path="chap-edqual.html"><a href="chap-edqual.html#otros-graficos-para-datos-cualitativos"><i class="fa fa-check"></i><b>8.7</b> Otros gráficos para datos cualitativos</a><ul>
+<li class="chapter" data-level="8.7.1" data-path="chap-edqual.html"><a href="chap-edqual.html#sec:exqual"><i class="fa fa-check"></i><b>8.7.1</b> Un ejemplo completo</a></li>
+</ul></li>
+<li class="chapter" data-level="8.8" data-path="chap-edqual.html"><a href="chap-edqual.html#guia-rapida-de-funciones-3"><i class="fa fa-check"></i><b>8.8</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="8.9" data-path="chap-edqual.html"><a href="chap-edqual.html#ejercicio-5"><i class="fa fa-check"></i><b>8.9</b> Ejercicio</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="chap-ord.html"><a href="chap-ord.html"><i class="fa fa-check"></i><b>9</b> Descripción de datos ordinales</a><ul>
+<li class="chapter" data-level="9.1" data-path="chap-ord.html"><a href="chap-ord.html#frecuencias-para-datos-ordinales"><i class="fa fa-check"></i><b>9.1</b> Frecuencias para datos ordinales</a></li>
+<li class="chapter" data-level="9.2" data-path="chap-ord.html"><a href="chap-ord.html#descripcion-de-datos-ordinales-con-r"><i class="fa fa-check"></i><b>9.2</b> Descripción de datos ordinales con <code>R</code></a></li>
+<li class="chapter" data-level="9.3" data-path="chap-ord.html"><a href="chap-ord.html#guia-rapida-de-funciones-4"><i class="fa fa-check"></i><b>9.3</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="9.4" data-path="chap-ord.html"><a href="chap-ord.html#ejercicio-6"><i class="fa fa-check"></i><b>9.4</b> Ejercicio</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/RicUIB/AprendeR2.1" target="blank">Publicado con  bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">AprendeR: Parte I</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="chap:calc" class="section level1">
+<h1><span class="header-section-number">Lección 2</span> La calculadora</h1>
+<p>Cuando se trabaja en modo interactivo en la consola de <code>R</code>, hay que escribir las instrucciones a la derecha de la marca de inicio <code>&gt;</code> de la línea inferior. Para evaluar una instrucción al terminar de escribirla, se tiene que pulsar la tecla <em>Entrar</em> (<span class="math inline">\(\hookleftarrow\)</span>); así, por ejemplo, si junto a la marca de inicio escribimos <code>2+3</code> y pulsamos <em>Entrar</em>, <code>R</code> escribirá en la línea siguiente el resultado, <code>5</code>, y a continuación una nueva línea en blanco encabezada por la marca de inicio, donde podremos continuar entrando instrucciones.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2</span><span class="op">+</span><span class="dv">3</span> <span class="co">#Y ahora aquí pulso Entrar</span></code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<p>Bueno, hemos hecho trampa. Como ya habíamos comentado en la Sección <a href="chap-0.html#sec:guiones">1.3</a>, se pueden escribir comentarios: <code>R</code> ignora todo lo que se escribe en la línea después de un signo <code>#</code>. También podéis observar que <code>R</code> ha dado el resultado en una línea que empieza con <code>[1]</code>; ya discutiremos en la Lección <a href="chap-vect.html#chap:vect">4</a> qué significa este <code>[1]</code>.</p>
+<p>Si la expresión que entramos no está completa, <code>R</code> no la evaluará y en la línea siguiente esperará a que la acabemos; lo indicará con la <code>marca de continuación</code>, por defecto un signo <code>+</code>.<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a> Además, si cometemos algún error de sintaxis, <code>R</code> nos avisará con un mensaje de error.<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a></p>
+<pre><code>&gt; 2*(3+5 #Pulso Entrar, pero no he acabado
++ ) #ahora sí
+[1] 16
+&gt; 2*3+5)
+Error: unexpected &#39;)&#39; in &quot;2*3+5)&quot;</code></pre>
+<p>Como podemos ver, al ejecutar la segunda instrucción, <code>R</code> nos avisa de que el paréntesis no está en su sitio.</p>
+<p>Se puede agrupar más de una instrucción en una sola línea separándolas con signos de punto y coma. Al pulsar la tecla <em>Entrar</em>, <code>R</code> las ejecutará todas, una tras otra y en el orden en el que las hayamos escrito.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2</span><span class="op">+</span><span class="dv">3</span>; <span class="dv">2</span><span class="op">+</span><span class="dv">4</span>; <span class="dv">2</span><span class="op">+</span><span class="dv">5</span></code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<pre><code>## [1] 6</code></pre>
+<pre><code>## [1] 7</code></pre>
+<div id="numeros-reales-operaciones-y-funciones-basicas" class="section level2">
+<h2><span class="header-section-number">2.1</span> Números reales: operaciones y funciones básicas</h2>
+<p>La separación entre la parte entera y la parte decimal en los números reales se indica con un punto, no con una coma.<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a></p>
+<pre><code>&gt; 2+2.5 #¡ATENCIÓN! El separador decimal ha de ser un punto
+[1] 4.5
+&gt; 2+2,5 #No con una coma
+Error: unexpected &#39;,&#39; in &quot;2+2,&quot;</code></pre>
+<p>Las operaciones usuales se indican en <code>R</code> con los signos que damos en la Tabla <a href="chap-calc.html#tab:ops">2.1</a>. Por lo que se refiere a los dos últimos operadores en esta tabla, recordad que si <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> son dos números reales, con <span class="math inline">\(b&gt;0\)</span>, la <code>división entera</code> de <span class="math inline">\(a\)</span> por <span class="math inline">\(b\)</span> da como <code>cociente entero</code> el mayor número entero <span class="math inline">\(q\)</span> tal que <span class="math inline">\(q\cdot b\leq a\)</span>, y como <code>resto</code> la diferencia <span class="math inline">\(a-q\cdot b\)</span>. Por ejemplo, la división entera de 29.5 entre 6.3 es <span class="math inline">\(29.5=4\cdot 6.3+4.3\)</span>, con cociente entero 4 y resto 4.3.<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a></p>
+<table>
+<caption><span id="tab:ops">Tabla 2.1: </span>Símbolos de operaciones aritméticas.</caption>
+<tbody>
+<tr class="odd">
+<td align="left">Operación</td>
+<td align="left">Simbolos</td>
+</tr>
+<tr class="even">
+<td align="left">Suma</td>
+<td align="left">+</td>
+</tr>
+<tr class="odd">
+<td align="left">Resta</td>
+<td align="left">-</td>
+</tr>
+<tr class="even">
+<td align="left">Multiplicación</td>
+<td align="left">*</td>
+</tr>
+<tr class="odd">
+<td align="left">División</td>
+<td align="left">/</td>
+</tr>
+<tr class="even">
+<td align="left">Potencia</td>
+<td align="left">^</td>
+</tr>
+<tr class="odd">
+<td align="left">Cociente entero</td>
+<td align="left">%/%</td>
+</tr>
+<tr class="even">
+<td align="left">Resto div. entera</td>
+<td align="left">%%</td>
+</tr>
+</tbody>
+</table>
+<!--
+\begin{table}[htb]
+\abovecaptionskip=-1ex
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+Operación\vphantom{$\Big($} & Suma & Resta & Multiplicación & División & Potencia & Cociente & Resto \\[-1ex] 
+& & & & & & entero & div. entera\\\hline
+Signo\vphantom{$\Big($} & `+` & `-` & `*` & `/` & `\^{`}  &\quad `\%/\%` & \qquad `\%\%` \\ \hline
+\end{tabular}
+\end{center}
+\caption{Signos de operaciones aritméticas.}\label{tab:ops}
+\end{table}
+-->
+<p>A continuación, damos algunos ejemplos de manejo de estas operaciones. Observad el uso natural de los paréntesis para indicar la precedencia de las operaciones.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2</span><span class="op">*</span><span class="dv">3</span><span class="op">+</span><span class="dv">5</span><span class="op">/</span><span class="dv">2</span></code></pre></div>
+<pre><code>## [1] 8.5</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2</span><span class="op">*</span>(<span class="dv">3</span><span class="op">+</span><span class="dv">5</span><span class="op">/</span><span class="dv">2</span>) <span class="co">#Aquí lo único que dividimos entre 2 es 5</span></code></pre></div>
+<pre><code>## [1] 11</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2</span><span class="op">*</span>((<span class="dv">3</span><span class="op">+</span><span class="dv">5</span>)<span class="op">/</span><span class="dv">2</span>)</code></pre></div>
+<pre><code>## [1] 8</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2</span><span class="op">/</span><span class="dv">3</span><span class="op">+</span><span class="dv">4</span> <span class="co">#Aquí el denominador de la fracción es 3</span></code></pre></div>
+<pre><code>## [1] 4.666667</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2</span><span class="op">/</span>(<span class="dv">3</span><span class="op">+</span><span class="dv">4</span>)</code></pre></div>
+<pre><code>## [1] 0.2857143</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2</span><span class="op">^</span><span class="dv">3</span><span class="op">*</span><span class="dv">5</span> <span class="co">#Aquí el exponente es 3</span></code></pre></div>
+<pre><code>## [1] 40</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2</span><span class="op">^</span>(<span class="dv">3</span><span class="op">*</span><span class="dv">5</span>)</code></pre></div>
+<pre><code>## [1] 32768</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2</span><span class="op">^-</span><span class="dv">5</span>  <span class="co">#En este caso no hacen falta paréntesis...</span></code></pre></div>
+<pre><code>## [1] 0.03125</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2</span><span class="op">^</span>(<span class="op">-</span><span class="dv">5</span>) <span class="co">#Pero queda más claro si se usan</span></code></pre></div>
+<pre><code>## [1] 0.03125</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">534</span><span class="op">%/%</span><span class="dv">7</span> <span class="co">#¿Cuántas semanas completas caben en 534 días?</span></code></pre></div>
+<pre><code>## [1] 76</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">534</span><span class="op">%%</span><span class="dv">7</span> <span class="co">#¿Y cuántos días sobran? </span></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">534</span><span class="op">-</span><span class="dv">76</span><span class="op">*</span><span class="dv">7</span></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<p>El objeto <code>pi</code> representa el número real <span class="math inline">\(\pi\)</span>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pi</code></pre></div>
+<pre><code>## [1] 3.141593</code></pre>
+<p>¡Cuidado! No podemos omitir el signo <code>*</code> en las multiplicaciones.</p>
+<pre><code>&gt; 2(3+5)
+Error: attempt to apply non-function
+&gt; 2*(3+5)
+[1] 16
+&gt; 2pi
+Error: unexpected symbol in &quot;2pi&quot;
+&gt; 2*pi
+[1] 6.283185</code></pre>
+<p>Cuando un número es muy grande o muy pequeño, <code>R</code> emplea la llamada <code>notación científica</code> para dar una aproximación.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2</span><span class="op">^</span><span class="dv">40</span></code></pre></div>
+<pre><code>## [1] 1.099512e+12</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2</span><span class="op">^</span>(<span class="op">-</span><span class="dv">20</span>)</code></pre></div>
+<pre><code>## [1] 9.536743e-07</code></pre>
+<p>En este ejemplo, <code>1.099512e+12</code> representa el número <span class="math inline">\(1.099512\cdot 10^{12}\)</span>, es decir, 1099512000000, y <code>9.536743e-07</code> representa el número <span class="math inline">\(9.536743\cdot 10^{-7}\)</span>, es decir, <span class="math inline">\(0.0000009536743\)</span>. Como muestra el ejemplo siguiente, no es necesario que un número sea especialmente grande o pequeño para que <code>R</code> lo escriba en notación científica: basta que esté rodeado de otros números en esa notación.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">c</span>(<span class="dv">2</span><span class="op">^</span><span class="dv">40</span>,<span class="dv">2</span><span class="op">^</span>(<span class="op">-</span><span class="dv">20</span>),<span class="dv">17</span><span class="op">/</span><span class="dv">3</span>) <span class="co">#La función c sirve para definir vectores</span></code></pre></div>
+<pre><code>## [1] 1.099512e+12 9.536743e-07 5.666667e+00</code></pre>
+<p>Este <code>5.666667e+00</code> representa el número <span class="math inline">\(5.666667\cdot 10^0\)</span>, es decir, <span class="math inline">\(5.666667\)</span>.</p>
+<p><code>R</code> dispone, entre muchas otras, de las funciones numéricas de la Tabla <a href="chap-calc.html#tab:ops">2.1</a>.</p>
+<p>Recordad que <span class="math inline">\(n!\)</span>, el <code>factorial</code> de <span class="math inline">\(n\)</span>, es el producto</p>
+<p><span class="math display">\[
+n!=n\cdot (n-1)\cdot (n-2) \cdots 3\cdot 2 \cdot 1
+\]</span></p>
+<p>(con el convenio de que <span class="math inline">\(0!=1\)</span>), y es igual al número de maneras posibles de ordenar una lista de <span class="math inline">\(n\)</span> objetos diferentes (su número de <code>permutaciones</code> ). El <code>número combinatorio</code> <span class="math inline">\(\binom{n}{m}\)</span>, con <span class="math inline">\(m\leq n\)</span>, es</p>
+<p><span class="math display">\[
+\binom{n}{m}=\frac{n!}{m!\cdot (n-m)!}=\frac{n(n-1)(n-2)\cdots (n-m+1)}{m(m-1)(m-2)\cdots 2\cdot 1},
+\]</span></p>
+<p>y es igual al número de maneras posibles de escoger un subconjunto de <span class="math inline">\(m\)</span> elementos de un conjunto de <span class="math inline">\(n\)</span> objetos diferentes. Recordad también que el <code>valor absoluto</code> <span class="math inline">\(|x|\)</span> de un número <span class="math inline">\(x\)</span> se obtiene tomando <span class="math inline">\(x\)</span> sin signo: <span class="math inline">\(|-8|=|8|=8\)</span>.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="right">Función</th>
+<th align="right"><span class="math inline">\(\sqrt{x}\)</span></th>
+<th align="right"><span class="math inline">\(e^x\)</span></th>
+<th align="right"><span class="math inline">\(\ln(x)\)</span></th>
+<th align="right"><span class="math inline">\(\log_{10}(x)\)</span></th>
+<th align="right"><span class="math inline">\(\log_a(x)\)</span></th>
+<th align="right"><span class="math inline">\(n!\)</span></th>
+<th align="right"><span class="math inline">\(\binom{n}{m}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right"><strong>Signo</strong></td>
+<td align="right">sqrt</td>
+<td align="right">exp</td>
+<td align="right">log</td>
+<td align="right">log10</td>
+<td align="right">log( , a)</td>
+<td align="right"><code>factorial</code></td>
+<td align="right"><code>choose</code></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="right">Función</th>
+<th align="right"><span class="math inline">\(\sin(x)\)</span></th>
+<th align="right"><span class="math inline">\(\cos(x)\)</span></th>
+<th align="right"><span class="math inline">\(\tan(x)\)</span></th>
+<th align="right"><span class="math inline">\(\arcsin(x)\)</span></th>
+<th align="right"><span class="math inline">\(\mathrm{arccos}(x)\)</span></th>
+<th align="right"><span class="math inline">\(\arctan(x)\)</span></th>
+<th align="right"><code>|</code><span class="math inline">\(x\)</span><code>|</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right"><strong>Signo</strong></td>
+<td align="right"><code>sin</code></td>
+<td align="right"><code>cos</code></td>
+<td align="right"><code>tan</code></td>
+<td align="right"><code>asin</code></td>
+<td align="right"><code>acos</code></td>
+<td align="right"><code>atan</code></td>
+<td align="right"><code>abs</code></td>
+</tr>
+</tbody>
+</table>
+<!--
+```
+Signo & `sqrt`\vphantom{$\Big($} & `exp` & `log` & `log10` & `log( , a)` & `factorial` & `choose`\\ \hline\hline
+Función &$\sin(x)$\vphantom{$\Big($} & $\cos(x)$ & $\tan(x)$ & $\arcsin(x)$ & $\mathrm{arccos}(x)$ & $\arctan(x)$ & $|x|$ \\ \hline
+Signo & `sin`\vphantom{$\Big($} & `cos` & `tan` & `asin` & `acos`& `atan` & `abs`\\ \hline
+
+```
+
+
+```r
+#\caption{Funciones numéricas.}\label{tab:fun}
+```
+-->
+<!--
+\begin{table}[htb]
+\abovecaptionskip=-1ex
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+Función & $\sqrt{x}$ \vphantom{$\Big($} & $e^x$ & $\ln(x)$ & $\log_{10}(x)$ & $\log_a(x)$ & $n!$ & $\binom{n}{m}$\\ \hline
+Signo & `sqrt`\vphantom{$\Big($} & `exp` & `log` & `log10` & `log( , a)` & `factorial` & `choose`\\ \hline\hline
+Función &$\sin(x)$\vphantom{$\Big($} & $\cos(x)$ & $\tan(x)$ & $\arcsin(x)$ & $\mathrm{arccos}(x)$ & $\arctan(x)$ & $|x|$ \\ \hline
+Signo & `sin`\vphantom{$\Big($} & `cos` & `tan` & `asin` & `acos`& `atan` & `abs`\\ \hline
+\end{tabular}
+\end{center}
+\caption{Funciones numéricas.}\label{tab:fun}
+\end{table}
+-->
+<p>Las funciones de <code>R</code> se aplican a sus argumentos introduciéndolos siempre entre paréntesis. Si la función se tiene que aplicar a más de un argumento, éstos se tienen que especificar en el orden que toque y separándolos mediante comas; <code>R</code> no tiene en cuenta los espacios en blanco alrededor de las comas. Veamos algunos ejemplos:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sqrt</span>(<span class="dv">4</span>)</code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sqrt</span>(<span class="dv">8</span>)<span class="op">-</span><span class="dv">8</span><span class="op">^</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">2</span>)</code></pre></div>
+<pre><code>## [1] 0</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">log10</span>(<span class="dv">8</span>)</code></pre></div>
+<pre><code>## [1] 0.90309</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">log</span>(<span class="dv">8</span>)<span class="op">/</span><span class="kw">log</span>(<span class="dv">10</span>)</code></pre></div>
+<pre><code>## [1] 0.90309</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">7</span><span class="op">^</span><span class="kw">log</span>(<span class="dv">2</span>, <span class="dv">7</span>) <span class="co">#7 elevado al logaritmo en base 7 de 2 da...</span></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<pre><code>&gt; 10! #R no entiende esta expresión
+Error: syntax error</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">factorial</span>(<span class="dv">10</span>)</code></pre></div>
+<pre><code>## [1] 3628800</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">exp</span>(<span class="kw">sqrt</span>(<span class="dv">8</span>))</code></pre></div>
+<pre><code>## [1] 16.91883</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">choose</span>(<span class="dv">5</span>,<span class="dv">3</span>)  <span class="co">#Núm. de subconjuntos de 3 elementos de un conjunto de 5 </span></code></pre></div>
+<pre><code>## [1] 10</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">choose</span>(<span class="dv">3</span>,<span class="dv">5</span>)  <span class="co">#Núm. de subconjuntos de 5 elementos de un conjunto de 3</span></code></pre></div>
+<pre><code>## [1] 0</code></pre>
+<p><code>R</code> entiende que los argumentos de las funciones <code>sin</code>, <code>cos</code> y <code>tan</code> están en radianes. Si queremos aplicar una de estas funciones a un número de grados, podemos traducir los grados a radianes multiplicándolos por <span class="math inline">\(\pi/180\)</span>. De manera similar, los resultados de <code>asin</code>, <code>acos</code> y <code>atan</code> también están en radianes, y se pueden convertir a grados multiplicándolos por <span class="math inline">\(180/\pi\)</span>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cos</span>(<span class="dv">60</span>) <span class="co">#Coseno de 60 radianes</span></code></pre></div>
+<pre><code>## [1] -0.952413</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cos</span>(<span class="dv">60</span><span class="op">*</span>pi<span class="op">/</span><span class="dv">180</span>) <span class="co">#Coseno de 60 grados</span></code></pre></div>
+<pre><code>## [1] 0.5</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">acos</span>(<span class="fl">0.5</span>)  <span class="co">#Arcocoseno de 0.5 en radianes</span></code></pre></div>
+<pre><code>## [1] 1.047198</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">acos</span>(<span class="fl">0.5</span>)<span class="op">*</span><span class="dv">180</span><span class="op">/</span>pi <span class="co">#Arcocoseno de 0.5 en grados</span></code></pre></div>
+<pre><code>## [1] 60</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">acos</span>(<span class="dv">2</span>) </code></pre></div>
+<pre><code>## [1] NaN</code></pre>
+<p>Este último <code>NaN</code> (acrónimo de <code>Not a Number</code> ) significa que el resultado no existe; en efecto, <span class="math inline">\(\mathrm{arccos}(2)\)</span> no existe como número real, ya que <span class="math inline">\(\cos(x)\)</span> siempre pertenece al intervalo <span class="math inline">\([-1,1]\)</span>.</p>
+<p>Ya hemos visto que <code>R</code> dispone del signo <code>pi</code> para representar el número real <span class="math inline">\(\pi\)</span>. En cambio, no tiene ningún signo para indicar la constante de Euler <span class="math inline">\(e\)</span>, y hay que emplear <code>exp(1)</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2</span><span class="op">*</span><span class="kw">exp</span>(<span class="dv">1</span>) <span class="co">#2·e</span></code></pre></div>
+<pre><code>## [1] 5.436564</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">exp</span>(pi)<span class="op">-</span>pi<span class="op">^</span><span class="kw">exp</span>(<span class="dv">1</span>) <span class="co">#e^pi-pi^e</span></code></pre></div>
+<pre><code>## [1] 0.6815349</code></pre>
+<p>Para terminar esta sección, observad el resultado siguiente:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sqrt</span>(<span class="dv">2</span>)<span class="op">^</span><span class="dv">2</span><span class="op">-</span><span class="dv">2</span></code></pre></div>
+<pre><code>## [1] 4.440892e-16</code></pre>
+<p><code>R</code> opera numéricamente con <span class="math inline">\(\sqrt{2}\)</span>, no formalmente, y por eso no da como resultado de <span class="math inline">\((\sqrt{2})^2-2\)</span> el valor 0 exacto, sino el número pequeñísimo <span class="math inline">\(4.440892\cdot 10^{-16}\)</span>; de hecho, <code>R</code> trabaja internamente con una precisión de aproximadamente 16 cifras decimales, por lo que no siempre podemos esperar resultados exactos.<a href="#fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a></p>
+</div>
+<div id="cifras-significativas-y-redondeos" class="section level2">
+<h2><span class="header-section-number">2.2</span> Cifras significativas y redondeos</h2>
+<p>En cada momento, <code>R</code> decide cuántas cifras muestra de un número según el contexto.<a href="#fn11" class="footnoteRef" id="fnref11"><sup>11</sup></a> Si queremos conocer una cantidad específica <span class="math inline">\(n\)</span> de cifras significativas de un número <span class="math inline">\(x\)</span>, podemos emplear la función <code>print(x, n)</code>. Por ejemplo:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sqrt</span>(<span class="dv">2</span>)</code></pre></div>
+<pre><code>## [1] 1.414214</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(<span class="kw">sqrt</span>(<span class="dv">2</span>), <span class="dv">20</span>)</code></pre></div>
+<pre><code>## [1] 1.4142135623730951455</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(<span class="kw">sqrt</span>(<span class="dv">2</span>), <span class="dv">2</span>)</code></pre></div>
+<pre><code>## [1] 1.4</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2</span><span class="op">^</span><span class="dv">100</span></code></pre></div>
+<pre><code>## [1] 1.267651e+30</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(<span class="dv">2</span><span class="op">^</span><span class="dv">100</span>, <span class="dv">15</span>)</code></pre></div>
+<pre><code>## [1] 1.26765060022823e+30</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(<span class="dv">2</span><span class="op">^</span><span class="dv">100</span>, <span class="dv">5</span>)</code></pre></div>
+<pre><code>## [1] 1.2677e+30</code></pre>
+<p>El número máximo de cifras que podemos pedir con <code>print</code> es 22; si pedimos más, <code>R</code> nos dará un mensaje de error.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(<span class="kw">sqrt</span>(<span class="dv">2</span>), <span class="dv">22</span>)</code></pre></div>
+<pre><code>## [1] 1.414213562373095145475</code></pre>
+<pre><code>&gt; print(sqrt(2), 23)
+Error in print.default(sqrt(2), 23) : invalid &#39;digits&#39; argument</code></pre>
+<p>Por otro lado, hay que tener en cuenta que, como ya hemos comentado, <code>R</code> trabaja con una precisión de unas 16 cifras decimales y por lo tanto los dígitos más allá de esta precisión pueden ser incorrectos. Por ejemplo, si le pedimos las 22 primeras cifras de <span class="math inline">\(\pi\)</span>, obtenemos el resultado siguiente:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(pi,<span class="dv">22</span>)</code></pre></div>
+<pre><code>## [1] 3.141592653589793115998</code></pre>
+<p>En cambio, <span class="math inline">\(\pi\)</span> vale en realidad <span class="math inline">\(3.141592653589793\underline{238462}\ldots\)</span>, lo que significa que el valor que da <code>R</code> es erróneo a partir de la decimosexta cifra decimal.</p>
+<p>La función <code>print</code> permite indicar las cifras que queremos <code>leer</code> , pero no sirve para especificar las cifras decimales con las que queremos <code>trabajar</code>. Para <code>redondear</code> un número <span class="math inline">\(x\)</span> a una cantidad específica <span class="math inline">\(n\)</span> de cifras decimales, y trabajar solamente con esas cifras, hay que usar la función <code>round(x, n)</code>. La diferencia entre los efectos de <code>print</code> y <code>round</code> consiste en que <code>print(sqrt(2), 3)</code> es igual a <span class="math inline">\(\sqrt{2}\)</span>, pero <code>R</code> sólo muestra sus primeras 3 cifras, mientras que <code>round(sqrt(2), 3)</code> <code>es igual a</code> <span class="math inline">\(1.414\)</span>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(<span class="kw">sqrt</span>(<span class="dv">2</span>), <span class="dv">3</span>)</code></pre></div>
+<pre><code>## [1] 1.41</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(<span class="kw">sqrt</span>(<span class="dv">2</span>), <span class="dv">3</span>)<span class="op">^</span><span class="dv">2</span></code></pre></div>
+<pre><code>## [1] 1.41</code></pre>
+<pre><code>## [1] 2</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="fl">1.41</span><span class="op">^</span><span class="dv">2</span></code></pre></div>
+<pre><code>## [1] 1.9881</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(<span class="kw">sqrt</span>(<span class="dv">2</span>), <span class="dv">3</span>)</code></pre></div>
+<pre><code>## [1] 1.414</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(<span class="kw">sqrt</span>(<span class="dv">2</span>), <span class="dv">3</span>)<span class="op">^</span><span class="dv">2</span></code></pre></div>
+<pre><code>## [1] 1.999396</code></pre>
+<p>En caso de empate, R redondea al valor que termina en cifra par.<a href="#fn12" class="footnoteRef" id="fnref12"><sup>12</sup></a></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(<span class="fl">2.25</span>, <span class="dv">1</span>)</code></pre></div>
+<pre><code>## [1] 2.2</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(<span class="fl">2.35</span>, <span class="dv">1</span>)  </code></pre></div>
+<pre><code>## [1] 2.4</code></pre>
+<p>¿Qué pasa si no se indica el número de cifras en el argumento de <code>round</code>?</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(<span class="kw">sqrt</span>(<span class="dv">2</span>)) </code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(<span class="kw">sqrt</span>(<span class="dv">2</span>), <span class="dv">0</span>) </code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<p>Al entrar <code>round(sqrt(2))</code>, <code>R</code> ha entendido que el número de cifras decimales al que queríamos redondear era 0. Esto significa que 0 es el <code>valor por defecto</code> de este parámetro. No es necesario especificar los valores por defecto de los parámetros de una función, y para saber cuáles son, hay que consultar su Ayuda. Así, por ejemplo, la Ayuda de <code>round</code> indica que su sintaxis es</p>
+<p><code>round(x, digits=0)</code>,</p>
+<p>donde el valor de <code>digits</code> ha de ser un número entero que indique el número de cifras decimales. Esta sintaxis significa que el valor por defecto del parámetro <code>digits</code> es 0.</p>
+<p>Escribir <code>digits=</code> en el argumento para especificar el número de cifras decimales es optativo, siempre que mantengamos el orden de los argumentos indicado en la Ayuda: en este caso, primero el número y luego las cifras. Este es el motivo por el que podemos escribir <code>round(sqrt(2), 1)</code> en lugar de <code>round(sqrt(2), digits=1)</code>. Si cambiamos el orden de los argumentos, entonces sí que hay que especificar el nombre del parámetro, como muestra el siguiente ejemplo:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(<span class="dt">digits=</span><span class="dv">3</span>, <span class="kw">sqrt</span>(<span class="dv">2</span>))</code></pre></div>
+<pre><code>## [1] 1.414</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(<span class="dv">3</span>, <span class="kw">sqrt</span>(<span class="dv">2</span>))</code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<p>En la tabla de funciones ya vimos una función de dos argumentos que toma uno por defecto: <code>log</code>. Su sintaxis completa es <code>log(x, base=...)</code>, y si no especificamos la <code>base</code>, toma su valor por defecto, <span class="math inline">\(e\)</span>, y calcula el logaritmo neperiano.</p>
+<p>La función <code>round(x)</code> redondea <span class="math inline">\(x\)</span> al valor entero más cercano (y en caso de empate, al que termina en cifra par). <code>R</code> también dispone de otras funciones que permiten redondear a números enteros en otros sentidos específicos:</p>
+<ul>
+<li><p><code>floor(x)</code> redondea <span class="math inline">\(x\)</span> a un número entero por defecto, dando el mayor número entero menor o igual que <span class="math inline">\(x\)</span>, que denotamos por <span class="math inline">\(\lfloor x\rfloor\)</span>.</p></li>
+<li><p><code>ceiling(x)</code> redondea <span class="math inline">\(x\)</span> a un número entero por exceso, dando el menor número entero mayor o igual que <span class="math inline">\(x\)</span>, que denotamos por <span class="math inline">\(\lceil x\rceil\)</span>.</p></li>
+<li><p><code>trunc(x)</code> da la parte entera de <span class="math inline">\(x\)</span>, eliminando la parte decimal.</p></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">floor</span>(<span class="fl">8.3</span>) <span class="co">#El mayor entero menor o igual que 8.3</span></code></pre></div>
+<pre><code>## [1] 8</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ceiling</span>(<span class="fl">8.3</span>) <span class="co">#El menor entero mayor o igual que 8.3</span></code></pre></div>
+<pre><code>## [1] 9</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">trunc</span>(<span class="fl">8.3</span>) <span class="co">#La parte entera de 8.3</span></code></pre></div>
+<pre><code>## [1] 8</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(<span class="fl">8.3</span>) <span class="co">#El entero más cercano a 8.3</span></code></pre></div>
+<pre><code>## [1] 8</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">floor</span>(<span class="op">-</span><span class="fl">3.7</span>) <span class="co">#El mayor entero menor o igual que -3.7</span></code></pre></div>
+<pre><code>## [1] -4</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ceiling</span>(<span class="op">-</span><span class="fl">3.7</span>) <span class="co">#El menor entero mayor o igual que -3.7</span></code></pre></div>
+<pre><code>## [1] -3</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">trunc</span>(<span class="op">-</span><span class="fl">3.7</span>) <span class="co">#La parte entera de -3.7</span></code></pre></div>
+<pre><code>## [1] -3</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(<span class="op">-</span><span class="fl">3.7</span>) <span class="co">#El entero más cercano a -3.7</span></code></pre></div>
+<pre><code>## [1] -4</code></pre>
+</div>
+<div id="definicion-de-variables" class="section level2">
+<h2><span class="header-section-number">2.3</span> Definición de variables</h2>
+<p><code>R</code> funciona mediante <code>objetos</code>, estructuras de diferentes tipos que sirven para realizar diferentes tareas. Una <code>variable</code> es un tipo de objeto que sirve para guardar datos. Por ejemplo, si queremos crear una variable <span class="math inline">\(x\)</span> que contenga el valor <span class="math inline">\(\pi^2\)</span>, podemos escribir:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x=pi<span class="op">^</span><span class="dv">2</span></code></pre></div>
+<p>Al entrar esta instrucción, <code>R</code> creará el objeto <code>x</code> y le asignará el valor que hemos especificado. En general, se puede crear una variable y asignarle un valor, o asignar un nuevo valor a una variable definida anteriormente, mediante la construcción <code>nombre_de_la_variable=valor</code>.</p>
+<p>También se puede conectar el nombre de la variable con el valor por medio de una flecha <code>-&gt;</code> o <code>&lt;-</code>, compuesta de un guión y un signo de desigualdad, de manera que el sentido de la flecha vaya del valor a la variable; por ejemplo, las tres primeras instrucciones siguientes son equivalentes, y asignan el valor 2 a la variable <span class="math inline">\(x\)</span>, mientras que las dos últimas son incorrectas:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x=<span class="dv">2</span>
+x&lt;-<span class="dv">2</span>
+<span class="dv">2</span>-&gt;x</code></pre></div>
+<pre><code>&gt; 2=x
+Error in 2 = x : invalid (do_set) left-hand side to assignment
+&gt; 2&lt;-x
+Error in 2 &lt;- x : invalid (do_set) left-hand side to assignment</code></pre>
+<p>Nosotros usaremos sistemáticamente el signo <code>=</code> para hacer asignaciones.</p>
+<p>Se puede usar como nombre de una variable cualquier palabra que combine letras mayúsculas y minúsculas (<code>R</code> las distingue), con acentos o sin,<a href="#fn13" class="footnoteRef" id="fnref13"><sup>13</sup></a> dígitos (0,…, 9), puntos &lt;&lt;.&gt;&gt; y signos &lt;&lt;<code>_</code>&gt;&gt;, siempre que empiece con una letra o un punto. Aunque no esté prohibido, es muy mala idea redefinir nombres que ya sepáis que tienen significado para <code>R</code>, como por ejemplo <code>pi</code> o <code>sqrt</code>.<a href="#fn14" class="footnoteRef" id="fnref14"><sup>14</sup></a></p>
+<p>Como podéis ver en las instrucciones anteriores y en las que siguen, cuando asignamos un valor a una variable, <code>R</code> no da ningún resultado; después podemos usar el nombre de la variable para referirnos al valor que representa. Es posible asignar varios valores a una misma variable en una misma sesión: naturalmente, en cada momento <code>R</code> empleará el último valor asignado. Incluso se puede redefinir el valor de una variable usando en la nueva definición su valor actual.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x=<span class="dv">5</span>
+x<span class="op">^</span><span class="dv">2</span></code></pre></div>
+<pre><code>## [1] 25</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x=x<span class="op">-</span><span class="dv">2</span> <span class="co">#Redefinimos x como su valor actual menos 2</span>
+x</code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x<span class="op">^</span><span class="dv">2</span></code></pre></div>
+<pre><code>## [1] 9</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x=<span class="kw">sqrt</span>(x) <span class="co">#Redefinimos x como la raíz cuadrada de su valor actual</span>
+x</code></pre></div>
+<pre><code>## [1] 1.732051</code></pre>
+</div>
+<div id="definicion-de-funciones" class="section level2">
+<h2><span class="header-section-number">2.4</span> Definición de funciones</h2>
+<p>A menudo querremos definir alguna función. Para ello tenemos que usar, en vez de simplemente <code>=</code>, una construcción especial: <code>nombre_de_la_función=function(variable(s)){definición}</code>. Una vez definida una función, la podemos aplicar a valores de la(s) variable(s).</p>
+<p>Veamos un ejemplo. Vamos a llamar <span class="math inline">\(f\)</span> a la función <span class="math inline">\(x^2-2^x\)</span>, usando <span class="math inline">\(x\)</span> como variable:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">f=<span class="cf">function</span>(x){x<span class="op">^</span><span class="dv">2</span><span class="op">-</span><span class="dv">2</span><span class="op">^</span>x}
+<span class="kw">f</span>(<span class="dv">30</span>) <span class="co">#La función f aplicada a 30</span></code></pre></div>
+<pre><code>## [1] -1073740924</code></pre>
+<p>Conviene que os acostumbréis a escribir la fórmula que define la función entre llaves <code>{...}</code>. A veces es necesario y a veces no, pero no vale la pena discutir cuándo.</p>
+<p>El nombre de la variable se indica dentro de los paréntesis que siguen al <code>function</code>. En el ejemplo anterior, la variable era <span class="math inline">\(x\)</span>, y por eso hemos escrito <code>=function(x)</code>. Si hubiéramos querido definir la función con variable <span class="math inline">\(t\)</span>, habríamos usado <code>=function(t)</code> (y, naturalmente, habríamos escrito la fórmula que define la función con la variable <span class="math inline">\(t\)</span>):</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">f=<span class="cf">function</span>(t){t<span class="op">^</span><span class="dv">2</span><span class="op">-</span><span class="dv">2</span><span class="op">^</span>t}</code></pre></div>
+<p>Se pueden definir funciones de dos o más variables con <code>function</code>, declarándolas todas. Por ejemplo, para definir la función <span class="math inline">\(f(x,y)=e^{(2x-y)^2}\)</span>, tenemos que entrar</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">f=<span class="cf">function</span>(x, y){<span class="kw">exp</span>((<span class="dv">2</span><span class="op">*</span>x<span class="op">-</span>y)<span class="op">^</span><span class="dv">2</span>)}</code></pre></div>
+<p>y ahora ya podemos aplicar esta función a pares de valores:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">f</span>(<span class="dv">0</span>, <span class="dv">1</span>)</code></pre></div>
+<pre><code>## [1] 2.718282</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">f</span>(<span class="dv">1</span>, <span class="dv">0</span>)</code></pre></div>
+<pre><code>## [1] 54.59815</code></pre>
+<p>Las funciones no tienen por qué tener como argumentos o resultados sólo números reales: pueden involucrar vectores, matrices, tablas de datos, etc. Y se pueden definir por medio de secuencias de instrucciones, no sólo mediante fórmulas numéricas directas; en este caso, hay que separar las diferentes instrucciones con signos de punto y coma o escribir cada instrucción en una nueva línea. Ya iremos viendo ejemplos a medida que avance el curso.</p>
+<p>En cada momento se pueden saber los objetos (por ejemplo, variables y funciones) que se han definido en la sesión hasta ese momento entrando la instrucción <code>ls()</code> o consultando la pestaña <strong>Environment</strong>. Para borrar la definición de un objeto, hay que aplicarle la función <code>rm</code>. Si se quiere hacer limpieza y borrar de golpe las definiciones de todos los objetos que se han definido hasta el momento, se puede emplear la instrucción <code>rm(list=ls())</code> o usar el botón &lt;&lt;<em>Clear</em>&gt;&gt; (icono de la escoba) de la barra superior de la pestaña <strong>Environment</strong>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rm</span>(<span class="dt">list=</span><span class="kw">ls</span>())    <span class="co">#Borramos todas las definiciones</span>
+f=<span class="cf">function</span>(t){t<span class="op">^</span><span class="dv">2</span><span class="op">-</span><span class="dv">2</span><span class="op">^</span>t}
+a=<span class="dv">1</span>
+a</code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ls</span>()</code></pre></div>
+<pre><code>## [1] &quot;a&quot; &quot;f&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rm</span>(a)
+<span class="kw">ls</span>()</code></pre></div>
+<pre><code>## [1] &quot;f&quot;</code></pre>
+<pre><code>&gt; a
+Error: object &#39;a&#39; not found</code></pre>
+</div>
+<div id="numeros-complejos-opcional" class="section level2">
+<h2><span class="header-section-number">2.5</span> Números complejos (opcional)</h2>
+<p>Hasta aquí, hemos operado con números reales. Con <code>R</code> también podemos operar con números complejos. Los signos para las operaciones son los mismos que en el caso real.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(<span class="dv">2</span><span class="op">+</span>5i)<span class="op">*</span><span class="dv">3</span></code></pre></div>
+<pre><code>## [1] 6+15i</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(<span class="dv">2</span><span class="op">+</span>5i)<span class="op">*</span>(<span class="dv">3</span><span class="op">+</span>7i)</code></pre></div>
+<pre><code>## [1] -29+29i</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(<span class="dv">2</span><span class="op">+</span>5i)<span class="op">/</span>(<span class="dv">3</span><span class="op">+</span>7i)</code></pre></div>
+<pre><code>## [1] 0.7068966+0.0172414i</code></pre>
+<p>Fijaos en que cuando entramos en <code>R</code> un número complejo escrito en forma binomial <span class="math inline">\(a+bi\)</span>, <strong>no</strong> escribimos un <code>*</code> entre la <code>i</code> y su coeficiente; de hecho, <em>no hay que escribirlo</em> :</p>
+<pre><code>&gt; 2+5*i
+Error: object &#39;i&#39; not found</code></pre>
+<p>Por otro lado, si el coeficiente de <span class="math inline">\(i\)</span> es 1 o <span class="math inline">\(-1\)</span>, hay que escribir el &lt;&lt;1&gt;&gt;: por ejemplo, <span class="math inline">\(3-i\)</span> se tiene que escribir <code>3-1i</code>. Si no lo hacemos, <code>R</code> da un mensaje de error.</p>
+<pre><code>&gt; (3+i)*(2-i)
+Error: object &#39;i&#39; not found</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(<span class="dv">3</span><span class="op">+</span>1i)<span class="op">*</span>(<span class="dv">2</span><span class="op">-</span>1i)</code></pre></div>
+<pre><code>## [1] 7-1i</code></pre>
+<p>Los complejos que tienen como parte imaginaria un número entero o un racional escrito en forma decimal se pueden entrar directamente en forma binomial, como lo hemos hecho hasta ahora. Para definir números complejos más &lt;<complejos>&gt; se puede usar la función <code>complex(real=..., imaginary=...)</code>.</p>
+<p>Veamos un ejemplo:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span><span class="op">+</span><span class="dv">2</span><span class="op">/</span>3i <span class="co">#Esto en realidad es 1 más 2 partido por 3i</span></code></pre></div>
+<pre><code>## [1] 1-0.666667i</code></pre>
+<pre><code>&gt; 1+(2/3)i  
+Error: unexpected symbol in &quot;1+(2/3)i&quot;
+&gt; complex(real=1,imaginary=2/3)
+[1] 1+0.666667i
+&gt; z=1+sqrt(2)i
+Error: unexpected symbol in &quot;z=1+sqrt(2)i&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">z=<span class="kw">complex</span>(<span class="dt">real=</span><span class="dv">1</span>, <span class="dt">imaginary=</span><span class="kw">sqrt</span>(<span class="dv">2</span>))
+z</code></pre></div>
+<pre><code>## [1] 1+1.414214i</code></pre>
+<p>Como sabéis, los números complejos se inventaron para poder trabajar con raíces cuadradas de números negativos. Ahora bien, por defecto, cuando calculamos la raíz cuadrada de un número negativo <code>R</code> no devuelve un número complejo, sino que se limita a avisarnos de que no existe.</p>
+<pre><code>sqrt(-3)
+[1] NaN
+Warning message:
+In sqrt(-3) : NaNs produced</code></pre>
+<p>Si queremos que <code>R</code> produzca un número complejo al calcular la raíz cuadrada de un número negativo, tenemos que especificar que este número negativo es un número complejo. La mejor manera de hacerlo es declarándolo como complejo aplicándole la función <code>as.complex</code></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sqrt</span>(<span class="kw">as.complex</span>(<span class="op">-</span><span class="dv">3</span>))</code></pre></div>
+<pre><code>## [1] 0+1.732051i</code></pre>
+<p>La mayoría de las funciones que hemos dado para los números reales admiten extensiones para números complejos, y con <code>R</code> se calculan con la misma función. Ahora no entraremos a explicar cómo se definen estas extensiones, sólo lo comentamos por si sabéis qué hacen y os interesa calcularlas.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sqrt</span>(<span class="dv">2</span><span class="op">+</span>3i)</code></pre></div>
+<pre><code>## [1] 1.674149+0.895977i</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">exp</span>(<span class="dv">2</span><span class="op">+</span>3i)</code></pre></div>
+<pre><code>## [1] -7.31511+1.042744i</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sin</span>(<span class="dv">2</span><span class="op">+</span>3i)</code></pre></div>
+<pre><code>## [1] 9.154499-4.168907i</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">acos</span>(<span class="kw">as.complex</span>(<span class="dv">2</span>)) <span class="co">#El arcocoseno de 2 es un número complejo</span></code></pre></div>
+<pre><code>## [1] 0+1.316958i</code></pre>
+<p>La raíz cuadrada merece un comentario. Naturalmente, <code>sqrt(2+3i)</code> calcula un número complejo <span class="math inline">\(z\)</span> tal que <span class="math inline">\(z^2=2+3i\)</span>. Como ocurre con los números reales, todo número complejo diferente de 0 tiene dos raíces cuadradas, y una se obtiene multiplicando la otra por <span class="math inline">\(-1\)</span>. <code>R</code> da como raíz cuadrada de un número real la positiva, y como raíz cuadrada de un complejo la que tiene parte real positiva, y si su parte real es 0, la que tiene parte imaginaria positiva. <!--
+AAAAAAAA pendiente dibujo de raíces de  complejos
+--></p>
+<div class="figure" style="text-align: center"><span id="fig:geom"></span>
+<img src="AprendeR-Parte-I_files/figure-html/geom-1.png" alt="Interpretación geométrica de los números complejos." width="80%" />
+<p class="caption">
+Figura 2.1: Interpretación geométrica de los números complejos.
+</p>
+</div>
+<!--
+\begin{figure}[htb]
+    \begin{center}
+      \begin{picture}(200,140)(-40,-30)
+      \put(-20,0){\line(1,0){200}} % l'eix x
+      \put(0,-20){\line(0,1){130}} % l'eix y
+      \put(120,80){$\bullet$}
+      \multiput(120,0)(0,2){40}{$\scriptstyle\cdot$}
+      \multiput(0,80)(2,0){60}{$\scriptstyle \cdot$}
+    %   \curve(0,0, 59,40)
+      \arc(30,20){-33.7}
+      \put(31,18.4){\vector(-2,3){1}}
+      \put(5,50){\small \red{$|z|=\sqrt{a^2+b^2}$}}
+      \put(38,10){\small $ \theta_{z}$}
+      \put(126,86){\small $ z=(a,b)=a+bi$}
+      \put(120,-10){\small $ a$}
+     \put(-10,80){\small $ b$}
+     \put(45,-10){\small \red{$|z|\cos(\theta_{z})$}}
+     \put(125,40){\small \red{$|z|\sin(\theta_{z})$}}
+     \thicklines
+\put(0,0){\line(3,2){120}}
+      \end{picture}
+    \end{center}
+\caption{Interpretación geométrica de los números complejos.}
+\label{fig:geom}
+\end{figure}
+-->
+<p>Un número complejo <span class="math inline">\(z=a+bi\)</span> se puede representar como el punto <span class="math inline">\((a,b)\)</span> del plano cartesiano <span class="math inline">\(\mathbb{R}^2\)</span>. Esto permite asociarle dos magnitudes geométricas véase la Figura <a href="chap-calc.html#fig:geom">2.1</a></p>
+<ul>
+<li><p>El <code>módulo</code> de <span class="math inline">\(z\)</span>, que denotaremos por <span class="math inline">\(|z|\)</span>, es la distancia euclídea de <span class="math inline">\((0,0)\)</span> a <span class="math inline">\((a,b)\)</span>: <span class="math display">\[
+|z|=\sqrt{a^2+b^2}.
+\]</span> Si <span class="math inline">\(z\in \mathbb{R}\)</span>, su módulo coincide con su valor absoluto; en particular, si <span class="math inline">\(z=0\)</span>, su módulo es <span class="math inline">\(0\)</span>, y es el único número complejo de módulo 0.</p></li>
+<li><p>El <code>argumento</code> de <span class="math inline">\(z\)</span> (para <span class="math inline">\(z\neq 0\)</span>), que denotaremos por <span class="math inline">\(\theta_{z}\)</span>, es el ángulo que forman el semieje positivo de abscisas y el vector que va de <span class="math inline">\((0,0)\)</span> a <span class="math inline">\((a,b)\)</span>. Este ángulo está determinado por las ecuaciones <span class="math display">\[
+\cos (\theta_{z})=\frac{a}{\sqrt{a^2+b^2}},\qquad
+\sin (\theta_{z})=\frac{b}{\sqrt{a^2+b^2}}.
+\]</span></p></li>
+</ul>
+<!--
+\begin{table}[htb]
+\abovecaptionskip=-1ex
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+Operación\vphantom{$\Big($} & Parte real & Parte imaginaria & Módulo & Argumento & Conjugado \\ \hline
+Signo\vphantom{$\Big($} & `Re` & `Im` & `Mod` & `Arg` & `Conj` \\ \hline
+\end{tabular}
+\end{center}
+\caption{Funciones específicas para números complejos.{Re}{Im}{Mod}{Arg}{Conj}}\label{tab:comp}
+\end{table}
+-->
+<table>
+<caption><span id="tab:comp">Tabla 2.2: </span>Funciones específicas para números complejos.</caption>
+<thead>
+<tr class="header">
+<th align="left">Operación</th>
+<th align="left">Signo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Parte real</td>
+<td align="left"><code>Re</code></td>
+</tr>
+<tr class="even">
+<td align="left">Parte imaginaria</td>
+<td align="left"><code>Im</code></td>
+</tr>
+<tr class="odd">
+<td align="left">Módulo</td>
+<td align="left"><code>Mod</code></td>
+</tr>
+<tr class="even">
+<td align="left">Argumento</td>
+<td align="left"><code>Arg</code></td>
+</tr>
+<tr class="odd">
+<td align="left">Conjugado</td>
+<td align="left"><code>Conj</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>R</code> sabe calcular módulos y argumentos de números complejos. Los argumentos los da en radianes y dentro del intervalo <span class="math inline">\((-\pi,\pi]\)</span>. En general, <code>R</code> dispone de las funciones básicas específicas para números complejos de la Tabla <a href="chap-calc.html#tab:comp">2.2</a>. Recordad que el <code>conjugado</code> de un número complejo <span class="math inline">\(z=a+bi\)</span> es <span class="math inline">\(\overline{z}=a-bi\)</span>. Veamos algunos ejemplos de uso de estas funciones:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">Re</span>(<span class="dv">4</span><span class="op">-</span>7i)</code></pre></div>
+<pre><code>## [1] 4</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">Im</span>(<span class="dv">4</span><span class="op">-</span>7i)</code></pre></div>
+<pre><code>## [1] -7</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">Mod</span>(<span class="dv">4</span><span class="op">-</span>7i)</code></pre></div>
+<pre><code>## [1] 8.062258</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">Arg</span>(<span class="dv">4</span><span class="op">-</span>7i)</code></pre></div>
+<pre><code>## [1] -1.05165</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">Conj</span>(<span class="dv">4</span><span class="op">-</span>7i)</code></pre></div>
+<pre><code>## [1] 4+7i</code></pre>
+<p>El módulo y el argumento de un número complejo <span class="math inline">\(z\neq 0\)</span> lo determinan de manera única, porque <span class="math display">\[
+z=|z|\big(\cos(\theta_z)+\sin(\theta_z)i\big).
+\]</span> Si queremos definir un número complejo mediante su módulo y argumento, no hace falta utilizar esta igualdad: podemos usar la instrucción <code>complex(modulus=..., argument=...)</code>.</p>
+<p>Por ejemplo:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">z=<span class="kw">complex</span>(<span class="dt">modulus=</span><span class="dv">3</span>, <span class="dt">argument=</span>pi<span class="op">/</span><span class="dv">5</span>)
+z</code></pre></div>
+<pre><code>## [1] 2.427051+1.763356i</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">Mod</span>(z)</code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">Arg</span>(z)</code></pre></div>
+<pre><code>## [1] 0.6283185</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pi<span class="op">/</span><span class="dv">5</span></code></pre></div>
+<pre><code>## [1] 0.6283185</code></pre>
+</div>
+<div id="guia-rapida" class="section level2">
+<h2><span class="header-section-number">2.6</span> Guía rápida</h2>
+<ul>
+<li>Signos de operaciones aritméticas:</li>
+</ul>
+<table>
+<caption><span id="tab:unnamed-chunk-42">Tabla 2.3: </span>Símbolos de operaciones aritméticas.</caption>
+<tbody>
+<tr class="odd">
+<td align="left">Operación</td>
+<td align="left">Simbolos</td>
+</tr>
+<tr class="even">
+<td align="left">Suma</td>
+<td align="left">+</td>
+</tr>
+<tr class="odd">
+<td align="left">Resta</td>
+<td align="left">-</td>
+</tr>
+<tr class="even">
+<td align="left">Multiplicación</td>
+<td align="left">*</td>
+</tr>
+<tr class="odd">
+<td align="left">División</td>
+<td align="left">/</td>
+</tr>
+<tr class="even">
+<td align="left">Potencia</td>
+<td align="left">^</td>
+</tr>
+<tr class="odd">
+<td align="left">Cociente entero</td>
+<td align="left">%/%</td>
+</tr>
+<tr class="even">
+<td align="left">Resto div. entera</td>
+<td align="left">%%</td>
+</tr>
+</tbody>
+</table>
+<!--
+```
+\begin{center}
+\small
+\hspace*{-1cm}\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+Operación\vphantom{$\Big($} & Suma & Resta & Multiplicación & División & Potencia & Cociente & Resto \\[-1ex] 
+& & & & & & entero & div. entera\\\hline
+Signo\vphantom{$\Big($} & `+` & `-` & `*` & `/` & `\^{`}  &\quad `\%/\%` & \qquad `\%\%` \\ \hline
+\end{tabular}
+\end{center}
+```
+-->
+<ul>
+<li>Funciones numéricas:</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th align="right">Función</th>
+<th align="right"><span class="math inline">\(\sqrt{x}\)</span></th>
+<th align="right"><span class="math inline">\(e^x\)</span></th>
+<th align="right"><span class="math inline">\(\ln(x)\)</span></th>
+<th align="right"><span class="math inline">\(\log_{10}(x)\)</span></th>
+<th align="right"><span class="math inline">\(\log_a(x)\)</span></th>
+<th align="right"><span class="math inline">\(n!\)</span></th>
+<th align="right"><span class="math inline">\(\binom{n}{m}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right"><strong>Signo</strong></td>
+<td align="right">sqrt</td>
+<td align="right">exp</td>
+<td align="right">log</td>
+<td align="right">log10</td>
+<td align="right">log( , a)</td>
+<td align="right"><code>factorial</code></td>
+<td align="right"><code>choose</code></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="right">Función</th>
+<th align="right"><span class="math inline">\(\sin(x)\)</span></th>
+<th align="right"><span class="math inline">\(\cos(x)\)</span></th>
+<th align="right"><span class="math inline">\(\tan(x)\)</span></th>
+<th align="right"><span class="math inline">\(\arcsin(x)\)</span></th>
+<th align="right"><span class="math inline">\(\mathrm{arccos}(x)\)</span></th>
+<th align="right"><span class="math inline">\(\arctan(x)\)</span></th>
+<th align="right"><code>|</code><span class="math inline">\(x\)</span><code>|</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right"><strong>Signo</strong></td>
+<td align="right"><code>sin</code></td>
+<td align="right"><code>cos</code></td>
+<td align="right"><code>tan</code></td>
+<td align="right"><code>asin</code></td>
+<td align="right"><code>acos</code></td>
+<td align="right"><code>atan</code></td>
+<td align="right"><code>abs</code></td>
+</tr>
+</tbody>
+</table>
+<!---
+```
+\begin{center}
+\hspace*{-1cm}\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+Función & $\sqrt{x}$ \vphantom{$\Big($} & $e^x$ & $\ln(x)$ & $\log_{10}(x)$ & $\log_a(x)$ & $n!$ & $\binom{n}{m}$\\ \hline
+Signo & `sqrt`\vphantom{$\Big($} & `exp` & `log` & `log10` & `log( , a)` & `factorial` & `choose`\\ \hline\hline
+Función &$\sin(x)$\vphantom{$\Big($} & $\cos(x)$ & $\tan(x)$ & $\arcsin(x)$ & $\mathrm{arccos}(x)$ & $\arctan(x)$ & `|`$x$`|` \\ \hline
+Signo & `sin`\vphantom{$\Big($} & `cos` & `tan` & `asin` & `acos`& `atan` & `abs`\\ \hline
+\end{tabular}
+\end{center}
+```
+-->
+<ul>
+<li><p><code>pi</code> es el número <span class="math inline">\(\pi\)</span>.</p></li>
+<li><p><code>print(x, n)</code> muestra el valor de <span class="math inline">\(x\)</span> con <span class="math inline">\(n\)</span> cifras significativas.</p></li>
+<li><p><code>round(x, n)</code> redondea el valor de <span class="math inline">\(x\)</span> a <span class="math inline">\(n\)</span> cifras decimales.</p></li>
+<li><p><code>floor(x)</code> redondea <span class="math inline">\(x\)</span> a un número entero por defecto.</p></li>
+<li><p><code>ceiling(x)</code> redondea <span class="math inline">\(x\)</span> a un número entero por exceso.</p></li>
+<li><p><code>trunc(x)</code> da la parte entera de <span class="math inline">\(x\)</span>.</p></li>
+<li><p><code>variable</code> <code>=``valor</code> asigna el <code>valor</code> a la <code>variable</code> . Otras construcciones equivalentes son <code>variable</code> <code>&lt;-``valor</code> y <code>valor</code> <code>-&gt;``variable</code> .</p></li>
+<li><p><code>funcion=function(variables){instrucciones}</code> define la <code>funcion</code> (no ponemos acento en la o) de variables las especificadas entre los paréntesis mediante las instrucciones especificadas entre las llaves.</p></li>
+<li><p><code>ls()</code> nos da la lista de objetos actualmente definidos.</p></li>
+<li><p><code>rm</code> borra la definición del objeto u objetos a los que se aplica.</p></li>
+<li><p><code>rm(list=ls())</code> borra las definiciones de todos los objetos que hayamos definido.</p></li>
+<li><p><code>complex</code> se usa para definir números complejos que no se puedan entrar directamente en forma binomial. Algunos parámetros importantes:</p></li>
+<li><p><code>real</code> e <code>imaginary</code>: sirven para especificar su parte real y su parte imaginaria.</p></li>
+<li><p><code>modulus</code> y <code>argument</code>: sirven para especificar su módulo y su argumento.</p></li>
+<li><p><code>as.complex</code> convierte un número real en complejo.</p></li>
+<li><p>Funciones específicas para números complejos:</p></li>
+</ul>
+<p>Operación | Parte real | Parte imaginaria | Módulo | Argumento | Conjugado <strong>Signo</strong> | <code>Re</code> | <code>Im</code> | <code>Mod</code> | <code>Arg</code> | <code>Conj</code></p>
+<!--
+```
+\begin{center}
+\hspace*{-0.5cm}\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+Operación\vphantom{$\Big($} & Parte real & Parte imaginaria & Módulo & Argumento & Conjugado \\ \hline
+Signo\vphantom{$\Big($} & `Re` & `Im` & `Mod` & `Arg` & `Conj` \\ \hline
+\end{tabular}
+\end{center}
+```
+-->
+</div>
+<div id="ejercicio" class="section level2">
+<h2><span class="header-section-number">2.7</span> Ejercicio</h2>
+<p>Si hubiéramos empezado a contar segundos a partir de las 12 campanadas que marcaron el inicio de 2015, ¿qué día de qué año llegaríamos a los 250 millones de segundos? ¡Cuidado con los años bisiestos!</p>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="6">
+<li id="fn6"><p>En estas notas, y excepto en el ejemplo que damos en esta página, no mostraremos este signo <code>+</code> para no confundirlo con una suma.<a href="chap-calc.html#fnref6">↩</a></p></li>
+<li id="fn7"><p>Cuando instaláis <code>R</code>, éste reconoce la zona donde vivís a partir de información que extrae del ordenador, y especifica el idioma de los mensajes de acuerdo con esta zona. Seguramente, por lo tanto, los mensajes de error y advertencias os aparecerán en castellano; un castellano algo chapucero, la verdad. Si los queréis en inglés, entrad la instrucción <code>system(&quot;defaults write org.R-project.R force.LANG en_US.UTF-8&quot;)</code> y, a continuación, cerrad <code>Rstudio</code> y volvedlo a abrir. Si los tenéis en inglés, o en cualquier otro idioma, y los queréis en castellano, tenéis que usar <code>system(&quot;defaults write org.R-project.R force.LANG es_Es.UTF-8&quot;)</code>.<a href="chap-calc.html#fnref7">↩</a></p></li>
+<li id="fn8"><p>Por consistencia, en el texto también seguiremos el convenio angloamericano de usar un punto en lugar de una coma como separador decimal.<a href="chap-calc.html#fnref8">↩</a></p></li>
+<li id="fn9"><p>Cuando <span class="math inline">\(b&lt;0\)</span>, <code>R</code> da como cociente entero el menor número entero <span class="math inline">\(q\)</span> tal que <span class="math inline">\(q\cdot b\geq a\)</span>, y como resto la diferencia <span class="math inline">\(a-q\cdot b\)</span>, que en este caso es negativa.<a href="chap-calc.html#fnref9">↩</a></p></li>
+<li id="fn10"><p>Si necesitáis trabajar de manera exacta con más cifras significativas, os recomendamos usar las funciones del paquete <code>Rmpfr</code>. Podéis consultar su manual de referencia en <a href="https://cran.r-project.org/web/packages/Rmpfr/index.html" class="uri">https://cran.r-project.org/web/packages/Rmpfr/index.html</a> .<a href="chap-calc.html#fnref10">↩</a></p></li>
+<li id="fn11"><p>También podéis especificar este número de cifras para toda una sesión, entrándolo en lugar de los puntos suspensivos en <code>options(digits=...)</code>. Esto no cambia la precisión de los cálculos, sólo cómo se muestran los resultados.<a href="chap-calc.html#fnref11">↩</a></p></li>
+<li id="fn12"><p>No es un capricho, es la regla de redondeo en caso de empate recomendada por el estándar IEEE 754 para aritmética en coma flotante.<a href="chap-calc.html#fnref12">↩</a></p></li>
+<li id="fn13"><p>Aunque os recomendamos que no uséis letras acentuadas, ya que se pueden importar mal de un ordenador a otro. Nosotros las evitaremos.<a href="chap-calc.html#fnref13">↩</a></p></li>
+<li id="fn14"><p>En la Web se pueden encontrar muchas &lt;<em>guías de estilo de <code>R</code></em> con recomendaciones sobre cómo construir los nombres de objetos. Un buen artículo introductorio sobre el tema se puede encontrar en <a href="http://journal.r-project.org/archive/2012-2/RJournal_2012-2_Baaaath.pdf" class="uri">http://journal.r-project.org/archive/2012-2/RJournal_2012-2_Baaaath.pdf</a> . Al aprender un lenguaje informático es cuando es más fácil adquirir buenos hábitos.<a href="chap-calc.html#fnref14">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="chap-0.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="chap-lm.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/RicUIB/AprendeR2.1/edit/master/02chap01_La_calculadora.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["AprendeR-Parte-I.pdf", "AprendeR-Parte-I.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

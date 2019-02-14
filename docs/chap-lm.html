@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Lección 3 Un aperitivo: Introducción a la regresión lineal | AprendeR: Parte I</title>
+  <meta name="description" content="Apuntes AprendeR bookdown::gitbook.">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="Lección 3 Un aperitivo: Introducción a la regresión lineal | AprendeR: Parte I" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Apuntes AprendeR bookdown::gitbook." />
+  <meta name="github-repo" content="RicUIB/AprendeR" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Lección 3 Un aperitivo: Introducción a la regresión lineal | AprendeR: Parte I" />
+  
+  <meta name="twitter:description" content="Apuntes AprendeR bookdown::gitbook." />
+  
+
+<meta name="author" content="The AprendeR team">
+
+
+<meta name="date" content="2019-02-14">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="chap-calc.html">
+<link rel="next" href="chap-vect.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">AprendeR: Parte I</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Presentación</a></li>
+<li class="chapter" data-level="1" data-path="chap-0.html"><a href="chap-0.html"><i class="fa fa-check"></i><b>1</b> Logística de <code>R</code></a><ul>
+<li class="chapter" data-level="1.1" data-path="chap-0.html"><a href="chap-0.html#como-instalar-r-y-rstudio"><i class="fa fa-check"></i><b>1.1</b> Cómo instalar <code>R</code> y <em>Rstudio</em></a></li>
+<li class="chapter" data-level="1.2" data-path="chap-0.html"><a href="chap-0.html#sec:guardar"><i class="fa fa-check"></i><b>1.2</b> Cómo guardar el trabajo realizado</a></li>
+<li class="chapter" data-level="1.3" data-path="chap-0.html"><a href="chap-0.html#sec:guiones"><i class="fa fa-check"></i><b>1.3</b> Cómo trabajar con guiones y otros ficheros</a></li>
+<li class="chapter" data-level="1.4" data-path="chap-0.html"><a href="chap-0.html#sec:help"><i class="fa fa-check"></i><b>1.4</b> Cómo obtener ayuda</a></li>
+<li class="chapter" data-level="1.5" data-path="chap-0.html"><a href="chap-0.html#sec:paquetes"><i class="fa fa-check"></i><b>1.5</b> Cómo instalar y cargar paquetes</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="chap-calc.html"><a href="chap-calc.html"><i class="fa fa-check"></i><b>2</b> La calculadora</a><ul>
+<li class="chapter" data-level="2.1" data-path="chap-calc.html"><a href="chap-calc.html#numeros-reales-operaciones-y-funciones-basicas"><i class="fa fa-check"></i><b>2.1</b> Números reales: operaciones y funciones básicas</a></li>
+<li class="chapter" data-level="2.2" data-path="chap-calc.html"><a href="chap-calc.html#cifras-significativas-y-redondeos"><i class="fa fa-check"></i><b>2.2</b> Cifras significativas y redondeos</a></li>
+<li class="chapter" data-level="2.3" data-path="chap-calc.html"><a href="chap-calc.html#definicion-de-variables"><i class="fa fa-check"></i><b>2.3</b> Definición de variables</a></li>
+<li class="chapter" data-level="2.4" data-path="chap-calc.html"><a href="chap-calc.html#definicion-de-funciones"><i class="fa fa-check"></i><b>2.4</b> Definición de funciones</a></li>
+<li class="chapter" data-level="2.5" data-path="chap-calc.html"><a href="chap-calc.html#numeros-complejos-opcional"><i class="fa fa-check"></i><b>2.5</b> Números complejos (opcional)</a></li>
+<li class="chapter" data-level="2.6" data-path="chap-calc.html"><a href="chap-calc.html#guia-rapida"><i class="fa fa-check"></i><b>2.6</b> Guía rápida</a></li>
+<li class="chapter" data-level="2.7" data-path="chap-calc.html"><a href="chap-calc.html#ejercicio"><i class="fa fa-check"></i><b>2.7</b> Ejercicio</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="chap-lm.html"><a href="chap-lm.html"><i class="fa fa-check"></i><b>3</b> Un aperitivo: Introducción a la regresión lineal</a><ul>
+<li class="chapter" data-level="3.1" data-path="chap-lm.html"><a href="chap-lm.html#calculo-de-rectas-de-regresion"><i class="fa fa-check"></i><b>3.1</b> Cálculo de rectas de regresión</a></li>
+<li class="chapter" data-level="3.2" data-path="chap-lm.html"><a href="chap-lm.html#rectas-de-regresion-y-transformaciones-logaritmicas"><i class="fa fa-check"></i><b>3.2</b> Rectas de regresión y transformaciones logarítmicas</a></li>
+<li class="chapter" data-level="3.3" data-path="chap-lm.html"><a href="chap-lm.html#guia-rapida-1"><i class="fa fa-check"></i><b>3.3</b> Guía rápida</a></li>
+<li class="chapter" data-level="3.4" data-path="chap-lm.html"><a href="chap-lm.html#ejercicio-1"><i class="fa fa-check"></i><b>3.4</b> Ejercicio</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="chap-vect.html"><a href="chap-vect.html"><i class="fa fa-check"></i><b>4</b> Vectores y otros tipos de listas</a><ul>
+<li class="chapter" data-level="4.1" data-path="chap-vect.html"><a href="chap-vect.html#construccion-de-vectores"><i class="fa fa-check"></i><b>4.1</b> Construcción de vectores</a></li>
+<li class="chapter" data-level="4.2" data-path="chap-vect.html"><a href="chap-vect.html#operaciones-con-vectores"><i class="fa fa-check"></i><b>4.2</b> Operaciones con vectores</a></li>
+<li class="chapter" data-level="4.3" data-path="chap-vect.html"><a href="chap-vect.html#entradas-y-trozos-de-vectores"><i class="fa fa-check"></i><b>4.3</b> Entradas y trozos de vectores</a></li>
+<li class="chapter" data-level="4.4" data-path="chap-vect.html"><a href="chap-vect.html#subsec:factor"><i class="fa fa-check"></i><b>4.4</b> Factores</a></li>
+<li class="chapter" data-level="4.5" data-path="chap-vect.html"><a href="chap-vect.html#sec:lists"><i class="fa fa-check"></i><b>4.5</b> Listas heterogéneas</a></li>
+<li class="chapter" data-level="4.6" data-path="chap-vect.html"><a href="chap-vect.html#guia-rapida-de-funciones"><i class="fa fa-check"></i><b>4.6</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="4.7" data-path="chap-vect.html"><a href="chap-vect.html#ejercicio-2"><i class="fa fa-check"></i><b>4.7</b> Ejercicio</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="chap-matrix.html"><a href="chap-matrix.html"><i class="fa fa-check"></i><b>5</b> Matrices</a><ul>
+<li class="chapter" data-level="5.1" data-path="chap-matrix.html"><a href="chap-matrix.html#construccion-de-matrices"><i class="fa fa-check"></i><b>5.1</b> Construcción de matrices</a></li>
+<li class="chapter" data-level="5.2" data-path="chap-matrix.html"><a href="chap-matrix.html#acceso-a-entradas-y-submatrices"><i class="fa fa-check"></i><b>5.2</b> Acceso a entradas y submatrices</a></li>
+<li class="chapter" data-level="5.3" data-path="chap-matrix.html"><a href="chap-matrix.html#algunas-funciones-para-matrices"><i class="fa fa-check"></i><b>5.3</b> Algunas funciones para matrices</a></li>
+<li class="chapter" data-level="5.4" data-path="chap-matrix.html"><a href="chap-matrix.html#calculo-matricial-opcional"><i class="fa fa-check"></i><b>5.4</b> Cálculo matricial (opcional)</a></li>
+<li class="chapter" data-level="5.5" data-path="chap-matrix.html"><a href="chap-matrix.html#valores-y-vectores-propios-opcional"><i class="fa fa-check"></i><b>5.5</b> Valores y vectores propios (opcional)</a></li>
+<li class="chapter" data-level="5.6" data-path="chap-matrix.html"><a href="chap-matrix.html#matrices-complejas-opcional"><i class="fa fa-check"></i><b>5.6</b> Matrices complejas (opcional)</a></li>
+<li class="chapter" data-level="5.7" data-path="chap-matrix.html"><a href="chap-matrix.html#guia-rapida-de-funciones-1"><i class="fa fa-check"></i><b>5.7</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="5.8" data-path="chap-matrix.html"><a href="chap-matrix.html#ejercicio-opcional"><i class="fa fa-check"></i><b>5.8</b> Ejercicio (opcional)</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="chap-df.html"><a href="chap-df.html"><i class="fa fa-check"></i><b>6</b> <em>Data frames</em></a><ul>
+<li class="chapter" data-level="6.1" data-path="chap-df.html"><a href="chap-df.html#estructura-de-un-data-frame"><i class="fa fa-check"></i><b>6.1</b> Estructura de un <em>data frame</em></a></li>
+<li class="chapter" data-level="6.2" data-path="chap-df.html"><a href="chap-df.html#como-importar-y-exportar-data-frames"><i class="fa fa-check"></i><b>6.2</b> Cómo importar y exportar <em>data frames</em></a></li>
+<li class="chapter" data-level="6.3" data-path="chap-df.html"><a href="chap-df.html#como-crear-data-frames"><i class="fa fa-check"></i><b>6.3</b> Cómo crear <em>data frames</em></a></li>
+<li class="chapter" data-level="6.4" data-path="chap-df.html"><a href="chap-df.html#sec:moddf"><i class="fa fa-check"></i><b>6.4</b> Cómo modificar un <em>data frame</em></a></li>
+<li class="chapter" data-level="6.5" data-path="chap-df.html"><a href="chap-df.html#sec:dfaf"><i class="fa fa-check"></i><b>6.5</b> Cómo añadir filas y columnas a un <em>data frame</em></a></li>
+<li class="chapter" data-level="6.6" data-path="chap-df.html"><a href="chap-df.html#como-seleccionar-trozos-de-un-data-frame"><i class="fa fa-check"></i><b>6.6</b> Cómo seleccionar trozos de un <em>data frame</em></a></li>
+<li class="chapter" data-level="6.7" data-path="chap-df.html"><a href="chap-df.html#como-aplicar-una-funcion-a-las-variables-de-un-data-frame"><i class="fa fa-check"></i><b>6.7</b> Cómo aplicar una función a las variables de un <em>data frame</em></a></li>
+<li class="chapter" data-level="6.8" data-path="chap-df.html"><a href="chap-df.html#sub:attach"><i class="fa fa-check"></i><b>6.8</b> Cómo añadir las variables de un <em>data frame</em> al entorno global</a></li>
+<li class="chapter" data-level="6.9" data-path="chap-df.html"><a href="chap-df.html#big-data-frames-con-data.table-opcional."><i class="fa fa-check"></i><b>6.9</b> &lt;&lt;<em>Big data</em>&gt;&gt; <em>frames</em> con <code>data.table</code> (opcional).</a></li>
+<li class="chapter" data-level="6.10" data-path="chap-df.html"><a href="chap-df.html#guia-rapida-de-funciones-2"><i class="fa fa-check"></i><b>6.10</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="6.11" data-path="chap-df.html"><a href="chap-df.html#ejercicio-3"><i class="fa fa-check"></i><b>6.11</b> Ejercicio</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="chap-plot.html"><a href="chap-plot.html"><i class="fa fa-check"></i><b>7</b> Gráficos I</a><ul>
+<li class="chapter" data-level="7.1" data-path="chap-plot.html"><a href="chap-plot.html#la-funcion-plot"><i class="fa fa-check"></i><b>7.1</b> La función <code>plot</code></a></li>
+<li class="chapter" data-level="7.2" data-path="chap-plot.html"><a href="chap-plot.html#parametros-de-plot"><i class="fa fa-check"></i><b>7.2</b> Parámetros de <code>plot</code></a></li>
+<li class="chapter" data-level="7.3" data-path="chap-plot.html"><a href="chap-plot.html#como-anadir-elementos-a-un-grafico"><i class="fa fa-check"></i><b>7.3</b> Cómo añadir elementos a un gráfico</a></li>
+<li class="chapter" data-level="7.4" data-path="chap-plot.html"><a href="chap-plot.html#guia-rapida-2"><i class="fa fa-check"></i><b>7.4</b> Guía rápida</a><ul>
+<li class="chapter" data-level="7.4.1" data-path="chap-plot.html"><a href="chap-plot.html#ejercicio-4"><i class="fa fa-check"></i><b>7.4.1</b> Ejercicio</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="chap-edqual.html"><a href="chap-edqual.html"><i class="fa fa-check"></i><b>8</b> Descripción de datos cualitativos</a><ul>
+<li class="chapter" data-level="8.1" data-path="chap-edqual.html"><a href="chap-edqual.html#frecuencias"><i class="fa fa-check"></i><b>8.1</b> Frecuencias</a></li>
+<li class="chapter" data-level="8.2" data-path="chap-edqual.html"><a href="chap-edqual.html#tablas-unidimensionales-de-frecuencias"><i class="fa fa-check"></i><b>8.2</b> Tablas unidimensionales de frecuencias</a></li>
+<li class="chapter" data-level="8.3" data-path="chap-edqual.html"><a href="chap-edqual.html#tablas-bidimensionales-de-frecuencias"><i class="fa fa-check"></i><b>8.3</b> Tablas bidimensionales de frecuencias</a></li>
+<li class="chapter" data-level="8.4" data-path="chap-edqual.html"><a href="chap-edqual.html#tablas-multidimensionales-de-frecuencias"><i class="fa fa-check"></i><b>8.4</b> Tablas multidimensionales de frecuencias</a></li>
+<li class="chapter" data-level="8.5" data-path="chap-edqual.html"><a href="chap-edqual.html#tablas-a-partir-de-dta-frames-de-de-variables-cualitativas"><i class="fa fa-check"></i><b>8.5</b> Tablas a partir de <em>dta frames</em> de de variables cualitativas</a></li>
+<li class="chapter" data-level="8.6" data-path="chap-edqual.html"><a href="chap-edqual.html#diagramas-de-barras"><i class="fa fa-check"></i><b>8.6</b> Diagramas de barras</a></li>
+<li class="chapter" data-level="8.7" data-path="chap-edqual.html"><a href="chap-edqual.html#otros-graficos-para-datos-cualitativos"><i class="fa fa-check"></i><b>8.7</b> Otros gráficos para datos cualitativos</a><ul>
+<li class="chapter" data-level="8.7.1" data-path="chap-edqual.html"><a href="chap-edqual.html#sec:exqual"><i class="fa fa-check"></i><b>8.7.1</b> Un ejemplo completo</a></li>
+</ul></li>
+<li class="chapter" data-level="8.8" data-path="chap-edqual.html"><a href="chap-edqual.html#guia-rapida-de-funciones-3"><i class="fa fa-check"></i><b>8.8</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="8.9" data-path="chap-edqual.html"><a href="chap-edqual.html#ejercicio-5"><i class="fa fa-check"></i><b>8.9</b> Ejercicio</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="chap-ord.html"><a href="chap-ord.html"><i class="fa fa-check"></i><b>9</b> Descripción de datos ordinales</a><ul>
+<li class="chapter" data-level="9.1" data-path="chap-ord.html"><a href="chap-ord.html#frecuencias-para-datos-ordinales"><i class="fa fa-check"></i><b>9.1</b> Frecuencias para datos ordinales</a></li>
+<li class="chapter" data-level="9.2" data-path="chap-ord.html"><a href="chap-ord.html#descripcion-de-datos-ordinales-con-r"><i class="fa fa-check"></i><b>9.2</b> Descripción de datos ordinales con <code>R</code></a></li>
+<li class="chapter" data-level="9.3" data-path="chap-ord.html"><a href="chap-ord.html#guia-rapida-de-funciones-4"><i class="fa fa-check"></i><b>9.3</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="9.4" data-path="chap-ord.html"><a href="chap-ord.html#ejercicio-6"><i class="fa fa-check"></i><b>9.4</b> Ejercicio</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/RicUIB/AprendeR2.1" target="blank">Publicado con  bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">AprendeR: Parte I</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="chap:lm" class="section level1">
+<h1><span class="header-section-number">Lección 3</span> Un aperitivo: Introducción a la regresión lineal</h1>
+<p>En muchos libros de texto y artículos científicos encontraréis gráficos donde una línea recta o algún otro tipo de curva se ajusta a una serie de observaciones representadas por medio de puntos en el plano. La situación en general es la siguiente. Supongamos que tenemos una serie de puntos del plano cartesiano <span class="math inline">\(\mathbb{R}^2\)</span>,</p>
+<p><span class="math display">\[
+(x_1,y_1), (x_2,y_2),\ldots,(x_n,y_n),
+\]</span> que representan pares de observaciones de dos variables numéricas: por ejemplo, <span class="math inline">\(x=\)</span> año e <span class="math inline">\(y=\)</span> población, o <span class="math inline">\(x=\)</span> longitud de una rama e <span class="math inline">\(y=\)</span> número de hojas en la rama. Queremos describir cómo depende la variable <code>dependiente</code> <span class="math inline">\(y\)</span> de la variable <code>independiente</code> <span class="math inline">\(x\)</span> a partir de estas observaciones. Para ello, buscaremos una función <span class="math inline">\(y=f(x)\)</span> cuya gráfica se aproxime lo máximo posible a los puntos <span class="math inline">\((x_i,y_i)_{i=1,\ldots,n}\)</span>. Esta función nos dará un modelo matemático del comportamiento de las observaciones realizadas que nos permitirá entender mejor los mecanismos que relacionan las variables estudiadas o hacer predicciones sobre futuras observaciones.</p>
+<p>Una primera opción, y la más sencilla, es estudiar si los puntos <span class="math inline">\((x_i,y_i)_{i=1,\ldots,n}\)</span> satisfacen una relación lineal. En este caso, se busca la recta de ecuación <span class="math inline">\(y=b_1x+b_0\)</span>, con <span class="math inline">\(b_0,b_1\in \mathbb{R}\)</span>, que aproxime mejor los puntos dados, en el sentido de que la suma de los cuadrados de las diferencias entre los valores <span class="math inline">\(y_i\)</span> y sus aproximaciones <span class="math inline">\(b_1x_i+b_0\)</span>, <span class="math display">\[
+\sum_{i=1}^n (y_i-(b_1x_i+b_0))^2,
+\]</span> sea mínima. A esta recta <span class="math inline">\(y=b_1x+b_0\)</span> se la llama <code>recta de regresión por mínimos cuadrados</code> ; para abreviar, aquí la llamaremos simplemente <code>recta de regresión</code>, porque es la única que estudiaremos por ahora.</p>
+<p>El objetivo de esta lección es ilustrar el uso de <code>R</code> mediante el cálculo de esta recta de regresión. Para ello, introduciremos algunas funciones de <code>R</code> que ya explicaremos con más detalle en otras lecciones. Utilizaremos también transformaciones logarítmicas para tratar casos en los que los puntos dados se aproximen mejor mediante una función potencial o exponencial. Dejaremos para otro curso el estudio detallado del ajuste de funciones a familias de puntos con <code>R</code>.</p>
+<div id="calculo-de-rectas-de-regresion" class="section level2">
+<h2><span class="header-section-number">3.1</span> Cálculo de rectas de regresión</h2>
+<p>Consideremos la Tabla <a href="chap-lm.html#tab:nin1">3.1</a>,<a href="#fn15" class="footnoteRef" id="fnref15"><sup>15</sup></a> que da la altura media de los niños a determinadas edades. Queremos determinar a partir de estos datos si hay una relación lineal entre la edad y la altura media de los niños.</p>
+<table>
+<caption><span id="tab:nin1">Tabla 3.1: </span>Alturas medias de niños por edad.</caption>
+<thead>
+<tr class="header">
+<th align="right">edad (años)</th>
+<th align="right">altura (cm)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">76.11</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">86.45</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="right">95.27</td>
+</tr>
+<tr class="even">
+<td align="right">5</td>
+<td align="right">109.18</td>
+</tr>
+<tr class="odd">
+<td align="right">7</td>
+<td align="right">122.03</td>
+</tr>
+<tr class="even">
+<td align="right">9</td>
+<td align="right">133.73</td>
+</tr>
+<tr class="odd">
+<td align="right">11</td>
+<td align="right">143.73</td>
+</tr>
+<tr class="even">
+<td align="right">13</td>
+<td align="right">156.41</td>
+</tr>
+</tbody>
+</table>
+<!--
+\begin{table}[htb]
+\begin{center}
+\abovecaptionskip=7pt
+\begin{tabular}{lcccccccc}
+\toprule
+edad (años) & 1 & 2 & 3 & 5 & 7 & 9 & 11 & 13\\
+\midrule
+altura (cm) & 76.11 & 86.45 & 95.27 & 109.18 & 122.03 & 133.73 & 143.73 & 156.41\\
+\bottomrule
+\end{tabular}
+\caption{Alturas medias de niños por edad.}\label{tab:1}
+\end{center}
+\vspace*{-4ex}
+
+\end{table}
+-->
+<p>Cuando tenemos una serie de observaciones emparejadas como las de esta tabla, la manera natural de almacenarlas en <code>R</code> es mediante una <code>tabla de datos</code> , un <em>data frame</em> en el argot de <code>R</code>. Aunque en este ejemplo concreto no sería necesario, lo haremos así para que empecéis a acostumbraros. La ventaja de tener los datos organizados en forma de <em>data frame</em> es que con ellos luego se pueden hacer muchas más cosas. Estudiaremos en detalle los <em>data frames</em> en la Lección <a href="chap-df.html#chap:df">6</a>.</p>
+<p>Para crear este <em>data frame</em>, en primer lugar guardaremos cada fila de la Tabla <a href="chap-lm.html#tab:nin1">3.1</a> como un <code>vector</code> , es decir, como una lista ordenada de números, y le pondremos un nombre adecuado. Para definir un vector, podemos aplicar la función <code>c</code> a la secuencia ordenada de números, separados por comas.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">edad=<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">9</span>,<span class="dv">11</span>,<span class="dv">13</span>)
+altura=<span class="kw">c</span>(<span class="fl">76.11</span>,<span class="fl">86.45</span>,<span class="fl">95.27</span>,<span class="fl">109.18</span>,<span class="fl">122.03</span>,<span class="fl">133.73</span>,<span class="fl">143.73</span>,<span class="fl">156.41</span>)
+edad</code></pre></div>
+<pre><code>## [1]  1  2  3  5  7  9 11 13</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">altura</code></pre></div>
+<pre><code>## [1]  76.11  86.45  95.27 109.18 122.03 133.73 143.73 156.41</code></pre>
+<p>Ahora vamos a construir un <em>data frame</em> de dos columnas, una para la edad y otra para la altura, y lo llamaremos <code>datos1</code>. Estas columnas serán las <code>variables</code> de nuestra tabla de datos. Para organizar diversos vectores de la misma longitud en un <em>data frame</em>, podemos aplicar la función <code>data.frame</code> a los vectores.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">datos1=<span class="kw">data.frame</span>(edad,altura)
+datos1</code></pre></div>
+<pre><code>##   edad altura
+## 1    1  76.11
+## 2    2  86.45
+## 3    3  95.27
+## 4    5 109.18
+## 5    7 122.03
+## 6    9 133.73
+## 7   11 143.73
+## 8   13 156.41</code></pre>
+<p>Observad que las filas del <em>data frame</em> resultante corresponden a los pares (edad, altura) de la Tabla <a href="chap-lm.html#tab:nin1">3.1</a>.</p>
+<p>Al analizar unos datos, siempre es conveniente empezar con una representación gráfica que nos permita hacernos una idea de sus características. En este caso, lo primero que haremos será dibujar los pares (<code>edad</code>,<code>altura</code> ) usando la función <code>plot</code>. Esta función tiene muchos parámetros que permiten mejorar el resultado, pero ya los veremos al estudiarla en detalle en la Lección <a href="chap-plot.html#chap:plot">7</a>. Por ahora nos conformamos con un gráfico básico de estos puntos que nos muestre su distribución.</p>
+<p>Dada una familia de puntos <span class="math inline">\((x_n,y_n)_{n=1,\ldots,k}\)</span>, si llamamos <code>x</code> al vector <span class="math inline">\((x_n)_{n=1,\ldots,k}\)</span> de sus abscisas e <code>y</code> al vector <span class="math inline">\((y_n)_{n=1,\ldots,k}\)</span> de sus ordenadas, podemos obtener el gráfico de los puntos <span class="math inline">\((x_n,y_n)_{n=1,\ldots,k}\)</span> mediante la instrucción <code>plot(x,y)</code>.</p>
+<p>Si los vectores <code>x</code> e <code>y</code> son, en este orden, la primera y la segunda columna de un <em>data frame</em> de dos variables, es suficiente aplicar la función <code>plot</code> al <em>data frame</em>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(datos1)</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:A301"></span>
+<img src="AprendeR-Parte-I_files/figure-html/A301-1.png" alt="Representación gráfica de la altura media de los niños a determinadas edades." width="80%" />
+<p class="caption">
+Figura 3.1: Representación gráfica de la altura media de los niños a determinadas edades.
+</p>
+</div>
+<p>Así, por ejemplo, para dibujar el gráfico de la Figura <a href="chap-lm.html#fig:A301">3.1</a> de los puntos <span class="math inline">\((\mathrm{edad}_n,\textrm{altura}_n)_{n=1,\ldots,8}\)</span>, basta entrar la siguiente instrucción:</p>
+<p>Al ejecutar esta instrucción en la consola de <code>Rstudio</code>, el gráfico resultante se abrirá en la pestaña <strong>Plots</strong>, y en él se puede observar a simple vista que nuestros puntos siguen aproximadamente una recta.</p>
+<!--
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{regr1.pdf}
+\end{center}
+\caption{Representación gráfica de la altura media de los niños a determinadas edades.}\label{fig:3.1}
+\end{figure}
+-->
+<p>Vamos a calcular ahora su recta de regresión.</p>
+<p>Dada una familia de puntos <span class="math inline">\((x_n,y_n)_{n=1,\ldots,k}\)</span>, si llamamos <code>x</code> al vector <span class="math inline">\((x_n)_{n=1,\ldots,k}\)</span> de sus abscisas e <code>y</code> al vector <span class="math inline">\((y_n)_{n=1,\ldots,k}\)</span> de sus ordenadas, su recta de regresión se calcula con <code>R</code> por medio de la instrucción <code>lm(y~x)</code>.</p>
+<p>Fijaos en la sintaxis: dentro del argumento de <code>lm</code>, primero va el vector <code>y</code>, seguido del vector <code>x</code> conectado a <code>y</code> por una tilde <code>~</code>. Para <code>R</code>, esta tilde significa <em>en función de</em>: es decir, <code>lm(y~x)</code> significa <em>la recta de regresión de <span class="math inline">\(y\)</span> en función de <span class="math inline">\(x\)</span></em>. Para obtener este signo, los usuarios de Windows y Linux tienen que pulsar Ctrl+Alt+4 seguido de un espacio en blanco y los de Mac OS X con teclado español pueden pulsar Alt+Ñ seguido de un espacio en blanco.</p>
+<p>Si los vectores <code>y</code> y <code>x</code> son, <code>en este orden</code> , la primera y la segunda columna de un <em>data frame</em> de dos variables, es suficiente aplicar la función <code>lm</code> al <em>data frame</em>. Por desgracia, en nuestro <em>data frame</em> no aparecen en este orden. En general, si <code>x</code> e <code>y</code> son dos columnas de un <em>data frame</em>, para calcular la recta de regresión de <span class="math inline">\(y\)</span> en función de <span class="math inline">\(x\)</span> podemos usar la instrucción <code>lm(y~x, data=</code><em>data frame</em><code>)</code>.</p>
+<p>Así pues, para calcular la recta de regresión de los puntos <span class="math inline">\((\mathrm{edad}_n,\textrm{altura}_n)_{n=1,\ldots,8}\)</span>, entramos la siguiente instrucción:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">lm</span>(altura<span class="op">~</span>edad, <span class="dt">data=</span>datos1)</code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = altura ~ edad, data = datos1)
+## 
+## Coefficients:
+## (Intercept)         edad  
+##      73.968        6.493</code></pre>
+<p>El resultado que hemos obtenido significa que la recta de regresión tiene término independiente <span class="math inline">\(73.968\)</span> (el punto donde la recta <code>interseca</code> al eje de las <span class="math inline">\(y\)</span>) y el coeficiente de <span class="math inline">\(x\)</span> es <span class="math inline">\(6.493\)</span> (el coeficiente de la variable <code>edad</code>). Es decir, es la recta <span class="math display">\[
+y=6.493x+73.968.
+\]</span> Ahora la podemos superponer al gráfico anterior, empleando la función <code>abline</code>. Esta función permite añadir una recta al gráfico activo en la pestaña <strong>Plots</strong>. Por lo tanto, si no hemos cerrado el gráfico anterior, la instrucción</p>
+<pre><code>abline(lm(altura~edad, data=datos1))</code></pre>
+<p>le añade la recta de regresión, produciendo la Figura <a href="chap-lm.html#fig:A302">3.2</a>. Se ve a simple vista que, efectivamente, esta recta aproxima muy bien los datos.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(datos1)
+<span class="kw">abline</span>(<span class="kw">lm</span>(altura<span class="op">~</span>edad, <span class="dt">data=</span>datos1))</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:A302"></span>
+<img src="AprendeR-Parte-I_files/figure-html/A302-1.png" alt="Ajuste mediante la recta de regresión de la altura media de los niños respecto de su edad." width="60%" />
+<p class="caption">
+Figura 3.2: Ajuste mediante la recta de regresión de la altura media de los niños respecto de su edad.
+</p>
+</div>
+<!--
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{regr2.pdf}
+\end{center}
+\caption{Ajuste mediante la recta de regresión de la altura media de los niños respecto de su edad.}\label{fig:3.2}
+\end{figure}
+-->
+<p>Es importante tener presente que el análisis que hemos realizado de los pares de valores <span class="math inline">\((\mathrm{edad}_n, \textrm{altura}_n)_{n=1,\ldots,8}\)</span> ha sido puramente descriptivo: hemos mostrado que estos datos son consistentes con una función lineal, pero <code>no hemos demostrado</code> que la altura media sea función aproximadamente lineal de la edad. Esto último requeriría una demostración matemática o un argumento biológico, no una simple comprobación numérica para una muestra pequeña de valores, que, al fin y al cabo, es lo único que hemos hecho.</p>
+<p>Lo que sí que podemos hacer ahora es usar la relación lineal observada para predecir la altura media de los niños de otras edades. Por ejemplo, ¿qué altura media estimamos que tienen los niños de 10 años? Si aplicamos la regla</p>
+<p><span class="math display">\[
+\textrm{altura}=6.493\cdot \mathrm{edad}+73.968,
+\]</span> podemos predecir que la altura media a los 10 años es</p>
+<p><span class="math display">\[
+6.493\cdot 10+73.968=138.898,
+\]</span> es decir, de unos 138.9 cm.</p>
+<p>Para evaluar numéricamente si la relación lineal que hemos encontrado es significativa o no, podemos usar el <em>coeficiente de determinación</em> <span class="math inline">\(R^2\)</span>. No explicaremos aquí cómo se define, ya lo haremos en su momento. Es suficiente saber que es un valor entre 0 y 1 y que cuanto más se aproxime la recta de regresión al conjunto de puntos, más cercano será a 1. Por el momento, y como regla general, si este coeficiente de determinación <span class="math inline">\(R^2\)</span> es mayor que 0.9, consideraremos que el ajuste de los puntos a la recta es bueno.</p>
+<p>Cuando <code>R</code> calcula la recta de regresión también obtiene este valor, pero no lo muestra si no se lo pedimos. Si queremos saber todo lo que ha calculado <code>R</code> con la función <code>lm</code>, tenemos que emplear la construcción <code>summary(lm(...))</code>.</p>
+<p>En general, la función <code>summary</code> aplicada a un objeto de <code>R</code> nos da un resumen de los contenidos de este objeto. Por ejemplo, como veremos en la Lección <a href="#chap:edquan"><strong>??</strong></a>, <code>summary</code> aplicado a un vector de números produce una serie de datos estadísticos sobre dicho vector.</p>
+<p>Veamos cuál es el resultado de esta instrucción en nuestro ejemplo:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(<span class="kw">lm</span>(altura<span class="op">~</span>edad, <span class="dt">data=</span>datos1))</code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = altura ~ edad, data = datos1)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+## -4.351 -1.743  0.408  2.018  2.745 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  73.9681     1.7979   41.14 1.38e-08 ***
+## edad          6.4934     0.2374   27.36 1.58e-07 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 2.746 on 6 degrees of freedom
+## Multiple R-squared:  0.992,  Adjusted R-squared:  0.9907 
+## F-statistic: 748.4 on 1 and 6 DF,  p-value: 1.577e-07</code></pre>
+<p>Por ahora podemos prescindir de casi toda esta información (en todo caso, observad que la columna <code>Estimate</code> nos da los coeficientes de la recta de regresión), y fijarnos sólo en el primer valor de la penúltima línea, <code>Multiple R-squared</code>. Éste es el coeficiente de determinación <span class="math inline">\(R^2\)</span> que nos interesa. En este caso ha sido de <span class="math inline">\(0.992\)</span>, lo que confirma que la recta de regresión aproxima muy bien los datos.</p>
+<p>Podemos pedir a <code>R</code> que nos dé el valor <code>Multiple R-squared</code> sin tener que obtener todo el <code>summary</code>, añadiendo el sufijo <code>$r.squared</code> a la construcción <code>summary(lm(...))</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(<span class="kw">lm</span>(altura<span class="op">~</span>edad, <span class="dt">data=</span>datos1))<span class="op">$</span>r.squared</code></pre></div>
+<pre><code>## [1] 0.9920466</code></pre>
+<p>Los sufijos que empiezan con <code>$</code> suelen usarse en <code>R</code> para obtener componentes de un objeto. Por ejemplo, si al nombre de un <em>data frame</em> le añadimos el sufijo formado por <code>$</code> seguido del nombre de una de sus variables, obtenemos el contenido de esta variable.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">datos1<span class="op">$</span>edad</code></pre></div>
+<pre><code>## [1]  1  2  3  5  7  9 11 13</code></pre>
+<p>Veamos otro ejemplo de cálculo de recta de regresión.</p>
+
+<div class="example">
+<span id="exm:reg2" class="example"><strong>Ejemplo 3.1  (Regresion Karl Pearson)  </strong></span>Karl Pearson recopiló en 1903 las alturas de 1078 parejas formadas por un padre y un hijo. Hemos guardado en el <code>url</code> <a href="http://aprender.uib.es/Rdir/pearson.txt" class="uri">http://aprender.uib.es/Rdir/pearson.txt</a> un fichero que contiene estas alturas. Si lo abrís en un navegador, veréis que es una tabla de dos columnas, etiquetadas <code>Padres</code> e <code>Hijos</code> (Figura <a href="chap-lm.html#fig:pearson">3.3</a>). Cada fila contiene las alturas en pulgadas de un par Padre-Hijo.
+</div>
+
+<div class="figure" style="text-align: center"><span id="fig:pearson"></span>
+<img src="images/pearson.png" alt="Vista en un navegador del fichero pearson.txt." width="80%" />
+<p class="caption">
+Figura 3.3: Vista en un navegador del fichero pearson.txt.
+</p>
+</div>
+<!--
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=0.7\linewidth]{pearson.png}
+\end{center}
+\caption{Vista en un navegador del fichero `pearson.txt`.}\label{fig:pearson}
+\end{figure}
+-->
+<p>Vamos a usar estos datos para estudiar si hay dependencia lineal entre la altura de un hijo y la de su padre. Para ello, lo primero que haremos será cargarlos en un <em>data frame</em> Esto se puede llevar a cabo de dos maneras:</p>
+<ul>
+<li>Usando el menú &lt;&lt;<em>Import Dataset</em>&gt;&gt;  de la pestaña <strong>Environment</strong> de la ventana superior derecha de <em>RStudio</em>, sobre el que volveremos en la Lección <a href="chap-df.html#chap:df">6</a>. Al pulsar sobre este menú, se nos ofrece la posibilidad de importar un fichero de nuestro ordenador (<code>From Text File...</code>) o de Internet (<code>From Web Url...</code>); en este ejemplo, hemos de usar la segunda opción. Al seleccionarla, se nos pide el <code>url</code> del fichero; al entrarlo, se abre una ventana de diálogo donde podemos especificar el nombre del <em>data frame</em> que queremos crear, si el fichero tiene o no una primera fila con los nombres de las columnas, cuál es el signo usado para separar columnas, etc. En el sector &lt;&lt;<em>Input File</em>&gt;&gt; de esta ventana de diálogo se puede ver el aspecto del fichero original, y en el sector &lt;&lt;<em>Data Frame</em>&gt;&gt;, el <em>data frame</em> que obtendremos con las opciones seleccionadas; se trata entonces de escoger las opciones adecuadas para que se cree la versión correcta del <em>data frame</em></li>
+</ul>
+<p>En el caso concreto de esta tabla <code>pearson.txt</code>, se tiene que escoger el valor &lt;&lt;<em>Yes</em>&gt;&gt; en &lt;&lt;<em>Heading</em>&gt;&gt; y el valor &lt;&lt;<em>Whitespace</em>&gt;&gt; en &lt;&lt;<em>Separator</em>&gt;&gt; (Figura <a href="chap-lm.html#fig:guardpearson">3.4</a>). Al pulsar el botón &lt;&lt;<em>Import</em>&gt;&gt;, se importará el fichero en un <em>data frame</em> con el nombre especificado en el campo &lt;&lt;<em>Name</em>&gt;&gt; y se verá su contenido en la ventana de ficheros.</p>
+<!--
+AAAAAAAAAAAAAAAA arreglar problemas con la caption que no va en latex
+Opciones para guardar el fichero `pearson.txt` en un *data frame* llamado `df_pearson` usando el menú <<*Import Dataset*>>.
+-->
+<div class="figure" style="text-align: center"><span id="fig:guardpearson"></span>
+<img src="images/guardpearson.jpg" alt="Opciones para guardar el fichero pearson.txt en un *data frame* llamado *df pearson* usando el menú *Import Dataset*." width="80%" />
+<p class="caption">
+Figura 3.4: Opciones para guardar el fichero pearson.txt en un <em>data frame</em> llamado <em>df pearson</em> usando el menú <em>Import Dataset</em>.
+</p>
+</div>
+<ul>
+<li>Usando la instrucción <code>read.table</code>, de la que también hablaremos en la Lección <a href="chap-df.html#chap:df">6</a>; por ahora simplemente hay que saber que se ha de aplicar al nombre del fichero entre comillas, si está en el directorio de trabajo, o a su <code>url</code> , también escrito entre comillas. Si además el fichero contiene una primera fila con los nombres de las columnas, hay que añadir el parámetro <code>header=TRUE</code>.</li>
+</ul>
+<p>Así pues, para cargar esta tabla de datos concreta en un <em>data frame</em> llamado <code>df_pearson</code>, podemos usar el menú &lt;&lt;<em>Import Dataset</em>&gt;&gt;, o entrar la instrucción siguiente:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">df_pearson=<span class="kw">read.table</span>(<span class="st">&quot;pearson.txt&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>)</code></pre></div>
+<p>En ambos casos, para comprobar que se ha cargado bien, podemos usar las funciones <code>str</code>, que muestra la estructura del <em>data frame</em>, y <code>head</code>, que muestra sus primeras filas.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(df_pearson)</code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    1078 obs. of  2 variables:
+##  $ Padres: num  65 63.3 65 65.8 61.1 ...
+##  $ Hijos : num  59.8 63.2 63.3 62.8 64.3 ...</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(df_pearson)</code></pre></div>
+<pre><code>##     Padres    Hijos
+## 1 65.04851 59.77827
+## 2 63.25094 63.21404
+## 3 64.95532 63.34242
+## 4 65.75250 62.79238
+## 5 61.13723 64.28113
+## 6 63.02254 64.24221</code></pre>
+<p>El resultado de <code>str(df_pearson)</code> nos dice que este <em>data frame</em> está formado por 1078 observaciones (filas) de dos variables (columnas) llamadas <code>Padres</code> e <code>Hijos</code>. El resultado de <code>head(df_pearson)</code> nos muestra sus primeras seis filas, que podemos comprobar que coinciden con las del fichero original mostrado en la Figura <a href="chap-lm.html#fig:pearson">3.3</a>.</p>
+<p>Ejecutamos ahora las siguientes instrucciones:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))<span class="co"># dos dibujos en linea</span>
+<span class="kw">plot</span>(df_pearson)
+<span class="kw">lm</span>(Hijos<span class="op">~</span>Padres, <span class="dt">data=</span>df_pearson)</code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = Hijos ~ Padres, data = df_pearson)
+## 
+## Coefficients:
+## (Intercept)       Padres  
+##     33.8866       0.5141</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(<span class="kw">lm</span>(Hijos<span class="op">~</span>Padres, <span class="dt">data=</span>df_pearson))<span class="op">$</span>r.squared</code></pre></div>
+<pre><code>## [1] 0.2513401</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(df_pearson)
+<span class="kw">abline</span>(<span class="kw">lm</span>(Hijos<span class="op">~</span>Padres, <span class="dt">data=</span>df_pearson))
+<span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))<span class="co"># volvemos a un dibujos en linea</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:pears2"></span>
+<img src="AprendeR-Parte-I_files/figure-html/pears2-1.png" alt="Representación gráfica de las alturas de los hijos en función de la de sus padres, junto con su recta de regresión." width="60%" />
+<p class="caption">
+Figura 3.5: Representación gráfica de las alturas de los hijos en función de la de sus padres, junto con su recta de regresión.
+</p>
+</div>
+<p>La instrucción <code>plot</code> de la primera línea produce el gráfico de la izquierda de la Figura <a href="chap-lm.html#fig:pears2">3.5</a>, y junto con la instrucción <code>abline</code> de la última, produce el de la derecha. Obtenemos la recta de regresión <span class="math display">\[
+y=33.8866+0.5141x,
+\]</span> donde <span class="math inline">\(y\)</span> representa la altura de un hijo y <span class="math inline">\(x\)</span> la de su padre, y un coeficiente de determinación <span class="math inline">\(R^2=0.25\)</span>, muy bajo. La regresión no es muy buena, como se puede observar en la Figura <a href="chap-lm.html#fig:pears2">3.5</a> derecha.</p>
+<!--
+```
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=0.45\linewidth]{pearson1.pdf}\
+\includegraphics[width=0.45\linewidth]{pearson2.pdf}
+\end{center}
+\caption{Representación gráfica de las alturas de los hijos en función de la de sus padres, junto con su recta de regresión.}\label{fig:pears}\end{figure}
+```
+-->
+</div>
+<div id="rectas-de-regresion-y-transformaciones-logaritmicas" class="section level2">
+<h2><span class="header-section-number">3.2</span> Rectas de regresión y transformaciones logarítmicas</h2>
+<p>La dependencia de un valor en función de otro no siempre es lineal. A veces podremos detectar otras dependencias (en concreto, exponenciales o potenciales) realizando un <code>cambio de escala</code> adecuado en el gráfico.</p>
+<p>Cuando dibujamos un gráfico, lo normal es marcar cada eje de manera que la misma distancia entre marcas signifique la misma diferencia entre sus valores; por ejemplo, en el gráfico de la Figura <a href="chap-lm.html#fig:F3010">3.10</a>, las marcas sobre cada uno de los ejes están igualmente espaciadas, de manera que entre cada par de marcas consecutivas en el eje de abscisas hay una diferencia de 2 años y entre cada par de marcas consecutivas en el eje de ordenadas hay una diferencia de 20 cm. Decimos entonces que los ejes están en escala <code>lineal</code> . Pero a veces es conveniente dibujar algún eje en <code>escala logarítmica</code>, situando las marcas de tal manera que la misma distancia entre marcas signifique el mismo <code>cociente</code> entre sus valores. Como el logaritmo transforma cocientes en restas, un eje en escala logarítmica representa el logaritmo de sus valores en escala lineal.</p>
+<p>Decimos que un gráfico está en <code>escala semilogarítmica</code> cuando su eje de abscisas está en escala lineal y su eje de ordenadas en escala logarítmica. Salvo por los valores en las marcas sobre el eje de las <span class="math inline">\(y\)</span>, esto significa que dibujamos en escala lineal el gráfico de <span class="math inline">\(\log(y)\)</span> en función de <span class="math inline">\(x\)</span>. Así pues, si al representar unos puntos <span class="math inline">\((x,y)\)</span> en escala semilogarítmica observamos que siguen aproximadamente una recta, esto querrá decir que los valores <span class="math inline">\(\log(y)\)</span> siguen una ley aproximadamente lineal en los valores <span class="math inline">\(x\)</span>, y, por lo tanto, que <span class="math inline">\(y\)</span> sigue una ley aproximadamente exponencial en <span class="math inline">\(x\)</span>. En efecto, si <span class="math inline">\(\log(y)= ax+b\)</span>, entonces <span class="math display">\[
+y=10^{\log(y)}= 10^{ax+b}=10^{ax}\cdot 10^{b}=10^{b}\cdot (10^{a})^{x}=\beta\cdot \alpha^x,
+\]</span> donde <span class="math inline">\(\beta=10^b\)</span> y <span class="math inline">\(\alpha=10^a\)</span>.</p>
+<p>De manera similar, decimos que un gráfico está en <code>escala doble logarítmica</code> cuando ambos ejes están en escala logarítmica. Esto es equivalente, de nuevo salvo por los valores en las marcas sobre los ejes, a dibujar en escala lineal el gráfico de <span class="math inline">\(\log(y)\)</span> en función de <span class="math inline">\(\log(x)\)</span>. Por consiguiente, si al dibujar unos puntos <span class="math inline">\((x,y)\)</span> en escala doble logarítmica observamos que siguen aproximadamente una recta, esto querrá decir que los valores <span class="math inline">\(\log(y)\)</span> siguen una ley aproximadamente lineal en los valores <span class="math inline">\(\log(x)\)</span>, y, por lo tanto, que <span class="math inline">\(y\)</span> sigue una ley aproximadamente potencial en <span class="math inline">\(x\)</span>. En efecto, si <span class="math inline">\(\log(y)= a\log(x)+b\)</span>, entonces <span class="math display">\[
+y=10^{\log(y)}= 10^{a\log(x)+b}=10^{a\log(x)}\cdot 10^{b}=10^{b}\cdot (10^{\log(x)})^{a}
+=10^{b}\cdot x^{a}=\beta \cdot x^{a},
+\]</span> donde <span class="math inline">\(\beta=10^b\)</span>.</p>
+<p>Veamos algunos ejemplos de regresiones lineales con cambios de escala.</p>
+
+<div class="example">
+<span id="exm:reg3" class="example"><strong>Ejemplo 3.2  (Serotonina)  </strong></span>La serotonina se asocia a la estabilidad emocional en el hombre. En un cierto experimento<a href="#fn16" class="footnoteRef" id="fnref16"><sup>16</sup></a> se midió, para algunas cantidades de serotonina, el porcentaje de inhibición de un cierto proceso bioquímico en el que se observaba su presencia. El objetivo era estimar la cantidad de serotonina presente en un tejido a partir del porcentaje de inhibición observado.
+</div>
+
+<p>Los datos que se obtuvieron son los de la Tabla <a href="chap-lm.html#tab:T4">3.2</a>.<a href="#fn17" class="footnoteRef" id="fnref17"><sup>17</sup></a></p>
+<table>
+<caption><span id="tab:T4">Tabla 3.2: </span>Porcentajes de inhibición de un cierto proceso bioquímico en presencia de serotonina.</caption>
+<thead>
+<tr class="header">
+<th align="right">serotonina (ng)</th>
+<th align="right">inhibición (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1.2</td>
+<td align="right">19</td>
+</tr>
+<tr class="even">
+<td align="right">3.6</td>
+<td align="right">36</td>
+</tr>
+<tr class="odd">
+<td align="right">12.0</td>
+<td align="right">60</td>
+</tr>
+<tr class="even">
+<td align="right">33.0</td>
+<td align="right">84</td>
+</tr>
+</tbody>
+</table>
+<!--
+```
+\begin{table}[htb]
+\begin{center}
+\abovecaptionskip=6pt
+\begin{tabular}{ccccc}
+\toprule
+serotonina (ng) & 1.2 & 3.6 & 12 & 33 \\
+\midrule
+inhibición (\%) & 19 & 36 & 60 & 84 \\
+\bottomrule
+\end{tabular}
+\caption{Porcentajes de inhibición de un cierto proceso bioquímico en presencia de serotonina.}\label{tab:4}
+\end{center}
+\end{table}
+```
+-->
+<p>Como queremos predecir la cantidad de serotonina en función de la inhibición observada, consideraremos los pares <code>(inhibición,serotonina)</code>. En esta ocasión, en vez de trabajar con un <em>data frame</em>, trabajaremos directamente con los vectores. Con las instrucciones</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">inh=<span class="kw">c</span>(<span class="dv">19</span>,<span class="dv">36</span>,<span class="dv">60</span>,<span class="dv">84</span>)
+ser=<span class="kw">c</span>(<span class="fl">1.2</span>,<span class="fl">3.6</span>,<span class="dv">12</span>,<span class="dv">33</span>)
+<span class="kw">plot</span>(inh,ser)</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:F304bis"></span>
+<img src="AprendeR-Parte-I_files/figure-html/F304bis-1.png" alt="Representación gráfica en escala lineal del porcentaje de inhibición en función de la cantidad de serotonina." width="60%" />
+<p class="caption">
+Figura 3.6: Representación gráfica en escala lineal del porcentaje de inhibición en función de la cantidad de serotonina.
+</p>
+</div>
+<p>obtenemos la Figura <a href="chap-lm.html#fig:F304bis">3.6</a>, donde vemos claramente que la cantidad de serotonina no es función lineal de la inhibición.</p>
+<!--
+```
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{regr-ser1.pdf}
+\end{center}
+\caption{Representación gráfica en escala lineal del porcentaje de inhibición en función de la cantidad de serotonina.}\label{fig:3.4}
+\end{figure}
+```
+-->
+<p>Vamos a dibujar ahora el gráfico semilogarítmico de estos puntos, para ver si de esta manera quedan sobre una recta. Para ello, tenemos que añadir al argumento de <code>plot</code> el parámetro <code>log=&quot;y&quot;</code>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(inh, ser, <span class="dt">log=</span><span class="st">&quot;y&quot;</span>)</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:F305bis"></span>
+<img src="AprendeR-Parte-I_files/figure-html/F305bis-1.png" alt="Representación gráfica en escala semilogarítmica del porcentaje de inhibición en función de la cantidad de serotonina." width="60%" />
+<p class="caption">
+Figura 3.7: Representación gráfica en escala semilogarítmica del porcentaje de inhibición en función de la cantidad de serotonina.
+</p>
+</div>
+<p>produce la Figura <a href="chap-lm.html#fig:F305bis">3.7</a> (y observad las marcas en el eje de ordenadas).</p>
+<!--
+```
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{regr-ser2.pdf}
+\end{center}
+\caption{Representación gráfica en escala semilogarítmica del porcentaje de inhibición en función de la cantidad de serotonina.}\label{fig:3.5}
+\end{figure}
+```
+-->
+<p>Los puntos en este gráfico sí que parecen seguir una recta. Por lo tanto, parece que el logaritmo de la cantidad de serotonina es una función aproximadamente lineal del porcentaje de inhibición. Para confirmarlo, calcularemos la recta de regresión de los puntos</p>
+<p><span class="math display">\[
+(\textrm{inhibición}_n,\log(\textrm{serotonina}_n))_{n=1,\ldots,4}.
+\]</span> Para calcular los logaritmos en base 10 de todas las cantidades de serotonina en un solo paso, podemos aplicar la función <code>log10</code> directamente al vector <code>ser</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">log10</span>(ser)</code></pre></div>
+<pre><code>## [1] 0.07918125 0.55630250 1.07918125 1.51851394</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">lm</span>(<span class="kw">log10</span>(ser)<span class="op">~</span>inh)</code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = log10(ser) ~ inh)
+## 
+## Coefficients:
+## (Intercept)          inh  
+##    -0.28427      0.02196</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(<span class="kw">lm</span>(<span class="kw">log10</span>(ser)<span class="op">~</span>inh))<span class="op">$</span>r.squared</code></pre></div>
+<pre><code>## [1] 0.9921146</code></pre>
+<p>El resultado indica que la recta de regresión de estos puntos es <span class="math inline">\(y= 0.02196x-0.28427\)</span>, con un valor de <span class="math inline">\(R^2\)</span> de <span class="math inline">\(0.992\)</span>, muy bueno. Por lo tanto, podemos afirmar que, aproximadamente,</p>
+<p><span class="math display">\[
+\log(\textrm{serotonina})= 0.02196\cdot \mbox{inhibición}-0.28427.
+\]</span> Elevando 10 a cada uno de los lados de esta identidad, obtenemos</p>
+<span class="math display">\[\begin{align*}
+\textrm{serotonina} = &amp; 10^{\log(\textrm{serotonina})}= 10^{-0.28427}\cdot 10^{0.02196\cdot \mbox{inhibición}} \\ = &amp;  0.52\cdot 1.052^{\mbox{inhibición}}.
+\end{align*}\]</span>
+<p>Es decir, los puntos de partida siguen aproximadamente la función exponencial</p>
+<p><span class="math display">\[
+y=0.52\cdot 1.052^{x}.
+\]</span></p>
+<p>Vamos ahora a dibujar en un mismo gráfico los puntos <span class="math inline">\((\textrm{inhibición}_n,\textrm{serotonina}_n)\)</span> y esta función exponencial. Para añadir la gráfica de una función <span class="math inline">\(y=f(x)\)</span> al gráfico activo en la pestaña <strong>Plots</strong> podemos emplear la función <code>curve(f(x)$, add=TRUE)</code>.</p>
+<p>Así,</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(inh, ser)
+<span class="kw">curve</span>(<span class="fl">0.52</span><span class="op">*</span><span class="fl">1.052</span><span class="op">^</span>x, <span class="dt">add=</span><span class="ot">TRUE</span>)</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:F306bis"></span>
+<img src="AprendeR-Parte-I_files/figure-html/F306bis-1.png" alt="Representación gráfica en escala lineal del porcentaje de inhibición en función de la cantidad de serotonina, junto con la función $y=0.52\cdot 1.052^x$." width="60%" />
+<p class="caption">
+Figura 3.8: Representación gráfica en escala lineal del porcentaje de inhibición en función de la cantidad de serotonina, junto con la función <span class="math inline">\(y=0.52\cdot 1.052^x\)</span>.
+</p>
+</div>
+<p>produce la Figura <a href="chap-lm.html#fig:F306bis">3.8</a>; fijaos en cómo hemos especificado la función <span class="math inline">\(y=0.52\cdot 1.052^{x}\)</span> dentro del <code>curve</code>.</p>
+<!--
+```
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{regr-ser3.pdf}
+\end{center}
+\caption{Representación gráfica en escala lineal del porcentaje de inhibición en función de la cantidad de serotonina, junto con la función $y=0.52\cdot 1.052^x$.}\label{fig:3.6}
+\end{figure}
+```
+-->
+<p>Ahora podemos usar la relación observada,</p>
+<p><span class="math display">\[
+\textrm{serotonina}= 0.52\cdot 1.052^{\textrm{inhibición}},
+\]</span> para estimar la cantidad de serotonina presente en el tejido a partir de una inhibición concreta. Por ejemplo, si hemos observado un <span class="math inline">\(25\%\)</span> de inhibición, podemos estimar que la cantidad de serotonina será</p>
+<p><span class="math display">\[
+0.52\cdot 1.052^{25}=1.84\cdot \textrm{ng}.
+\]</span></p>
+<!--\end{ejemplo}`
+-->
+
+<div class="example">
+<span id="exm:reg4" class="example"><strong>Ejemplo 3.3  (SIDA en USA, 1981-1992)  </strong></span>Consideremos ahora los datos de la Tabla <a href="chap-lm.html#tab:sida">3.3</a>. Se trata de los números acumulados de casos de SIDA en los Estados Unidos desde 1981 hasta 1992.<a href="#fn18" class="footnoteRef" id="fnref18"><sup>18</sup></a> <code>Acumulados</code> significa que, para cada año, se da el número de casos detectados <code>hasta</code> entonces.
+</div>
+
+<table>
+<caption><span id="tab:sida">Tabla 3.3: </span>Números acumulados anuales de casos de SIDA en los Estados Unidos, 1981 a 1992.</caption>
+<thead>
+<tr class="header">
+<th align="right">año</th>
+<th align="right">casos</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1981</td>
+<td align="right">97</td>
+</tr>
+<tr class="even">
+<td align="right">1982</td>
+<td align="right">709</td>
+</tr>
+<tr class="odd">
+<td align="right">1983</td>
+<td align="right">2698</td>
+</tr>
+<tr class="even">
+<td align="right">1984</td>
+<td align="right">6928</td>
+</tr>
+<tr class="odd">
+<td align="right">1985</td>
+<td align="right">15242</td>
+</tr>
+<tr class="even">
+<td align="right">1986</td>
+<td align="right">29944</td>
+</tr>
+<tr class="odd">
+<td align="right">1987</td>
+<td align="right">52902</td>
+</tr>
+<tr class="even">
+<td align="right">1988</td>
+<td align="right">83903</td>
+</tr>
+<tr class="odd">
+<td align="right">1989</td>
+<td align="right">120612</td>
+</tr>
+<tr class="even">
+<td align="right">1990</td>
+<td align="right">161711</td>
+</tr>
+<tr class="odd">
+<td align="right">1991</td>
+<td align="right">206247</td>
+</tr>
+<tr class="even">
+<td align="right">1992</td>
+<td align="right">257085</td>
+</tr>
+</tbody>
+</table>
+<!--
+\begin{table}[htb]
+\begin{center}
+\abovecaptionskip=7pt
+\begin{tabular}{ccccccccccccc}
+\toprule
+año & 1981 & 1982 &1983 &1984& 1985 &1986 &1987 &1988 \\
+\midrule
+casos & 97 & 709 & 2698 & 6928 & 15242 & 29944 & 52902 & 83903 \\
+\bottomrule
+año &1989\vphantom{$A^{\mbox{ A}}$} &1990& 1991 &1992\\
+\midrule
+casos & 120612 & 161711 & 206247 & 257085\\
+\bottomrule
+\end{tabular}
+\caption{Números acumulados anuales de casos de SIDA en los Estados Unidos.}
+\label{tab:3}
+\end{center}
+\end{table}
+-->
+<p>Queremos estudiar el comportamiento de estos números acumulados de casos en función del tiempo expresado en años a partir de 1980. Lo primero que hacemos es cargar los datos en un <em>data frame</em> Fijaos en que la lista de años va a ser la secuencia de números consecutivos entre 1 y 12. Para definir la secuencia de números consecutivos entre <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> podemos usar la construcción <code>a:b</code>. Esto nos ahorra trabajo y reduce las oportunidades de cometer errores al escribir los números.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tiempo=<span class="dv">1</span><span class="op">:</span><span class="dv">12</span>
+SIDA_acum=<span class="kw">c</span>(<span class="dv">97</span>,<span class="dv">709</span>,<span class="dv">2698</span>,<span class="dv">6928</span>,<span class="dv">15242</span>,<span class="dv">29944</span>,<span class="dv">52902</span>,<span class="dv">83903</span>,<span class="dv">120612</span>,
+  <span class="dv">161711</span>,<span class="dv">206247</span>,<span class="dv">257085</span>)
+df_SIDA=<span class="kw">data.frame</span>(tiempo, SIDA_acum)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(df_SIDA)</code></pre></div>
+<p>Obtenemos el gráfico de la izquierda de la Figura <a href="chap-lm.html#fig:F307bis">3.9</a>, y está claro que los puntos <span class="math inline">\((x_n,y_n)\)</span>, donde <span class="math inline">\(x\)</span> representa el año e <span class="math inline">\(y\)</span> el número acumulado de casos de SIDA, no se ajustan a una recta. De hecho, a simple vista se diría que el crecimiento de <span class="math inline">\(y\)</span> en función de <span class="math inline">\(x\)</span> es exponencial.</p>
+<p>Para confirmar este crecimiento exponencial, dibujamos el gráfico semilogarítmico:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(df_SIDA, <span class="dt">log=</span><span class="st">&quot;y&quot;</span>)</code></pre></div>
+<p>produce el gráfico central de la Figura <a href="chap-lm.html#fig:F307bis">3.9</a>, donde los puntos tampoco siguen una recta, y, por lo tanto, <span class="math inline">\(y\)</span> tampoco es función exponencial de <span class="math inline">\(x\)</span>.</p>
+<p>Vamos a ver si el crecimiento de <span class="math inline">\(y\)</span> en función de <span class="math inline">\(x\)</span> es potencial. Para ello, dibujaremos un gráfico doble logarítmico de los puntos <span class="math inline">\((x_n,y_n)\)</span>, especificando <code>log=&quot;xy&quot;</code> dentro del argumento de <code>plot</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(df_SIDA, <span class="dt">log=</span><span class="st">&quot;xy&quot;</span>)</code></pre></div>
+<p>Obtenemos el gráfico de la derecha de la Figura <a href="chap-lm.html#fig:F307bis">3.9</a>, y ahora sí que parece lineal.</p>
+<!--,out.width='80%', fig.asp=.75, fig.align='center'--->
+<div class="figure" style="text-align: center"><span id="fig:F307bis"></span>
+<img src="AprendeR-Parte-I_files/figure-html/F307bis-1.png" alt="Representación gráfica en escala lineal (izquierda), semilogarítmica (centro) y doble logarítmica (derecha) del número acumulado de casos de SIDA en EEUU desde 1980 en función de los años transcurridos desde ese año." width="480" />
+<p class="caption">
+Figura 3.9: Representación gráfica en escala lineal (izquierda), semilogarítmica (centro) y doble logarítmica (derecha) del número acumulado de casos de SIDA en EEUU desde 1980 en función de los años transcurridos desde ese año.
+</p>
+</div>
+<!--
+\begin{figure}[htb]
+\abovecaptionskip=-5pt
+\begin{center}
+\includegraphics[width=0.32\textwidth]{regr4.pdf}\
+\includegraphics[width=0.32\textwidth]{regr45.pdf}\
+\includegraphics[width=0.32\textwidth]{regr46.pdf}
+\end{center}
+\caption{Representación gráfica en escala lineal (izquierda), semilogarítmica (centro) y doble logarítmica (derecha) del número acumulado de casos de SIDA en EEUU desde 1980 en función de los años transcurridos desde ese año.}\label{fig:3.7}
+\end{figure}
+-->
+<p>Lo que haremos ahora será calcular la recta de regresión del logaritmo de <code>SIDA_acum</code> respecto del logaritmo de <code>tiempo</code> y mirar el coeficiente de determinación. Recordad que podemos aplicar una función a todas las entradas de un vector en un solo paso.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">lm</span>(<span class="kw">log10</span>(SIDA_acum)<span class="op">~</span><span class="kw">log10</span>(tiempo), <span class="dt">data=</span>df_SIDA)
+<span class="kw">summary</span>(<span class="kw">lm</span>(<span class="kw">log10</span>(SIDA_acum)<span class="op">~</span><span class="kw">log10</span>(tiempo),
+  <span class="dt">data=</span>df_SIDA))<span class="op">$</span>r.squared</code></pre></div>
+<p>La regresión que obtenemos es <span class="math inline">\(\log(y)=1.918 + 3.274\log(x)\)</span>, con un valor de <span class="math inline">\(R^2\)</span> de 0.998, muy alto. Elevando 10 a ambos lados de esta igualdad, obtenemos</p>
+<span class="math display">\[\begin{align*}
+y=10^{\log(y)}= &amp; 10^{1.918}\cdot 10^{3.274\log(x)}=10^{1.918}\cdot (10^{\log(x)})^{3.274}
+\\ = &amp; 82.79422\cdot x^{3.274}.
+\end{align*}\]</span>
+<p>Para ver si los puntos <span class="math inline">\((\textrm{tiempo}_n,{\textrm{SIDA_acum}}_n)_{n=1,\ldots,12}\)</span> se ajustan bien a la curva</p>
+<p><span class="math display">\[
+y=82.79422\cdot x^{3.274},
+\]</span> dibujaremos los puntos y la curva en un único gráfico (en escala lineal):</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(df_SIDA)
+<span class="kw">curve</span>(<span class="fl">82.79422</span><span class="op">*</span>x<span class="op">^</span><span class="fl">3.274</span>, <span class="dt">add=</span><span class="ot">TRUE</span>)</code></pre></div>
+<p>produce la Figura <a href="chap-lm.html#fig:F3010">3.10</a>, donde vemos que la curva se ajusta bastante bien a los puntos.</p>
+<div class="figure" style="text-align: center"><span id="fig:F3010"></span>
+<img src="images/regr9.png" alt="Representación gráfica en escala lineal de la cantidad acumulada de enfermos de SIDA en EEUU desde 1980 en función de los años transcurridos desde ese año, junto con su ajuste mediante la función potencial $82.79422 · x^{3.274}$." width="80%" />
+<p class="caption">
+Figura 3.10: Representación gráfica en escala lineal de la cantidad acumulada de enfermos de SIDA en EEUU desde 1980 en función de los años transcurridos desde ese año, junto con su ajuste mediante la función potencial <span class="math inline">\(82.79422 · x^{3.274}\)</span>.
+</p>
+</div>
+<!--
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{regr9.pdf}
+\end{center}
+\caption{Representación gráfica en escala lineal de la cantidad acumulada de enfermos de SIDA en EEUU desde 1980 en función de los años transcurridos desde ese año, junto con su ajuste mediante la función potencial $82.79422\cdot x^{3.274}$.}\label{fig:3.10} 
+\end{figure}
+-->
+<p>Hay que mencionar aquí que se han propuesto modelos matemáticos<a href="#fn19" class="footnoteRef" id="fnref19"><sup>19</sup></a> que predicen que, cuando se inicia una epidemia de SIDA en una población, los números acumulados de casos en los primeros años son proporcionales al cubo del tiempo transcurrido desde el inicio. El resultado del análisis que hemos realizado es consistente con esta predicción teórica.</p>
+</div>
+<div id="guia-rapida-1" class="section level2">
+<h2><span class="header-section-number">3.3</span> Guía rápida</h2>
+<ul>
+<li><code>c</code> sirve para definir vectores.</li>
+<li><code>a:b</code>, con <span class="math inline">\(a&lt;b\)</span>, define un vector con la secuencia <span class="math inline">\(a,a+1,a+2,\ldots, b\)</span>.</li>
+<li><code>data.frame</code>, aplicada a unos vectores de la misma longitud, define un <em>data frame</em> (el tipo de objetos de <code>R</code> en los que guardamos usualmente las tablas de datos) cuyas columnas serán estos vectores.</li>
+<li><code>read.table</code> define un <em>data frame</em> a partir de un fichero externo. También se puede usar el menú &lt;&lt;<em>Import Dataset</em>&gt;&gt; de la pestaña <strong>Environment</strong> en la ventana superior derecha de <em>RStudio</em></li>
+<li><code>lm(y~x)</code> calcula la recta de regresión del vector <span class="math inline">\(y\)</span> respecto del vector <span class="math inline">\(x\)</span>. Si <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> son dos columnas de un <em>data frame</em>, éste se ha de especificar en el argumento mediante el parámetro <code>data</code> igualado al nombre del <em>data frame</em></li>
+<li><code>summary</code> sirve para obtener un resumen estadístico de un objeto. Este resumen depende del objeto. En el caso de una recta de regresión calculada con <code>lm</code>, muestra una serie de información estadística extra obtenida en dicho cálculo.</li>
+<li><code>plot(x,y)</code> produce el gráfico de los puntos <span class="math inline">\((x_n,y_n)\)</span>. Si <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> son, respectivamente, la primera y la segunda columna de un <em>data frame</em> de dos columnas, se le puede entrar directamente el nombre del <em>data frame</em> como argumento. El parámetro <code>log</code> sirve para indicar los ejes que se desea que estén en escala logarítmica: <code>&quot;x&quot;</code> (abscisas), <code>&quot;y&quot;</code> (ordenadas) o <code>&quot;xy&quot;</code> (ambos).</li>
+<li><code>abline</code> añade una recta al gráfico activo.</li>
+<li><code>curve(función, add=TRUE)</code> añade la gráfica de la <code>función</code> al gráfico activo.</li>
+</ul>
+</div>
+<div id="ejercicio-1" class="section level2">
+<h2><span class="header-section-number">3.4</span> Ejercicio</h2>
+<p>Las larvas de <code>Lymantria dispar</code> , conocidas como <code>orugas peludas del alcornoque</code> , son una plaga en bosques y huertos. En un experimento<a href="#fn20" class="footnoteRef" id="fnref20"><sup>20</sup></a> se quiso determinar la capacidad de atracción de una cierta feromona sobre los machos de esta especie, con el objetivo de emplearla en trampas. En la Tabla <a href="chap-lm.html#tab:cuques">3.4</a>, <span class="math inline">\(x\)</span> representa la cantidad de feromona empleada, en <span class="math inline">\(\mu\)</span>g,<a href="#fn21" class="footnoteRef" id="fnref21"><sup>21</sup></a> y <span class="math inline">\(N\)</span> el número de machos atrapados en una trampa empleando esta cantidad de feromona para atraerlos.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span><span class="kw">kable</span>(
+df.aux,
+  <span class="dt">caption =</span> <span class="st">&#39;Cantidades de feromona empleadas en trampas y números de machos atrapados.&#39;</span>, <span class="dt">booktabs =</span> <span class="ot">FALSE</span>,<span class="dt">col.names=</span><span class="kw">c</span>(<span class="st">&quot;$x$&quot;</span>,<span class="st">&quot;$N$&quot;</span>))</code></pre></div>
+<table>
+<caption><span id="tab:cuques">Tabla 3.4: </span>Cantidades de feromona empleadas en trampas y números de machos atrapados.</caption>
+<thead>
+<tr class="header">
+<th align="right"><span class="math inline">\(x\)</span></th>
+<th align="right"><span class="math inline">\(N\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">0.1</td>
+<td align="right">3</td>
+</tr>
+<tr class="even">
+<td align="right">1.0</td>
+<td align="right">6</td>
+</tr>
+<tr class="odd">
+<td align="right">5.0</td>
+<td align="right">9</td>
+</tr>
+<tr class="even">
+<td align="right">10.0</td>
+<td align="right">11</td>
+</tr>
+<tr class="odd">
+<td align="right">100.0</td>
+<td align="right">20</td>
+</tr>
+</tbody>
+</table>
+<!--
+\begin{table}[htb]
+\abovecaptionskip=7pt
+\begin{center}
+\begin{tabular}{lccccc}
+\toprule
+$x$ & 0.1 & 1 & 5 & 10 & 100 \\
+\midrule
+$N$ & 3 & 6 & 9 & 11 & 20 \\
+\bottomrule
+\end{tabular}
+\caption{Cantidades de feromona empleadas en trampas y números de machos atrapados.}\label{tabla:cuques}
+\end{center}
+\end{table}
+-->
+<ol style="list-style-type: decimal">
+<li><p>Decidid si, en los puntos <span class="math inline">\((x,N)\)</span> dados en la Tabla <a href="chap-lm.html#tab:cuques">3.4</a>, el valor de <span class="math inline">\(N\)</span> sigue una función aproximadamente lineal, exponencial o potencial en el valor de <span class="math inline">\(x\)</span>.</p></li>
+<li><p>En caso de ser una función de uno de estos tres tipos, calculadla.</p></li>
+<li><p>Representad en un gráfico los puntos <span class="math inline">\((x,N)\)</span> de la Tabla <a href="chap-lm.html#tab:cuques">3.4</a> y la función que hayáis calculado en el apartado anterior, para visualizar la bondad del ajuste de la curva a los puntos.</p></li>
+<li><p>Estimad cuánta feromona tenemos que usar en una trampa para atraer a 50 machos.</p></li>
+</ol>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="15">
+<li id="fn15"><p>Los datos se han extraído de <a href="http://www.cdc.gov/growthcharts/clinical_charts.htm" class="uri">http://www.cdc.gov/growthcharts/clinical_charts.htm</a> .<a href="chap-lm.html#fnref15">↩</a></p></li>
+<li id="fn16"><p>Véase el artículo &lt;&lt;Serotonin: Radioimmunoassay&gt;&gt; de B. Peskar y S. Spector (<code>Science</code> 179, 1973, pp. 1340-1341).<a href="chap-lm.html#fnref16">↩</a></p></li>
+<li id="fn17"><p><code>ng</code> es la abreviatura de <code>nanogramo</code> , la milmillonésima parte de un gramo.<a href="chap-lm.html#fnref17">↩</a></p></li>
+<li id="fn18"><p>Datos extraídos del <em>HIV/AIDS Surveillance Report</em> de 1993, accesible en <a href="http://www.cdc.gov/hiv/topics/surveillance/resources/reports/index.htm" class="uri">http://www.cdc.gov/hiv/topics/surveillance/resources/reports/index.htm</a> .<a href="chap-lm.html#fnref18">↩</a></p></li>
+<li id="fn19"><p>Véase el artículo &lt;<Risk behavior-based model of the cubic growth of acquired immunodeficiency syndrome in the United States>&gt; de S.A. Colgate, E. A. Stanley, J. M. Hyman, S. P. Layne y C. Qualls (<em>Proc. Natl. Acad. Sci</em>. USA 86, 1989, pp. 4793–4797).<a href="chap-lm.html#fnref19">↩</a></p></li>
+<li id="fn20"><p>Véase el artículo &lt;<Gypsy moth control with the sex attractant pheromone>&gt; de M. Beroza y E. F. Knipling (<code>Science</code> 177, 1972, pp. 19–27).<a href="chap-lm.html#fnref20">↩</a></p></li>
+<li id="fn21"><p><span class="math inline">\(\mu\)</span>g es la abreviatura de <code>microgramo</code> , la millonésima parte de un gramo.<a href="chap-lm.html#fnref21">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="chap-calc.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="chap-vect.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/RicUIB/AprendeR2.1/edit/master/03chap02_Un_aperitivo.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["AprendeR-Parte-I.pdf", "AprendeR-Parte-I.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
