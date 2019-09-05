@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Lección 1 Logística de R | AprendeR: Parte I</title>
-  <meta name="description" content="Apuntes AprendeR bookdown::gitbook.">
-  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+  <meta name="description" content="Apuntes AprendeR bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Lección 1 Logística de R | AprendeR: Parte I" />
   <meta property="og:type" content="book" />
   
   
   <meta property="og:description" content="Apuntes AprendeR bookdown::gitbook." />
-  <meta name="github-repo" content="RicUIB/AprendeR" />
+  <meta name="github-repo" content="AprendeR-UIB/AprendeR1" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Lección 1 Logística de R | AprendeR: Parte I" />
@@ -22,18 +21,18 @@
   <meta name="twitter:description" content="Apuntes AprendeR bookdown::gitbook." />
   
 
-<meta name="author" content="The AprendeR team">
+<meta name="author" content="The UIB-AprendeR team" />
 
 
-<meta name="date" content="2019-02-14">
+<meta name="date" content="2019-09-05" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html">
-<link rel="next" href="chap-calc.html">
+<link rel="prev" href="index.html"/>
+<link rel="next" href="chap-calc.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,41 +50,66 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -105,12 +129,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Presentación</a></li>
-<li class="chapter" data-level="1" data-path="chap-0.html"><a href="chap-0.html"><i class="fa fa-check"></i><b>1</b> Logística de <code>R</code></a><ul>
-<li class="chapter" data-level="1.1" data-path="chap-0.html"><a href="chap-0.html#como-instalar-r-y-rstudio"><i class="fa fa-check"></i><b>1.1</b> Cómo instalar <code>R</code> y <em>Rstudio</em></a></li>
+<li class="chapter" data-level="1" data-path="chap-0.html"><a href="chap-0.html"><i class="fa fa-check"></i><b>1</b> Logística de R</a><ul>
+<li class="chapter" data-level="1.1" data-path="chap-0.html"><a href="chap-0.html#como-instalar-r-y-rstudio"><i class="fa fa-check"></i><b>1.1</b> Cómo instalar R y <em>RStudio</em></a></li>
 <li class="chapter" data-level="1.2" data-path="chap-0.html"><a href="chap-0.html#sec:guardar"><i class="fa fa-check"></i><b>1.2</b> Cómo guardar el trabajo realizado</a></li>
 <li class="chapter" data-level="1.3" data-path="chap-0.html"><a href="chap-0.html#sec:guiones"><i class="fa fa-check"></i><b>1.3</b> Cómo trabajar con guiones y otros ficheros</a></li>
 <li class="chapter" data-level="1.4" data-path="chap-0.html"><a href="chap-0.html#sec:help"><i class="fa fa-check"></i><b>1.4</b> Cómo obtener ayuda</a></li>
 <li class="chapter" data-level="1.5" data-path="chap-0.html"><a href="chap-0.html#sec:paquetes"><i class="fa fa-check"></i><b>1.5</b> Cómo instalar y cargar paquetes</a></li>
+<li class="chapter" data-level="1.6" data-path="chap-0.html"><a href="chap-0.html#guia-rapida"><i class="fa fa-check"></i><b>1.6</b> Guía rápida</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="chap-calc.html"><a href="chap-calc.html"><i class="fa fa-check"></i><b>2</b> La calculadora</a><ul>
 <li class="chapter" data-level="2.1" data-path="chap-calc.html"><a href="chap-calc.html#numeros-reales-operaciones-y-funciones-basicas"><i class="fa fa-check"></i><b>2.1</b> Números reales: operaciones y funciones básicas</a></li>
@@ -118,73 +143,20 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2.3" data-path="chap-calc.html"><a href="chap-calc.html#definicion-de-variables"><i class="fa fa-check"></i><b>2.3</b> Definición de variables</a></li>
 <li class="chapter" data-level="2.4" data-path="chap-calc.html"><a href="chap-calc.html#definicion-de-funciones"><i class="fa fa-check"></i><b>2.4</b> Definición de funciones</a></li>
 <li class="chapter" data-level="2.5" data-path="chap-calc.html"><a href="chap-calc.html#numeros-complejos-opcional"><i class="fa fa-check"></i><b>2.5</b> Números complejos (opcional)</a></li>
-<li class="chapter" data-level="2.6" data-path="chap-calc.html"><a href="chap-calc.html#guia-rapida"><i class="fa fa-check"></i><b>2.6</b> Guía rápida</a></li>
-<li class="chapter" data-level="2.7" data-path="chap-calc.html"><a href="chap-calc.html#ejercicio"><i class="fa fa-check"></i><b>2.7</b> Ejercicio</a></li>
+<li class="chapter" data-level="2.6" data-path="chap-calc.html"><a href="chap-calc.html#guia-rapida-1"><i class="fa fa-check"></i><b>2.6</b> Guía rápida</a></li>
+<li class="chapter" data-level="2.7" data-path="chap-calc.html"><a href="chap-calc.html#ejercicios"><i class="fa fa-check"></i><b>2.7</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-calc.html"><a href="chap-calc.html#modelo-de-test"><i class="fa fa-check"></i>Modelo de test</a></li>
+<li class="chapter" data-level="" data-path="chap-calc.html"><a href="chap-calc.html#ejercicio"><i class="fa fa-check"></i>Ejercicio</a></li>
+<li class="chapter" data-level="" data-path="chap-calc.html"><a href="chap-calc.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="chap-lm.html"><a href="chap-lm.html"><i class="fa fa-check"></i><b>3</b> Un aperitivo: Introducción a la regresión lineal</a><ul>
 <li class="chapter" data-level="3.1" data-path="chap-lm.html"><a href="chap-lm.html#calculo-de-rectas-de-regresion"><i class="fa fa-check"></i><b>3.1</b> Cálculo de rectas de regresión</a></li>
 <li class="chapter" data-level="3.2" data-path="chap-lm.html"><a href="chap-lm.html#rectas-de-regresion-y-transformaciones-logaritmicas"><i class="fa fa-check"></i><b>3.2</b> Rectas de regresión y transformaciones logarítmicas</a></li>
-<li class="chapter" data-level="3.3" data-path="chap-lm.html"><a href="chap-lm.html#guia-rapida-1"><i class="fa fa-check"></i><b>3.3</b> Guía rápida</a></li>
-<li class="chapter" data-level="3.4" data-path="chap-lm.html"><a href="chap-lm.html#ejercicio-1"><i class="fa fa-check"></i><b>3.4</b> Ejercicio</a></li>
+<li class="chapter" data-level="3.3" data-path="chap-lm.html"><a href="chap-lm.html#guia-rapida-2"><i class="fa fa-check"></i><b>3.3</b> Guía rápida</a></li>
+<li class="chapter" data-level="3.4" data-path="chap-lm.html"><a href="chap-lm.html#ejercicios-1"><i class="fa fa-check"></i><b>3.4</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-lm.html"><a href="chap-lm.html#ejercicio-1"><i class="fa fa-check"></i>Ejercicio</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="chap-vect.html"><a href="chap-vect.html"><i class="fa fa-check"></i><b>4</b> Vectores y otros tipos de listas</a><ul>
-<li class="chapter" data-level="4.1" data-path="chap-vect.html"><a href="chap-vect.html#construccion-de-vectores"><i class="fa fa-check"></i><b>4.1</b> Construcción de vectores</a></li>
-<li class="chapter" data-level="4.2" data-path="chap-vect.html"><a href="chap-vect.html#operaciones-con-vectores"><i class="fa fa-check"></i><b>4.2</b> Operaciones con vectores</a></li>
-<li class="chapter" data-level="4.3" data-path="chap-vect.html"><a href="chap-vect.html#entradas-y-trozos-de-vectores"><i class="fa fa-check"></i><b>4.3</b> Entradas y trozos de vectores</a></li>
-<li class="chapter" data-level="4.4" data-path="chap-vect.html"><a href="chap-vect.html#subsec:factor"><i class="fa fa-check"></i><b>4.4</b> Factores</a></li>
-<li class="chapter" data-level="4.5" data-path="chap-vect.html"><a href="chap-vect.html#sec:lists"><i class="fa fa-check"></i><b>4.5</b> Listas heterogéneas</a></li>
-<li class="chapter" data-level="4.6" data-path="chap-vect.html"><a href="chap-vect.html#guia-rapida-de-funciones"><i class="fa fa-check"></i><b>4.6</b> Guía rápida de funciones</a></li>
-<li class="chapter" data-level="4.7" data-path="chap-vect.html"><a href="chap-vect.html#ejercicio-2"><i class="fa fa-check"></i><b>4.7</b> Ejercicio</a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="chap-matrix.html"><a href="chap-matrix.html"><i class="fa fa-check"></i><b>5</b> Matrices</a><ul>
-<li class="chapter" data-level="5.1" data-path="chap-matrix.html"><a href="chap-matrix.html#construccion-de-matrices"><i class="fa fa-check"></i><b>5.1</b> Construcción de matrices</a></li>
-<li class="chapter" data-level="5.2" data-path="chap-matrix.html"><a href="chap-matrix.html#acceso-a-entradas-y-submatrices"><i class="fa fa-check"></i><b>5.2</b> Acceso a entradas y submatrices</a></li>
-<li class="chapter" data-level="5.3" data-path="chap-matrix.html"><a href="chap-matrix.html#algunas-funciones-para-matrices"><i class="fa fa-check"></i><b>5.3</b> Algunas funciones para matrices</a></li>
-<li class="chapter" data-level="5.4" data-path="chap-matrix.html"><a href="chap-matrix.html#calculo-matricial-opcional"><i class="fa fa-check"></i><b>5.4</b> Cálculo matricial (opcional)</a></li>
-<li class="chapter" data-level="5.5" data-path="chap-matrix.html"><a href="chap-matrix.html#valores-y-vectores-propios-opcional"><i class="fa fa-check"></i><b>5.5</b> Valores y vectores propios (opcional)</a></li>
-<li class="chapter" data-level="5.6" data-path="chap-matrix.html"><a href="chap-matrix.html#matrices-complejas-opcional"><i class="fa fa-check"></i><b>5.6</b> Matrices complejas (opcional)</a></li>
-<li class="chapter" data-level="5.7" data-path="chap-matrix.html"><a href="chap-matrix.html#guia-rapida-de-funciones-1"><i class="fa fa-check"></i><b>5.7</b> Guía rápida de funciones</a></li>
-<li class="chapter" data-level="5.8" data-path="chap-matrix.html"><a href="chap-matrix.html#ejercicio-opcional"><i class="fa fa-check"></i><b>5.8</b> Ejercicio (opcional)</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="chap-df.html"><a href="chap-df.html"><i class="fa fa-check"></i><b>6</b> <em>Data frames</em></a><ul>
-<li class="chapter" data-level="6.1" data-path="chap-df.html"><a href="chap-df.html#estructura-de-un-data-frame"><i class="fa fa-check"></i><b>6.1</b> Estructura de un <em>data frame</em></a></li>
-<li class="chapter" data-level="6.2" data-path="chap-df.html"><a href="chap-df.html#como-importar-y-exportar-data-frames"><i class="fa fa-check"></i><b>6.2</b> Cómo importar y exportar <em>data frames</em></a></li>
-<li class="chapter" data-level="6.3" data-path="chap-df.html"><a href="chap-df.html#como-crear-data-frames"><i class="fa fa-check"></i><b>6.3</b> Cómo crear <em>data frames</em></a></li>
-<li class="chapter" data-level="6.4" data-path="chap-df.html"><a href="chap-df.html#sec:moddf"><i class="fa fa-check"></i><b>6.4</b> Cómo modificar un <em>data frame</em></a></li>
-<li class="chapter" data-level="6.5" data-path="chap-df.html"><a href="chap-df.html#sec:dfaf"><i class="fa fa-check"></i><b>6.5</b> Cómo añadir filas y columnas a un <em>data frame</em></a></li>
-<li class="chapter" data-level="6.6" data-path="chap-df.html"><a href="chap-df.html#como-seleccionar-trozos-de-un-data-frame"><i class="fa fa-check"></i><b>6.6</b> Cómo seleccionar trozos de un <em>data frame</em></a></li>
-<li class="chapter" data-level="6.7" data-path="chap-df.html"><a href="chap-df.html#como-aplicar-una-funcion-a-las-variables-de-un-data-frame"><i class="fa fa-check"></i><b>6.7</b> Cómo aplicar una función a las variables de un <em>data frame</em></a></li>
-<li class="chapter" data-level="6.8" data-path="chap-df.html"><a href="chap-df.html#sub:attach"><i class="fa fa-check"></i><b>6.8</b> Cómo añadir las variables de un <em>data frame</em> al entorno global</a></li>
-<li class="chapter" data-level="6.9" data-path="chap-df.html"><a href="chap-df.html#big-data-frames-con-data.table-opcional."><i class="fa fa-check"></i><b>6.9</b> &lt;&lt;<em>Big data</em>&gt;&gt; <em>frames</em> con <code>data.table</code> (opcional).</a></li>
-<li class="chapter" data-level="6.10" data-path="chap-df.html"><a href="chap-df.html#guia-rapida-de-funciones-2"><i class="fa fa-check"></i><b>6.10</b> Guía rápida de funciones</a></li>
-<li class="chapter" data-level="6.11" data-path="chap-df.html"><a href="chap-df.html#ejercicio-3"><i class="fa fa-check"></i><b>6.11</b> Ejercicio</a></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="chap-plot.html"><a href="chap-plot.html"><i class="fa fa-check"></i><b>7</b> Gráficos I</a><ul>
-<li class="chapter" data-level="7.1" data-path="chap-plot.html"><a href="chap-plot.html#la-funcion-plot"><i class="fa fa-check"></i><b>7.1</b> La función <code>plot</code></a></li>
-<li class="chapter" data-level="7.2" data-path="chap-plot.html"><a href="chap-plot.html#parametros-de-plot"><i class="fa fa-check"></i><b>7.2</b> Parámetros de <code>plot</code></a></li>
-<li class="chapter" data-level="7.3" data-path="chap-plot.html"><a href="chap-plot.html#como-anadir-elementos-a-un-grafico"><i class="fa fa-check"></i><b>7.3</b> Cómo añadir elementos a un gráfico</a></li>
-<li class="chapter" data-level="7.4" data-path="chap-plot.html"><a href="chap-plot.html#guia-rapida-2"><i class="fa fa-check"></i><b>7.4</b> Guía rápida</a><ul>
-<li class="chapter" data-level="7.4.1" data-path="chap-plot.html"><a href="chap-plot.html#ejercicio-4"><i class="fa fa-check"></i><b>7.4.1</b> Ejercicio</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="8" data-path="chap-edqual.html"><a href="chap-edqual.html"><i class="fa fa-check"></i><b>8</b> Descripción de datos cualitativos</a><ul>
-<li class="chapter" data-level="8.1" data-path="chap-edqual.html"><a href="chap-edqual.html#frecuencias"><i class="fa fa-check"></i><b>8.1</b> Frecuencias</a></li>
-<li class="chapter" data-level="8.2" data-path="chap-edqual.html"><a href="chap-edqual.html#tablas-unidimensionales-de-frecuencias"><i class="fa fa-check"></i><b>8.2</b> Tablas unidimensionales de frecuencias</a></li>
-<li class="chapter" data-level="8.3" data-path="chap-edqual.html"><a href="chap-edqual.html#tablas-bidimensionales-de-frecuencias"><i class="fa fa-check"></i><b>8.3</b> Tablas bidimensionales de frecuencias</a></li>
-<li class="chapter" data-level="8.4" data-path="chap-edqual.html"><a href="chap-edqual.html#tablas-multidimensionales-de-frecuencias"><i class="fa fa-check"></i><b>8.4</b> Tablas multidimensionales de frecuencias</a></li>
-<li class="chapter" data-level="8.5" data-path="chap-edqual.html"><a href="chap-edqual.html#tablas-a-partir-de-dta-frames-de-de-variables-cualitativas"><i class="fa fa-check"></i><b>8.5</b> Tablas a partir de <em>dta frames</em> de de variables cualitativas</a></li>
-<li class="chapter" data-level="8.6" data-path="chap-edqual.html"><a href="chap-edqual.html#diagramas-de-barras"><i class="fa fa-check"></i><b>8.6</b> Diagramas de barras</a></li>
-<li class="chapter" data-level="8.7" data-path="chap-edqual.html"><a href="chap-edqual.html#otros-graficos-para-datos-cualitativos"><i class="fa fa-check"></i><b>8.7</b> Otros gráficos para datos cualitativos</a><ul>
-<li class="chapter" data-level="8.7.1" data-path="chap-edqual.html"><a href="chap-edqual.html#sec:exqual"><i class="fa fa-check"></i><b>8.7.1</b> Un ejemplo completo</a></li>
-</ul></li>
-<li class="chapter" data-level="8.8" data-path="chap-edqual.html"><a href="chap-edqual.html#guia-rapida-de-funciones-3"><i class="fa fa-check"></i><b>8.8</b> Guía rápida de funciones</a></li>
-<li class="chapter" data-level="8.9" data-path="chap-edqual.html"><a href="chap-edqual.html#ejercicio-5"><i class="fa fa-check"></i><b>8.9</b> Ejercicio</a></li>
-</ul></li>
-<li class="chapter" data-level="9" data-path="chap-ord.html"><a href="chap-ord.html"><i class="fa fa-check"></i><b>9</b> Descripción de datos ordinales</a><ul>
-<li class="chapter" data-level="9.1" data-path="chap-ord.html"><a href="chap-ord.html#frecuencias-para-datos-ordinales"><i class="fa fa-check"></i><b>9.1</b> Frecuencias para datos ordinales</a></li>
-<li class="chapter" data-level="9.2" data-path="chap-ord.html"><a href="chap-ord.html#descripcion-de-datos-ordinales-con-r"><i class="fa fa-check"></i><b>9.2</b> Descripción de datos ordinales con <code>R</code></a></li>
-<li class="chapter" data-level="9.3" data-path="chap-ord.html"><a href="chap-ord.html#guia-rapida-de-funciones-4"><i class="fa fa-check"></i><b>9.3</b> Guía rápida de funciones</a></li>
-<li class="chapter" data-level="9.4" data-path="chap-ord.html"><a href="chap-ord.html#ejercicio-6"><i class="fa fa-check"></i><b>9.4</b> Ejercicio</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/RicUIB/AprendeR2.1" target="blank">Publicado con  bookdown</a></li>
@@ -207,123 +179,136 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
             <section class="normal" id="section-">
 <div id="chap:0" class="section level1">
-<h1><span class="header-section-number">Lección 1</span> Logística de <code>R</code></h1>
-<p><code>R</code> es un entorno de programación para el análisis estadístico y gráfico de datos muy popular, cada día más utilizado en empresas y universidades. Su uso tiene muchas ventajas. Para empezar, es <em>software</em> libre. La elección de <em>software</em> libre es, en general, acertada por varios motivos: por un lado, transmite valores socialmente positivos, como por ejemplo la libertad individual, el conocimiento compartido, la solidaridad y la cooperación; por otro, nos aproxima al método científico, porque permite el examen y mejora del código desarrollado por otros usuarios y la reproducibilidad de los resultados obtenidos; finalmente, pero no menos importante desde un punto de vista práctico, podemos adquirir de manera legal y gratuita copias del programa, sin necesidad de licencias personales o académicas.</p>
-<p>Aparte de su faceta de <em>software</em> libre, <code>R</code> tiene algunas ventajas específicas: por ejemplo, su sintaxis básica es sencilla e intuitiva, con la que es muy fácil familiarizarse, lo que se traduce en un aprendizaje rápido y cómodo; además, tiene una enorme comunidad de usuarios, estructurada alrededor de la <em>Comprehensive R Archive Network</em>, <code>CRAN</code> , que desarrolla cada día nuevos paquetes<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> que extienden sus funcionalidades y cubren casi todas las necesidades computacionales y estadísticas de un científico o ingeniero. En fin, si necesitáis aún más razones para usar <code>R</code>, podéis consultar la página &lt;&lt;<em>Why use <code>R</code>?</em>&gt;&gt; de la organización <em>inside-<code>R</code></em>, en <code>url</code><a href="http://www.inside-r.org/why-use-r" class="uri">http://www.inside-r.org/why-use-r</a></p>
+<h1><span class="header-section-number">Lección 1</span> Logística de R</h1>
+<p>R es un entorno de programación para el análisis estadístico y gráfico de datos muy popular, cada día más utilizado en empresas y universidades. Su uso tiene muchas ventajas. Para empezar, es <em>software</em> libre. La elección de <em>software</em> libre es, en general, acertada por varios motivos. Por un lado, transmite valores socialmente positivos, como por ejemplo la libertad individual, el conocimiento compartido, la solidaridad y la cooperación. Por otro, nos aproxima al método científico, porque permite el examen y mejora del código desarrollado por otros usuarios y la reproducibilidad de los resultados obtenidos. Finalmente, pero no menos importante desde un punto de vista práctico, podemos adquirir de manera legal y gratuita copias del programa, sin necesidad de licencias personales o académicas.</p>
+<p>Aparte de su faceta de <em>software</em> libre, R tiene algunas ventajas específicas: por ejemplo, su sintaxis básica es sencilla e intuitiva, con la que es muy fácil familiarizarse, lo que se traduce en un aprendizaje rápido y cómodo. Además, tiene una enorme comunidad de usuarios, estructurada alrededor de la <em>Comprehensive R Archive Network</em>, o <em>CRAN</em>, que desarrolla cada día nuevos paquetes que extienden sus funcionalidades y cubren casi todas las necesidades computacionales y estadísticas de un científico o ingeniero. Para que os hagáis una idea, en el momento de revisar estas notas (septiembre de 2019) el número de paquetes en el repositorio de la CRAN acaba de superar los 15000.</p>
 <div id="como-instalar-r-y-rstudio" class="section level2">
-<h2><span class="header-section-number">1.1</span> Cómo instalar <code>R</code> y <em>Rstudio</em></h2>
-<p>Instalar <code>R</code> es muy sencillo; de hecho, seguramente ya lo tenéis instalado en vuestro ordenador, pero es conveniente que dispongáis de su versión más reciente<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> y que regularmente lo pongáis al día. Los pasos a realizar en Windows o Mac OS X para instalar su última versión son los siguientes:</p>
-<ol style="list-style-type: decimal">
-<li>Acceded a la página web de la <code>CRAN</code>, <a href="http://cran.r-project.org/" class="uri">http://cran.r-project.org/</a><br />
-y pulsad sobre el enlace correspondiente a vuestro sistema operativo:<br />
-&lt;&lt;<em>Download R for Windows</em>&gt;&gt; o &lt;&lt;<em>Download R for Mac OS X</em>&gt;&gt;.</li>
-<li><p>Si sois usuarios de Windows, entrad en el enlace &lt;&lt;<em>base</em>&gt;&gt;, descargad <code>R</code> y seguid las instrucciones de instalación del documento &lt;&lt;<em>Installation and other instructions</em>&gt;&gt; que encontraréis en esa misma página.</p></li>
-<li><p>Si usáis Windows Vista, conviene que consultéis además el enlace &lt;&lt;<em>How do I install R when using Windows Vista?</em>&gt;&gt;. Si sois usuarios de Mac OS X, descargad el fichero <code>.pkg</code> correspondiente y, una vez descargado, abridlo y seguid las instrucciones del Asistente de Instalación.</p></li>
-<li><p>Si trabajáis con Ubuntu o Debian, para instalar la última versión de <code>R</code> basta que ejecutéis en una terminal, estando conectados a Internet, la siguiente instrucción: <code>sudo aptitude install r-base</code></p></li>
-</ol>
-<p>Cuando instaláis <code>R</code> para Windows o Mac OS X, con él también se os instala una interfaz gráfica que se abrirá al abrir la aplicación y en la que podréis trabajar. La instalación para Linux no lleva una interfaz por defecto, así que sus usuarios tienen que trabajar con <code>R</code> en la terminal (ejecutando <code>R</code> para iniciar una sesión) o instalar aparte una interfaz.<br />
-Independientemente de todas estas posibilidades, en este curso usaremos <em>Rstudio</em> como interfaz gráfica de usuario de <code>R</code> para todos los sistemas operativos.</p>
-<p>Propiamente hablando, <em>Rstudio</em> es mucho más que una interfaz de <code>R</code>: se trata de todo un entorno integrado para utilizar y programar con <code>R</code>, que dispone de un conjunto de herramientas que facilitan el trabajo con este lenguaje. Para instalarlo, se ha de descargar de <a href="http://www.rstudio.com/products/rstudio/download/" class="uri">http://www.rstudio.com/products/rstudio/download/</a></p>
-<p>la versión correspondiente al sistema operativo en el que se trabaja. Una vez descargado, en el caso de Windows o Mac OS X ya se puede abrir directamente. En el caso de Linux, hay que ejecutar en una terminal la siguiente instrucción para completar su instalación:<code>sudo dpkg -i rstudio-&lt;version&gt;-i386.deb</code>. Donde <code>version</code> refiere a la versión concreta que se haya descargado. Conviene recordar que <em>Rstudio</em> no es <code>R</code>, ni tan solo lo contiene: hay que instalar ambos programas. De hecho, las instalaciones de <code>R</code> y <em>Rstudio</em> son independientes una de la otra, de manera que cuando se pone al día uno de estos programas, no se modifica el otro.</p>
+<h2><span class="header-section-number">1.1</span> Cómo instalar R y <em>RStudio</em></h2>
+<p>Instalar R es muy sencillo; de hecho, seguramente ya lo tenéis instalado en vuestro ordenador, pero es conveniente que dispongáis de su versión más reciente y que regularmente lo pongáis al día. Los pasos a realizar en Windows o Mac OS X para instalar su última versión son los siguientes:</p>
+<ul>
+<li><p>Si sois usuarios de Windows, acceded a la página web de la <a href="http://cran.r-project.org/"><em>CRAN</em></a> y pulsad sobre el enlace <em>Download R for Windows</em>. A continuación, entrad en el enlace <em>base</em>, descargad R y seguid las instrucciones de instalación del documento <em>Installation and other instructions</em> que encontraréis en esa misma página.</p></li>
+<li><p>Si sois usuarios de Mac OS X, acceded a la página web de la <a href="http://cran.r-project.org/"><em>CRAN</em></a> y pulsad sobre el enlace <em>Download R for Mac OS X</em>. A continuación, descargad el fichero <code>.pkg</code> correspondiente y, una vez descargado, abridlo y seguid las instrucciones del Asistente de Instalación.</p></li>
+<li>Si trabajáis con Ubuntu o Debian, para instalar la última versión de R basta que ejecutéis en una terminal, estando conectados a Internet, la siguiente instrucción:</li>
+</ul>
+<pre><code>sudo aptitude install r-base</code></pre>
+<p>Cuando instaláis R para Windows o Mac OS X, con él también se os instala una interfaz gráfica que se abrirá al abrir la aplicación y en la que podréis trabajar. La instalación para Linux no lleva una interfaz por defecto, así que sus usuarios tienen que trabajar con R en la terminal (ejecutando R para iniciar una sesión) o instalar aparte una interfaz. Independientemente de todas estas posibilidades, en este curso usaremos <em>RStudio</em> como interfaz gráfica de usuario de R para todos los sistemas operativos.</p>
+<p>Propiamente hablando, <em>RStudio</em> es mucho más que una interfaz de R: se trata de todo un entorno integrado para utilizar y programar con R, que dispone de un conjunto de herramientas que facilitan el trabajo con este lenguaje. Para instalarlo, se ha de descargar del <em>url</em> <a href="http://www.rstudio.com/products/rstudio/download/">http://www.rstudio.com/products/rstudio/download/</a> la versión correspondiente al sistema operativo en el que se trabaja; en cada caso, escoged la versión gratuita de <em>RStudio Desktop</em>. Una vez descargado, si usáis Windows o Mac OS X ya lo podéis abrir directamente. En el caso de Linux, hay que ejecutar en una terminal la siguiente instrucción para completar su instalación:</p>
+<pre><code>sudo dpkg -i rstudio-&lt;version&gt;-i386.deb</code></pre>
+<p>donde <code>version</code> refiere a la versión concreta que hayáis descargado. Conviene recordar que <em>RStudio</em> no es R, ni tan sólo lo contiene: hay que instalar ambos programas. De hecho, las instalaciones de R y <em>RStudio</em> son independientes una de la otra, de manera que cuando se pone al día uno de estos programas, no se modifica el otro.</p>
 <div class="figure" style="text-align: center"><span id="fig:rstudio1"></span>
-<img src="images/rstudio1.png" alt="Ventana de Rstudio para Mac OS X." width="80%" />
+<img src="AprendeR-Parte-I_files/figure-html/rstudio1.png" alt="Ventana de RStudio para Mac OS X." width="80%" />
 <p class="caption">
-Figura 1.1: Ventana de Rstudio para Mac OS X.
+Figura 1.1: Ventana de RStudio para Mac OS X.
 </p>
 </div>
-<p>Cuando se abre <em>Rstudio</em>, aparece una ventana similar a la que muestra la Figura <a href="chap-0.html#fig:rstudio1">1.1</a>: su apariencia exacta dependerá del sistema operativo. De momento, nos concentraremos en la ventana de la izquierda, llamada la <code>consola</code> de <code>R</code>. Observaréis que en el momento de abrir la aplicación, dicha ventana contiene una serie de información (versión, créditos, etc.) y al final una línea en blanco encabezada por el símbolo <code>&gt;</code>. Este símbolo es la <code>marca de inicio</code> e indica que <code>R</code> espera que escribáis alguna instrucción y la ejecutéis.</p>
-<p>Durante la mayor parte de este curso, usaremos <em>Rstudio</em> de manera interactiva:</p>
+<p>Cuando se abre <em>RStudio</em>, aparece una ventana similar a la que muestra la Figura <a href="chap-0.html#fig:rstudio1">1.1</a>: su apariencia exacta dependerá del sistema operativo, de la versión de <em>RStudio</em> e incluso de los paquetes que estemos usando. De momento, nos concentraremos en la ventana de la izquierda, llamada la <strong>consola</strong> de R (la pestaña <em>Console</em>). Observaréis que en el momento de abrir la aplicación, dicha ventana contiene una serie de información (versión,
+créditos etc.) y al final una línea en blanco encabezada por el símbolo <code>&gt;</code>. Este símbolo es la <strong>marca de inicio</strong> e indica que R espera que escribáis alguna instrucción y la ejecutéis.</p>
+<p>Durante la mayor parte de este curso, usaremos <em>RStudio</em> de manera interactiva:</p>
 <ol style="list-style-type: decimal">
 <li>Escribiremos una instrucción en la consola, a la derecha de la marca de inicio de su última línea.</li>
 <li>La ejecutaremos pulsando la tecla <em>Entrar</em> (<span class="math inline">\(\hookleftarrow\)</span>).</li>
-<li><code>R</code> la evaluará y, si corresponde, escribirá el resultado en la línea siguiente de la consola (como veremos, no todas las instrucciones hacen que <code>R</code> escriba algo).</li>
-<li><code>R</code> abrirá una nueva línea en blanco encabezada por una marca de inicio, donde esperará una nueva instrucción.</li>
+<li>R la evaluará y, si corresponde, escribirá el resultado en la línea siguiente de la consola (como veremos, no todas las instrucciones hacen que R escriba algo).</li>
+<li>R abrirá una nueva línea en blanco encabezada por una marca de inicio, donde esperará una nueva instrucción.</li>
 </ol>
-<p>Haced una prueba: escribid <code>1+1</code> junto a la marca de inicio y pulsad <em>Entrar</em>; <code>R</code> escribirá en la línea siguiente el resultado de la suma, <code>2</code>, y a continuación una nueva línea en blanco encabezada por la marca de inicio.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span><span class="op">+</span><span class="dv">1</span></code></pre></div>
+<p>Haced una prueba: escribid <code>1+1</code> junto a la marca de inicio y pulsad <em>Entrar</em>; R escribirá en la línea siguiente el resultado de la suma, <code>2</code>, y a continuación una nueva línea en blanco encabezada por la marca de inicio.
+Ya hablaremos en la Lección <a href="#chap:vect"><strong>??</strong></a> del <code>[1]</code> que os habrá aparecido delante del 2 en el resultado. Hasta entonces, no os preocupéis por él. En los bloques de código de este libro no incluimos la marca de inicio, para que podáis copiar tranquilamente el código y luego pegarlo y ejecutarlo en vuestra consola, y el resultado aparece precedido de <code>##</code>, para que si por descuido copiáis un resultado, no se ejecute: el símbolo <code>#</code> sirve para indicar a R que no ejecute lo que venga a continuación en la misma línea. Así, en este libro el cálculo anterior corresponde a:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="dv">1</span><span class="op">+</span><span class="dv">1</span></a></code></pre></div>
 <pre><code>## [1] 2</code></pre>
-<p>Ya hablaremos del <code>[1]</code> que precede al 2 en la Lección <a href="chap-vect.html#chap:vect">4</a>. Hasta entonces, no os preocupéis por él.</p>
-<p>Para facilitarnos el trabajo, la consola dispone de un mecanismo para acceder a las instrucciones ya ejecutadas y modificarlas si queremos. Si situamos el cursor a la derecha de la marca de inicio de la línea inferior y pulsamos la tecla de la flecha vertical ascendente <span class="math inline">\(\uparrow\)</span>, iremos obteniendo de manera consecutiva, en esa línea, las instrucciones escritas hasta el momento en la misma sesión; si nos pasamos, podemos usar la tecla <span class="math inline">\(\downarrow\)</span> para retroceder dentro de esta lista; una vez alcanzada la instrucción deseada, podemos volver a ejecutarla o, con las teclas de flechas horizontales, ir al lugar de la instrucción que queramos y reescribir un trozo antes de ejecutarla. Otra posibilidad es usar la pestaña <strong>History</strong> de la ventana superior derecha de <em>Rstudio</em>, que contiene la lista de todas las instrucciones que se han ejecutado en la sesión actual. Si seleccionamos una instrucción de esta lista y pulsamos el botón &lt;&lt;<em>To console</em>&gt;&gt; del menú superior de la pestaña, la instrucción se copiará en la consola y la podremos modificar o ejecutar directamente.</p>
-<p>También podemos copiar instrucciones de otros ficheros y pegarlas a la derecha de la marca de inicio de la manera habitual en el sistema operativo de nuestro ordenador. Pero hay que ir con cuidado: las instrucciones copiadas de ficheros en formato que no sea texto simple pueden contener caracteres invisibles a simple vista que generen errores al intentar ejecutar la instrucción copiada. En particular, esto afecta a las instrucciones que podáis copiar de ficheros en formato PDF como este. Para evitaros este problema, para cada lección encontraréis, en el repositorio del curso, un fichero en formato texto simple llamado <code>Leccion_i.R</code> (donde la <code>i</code> indica el número de la lección), que contendrá la mayoría de las instrucciones que aparecen en ella. Estas instrucciones las podréis copiar y pegar en la consola, o podréis ejecutarlas directamente abriendo el guión en la ventana de ficheros (véase la Sección <a href="chap-0.html#sec:guiones">1.3</a>).</p>
-<p>Volvamos a la ventana de <em>Rstudio</em> de la Figura <a href="#fig:rstudio"><strong>??</strong></a>. Observaréis que está dividida a su vez en tres ventanas. La de la izquierda es la <code>consola</code> , donde trabajamos en modo interactivo. La ventana inferior derecha tiene algunas pestañas, entre las que destacamos:</p>
+<p>Para facilitarnos el trabajo, la consola dispone de un mecanismo para acceder a las instrucciones ya ejecutadas y modificarlas si queremos. Si situamos el cursor a la derecha de la marca de inicio de la línea inferior y pulsamos la tecla de la flecha vertical ascendente <span class="math inline">\(\uparrow\)</span>, iremos obteniendo de manera consecutiva, en esa línea, las instrucciones escritas hasta el momento en la misma sesión; si nos pasamos, podemos usar la tecla <span class="math inline">\(\downarrow\)</span> para retroceder dentro de esta lista; una vez alcanzada la instrucción deseada, podemos volver a ejecutarla o, con las teclas de flechas horizontales, ir al lugar de la instrucción que queramos y reescribir un trozo antes de ejecutarla. Otra posibilidad es usar la pestaña <em>History</em> de la ventana superior derecha de <em>RStudio</em>, que contiene la lista de todas las instrucciones que se han ejecutado en la sesión actual. Si seleccionamos una instrucción de esta lista y pulsamos el botón <em>To console</em> del menú superior de la pestaña, la instrucción se copiará en la consola y la podremos modificar o ejecutar directamente.</p>
+<p>También podemos copiar instrucciones de otros ficheros y pegarlas a la derecha de la marca de inicio de la manera habitual en el sistema operativo de nuestro ordenador. Pero hay que ir con cuidado: las instrucciones copiadas de ficheros en formato que no sea texto simple pueden contener caracteres invisibles a simple vista que generen errores al intentar ejecutar la instrucción copiada. En particular, esto afecta a las instrucciones que podáis copiar de ficheros en formato PDF, procurad no hacerlo. En cambio, no hay ningún problema en copiar y pegar instrucciones de ficheros html como los de estas lecciones.</p>
+<p>Volvamos a la ventana de <em>RStudio</em> de la Figura <a href="chap-0.html#fig:rstudio1">1.1</a>. Observaréis que está dividida a su vez en tres ventanas. La de la izquierda es la consola, donde trabajamos en modo interactivo. La ventana inferior derecha tiene algunas pestañas, entre las que destacamos:</p>
 <ul>
-<li><strong>Files</strong>, que muestra el contenido de la carpeta de trabajo actual (véase la Sección <a href="chap-0.html#sec:guardar">1.2</a>). Al hacer clic sobre un fichero en esta lista, se abrirá en la ventana de ficheros (véase la Sección <a href="chap-0.html#sec:guiones">1.3</a>).</li>
-<li><strong>Plots</strong>, que muestra los gráficos que hayamos producido durante la sesión. Se puede navegar entre ellos con las flechas de la barra superior de la pestaña.</li>
-<li><strong>Packages</strong>, que muestra todos los paquetes instalados y, marcados, los que están cargados en la sesión actual (véase la Sección <a href="chap-0.html#sec:paquetes">1.5</a>).</li>
-<li><strong>Help</strong>, donde aparecerá la ayuda que pidamos (véase la Sección <a href="chap-0.html#sec:help">1.4</a>).</li>
+<li><em>Files</em>, que muestra el contenido de la carpeta de trabajo actual (véase la Sección <a href="chap-0.html#sec:guardar">1.2</a>). Al hacer clic sobre un fichero en esta lista, se abrirá en la ventana de ficheros (véase la Sección <a href="chap-0.html#sec:guiones">1.3</a>).</li>
+<li><em>Plots</em>, que muestra los gráficos que hayamos producido durante la sesión. Se puede navegar entre ellos con las flechas de la barra superior de la pestaña.</li>
+<li><em>Packages</em>, que muestra todos los paquetes instalados y, marcados, los que están cargados en la sesión actual (véase la Sección <a href="chap-0.html#sec:paquetes">1.5</a>).</li>
+<li><em>Help</em>, donde aparecerá la ayuda que pidamos (véase la Sección <a href="chap-0.html#sec:help">1.4</a>).</li>
 </ul>
-<p>Por lo que se refiere a la ventana superior izquierda, tiene dos pestañas:</p>
+<p>Por lo que se refiere a la ventana superior izquierda, destacamos las dos pestañas siguientes:</p>
 <ul>
-<li><strong>Environment</strong>, con la lista de los objetos actualmente definidos (véase la Lección <a href="chap-calc.html#chap:calc">2</a>).</li>
-<li><strong>History</strong>, de la que ya hemos hablado, que contiene la lista de todas las instrucciones que hayamos ejecutado durante la sesión.</li>
+<li><em>Environment</em>, con la lista de los objetos actualmente definidos (véase la Lección <a href="chap-calc.html#chap:calc">2</a>).</li>
+<li><em>History</em>, de la que ya hemos hablado, que contiene la lista de todas las instrucciones que hayamos ejecutado durante la sesión.</li>
 </ul>
-<p>Aparte de estas tres ventanas, <em>Rstudio</em> dispone de una cuarta ventana para ficheros, que se abre en el sector superior izquierdo, sobre la consola (véase la Sección <a href="chap-0.html#sec:guiones">1.3</a>).</p>
-<p>Para cerrar <em>Rstudio</em>, basta elegir &lt;&lt;<em>Quit</em> <em>Rstudio</em>&gt;&gt; del menú &lt;&lt;<em>Rstudio</em>&gt;&gt; o pulsar la combinación de teclas usual para cerrar un programa en vuestro sistema operativo.</p>
+<p>Aparte de estas tres ventanas, <em>RStudio</em> dispone de una cuarta ventana para ficheros, que se abre en el sector superior izquierdo, sobre la consola (véase la Sección <a href="chap-0.html#sec:guiones">1.3</a>).</p>
+<p>Para cerrar <em>RStudio</em>, basta elegir <em>Quit RStudio</em> del menú <em>RStudio</em> o
+pulsar la combinación de teclas usual para cerrar un programa en vuestro sistema operativo.</p>
 </div>
 <div id="sec:guardar" class="section level2">
 <h2><span class="header-section-number">1.2</span> Cómo guardar el trabajo realizado</h2>
-<p>Antes de empezar a utilizar <code>R</code> en serio, lo primero que tenéis que hacer es crear en vuestro ordenador una carpeta específica que será vuestra <em>carpeta de trabajo</em> con <code>R</code>. A continuación, en las <code>Preferencias</code> de <em>Rstudio</em>, que podréis abrir desde el menú &lt;&lt;<em>Rstudio</em>&gt;&gt;, tenéis que declarar esta carpeta como <em>Default working directory</em>. A partir de este momento, por defecto, todo el trabajo que realicéis quedará guardado dentro de esta carpeta, y <em>Rstudio</em> buscará dentro de esta carpeta todo lo que queráis que lea. Si en un momento determinado queréis cambiar temporalmente de carpeta de trabajo, tenéis dos opciones:</p>
+<p>Antes de empezar a utilizar R en serio, lo primero que tenéis que hacer es crear en vuestro ordenador una carpeta específica que será vuestra <strong>carpeta de trabajo</strong> con R. A continuación, en las <em>Preferencias</em> de <em>RStudio</em>, que podréis abrir desde el menú <em>RStudio</em>, tenéis que declarar esta carpeta como <em>Default working directory</em>. A partir de este momento, por defecto, todo el trabajo que realicéis quedará guardado dentro de esta carpeta, y <em>RStudio</em> buscará dentro de esta carpeta todo lo que queráis que lea.
+Si en un momento determinado queréis cambiar temporalmente de carpeta de trabajo, tenéis dos opciones:</p>
 <ul>
-<li>Podéis usar el menú &lt;&lt;<em>Session</em> <span class="math inline">\(\rightarrow\)</span> <em>Set Working Directory</em> <span class="math inline">\(\rightarrow\)</span> <em>Choose Directory…</em>&gt;&gt; para escoger una carpeta.</li>
-<li>Podéis abrir la pestaña <strong>Files</strong> de la ventana inferior derecha y navegar por el árbol de directorios que aparece en su barra superior hasta llegar a la carpeta deseada.</li>
+<li><p>Podéis usar el menú <em>Session</em> <span class="math inline">\(\rightarrow\)</span> <em>Set Working Directory</em> <span class="math inline">\(\rightarrow\)</span> <em>Choose Directory…</em> para escoger una carpeta.</p></li>
+<li><p>Podéis abrir la pestaña <em>Files</em> de la ventana inferior derecha y navegar por el árbol de directorios que aparece en su barra superior hasta llegar a la carpeta deseada.</p></li>
 </ul>
 <p>Tanto de una manera como de la otra, la carpeta que especifiquéis será la carpeta de trabajo durante lo que queda de sesión o hasta que la volváis a cambiar.</p>
-<p>En cualquier momento podéis guardar la sesión en la que estéis trabajando usando el menú &lt;&lt;<em>Session</em> <span class="math inline">\(\rightarrow\)</span> <em>Save Workspace as…</em>&gt;&gt;. Además, si no habéis modificado esta opción en las <code>Preferencias</code> , cuando cerréis <em>Rstudio</em> se os pedirá si queréis guardar la sesión; si contestáis que sí, <em>Rstudio</em> guardará en la carpeta de trabajo dos ficheros, <code>.RData</code> y <code>.RHistory</code>, que se cargarán automáticamente al volver a abrir <em>Rstudio</em> y estaréis exactamente donde lo habíais dejado. Nuestro consejo es que digáis que no: normalmente, no os interesará arrastrar todo lo que hayáis hecho en sesiones anteriores. Y si queréis guardar algunas definiciones e instrucciones de una sesión, lo más práctico es guardarlas en un <em>guión</em> (véase la Sección <a href="chap-0.html#sec:guiones">1.3</a>).</p>
-<p>Los gráficos que generéis con <em>Rstudio</em> aparecerán en la ventana inferior derecha, en la pestaña <strong>Plots</strong> que se activa automáticamente cuando se crea alguno. La apariencia del gráfico dependerá de las dimensiones de esta ventana, por lo que es conveniente que sea cuadrada si queréis que el gráfico no aparezca achatado o estirado. Si modificáis la forma de la ventana, las dimensiones del gráfico que aparezca en ella se modificarán de manera automática.</p>
-<p>Para guardar un gráfico, hay que ir al menú &lt;&lt;<em>Export</em>&gt;&gt; de esta ventana y seleccionar cómo queréis guardarlo: como una imagen en uno los formatos estándares de imágenes (.png, .jpeg, .tiff, etc.) o en formato PDF. Entonces, se abrirá una ventana donde podéis darle nombre, modificar sus dimensiones y especificar el directorio donde queráis que se guarde, entre otras opciones.</p>
+<p>En cualquier momento podéis guardar la sesión en la que estéis trabajando usando el menú <em>Session</em> <span class="math inline">\(\rightarrow\)</span> <em>Save Workspace as…</em>.
+Además, si no habéis modificado esta opción en las <em>Preferencias</em>, cuando cerréis <em>RStudio</em> se os pedirá si queréis guardar la sesión; si contestáis que sí, <em>RStudio</em> guardará en la carpeta de trabajo dos ficheros, <code>.RData</code> y <code>.RHistory</code>, que se cargarán automáticamente al volver a abrir <em>RStudio</em> y estaréis exactamente donde lo habíais dejado. Nuestro consejo es que digáis que no: normalmente, no os interesará arrastrar todo lo que hayáis hecho en sesiones anteriores. Y si queréis guardar algunas definiciones e instrucciones de una sesión, lo más práctico es guardarlas en un <em>guión</em> (véase la Sección <a href="chap-0.html#sec:guiones">1.3</a>).</p>
+<p>Los gráficos que generéis con <em>RStudio</em> aparecerán en la ventana inferior derecha, en la pestaña <em>Plots</em> que se activa automáticamente cuando se crea alguno. La apariencia del gráfico dependerá de las dimensiones de esta ventana, por lo que es conveniente que sea cuadrada si queréis que el gráfico no aparezca achatado o estirado. Si modificáis la forma de la ventana, las dimensiones del gráfico que aparezca en ella se modificarán de manera automática.</p>
+<p>Para guardar un gráfico, hay que ir al menú <em>Export</em> de esta pestaña y seleccionar cómo queréis guardarlo: como una imagen en uno los formatos estándares de imágenes (.png, .jpeg, .tiff, etc.) o en formato PDF. Entonces, se abrirá una ventana donde podéis darle nombre, modificar sus dimensiones y especificar el directorio donde queráis que se guarde, entre otras opciones.</p>
 </div>
 <div id="sec:guiones" class="section level2">
 <h2><span class="header-section-number">1.3</span> Cómo trabajar con guiones y otros ficheros</h2>
-<p><code>R</code> admite la posibilidad de crear y usar ficheros de instrucciones que se pueden ejecutar y guardar llamados <code>guiones</code> (<em>scripts</em>). Estos guiones son una alternativa muy cómoda a las sesiones interactivas, porque permiten guardar las versiones finales de las instrucciones usadas, y no toda la sesión con pruebas, errores y resultados provisionales, y facilitan la ejecución de secuencias de instrucciones en un solo paso. Además, un guión se puede guardar, volver a abrir más adelante, editar, etc. El símbolo <code>#</code> sirve para indicar a <code>R</code> que omita todo lo que hay a su derecha en la misma línea, lo que permite añadir comentarios a un guión.</p>
-<p>Para crear un guión con <em>Rstudio</em>, tenéis que ir al menú &lt;&lt;<em>File</em> <span class="math inline">\(\rightarrow\)</span> <em>New File</em> <span class="math inline">\(\rightarrow\)</span> <em>R Script</em>&gt;&gt;. Veréis que os aparece una ventana nueva en el sector superior izquierdo de la ventana de <em>Rstudio</em>, sobre la consola: la llamaremos <code>ventana de ficheros</code> . En ella podéis escribir, línea a línea, las instrucciones que queráis. Para ejecutar instrucciones de esta ventana, basta que las seleccionéis y pulséis el botón &lt;&lt;<em>Run</em>&gt;&gt; que aparece en la barra superior de esta ventana.</p>
-<p>Para guardar un guión, basta pulsar el botón con el icono de un disquete de ordenador que aparece en la barra superior de su ventana. Otra posibilidad es usar el menú &lt;&lt;<em>File</em> <span class="math inline">\(\rightarrow\)</span> <em>Save</em>&gt;&gt;, o pulsar la combinación de teclas usual para guardar un fichero en vuestro sistema operativo, siempre y cuando la <code>ventana activa</code> de <em>Rstudio</em> (donde esté activo el cursor en ese momento) sea la del guión. Al guardar un guión por primera vez, se abre una ventana de diálogo donde <em>Rstudio</em> espera que le demos un nombre; la costumbre es usar para los guiones la extensión <code>.R</code>.</p>
-<p>Podéis abrir un guión ya preexistente con <em>Rstudio</em> usando el menú &lt;&lt;<em>File</em> <span class="math inline">\(\rightarrow\)</span> <em>Open File</em>&gt;&gt; de <em>Rstudio</em> o pulsando sobre él en la pestaña <strong>Files</strong>. También podéis arrastrar el icono del guión sobre el de <em>Rstudio</em> o (si habéis declarado que la aplicación por defecto para abrir ficheros con extensión <code>.R</code> sea <em>Rstudio</em>) simplemente abrir el fichero de la manera usual en vuestro sistema operativo.</p>
-<p>Además de guiones, con <em>Rstudio</em> también podemos crear otros tipos de ficheros que combinen instrucciones de <code>R</code> con instrucciones de otro lenguaje. En este curso lo usaremos para crear ficheros <em>R Markdown</em>, que permiten generar de manera muy cómoda informes y presentaciones que incorporen instrucciones de <code>R</code> (o sólo sus resultados). Para crear un fichero <em>R Markdown</em>, tenéis que ir al menú &lt;&lt;<em>File</em> <span class="math inline">\(\rightarrow\)</span> <em>New File</em> <span class="math inline">\(\rightarrow\)</span> <em>R Markdown…</em>&gt;&gt;, donde os aparecerá una ventana que os pedirá el tipo de documento (&lt;&lt;<em>Document</em>&gt;&gt;, &lt;&lt;<em>Presentation</em>&gt;&gt;…), su título y el formato de salida. Una vez completada esta información, se abrirá el fichero en la ventana superior izquierda.</p>
-<p>Por poner un ejemplo, supongamos que habéis elegido realizar un informe (&lt;&lt;<em>Document</em>&gt;&gt;) con formato de salida html (los formatos posibles son: pdf, html o Word); entonces, para generar un informe básico basta sustituir las palabras clave que ha generado <em>Rstudio</em> en esta ventana. Probadlo: cambiad el título y el texto; a continuación, guardad el fichero con el nombre que queráis y extensión <code>.Rmd</code>, y pulsad el botón &lt;&lt;<em>Knit html</em>&gt;&gt; situado en la barra superior de la ventana; se generará un fichero html en la carpeta de trabajo, con el texto del fichero <em>R Markdown</em> y el mismo título cambiando la extensión <code>.Rmd</code> por <code>.html</code>, y se abrirá en una ventana aparte.</p>
-<p>Aprender los primeros pasos de <em>R Markdown</em> es sencillo. Para ello, id al botón &lt;&lt;<em>?</em>&gt;&gt; situado en la barra superior de la ventana de ficheros y escoged &lt;&lt;<em>Markdown Quick Reference</em>&gt;&gt;; os aparecerá, en la ventana de ayuda, un manual de referencia rápida de <em>R Markdown</em> que se puede leer en 15 minutos y que para la mayoría de ejercicios de este curso es más que suficiente. También os puede ser útiles las <code>chuletas</code> de <em>R Markdown</em> que encontraréis en el repositorio del curso y en su <code>url</code> original:</p>
+<p>R admite la posibilidad de crear y usar ficheros de instrucciones que se pueden ejecutar y guardar llamados <strong>guiones</strong> (<em>scripts</em>). Estos guiones son una alternativa muy cómoda a las sesiones interactivas, porque permiten guardar las versiones finales de las instrucciones usadas, y no toda la sesión con pruebas, errores y resultados provisionales, y facilitan la ejecución de secuencias de instrucciones en un solo paso. Además, un guión se puede guardar, volver a abrir más adelante, editar, etc. Como ya hemos comentado, el símbolo <code>#</code> sirve para indicar a R que omita todo lo que hay a su derecha en la misma línea, lo que permite añadir comentarios a un guión.</p>
+<p>Para crear un guión con <em>RStudio</em>, tenéis que ir al menú <em>File</em> <span class="math inline">\(\rightarrow\)</span> <em>New File</em> <span class="math inline">\(\rightarrow\)</span> <em>R Script</em>. Veréis que os aparece una ventana nueva en el sector superior izquierdo de la ventana de <em>RStudio</em>, sobre la consola: la llamaremos <strong>ventana de ficheros</strong>. En ella podéis escribir, línea a línea, las instrucciones que queráis. Para ejecutar instrucciones de esta ventana, basta que las seleccionéis y pulséis el botón <em>Run</em> que aparece en la barra superior de esta ventana.</p>
+<p>Para guardar un guión, basta pulsar el botón con el icono de un disquete de ordenador que aparece en la barra superior de su ventana. Otra posibilidad es usar el menú <em>File</em> <span class="math inline">\(\rightarrow\)</span> <em>Save</em>, o pulsar la combinación de teclas usual para guardar un fichero en vuestro sistema operativo, siempre y cuando la <strong>ventana activa</strong> de <em>RStudio</em> (donde esté activo el cursor en ese momento) sea la del guión. Al guardar un guión por primera vez, se abre una ventana de diálogo donde <em>RStudio</em> espera que le demos un nombre; la costumbre es usar para los guiones la extensión <code>.R</code>.</p>
+<p>Podéis abrir un guión ya preexistente con <em>RStudio</em> usando el menú <em>File</em> <span class="math inline">\(\rightarrow\)</span> <em>Open File</em> de <em>RStudio</em> o pulsando sobre él en la pestaña <em>Files</em>. También podéis arrastrar el icono del guión sobre el de <em>RStudio</em> o (si habéis declarado que la aplicación por defecto para abrir ficheros con extensión <code>.R</code> sea <em>RStudio</em>) simplemente abrir el fichero de la manera usual en vuestro sistema operativo.</p>
+<p>Además de guiones, con <em>RStudio</em> también podemos crear otros tipos de ficheros que combinen instrucciones de R con instrucciones de otro lenguaje. En este curso lo usaremos para crear ficheros <em>R Markdown</em>, que permiten generar de manera muy cómoda informes y presentaciones que incorporen instrucciones de R (o sólo sus resultados). Para crear un fichero <em>R Markdown</em>, tenéis que ir al menú <em>File</em> <span class="math inline">\(\rightarrow\)</span> <em>New File</em> <span class="math inline">\(\rightarrow\)</span> <em>R Markdown…</em>, donde os aparecerá una ventana que os pedirá el tipo de documento (<em>Document</em>, <em>Presentation</em>…), su título y el formato de salida. Una vez completada esta información, se abrirá el fichero en la ventana superior izquierda.</p>
+<p>Por poner un ejemplo, supongamos que habéis elegido realizar un informe (<em>Document</em>) con formato de salida html (los formatos posibles son: PDF, HTML o Word); entonces, para generar un informe básico basta sustituir las palabras clave que ha generado <em>RStudio</em> en esta ventana. Probadlo: cambiad el título y el texto; a continuación, guardad el fichero con el nombre que queráis y extensión <code>.Rmd</code>, y pulsad el botón <em>Knit</em> situado en la barra superior de la ventana; se generará un fichero HTML en la carpeta de trabajo, con el texto del fichero <em>R Markdown</em> y el mismo título cambiando la extensión <code>.Rmd</code> por <code>.html</code>, y se abrirá en una ventana aparte.</p>
+<p>Aprender los primeros pasos de <em>R Markdown</em> es sencillo. Para ello, podéis consultar el manual de referencia rápida de <em>R Markdown</em> que encontraréis en el <em>url</em> <a href="https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf">https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf</a>, que se puede leer en 15 minutos y que para la mayoría de ejercicios de este curso es más que suficiente.
+También os puede ser útiles las “chuletas” de <em>R Markdown</em> siguientes:</p>
 <ul>
-<li><a href="https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf" class="uri">https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf</a></li>
-<li><a href="https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf" class="uri">https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf</a></li>
+<li><a href="https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf">https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf</a></li>
+<li><a href="https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf">https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf</a></li>
 </ul>
-<p>En cualquier caso, a medida que avance el curso iremos explicando técnicas para mejorar los ficheros resultantes.</p>
+<p>En la Lección <a href="#chap:Rmd"><strong>??</strong></a>, al final de esta primera parte, explicamos algunas técnicas para mejorar los ficheros resultantes.</p>
 </div>
 <div id="sec:help" class="section level2">
 <h2><span class="header-section-number">1.4</span> Cómo obtener ayuda</h2>
-<p>Para conocer toda la información (qué hace, cuál es la sintaxis correcta, qué parámetros tiene, algunos ejemplos de uso…) sobre una función o un objeto, se puede usar el campo de búsqueda, marcado con una lupa, en la esquina superior derecha de la pestaña de Ayuda (<strong>Help</strong>), situada en el sector inferior derecho de la ventana de <em>Rstudio</em>. Como alternativa, se pueden usar las instrucciones</p>
-<p><code>help(nombre del objeto)</code> o, equivalentemente, <code>?nombre del objeto</code>.</p>
-<p>Por ejemplo, si entramos en el campo de búsqueda de la pestaña de Ayuda la palabra <code>sum</code> , o si entramos<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> en la consola la instrucción</p>
-<pre><code>help(sum)</code></pre>
+<p>Para conocer toda la información (qué hace, cuál es la sintaxis correcta, qué parámetros tiene, algunos ejemplos de uso…) sobre una función o un objeto, se puede usar el campo de búsqueda, marcado con una lupa, en la esquina superior derecha de la pestaña de <strong>Ayuda</strong> (<em>Help</em>), situada en la ventana inferior derecha de <em>RStudio</em>. Como alternativa, se pueden usar las instrucciones</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">help</span>(nombre del objeto)</a></code></pre></div>
+<p>o, equivalentemente,</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">?nombre del objeto</a></code></pre></div>
+<p>Por ejemplo, si entramos en el campo de búsqueda de la pestaña de Ayuda la palabra <code>sum</code>, o si <strong>entramos</strong> en la consola (es decir, si escribimos a la derecha de la marca de inicio y a continuación pulsamos la tecla <em>Entrar</em>) la instrucción</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">help</span>(sum)</a></code></pre></div>
 <p>obtenemos en la pestaña de Ayuda toda la información sobre la función <code>sum</code>.</p>
-<p>Cuando hayamos avanzado un poco en este curso, la Ayuda os será muy útil. Aquí sólo veremos alguna aplicación simple de la mayoría de las funciones que estudiemos, con los parámetros más importantes y suficientes para nuestros propósitos, y necesitaréis consultar su Ayuda para conocer todos sus usos, todos sus parámetros y otra información relevante.</p>
-<p>Si queremos pedir ayuda sobre un tema concreto, pero no sabemos el nombre exacto de la función, podemos entrar una palabra clave en el campo de búsqueda de la pestaña de Ayuda, o usar las funciones <code>help.search(&quot;palabra clave&quot;)</code> o, equivalentemente, <code>??&quot;palabra clave&quot;</code></p>
-<p>(las comillas en el <code>help.search</code> son obligatorias). De esta manera, conseguiremos en la ventana de Ayuda una lista de las funciones que <code>R</code> entiende que están relacionadas con la palabra clave entrada. Entonces, pulsando en la función que nos interese de esta lista, aparecerá la información específica sobre ella. Como podéis imaginar, conviene que la palabra clave esté en inglés.</p>
-<p><code>R</code> dispone también de una página web de ayuda en línea, que se abre en la pestaña de Ayuda entrando la instrucción <code>help.start()</code>.<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a></p>
-<p>Además de la ayuda que incorpora el mismo <code>R</code>, siempre podéis acudir a foros y listas de discusión para encontrar ayuda sobre cualquier duda que podáis tener. Algunos recursos que nosotros encontramos especialmente útiles son los siguientes:</p>
+<p>Cuando hayamos avanzado un poco en este curso, la Ayuda os será muy útil. Aquí sólo veremos alguna aplicación simple de la mayoría de las funciones que estudiemos, con los parámetros más importantes y suficientes para nuestros propósitos, y necesitaréis consultar su Ayuda para conocer todos sus usos, todos sus parámetros u otra información relevante.</p>
+<p>Si queremos pedir ayuda sobre un tema concreto, pero no sabemos el nombre exacto de la función, podemos entrar una palabra clave en el campo de búsqueda de la pestaña de Ayuda, o usar la función</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">help.search</span>(<span class="st">&quot;palabra clave&quot;</span>)</a></code></pre></div>
+<p>o, equivalentemente,</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">??<span class="st">&quot;palabra clave&quot;</span></a></code></pre></div>
+<p>(las comillas ahora son obligatorias). De esta manera, conseguiremos en la ventana de Ayuda una lista de las funciones que R entiende que están relacionadas con la palabra clave entrada. Entonces, pulsando en la función que nos interese de esta lista, aparecerá la información específica sobre ella.
+Como podéis imaginar, conviene que la palabra clave esté en inglés.</p>
+<p>Además de la ayuda que incorpora el mismo R, siempre podéis acudir a foros y listas de discusión para encontrar ayuda sobre cualquier duda que podáis tener. Algunos recursos que nosotros encontramos especialmente útiles son los siguientes:</p>
 <ul>
-<li>La sección dedicada a <code>R</code> del foro <em>stackoverflow</em>: <a href="http://stackoverflow.com/questions/tagged/r">stackoverflow</a></li>
-<li>El archivo de la lista de discusión <em>R-help</em>: <a href="http://r.789695.n4.nabble.com/r-help-f789696.html">R-help</a></li>
-<li>El grupo de Facebook &lt;&lt;<em>R project en español</em>&gt;&gt;: <a href="https://www.facebook.com/groups/rprojectsp">R project en español</a></li>
+<li>La sección dedicada a R del foro <a href="http://stackoverflow.com/questions/tagged/r"><em>stackoverflow</em></a></li>
+<li>El archivo de la lista de discusión <a href="http://r.789695.n4.nabble.com/r-help-f789696.html"><em>R-help</em></a></li>
+<li>El grupo de Facebook <a href="https://www.facebook.com/groups/rprojectsp"><em>R project en español</em></a></li>
 </ul>
-<p>Es muy probable que alguien ya haya tenido la misma dificultad y se la hayan resuelto en alguno de estos foros.</p>
-<p>Existe también una comunidad muy activa de usuarios hispanos de <code>R</code>, en cuyo portal web encontraréis muchos recursos útiles para mejorar vuestro conocimiento de este lenguaje: <a href="http://r-es.org/Comunidad" class="uri">http://r-es.org/Comunidad</a></p>
+<p>Si tenéis alguna dificultad, es muy probable que alguien ya la haya tenido y se la hayan resuelto en alguno de estos foros.</p>
+<p>Existe también una comunidad muy activa de usuarios hispanos de R, en cuyo <a href="http://r-es.org/Comunidad">portal web</a> encontraréis muchos recursos útiles para mejorar vuestro conocimiento de este lenguaje.</p>
 </div>
 <div id="sec:paquetes" class="section level2">
 <h2><span class="header-section-number">1.5</span> Cómo instalar y cargar paquetes</h2>
-<p>Muchas funciones y tablas de datos útiles no vienen con la instalación básica de <code>R</code>, sino que forman parte de <em>paquetes</em> (<em>packages</em>), que se tienen que instalar y cargar para poderlos usar. Por citar un par de ejemplos, el paquete <code>magic</code> lleva una función <code>magic</code> que crea <em>cuadrados mágicos</em>;<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a> para usarla, tenemos que instalar y cargar este paquete. De manera similar, el paquete <code>ggplot2</code> incorpora una serie de funciones para dibujar gráficos avanzados que no podemos usar si primero no instalamos y cargamos este paquete.</p>
-<p>Podemos consultar en la pestaña <strong>Packages</strong> la lista de paquetes que tenemos instalados. Los paquetes que aparecen marcados en esta lista son los que tenemos cargados en la sesión actual. Si queremos cargar un paquete ya instalado, basta marcarlo en esta lista; podemos hacerlo también desde la consola, con la instrucción <code>library(paquete)</code>.</p>
+<p>Muchas funciones y tablas de datos útiles no vienen con la instalación básica de R, sino que forman parte de <strong>paquetes</strong> (<em>packages</em>), que se tienen que instalar y cargar para poderlos usar. Por citar un par de ejemplos, el paquete <strong>magic</strong> lleva una función <code>magic</code> que crea <strong>cuadrados mágicos</strong> (tablas cuadradas de números naturales diferentes dos a dos tales que las sumas de todas sus columnas, de todas sus filas y de sus dos diagonales principales valgan todas lo mismo), y para usarla tenemos que instalar y cargar este paquete. De manera similar, el paquete <strong>ggplot2</strong> incorpora una serie de funciones para dibujar gráficos avanzados que no podemos usar si primero no instalamos y cargamos este paquete.</p>
+<p>Podemos consultar en la pestaña <em>Packages</em> la lista de paquetes que tenemos instalados. Los paquetes que aparecen marcados en esta lista son los que tenemos cargados en la sesión actual. Si queremos cargar un paquete ya instalado, basta marcarlo en esta lista; podemos hacerlo también desde la consola, con la instrucción</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw">library</span>(nombre del paquete)</a></code></pre></div>
 <p>En caso de necesitar un paquete que no tengamos instalado, hay que instalarlo antes de poderlo cargar. La mayoría de los paquetes se pueden instalar desde el repositorio del CRAN; esto se puede hacer de dos maneras:</p>
 <ul>
-<li><p>Desde la consola, entrando la instrucción <code>install.packages(&quot;paquete&quot;, dep=TRUE)</code> (las comillas son obligatorias). El parámetro <code>dep=TRUE</code> obliga a <code>R</code> a instalar no sólo el paquete requerido, sino todos aquellos de los que dependa para funcionar correctamente.</p></li>
-<li><p>Pulsando el botón &lt;&lt;<em>Install</em>&gt;&gt; de la barra superior de la pestaña de paquetes; al hacerlo, <em>Rstudio</em> abre una ventana dónde se nos pide el nombre del paquete a instalar. Conviene dejar marcada la opción &lt;&lt;<em>Install dependencies</em>&gt;&gt;, para que se instalen también los paquetes necesarios para su funcionamiento.</p></li>
+<li>Desde la consola, entrando la instrucción</li>
+</ul>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="kw">install.packages</span>(<span class="st">&quot;nombre del paquete&quot;</span>, <span class="dt">dep=</span><span class="ot">TRUE</span>)</a></code></pre></div>
+<p>(las comillas son obligatorias, y fijaos en el plural de <code>packages</code> aunque sólo queráis instalar uno). El parámetro <code>dep=TRUE</code> hace que R instale no sólo el paquete requerido, sino todos aquellos de los que dependa para funcionar correctamente.</p>
+<ul>
+<li>Pulsando el botón <em>Install</em> de la barra superior de la pestaña de paquetes; al hacerlo, <em>RStudio</em> abre una ventana dónde se nos pide el nombre del paquete a instalar. Conviene dejar marcada la opción <em>Install dependencies</em>, para que se instalen también los paquetes necesarios para su funcionamiento.</li>
 </ul>
 <p>Así, supongamos que queremos construir cuadrados mágicos, pero aún no hemos cargado el paquete <code>magic</code>.</p>
-<pre><code>&gt; magic(10)
-Error: could not find function &quot;magic&quot;
-&gt; install.packages(&quot;magic&quot;, dep=TRUE) #Instalamos el paquete magic; también lo
-# podéis hacer a través de la ventana de paquetes</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(magic)  <span class="co">#Cargamos el paquete; también lo podéis hacer a </span>
-<span class="co"># través de la ventana de paquetes</span>
-<span class="kw">magic</span>(<span class="dv">10</span>)</code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="kw">magic</span>(<span class="dv">10</span>)</a></code></pre></div>
+<pre><code>## Error in magic(10): no se pudo encontrar la función &quot;magic&quot;</code></pre>
+<p>Así que instalamos y cargamos dicho paquete (también lo podríamos hacer desde la ventana <em>Packages</em>):</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="kw">install.packages</span>(<span class="st">&quot;magic&quot;</span>, <span class="dt">dep=</span><span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb14-2" data-line-number="2"><span class="kw">library</span>(magic)</a></code></pre></div>
+<p>Ahora ya podemos usar la función <code>magic</code>:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="kw">magic</span>(<span class="dv">10</span>)</a></code></pre></div>
 <pre><code>##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]
 ##  [1,]   34   35    6    7   98   99   70   71   42    43
 ##  [2,]   36   33    8    5  100   97   72   69   44    41
@@ -335,20 +320,20 @@ Error: could not find function &quot;magic&quot;
 ##  [8,]   61   64   53   56   25   28   17   20   89    92
 ##  [9,]   59   58   31   30    3    2   95   94   67    66
 ## [10,]   57   60   29   32    1    4   93   96   65    68</code></pre>
-<p>Cuando cerramos <em>Rstudio</em>, los paquetes instalados en la sesión siguen instalados, pero cargados se pierden; por lo tanto, si queremos volver a usarlos en otra sesión, tendremos que volver a cargarlos.</p>
+<p>Cuando cerramos <em>RStudio</em>, los paquetes instalados en la sesión siguen instalados, pero los cargados se pierden; por lo tanto, si queremos volver a usarlos en otra sesión, tendremos que volver a cargarlos.</p>
 <p>Hay paquetes que no se encuentran en el CRAN y que, por lo tanto, no se pueden instalar de la forma que hemos visto. Cuando sea necesario, ya explicaremos la manera de instalarlos y cargarlos en cada caso.</p>
+<p>Para terminar, observad que a la derecha del nombre de cada paquete en la pestaña <em>Packages</em> aparecen dos símbolos. Al pulsar el primero, seis puntitos, se abrirá en el navegador la página de información del paquete, y al pulsar el segundo, una crucecita, desinstalamos el paquete. Asimismo, en la barra superior de la pestaña <em>Packages</em> encontraréis un botón <em>Update</em> que sirve para poner al día los paquetes instalados, obteniendo sus últimas versiones publicadas.</p>
+</div>
+<div id="guia-rapida" class="section level2">
+<h2><span class="header-section-number">1.6</span> Guía rápida</h2>
+<ul>
+<li><p><code>help</code> o <code>?</code> permiten pedir información sobre una función. También se puede usar el campo de búsqueda de la pestaña <em>Help</em> en la ventana inferior derecha de <em>RStudio</em>.</p></li>
+<li><p><code>help.search</code> o <code>??</code> permiten pedir información sobre una palabra clave (entrada entre comillas). De nuevo, también se puede usar el campo de búsqueda de la pestaña <em>Help</em> en la ventana inferior derecha de <em>RStudio</em>.</p></li>
+<li><p><code>install.packages(&quot;paquete&quot;, dep=TRUE)</code> instala el <code>paquete</code> y todos los otros paquetes de los que dependa. También se puede usar el botón <em>Install</em> de la pestaña <em>Packages</em> en la ventana inferior derecha de <em>RStudio</em>.</p></li>
+<li><p><code>library(paquete)</code> carga el <code>paquete</code>. También se puede cargar marcándolo en la ventana <em>Packages</em> de <em>RStudio</em>.</p></li>
+</ul>
 
 </div>
-</div>
-<div class="footnotes">
-<hr />
-<ol start="1">
-<li id="fn1"><p>En enero de 2016, el repositorio de paquetes de la CRAN, <a href="http://cran.r-project.org/web/packages/" class="uri">http://cran.r-project.org/web/packages/</a>, superó los 7500 paquetes.<a href="chap-0.html#fnref1">↩</a></p></li>
-<li id="fn2"><p>Las sesiones de <code>R</code> que aparecen en estas notas se han llevado a cabo en la versión 3.2.3.<a href="chap-0.html#fnref2">↩</a></p></li>
-<li id="fn3"><p>Aquí entramos significa, naturalmente, <em>escribir a la derecha de la marca de inicio y a continuación pulsar la tecla Entrar</em>.<a href="chap-0.html#fnref3">↩</a></p></li>
-<li id="fn4"><p>Si ejecutáis esta instrucción en otras interfaces de <code>R</code>, esta página de ayuda en línea se abre en un navegador, siempre y cuando estéis conectados a Internet.<a href="chap-0.html#fnref4">↩</a></p></li>
-<li id="fn5"><p>Un <em>cuadrado mágico</em> es una tabla cuadrada de números naturales, diferentes dos a dos, tal que las sumas de todas sus columnas, de todas sus filas y de sus dos diagonales principales valen todas lo mismo.<a href="chap-0.html#fnref5">↩</a></p></li>
-</ol>
 </div>
             </section>
 
@@ -406,10 +391,11 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
