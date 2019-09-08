@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html >
+
 <head>
 
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Lección 1 Logística de R | AprendeR: Parte I</title>
-  <meta name="description" content="Apuntes AprendeR bookdown::gitbook." />
-  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
+  <meta name="description" content="Apuntes AprendeR bookdown::gitbook.">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
   <meta property="og:title" content="Lección 1 Logística de R | AprendeR: Parte I" />
   <meta property="og:type" content="book" />
@@ -21,18 +22,18 @@
   <meta name="twitter:description" content="Apuntes AprendeR bookdown::gitbook." />
   
 
-<meta name="author" content="The UIB-AprendeR team" />
+<meta name="author" content="The UIB-AprendeR team">
 
 
-<meta name="date" content="2019-09-05" />
+<meta name="date" content="2019-09-08">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="chap-calc.html"/>
+<link rel="prev" href="index.html">
+<link rel="next" href="chap-calc.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -55,6 +56,7 @@ a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
 a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
@@ -129,6 +131,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Presentación</a></li>
+<li class="part"><span><b>Parte I: R básico</b></span></li>
 <li class="chapter" data-level="1" data-path="chap-0.html"><a href="chap-0.html"><i class="fa fa-check"></i><b>1</b> Logística de R</a><ul>
 <li class="chapter" data-level="1.1" data-path="chap-0.html"><a href="chap-0.html#como-instalar-r-y-rstudio"><i class="fa fa-check"></i><b>1.1</b> Cómo instalar R y <em>RStudio</em></a></li>
 <li class="chapter" data-level="1.2" data-path="chap-0.html"><a href="chap-0.html#sec:guardar"><i class="fa fa-check"></i><b>1.2</b> Cómo guardar el trabajo realizado</a></li>
@@ -145,17 +148,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.5" data-path="chap-calc.html"><a href="chap-calc.html#numeros-complejos-opcional"><i class="fa fa-check"></i><b>2.5</b> Números complejos (opcional)</a></li>
 <li class="chapter" data-level="2.6" data-path="chap-calc.html"><a href="chap-calc.html#guia-rapida-1"><i class="fa fa-check"></i><b>2.6</b> Guía rápida</a></li>
 <li class="chapter" data-level="2.7" data-path="chap-calc.html"><a href="chap-calc.html#ejercicios"><i class="fa fa-check"></i><b>2.7</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-calc.html"><a href="chap-calc.html#modelo-de-test"><i class="fa fa-check"></i>Modelo de test</a></li>
+<li class="chapter" data-level="" data-path="chap-calc.html"><a href="chap-calc.html#test"><i class="fa fa-check"></i>Test</a></li>
 <li class="chapter" data-level="" data-path="chap-calc.html"><a href="chap-calc.html#ejercicio"><i class="fa fa-check"></i>Ejercicio</a></li>
 <li class="chapter" data-level="" data-path="chap-calc.html"><a href="chap-calc.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="chap-lm.html"><a href="chap-lm.html"><i class="fa fa-check"></i><b>3</b> Un aperitivo: Introducción a la regresión lineal</a><ul>
-<li class="chapter" data-level="3.1" data-path="chap-lm.html"><a href="chap-lm.html#calculo-de-rectas-de-regresion"><i class="fa fa-check"></i><b>3.1</b> Cálculo de rectas de regresión</a></li>
+<li class="chapter" data-level="3.1" data-path="chap-lm.html"><a href="chap-lm.html#sec:introlm"><i class="fa fa-check"></i><b>3.1</b> Cálculo de rectas de regresión</a></li>
 <li class="chapter" data-level="3.2" data-path="chap-lm.html"><a href="chap-lm.html#rectas-de-regresion-y-transformaciones-logaritmicas"><i class="fa fa-check"></i><b>3.2</b> Rectas de regresión y transformaciones logarítmicas</a></li>
 <li class="chapter" data-level="3.3" data-path="chap-lm.html"><a href="chap-lm.html#guia-rapida-2"><i class="fa fa-check"></i><b>3.3</b> Guía rápida</a></li>
 <li class="chapter" data-level="3.4" data-path="chap-lm.html"><a href="chap-lm.html#ejercicios-1"><i class="fa fa-check"></i><b>3.4</b> Ejercicios</a><ul>
 <li class="chapter" data-level="" data-path="chap-lm.html"><a href="chap-lm.html#ejercicio-1"><i class="fa fa-check"></i>Ejercicio</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="chap-vect.html"><a href="chap-vect.html"><i class="fa fa-check"></i><b>4</b> Vectores y otros tipos de listas</a><ul>
+<li class="chapter" data-level="4.1" data-path="chap-vect.html"><a href="chap-vect.html#sec:vect"><i class="fa fa-check"></i><b>4.1</b> Construcción de vectores</a></li>
+<li class="chapter" data-level="4.2" data-path="chap-vect.html"><a href="chap-vect.html#operaciones-con-vectores"><i class="fa fa-check"></i><b>4.2</b> Operaciones con vectores</a></li>
+<li class="chapter" data-level="4.3" data-path="chap-vect.html"><a href="chap-vect.html#entradas-y-trozos-de-vectores"><i class="fa fa-check"></i><b>4.3</b> Entradas y trozos de vectores</a></li>
+<li class="chapter" data-level="4.4" data-path="chap-vect.html"><a href="chap-vect.html#subsec:factor"><i class="fa fa-check"></i><b>4.4</b> Factores</a></li>
+<li class="chapter" data-level="4.5" data-path="chap-vect.html"><a href="chap-vect.html#sec:lists"><i class="fa fa-check"></i><b>4.5</b> Listas heterogéneas</a></li>
+<li class="chapter" data-level="4.6" data-path="chap-vect.html"><a href="chap-vect.html#guia-rapida-de-funciones"><i class="fa fa-check"></i><b>4.6</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="4.7" data-path="chap-vect.html"><a href="chap-vect.html#ejercicios-2"><i class="fa fa-check"></i><b>4.7</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-vect.html"><a href="chap-vect.html#test-1"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-vect.html"><a href="chap-vect.html#ejercicio-2"><i class="fa fa-check"></i>Ejercicio</a></li>
+<li class="chapter" data-level="" data-path="chap-vect.html"><a href="chap-vect.html#respuestas-al-test-1"><i class="fa fa-check"></i>Respuestas al test</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -211,8 +227,8 @@ créditos etc.) y al final una línea en blanco encabezada por el símbolo <code
 <li>R abrirá una nueva línea en blanco encabezada por una marca de inicio, donde esperará una nueva instrucción.</li>
 </ol>
 <p>Haced una prueba: escribid <code>1+1</code> junto a la marca de inicio y pulsad <em>Entrar</em>; R escribirá en la línea siguiente el resultado de la suma, <code>2</code>, y a continuación una nueva línea en blanco encabezada por la marca de inicio.
-Ya hablaremos en la Lección <a href="#chap:vect"><strong>??</strong></a> del <code>[1]</code> que os habrá aparecido delante del 2 en el resultado. Hasta entonces, no os preocupéis por él. En los bloques de código de este libro no incluimos la marca de inicio, para que podáis copiar tranquilamente el código y luego pegarlo y ejecutarlo en vuestra consola, y el resultado aparece precedido de <code>##</code>, para que si por descuido copiáis un resultado, no se ejecute: el símbolo <code>#</code> sirve para indicar a R que no ejecute lo que venga a continuación en la misma línea. Así, en este libro el cálculo anterior corresponde a:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="dv">1</span><span class="op">+</span><span class="dv">1</span></a></code></pre></div>
+Ya hablaremos en la Lección <a href="chap-vect.html#chap:vect">4</a> del <code>[1]</code> que os habrá aparecido delante del 2 en el resultado. Hasta entonces, no os preocupéis por él. En los bloques de código de este libro no incluimos la marca de inicio, para que podáis copiar tranquilamente el código y luego pegarlo y ejecutarlo en vuestra consola, y el resultado aparece precedido de <code>##</code>, para que si por descuido copiáis un resultado, no se ejecute: el símbolo <code>#</code> sirve para indicar a R que no ejecute lo que venga a continuación en la misma línea. Así, en este libro el cálculo anterior corresponde a:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span><span class="op">+</span><span class="dv">1</span></code></pre>
 <pre><code>## [1] 2</code></pre>
 <p>Para facilitarnos el trabajo, la consola dispone de un mecanismo para acceder a las instrucciones ya ejecutadas y modificarlas si queremos. Si situamos el cursor a la derecha de la marca de inicio de la línea inferior y pulsamos la tecla de la flecha vertical ascendente <span class="math inline">\(\uparrow\)</span>, iremos obteniendo de manera consecutiva, en esa línea, las instrucciones escritas hasta el momento en la misma sesión; si nos pasamos, podemos usar la tecla <span class="math inline">\(\downarrow\)</span> para retroceder dentro de esta lista; una vez alcanzada la instrucción deseada, podemos volver a ejecutarla o, con las teclas de flechas horizontales, ir al lugar de la instrucción que queramos y reescribir un trozo antes de ejecutarla. Otra posibilidad es usar la pestaña <em>History</em> de la ventana superior derecha de <em>RStudio</em>, que contiene la lista de todas las instrucciones que se han ejecutado en la sesión actual. Si seleccionamos una instrucción de esta lista y pulsamos el botón <em>To console</em> del menú superior de la pestaña, la instrucción se copiará en la consola y la podremos modificar o ejecutar directamente.</p>
 <p>También podemos copiar instrucciones de otros ficheros y pegarlas a la derecha de la marca de inicio de la manera habitual en el sistema operativo de nuestro ordenador. Pero hay que ir con cuidado: las instrucciones copiadas de ficheros en formato que no sea texto simple pueden contener caracteres invisibles a simple vista que generen errores al intentar ejecutar la instrucción copiada. En particular, esto afecta a las instrucciones que podáis copiar de ficheros en formato PDF, procurad no hacerlo. En cambio, no hay ningún problema en copiar y pegar instrucciones de ficheros html como los de estas lecciones.</p>
@@ -254,28 +270,29 @@ Además, si no habéis modificado esta opción en las <em>Preferencias</em>, cua
 <p>Podéis abrir un guión ya preexistente con <em>RStudio</em> usando el menú <em>File</em> <span class="math inline">\(\rightarrow\)</span> <em>Open File</em> de <em>RStudio</em> o pulsando sobre él en la pestaña <em>Files</em>. También podéis arrastrar el icono del guión sobre el de <em>RStudio</em> o (si habéis declarado que la aplicación por defecto para abrir ficheros con extensión <code>.R</code> sea <em>RStudio</em>) simplemente abrir el fichero de la manera usual en vuestro sistema operativo.</p>
 <p>Además de guiones, con <em>RStudio</em> también podemos crear otros tipos de ficheros que combinen instrucciones de R con instrucciones de otro lenguaje. En este curso lo usaremos para crear ficheros <em>R Markdown</em>, que permiten generar de manera muy cómoda informes y presentaciones que incorporen instrucciones de R (o sólo sus resultados). Para crear un fichero <em>R Markdown</em>, tenéis que ir al menú <em>File</em> <span class="math inline">\(\rightarrow\)</span> <em>New File</em> <span class="math inline">\(\rightarrow\)</span> <em>R Markdown…</em>, donde os aparecerá una ventana que os pedirá el tipo de documento (<em>Document</em>, <em>Presentation</em>…), su título y el formato de salida. Una vez completada esta información, se abrirá el fichero en la ventana superior izquierda.</p>
 <p>Por poner un ejemplo, supongamos que habéis elegido realizar un informe (<em>Document</em>) con formato de salida html (los formatos posibles son: PDF, HTML o Word); entonces, para generar un informe básico basta sustituir las palabras clave que ha generado <em>RStudio</em> en esta ventana. Probadlo: cambiad el título y el texto; a continuación, guardad el fichero con el nombre que queráis y extensión <code>.Rmd</code>, y pulsad el botón <em>Knit</em> situado en la barra superior de la ventana; se generará un fichero HTML en la carpeta de trabajo, con el texto del fichero <em>R Markdown</em> y el mismo título cambiando la extensión <code>.Rmd</code> por <code>.html</code>, y se abrirá en una ventana aparte.</p>
-<p>Aprender los primeros pasos de <em>R Markdown</em> es sencillo. Para ello, podéis consultar el manual de referencia rápida de <em>R Markdown</em> que encontraréis en el <em>url</em> <a href="https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf">https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf</a>, que se puede leer en 15 minutos y que para la mayoría de ejercicios de este curso es más que suficiente.
+<p>Aprender los primeros pasos de <em>R Markdown</em> es sencillo. Para ello, podéis consultar el manual de referencia rápida de <em>R Markdown</em> que encontraréis en el menú <em>Help</em> de <em>RStudio</em>, que para la mayoría de ejercicios de este curso es más que suficiente.
 También os puede ser útiles las “chuletas” de <em>R Markdown</em> siguientes:</p>
 <ul>
-<li><a href="https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf">https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf</a></li>
-<li><a href="https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf">https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf</a></li>
+<li><p><a href="https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf">https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf</a></p></li>
+<li><p><a href="https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf">https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf</a></p></li>
+<li><p><a href="https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf">https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf</a></p></li>
 </ul>
-<p>En la Lección <a href="#chap:Rmd"><strong>??</strong></a>, al final de esta primera parte, explicamos algunas técnicas para mejorar los ficheros resultantes.</p>
+<p>En la Lección <a href="#chap:Rmd"><strong>??</strong></a> explicamos algunas técnicas para mejorar los ficheros resultantes.</p>
 </div>
 <div id="sec:help" class="section level2">
 <h2><span class="header-section-number">1.4</span> Cómo obtener ayuda</h2>
 <p>Para conocer toda la información (qué hace, cuál es la sintaxis correcta, qué parámetros tiene, algunos ejemplos de uso…) sobre una función o un objeto, se puede usar el campo de búsqueda, marcado con una lupa, en la esquina superior derecha de la pestaña de <strong>Ayuda</strong> (<em>Help</em>), situada en la ventana inferior derecha de <em>RStudio</em>. Como alternativa, se pueden usar las instrucciones</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">help</span>(nombre del objeto)</a></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">help</span>(nombre del objeto)</code></pre>
 <p>o, equivalentemente,</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">?nombre del objeto</a></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">?nombre del objeto</code></pre>
 <p>Por ejemplo, si entramos en el campo de búsqueda de la pestaña de Ayuda la palabra <code>sum</code>, o si <strong>entramos</strong> en la consola (es decir, si escribimos a la derecha de la marca de inicio y a continuación pulsamos la tecla <em>Entrar</em>) la instrucción</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">help</span>(sum)</a></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">help</span>(sum)</code></pre>
 <p>obtenemos en la pestaña de Ayuda toda la información sobre la función <code>sum</code>.</p>
 <p>Cuando hayamos avanzado un poco en este curso, la Ayuda os será muy útil. Aquí sólo veremos alguna aplicación simple de la mayoría de las funciones que estudiemos, con los parámetros más importantes y suficientes para nuestros propósitos, y necesitaréis consultar su Ayuda para conocer todos sus usos, todos sus parámetros u otra información relevante.</p>
 <p>Si queremos pedir ayuda sobre un tema concreto, pero no sabemos el nombre exacto de la función, podemos entrar una palabra clave en el campo de búsqueda de la pestaña de Ayuda, o usar la función</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">help.search</span>(<span class="st">&quot;palabra clave&quot;</span>)</a></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">help.search</span>(<span class="st">&quot;palabra clave&quot;</span>)</code></pre>
 <p>o, equivalentemente,</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">??<span class="st">&quot;palabra clave&quot;</span></a></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">??<span class="st">&quot;palabra clave&quot;</span></code></pre>
 <p>(las comillas ahora son obligatorias). De esta manera, conseguiremos en la ventana de Ayuda una lista de las funciones que R entiende que están relacionadas con la palabra clave entrada. Entonces, pulsando en la función que nos interese de esta lista, aparecerá la información específica sobre ella.
 Como podéis imaginar, conviene que la palabra clave esté en inglés.</p>
 <p>Además de la ayuda que incorpora el mismo R, siempre podéis acudir a foros y listas de discusión para encontrar ayuda sobre cualquier duda que podáis tener. Algunos recursos que nosotros encontramos especialmente útiles son los siguientes:</p>
@@ -291,24 +308,24 @@ Como podéis imaginar, conviene que la palabra clave esté en inglés.</p>
 <h2><span class="header-section-number">1.5</span> Cómo instalar y cargar paquetes</h2>
 <p>Muchas funciones y tablas de datos útiles no vienen con la instalación básica de R, sino que forman parte de <strong>paquetes</strong> (<em>packages</em>), que se tienen que instalar y cargar para poderlos usar. Por citar un par de ejemplos, el paquete <strong>magic</strong> lleva una función <code>magic</code> que crea <strong>cuadrados mágicos</strong> (tablas cuadradas de números naturales diferentes dos a dos tales que las sumas de todas sus columnas, de todas sus filas y de sus dos diagonales principales valgan todas lo mismo), y para usarla tenemos que instalar y cargar este paquete. De manera similar, el paquete <strong>ggplot2</strong> incorpora una serie de funciones para dibujar gráficos avanzados que no podemos usar si primero no instalamos y cargamos este paquete.</p>
 <p>Podemos consultar en la pestaña <em>Packages</em> la lista de paquetes que tenemos instalados. Los paquetes que aparecen marcados en esta lista son los que tenemos cargados en la sesión actual. Si queremos cargar un paquete ya instalado, basta marcarlo en esta lista; podemos hacerlo también desde la consola, con la instrucción</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw">library</span>(nombre del paquete)</a></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(nombre del paquete)</code></pre>
 <p>En caso de necesitar un paquete que no tengamos instalado, hay que instalarlo antes de poderlo cargar. La mayoría de los paquetes se pueden instalar desde el repositorio del CRAN; esto se puede hacer de dos maneras:</p>
 <ul>
 <li>Desde la consola, entrando la instrucción</li>
 </ul>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="kw">install.packages</span>(<span class="st">&quot;nombre del paquete&quot;</span>, <span class="dt">dep=</span><span class="ot">TRUE</span>)</a></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;nombre del paquete&quot;</span>, <span class="dt">dep=</span><span class="ot">TRUE</span>)</code></pre>
 <p>(las comillas son obligatorias, y fijaos en el plural de <code>packages</code> aunque sólo queráis instalar uno). El parámetro <code>dep=TRUE</code> hace que R instale no sólo el paquete requerido, sino todos aquellos de los que dependa para funcionar correctamente.</p>
 <ul>
 <li>Pulsando el botón <em>Install</em> de la barra superior de la pestaña de paquetes; al hacerlo, <em>RStudio</em> abre una ventana dónde se nos pide el nombre del paquete a instalar. Conviene dejar marcada la opción <em>Install dependencies</em>, para que se instalen también los paquetes necesarios para su funcionamiento.</li>
 </ul>
 <p>Así, supongamos que queremos construir cuadrados mágicos, pero aún no hemos cargado el paquete <code>magic</code>.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="kw">magic</span>(<span class="dv">10</span>)</a></code></pre></div>
-<pre><code>## Error in magic(10): no se pudo encontrar la función &quot;magic&quot;</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">magic</span>(<span class="dv">10</span>)</code></pre>
+<pre><code>## Error in magic(10): could not find function &quot;magic&quot;</code></pre>
 <p>Así que instalamos y cargamos dicho paquete (también lo podríamos hacer desde la ventana <em>Packages</em>):</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="kw">install.packages</span>(<span class="st">&quot;magic&quot;</span>, <span class="dt">dep=</span><span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb14-2" data-line-number="2"><span class="kw">library</span>(magic)</a></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;magic&quot;</span>, <span class="dt">dep=</span><span class="ot">TRUE</span>)
+<span class="kw">library</span>(magic)</code></pre>
 <p>Ahora ya podemos usar la función <code>magic</code>:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="kw">magic</span>(<span class="dv">10</span>)</a></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">magic</span>(<span class="dv">10</span>)</code></pre>
 <pre><code>##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]
 ##  [1,]   34   35    6    7   98   99   70   71   42    43
 ##  [2,]   36   33    8    5  100   97   72   69   44    41
@@ -393,9 +410,8 @@ gitbook.start({
     script.type = "text/javascript";
     var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
