@@ -25,7 +25,7 @@
 <meta name="author" content="The UIB-AprendeR team">
 
 
-<meta name="date" content="2019-10-02">
+<meta name="date" content="2019-10-09">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -33,7 +33,7 @@
   
   
 <link rel="prev" href="chap-edqual.html">
-
+<link rel="next" href="chap-quan.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -242,6 +242,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="chap-ord.html"><a href="chap-ord.html#respuestas-al-test-6"><i class="fa fa-check"></i>Respuestas al test</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="10" data-path="chap-quan.html"><a href="chap-quan.html"><i class="fa fa-check"></i><b>10</b> Descripción de datos cuantitativos</a><ul>
+<li class="chapter" data-level="10.1" data-path="chap-quan.html"><a href="chap-quan.html#sec:quan"><i class="fa fa-check"></i><b>10.1</b> Frecuencias</a></li>
+<li class="chapter" data-level="10.2" data-path="chap-quan.html"><a href="chap-quan.html#medidas-de-tendencia-central"><i class="fa fa-check"></i><b>10.2</b> Medidas de tendencia central</a></li>
+<li class="chapter" data-level="10.3" data-path="chap-quan.html"><a href="chap-quan.html#medidas-de-posicion"><i class="fa fa-check"></i><b>10.3</b> Medidas de posición</a></li>
+<li class="chapter" data-level="10.4" data-path="chap-quan.html"><a href="chap-quan.html#medidas-de-dispersion"><i class="fa fa-check"></i><b>10.4</b> Medidas de dispersión</a></li>
+<li class="chapter" data-level="10.5" data-path="chap-quan.html"><a href="chap-quan.html#diagramas-de-caja"><i class="fa fa-check"></i><b>10.5</b> Diagramas de caja</a></li>
+<li class="chapter" data-level="10.6" data-path="chap-quan.html"><a href="chap-quan.html#guia-rapida-de-funciones-5"><i class="fa fa-check"></i><b>10.6</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="10.7" data-path="chap-quan.html"><a href="chap-quan.html#ejercicios-8"><i class="fa fa-check"></i><b>10.7</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-quan.html"><a href="chap-quan.html#test-7"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-quan.html"><a href="chap-quan.html#ejercicio-8"><i class="fa fa-check"></i>Ejercicio</a></li>
+<li class="chapter" data-level="" data-path="chap-quan.html"><a href="chap-quan.html#respuestas-al-test-7"><i class="fa fa-check"></i>Respuestas al test</a></li>
+</ul></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/RicUIB/AprendeR2.1" target="blank">Publicado con  bookdown</a></li>
 
@@ -348,12 +361,12 @@ notas</code></pre>
 <li>Un diagrama de barras de sus frecuencias absolutas:</li>
 </ul>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">barplot</span>(<span class="kw">table</span>(notas))</code></pre>
-<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-452-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-453-1.png" width="480" style="display: block; margin: auto;" /></p>
 <ul>
 <li>Un diagrama de barras de sus frecuencias absolutas acumuladas:</li>
 </ul>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">barplot</span>(<span class="kw">cumsum</span>(<span class="kw">table</span>(notas)))</code></pre>
-<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-453-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-454-1.png" width="480" style="display: block; margin: auto;" /></p>
 <!--
 ```{r F1702,fig.cap="Diagramas de barras de frecuencias absolutas y de frecuencias absolutas acumuladas de las notas del Ejemplo 
 \@ref(ex:ex1701bis)."}
@@ -466,14 +479,14 @@ Nivel & Significado\\\hline
 <span class="kw">barplot</span>(<span class="kw">prop.table</span>(<span class="kw">table</span>(respuestas)), <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">0.30</span>), <span class="dt">cex.names=</span><span class="fl">0.75</span>,
   <span class="dt">main=</span><span class="st">&quot;Diagrama de barras de las frecuencias relativas</span><span class="ch">\n</span><span class="st"> de la variable </span><span class="ch">\&quot;</span><span class="st">respuestas</span><span class="ch">\&quot;</span><span class="st">&quot;</span>, 
   <span class="dt">names=</span>Nombres.compl, <span class="dt">xlab=</span><span class="st">&quot;Nivel de acuerdo escala Likert&quot;</span>,  <span class="dt">ylab=</span><span class="st">&quot;Frec. relativas&quot;</span>)</code></pre>
-<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-461-1.png" width="528" style="display: block; margin: auto;" /></p>
+<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-462-1.png" width="528" style="display: block; margin: auto;" /></p>
 <ul>
 <li>Un diagrama de barras de sus frecuencias relativas acumuladas:</li>
 </ul>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">barplot</span>(<span class="kw">cumsum</span>(<span class="kw">prop.table</span>(<span class="kw">table</span>(respuestas))), <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="dt">cex.names=</span><span class="fl">0.75</span>,
   <span class="dt">main=</span><span class="st">&quot;Diagrama de barras de las frecuencias relativas acumuladas </span><span class="ch">\n</span><span class="st"> de la variable </span><span class="ch">\&quot;</span><span class="st">respuestas</span><span class="ch">\&quot;</span><span class="st">&quot;</span>, 
   <span class="dt">names=</span>Nombres.compl, <span class="dt">xlab=</span><span class="st">&quot;Nivel de acuerdo escala Likert&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Frec. relativas acumuladas&quot;</span>)</code></pre>
-<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-462-1.png" width="528" style="display: block; margin: auto;" /></p>
+<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-463-1.png" width="528" style="display: block; margin: auto;" /></p>
 <p>En los dos últimos diagramas de barras, hemos representado los niveles con un texto más descriptivo. Para hacerlo, hemos definido un vector <code>Nombres.compl</code> con sus nuevos nombres en el orden correspondiente (y en dos líneas cada uno para ocupar menos espacio horizontal), y entonces en los <code>barplot</code> hemos especificado <code>names=Nombres.compl</code>. Además, con el parámetro <code>cex.names</code> hemos reducido un 25% el tamaño de los nombres de las barras para que cupieran bien en el dibujo.</p>
 
 <div class="example">
@@ -598,7 +611,7 @@ AbsFr</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">Nombres.Completos=<span class="kw">c</span>(<span class="st">&quot;Totalmente</span><span class="ch">\n</span><span class="st"> diferentes&quot;</span>,<span class="st">&quot;Diferentes</span><span class="ch">\n</span><span class="st">&quot;</span>,<span class="st">&quot;Parecidas</span><span class="ch">\n</span><span class="st"> &quot;</span>,
                     <span class="st">&quot;Muy</span><span class="ch">\n</span><span class="st"> parecidas&quot;</span>,<span class="st">&quot;Totalmente</span><span class="ch">\n</span><span class="st"> iguales&quot;</span>)
 <span class="kw">barplot</span>(<span class="kw">cumsum</span>(<span class="kw">prop.table</span>(AbsFr)), <span class="dt">names=</span>Nombres.Completos, <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="dt">cex.names=</span><span class="fl">0.75</span>)</code></pre>
-<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-468-1.png" width="528" style="display: block; margin: auto;" /></p>
+<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-469-1.png" width="528" style="display: block; margin: auto;" /></p>
 <p>Para calcular frecuencias acumuladas en una tabla multidimensional, hay que aplicar a la tabla la función <code>cumsum</code> mediante la función <code>apply</code>. En este caso concreto, la sintaxis de la instrucción sería</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">apply</span>(tabla, <span class="dt">MARGIN=</span>..., <span class="dt">FUN=</span>cumsum)</code></pre>
 <p>donde el valor de <code>MARGIN</code> ha de ser el de la dimensión en la que queremos acumular las frecuencias: 1 si queremos calcular las frecuencias acumuladas por filas, 2 si las queremos calcular por columnas, etc. Esta construcción tiene algunas particularidades, que vamos a ilustrar con un ejemplo.</p>
@@ -658,13 +671,13 @@ Resulta que cuando se aplica <code>apply</code> a una <code>table</code> bidimen
 <pre class="sourceCode r"><code class="sourceCode r">Tabla=<span class="kw">apply</span>(<span class="kw">prop.table</span>(<span class="kw">table</span>(df_encuesta), <span class="dt">margin=</span><span class="dv">1</span>), <span class="dt">MARGIN=</span><span class="dv">1</span>,<span class="dt">FUN=</span>cumsum)
 <span class="kw">barplot</span>(Tabla, <span class="dt">beside=</span><span class="ot">TRUE</span>, <span class="dt">legend=</span><span class="ot">TRUE</span>,
         <span class="dt">main=</span><span class="st">&quot;Diagrama de barras de frecuencias relativas acumuladas</span><span class="ch">\n</span><span class="st"> de respuestas por empresa&quot;</span>)</code></pre>
-<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-474-1.png" width="528" style="display: block; margin: auto;" /></p>
+<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-475-1.png" width="528" style="display: block; margin: auto;" /></p>
 <p>Como vemos, la leyenda se superpone sobre las barras de la última empresa. Para resolver este problema, situaremos la leyenda en la esquina superior izquierda. Además, vamos a sustituir en la leyenda los valores de las respuestas por sus significados, y para que quepa, reduciremos el tamaño del texto.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">barplot</span>(Tabla, <span class="dt">beside=</span><span class="ot">TRUE</span>, 
         <span class="dt">legend.text=</span><span class="kw">c</span>(<span class="st">&quot;Muy en desacuerdo&quot;</span>, <span class="st">&quot;En desacuerdo&quot;</span>,<span class="st">&quot;Neutro&quot;</span>,<span class="st">&quot;De acuerdo&quot;</span>,<span class="st">&quot;Muy de acuerdo&quot;</span>), 
         <span class="dt">main=</span><span class="st">&quot;Diagrama de barras de frecuencias relativas acumuladas</span><span class="ch">\n</span><span class="st"> de respuestas por empresa&quot;</span>,
         <span class="dt">args.legend=</span><span class="kw">list</span>(<span class="dt">x=</span><span class="st">&quot;topleft&quot;</span>, <span class="dt">cex=</span><span class="fl">0.45</span>))</code></pre>
-<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-475-1.png" width="528" style="display: block; margin: auto;" /></p>
+<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-476-1.png" width="528" style="display: block; margin: auto;" /></p>
 <!--
 \end{ejemplo}
 
@@ -763,11 +776,11 @@ Freq.rel</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">cyan.col=<span class="kw">c</span>(<span class="st">&quot;cyan4&quot;</span>,<span class="st">&quot;cyan3&quot;</span>,<span class="st">&quot;cyan2&quot;</span>,<span class="st">&quot;cyan1&quot;</span>,<span class="st">&quot;cyan&quot;</span>) <span class="co">#Colores azulones para las barras</span>
 <span class="kw">barplot</span>(<span class="kw">t</span>(Freq.rel), <span class="dt">beside=</span><span class="ot">TRUE</span>, <span class="dt">legend=</span><span class="ot">TRUE</span>,  <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="dt">col=</span>cyan.col, 
   <span class="dt">main=</span><span class="st">&quot;Diagrama de barras de frecuencias relativas</span><span class="ch">\n</span><span class="st"> de números de insectos por insecticida&quot;</span>)</code></pre>
-<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-483-1.png" width="528" style="display: block; margin: auto;" /></p>
+<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-484-1.png" width="528" style="display: block; margin: auto;" /></p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">barplot</span>(Freq.rel.acum, <span class="dt">beside=</span><span class="ot">TRUE</span>, <span class="dt">legend=</span><span class="ot">TRUE</span>,<span class="dt">col=</span>cyan.col, 
   <span class="dt">main=</span><span class="st">&quot;Diagrama de barras de frecuencias relativas acumuladas</span><span class="ch">\n</span><span class="st"> de números de insectos por insecticida&quot;</span>, 
   <span class="dt">args.legend=</span><span class="kw">list</span>(<span class="dt">x=</span><span class="st">&quot;topleft&quot;</span>,<span class="dt">cex=</span><span class="fl">0.55</span>))</code></pre>
-<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-484-1.png" width="528" style="display: block; margin: auto;" /></p>
+<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-485-1.png" width="528" style="display: block; margin: auto;" /></p>
 <p>Observamos que los insecticidas C, D y E son los más efectivos, porque producen mayores números de campos con pocos insectos, mientras que B y F son poco efectivos.</p>
 <!--
 \begin{figure}[htb]
@@ -830,8 +843,8 @@ de las calificaciones alfabéticas dentro de cada grupo: los bloques han de corr
           </div>
         </div>
       </div>
-<a href="chap-edqual.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="chap-edqual.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="chap-quan.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

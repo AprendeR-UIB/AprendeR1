@@ -25,7 +25,7 @@
 <meta name="author" content="The UIB-AprendeR team">
 
 
-<meta name="date" content="2019-10-02">
+<meta name="date" content="2019-10-09">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -240,6 +240,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="chap-ord.html"><a href="chap-ord.html#test-6"><i class="fa fa-check"></i>Test</a></li>
 <li class="chapter" data-level="" data-path="chap-ord.html"><a href="chap-ord.html#ejercicio-7"><i class="fa fa-check"></i>Ejercicio</a></li>
 <li class="chapter" data-level="" data-path="chap-ord.html"><a href="chap-ord.html#respuestas-al-test-6"><i class="fa fa-check"></i>Respuestas al test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="chap-quan.html"><a href="chap-quan.html"><i class="fa fa-check"></i><b>10</b> Descripción de datos cuantitativos</a><ul>
+<li class="chapter" data-level="10.1" data-path="chap-quan.html"><a href="chap-quan.html#sec:quan"><i class="fa fa-check"></i><b>10.1</b> Frecuencias</a></li>
+<li class="chapter" data-level="10.2" data-path="chap-quan.html"><a href="chap-quan.html#medidas-de-tendencia-central"><i class="fa fa-check"></i><b>10.2</b> Medidas de tendencia central</a></li>
+<li class="chapter" data-level="10.3" data-path="chap-quan.html"><a href="chap-quan.html#medidas-de-posicion"><i class="fa fa-check"></i><b>10.3</b> Medidas de posición</a></li>
+<li class="chapter" data-level="10.4" data-path="chap-quan.html"><a href="chap-quan.html#medidas-de-dispersion"><i class="fa fa-check"></i><b>10.4</b> Medidas de dispersión</a></li>
+<li class="chapter" data-level="10.5" data-path="chap-quan.html"><a href="chap-quan.html#diagramas-de-caja"><i class="fa fa-check"></i><b>10.5</b> Diagramas de caja</a></li>
+<li class="chapter" data-level="10.6" data-path="chap-quan.html"><a href="chap-quan.html#guia-rapida-de-funciones-5"><i class="fa fa-check"></i><b>10.6</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="10.7" data-path="chap-quan.html"><a href="chap-quan.html#ejercicios-8"><i class="fa fa-check"></i><b>10.7</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-quan.html"><a href="chap-quan.html#test-7"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-quan.html"><a href="chap-quan.html#ejercicio-8"><i class="fa fa-check"></i>Ejercicio</a></li>
+<li class="chapter" data-level="" data-path="chap-quan.html"><a href="chap-quan.html#respuestas-al-test-7"><i class="fa fa-check"></i>Respuestas al test</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -567,6 +580,9 @@ B</code></pre>
 ## 3          4.7         3.2          1.3         0.2
 ## 4          4.6         3.1          1.5         0.2
 ## 5          5.0         3.6          1.4         0.2</code></pre>
+<p>Para terminar, una última instrucción para importar tablas, basada en funciones del paquete <strong>readr</strong>. Podéis seleccionar y copiar toda el contenido de una tabla de datos en el portapapeles con la combinación de teclas que corresponda en vuestro sistema operativo y “pegarlo” en un <em>data frame</em> con la siguiente instrucción (tras cargar primero el paquete <strong>readr</strong> si es necesario):</p>
+<pre class="sourceCode r"><code class="sourceCode r">Nombre=<span class="kw">read_delim</span>(<span class="kw">clipboard</span>(),<span class="dt">delim=</span>...)</code></pre>
+<p>donde <code>Nombre</code> refiere al nombre que queréis dar al <em>data frame</em> y en el parámetro <code>delim</code> tenéis que especificar el separador de columnas de manera similar a cómo usamos <code>sep</code> en <code>read.table</code>; la función <code>clipboard()</code> de <strong>readr</strong> devuelve el contenido del portapapeles. Leed la Ayuda de la función <code>read_delim</code> para conocer otros parámetros que podéis especificar.</p>
 </div>
 <div id="como-crear-data-frames" class="section level2">
 <h2><span class="header-section-number">6.3</span> Cómo crear <em>data frames</em></h2>
@@ -1527,14 +1543,15 @@ DT
 <li><code>aggregate</code> sirve para aplicar una función a una o varias variables de un <em>data frame</em> agrupando sus entradas por los niveles de uno o varios factores.</li>
 <li><code>attach</code> añade las variables de un <em>data frame</em> al entorno global de R.</li>
 <li><code>detach</code> deshace el efecto de <code>attach</code>.</li>
-</ul>
+<li><code>clipboard()</code>, del paquete <strong>readr</strong> , da el contenido del Portapapeles.
 <!--
 * `data.table`, del paquete `data.table`, crea un *data table* a partir de vectores o de un *data frame*
 * `fread`, del paquete `data.table`,  permite importar un fichero externo en un *data table*.
 * `setkey`, del paquete `data.table`,  indexa un *data table*.
 * `[1, 2, by=3]`, aplicado a un  `data.table`, extrae las filas especificadas en la posición `1` y ejecuta  la expresión `2` sobre sus columnas, agrupando las filas según la condición `3`.
 
--->
+--></li>
+</ul>
 </div>
 <div id="ejercicios-4" class="section level2">
 <h2><span class="header-section-number">6.10</span> Ejercicios</h2>
