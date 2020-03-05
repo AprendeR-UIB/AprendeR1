@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Lección 8 Estructuras de control básicas | AprendeR: Parte I</title>
+  <meta name="description" content="Apuntes AprendeR bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Lección 8 Estructuras de control básicas | AprendeR: Parte I" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Apuntes AprendeR bookdown::gitbook." />
+  <meta name="github-repo" content="AprendeR-UIB/AprendeR1" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Lección 8 Estructuras de control básicas | AprendeR: Parte I" />
+  
+  <meta name="twitter:description" content="Apuntes AprendeR bookdown::gitbook." />
+  
+
+<meta name="author" content="The UIB-AprendeR team" />
+
+
+<meta name="date" content="2020-03-05" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="chap-plot.html"/>
+<link rel="next" href="chap-distr.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="libs/d3-3.5.3/d3.min.js"></script>
+<link href="libs/colorbrewer-1/colorbrewer.css" rel="stylesheet" />
+<script src="libs/colorbrewer-1/colorbrewer.js"></script>
+<link href="libs/streamgraph-1/streamgraph.css" rel="stylesheet" />
+<script src="libs/streamgraph-binding-0.9.0/streamgraph.js"></script>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">AprendeR: Parte I</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Presentación</a></li>
+<li class="part"><span><b>Parte I: R básico</b></span></li>
+<li class="chapter" data-level="1" data-path="chap-0.html"><a href="chap-0.html"><i class="fa fa-check"></i><b>1</b> Logística de R</a><ul>
+<li class="chapter" data-level="1.1" data-path="chap-0.html"><a href="chap-0.html#como-instalar-r-y-rstudio"><i class="fa fa-check"></i><b>1.1</b> Cómo instalar R y <em>RStudio</em></a></li>
+<li class="chapter" data-level="1.2" data-path="chap-0.html"><a href="chap-0.html#sec:guardar"><i class="fa fa-check"></i><b>1.2</b> Cómo guardar el trabajo realizado</a></li>
+<li class="chapter" data-level="1.3" data-path="chap-0.html"><a href="chap-0.html#sec:guiones"><i class="fa fa-check"></i><b>1.3</b> Cómo trabajar con guiones y otros ficheros</a></li>
+<li class="chapter" data-level="1.4" data-path="chap-0.html"><a href="chap-0.html#sec:help"><i class="fa fa-check"></i><b>1.4</b> Cómo obtener ayuda</a></li>
+<li class="chapter" data-level="1.5" data-path="chap-0.html"><a href="chap-0.html#sec:paquetes"><i class="fa fa-check"></i><b>1.5</b> Cómo instalar y cargar paquetes</a></li>
+<li class="chapter" data-level="1.6" data-path="chap-0.html"><a href="chap-0.html#guia-rapida"><i class="fa fa-check"></i><b>1.6</b> Guía rápida</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="chap-calc.html"><a href="chap-calc.html"><i class="fa fa-check"></i><b>2</b> La calculadora</a><ul>
+<li class="chapter" data-level="2.1" data-path="chap-calc.html"><a href="chap-calc.html#numeros-reales-operaciones-y-funciones-basicas"><i class="fa fa-check"></i><b>2.1</b> Números reales: operaciones y funciones básicas</a></li>
+<li class="chapter" data-level="2.2" data-path="chap-calc.html"><a href="chap-calc.html#cifras-significativas-y-redondeos"><i class="fa fa-check"></i><b>2.2</b> Cifras significativas y redondeos</a></li>
+<li class="chapter" data-level="2.3" data-path="chap-calc.html"><a href="chap-calc.html#definicion-de-variables"><i class="fa fa-check"></i><b>2.3</b> Definición de variables</a></li>
+<li class="chapter" data-level="2.4" data-path="chap-calc.html"><a href="chap-calc.html#definicion-de-funciones"><i class="fa fa-check"></i><b>2.4</b> Definición de funciones</a></li>
+<li class="chapter" data-level="2.5" data-path="chap-calc.html"><a href="chap-calc.html#numeros-complejos-opcional"><i class="fa fa-check"></i><b>2.5</b> Números complejos (opcional)</a></li>
+<li class="chapter" data-level="2.6" data-path="chap-calc.html"><a href="chap-calc.html#guia-rapida-1"><i class="fa fa-check"></i><b>2.6</b> Guía rápida</a></li>
+<li class="chapter" data-level="2.7" data-path="chap-calc.html"><a href="chap-calc.html#ejercicios"><i class="fa fa-check"></i><b>2.7</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-calc.html"><a href="chap-calc.html#test"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-calc.html"><a href="chap-calc.html#ejercicio"><i class="fa fa-check"></i>Ejercicio</a></li>
+<li class="chapter" data-level="" data-path="chap-calc.html"><a href="chap-calc.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="chap-lm.html"><a href="chap-lm.html"><i class="fa fa-check"></i><b>3</b> Un aperitivo: Introducción a la regresión lineal</a><ul>
+<li class="chapter" data-level="3.1" data-path="chap-lm.html"><a href="chap-lm.html#sec:introlm"><i class="fa fa-check"></i><b>3.1</b> Cálculo de rectas de regresión</a></li>
+<li class="chapter" data-level="3.2" data-path="chap-lm.html"><a href="chap-lm.html#rectas-de-regresion-y-transformaciones-logaritmicas"><i class="fa fa-check"></i><b>3.2</b> Rectas de regresión y transformaciones logarítmicas</a></li>
+<li class="chapter" data-level="3.3" data-path="chap-lm.html"><a href="chap-lm.html#guia-rapida-2"><i class="fa fa-check"></i><b>3.3</b> Guía rápida</a></li>
+<li class="chapter" data-level="3.4" data-path="chap-lm.html"><a href="chap-lm.html#ejercicios-1"><i class="fa fa-check"></i><b>3.4</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-lm.html"><a href="chap-lm.html#ejercicio-1"><i class="fa fa-check"></i>Ejercicio</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="chap-vect.html"><a href="chap-vect.html"><i class="fa fa-check"></i><b>4</b> Vectores y otros tipos de listas</a><ul>
+<li class="chapter" data-level="4.1" data-path="chap-vect.html"><a href="chap-vect.html#sec:vect"><i class="fa fa-check"></i><b>4.1</b> Construcción de vectores</a></li>
+<li class="chapter" data-level="4.2" data-path="chap-vect.html"><a href="chap-vect.html#operaciones-con-vectores"><i class="fa fa-check"></i><b>4.2</b> Operaciones con vectores</a></li>
+<li class="chapter" data-level="4.3" data-path="chap-vect.html"><a href="chap-vect.html#entradas-y-trozos-de-vectores"><i class="fa fa-check"></i><b>4.3</b> Entradas y trozos de vectores</a></li>
+<li class="chapter" data-level="4.4" data-path="chap-vect.html"><a href="chap-vect.html#subsec:factor"><i class="fa fa-check"></i><b>4.4</b> Factores</a></li>
+<li class="chapter" data-level="4.5" data-path="chap-vect.html"><a href="chap-vect.html#sec:lists"><i class="fa fa-check"></i><b>4.5</b> Listas heterogéneas</a></li>
+<li class="chapter" data-level="4.6" data-path="chap-vect.html"><a href="chap-vect.html#guia-rapida-de-funciones"><i class="fa fa-check"></i><b>4.6</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="4.7" data-path="chap-vect.html"><a href="chap-vect.html#ejercicios-2"><i class="fa fa-check"></i><b>4.7</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-vect.html"><a href="chap-vect.html#test-1"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-vect.html"><a href="chap-vect.html#ejercicio-2"><i class="fa fa-check"></i>Ejercicio</a></li>
+<li class="chapter" data-level="" data-path="chap-vect.html"><a href="chap-vect.html#respuestas-al-test-1"><i class="fa fa-check"></i>Respuestas al test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="chap-matrix.html"><a href="chap-matrix.html"><i class="fa fa-check"></i><b>5</b> Matrices</a><ul>
+<li class="chapter" data-level="5.1" data-path="chap-matrix.html"><a href="chap-matrix.html#construccion-de-matrices"><i class="fa fa-check"></i><b>5.1</b> Construcción de matrices</a></li>
+<li class="chapter" data-level="5.2" data-path="chap-matrix.html"><a href="chap-matrix.html#sec:entrmatr"><i class="fa fa-check"></i><b>5.2</b> Acceso a entradas y submatrices</a></li>
+<li class="chapter" data-level="5.3" data-path="chap-matrix.html"><a href="chap-matrix.html#algunas-funciones-para-matrices"><i class="fa fa-check"></i><b>5.3</b> Algunas funciones para matrices</a></li>
+<li class="chapter" data-level="5.4" data-path="chap-matrix.html"><a href="chap-matrix.html#calculo-matricial"><i class="fa fa-check"></i><b>5.4</b> Cálculo matricial</a></li>
+<li class="chapter" data-level="5.5" data-path="chap-matrix.html"><a href="chap-matrix.html#valores-y-vectores-propios"><i class="fa fa-check"></i><b>5.5</b> Valores y vectores propios</a></li>
+<li class="chapter" data-level="5.6" data-path="chap-matrix.html"><a href="chap-matrix.html#matrices-complejas-opcional"><i class="fa fa-check"></i><b>5.6</b> Matrices complejas (opcional)</a></li>
+<li class="chapter" data-level="5.7" data-path="chap-matrix.html"><a href="chap-matrix.html#guia-rapida-de-funciones-1"><i class="fa fa-check"></i><b>5.7</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="5.8" data-path="chap-matrix.html"><a href="chap-matrix.html#ejercicios-3"><i class="fa fa-check"></i><b>5.8</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-matrix.html"><a href="chap-matrix.html#test-2"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-matrix.html"><a href="chap-matrix.html#ejercicio-3"><i class="fa fa-check"></i>Ejercicio</a></li>
+<li class="chapter" data-level="" data-path="chap-matrix.html"><a href="chap-matrix.html#respuestas-al-test-2"><i class="fa fa-check"></i>Respuestas al test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="chap-df.html"><a href="chap-df.html"><i class="fa fa-check"></i><b>6</b> <em>Data frames</em></a><ul>
+<li class="chapter" data-level="6.1" data-path="chap-df.html"><a href="chap-df.html#estructura-de-un-data-frame"><i class="fa fa-check"></i><b>6.1</b> Estructura de un <em>data frame</em></a></li>
+<li class="chapter" data-level="6.2" data-path="chap-df.html"><a href="chap-df.html#como-importar-y-exportar-data-frames"><i class="fa fa-check"></i><b>6.2</b> Cómo importar y exportar <em>data frames</em></a></li>
+<li class="chapter" data-level="6.3" data-path="chap-df.html"><a href="chap-df.html#como-crear-data-frames"><i class="fa fa-check"></i><b>6.3</b> Cómo crear <em>data frames</em></a></li>
+<li class="chapter" data-level="6.4" data-path="chap-df.html"><a href="chap-df.html#sec:moddf"><i class="fa fa-check"></i><b>6.4</b> Cómo modificar un <em>data frame</em></a></li>
+<li class="chapter" data-level="6.5" data-path="chap-df.html"><a href="chap-df.html#sec:dfaf"><i class="fa fa-check"></i><b>6.5</b> Cómo añadir filas y columnas a un <em>data frame</em></a></li>
+<li class="chapter" data-level="6.6" data-path="chap-df.html"><a href="chap-df.html#como-seleccionar-trozos-de-un-data-frame"><i class="fa fa-check"></i><b>6.6</b> Cómo seleccionar trozos de un <em>data frame</em></a></li>
+<li class="chapter" data-level="6.7" data-path="chap-df.html"><a href="chap-df.html#como-aplicar-una-funcion-a-las-variables-de-un-data-frame"><i class="fa fa-check"></i><b>6.7</b> Cómo aplicar una función a las variables de un <em>data frame</em></a></li>
+<li class="chapter" data-level="6.8" data-path="chap-df.html"><a href="chap-df.html#sub:attach"><i class="fa fa-check"></i><b>6.8</b> Cómo añadir las variables de un <em>data frame</em> al entorno global</a></li>
+<li class="chapter" data-level="6.9" data-path="chap-df.html"><a href="chap-df.html#guia-rapida-de-funciones-2"><i class="fa fa-check"></i><b>6.9</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="6.10" data-path="chap-df.html"><a href="chap-df.html#ejercicios-4"><i class="fa fa-check"></i><b>6.10</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-df.html"><a href="chap-df.html#test-3"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-df.html"><a href="chap-df.html#ejercicio-4"><i class="fa fa-check"></i>Ejercicio</a></li>
+<li class="chapter" data-level="" data-path="chap-df.html"><a href="chap-df.html#respuestas-al-test-3"><i class="fa fa-check"></i>Respuestas al test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="chap-plot.html"><a href="chap-plot.html"><i class="fa fa-check"></i><b>7</b> Gráficos básicos</a><ul>
+<li class="chapter" data-level="7.1" data-path="chap-plot.html"><a href="chap-plot.html#la-funcion-plot"><i class="fa fa-check"></i><b>7.1</b> La función <code>plot</code></a></li>
+<li class="chapter" data-level="7.2" data-path="chap-plot.html"><a href="chap-plot.html#parametros-de-plot"><i class="fa fa-check"></i><b>7.2</b> Parámetros de <code>plot</code></a></li>
+<li class="chapter" data-level="7.3" data-path="chap-plot.html"><a href="chap-plot.html#como-anadir-elementos-a-un-grafico"><i class="fa fa-check"></i><b>7.3</b> Cómo añadir elementos a un gráfico</a></li>
+<li class="chapter" data-level="7.4" data-path="chap-plot.html"><a href="chap-plot.html#guia-rapida-3"><i class="fa fa-check"></i><b>7.4</b> Guía rápida</a></li>
+<li class="chapter" data-level="7.5" data-path="chap-plot.html"><a href="chap-plot.html#ejercicios-5"><i class="fa fa-check"></i><b>7.5</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-plot.html"><a href="chap-plot.html#test-4"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-plot.html"><a href="chap-plot.html#ejercicio-5"><i class="fa fa-check"></i>Ejercicio</a></li>
+<li class="chapter" data-level="" data-path="chap-plot.html"><a href="chap-plot.html#respuestas-al-test-4"><i class="fa fa-check"></i>Respuestas al test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="chap-for.html"><a href="chap-for.html"><i class="fa fa-check"></i><b>8</b> Estructuras de control básicas</a><ul>
+<li class="chapter" data-level="8.1" data-path="chap-for.html"><a href="chap-for.html#bucles-de-tipo-for"><i class="fa fa-check"></i><b>8.1</b> Bucles de tipo “for”</a></li>
+<li class="chapter" data-level="8.2" data-path="chap-for.html"><a href="chap-for.html#bucles-de-tipo-while"><i class="fa fa-check"></i><b>8.2</b> Bucles de tipo “while”</a></li>
+<li class="chapter" data-level="8.3" data-path="chap-for.html"><a href="chap-for.html#estructuras-condicionales"><i class="fa fa-check"></i><b>8.3</b> Estructuras condicionales</a></li>
+<li class="chapter" data-level="8.4" data-path="chap-for.html"><a href="chap-for.html#guia-rapida-de-funciones-3"><i class="fa fa-check"></i><b>8.4</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="8.5" data-path="chap-for.html"><a href="chap-for.html#ejercicios-6"><i class="fa fa-check"></i><b>8.5</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-for.html"><a href="chap-for.html#test-5"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-for.html"><a href="chap-for.html#ejercicio-6"><i class="fa fa-check"></i>Ejercicio</a></li>
+<li class="chapter" data-level="" data-path="chap-for.html"><a href="chap-for.html#respuestas-al-test-5"><i class="fa fa-check"></i>Respuestas al test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="chap-distr.html"><a href="chap-distr.html"><i class="fa fa-check"></i><b>9</b> Distribuciones de probabilidad</a><ul>
+<li class="chapter" data-level="9.1" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios-7"><i class="fa fa-check"></i><b>9.1</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#test-6"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#problemas"><i class="fa fa-check"></i>Problemas</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test-6"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#soluciones-sucintas-de-los-problemas"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>Parte II: Estadística descriptiva</b></span></li>
+<li class="chapter" data-level="10" data-path="chap-edqual.html"><a href="chap-edqual.html"><i class="fa fa-check"></i><b>10</b> Descripción de datos cualitativos</a><ul>
+<li class="chapter" data-level="10.1" data-path="chap-edqual.html"><a href="chap-edqual.html#sec:edqual"><i class="fa fa-check"></i><b>10.1</b> Frecuencias</a></li>
+<li class="chapter" data-level="10.2" data-path="chap-edqual.html"><a href="chap-edqual.html#tablas-unidimensionales-de-frecuencias"><i class="fa fa-check"></i><b>10.2</b> Tablas unidimensionales de frecuencias</a></li>
+<li class="chapter" data-level="10.3" data-path="chap-edqual.html"><a href="chap-edqual.html#tablas-bidimensionales-de-frecuencias"><i class="fa fa-check"></i><b>10.3</b> Tablas bidimensionales de frecuencias</a></li>
+<li class="chapter" data-level="10.4" data-path="chap-edqual.html"><a href="chap-edqual.html#tablas-multidimensionales-de-frecuencias"><i class="fa fa-check"></i><b>10.4</b> Tablas multidimensionales de frecuencias</a></li>
+<li class="chapter" data-level="10.5" data-path="chap-edqual.html"><a href="chap-edqual.html#tablas-a-partir-de-data-frames-de-variables-cualitativas"><i class="fa fa-check"></i><b>10.5</b> Tablas a partir de <em>data frames</em> de variables cualitativas</a></li>
+<li class="chapter" data-level="10.6" data-path="chap-edqual.html"><a href="chap-edqual.html#diagramas-de-barras"><i class="fa fa-check"></i><b>10.6</b> Diagramas de barras</a></li>
+<li class="chapter" data-level="10.7" data-path="chap-edqual.html"><a href="chap-edqual.html#otros-graficos-para-datos-cualitativos"><i class="fa fa-check"></i><b>10.7</b> Otros gráficos para datos cualitativos</a></li>
+<li class="chapter" data-level="10.8" data-path="chap-edqual.html"><a href="chap-edqual.html#sec:exqual"><i class="fa fa-check"></i><b>10.8</b> Un ejemplo completo</a></li>
+<li class="chapter" data-level="10.9" data-path="chap-edqual.html"><a href="chap-edqual.html#guia-rapida-de-funciones-4"><i class="fa fa-check"></i><b>10.9</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="10.10" data-path="chap-edqual.html"><a href="chap-edqual.html#ejercicios-8"><i class="fa fa-check"></i><b>10.10</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-edqual.html"><a href="chap-edqual.html#test-7"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-edqual.html"><a href="chap-edqual.html#ejercicio-7"><i class="fa fa-check"></i>Ejercicio</a></li>
+<li class="chapter" data-level="" data-path="chap-edqual.html"><a href="chap-edqual.html#respuestas-al-test-7"><i class="fa fa-check"></i>Respuestas al test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="chap-ord.html"><a href="chap-ord.html"><i class="fa fa-check"></i><b>11</b> Descripción de datos ordinales</a><ul>
+<li class="chapter" data-level="11.1" data-path="chap-ord.html"><a href="chap-ord.html#frecuencias-para-datos-ordinales"><i class="fa fa-check"></i><b>11.1</b> Frecuencias para datos ordinales</a></li>
+<li class="chapter" data-level="11.2" data-path="chap-ord.html"><a href="chap-ord.html#descripcion-de-datos-ordinales-con-r"><i class="fa fa-check"></i><b>11.2</b> Descripción de datos ordinales con R</a></li>
+<li class="chapter" data-level="11.3" data-path="chap-ord.html"><a href="chap-ord.html#guia-rapida-de-funciones-5"><i class="fa fa-check"></i><b>11.3</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="11.4" data-path="chap-ord.html"><a href="chap-ord.html#ejercicios-9"><i class="fa fa-check"></i><b>11.4</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-ord.html"><a href="chap-ord.html#test-8"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-ord.html"><a href="chap-ord.html#ejercicio-8"><i class="fa fa-check"></i>Ejercicio</a></li>
+<li class="chapter" data-level="" data-path="chap-ord.html"><a href="chap-ord.html#respuestas-al-test-8"><i class="fa fa-check"></i>Respuestas al test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="chap-quan.html"><a href="chap-quan.html"><i class="fa fa-check"></i><b>12</b> Descripción de datos cuantitativos</a><ul>
+<li class="chapter" data-level="12.1" data-path="chap-quan.html"><a href="chap-quan.html#sec:quan"><i class="fa fa-check"></i><b>12.1</b> Frecuencias</a></li>
+<li class="chapter" data-level="12.2" data-path="chap-quan.html"><a href="chap-quan.html#medidas-de-tendencia-central"><i class="fa fa-check"></i><b>12.2</b> Medidas de tendencia central</a></li>
+<li class="chapter" data-level="12.3" data-path="chap-quan.html"><a href="chap-quan.html#medidas-de-posicion"><i class="fa fa-check"></i><b>12.3</b> Medidas de posición</a></li>
+<li class="chapter" data-level="12.4" data-path="chap-quan.html"><a href="chap-quan.html#medidas-de-dispersion"><i class="fa fa-check"></i><b>12.4</b> Medidas de dispersión</a></li>
+<li class="chapter" data-level="12.5" data-path="chap-quan.html"><a href="chap-quan.html#diagramas-de-caja"><i class="fa fa-check"></i><b>12.5</b> Diagramas de caja</a></li>
+<li class="chapter" data-level="12.6" data-path="chap-quan.html"><a href="chap-quan.html#guia-rapida-de-funciones-6"><i class="fa fa-check"></i><b>12.6</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="12.7" data-path="chap-quan.html"><a href="chap-quan.html#ejercicios-10"><i class="fa fa-check"></i><b>12.7</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-quan.html"><a href="chap-quan.html#test-9"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-quan.html"><a href="chap-quan.html#ejercicio-9"><i class="fa fa-check"></i>Ejercicio</a></li>
+<li class="chapter" data-level="" data-path="chap-quan.html"><a href="chap-quan.html#respuestas-al-test-9"><i class="fa fa-check"></i>Respuestas al test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="datos-cuantitativos-agrupados.html"><a href="datos-cuantitativos-agrupados.html"><i class="fa fa-check"></i><b>13</b> Datos cuantitativos agrupados</a><ul>
+<li class="chapter" data-level="13.1" data-path="datos-cuantitativos-agrupados.html"><a href="datos-cuantitativos-agrupados.html#como-agrupar-datos"><i class="fa fa-check"></i><b>13.1</b> Cómo agrupar datos</a></li>
+<li class="chapter" data-level="13.2" data-path="datos-cuantitativos-agrupados.html"><a href="datos-cuantitativos-agrupados.html#sec:agrupR"><i class="fa fa-check"></i><b>13.2</b> Agrupamiento de datos con R</a></li>
+<li class="chapter" data-level="13.3" data-path="datos-cuantitativos-agrupados.html"><a href="datos-cuantitativos-agrupados.html#estadisticos-para-datos-agrupados"><i class="fa fa-check"></i><b>13.3</b> Estadísticos para datos agrupados</a></li>
+<li class="chapter" data-level="13.4" data-path="datos-cuantitativos-agrupados.html"><a href="datos-cuantitativos-agrupados.html#sec:hist"><i class="fa fa-check"></i><b>13.4</b> Histogramas</a></li>
+<li class="chapter" data-level="13.5" data-path="datos-cuantitativos-agrupados.html"><a href="datos-cuantitativos-agrupados.html#guia-rapida-de-funciones-7"><i class="fa fa-check"></i><b>13.5</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="13.6" data-path="datos-cuantitativos-agrupados.html"><a href="datos-cuantitativos-agrupados.html#ejercicios-11"><i class="fa fa-check"></i><b>13.6</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="datos-cuantitativos-agrupados.html"><a href="datos-cuantitativos-agrupados.html#test-10"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="datos-cuantitativos-agrupados.html"><a href="datos-cuantitativos-agrupados.html#ejercicio-10"><i class="fa fa-check"></i>Ejercicio</a></li>
+<li class="chapter" data-level="" data-path="datos-cuantitativos-agrupados.html"><a href="datos-cuantitativos-agrupados.html#respuestas-al-test-10"><i class="fa fa-check"></i>Respuestas al test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="graficos-avanzados.html"><a href="graficos-avanzados.html"><i class="fa fa-check"></i><b>14</b> Gráficos avanzados</a><ul>
+<li class="chapter" data-level="14.1" data-path="graficos-avanzados.html"><a href="graficos-avanzados.html#nubes-de-palabras-o-de-etiquetas-word-clouds"><i class="fa fa-check"></i><b>14.1</b> Nubes de palabras o de etiquetas (<em>word clouds</em>)</a></li>
+<li class="chapter" data-level="14.2" data-path="graficos-avanzados.html"><a href="graficos-avanzados.html#mapa-de-calor-o-heatmap"><i class="fa fa-check"></i><b>14.2</b> Mapa de calor o <em>heatmap</em></a></li>
+<li class="chapter" data-level="14.3" data-path="graficos-avanzados.html"><a href="graficos-avanzados.html#dendrogramas"><i class="fa fa-check"></i><b>14.3</b> Dendrogramas</a></li>
+<li class="chapter" data-level="14.4" data-path="graficos-avanzados.html"><a href="graficos-avanzados.html#graficos-de-burbujas-o-bubbles"><i class="fa fa-check"></i><b>14.4</b> Gráficos de burbujas o <em>bubbles</em></a></li>
+<li class="chapter" data-level="14.5" data-path="graficos-avanzados.html"><a href="graficos-avanzados.html#graficos-de-corrientes-o-streamgraphs"><i class="fa fa-check"></i><b>14.5</b> Gráficos de corrientes o <em>streamgraphs</em></a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/RicUIB/AprendeR2.1" target="blank">Publicado con  bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">AprendeR: Parte I</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="chap:for" class="section level1">
+<h1><span class="header-section-number">Lección 8</span> Estructuras de control básicas</h1>
+<p>Una de las grandes ventajas de R es su capacidad de <strong>vectorizar construcciones</strong>, es decir, la posibilidad de aplicar de golpe una función a todo un vector, o a todas las entradas de un vector, o a todas las filas o columnas de un <em>data frame</em> o una matriz. Por ejemplo, para calcular la suma de todos los elementos de un vector, en muchos lenguajes de programación tendríamos que llevar a cabo un proceso recurrente como el que sigue:</p>
+<ol style="list-style-type: decimal">
+<li>Iniciar una variable “Suma” igual al primer elemento del vector</li>
+<li>Para cada posición <em>i</em> entre 2 y la longitud del vector, redefinir “Suma” como la suma de su valor actual y el elemento <em>i</em>-ésimo del vector</li>
+<li>Al llegar al final del vector, dar el valor final de “Suma”</li>
+</ol>
+<p>En cambio, como sabéis, con R basta entrar <code>sum(vector)</code>.</p>
+<p>De manera similar, para calcular todos los cuadrados de números naturales del 1 al 100, con R basta entrar <code>(1:100)^2</code>, mientras que en muchos lenguajes de programación tendríamos que llevar a cabo un proceso similar al anterior:</p>
+<ol style="list-style-type: decimal">
+<li>Definir un vector “Cuadrados” vacío</li>
+<li>Para cada n entre 1 y 100, añadir al final del vector “Cuadrados” el valor de n<sup>2</sup></li>
+<li>Al terminar, dar el contenido final del vector “Cuadrados”</li>
+</ol>
+<p>Incluso para construcciones más complicadas que elevar al cuadrado, R dispone de funciones, genéricamente llamadas <strong>funciones de tipo apply</strong> que permiten aplicar una función a todos los elementos de un objeto. Algunas de estas funciones ya han aparecido en lecciones anteriores:</p>
+<ul>
+<li><p><code>apply</code>, para aplicar una función a todas las filas o a todas las columnas de una matriz</p></li>
+<li><p><code>aggregate</code>, para aplicar una función a todos los grupos formados al clasificar una variable según un factor</p></li>
+<li><p><code>lapply</code>, para aplicar una función a todos los elementos de un objeto y dar el resultado en forma de <em>list</em></p></li>
+<li><p><code>sapply</code>, para aplicar una función a todos los elementos de un objeto y dar el resultado con una estructura lo más sencilla posible (por ejemplo, si el resultado es una lista de números, forma con ellos un vector)</p></li>
+</ul>
+<p>Las normas usuales de “buena práctica de la programación” en R fomentan el uso de la vectorización de cálculos usando funciones de tipo <em>apply</em> u otras funciones específicas tipo <code>sum</code> cuando existen. Pero hay ocasiones en que es necesario, o nos puede convenir por algún motivo, escribir un pequeño <strong>bucle</strong> (un proceso que repite varias veces una misma secuencia de operaciones) del estilo de los que hemos explicado. En esta lección explicamos cómo usar en R los dos tipos de bucles más sencillos: los bucles de tipo <strong>for</strong> y de tipo <strong>while</strong>. Completamos la lección introduciendo otro tipo de estructura de control muy común: las estructuras condicionales.</p>
+<div id="bucles-de-tipo-for" class="section level2">
+<h2><span class="header-section-number">8.1</span> Bucles de tipo “for”</h2>
+<p>Un <strong>bucle de tipo “for”</strong> es una estructura del tipo “Para todo … haz …” en la que se repite una determinada operación o secuencia de operaciones para todos los elementos de un vector (también puede ser de una list, pero para simplificar aquí siempre tomaremos un vector). Con R, este tipo de bucles se especifican con una instrucción de la forma</p>
+<div class="sourceCode" id="cb1089"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1089-1" data-line-number="1"><span class="cf">for</span>(índice <span class="cf">in</span> vector){acción}</a></code></pre></div>
+<p>Esta sintaxis indica a R que</p>
+<blockquote>
+<p>para todo <code>índice</code> que pertenezca al <code>vector</code>, efectúe la <code>acción</code> especificada entre las llaves.</p>
+</blockquote>
+<p>En esta instrucción el <code>índice</code> juega un papel de variable interna, como las variables entre los paréntesis en la definición de funciones.</p>
+<p>Así, por ejemplo, para construir el vector de los cuadrados de números naturales del 1 al 10 por medio de un bucle de tipo “for” entraríamos</p>
+<div class="sourceCode" id="cb1090"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1090-1" data-line-number="1"><span class="cf">for</span>(n <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>){Cuadrados[n]=n<span class="op">^</span><span class="dv">2</span>}</a></code></pre></div>
+<pre><code>## Error in eval(expr, envir, enclos): objeto &#39;Cuadrados&#39; no encontrado</code></pre>
+<p>Bueno, ya veis que no. Esta construcción solo implementa el paso 2 del proceso descrito en la introducción de la lección. Antes, hay que efectuar el paso 1: definir el vector de Cuadrados y darle un valor inicial, aunque sea igualarlo a un vector vacío, para que luego R lo vaya construyendo:</p>
+<div class="sourceCode" id="cb1092"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1092-1" data-line-number="1">Cuadrados=<span class="kw">c</span>()  <span class="co">#Iniciamos Cuadrados como un vector vacío</span></a>
+<a class="sourceLine" id="cb1092-2" data-line-number="2"><span class="cf">for</span>(n <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>){Cuadrados[n]=n<span class="op">^</span><span class="dv">2</span>}</a>
+<a class="sourceLine" id="cb1092-3" data-line-number="3">Cuadrados</a></code></pre></div>
+<pre><code>##  [1]   1   4   9  16  25  36  49  64  81 100</code></pre>
+<p>En vez de empezar con el vector <code>Cuadrados</code> vacío, podríamos iniciarlo con su primera entrada, 1. Y en vez de ir definiendo las entradas sucesivas de este vector en las diferentes iteraciones del bucle, también podríamos ir añadiéndolas al final:</p>
+<div class="sourceCode" id="cb1094"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1094-1" data-line-number="1">Cuadrados=<span class="kw">c</span>(<span class="dv">1</span>)  </a>
+<a class="sourceLine" id="cb1094-2" data-line-number="2"><span class="cf">for</span>(n <span class="cf">in</span> <span class="dv">2</span><span class="op">:</span><span class="dv">10</span>){Cuadrados=<span class="kw">c</span>(Cuadrados,n<span class="op">^</span><span class="dv">2</span>)}</a>
+<a class="sourceLine" id="cb1094-3" data-line-number="3">Cuadrados</a></code></pre></div>
+<pre><code>##  [1]   1   4   9  16  25  36  49  64  81 100</code></pre>
+<p>Desde el punto de vista de R, estos dos bucles de tipo “for” tienen un defecto: como cada iteración del bucle cambia la dimensión del vector <code>Cuadrados</code>, en cada iteración R define un nuevo objeto “Cuadrados” en el que copia el contenido del <code>Cuadrados</code> anterior y le añade el nuevo elemento. En bucles más complicados, esto podría ralentizar el cálculo. La manera correcta de definir este bucle en R es iniciar el vector <code>Cuadrados</code> como un vector de la longitud que va a tener al final, 10 en nuestro caso, y con el contenido que queramos, por ejemplo constante, y entonces ir modificando sus entradas una a una:</p>
+<div class="sourceCode" id="cb1096"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1096-1" data-line-number="1">Cuadrados=<span class="kw">rep</span>(<span class="dv">1</span>,<span class="dv">10</span>)  </a>
+<a class="sourceLine" id="cb1096-2" data-line-number="2"><span class="cf">for</span>(n <span class="cf">in</span> <span class="dv">2</span><span class="op">:</span><span class="dv">10</span>){Cuadrados[n]=n<span class="op">^</span><span class="dv">2</span>}</a>
+<a class="sourceLine" id="cb1096-3" data-line-number="3">Cuadrados</a></code></pre></div>
+<pre><code>##  [1]   1   4   9  16  25  36  49  64  81 100</code></pre>
+
+<div class="example">
+<p><span id="exm:fib1" class="example"><strong>Ejemplo 8.1  </strong></span>Estamos seguros de que conocéis la sucesión de Fibonacci <span class="math inline">\(F_n\)</span>,
+<span class="math display">\[
+1, 1, 2, 3, 5, 8, 13, 21, 34, 55, \ldots,
+\]</span>
+donde cada término es la suma de los dos anteriores. Esto corresponde a la recurrencia
+<span class="math display">\[
+F_{n}=F_{n-2}+F_{n-1},
+\]</span>
+que, junto con las condiciones iniciales <span class="math inline">\(F_1=F_2=1\)</span>, determina completamente la sucesión:
+<span class="math display">\[
+\begin{array}{l}
+F_3=F_1+F_2=2\\
+F_4=F_2+F_3=3\\
+F_5=F_3+F_4=5\\
+\quad\vdots
+\end{array}
+\]</span></p>
+</div>
+
+<p>Vamos a calcular los 20 primeros números de Fibonacci, <span class="math inline">\((F_n)_{n=1,\ldots,20}\)</span>. Para ello, usaremos un bucle de tipo “for” que traduzca la construcción “para cada n de 3 a 20, <span class="math inline">\(F_n\)</span> es la suma de <span class="math inline">\(F_{n-1}\)</span> y <span class="math inline">\(F_{n-2}\)</span>”. Como <span class="math inline">\(F_1=F_2=1\)</span>, iniciaremos el vector que al final contendrá nuestros números de Fibonacci como un vector formado por veinte unos, y con el bucle redefniremos sus entradas a partir de la tercera:</p>
+<div class="sourceCode" id="cb1098"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1098-1" data-line-number="1">Fib=<span class="kw">rep</span>(<span class="dv">1</span>,<span class="dv">20</span>) </a>
+<a class="sourceLine" id="cb1098-2" data-line-number="2"><span class="cf">for</span>(n <span class="cf">in</span> <span class="dv">3</span><span class="op">:</span><span class="dv">20</span>){Fib[n]=Fib[n<span class="dv">-1</span>]<span class="op">+</span>Fib[n<span class="dv">-2</span>]} </a>
+<a class="sourceLine" id="cb1098-3" data-line-number="3">Fib</a></code></pre></div>
+<pre><code>##  [1]    1    1    2    3    5    8   13   21   34   55   89  144  233  377
+## [15]  610  987 1597 2584 4181 6765</code></pre>
+<p>Como en la definición de funciones, si la construcción que queremos realizar en cada paso de un bucle, sea de tipo “for” o, en la siguiente sección, de tipo “while”, requiere de más de una instrucción, las podemos separar dentro de las llaves mediante signos de punto y coma o simplemente escribiéndolas en líneas aparte. Además, podéis anidar instrucciones <code>for</code> si necesitáis que el conjunto de índices sea multidimensional.</p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-375" class="example"><strong>Ejemplo 8.2  </strong></span>Supongamos que queremos definir una función SimM que, aplicada a una matriz cuadrada A, la <em>simetrice</em>, es decir, substituya cada entrada (i,j) de A fuera de su diagonal principal por la media de las entradas (i,j) y (j,i). Para ello lo que haremos será, dada la matriz A, si n indica sus números de filas y de columnas:</p>
+</div>
+
+<ol style="list-style-type: decimal">
+<li>Definir una copia AA de A</li>
+<li>Para cada i entre 1 y n-1 y para cada j entre i+1 y n, redefinir AA[i,j] y AA[j,i] como (A[i,j]+A[j,i])/2</li>
+<li>Dar como resultado la matriz simétrica AA resultante</li>
+</ol>
+<div class="sourceCode" id="cb1100"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1100-1" data-line-number="1">SimM=<span class="cf">function</span>(A){</a>
+<a class="sourceLine" id="cb1100-2" data-line-number="2">  n=<span class="kw">dim</span>(A)[<span class="dv">1</span>]</a>
+<a class="sourceLine" id="cb1100-3" data-line-number="3">  AA=A</a>
+<a class="sourceLine" id="cb1100-4" data-line-number="4">  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>(n<span class="dv">-1</span>)){</a>
+<a class="sourceLine" id="cb1100-5" data-line-number="5">    <span class="cf">for</span> (j <span class="cf">in</span> (i<span class="op">+</span><span class="dv">1</span>)<span class="op">:</span>n){</a>
+<a class="sourceLine" id="cb1100-6" data-line-number="6">      AA[i,j]=(A[i,j]<span class="op">+</span>A[j,i])<span class="op">/</span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb1100-7" data-line-number="7">      AA[j,i]=(A[i,j]<span class="op">+</span>A[j,i])<span class="op">/</span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb1100-8" data-line-number="8">    }</a>
+<a class="sourceLine" id="cb1100-9" data-line-number="9">  }</a>
+<a class="sourceLine" id="cb1100-10" data-line-number="10">AA</a>
+<a class="sourceLine" id="cb1100-11" data-line-number="11">}</a></code></pre></div>
+<p>Veamos con un ejemplo si funciona:</p>
+<div class="sourceCode" id="cb1101"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1101-1" data-line-number="1">A=<span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">9</span>),<span class="dt">nrow=</span><span class="dv">3</span>,<span class="dt">byrow=</span><span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb1101-2" data-line-number="2">A</a></code></pre></div>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    2    3
+## [2,]    4    5    6
+## [3,]    7    8    9</code></pre>
+<div class="sourceCode" id="cb1103"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1103-1" data-line-number="1"><span class="kw">SimM</span>(A)</a></code></pre></div>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    3    5
+## [2,]    3    5    7
+## [3,]    5    7    9</code></pre>
+<p>Naturalmente, y como casi siempre con R, no hacía falta usar bucles de tipo “for” para definir esta función:</p>
+<div class="sourceCode" id="cb1105"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1105-1" data-line-number="1">SimM2=<span class="cf">function</span>(A){(A<span class="op">+</span><span class="kw">t</span>(A))<span class="op">/</span><span class="dv">2</span>}</a>
+<a class="sourceLine" id="cb1105-2" data-line-number="2"><span class="kw">SimM2</span>(A)</a></code></pre></div>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    3    5
+## [2,]    3    5    7
+## [3,]    5    7    9</code></pre>
+</div>
+<div id="bucles-de-tipo-while" class="section level2">
+<h2><span class="header-section-number">8.2</span> Bucles de tipo “while”</h2>
+<p>Los <strong>bucles de tipo “while”</strong> repiten una determinada secuencia de operaciones mientras (<em>while</em>) una cierta condición lógica se satisfaga. Su sintaxis es</p>
+<div class="sourceCode" id="cb1107"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1107-1" data-line-number="1"><span class="cf">while</span>(condición){acción}</a></code></pre></div>
+<p>e indica a R que</p>
+<blockquote>
+<p>antes de efectuar por primera vez la <code>acción</code> especificada entre las llaves y tras cada ejecución de la misma, compruebe si la <code>condición</code> especificada entre paréntesis se satisface; en caso afirmativo, vuelva a efectuar la acción, y en caso negativo pare la ejecución del bucle.</p>
+</blockquote>
+<p>Por ejemplo, el bucle</p>
+<div class="sourceCode" id="cb1108"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1108-1" data-line-number="1">Cuadrados=<span class="kw">rep</span>(<span class="dv">1</span>,<span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb1108-2" data-line-number="2"><span class="cf">for</span>(n <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>){Cuadrados[n]=n<span class="op">^</span><span class="dv">2</span>}</a>
+<a class="sourceLine" id="cb1108-3" data-line-number="3">Cuadrados</a></code></pre></div>
+<pre><code>##  [1]   1   4   9  16  25  36  49  64  81 100</code></pre>
+<p>se podría reescribir como un <code>while</code> de la manera siguiente</p>
+<div class="sourceCode" id="cb1110"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1110-1" data-line-number="1">n=<span class="dv">1</span> <span class="co">#Iniciamos un contador</span></a>
+<a class="sourceLine" id="cb1110-2" data-line-number="2">Cuadrados=<span class="kw">c</span>() <span class="co">#Iniciamos el vector</span></a>
+<a class="sourceLine" id="cb1110-3" data-line-number="3"><span class="cf">while</span>(n<span class="op">&lt;=</span><span class="dv">10</span>){ <span class="co">#Mientras n sea menor o igual a 10...</span></a>
+<a class="sourceLine" id="cb1110-4" data-line-number="4">  Cuadrados[n]=n<span class="op">^</span><span class="dv">2</span> <span class="co">#añadimos n^2 al vector de Cuadrados...</span></a>
+<a class="sourceLine" id="cb1110-5" data-line-number="5">  n=n<span class="op">+</span><span class="dv">1</span> <span class="co">#y aumentamos en 1 el contador n</span></a>
+<a class="sourceLine" id="cb1110-6" data-line-number="6">}</a>
+<a class="sourceLine" id="cb1110-7" data-line-number="7">Cuadrados</a></code></pre></div>
+<pre><code>##  [1]   1   4   9  16  25  36  49  64  81 100</code></pre>
+<p>Este bucle:</p>
+<ul>
+<li>Como <span class="math inline">\(1\leqslant 10\)</span>, definirá Cuadrados[1]=1 y redefinirá n=2;</li>
+<li>Comprobará que <span class="math inline">\(2\leqslant 10\)</span>, y entonces definirá Cuadrados[2]=4 y redefinirá n=3;</li>
+<li>Comprobará que <span class="math inline">\(3\leqslant 10\)</span>, y entonces definirá Cuadrados[3]=9 y redefinirá n=4;</li>
+<li>…</li>
+<li>Comprobará que <span class="math inline">\(10\leqslant 10\)</span>, y entonces definirá Cuadrados[10]=100 y redefinirá n=11;</li>
+<li>Comprobará que <span class="math inline">\(11&gt;10\)</span> y parará.</li>
+</ul>
+<p>Veamos otro ejemplo. Supongamos que queremos calcular los números de Fibonacci menores o iguales a 100. Podemos usar un bucle de tipo “while” de la manera siguiente:</p>
+<ol style="list-style-type: decimal">
+<li>Iniciaremos un vector con los dos primeros números de Fibonacci</li>
+<li>Mientras la suma de los dos últimos números de Fibonacci calculados sea menor o igual a 100, añadiremos esta suma al final del vector, como siguiente número de Fibonacci</li>
+</ol>
+<div class="sourceCode" id="cb1112"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1112-1" data-line-number="1">Fib=<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>) </a>
+<a class="sourceLine" id="cb1112-2" data-line-number="2"><span class="cf">while</span>(Fib[<span class="kw">length</span>(Fib)]<span class="op">+</span>Fib[<span class="kw">length</span>(Fib)<span class="op">-</span><span class="dv">1</span>]<span class="op">&lt;=</span><span class="dv">100</span>){</a>
+<a class="sourceLine" id="cb1112-3" data-line-number="3">  Fib[<span class="kw">length</span>(Fib)<span class="op">+</span><span class="dv">1</span>]=Fib[<span class="kw">length</span>(Fib)]<span class="op">+</span>Fib[<span class="kw">length</span>(Fib)<span class="op">-</span><span class="dv">1</span>] </a>
+<a class="sourceLine" id="cb1112-4" data-line-number="4">  } </a>
+<a class="sourceLine" id="cb1112-5" data-line-number="5">Fib</a></code></pre></div>
+<pre><code>##  [1]  1  1  2  3  5  8 13 21 34 55 89</code></pre>
+<p>El siguiente número de Fibonacci ya sería mayor que 100:</p>
+<div class="sourceCode" id="cb1114"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1114-1" data-line-number="1">Fib[<span class="kw">length</span>(Fib)]<span class="op">+</span>Fib[<span class="kw">length</span>(Fib)<span class="op">-</span><span class="dv">1</span>]</a></code></pre></div>
+<pre><code>## [1] 144</code></pre>
+</div>
+<div id="estructuras-condicionales" class="section level2">
+<h2><span class="header-section-number">8.3</span> Estructuras condicionales</h2>
+<p>Las <strong>estructuras de control condicionales</strong> (o <strong>condicionales</strong> a secas) permiten que un programa decida de manera automática entre varias opciones en función de si se cumplen o no determinadas condiciones. Estas estructuras tienen en R la misma estructura que en casi todos los otros lenguajes de programación. Por un lado, tenemos la estructura</p>
+<div class="sourceCode" id="cb1116"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1116-1" data-line-number="1"><span class="cf">if</span>(condición){acción}</a></code></pre></div>
+<p>que indica a R que</p>
+<blockquote>
+<p>si se satisface la <code>condición</code> especificada entre paréntesis, se lleve a cabo la <code>acción</code> especificada entre llaves y luego se continúe con el programa, mientras que si no se satisface dicha <code>condición</code>, se continúe con el programa sin efectuar la <code>acción</code>.</p>
+</blockquote>
+<p>Por otro lado, tenemos la estructura</p>
+<div class="sourceCode" id="cb1117"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1117-1" data-line-number="1"><span class="cf">if</span>(condición){acción1} <span class="cf">else</span> {acción2}</a></code></pre></div>
+<p>que indica a R que</p>
+<blockquote>
+<p>si se satisface la <code>condición</code> se lleve a cabo la <code>acción1</code> y si no se satisface dicha <code>condición</code> se lleve a cabo la <code>acción2</code> (y luego, en ambos casos se continúe con el programa).</p>
+</blockquote>
+<p>Por ejemplo, si quisiéramos definir una función que valiera <span class="math inline">\(x^2\)</span> si <span class="math inline">\(x\leqslant 0\)</span> y <span class="math inline">\(x^3\)</span> si <span class="math inline">\(x\geqslant 0\)</span>, tendríamos que usar un condicional:</p>
+<div class="sourceCode" id="cb1118"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1118-1" data-line-number="1">f=<span class="cf">function</span>(x){</a>
+<a class="sourceLine" id="cb1118-2" data-line-number="2">  <span class="cf">if</span>(x<span class="op">&lt;=</span><span class="dv">0</span>){x<span class="op">^</span><span class="dv">2</span>} <span class="cf">else</span> {x<span class="op">^</span><span class="dv">3</span>}</a>
+<a class="sourceLine" id="cb1118-3" data-line-number="3">}</a>
+<a class="sourceLine" id="cb1118-4" data-line-number="4"><span class="kw">f</span>(<span class="op">-</span><span class="dv">3</span>)</a></code></pre></div>
+<pre><code>## [1] 9</code></pre>
+<div class="sourceCode" id="cb1120"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1120-1" data-line-number="1"><span class="kw">f</span>(<span class="dv">3</span>)</a></code></pre></div>
+<pre><code>## [1] 27</code></pre>
+<p>Vamos a definir una función más complicada, que usará varios condicionales y un bucle. Se trata de una función que usa la <strong>criba de Eratóstenes</strong> (un número natural <span class="math inline">\(n\)</span> mayor que 1 es primo si, y solo si, no es divisible por ningún número natural entre 2 y <span class="math inline">\(n-1\)</span>) para decidir si un número natural es primo o no, indicándolo con los valores lógicos usuales <code>TRUE</code> y <code>FALSE</code>. En esta función:</p>
+<ol style="list-style-type: decimal">
+<li><p>En primer lugar usaremos un condicional para que si la entrada no es un número natural nos dé un mensaje de error y si es un número natural proceda con la criba de Eratóstenes.</p></li>
+<li><p>A continuación, con un segundo condicional separaremos las entradas 0 y 1, que no son primos, del resto.</p></li>
+<li><p>Luego, con un tercer condicional separaremos la entrada 2, que es un número primo, de las mayores o iguales que 3.</p></li>
+<li><p>Finalmente, para un número <span class="math inline">\(n\geqslant 3\)</span>, con un bucle de tipo “for” probaremos todos los divisores naturales entre 2 y <span class="math inline">\(n-1\)</span>: si algún resto de la división entera da resto 0 (un cuarto condicional), el número entrado no es primo, y si todos los restos son diferentes de 0, sí que es primo.</p></li>
+</ol>
+<div class="sourceCode" id="cb1122"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1122-1" data-line-number="1">Es.Primo=<span class="cf">function</span>(n){</a>
+<a class="sourceLine" id="cb1122-2" data-line-number="2">  <span class="cf">if</span> (n<span class="op">!=</span><span class="kw">round</span>(n) <span class="op">|</span><span class="st"> </span>n<span class="op">&lt;</span><span class="dv">0</span>){ <span class="co">#Si n no es entero o si es negativo...</span></a>
+<a class="sourceLine" id="cb1122-3" data-line-number="3">    <span class="kw">stop</span>(<span class="st">&quot;El argumento no es un número natural&quot;</span>)  <span class="co">#da error y para</span></a>
+<a class="sourceLine" id="cb1122-4" data-line-number="4">  } <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb1122-5" data-line-number="5">    <span class="cf">if</span> (n<span class="op">==</span><span class="dv">0</span> <span class="op">|</span><span class="st"> </span>n<span class="op">==</span><span class="dv">1</span>){</a>
+<a class="sourceLine" id="cb1122-6" data-line-number="6">          Primo=<span class="ot">FALSE</span></a>
+<a class="sourceLine" id="cb1122-7" data-line-number="7">    } <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb1122-8" data-line-number="8">      Primo=<span class="ot">TRUE</span></a>
+<a class="sourceLine" id="cb1122-9" data-line-number="9">      <span class="cf">if</span> (n<span class="op">&gt;=</span><span class="dv">3</span>){</a>
+<a class="sourceLine" id="cb1122-10" data-line-number="10">           <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">2</span><span class="op">:</span>(n<span class="dv">-1</span>)) {</a>
+<a class="sourceLine" id="cb1122-11" data-line-number="11">          <span class="cf">if</span> ((n <span class="op">%%</span><span class="st"> </span>i) <span class="op">==</span><span class="st"> </span><span class="dv">0</span>) {</a>
+<a class="sourceLine" id="cb1122-12" data-line-number="12">            Primo=<span class="ot">FALSE</span></a>
+<a class="sourceLine" id="cb1122-13" data-line-number="13">          } </a>
+<a class="sourceLine" id="cb1122-14" data-line-number="14">}</a>
+<a class="sourceLine" id="cb1122-15" data-line-number="15">}</a>
+<a class="sourceLine" id="cb1122-16" data-line-number="16">} </a>
+<a class="sourceLine" id="cb1122-17" data-line-number="17">Primo</a>
+<a class="sourceLine" id="cb1122-18" data-line-number="18">}</a>
+<a class="sourceLine" id="cb1122-19" data-line-number="19">}</a></code></pre></div>
+<p>Veamos un ejemplo que dé error:</p>
+<div class="sourceCode" id="cb1123"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1123-1" data-line-number="1"><span class="kw">Es.Primo</span>(<span class="op">-</span><span class="dv">3</span>)</a></code></pre></div>
+<pre><code>## Error in Es.Primo(-3): El argumento no es un número natural</code></pre>
+<p>Y ahora vamos a aplicar esta función a todos los números naturales entre 0 y 20. No, no usaremos un <code>for</code>, usaremos <code>sapply</code>.</p>
+<div class="sourceCode" id="cb1125"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1125-1" data-line-number="1"><span class="kw">sapply</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">20</span>,<span class="dt">FUN=</span>Es.Primo)</a></code></pre></div>
+<pre><code>##  [1] FALSE FALSE  TRUE  TRUE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE
+## [12]  TRUE FALSE  TRUE FALSE FALSE FALSE  TRUE FALSE  TRUE FALSE</code></pre>
+</div>
+<div id="guia-rapida-de-funciones-3" class="section level2">
+<h2><span class="header-section-number">8.4</span> Guía rápida de funciones</h2>
+<ul>
+<li><p><code>apply</code> aplica una función a todas las filas o a todas las columnas de una matriz</p></li>
+<li><p><code>aggregate</code> aplica una función a todos los grupos formados al clasificar una variable según un factor</p></li>
+<li><p><code>lapply</code> aplica una función a todos los elementos de un objeto y da el resultado en forma de <em>list</em></p></li>
+<li><p><code>sapply</code> aplica una función a todos los elementos de un objeto y simplifca la estructura el resultado</p></li>
+<li><p><code>for(índice in vector){acción}</code> implementa un bucle de tipo “for”</p></li>
+<li><p><code>while(condición){acción}</code> implementa un bucle de tipo “while”</p></li>
+<li><p><code>if(condición){acción}</code> implementa un condicional “if…then”</p></li>
+<li><p><code>if(condición){acción1} else {acción2}</code> implementa un condicional “if…then…else”</p></li>
+<li><p><code>stop</code> para una ejecución y da un mensaje de error</p></li>
+</ul>
+</div>
+<div id="ejercicios-6" class="section level2">
+<h2><span class="header-section-number">8.5</span> Ejercicios</h2>
+<div id="test-5" class="section level3 unnumbered">
+<h3>Test</h3>
+<p><em>(1)</em> Dad el valor del término <span class="math inline">\(x_{100}\)</span> de la sucesión <span class="math inline">\(x_n\)</span> definida por <span class="math inline">\(x_1=1\)</span>, <span class="math inline">\(x_2=2\)</span> y <span class="math inline">\(x_{n}=2x_{n-1}-x_{n-2}+\lfloor n/2\rfloor\)</span> para todo <span class="math inline">\(n\geqslant 3\)</span>.</p>
+<p><em>(2)</em> Tenemos dos sucesiones <span class="math inline">\(x_n\)</span> y <span class="math inline">\(y_n\)</span> que evolucionan de manera conjunta siguiendo las ecuaciones <span class="math inline">\(x_{n+1}=2x_n-3y_n\)</span> e <span class="math inline">\(y_{n+1}=x_n+(-1)^ny_n\)</span>. Si partimos de <span class="math inline">\(x_1=10\)</span> y <span class="math inline">\(y_1=1\)</span>, ¿qué vale <span class="math inline">\(y_n\)</span> para el primer <span class="math inline">\(n\)</span> tal que <span class="math inline">\(x_n&gt;10^6\)</span>?</p>
+</div>
+<div id="ejercicio-6" class="section level3 unnumbered">
+<h3>Ejercicio</h3>
+<p>La <strong>conjetura de Collatz</strong> es una de las más misteriosas de la matemática actual. Dice lo siguiente.</p>
+<blockquote>
+<p>Empezando con un número natural mayor o igual que 1 cualquiera, iterad el proceso siguiente: si el número es par, lo dividimos por 2, y si es impar, lo multiplicamos por 3 y le sumamos 1, y vuelta a empezar. Esto proceso terminará por producir, más pronto o más tarde, siempre un 1.</p>
+</blockquote>
+<p>Por ejemplo, empecemos con 7.</p>
+<ol style="list-style-type: decimal">
+<li><p>Como 7 es impar, lo multiplicamos por 3 y le sumamos 1: 22.</p></li>
+<li><p>Como 22 es par, lo dividimos por 2: 11.</p></li>
+<li><p>Como 11 es impar, lo multiplicamos por 3 y le sumamos 1: 34.</p></li>
+<li><p>Como 34 es par, lo dividimos por 2: 17.</p></li>
+<li><p>Como 17 es impar, lo multiplicamos por 3 y le sumamos 1: 52</p></li>
+<li><p>Como 52 es par, lo dividimos por 2: 26.</p></li>
+<li><p>Como 26 es par, lo dividimos por 2: 13.</p></li>
+<li><p>Como 13 es impar, lo multiplicamos por 3 y le sumamos 1: 40.</p></li>
+<li><p>Como 40 es par, lo dividimos por 2: 20.</p></li>
+<li><p>Como 20 es par, lo dividimos por 2: 10.</p></li>
+<li><p>Como 10 es par, lo dividimos por 2: 5.</p></li>
+<li><p>Como 5 es impar, lo multiplicamos por 3 y le sumamos 1: 16.</p></li>
+<li><p>Como 16 es par, lo dividimos por 2: 8.</p></li>
+<li><p>Como 8 es par, lo dividimos por 2: 4.</p></li>
+<li><p>Como 4 es par, lo dividimos por 2: 2.</p></li>
+<li><p>Como 2 es par, lo dividimos por 2: <strong>1</strong>.</p></li>
+</ol>
+<p>Fijaos que al llegar al 1, entraríamos en un bucle. Como es impar, lo multiplicaríamos por 3 y le sumaríamos 1, daría 4; como es par, lo dividiríamos por 2, daría 2; como es par, lo dividiríamos por 2, daría 1; y volveríamos al 4.</p>
+<p><em>(1)</em> Definid una función que, aplicada a un número natural no nulo n, produzca la secuencia que se obtiene con este procedimiento empezando con n hasta llegar a un 1.</p>
+<p><em>(2)</em> Definid una función que, aplicada a dos números naturales no nulos n y N, produzca la secuencia que se obtiene con este procedimiento empezando con n hasta llegar a un 1, o que pare si han efectuado N pasos sin alcanzarlo y entonces escriba en la consola “Tras N pasos no hemos llegado a un 1” (con N el número que se ha entrado). Para esto último podéis usar la función <code>paste</code>; consultad su Ayuda. Además, la función ha de dar algún mensaje de error si la n a la que se aplique no es un número natural mayor que 0.</p>
+<p><em>(3)</em> ¿Cuál es el primer número natural para el que, tras 250 pasos, no se ha llegado a 1?</p>
+</div>
+<div id="respuestas-al-test-5" class="section level3 unnumbered">
+<h3>Respuestas al test</h3>
+<p><em>(1)</em> 84576</p>
+<p><em>(2)</em> 156941</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="chap-plot.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="chap-distr.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/RicUIB/AprendeR2.1/edit/master/08chap07_Control.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["AprendeR-Parte-I.pdf", "AprendeR-Parte-I.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

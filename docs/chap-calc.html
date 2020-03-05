@@ -24,7 +24,7 @@
 <meta name="author" content="The UIB-AprendeR team" />
 
 
-<meta name="date" content="2020-03-02" />
+<meta name="date" content="2020-03-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -47,6 +47,12 @@
 
 
 
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="libs/d3-3.5.3/d3.min.js"></script>
+<link href="libs/colorbrewer-1/colorbrewer.css" rel="stylesheet" />
+<script src="libs/colorbrewer-1/colorbrewer.js"></script>
+<link href="libs/streamgraph-1/streamgraph.css" rel="stylesheet" />
+<script src="libs/streamgraph-binding-0.9.0/streamgraph.js"></script>
 
 
 <style type="text/css">
@@ -213,66 +219,87 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="chap-plot.html"><a href="chap-plot.html#respuestas-al-test-4"><i class="fa fa-check"></i>Respuestas al test</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="chap-distr.html"><a href="chap-distr.html"><i class="fa fa-check"></i><b>8</b> Distribuciones de probabilidad</a><ul>
-<li class="chapter" data-level="8.1" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios-6"><i class="fa fa-check"></i><b>8.1</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#test-5"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="8" data-path="chap-for.html"><a href="chap-for.html"><i class="fa fa-check"></i><b>8</b> Estructuras de control básicas</a><ul>
+<li class="chapter" data-level="8.1" data-path="chap-for.html"><a href="chap-for.html#bucles-de-tipo-for"><i class="fa fa-check"></i><b>8.1</b> Bucles de tipo “for”</a></li>
+<li class="chapter" data-level="8.2" data-path="chap-for.html"><a href="chap-for.html#bucles-de-tipo-while"><i class="fa fa-check"></i><b>8.2</b> Bucles de tipo “while”</a></li>
+<li class="chapter" data-level="8.3" data-path="chap-for.html"><a href="chap-for.html#estructuras-condicionales"><i class="fa fa-check"></i><b>8.3</b> Estructuras condicionales</a></li>
+<li class="chapter" data-level="8.4" data-path="chap-for.html"><a href="chap-for.html#guia-rapida-de-funciones-3"><i class="fa fa-check"></i><b>8.4</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="8.5" data-path="chap-for.html"><a href="chap-for.html#ejercicios-6"><i class="fa fa-check"></i><b>8.5</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-for.html"><a href="chap-for.html#test-5"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-for.html"><a href="chap-for.html#ejercicio-6"><i class="fa fa-check"></i>Ejercicio</a></li>
+<li class="chapter" data-level="" data-path="chap-for.html"><a href="chap-for.html#respuestas-al-test-5"><i class="fa fa-check"></i>Respuestas al test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="chap-distr.html"><a href="chap-distr.html"><i class="fa fa-check"></i><b>9</b> Distribuciones de probabilidad</a><ul>
+<li class="chapter" data-level="9.1" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios-7"><i class="fa fa-check"></i><b>9.1</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#test-6"><i class="fa fa-check"></i>Test</a></li>
 <li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#problemas"><i class="fa fa-check"></i>Problemas</a></li>
-<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test-5"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test-6"><i class="fa fa-check"></i>Respuestas al test</a></li>
 <li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#soluciones-sucintas-de-los-problemas"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>Parte II: Estadística descriptiva</b></span></li>
-<li class="chapter" data-level="9" data-path="chap-edqual.html"><a href="chap-edqual.html"><i class="fa fa-check"></i><b>9</b> Descripción de datos cualitativos</a><ul>
-<li class="chapter" data-level="9.1" data-path="chap-edqual.html"><a href="chap-edqual.html#sec:edqual"><i class="fa fa-check"></i><b>9.1</b> Frecuencias</a></li>
-<li class="chapter" data-level="9.2" data-path="chap-edqual.html"><a href="chap-edqual.html#tablas-unidimensionales-de-frecuencias"><i class="fa fa-check"></i><b>9.2</b> Tablas unidimensionales de frecuencias</a></li>
-<li class="chapter" data-level="9.3" data-path="chap-edqual.html"><a href="chap-edqual.html#tablas-bidimensionales-de-frecuencias"><i class="fa fa-check"></i><b>9.3</b> Tablas bidimensionales de frecuencias</a></li>
-<li class="chapter" data-level="9.4" data-path="chap-edqual.html"><a href="chap-edqual.html#tablas-multidimensionales-de-frecuencias"><i class="fa fa-check"></i><b>9.4</b> Tablas multidimensionales de frecuencias</a></li>
-<li class="chapter" data-level="9.5" data-path="chap-edqual.html"><a href="chap-edqual.html#tablas-a-partir-de-data-frames-de-variables-cualitativas"><i class="fa fa-check"></i><b>9.5</b> Tablas a partir de <em>data frames</em> de variables cualitativas</a></li>
-<li class="chapter" data-level="9.6" data-path="chap-edqual.html"><a href="chap-edqual.html#diagramas-de-barras"><i class="fa fa-check"></i><b>9.6</b> Diagramas de barras</a></li>
-<li class="chapter" data-level="9.7" data-path="chap-edqual.html"><a href="chap-edqual.html#otros-graficos-para-datos-cualitativos"><i class="fa fa-check"></i><b>9.7</b> Otros gráficos para datos cualitativos</a></li>
-<li class="chapter" data-level="9.8" data-path="chap-edqual.html"><a href="chap-edqual.html#sec:exqual"><i class="fa fa-check"></i><b>9.8</b> Un ejemplo completo</a></li>
-<li class="chapter" data-level="9.9" data-path="chap-edqual.html"><a href="chap-edqual.html#guia-rapida-de-funciones-3"><i class="fa fa-check"></i><b>9.9</b> Guía rápida de funciones</a></li>
-<li class="chapter" data-level="9.10" data-path="chap-edqual.html"><a href="chap-edqual.html#ejercicios-7"><i class="fa fa-check"></i><b>9.10</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-edqual.html"><a href="chap-edqual.html#test-6"><i class="fa fa-check"></i>Test</a></li>
-<li class="chapter" data-level="" data-path="chap-edqual.html"><a href="chap-edqual.html#ejercicio-6"><i class="fa fa-check"></i>Ejercicio</a></li>
-<li class="chapter" data-level="" data-path="chap-edqual.html"><a href="chap-edqual.html#respuestas-al-test-6"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="10" data-path="chap-edqual.html"><a href="chap-edqual.html"><i class="fa fa-check"></i><b>10</b> Descripción de datos cualitativos</a><ul>
+<li class="chapter" data-level="10.1" data-path="chap-edqual.html"><a href="chap-edqual.html#sec:edqual"><i class="fa fa-check"></i><b>10.1</b> Frecuencias</a></li>
+<li class="chapter" data-level="10.2" data-path="chap-edqual.html"><a href="chap-edqual.html#tablas-unidimensionales-de-frecuencias"><i class="fa fa-check"></i><b>10.2</b> Tablas unidimensionales de frecuencias</a></li>
+<li class="chapter" data-level="10.3" data-path="chap-edqual.html"><a href="chap-edqual.html#tablas-bidimensionales-de-frecuencias"><i class="fa fa-check"></i><b>10.3</b> Tablas bidimensionales de frecuencias</a></li>
+<li class="chapter" data-level="10.4" data-path="chap-edqual.html"><a href="chap-edqual.html#tablas-multidimensionales-de-frecuencias"><i class="fa fa-check"></i><b>10.4</b> Tablas multidimensionales de frecuencias</a></li>
+<li class="chapter" data-level="10.5" data-path="chap-edqual.html"><a href="chap-edqual.html#tablas-a-partir-de-data-frames-de-variables-cualitativas"><i class="fa fa-check"></i><b>10.5</b> Tablas a partir de <em>data frames</em> de variables cualitativas</a></li>
+<li class="chapter" data-level="10.6" data-path="chap-edqual.html"><a href="chap-edqual.html#diagramas-de-barras"><i class="fa fa-check"></i><b>10.6</b> Diagramas de barras</a></li>
+<li class="chapter" data-level="10.7" data-path="chap-edqual.html"><a href="chap-edqual.html#otros-graficos-para-datos-cualitativos"><i class="fa fa-check"></i><b>10.7</b> Otros gráficos para datos cualitativos</a></li>
+<li class="chapter" data-level="10.8" data-path="chap-edqual.html"><a href="chap-edqual.html#sec:exqual"><i class="fa fa-check"></i><b>10.8</b> Un ejemplo completo</a></li>
+<li class="chapter" data-level="10.9" data-path="chap-edqual.html"><a href="chap-edqual.html#guia-rapida-de-funciones-4"><i class="fa fa-check"></i><b>10.9</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="10.10" data-path="chap-edqual.html"><a href="chap-edqual.html#ejercicios-8"><i class="fa fa-check"></i><b>10.10</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-edqual.html"><a href="chap-edqual.html#test-7"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-edqual.html"><a href="chap-edqual.html#ejercicio-7"><i class="fa fa-check"></i>Ejercicio</a></li>
+<li class="chapter" data-level="" data-path="chap-edqual.html"><a href="chap-edqual.html#respuestas-al-test-7"><i class="fa fa-check"></i>Respuestas al test</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="chap-ord.html"><a href="chap-ord.html"><i class="fa fa-check"></i><b>10</b> Descripción de datos ordinales</a><ul>
-<li class="chapter" data-level="10.1" data-path="chap-ord.html"><a href="chap-ord.html#frecuencias-para-datos-ordinales"><i class="fa fa-check"></i><b>10.1</b> Frecuencias para datos ordinales</a></li>
-<li class="chapter" data-level="10.2" data-path="chap-ord.html"><a href="chap-ord.html#descripcion-de-datos-ordinales-con-r"><i class="fa fa-check"></i><b>10.2</b> Descripción de datos ordinales con R</a></li>
-<li class="chapter" data-level="10.3" data-path="chap-ord.html"><a href="chap-ord.html#guia-rapida-de-funciones-4"><i class="fa fa-check"></i><b>10.3</b> Guía rápida de funciones</a></li>
-<li class="chapter" data-level="10.4" data-path="chap-ord.html"><a href="chap-ord.html#ejercicios-8"><i class="fa fa-check"></i><b>10.4</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-ord.html"><a href="chap-ord.html#test-7"><i class="fa fa-check"></i>Test</a></li>
-<li class="chapter" data-level="" data-path="chap-ord.html"><a href="chap-ord.html#ejercicio-7"><i class="fa fa-check"></i>Ejercicio</a></li>
-<li class="chapter" data-level="" data-path="chap-ord.html"><a href="chap-ord.html#respuestas-al-test-7"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="11" data-path="chap-ord.html"><a href="chap-ord.html"><i class="fa fa-check"></i><b>11</b> Descripción de datos ordinales</a><ul>
+<li class="chapter" data-level="11.1" data-path="chap-ord.html"><a href="chap-ord.html#frecuencias-para-datos-ordinales"><i class="fa fa-check"></i><b>11.1</b> Frecuencias para datos ordinales</a></li>
+<li class="chapter" data-level="11.2" data-path="chap-ord.html"><a href="chap-ord.html#descripcion-de-datos-ordinales-con-r"><i class="fa fa-check"></i><b>11.2</b> Descripción de datos ordinales con R</a></li>
+<li class="chapter" data-level="11.3" data-path="chap-ord.html"><a href="chap-ord.html#guia-rapida-de-funciones-5"><i class="fa fa-check"></i><b>11.3</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="11.4" data-path="chap-ord.html"><a href="chap-ord.html#ejercicios-9"><i class="fa fa-check"></i><b>11.4</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-ord.html"><a href="chap-ord.html#test-8"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-ord.html"><a href="chap-ord.html#ejercicio-8"><i class="fa fa-check"></i>Ejercicio</a></li>
+<li class="chapter" data-level="" data-path="chap-ord.html"><a href="chap-ord.html#respuestas-al-test-8"><i class="fa fa-check"></i>Respuestas al test</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="chap-quan.html"><a href="chap-quan.html"><i class="fa fa-check"></i><b>11</b> Descripción de datos cuantitativos</a><ul>
-<li class="chapter" data-level="11.1" data-path="chap-quan.html"><a href="chap-quan.html#sec:quan"><i class="fa fa-check"></i><b>11.1</b> Frecuencias</a></li>
-<li class="chapter" data-level="11.2" data-path="chap-quan.html"><a href="chap-quan.html#medidas-de-tendencia-central"><i class="fa fa-check"></i><b>11.2</b> Medidas de tendencia central</a></li>
-<li class="chapter" data-level="11.3" data-path="chap-quan.html"><a href="chap-quan.html#medidas-de-posicion"><i class="fa fa-check"></i><b>11.3</b> Medidas de posición</a></li>
-<li class="chapter" data-level="11.4" data-path="chap-quan.html"><a href="chap-quan.html#medidas-de-dispersion"><i class="fa fa-check"></i><b>11.4</b> Medidas de dispersión</a></li>
-<li class="chapter" data-level="11.5" data-path="chap-quan.html"><a href="chap-quan.html#diagramas-de-caja"><i class="fa fa-check"></i><b>11.5</b> Diagramas de caja</a></li>
-<li class="chapter" data-level="11.6" data-path="chap-quan.html"><a href="chap-quan.html#guia-rapida-de-funciones-5"><i class="fa fa-check"></i><b>11.6</b> Guía rápida de funciones</a></li>
-<li class="chapter" data-level="11.7" data-path="chap-quan.html"><a href="chap-quan.html#ejercicios-9"><i class="fa fa-check"></i><b>11.7</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-quan.html"><a href="chap-quan.html#test-8"><i class="fa fa-check"></i>Test</a></li>
-<li class="chapter" data-level="" data-path="chap-quan.html"><a href="chap-quan.html#ejercicio-8"><i class="fa fa-check"></i>Ejercicio</a></li>
-<li class="chapter" data-level="" data-path="chap-quan.html"><a href="chap-quan.html#respuestas-al-test-8"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="12" data-path="chap-quan.html"><a href="chap-quan.html"><i class="fa fa-check"></i><b>12</b> Descripción de datos cuantitativos</a><ul>
+<li class="chapter" data-level="12.1" data-path="chap-quan.html"><a href="chap-quan.html#sec:quan"><i class="fa fa-check"></i><b>12.1</b> Frecuencias</a></li>
+<li class="chapter" data-level="12.2" data-path="chap-quan.html"><a href="chap-quan.html#medidas-de-tendencia-central"><i class="fa fa-check"></i><b>12.2</b> Medidas de tendencia central</a></li>
+<li class="chapter" data-level="12.3" data-path="chap-quan.html"><a href="chap-quan.html#medidas-de-posicion"><i class="fa fa-check"></i><b>12.3</b> Medidas de posición</a></li>
+<li class="chapter" data-level="12.4" data-path="chap-quan.html"><a href="chap-quan.html#medidas-de-dispersion"><i class="fa fa-check"></i><b>12.4</b> Medidas de dispersión</a></li>
+<li class="chapter" data-level="12.5" data-path="chap-quan.html"><a href="chap-quan.html#diagramas-de-caja"><i class="fa fa-check"></i><b>12.5</b> Diagramas de caja</a></li>
+<li class="chapter" data-level="12.6" data-path="chap-quan.html"><a href="chap-quan.html#guia-rapida-de-funciones-6"><i class="fa fa-check"></i><b>12.6</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="12.7" data-path="chap-quan.html"><a href="chap-quan.html#ejercicios-10"><i class="fa fa-check"></i><b>12.7</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-quan.html"><a href="chap-quan.html#test-9"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-quan.html"><a href="chap-quan.html#ejercicio-9"><i class="fa fa-check"></i>Ejercicio</a></li>
+<li class="chapter" data-level="" data-path="chap-quan.html"><a href="chap-quan.html#respuestas-al-test-9"><i class="fa fa-check"></i>Respuestas al test</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="chap-cut.html"><a href="chap-cut.html"><i class="fa fa-check"></i><b>12</b> Datos cuantitativos agrupados</a><ul>
-<li class="chapter" data-level="12.1" data-path="chap-cut.html"><a href="chap-cut.html#como-agrupar-datos"><i class="fa fa-check"></i><b>12.1</b> Cómo agrupar datos</a></li>
-<li class="chapter" data-level="12.2" data-path="chap-cut.html"><a href="chap-cut.html#sec:agrupR"><i class="fa fa-check"></i><b>12.2</b> Agrupamiento de datos con R</a></li>
-<li class="chapter" data-level="12.3" data-path="chap-cut.html"><a href="chap-cut.html#estadisticos-para-datos-agrupados"><i class="fa fa-check"></i><b>12.3</b> Estadísticos para datos agrupados</a></li>
-<li class="chapter" data-level="12.4" data-path="chap-cut.html"><a href="chap-cut.html#sec:hist"><i class="fa fa-check"></i><b>12.4</b> Histogramas</a></li>
-<li class="chapter" data-level="12.5" data-path="chap-cut.html"><a href="chap-cut.html#guia-rapida-de-funciones-6"><i class="fa fa-check"></i><b>12.5</b> Guía rápida de funciones</a></li>
-<li class="chapter" data-level="12.6" data-path="chap-cut.html"><a href="chap-cut.html#ejercicios-10"><i class="fa fa-check"></i><b>12.6</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-cut.html"><a href="chap-cut.html#test-9"><i class="fa fa-check"></i>Test</a></li>
-<li class="chapter" data-level="" data-path="chap-cut.html"><a href="chap-cut.html#ejercicio-9"><i class="fa fa-check"></i>Ejercicio</a></li>
-<li class="chapter" data-level="" data-path="chap-cut.html"><a href="chap-cut.html#respuestas-al-test-9"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="13" data-path="datos-cuantitativos-agrupados.html"><a href="datos-cuantitativos-agrupados.html"><i class="fa fa-check"></i><b>13</b> Datos cuantitativos agrupados</a><ul>
+<li class="chapter" data-level="13.1" data-path="datos-cuantitativos-agrupados.html"><a href="datos-cuantitativos-agrupados.html#como-agrupar-datos"><i class="fa fa-check"></i><b>13.1</b> Cómo agrupar datos</a></li>
+<li class="chapter" data-level="13.2" data-path="datos-cuantitativos-agrupados.html"><a href="datos-cuantitativos-agrupados.html#sec:agrupR"><i class="fa fa-check"></i><b>13.2</b> Agrupamiento de datos con R</a></li>
+<li class="chapter" data-level="13.3" data-path="datos-cuantitativos-agrupados.html"><a href="datos-cuantitativos-agrupados.html#estadisticos-para-datos-agrupados"><i class="fa fa-check"></i><b>13.3</b> Estadísticos para datos agrupados</a></li>
+<li class="chapter" data-level="13.4" data-path="datos-cuantitativos-agrupados.html"><a href="datos-cuantitativos-agrupados.html#sec:hist"><i class="fa fa-check"></i><b>13.4</b> Histogramas</a></li>
+<li class="chapter" data-level="13.5" data-path="datos-cuantitativos-agrupados.html"><a href="datos-cuantitativos-agrupados.html#guia-rapida-de-funciones-7"><i class="fa fa-check"></i><b>13.5</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="13.6" data-path="datos-cuantitativos-agrupados.html"><a href="datos-cuantitativos-agrupados.html#ejercicios-11"><i class="fa fa-check"></i><b>13.6</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="datos-cuantitativos-agrupados.html"><a href="datos-cuantitativos-agrupados.html#test-10"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="datos-cuantitativos-agrupados.html"><a href="datos-cuantitativos-agrupados.html#ejercicio-10"><i class="fa fa-check"></i>Ejercicio</a></li>
+<li class="chapter" data-level="" data-path="datos-cuantitativos-agrupados.html"><a href="datos-cuantitativos-agrupados.html#respuestas-al-test-10"><i class="fa fa-check"></i>Respuestas al test</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="14" data-path="graficos-avanzados.html"><a href="graficos-avanzados.html"><i class="fa fa-check"></i><b>14</b> Gráficos avanzados</a><ul>
+<li class="chapter" data-level="14.1" data-path="graficos-avanzados.html"><a href="graficos-avanzados.html#nubes-de-palabras-o-de-etiquetas-word-clouds"><i class="fa fa-check"></i><b>14.1</b> Nubes de palabras o de etiquetas (<em>word clouds</em>)</a></li>
+<li class="chapter" data-level="14.2" data-path="graficos-avanzados.html"><a href="graficos-avanzados.html#mapa-de-calor-o-heatmap"><i class="fa fa-check"></i><b>14.2</b> Mapa de calor o <em>heatmap</em></a></li>
+<li class="chapter" data-level="14.3" data-path="graficos-avanzados.html"><a href="graficos-avanzados.html#dendrogramas"><i class="fa fa-check"></i><b>14.3</b> Dendrogramas</a></li>
+<li class="chapter" data-level="14.4" data-path="graficos-avanzados.html"><a href="graficos-avanzados.html#graficos-de-burbujas-o-bubbles"><i class="fa fa-check"></i><b>14.4</b> Gráficos de burbujas o <em>bubbles</em></a></li>
+<li class="chapter" data-level="14.5" data-path="graficos-avanzados.html"><a href="graficos-avanzados.html#graficos-de-corrientes-o-streamgraphs"><i class="fa fa-check"></i><b>14.5</b> Gráficos de corrientes o <em>streamgraphs</em></a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/RicUIB/AprendeR2.1" target="blank">Publicado con  bookdown</a></li>
+
 </ul>
 
       </nav>
@@ -967,8 +994,8 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": null,
-"text": null
+"link": "https://github.com/RicUIB/AprendeR2.1/edit/master/02chap01_La_calculadora.Rmd",
+"text": "Edit"
 },
 "history": {
 "link": null,

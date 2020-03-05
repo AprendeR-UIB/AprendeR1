@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Lección 9 Descripción de datos cualitativos | AprendeR: Parte I</title>
+  <title>Lección 10 Descripción de datos cualitativos | AprendeR: Parte I</title>
   <meta name="description" content="Apuntes AprendeR bookdown::gitbook." />
   <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Lección 9 Descripción de datos cualitativos | AprendeR: Parte I" />
+  <meta property="og:title" content="Lección 10 Descripción de datos cualitativos | AprendeR: Parte I" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="AprendeR-UIB/AprendeR1" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Lección 9 Descripción de datos cualitativos | AprendeR: Parte I" />
+  <meta name="twitter:title" content="Lección 10 Descripción de datos cualitativos | AprendeR: Parte I" />
   
   <meta name="twitter:description" content="Apuntes AprendeR bookdown::gitbook." />
   
@@ -24,7 +24,7 @@
 <meta name="author" content="The UIB-AprendeR team" />
 
 
-<meta name="date" content="2020-03-02" />
+<meta name="date" content="2020-03-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -47,6 +47,12 @@
 
 
 
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="libs/d3-3.5.3/d3.min.js"></script>
+<link href="libs/colorbrewer-1/colorbrewer.css" rel="stylesheet" />
+<script src="libs/colorbrewer-1/colorbrewer.js"></script>
+<link href="libs/streamgraph-1/streamgraph.css" rel="stylesheet" />
+<script src="libs/streamgraph-binding-0.9.0/streamgraph.js"></script>
 
 
 <style type="text/css">
@@ -213,66 +219,87 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="chap-plot.html"><a href="chap-plot.html#respuestas-al-test-4"><i class="fa fa-check"></i>Respuestas al test</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="chap-distr.html"><a href="chap-distr.html"><i class="fa fa-check"></i><b>8</b> Distribuciones de probabilidad</a><ul>
-<li class="chapter" data-level="8.1" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios-6"><i class="fa fa-check"></i><b>8.1</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#test-5"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="8" data-path="chap-for.html"><a href="chap-for.html"><i class="fa fa-check"></i><b>8</b> Estructuras de control básicas</a><ul>
+<li class="chapter" data-level="8.1" data-path="chap-for.html"><a href="chap-for.html#bucles-de-tipo-for"><i class="fa fa-check"></i><b>8.1</b> Bucles de tipo “for”</a></li>
+<li class="chapter" data-level="8.2" data-path="chap-for.html"><a href="chap-for.html#bucles-de-tipo-while"><i class="fa fa-check"></i><b>8.2</b> Bucles de tipo “while”</a></li>
+<li class="chapter" data-level="8.3" data-path="chap-for.html"><a href="chap-for.html#estructuras-condicionales"><i class="fa fa-check"></i><b>8.3</b> Estructuras condicionales</a></li>
+<li class="chapter" data-level="8.4" data-path="chap-for.html"><a href="chap-for.html#guia-rapida-de-funciones-3"><i class="fa fa-check"></i><b>8.4</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="8.5" data-path="chap-for.html"><a href="chap-for.html#ejercicios-6"><i class="fa fa-check"></i><b>8.5</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-for.html"><a href="chap-for.html#test-5"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-for.html"><a href="chap-for.html#ejercicio-6"><i class="fa fa-check"></i>Ejercicio</a></li>
+<li class="chapter" data-level="" data-path="chap-for.html"><a href="chap-for.html#respuestas-al-test-5"><i class="fa fa-check"></i>Respuestas al test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="chap-distr.html"><a href="chap-distr.html"><i class="fa fa-check"></i><b>9</b> Distribuciones de probabilidad</a><ul>
+<li class="chapter" data-level="9.1" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios-7"><i class="fa fa-check"></i><b>9.1</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#test-6"><i class="fa fa-check"></i>Test</a></li>
 <li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#problemas"><i class="fa fa-check"></i>Problemas</a></li>
-<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test-5"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test-6"><i class="fa fa-check"></i>Respuestas al test</a></li>
 <li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#soluciones-sucintas-de-los-problemas"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>Parte II: Estadística descriptiva</b></span></li>
-<li class="chapter" data-level="9" data-path="chap-edqual.html"><a href="chap-edqual.html"><i class="fa fa-check"></i><b>9</b> Descripción de datos cualitativos</a><ul>
-<li class="chapter" data-level="9.1" data-path="chap-edqual.html"><a href="chap-edqual.html#sec:edqual"><i class="fa fa-check"></i><b>9.1</b> Frecuencias</a></li>
-<li class="chapter" data-level="9.2" data-path="chap-edqual.html"><a href="chap-edqual.html#tablas-unidimensionales-de-frecuencias"><i class="fa fa-check"></i><b>9.2</b> Tablas unidimensionales de frecuencias</a></li>
-<li class="chapter" data-level="9.3" data-path="chap-edqual.html"><a href="chap-edqual.html#tablas-bidimensionales-de-frecuencias"><i class="fa fa-check"></i><b>9.3</b> Tablas bidimensionales de frecuencias</a></li>
-<li class="chapter" data-level="9.4" data-path="chap-edqual.html"><a href="chap-edqual.html#tablas-multidimensionales-de-frecuencias"><i class="fa fa-check"></i><b>9.4</b> Tablas multidimensionales de frecuencias</a></li>
-<li class="chapter" data-level="9.5" data-path="chap-edqual.html"><a href="chap-edqual.html#tablas-a-partir-de-data-frames-de-variables-cualitativas"><i class="fa fa-check"></i><b>9.5</b> Tablas a partir de <em>data frames</em> de variables cualitativas</a></li>
-<li class="chapter" data-level="9.6" data-path="chap-edqual.html"><a href="chap-edqual.html#diagramas-de-barras"><i class="fa fa-check"></i><b>9.6</b> Diagramas de barras</a></li>
-<li class="chapter" data-level="9.7" data-path="chap-edqual.html"><a href="chap-edqual.html#otros-graficos-para-datos-cualitativos"><i class="fa fa-check"></i><b>9.7</b> Otros gráficos para datos cualitativos</a></li>
-<li class="chapter" data-level="9.8" data-path="chap-edqual.html"><a href="chap-edqual.html#sec:exqual"><i class="fa fa-check"></i><b>9.8</b> Un ejemplo completo</a></li>
-<li class="chapter" data-level="9.9" data-path="chap-edqual.html"><a href="chap-edqual.html#guia-rapida-de-funciones-3"><i class="fa fa-check"></i><b>9.9</b> Guía rápida de funciones</a></li>
-<li class="chapter" data-level="9.10" data-path="chap-edqual.html"><a href="chap-edqual.html#ejercicios-7"><i class="fa fa-check"></i><b>9.10</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-edqual.html"><a href="chap-edqual.html#test-6"><i class="fa fa-check"></i>Test</a></li>
-<li class="chapter" data-level="" data-path="chap-edqual.html"><a href="chap-edqual.html#ejercicio-6"><i class="fa fa-check"></i>Ejercicio</a></li>
-<li class="chapter" data-level="" data-path="chap-edqual.html"><a href="chap-edqual.html#respuestas-al-test-6"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="10" data-path="chap-edqual.html"><a href="chap-edqual.html"><i class="fa fa-check"></i><b>10</b> Descripción de datos cualitativos</a><ul>
+<li class="chapter" data-level="10.1" data-path="chap-edqual.html"><a href="chap-edqual.html#sec:edqual"><i class="fa fa-check"></i><b>10.1</b> Frecuencias</a></li>
+<li class="chapter" data-level="10.2" data-path="chap-edqual.html"><a href="chap-edqual.html#tablas-unidimensionales-de-frecuencias"><i class="fa fa-check"></i><b>10.2</b> Tablas unidimensionales de frecuencias</a></li>
+<li class="chapter" data-level="10.3" data-path="chap-edqual.html"><a href="chap-edqual.html#tablas-bidimensionales-de-frecuencias"><i class="fa fa-check"></i><b>10.3</b> Tablas bidimensionales de frecuencias</a></li>
+<li class="chapter" data-level="10.4" data-path="chap-edqual.html"><a href="chap-edqual.html#tablas-multidimensionales-de-frecuencias"><i class="fa fa-check"></i><b>10.4</b> Tablas multidimensionales de frecuencias</a></li>
+<li class="chapter" data-level="10.5" data-path="chap-edqual.html"><a href="chap-edqual.html#tablas-a-partir-de-data-frames-de-variables-cualitativas"><i class="fa fa-check"></i><b>10.5</b> Tablas a partir de <em>data frames</em> de variables cualitativas</a></li>
+<li class="chapter" data-level="10.6" data-path="chap-edqual.html"><a href="chap-edqual.html#diagramas-de-barras"><i class="fa fa-check"></i><b>10.6</b> Diagramas de barras</a></li>
+<li class="chapter" data-level="10.7" data-path="chap-edqual.html"><a href="chap-edqual.html#otros-graficos-para-datos-cualitativos"><i class="fa fa-check"></i><b>10.7</b> Otros gráficos para datos cualitativos</a></li>
+<li class="chapter" data-level="10.8" data-path="chap-edqual.html"><a href="chap-edqual.html#sec:exqual"><i class="fa fa-check"></i><b>10.8</b> Un ejemplo completo</a></li>
+<li class="chapter" data-level="10.9" data-path="chap-edqual.html"><a href="chap-edqual.html#guia-rapida-de-funciones-4"><i class="fa fa-check"></i><b>10.9</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="10.10" data-path="chap-edqual.html"><a href="chap-edqual.html#ejercicios-8"><i class="fa fa-check"></i><b>10.10</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-edqual.html"><a href="chap-edqual.html#test-7"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-edqual.html"><a href="chap-edqual.html#ejercicio-7"><i class="fa fa-check"></i>Ejercicio</a></li>
+<li class="chapter" data-level="" data-path="chap-edqual.html"><a href="chap-edqual.html#respuestas-al-test-7"><i class="fa fa-check"></i>Respuestas al test</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="chap-ord.html"><a href="chap-ord.html"><i class="fa fa-check"></i><b>10</b> Descripción de datos ordinales</a><ul>
-<li class="chapter" data-level="10.1" data-path="chap-ord.html"><a href="chap-ord.html#frecuencias-para-datos-ordinales"><i class="fa fa-check"></i><b>10.1</b> Frecuencias para datos ordinales</a></li>
-<li class="chapter" data-level="10.2" data-path="chap-ord.html"><a href="chap-ord.html#descripcion-de-datos-ordinales-con-r"><i class="fa fa-check"></i><b>10.2</b> Descripción de datos ordinales con R</a></li>
-<li class="chapter" data-level="10.3" data-path="chap-ord.html"><a href="chap-ord.html#guia-rapida-de-funciones-4"><i class="fa fa-check"></i><b>10.3</b> Guía rápida de funciones</a></li>
-<li class="chapter" data-level="10.4" data-path="chap-ord.html"><a href="chap-ord.html#ejercicios-8"><i class="fa fa-check"></i><b>10.4</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-ord.html"><a href="chap-ord.html#test-7"><i class="fa fa-check"></i>Test</a></li>
-<li class="chapter" data-level="" data-path="chap-ord.html"><a href="chap-ord.html#ejercicio-7"><i class="fa fa-check"></i>Ejercicio</a></li>
-<li class="chapter" data-level="" data-path="chap-ord.html"><a href="chap-ord.html#respuestas-al-test-7"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="11" data-path="chap-ord.html"><a href="chap-ord.html"><i class="fa fa-check"></i><b>11</b> Descripción de datos ordinales</a><ul>
+<li class="chapter" data-level="11.1" data-path="chap-ord.html"><a href="chap-ord.html#frecuencias-para-datos-ordinales"><i class="fa fa-check"></i><b>11.1</b> Frecuencias para datos ordinales</a></li>
+<li class="chapter" data-level="11.2" data-path="chap-ord.html"><a href="chap-ord.html#descripcion-de-datos-ordinales-con-r"><i class="fa fa-check"></i><b>11.2</b> Descripción de datos ordinales con R</a></li>
+<li class="chapter" data-level="11.3" data-path="chap-ord.html"><a href="chap-ord.html#guia-rapida-de-funciones-5"><i class="fa fa-check"></i><b>11.3</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="11.4" data-path="chap-ord.html"><a href="chap-ord.html#ejercicios-9"><i class="fa fa-check"></i><b>11.4</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-ord.html"><a href="chap-ord.html#test-8"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-ord.html"><a href="chap-ord.html#ejercicio-8"><i class="fa fa-check"></i>Ejercicio</a></li>
+<li class="chapter" data-level="" data-path="chap-ord.html"><a href="chap-ord.html#respuestas-al-test-8"><i class="fa fa-check"></i>Respuestas al test</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="chap-quan.html"><a href="chap-quan.html"><i class="fa fa-check"></i><b>11</b> Descripción de datos cuantitativos</a><ul>
-<li class="chapter" data-level="11.1" data-path="chap-quan.html"><a href="chap-quan.html#sec:quan"><i class="fa fa-check"></i><b>11.1</b> Frecuencias</a></li>
-<li class="chapter" data-level="11.2" data-path="chap-quan.html"><a href="chap-quan.html#medidas-de-tendencia-central"><i class="fa fa-check"></i><b>11.2</b> Medidas de tendencia central</a></li>
-<li class="chapter" data-level="11.3" data-path="chap-quan.html"><a href="chap-quan.html#medidas-de-posicion"><i class="fa fa-check"></i><b>11.3</b> Medidas de posición</a></li>
-<li class="chapter" data-level="11.4" data-path="chap-quan.html"><a href="chap-quan.html#medidas-de-dispersion"><i class="fa fa-check"></i><b>11.4</b> Medidas de dispersión</a></li>
-<li class="chapter" data-level="11.5" data-path="chap-quan.html"><a href="chap-quan.html#diagramas-de-caja"><i class="fa fa-check"></i><b>11.5</b> Diagramas de caja</a></li>
-<li class="chapter" data-level="11.6" data-path="chap-quan.html"><a href="chap-quan.html#guia-rapida-de-funciones-5"><i class="fa fa-check"></i><b>11.6</b> Guía rápida de funciones</a></li>
-<li class="chapter" data-level="11.7" data-path="chap-quan.html"><a href="chap-quan.html#ejercicios-9"><i class="fa fa-check"></i><b>11.7</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-quan.html"><a href="chap-quan.html#test-8"><i class="fa fa-check"></i>Test</a></li>
-<li class="chapter" data-level="" data-path="chap-quan.html"><a href="chap-quan.html#ejercicio-8"><i class="fa fa-check"></i>Ejercicio</a></li>
-<li class="chapter" data-level="" data-path="chap-quan.html"><a href="chap-quan.html#respuestas-al-test-8"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="12" data-path="chap-quan.html"><a href="chap-quan.html"><i class="fa fa-check"></i><b>12</b> Descripción de datos cuantitativos</a><ul>
+<li class="chapter" data-level="12.1" data-path="chap-quan.html"><a href="chap-quan.html#sec:quan"><i class="fa fa-check"></i><b>12.1</b> Frecuencias</a></li>
+<li class="chapter" data-level="12.2" data-path="chap-quan.html"><a href="chap-quan.html#medidas-de-tendencia-central"><i class="fa fa-check"></i><b>12.2</b> Medidas de tendencia central</a></li>
+<li class="chapter" data-level="12.3" data-path="chap-quan.html"><a href="chap-quan.html#medidas-de-posicion"><i class="fa fa-check"></i><b>12.3</b> Medidas de posición</a></li>
+<li class="chapter" data-level="12.4" data-path="chap-quan.html"><a href="chap-quan.html#medidas-de-dispersion"><i class="fa fa-check"></i><b>12.4</b> Medidas de dispersión</a></li>
+<li class="chapter" data-level="12.5" data-path="chap-quan.html"><a href="chap-quan.html#diagramas-de-caja"><i class="fa fa-check"></i><b>12.5</b> Diagramas de caja</a></li>
+<li class="chapter" data-level="12.6" data-path="chap-quan.html"><a href="chap-quan.html#guia-rapida-de-funciones-6"><i class="fa fa-check"></i><b>12.6</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="12.7" data-path="chap-quan.html"><a href="chap-quan.html#ejercicios-10"><i class="fa fa-check"></i><b>12.7</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-quan.html"><a href="chap-quan.html#test-9"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-quan.html"><a href="chap-quan.html#ejercicio-9"><i class="fa fa-check"></i>Ejercicio</a></li>
+<li class="chapter" data-level="" data-path="chap-quan.html"><a href="chap-quan.html#respuestas-al-test-9"><i class="fa fa-check"></i>Respuestas al test</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="chap-cut.html"><a href="chap-cut.html"><i class="fa fa-check"></i><b>12</b> Datos cuantitativos agrupados</a><ul>
-<li class="chapter" data-level="12.1" data-path="chap-cut.html"><a href="chap-cut.html#como-agrupar-datos"><i class="fa fa-check"></i><b>12.1</b> Cómo agrupar datos</a></li>
-<li class="chapter" data-level="12.2" data-path="chap-cut.html"><a href="chap-cut.html#sec:agrupR"><i class="fa fa-check"></i><b>12.2</b> Agrupamiento de datos con R</a></li>
-<li class="chapter" data-level="12.3" data-path="chap-cut.html"><a href="chap-cut.html#estadisticos-para-datos-agrupados"><i class="fa fa-check"></i><b>12.3</b> Estadísticos para datos agrupados</a></li>
-<li class="chapter" data-level="12.4" data-path="chap-cut.html"><a href="chap-cut.html#sec:hist"><i class="fa fa-check"></i><b>12.4</b> Histogramas</a></li>
-<li class="chapter" data-level="12.5" data-path="chap-cut.html"><a href="chap-cut.html#guia-rapida-de-funciones-6"><i class="fa fa-check"></i><b>12.5</b> Guía rápida de funciones</a></li>
-<li class="chapter" data-level="12.6" data-path="chap-cut.html"><a href="chap-cut.html#ejercicios-10"><i class="fa fa-check"></i><b>12.6</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-cut.html"><a href="chap-cut.html#test-9"><i class="fa fa-check"></i>Test</a></li>
-<li class="chapter" data-level="" data-path="chap-cut.html"><a href="chap-cut.html#ejercicio-9"><i class="fa fa-check"></i>Ejercicio</a></li>
-<li class="chapter" data-level="" data-path="chap-cut.html"><a href="chap-cut.html#respuestas-al-test-9"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="13" data-path="datos-cuantitativos-agrupados.html"><a href="datos-cuantitativos-agrupados.html"><i class="fa fa-check"></i><b>13</b> Datos cuantitativos agrupados</a><ul>
+<li class="chapter" data-level="13.1" data-path="datos-cuantitativos-agrupados.html"><a href="datos-cuantitativos-agrupados.html#como-agrupar-datos"><i class="fa fa-check"></i><b>13.1</b> Cómo agrupar datos</a></li>
+<li class="chapter" data-level="13.2" data-path="datos-cuantitativos-agrupados.html"><a href="datos-cuantitativos-agrupados.html#sec:agrupR"><i class="fa fa-check"></i><b>13.2</b> Agrupamiento de datos con R</a></li>
+<li class="chapter" data-level="13.3" data-path="datos-cuantitativos-agrupados.html"><a href="datos-cuantitativos-agrupados.html#estadisticos-para-datos-agrupados"><i class="fa fa-check"></i><b>13.3</b> Estadísticos para datos agrupados</a></li>
+<li class="chapter" data-level="13.4" data-path="datos-cuantitativos-agrupados.html"><a href="datos-cuantitativos-agrupados.html#sec:hist"><i class="fa fa-check"></i><b>13.4</b> Histogramas</a></li>
+<li class="chapter" data-level="13.5" data-path="datos-cuantitativos-agrupados.html"><a href="datos-cuantitativos-agrupados.html#guia-rapida-de-funciones-7"><i class="fa fa-check"></i><b>13.5</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="13.6" data-path="datos-cuantitativos-agrupados.html"><a href="datos-cuantitativos-agrupados.html#ejercicios-11"><i class="fa fa-check"></i><b>13.6</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="datos-cuantitativos-agrupados.html"><a href="datos-cuantitativos-agrupados.html#test-10"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="datos-cuantitativos-agrupados.html"><a href="datos-cuantitativos-agrupados.html#ejercicio-10"><i class="fa fa-check"></i>Ejercicio</a></li>
+<li class="chapter" data-level="" data-path="datos-cuantitativos-agrupados.html"><a href="datos-cuantitativos-agrupados.html#respuestas-al-test-10"><i class="fa fa-check"></i>Respuestas al test</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="14" data-path="graficos-avanzados.html"><a href="graficos-avanzados.html"><i class="fa fa-check"></i><b>14</b> Gráficos avanzados</a><ul>
+<li class="chapter" data-level="14.1" data-path="graficos-avanzados.html"><a href="graficos-avanzados.html#nubes-de-palabras-o-de-etiquetas-word-clouds"><i class="fa fa-check"></i><b>14.1</b> Nubes de palabras o de etiquetas (<em>word clouds</em>)</a></li>
+<li class="chapter" data-level="14.2" data-path="graficos-avanzados.html"><a href="graficos-avanzados.html#mapa-de-calor-o-heatmap"><i class="fa fa-check"></i><b>14.2</b> Mapa de calor o <em>heatmap</em></a></li>
+<li class="chapter" data-level="14.3" data-path="graficos-avanzados.html"><a href="graficos-avanzados.html#dendrogramas"><i class="fa fa-check"></i><b>14.3</b> Dendrogramas</a></li>
+<li class="chapter" data-level="14.4" data-path="graficos-avanzados.html"><a href="graficos-avanzados.html#graficos-de-burbujas-o-bubbles"><i class="fa fa-check"></i><b>14.4</b> Gráficos de burbujas o <em>bubbles</em></a></li>
+<li class="chapter" data-level="14.5" data-path="graficos-avanzados.html"><a href="graficos-avanzados.html#graficos-de-corrientes-o-streamgraphs"><i class="fa fa-check"></i><b>14.5</b> Gráficos de corrientes o <em>streamgraphs</em></a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/RicUIB/AprendeR2.1" target="blank">Publicado con  bookdown</a></li>
+
 </ul>
 
       </nav>
@@ -291,16 +318,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="chap:edqual" class="section level1">
-<h1><span class="header-section-number">Lección 9</span> Descripción de datos cualitativos</h1>
+<h1><span class="header-section-number">Lección 10</span> Descripción de datos cualitativos</h1>
 <p>Los <strong>datos cualitativos</strong> corresponden a observaciones sobre cualidades de un objeto o individuo, tales como su especie o su sexo, que pueden ser iguales o diferentes, pero que no admiten ningún otro tipo de comparación significativa: por ejemplo, datos para los que no tenga ningún sentido preguntarse si uno es más grande que otro, ni efectuar operaciones aritméticas con ellos, aunque estén representados por números. Llamaremos <strong>variable cualitativa</strong> a una lista de observaciones de un tipo de datos cualitativos sobre un conjunto concreto de objetos, y <strong>niveles</strong>, como en los factores, a los diferentes valores que pueden tomar estos datos; por ejemplo, los dos niveles de una variable <em>Sexo</em> serían “Macho” y “Hembra”, o sinónimos.</p>
 <p>Con R, usaremos vectores y factores para representar variables cualitativas. Los factores nos servirán para agrupar las observaciones según los niveles de la variable. De esta manera podremos segmentar la población que representa la variable en grupos o subpoblaciones, asignando un grupo a cada nivel, y podremos comparar el comportamiento de otras variables sobre estos grupos.</p>
 <div id="sec:edqual" class="section level2">
-<h2><span class="header-section-number">9.1</span> Frecuencias</h2>
+<h2><span class="header-section-number">10.1</span> Frecuencias</h2>
 <p>Los estadísticos básicos para datos cualitativos son sencillos: dada una variable
 cualitativa, para cada uno de sus niveles podemos contar cuántos datos hay en ese nivel (la <strong>frecuencia absoluta</strong> del nivel) y qué fracción del total representan (la <strong>frecuencia relativa</strong> del nivel) y nada más.</p>
 
 <div class="example">
-<p><span id="exm:ex1601" class="example"><strong>Ejemplo 9.1  </strong></span>Supongamos que se ha realizado un seguimiento a 20 personas ingresadas en un geriátrico. Uno de los datos que se han recogido sobre estas personas ha sido su sexo. El resultado ha sido una variable cualitativa formada por las 20 observaciones siguientes:</p>
+<p><span id="exm:ex1601" class="example"><strong>Ejemplo 10.1  </strong></span>Supongamos que se ha realizado un seguimiento a 20 personas ingresadas en un geriátrico. Uno de los datos que se han recogido sobre estas personas ha sido su sexo. El resultado ha sido una variable cualitativa formada por las 20 observaciones siguientes:</p>
 </div>
 
 <p style="text-align:center">
@@ -330,7 +357,7 @@ que <span class="math inline">\(n=20\)</span> (el número de observaciones efect
 <li><p>La <strong>frecuencia relativa</strong> del nivel <span class="math inline">\(l_j\)</span> en esta variable cualitativa es la fracción <span class="math inline">\(f_j={n_j}/{n}\)</span>. Es decir, la fracción (en tanto por uno) de observaciones que corresponden a este nivel. El tanto por ciento de observaciones del nivel <span class="math inline">\(l_j\)</span> es entonces <span class="math inline">\(f_j\cdot 100\%\)</span>.</p></li>
 <li><p>La <strong>moda</strong> de esta variable cualitativa es su nivel, o niveles, de mayor frecuencia (absoluta o relativa, tanto da).</p></li>
 </ul>
-<p>La tabla siguiente resume las frecuencias absolutas y relativas de la variable cualitativa del Ejemplo <a href="chap-edqual.html#exm:ex1601">9.1</a>, con las notaciones que acabamos de introducir. Su moda es el nivel <em>Mujer</em>.</p>
+<p>La tabla siguiente resume las frecuencias absolutas y relativas de la variable cualitativa del Ejemplo <a href="chap-edqual.html#exm:ex1601">10.1</a>, con las notaciones que acabamos de introducir. Su moda es el nivel <em>Mujer</em>.</p>
 <p><span class="math display">\[
 \begin{array}{|c||rrr|}
 \hline \mathbf{Sexo} &amp; n_j &amp; f_j &amp; \% \\\hline\hline
@@ -341,36 +368,36 @@ Total &amp; 20 &amp; 1 &amp; 100\% \\\hline
 \]</span></p>
 </div>
 <div id="tablas-unidimensionales-de-frecuencias" class="section level2">
-<h2><span class="header-section-number">9.2</span> Tablas unidimensionales de frecuencias</h2>
+<h2><span class="header-section-number">10.2</span> Tablas unidimensionales de frecuencias</h2>
 <p>Supongamos que tenemos una variable cualitativa guardada en un vector o un factor (para simplificar, en lo que queda de sección, diremos <strong>vector</strong> para referirnos genéricamente tanto a un vector como a un factor). Por ejemplo:</p>
-<div class="sourceCode" id="cb1161"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1161-1" data-line-number="1">x=<span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb1161-2" data-line-number="2">x</a></code></pre></div>
+<div class="sourceCode" id="cb1199"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1199-1" data-line-number="1">x=<span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb1199-2" data-line-number="2">x</a></code></pre></div>
 <pre><code>##  [1] 3 2 5 1 3 1 5 6 2 2 2 1 3 5 2</code></pre>
-<div class="sourceCode" id="cb1163"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1163-1" data-line-number="1">Respuestas=<span class="kw">factor</span>(<span class="kw">c</span>(<span class="st">&quot;No&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;Sí&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;Sí&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;Sí&quot;</span>))</a>
-<a class="sourceLine" id="cb1163-2" data-line-number="2">Respuestas</a></code></pre></div>
+<div class="sourceCode" id="cb1201"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1201-1" data-line-number="1">Respuestas=<span class="kw">factor</span>(<span class="kw">c</span>(<span class="st">&quot;No&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;Sí&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;Sí&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;Sí&quot;</span>))</a>
+<a class="sourceLine" id="cb1201-2" data-line-number="2">Respuestas</a></code></pre></div>
 <pre><code>## [1] No No Sí No Sí No No Sí
 ## Levels: No Sí</code></pre>
 <p>Con R, la <strong>tabla de frecuencias absolutas</strong> de un vector que representa una variable cualitativa se calcula con la función <code>table</code>. En nuestros ejemplos:</p>
-<div class="sourceCode" id="cb1165"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1165-1" data-line-number="1"><span class="kw">table</span>(x)</a></code></pre></div>
+<div class="sourceCode" id="cb1203"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1203-1" data-line-number="1"><span class="kw">table</span>(x)</a></code></pre></div>
 <pre><code>## x
 ## 1 2 3 5 6 
 ## 3 5 3 3 1</code></pre>
-<div class="sourceCode" id="cb1167"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1167-1" data-line-number="1"><span class="kw">table</span>(Respuestas)</a></code></pre></div>
+<div class="sourceCode" id="cb1205"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1205-1" data-line-number="1"><span class="kw">table</span>(Respuestas)</a></code></pre></div>
 <pre><code>## Respuestas
 ## No Sí 
 ##  5  3</code></pre>
 <p>El resultado de una función <code>table</code> es un objeto de datos de un tipo nuevo: una <strong>tabla de contingencia</strong>, una <em>table</em> en el argot de R. Como vemos, al aplicar <code>table</code> a un vector obtenemos una tabla unidimensional formada por una fila con los niveles de la variable y una segunda fila donde, debajo de cada nivel, aparece su frecuencia absoluta en el vector.</p>
 <p>Los nombres de las columnas de una tabla unidimensional se obtienen con la función <code>names</code>.</p>
-<div class="sourceCode" id="cb1169"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1169-1" data-line-number="1"><span class="kw">names</span>(<span class="kw">table</span>(x))</a></code></pre></div>
+<div class="sourceCode" id="cb1207"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1207-1" data-line-number="1"><span class="kw">names</span>(<span class="kw">table</span>(x))</a></code></pre></div>
 <pre><code>## [1] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;5&quot; &quot;6&quot;</code></pre>
-<div class="sourceCode" id="cb1171"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1171-1" data-line-number="1"><span class="kw">names</span>(<span class="kw">table</span>(Respuestas))</a></code></pre></div>
+<div class="sourceCode" id="cb1209"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1209-1" data-line-number="1"><span class="kw">names</span>(<span class="kw">table</span>(Respuestas))</a></code></pre></div>
 <pre><code>## [1] &quot;No&quot; &quot;Sí&quot;</code></pre>
 <p>Habréis observado que en la <code>table</code> de un vector sólo aparecen los nombres de los niveles presentes en el vector. Si el tipo de datos cualitativos usado tenía más niveles y queremos que aparezcan explícitamente en la tabla (con frecuencia 0), hay que transformar el vector en un factor con los niveles deseados.</p>
-<div class="sourceCode" id="cb1173"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1173-1" data-line-number="1">z=<span class="kw">factor</span>(x, <span class="dt">levels=</span><span class="dv">1</span><span class="op">:</span><span class="dv">7</span>)  <span class="co">#Los niveles serán 1,2,3,4,5,6,7</span></a>
-<a class="sourceLine" id="cb1173-2" data-line-number="2">z</a></code></pre></div>
+<div class="sourceCode" id="cb1211"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1211-1" data-line-number="1">z=<span class="kw">factor</span>(x, <span class="dt">levels=</span><span class="dv">1</span><span class="op">:</span><span class="dv">7</span>)  <span class="co">#Los niveles serán 1,2,3,4,5,6,7</span></a>
+<a class="sourceLine" id="cb1211-2" data-line-number="2">z</a></code></pre></div>
 <pre><code>##  [1] 3 2 5 1 3 1 5 6 2 2 2 1 3 5 2
 ## Levels: 1 2 3 4 5 6 7</code></pre>
-<div class="sourceCode" id="cb1175"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1175-1" data-line-number="1"><span class="kw">table</span>(z)</a></code></pre></div>
+<div class="sourceCode" id="cb1213"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1213-1" data-line-number="1"><span class="kw">table</span>(z)</a></code></pre></div>
 <pre><code>## z
 ## 1 2 3 4 5 6 7 
 ## 3 5 3 0 3 1 0</code></pre>
@@ -378,112 +405,112 @@ Total &amp; 20 &amp; 1 &amp; 100\% \\\hline
 <ul>
 <li>La cuarta columna de <code>table(x)</code>:</li>
 </ul>
-<div class="sourceCode" id="cb1177"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1177-1" data-line-number="1"><span class="kw">table</span>(x)[<span class="dv">4</span>] </a></code></pre></div>
+<div class="sourceCode" id="cb1215"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1215-1" data-line-number="1"><span class="kw">table</span>(x)[<span class="dv">4</span>] </a></code></pre></div>
 <pre><code>## 5 
 ## 3</code></pre>
 <ul>
 <li>La columna de <code>table(x)</code> correspondiente al nivel 5:</li>
 </ul>
-<div class="sourceCode" id="cb1179"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1179-1" data-line-number="1"><span class="kw">table</span>(x)[<span class="st">&quot;5&quot;</span>]</a></code></pre></div>
+<div class="sourceCode" id="cb1217"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1217-1" data-line-number="1"><span class="kw">table</span>(x)[<span class="st">&quot;5&quot;</span>]</a></code></pre></div>
 <pre><code>## 5 
 ## 3</code></pre>
 <ul>
 <li>El triple de la segunda columna de <code>table(x)</code>:</li>
 </ul>
-<div class="sourceCode" id="cb1181"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1181-1" data-line-number="1"><span class="dv">3</span><span class="op">*</span><span class="kw">table</span>(x)[<span class="dv">2</span>]</a></code></pre></div>
+<div class="sourceCode" id="cb1219"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1219-1" data-line-number="1"><span class="dv">3</span><span class="op">*</span><span class="kw">table</span>(x)[<span class="dv">2</span>]</a></code></pre></div>
 <pre><code>##  2 
 ## 15</code></pre>
 <p>Las tablas de contingencia aceptan la mayoría de las funciones explicadas para vectores. Por ejemplo:</p>
 <ul>
 <li>Suma de las entradas de <code>table(x)</code>:</li>
 </ul>
-<div class="sourceCode" id="cb1183"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1183-1" data-line-number="1"><span class="kw">sum</span>(<span class="kw">table</span>(x))</a></code></pre></div>
+<div class="sourceCode" id="cb1221"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1221-1" data-line-number="1"><span class="kw">sum</span>(<span class="kw">table</span>(x))</a></code></pre></div>
 <pre><code>## [1] 15</code></pre>
 <ul>
 <li>Raíces cuadradas de las entradas de <code>table(Respuestas)</code>:</li>
 </ul>
-<div class="sourceCode" id="cb1185"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1185-1" data-line-number="1"><span class="kw">sqrt</span>(<span class="kw">table</span>(Respuestas))</a></code></pre></div>
+<div class="sourceCode" id="cb1223"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1223-1" data-line-number="1"><span class="kw">sqrt</span>(<span class="kw">table</span>(Respuestas))</a></code></pre></div>
 <pre><code>## Respuestas
 ##       No       Sí 
 ## 2.236068 1.732051</code></pre>
 <p>La <strong>tabla de frecuencias relativas</strong> de un vector se puede calcular aplicando la función <code>prop.table</code> a su <code>table</code>. El resultado vuelve a ser una tabla de contingencia unidimensional.</p>
-<div class="sourceCode" id="cb1187"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1187-1" data-line-number="1"><span class="kw">prop.table</span>(<span class="kw">table</span>(x))</a></code></pre></div>
+<div class="sourceCode" id="cb1225"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1225-1" data-line-number="1"><span class="kw">prop.table</span>(<span class="kw">table</span>(x))</a></code></pre></div>
 <pre><code>## x
 ##          1          2          3          5          6 
 ## 0.20000000 0.33333333 0.20000000 0.20000000 0.06666667</code></pre>
-<div class="sourceCode" id="cb1189"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1189-1" data-line-number="1"><span class="kw">prop.table</span>(<span class="kw">table</span>(Respuestas))</a></code></pre></div>
+<div class="sourceCode" id="cb1227"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1227-1" data-line-number="1"><span class="kw">prop.table</span>(<span class="kw">table</span>(Respuestas))</a></code></pre></div>
 <pre><code>## Respuestas
 ##    No    Sí 
 ## 0.625 0.375</code></pre>
 <p><strong>¡Atención!</strong> La función <code>prop.table</code> se tiene que aplicar al resultado de <code>table</code>, no al vector original. Si aplicamos <code>prop.table</code> a un vector de palabras o a un factor, dará un error, pero si la aplicamos a un vector de números, nos dará una tabla. Esta tabla <em>no es la tabla de frecuencias relativas</em> de la variable cualitativa representada por el vector, sino la de una variable que tuviera como tabla de frecuencias absolutas este vector de números, entendiendo que cada entrada del vector representa la frecuencia de un nivel diferente. Por ejemplo, aplicando <code>prop.table</code> a nuestro vector <code>x</code> obtenemos:</p>
-<div class="sourceCode" id="cb1191"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1191-1" data-line-number="1"><span class="kw">prop.table</span>(x)</a></code></pre></div>
+<div class="sourceCode" id="cb1229"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1229-1" data-line-number="1"><span class="kw">prop.table</span>(x)</a></code></pre></div>
 <pre><code>##  [1] 0.06976744 0.04651163 0.11627907 0.02325581 0.06976744 0.02325581
 ##  [7] 0.11627907 0.13953488 0.04651163 0.04651163 0.04651163 0.02325581
 ## [13] 0.06976744 0.11627907 0.04651163</code></pre>
 <p>que no es la tabla de frecuencias relativas de <code>x</code>. Veamos otro ejemplo aun más evidente:</p>
-<div class="sourceCode" id="cb1193"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1193-1" data-line-number="1">X=<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb1193-2" data-line-number="2"><span class="kw">prop.table</span>(<span class="kw">table</span>(X))</a></code></pre></div>
+<div class="sourceCode" id="cb1231"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1231-1" data-line-number="1">X=<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb1231-2" data-line-number="2"><span class="kw">prop.table</span>(<span class="kw">table</span>(X))</a></code></pre></div>
 <pre><code>## X
 ## 1 
 ## 1</code></pre>
-<div class="sourceCode" id="cb1195"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1195-1" data-line-number="1"><span class="kw">prop.table</span>(X)</a></code></pre></div>
+<div class="sourceCode" id="cb1233"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1233-1" data-line-number="1"><span class="kw">prop.table</span>(X)</a></code></pre></div>
 <pre><code>## [1] 0.3333333 0.3333333 0.3333333</code></pre>
 <p>También podemos calcular la tabla de frecuencias relativas de un vector dividiendo el resultado de <code>table</code> por el número de observaciones.</p>
-<div class="sourceCode" id="cb1197"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1197-1" data-line-number="1"><span class="kw">table</span>(x)<span class="op">/</span><span class="kw">length</span>(x)</a></code></pre></div>
+<div class="sourceCode" id="cb1235"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1235-1" data-line-number="1"><span class="kw">table</span>(x)<span class="op">/</span><span class="kw">length</span>(x)</a></code></pre></div>
 <pre><code>## x
 ##          1          2          3          5          6 
 ## 0.20000000 0.33333333 0.20000000 0.20000000 0.06666667</code></pre>
-<div class="sourceCode" id="cb1199"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1199-1" data-line-number="1"><span class="kw">table</span>(x)<span class="op">/</span><span class="kw">sum</span>(<span class="kw">table</span>(x))</a></code></pre></div>
+<div class="sourceCode" id="cb1237"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1237-1" data-line-number="1"><span class="kw">table</span>(x)<span class="op">/</span><span class="kw">sum</span>(<span class="kw">table</span>(x))</a></code></pre></div>
 <pre><code>## x
 ##          1          2          3          5          6 
 ## 0.20000000 0.33333333 0.20000000 0.20000000 0.06666667</code></pre>
 <p>Dados un vector <code>x</code> y un número natural <em>n</em>, la instrucción</p>
-<div class="sourceCode" id="cb1201"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1201-1" data-line-number="1"><span class="kw">names</span>(<span class="kw">which</span>(<span class="kw">table</span>(x)<span class="op">==</span>n)</a></code></pre></div>
+<div class="sourceCode" id="cb1239"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1239-1" data-line-number="1"><span class="kw">names</span>(<span class="kw">which</span>(<span class="kw">table</span>(x)<span class="op">==</span>n)</a></code></pre></div>
 <p>nos da los niveles de <code>x</code> que tienen frecuencia absoluta <em>n</em>.</p>
-<div class="sourceCode" id="cb1202"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1202-1" data-line-number="1"><span class="kw">table</span>(x)</a></code></pre></div>
+<div class="sourceCode" id="cb1240"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1240-1" data-line-number="1"><span class="kw">table</span>(x)</a></code></pre></div>
 <pre><code>## x
 ## 1 2 3 5 6 
 ## 3 5 3 3 1</code></pre>
-<div class="sourceCode" id="cb1204"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1204-1" data-line-number="1"><span class="kw">names</span>(<span class="kw">which</span>(<span class="kw">table</span>(x)<span class="op">==</span><span class="dv">3</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb1242"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1242-1" data-line-number="1"><span class="kw">names</span>(<span class="kw">which</span>(<span class="kw">table</span>(x)<span class="op">==</span><span class="dv">3</span>))</a></code></pre></div>
 <pre><code>## [1] &quot;1&quot; &quot;3&quot; &quot;5&quot;</code></pre>
-<div class="sourceCode" id="cb1206"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1206-1" data-line-number="1"><span class="kw">names</span>(<span class="kw">which</span>(<span class="kw">table</span>(x)<span class="op">==</span><span class="dv">2</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb1244"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1244-1" data-line-number="1"><span class="kw">names</span>(<span class="kw">which</span>(<span class="kw">table</span>(x)<span class="op">==</span><span class="dv">2</span>))</a></code></pre></div>
 <pre><code>## character(0)</code></pre>
 <p>En particular, por lo tanto,</p>
-<div class="sourceCode" id="cb1208"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1208-1" data-line-number="1"><span class="kw">names</span>(<span class="kw">which</span>(<span class="kw">table</span>(x)<span class="op">==</span><span class="kw">max</span>(<span class="kw">table</span>(x))))</a></code></pre></div>
+<div class="sourceCode" id="cb1246"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1246-1" data-line-number="1"><span class="kw">names</span>(<span class="kw">which</span>(<span class="kw">table</span>(x)<span class="op">==</span><span class="kw">max</span>(<span class="kw">table</span>(x))))</a></code></pre></div>
 <p>nos da los niveles de frecuencia máxima en <code>x</code>: su <strong>moda</strong>.</p>
-<div class="sourceCode" id="cb1209"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1209-1" data-line-number="1"><span class="kw">names</span>(<span class="kw">which</span>(<span class="kw">table</span>(x)<span class="op">==</span><span class="kw">max</span>(<span class="kw">table</span>(x))))</a></code></pre></div>
+<div class="sourceCode" id="cb1247"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1247-1" data-line-number="1"><span class="kw">names</span>(<span class="kw">which</span>(<span class="kw">table</span>(x)<span class="op">==</span><span class="kw">max</span>(<span class="kw">table</span>(x))))</a></code></pre></div>
 <pre><code>## [1] &quot;2&quot;</code></pre>
-<div class="sourceCode" id="cb1211"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1211-1" data-line-number="1"><span class="kw">names</span>(<span class="kw">which</span>(<span class="kw">table</span>(Respuestas)<span class="op">==</span><span class="kw">max</span>(<span class="kw">table</span>(Respuestas))))</a></code></pre></div>
+<div class="sourceCode" id="cb1249"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1249-1" data-line-number="1"><span class="kw">names</span>(<span class="kw">which</span>(<span class="kw">table</span>(Respuestas)<span class="op">==</span><span class="kw">max</span>(<span class="kw">table</span>(Respuestas))))</a></code></pre></div>
 <pre><code>## [1] &quot;No&quot;</code></pre>
 
 <div class="example">
-<p><span id="exm:sexo" class="example"><strong>Ejemplo 9.2  </strong></span>Continuamos en la situación del Ejemplo <a href="chap-edqual.html#exm:ex1601">9.1</a>. Para calcular las frecuencias y la moda con R, definimos un vector con los datos y le aplicamos las funciones pertinentes:</p>
+<p><span id="exm:sexo" class="example"><strong>Ejemplo 10.2  </strong></span>Continuamos en la situación del Ejemplo <a href="chap-edqual.html#exm:ex1601">10.1</a>. Para calcular las frecuencias y la moda con R, definimos un vector con los datos y le aplicamos las funciones pertinentes:</p>
 </div>
 
-<div class="sourceCode" id="cb1213"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1213-1" data-line-number="1">Sexo_Ger=<span class="kw">c</span>(<span class="st">&quot;Mujer&quot;</span>,<span class="st">&quot;Mujer&quot;</span>,<span class="st">&quot;Hombre&quot;</span>,<span class="st">&quot;Mujer&quot;</span>,<span class="st">&quot;Mujer&quot;</span>,<span class="st">&quot;Mujer&quot;</span>,<span class="st">&quot;Mujer&quot;</span>,<span class="st">&quot;Mujer&quot;</span>,<span class="st">&quot;Hombre&quot;</span>,</a>
-<a class="sourceLine" id="cb1213-2" data-line-number="2">  <span class="st">&quot;Mujer&quot;</span>,<span class="st">&quot;Hombre&quot;</span>,<span class="st">&quot;Hombre&quot;</span>,<span class="st">&quot;Mujer&quot;</span>,<span class="st">&quot;Mujer&quot;</span>,<span class="st">&quot;Hombre&quot;</span>,<span class="st">&quot;Mujer&quot;</span>,<span class="st">&quot;Mujer&quot;</span>,<span class="st">&quot;Mujer&quot;</span>,<span class="st">&quot;Mujer&quot;</span>,<span class="st">&quot;Hombre&quot;</span>)</a>
-<a class="sourceLine" id="cb1213-3" data-line-number="3"><span class="kw">table</span>(Sexo_Ger)  <span class="co">#Tabla de frecuencias absolutas</span></a></code></pre></div>
+<div class="sourceCode" id="cb1251"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1251-1" data-line-number="1">Sexo_Ger=<span class="kw">c</span>(<span class="st">&quot;Mujer&quot;</span>,<span class="st">&quot;Mujer&quot;</span>,<span class="st">&quot;Hombre&quot;</span>,<span class="st">&quot;Mujer&quot;</span>,<span class="st">&quot;Mujer&quot;</span>,<span class="st">&quot;Mujer&quot;</span>,<span class="st">&quot;Mujer&quot;</span>,<span class="st">&quot;Mujer&quot;</span>,<span class="st">&quot;Hombre&quot;</span>,</a>
+<a class="sourceLine" id="cb1251-2" data-line-number="2">  <span class="st">&quot;Mujer&quot;</span>,<span class="st">&quot;Hombre&quot;</span>,<span class="st">&quot;Hombre&quot;</span>,<span class="st">&quot;Mujer&quot;</span>,<span class="st">&quot;Mujer&quot;</span>,<span class="st">&quot;Hombre&quot;</span>,<span class="st">&quot;Mujer&quot;</span>,<span class="st">&quot;Mujer&quot;</span>,<span class="st">&quot;Mujer&quot;</span>,<span class="st">&quot;Mujer&quot;</span>,<span class="st">&quot;Hombre&quot;</span>)</a>
+<a class="sourceLine" id="cb1251-3" data-line-number="3"><span class="kw">table</span>(Sexo_Ger)  <span class="co">#Tabla de frecuencias absolutas</span></a></code></pre></div>
 <pre><code>## Sexo_Ger
 ## Hombre  Mujer 
 ##      6     14</code></pre>
-<div class="sourceCode" id="cb1215"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1215-1" data-line-number="1"><span class="kw">prop.table</span>(<span class="kw">table</span>(Sexo_Ger)) <span class="co">#Tabla de frecuencias relativas</span></a></code></pre></div>
+<div class="sourceCode" id="cb1253"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1253-1" data-line-number="1"><span class="kw">prop.table</span>(<span class="kw">table</span>(Sexo_Ger)) <span class="co">#Tabla de frecuencias relativas</span></a></code></pre></div>
 <pre><code>## Sexo_Ger
 ## Hombre  Mujer 
 ##    0.3    0.7</code></pre>
-<div class="sourceCode" id="cb1217"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1217-1" data-line-number="1"><span class="kw">names</span>(<span class="kw">which</span>(<span class="kw">table</span>(Sexo_Ger)<span class="op">==</span><span class="kw">max</span>(<span class="kw">table</span>(Sexo_Ger)))) <span class="co">#Moda</span></a></code></pre></div>
+<div class="sourceCode" id="cb1255"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1255-1" data-line-number="1"><span class="kw">names</span>(<span class="kw">which</span>(<span class="kw">table</span>(Sexo_Ger)<span class="op">==</span><span class="kw">max</span>(<span class="kw">table</span>(Sexo_Ger)))) <span class="co">#Moda</span></a></code></pre></div>
 <pre><code>## [1] &quot;Mujer&quot;</code></pre>
 </div>
 <div id="tablas-bidimensionales-de-frecuencias" class="section level2">
-<h2><span class="header-section-number">9.3</span> Tablas bidimensionales de frecuencias</h2>
+<h2><span class="header-section-number">10.3</span> Tablas bidimensionales de frecuencias</h2>
 <p>La función <code>table</code> también permite construir tablas de frecuencias conjuntas de dos o más variables. A modo de ejemplo, supongamos que el vector <code>Respuestas</code>, de la sección anterior, contiene las respuestas a una pregunta dadas por unos individuos cuyos sexos tenemos almacenados en un vector <code>Sexo</code>, en el mismo orden que sus respuestas. En este caso, podemos construir una tabla que nos diga cuántos individuos de cada sexo han dado cada respuesta.</p>
-<div class="sourceCode" id="cb1219"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1219-1" data-line-number="1">Respuestas=<span class="kw">c</span>(<span class="st">&quot;No&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;Sí&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;Sí&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;Sí&quot;</span>)</a>
-<a class="sourceLine" id="cb1219-2" data-line-number="2">Sexo=<span class="kw">c</span>(<span class="st">&quot;M&quot;</span>,<span class="st">&quot;M&quot;</span>,<span class="st">&quot;M&quot;</span>,<span class="st">&quot;H&quot;</span>,<span class="st">&quot;H&quot;</span>,<span class="st">&quot;H&quot;</span>,<span class="st">&quot;H&quot;</span>,<span class="st">&quot;H&quot;</span>) <span class="co">#H es hombre, M es mujer</span></a>
-<a class="sourceLine" id="cb1219-3" data-line-number="3"><span class="kw">table</span>(Respuestas,Sexo)</a></code></pre></div>
+<div class="sourceCode" id="cb1257"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1257-1" data-line-number="1">Respuestas=<span class="kw">c</span>(<span class="st">&quot;No&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;Sí&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;Sí&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;Sí&quot;</span>)</a>
+<a class="sourceLine" id="cb1257-2" data-line-number="2">Sexo=<span class="kw">c</span>(<span class="st">&quot;M&quot;</span>,<span class="st">&quot;M&quot;</span>,<span class="st">&quot;M&quot;</span>,<span class="st">&quot;H&quot;</span>,<span class="st">&quot;H&quot;</span>,<span class="st">&quot;H&quot;</span>,<span class="st">&quot;H&quot;</span>,<span class="st">&quot;H&quot;</span>) <span class="co">#H es hombre, M es mujer</span></a>
+<a class="sourceLine" id="cb1257-3" data-line-number="3"><span class="kw">table</span>(Respuestas,Sexo)</a></code></pre></div>
 <pre><code>##           Sexo
 ## Respuestas H M
 ##         No 3 2
 ##         Sí 2 1</code></pre>
-<div class="sourceCode" id="cb1221"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1221-1" data-line-number="1"><span class="kw">table</span>(Sexo,Respuestas)</a></code></pre></div>
+<div class="sourceCode" id="cb1259"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1259-1" data-line-number="1"><span class="kw">table</span>(Sexo,Respuestas)</a></code></pre></div>
 <pre><code>##     Respuestas
 ## Sexo No Sí
 ##    H  3  2
@@ -491,20 +518,20 @@ Total &amp; 20 &amp; 1 &amp; 100\% \\\hline
 <p>El resultado es, en ambos casos, una tabla de contingencia como antes, pero ahora <strong>bidimensional</strong>, puesto que cada entrada tiene dos dimensiones, una por cada variable, como en una matriz.</p>
 <p>Como podemos ver, en una tabla bidimensional producida aplicando <code>table</code> a dos vectores, los niveles del primer vector en el argumento definen las filas, y los del segundo, las columnas. Así, en <code>table(Respuestas,Sexo)</code>, las filas corresponden a las respuestas y las columnas a los sexos.
 Para intercambiar filas por columnas, es decir, para “trasponer” la tabla sin tener que recalcularla, podemos usar la misma función <code>t</code> que usamos para trasponer matrices:</p>
-<div class="sourceCode" id="cb1223"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1223-1" data-line-number="1"><span class="kw">t</span>(<span class="kw">table</span>(Respuestas,Sexo))</a></code></pre></div>
+<div class="sourceCode" id="cb1261"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1261-1" data-line-number="1"><span class="kw">t</span>(<span class="kw">table</span>(Respuestas,Sexo))</a></code></pre></div>
 <pre><code>##     Respuestas
 ## Sexo No Sí
 ##    H  3  2
 ##    M  2  1</code></pre>
 <p>En la práctica, tenéis que decidir si alguna de las asignaciones de variables a dimensiones es más conveniente que la otra. Por ejemplo, y teniendo en cuenta que nuestra manera natural de leer una tabla es por filas, si lo que nos interesa son las frecuencias de las respuestas entre las personas de cada sexo, seguramente lo más adecuado será elegir el sexo como variable para las filas.</p>
 <p>Para referirnos a una entrada de una tabla bidimensional podemos usar corchetes como si estuviéramos en una matriz o un <em>data frame</em>. Dentro de los corchetes, tanto podemos usar los índices como los nombres (entre comillas) de los niveles.</p>
-<div class="sourceCode" id="cb1225"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1225-1" data-line-number="1"><span class="kw">table</span>(Respuestas,Sexo)[<span class="dv">1</span>,<span class="dv">2</span>]</a></code></pre></div>
+<div class="sourceCode" id="cb1263"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1263-1" data-line-number="1"><span class="kw">table</span>(Respuestas,Sexo)[<span class="dv">1</span>,<span class="dv">2</span>]</a></code></pre></div>
 <pre><code>## [1] 2</code></pre>
-<div class="sourceCode" id="cb1227"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1227-1" data-line-number="1"><span class="kw">table</span>(Respuestas,Sexo)[<span class="st">&quot;No&quot;</span>,<span class="st">&quot;M&quot;</span>]</a></code></pre></div>
+<div class="sourceCode" id="cb1265"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1265-1" data-line-number="1"><span class="kw">table</span>(Respuestas,Sexo)[<span class="st">&quot;No&quot;</span>,<span class="st">&quot;M&quot;</span>]</a></code></pre></div>
 <pre><code>## [1] 2</code></pre>
-<div class="sourceCode" id="cb1229"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1229-1" data-line-number="1"><span class="kw">table</span>(Sexo,Respuestas)[<span class="dv">1</span>,<span class="dv">2</span>]</a></code></pre></div>
+<div class="sourceCode" id="cb1267"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1267-1" data-line-number="1"><span class="kw">table</span>(Sexo,Respuestas)[<span class="dv">1</span>,<span class="dv">2</span>]</a></code></pre></div>
 <pre><code>## [1] 2</code></pre>
-<div class="sourceCode" id="cb1231"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1231-1" data-line-number="1"><span class="kw">table</span>(Sexo,Respuestas)[<span class="st">&quot;H&quot;</span>,<span class="st">&quot;Sí&quot;</span>]</a></code></pre></div>
+<div class="sourceCode" id="cb1269"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1269-1" data-line-number="1"><span class="kw">table</span>(Sexo,Respuestas)[<span class="st">&quot;H&quot;</span>,<span class="st">&quot;Sí&quot;</span>]</a></code></pre></div>
 <pre><code>## [1] 2</code></pre>
 <p>Como en el caso unidimensional, la función <code>prop.table</code> sirve para calcular tablas bidimensionales de frecuencias relativas conjuntas de pares de variables. Pero en el caso bidimensional tenemos dos tipos de frecuencias relativas, que definen, para cada par de variables, tres tablas diferentes:</p>
 <ul>
@@ -519,7 +546,7 @@ Por lo que se refiere a las frecuencias relativas marginales, la variable que de
 <ul>
 <li>La tabla <code>prop.table(table(Sexo,Respuestas))</code> nos da la fracción del total que representa cada pareja (sexo, respuesta).</li>
 </ul>
-<div class="sourceCode" id="cb1233"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1233-1" data-line-number="1"><span class="kw">prop.table</span>(<span class="kw">table</span>(Sexo,Respuestas))</a></code></pre></div>
+<div class="sourceCode" id="cb1271"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1271-1" data-line-number="1"><span class="kw">prop.table</span>(<span class="kw">table</span>(Sexo,Respuestas))</a></code></pre></div>
 <pre><code>##     Respuestas
 ## Sexo    No    Sí
 ##    H 0.375 0.250
@@ -527,7 +554,7 @@ Por lo que se refiere a las frecuencias relativas marginales, la variable que de
 <ul>
 <li>La tabla <code>prop.table(table(Sexo,Respuestas), margin=1)</code> nos da la fracción que representa cada respuesta dentro de cada sexo.</li>
 </ul>
-<div class="sourceCode" id="cb1235"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1235-1" data-line-number="1"><span class="kw">prop.table</span>(<span class="kw">table</span>(Sexo,Respuestas), <span class="dt">margin=</span><span class="dv">1</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1273"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1273-1" data-line-number="1"><span class="kw">prop.table</span>(<span class="kw">table</span>(Sexo,Respuestas), <span class="dt">margin=</span><span class="dv">1</span>)</a></code></pre></div>
 <pre><code>##     Respuestas
 ## Sexo        No        Sí
 ##    H 0.6000000 0.4000000
@@ -535,15 +562,15 @@ Por lo que se refiere a las frecuencias relativas marginales, la variable que de
 <ul>
 <li>La tabla <code>prop.table(table(Sexo,Respuestas), margin=2)</code> nos da la fracción que representa cada sexo dentro de cada respuesta</li>
 </ul>
-<div class="sourceCode" id="cb1237"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1237-1" data-line-number="1"><span class="kw">prop.table</span>(<span class="kw">table</span>(Sexo,Respuestas), <span class="dt">margin=</span><span class="dv">2</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1275"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1275-1" data-line-number="1"><span class="kw">prop.table</span>(<span class="kw">table</span>(Sexo,Respuestas), <span class="dt">margin=</span><span class="dv">2</span>)</a></code></pre></div>
 <pre><code>##     Respuestas
 ## Sexo        No        Sí
 ##    H 0.6000000 0.6666667
 ##    M 0.4000000 0.3333333</code></pre>
 <p>De esta manera, por ejemplo, en la primera tabla podemos leer que un 25% del total de la muestra son mujeres que han contestado que no; en la segunda tabla, que un 66.67% de las mujeres han contestado que no; y en la tercera tabla, que las mujeres representan el 40% del total de las personas que han contestado que no.</p>
 <p>La función <code>CrossTable</code> del paquete <code>gmodels</code> permite producir (especificando el parámetro <code>prop.chisq=FALSE</code>) un resumen de la tabla de frecuencias absolutas y las tres tablas de frecuencias relativas de dos variables en un formato adecuado para su visualización:</p>
-<div class="sourceCode" id="cb1239"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1239-1" data-line-number="1"><span class="kw">library</span>(gmodels) </a>
-<a class="sourceLine" id="cb1239-2" data-line-number="2"><span class="kw">CrossTable</span>(Sexo, Respuestas, <span class="dt">prop.chisq=</span><span class="ot">FALSE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1277"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1277-1" data-line-number="1"><span class="kw">library</span>(gmodels) </a>
+<a class="sourceLine" id="cb1277-2" data-line-number="2"><span class="kw">CrossTable</span>(Sexo, Respuestas, <span class="dt">prop.chisq=</span><span class="ot">FALSE</span>)</a></code></pre></div>
 <pre><code>## 
 ##  
 ##    Cell Contents
@@ -578,36 +605,36 @@ Por lo que se refiere a las frecuencias relativas marginales, la variable que de
 ## </code></pre>
 <p>La leyenda <code>Cell Contents</code> explica los contenidos de cada celda de la tabla: en este caso, y en orden descendente, la frecuencia absoluta <code>N</code>, la frecuencia relativa por filas, la frecuencia relativa por columnas, y la frecuencia relativa global. Asimismo, se muestran las celdas de los márgenes, con las frecuencias absolutas y relativas de cada fila (en la columna <em>Row Total</em>) y cada columna (en la fila <em>Column Total</em>). Esta función dispone de muchos parámetros que permiten modificar el contenido de las celdas y que podéis consultar en su Ayuda.</p>
 <p>Una tabla de contingencia bidimensional es, a efectos prácticos, una matriz con algunos atributos extra. En particular, podemos usar sobre estas tablas la mayoría de las funciones para matrices que tengan sentido para tablas; por ejemplo, <code>rowSums</code> y <code>colSums</code> se pueden aplicar a una tabla y suman sus filas y sus columnas, respectivamente:</p>
-<div class="sourceCode" id="cb1241"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1241-1" data-line-number="1"><span class="kw">table</span>(Sexo,Respuestas)</a></code></pre></div>
+<div class="sourceCode" id="cb1279"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1279-1" data-line-number="1"><span class="kw">table</span>(Sexo,Respuestas)</a></code></pre></div>
 <pre><code>##     Respuestas
 ## Sexo No Sí
 ##    H  3  2
 ##    M  2  1</code></pre>
-<div class="sourceCode" id="cb1243"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1243-1" data-line-number="1"><span class="kw">colSums</span>(<span class="kw">table</span>(Sexo,Respuestas))</a></code></pre></div>
+<div class="sourceCode" id="cb1281"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1281-1" data-line-number="1"><span class="kw">colSums</span>(<span class="kw">table</span>(Sexo,Respuestas))</a></code></pre></div>
 <pre><code>## No Sí 
 ##  5  3</code></pre>
-<div class="sourceCode" id="cb1245"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1245-1" data-line-number="1"><span class="kw">rowSums</span>(<span class="kw">table</span>(Sexo,Respuestas))</a></code></pre></div>
+<div class="sourceCode" id="cb1283"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1283-1" data-line-number="1"><span class="kw">rowSums</span>(<span class="kw">table</span>(Sexo,Respuestas))</a></code></pre></div>
 <pre><code>## H M 
 ## 5 3</code></pre>
-<div class="sourceCode" id="cb1247"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1247-1" data-line-number="1"><span class="kw">colSums</span>(<span class="kw">prop.table</span>(<span class="kw">table</span>(Sexo,Respuestas)))</a></code></pre></div>
+<div class="sourceCode" id="cb1285"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1285-1" data-line-number="1"><span class="kw">colSums</span>(<span class="kw">prop.table</span>(<span class="kw">table</span>(Sexo,Respuestas)))</a></code></pre></div>
 <pre><code>##    No    Sí 
 ## 0.625 0.375</code></pre>
-<div class="sourceCode" id="cb1249"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1249-1" data-line-number="1"><span class="kw">rowSums</span>(<span class="kw">prop.table</span>(<span class="kw">table</span>(Sexo,Respuestas)))</a></code></pre></div>
+<div class="sourceCode" id="cb1287"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1287-1" data-line-number="1"><span class="kw">rowSums</span>(<span class="kw">prop.table</span>(<span class="kw">table</span>(Sexo,Respuestas)))</a></code></pre></div>
 <pre><code>##     H     M 
 ## 0.625 0.375</code></pre>
 <p>También podemos usar sobre una tabla bidimensional (o, en general, multidimensional) la función <code>apply</code>
 con la misma sintaxis que para matrices; véase la próxima sección.</p>
 </div>
 <div id="tablas-multidimensionales-de-frecuencias" class="section level2">
-<h2><span class="header-section-number">9.4</span> Tablas multidimensionales de frecuencias</h2>
+<h2><span class="header-section-number">10.4</span> Tablas multidimensionales de frecuencias</h2>
 <p>En general, podemos calcular tablas de frecuencias de cualquier número de variables, no sólo de una o dos. El manejo de estas tablas multidimensionales es similar al caso bidimensional, simplemente recordando que ahora hay más variables que tener en cuenta en el momento, por ejemplo, de especificar entradas o de calcular frecuencias relativas marginales.</p>
 <p>Veamos un ejemplo tridimensional. Supongamos que, además de los vectores</p>
-<div class="sourceCode" id="cb1251"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1251-1" data-line-number="1">Respuestas=<span class="kw">c</span>(<span class="st">&quot;No&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;Sí&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;Sí&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;Sí&quot;</span>)</a>
-<a class="sourceLine" id="cb1251-2" data-line-number="2">Sexo=<span class="kw">c</span>(<span class="st">&quot;M&quot;</span>,<span class="st">&quot;M&quot;</span>,<span class="st">&quot;M&quot;</span>,<span class="st">&quot;H&quot;</span>,<span class="st">&quot;H&quot;</span>,<span class="st">&quot;H&quot;</span>,<span class="st">&quot;H&quot;</span>,<span class="st">&quot;H&quot;</span>) </a></code></pre></div>
+<div class="sourceCode" id="cb1289"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1289-1" data-line-number="1">Respuestas=<span class="kw">c</span>(<span class="st">&quot;No&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;Sí&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;Sí&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;Sí&quot;</span>)</a>
+<a class="sourceLine" id="cb1289-2" data-line-number="2">Sexo=<span class="kw">c</span>(<span class="st">&quot;M&quot;</span>,<span class="st">&quot;M&quot;</span>,<span class="st">&quot;M&quot;</span>,<span class="st">&quot;H&quot;</span>,<span class="st">&quot;H&quot;</span>,<span class="st">&quot;H&quot;</span>,<span class="st">&quot;H&quot;</span>,<span class="st">&quot;H&quot;</span>) </a></code></pre></div>
 <p>tenemos un tercer vector con las nacionalidades de los individuos representados en estos dos vectores:</p>
-<div class="sourceCode" id="cb1252"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1252-1" data-line-number="1">Pais=<span class="kw">c</span>(<span class="st">&quot;Francia&quot;</span>,<span class="st">&quot;Alemania&quot;</span>,<span class="st">&quot;Italia&quot;</span>,<span class="st">&quot;Italia&quot;</span>,<span class="st">&quot;Italia&quot;</span>,<span class="st">&quot;Italia&quot;</span>,<span class="st">&quot;Alemania&quot;</span>,<span class="st">&quot;Francia&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1290"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1290-1" data-line-number="1">Pais=<span class="kw">c</span>(<span class="st">&quot;Francia&quot;</span>,<span class="st">&quot;Alemania&quot;</span>,<span class="st">&quot;Italia&quot;</span>,<span class="st">&quot;Italia&quot;</span>,<span class="st">&quot;Italia&quot;</span>,<span class="st">&quot;Italia&quot;</span>,<span class="st">&quot;Alemania&quot;</span>,<span class="st">&quot;Francia&quot;</span>)</a></code></pre></div>
 <p>Podemos calcular entonces una tabla de frecuencias absolutas para las ternas (sexo, respuesta, país).</p>
-<div class="sourceCode" id="cb1253"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1253-1" data-line-number="1"><span class="kw">table</span>(Sexo,Respuestas,Pais)</a></code></pre></div>
+<div class="sourceCode" id="cb1291"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1291-1" data-line-number="1"><span class="kw">table</span>(Sexo,Respuestas,Pais)</a></code></pre></div>
 <pre><code>## , , Pais = Alemania
 ## 
 ##     Respuestas
@@ -629,7 +656,7 @@ con la misma sintaxis que para matrices; véase la próxima sección.</p>
 ##    H  2  1
 ##    M  0  1</code></pre>
 <p>R muestra la <em>tabla tridimensional</em> que obtenemos como una lista de tablas bidimensionales <code>table(Sexo,Respuestas)</code>, separando la población según los niveles de la tercera variable. Si no os gusta esta manera de visualizar una tabla tridimensional, una alternativa es usar la función <code>ftable</code>, que la mostrará en lo que se llama <strong>formato plano</strong>:</p>
-<div class="sourceCode" id="cb1255"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1255-1" data-line-number="1"><span class="kw">ftable</span>(Sexo,Respuestas,Pais)</a></code></pre></div>
+<div class="sourceCode" id="cb1293"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1293-1" data-line-number="1"><span class="kw">ftable</span>(Sexo,Respuestas,Pais)</a></code></pre></div>
 <pre><code>##                 Pais Alemania Francia Italia
 ## Sexo Respuestas                             
 ## H    No                     1       0      2
@@ -637,7 +664,7 @@ con la misma sintaxis que para matrices; véase la próxima sección.</p>
 ## M    No                     1       1      0
 ##      Sí                     0       0      1</code></pre>
 <p>Los parámetros <code>row.vars</code> y <code>col.vars</code> de <code>ftable</code> permiten especificar qué variables queremos que aparezcan como filas o como columnas, respectivamente.</p>
-<div class="sourceCode" id="cb1257"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1257-1" data-line-number="1"><span class="kw">ftable</span>(Sexo,Respuestas,Pais, <span class="dt">col.vars=</span><span class="kw">c</span>(<span class="st">&quot;Sexo&quot;</span>,<span class="st">&quot;Respuestas&quot;</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb1295"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1295-1" data-line-number="1"><span class="kw">ftable</span>(Sexo,Respuestas,Pais, <span class="dt">col.vars=</span><span class="kw">c</span>(<span class="st">&quot;Sexo&quot;</span>,<span class="st">&quot;Respuestas&quot;</span>))</a></code></pre></div>
 <pre><code>##          Sexo        H     M   
 ##          Respuestas No Sí No Sí
 ## Pais                           
@@ -645,17 +672,17 @@ con la misma sintaxis que para matrices; véase la próxima sección.</p>
 ## Francia              0  1  1  0
 ## Italia               2  1  0  1</code></pre>
 <p>Para referirnos a una entrada, o a una subtabla, de una tabla podemos usar corchetes.</p>
-<div class="sourceCode" id="cb1259"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1259-1" data-line-number="1"><span class="kw">table</span>(Sexo,Respuestas,Pais)[<span class="st">&quot;H&quot;</span>,<span class="st">&quot;Sí&quot;</span>,<span class="st">&quot;Italia&quot;</span>]</a></code></pre></div>
+<div class="sourceCode" id="cb1297"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1297-1" data-line-number="1"><span class="kw">table</span>(Sexo,Respuestas,Pais)[<span class="st">&quot;H&quot;</span>,<span class="st">&quot;Sí&quot;</span>,<span class="st">&quot;Italia&quot;</span>]</a></code></pre></div>
 <pre><code>## [1] 1</code></pre>
-<div class="sourceCode" id="cb1261"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1261-1" data-line-number="1"><span class="kw">table</span>(Sexo,Respuestas,Pais)[ , ,<span class="st">&quot;Italia&quot;</span>]</a></code></pre></div>
+<div class="sourceCode" id="cb1299"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1299-1" data-line-number="1"><span class="kw">table</span>(Sexo,Respuestas,Pais)[ , ,<span class="st">&quot;Italia&quot;</span>]</a></code></pre></div>
 <pre><code>##     Respuestas
 ## Sexo No Sí
 ##    H  2  1
 ##    M  0  1</code></pre>
-<div class="sourceCode" id="cb1263"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1263-1" data-line-number="1"><span class="kw">table</span>(Sexo,Respuestas,Pais)[  ,<span class="st">&quot;Sí&quot;</span>,<span class="st">&quot;Italia&quot;</span>]</a></code></pre></div>
+<div class="sourceCode" id="cb1301"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1301-1" data-line-number="1"><span class="kw">table</span>(Sexo,Respuestas,Pais)[  ,<span class="st">&quot;Sí&quot;</span>,<span class="st">&quot;Italia&quot;</span>]</a></code></pre></div>
 <pre><code>## H M 
 ## 1 1</code></pre>
-<div class="sourceCode" id="cb1265"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1265-1" data-line-number="1"><span class="kw">table</span>(Sexo,Respuestas,Pais)[<span class="st">&quot;M&quot;</span>, ,<span class="st">&quot;Italia&quot;</span>]</a></code></pre></div>
+<div class="sourceCode" id="cb1303"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1303-1" data-line-number="1"><span class="kw">table</span>(Sexo,Respuestas,Pais)[<span class="st">&quot;M&quot;</span>, ,<span class="st">&quot;Italia&quot;</span>]</a></code></pre></div>
 <pre><code>## No Sí 
 ##  0  1</code></pre>
 <p>En una tabla multidimensional, podemos calcular frecuencias relativas marginales respecto de los niveles de una variable o respecto de combinaciones de niveles de varias variables: por ejemplo, las frecuencias relativas marginales de las respuestas en cada combinación (sexo, país). Como en el caso bidimensional, las tablas correspondientes se calculan aplicando <code>prop.table</code> a la tabla de frecuencias absolutas, y especificando con el parámetro <code>margin</code> las dimensiones, o combinaciones de dimensiones, respecto de las que calculamos las frecuencias relativas. Si no se especifica el parámetro <code>margin</code>, se obtiene la tabla de frecuencias relativas globales.</p>
@@ -663,7 +690,7 @@ con la misma sintaxis que para matrices; véase la próxima sección.</p>
 <ul>
 <li>La tabla <code>prop.table(table(Sexo,Respuestas,Pais))</code> nos da la fracción que representa cada terna (sexo, respuesta, país) dentro del total de la muestra:</li>
 </ul>
-<div class="sourceCode" id="cb1267"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1267-1" data-line-number="1"><span class="kw">prop.table</span>(<span class="kw">table</span>(Sexo,Respuestas,Pais)) </a></code></pre></div>
+<div class="sourceCode" id="cb1305"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1305-1" data-line-number="1"><span class="kw">prop.table</span>(<span class="kw">table</span>(Sexo,Respuestas,Pais)) </a></code></pre></div>
 <pre><code>## , , Pais = Alemania
 ## 
 ##     Respuestas
@@ -687,7 +714,7 @@ con la misma sintaxis que para matrices; véase la próxima sección.</p>
 <ul>
 <li>La tabla <code>prop.table(table(Sexo,Respuestas,Pais), margin=3)</code> nos da la fracción que representa cada pareja (sexo, respuesta) dentro de cada país:</li>
 </ul>
-<div class="sourceCode" id="cb1269"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1269-1" data-line-number="1"><span class="kw">prop.table</span>(<span class="kw">table</span>(Sexo,Respuestas,Pais), <span class="dt">margin=</span><span class="dv">3</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1307"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1307-1" data-line-number="1"><span class="kw">prop.table</span>(<span class="kw">table</span>(Sexo,Respuestas,Pais), <span class="dt">margin=</span><span class="dv">3</span>)</a></code></pre></div>
 <pre><code>## , , Pais = Alemania
 ## 
 ##     Respuestas
@@ -711,7 +738,7 @@ con la misma sintaxis que para matrices; véase la próxima sección.</p>
 <ul>
 <li>La tabla <code>prop.table(table(Sexo,Respuestas,Pais), margin=c(1,3))</code> nos da la fracción que representa cada respuesta dentro de cada combinación de (sexo, país):</li>
 </ul>
-<div class="sourceCode" id="cb1271"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1271-1" data-line-number="1"><span class="kw">prop.table</span>(<span class="kw">table</span>(Sexo,Respuestas,Pais), <span class="dt">margin=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb1309"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1309-1" data-line-number="1"><span class="kw">prop.table</span>(<span class="kw">table</span>(Sexo,Respuestas,Pais), <span class="dt">margin=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>))</a></code></pre></div>
 <pre><code>## , , Pais = Alemania
 ## 
 ##     Respuestas
@@ -735,7 +762,7 @@ con la misma sintaxis que para matrices; véase la próxima sección.</p>
 <p>De esta manera, por ejemplo, en la primera tabla podemos leer que los hombres españoles que han contestado afirmativamente forman un
 12.5% del total de individuos; en la segunda, que los hombres que han contestado que sí representan un 25% del total de individuos españoles; y en la tercera, que un 33.33% del total de hombres españoles ha contestado que sí.</p>
 <p>Al aplicar <code>prop.table</code> al resultado de una <code>ftable</code>, la tabla resultante sigue en formato plano:</p>
-<div class="sourceCode" id="cb1273"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1273-1" data-line-number="1"><span class="kw">prop.table</span>(<span class="kw">ftable</span>(Sexo,Respuestas,Pais)) </a></code></pre></div>
+<div class="sourceCode" id="cb1311"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1311-1" data-line-number="1"><span class="kw">prop.table</span>(<span class="kw">ftable</span>(Sexo,Respuestas,Pais)) </a></code></pre></div>
 <pre><code>##                 Pais Alemania Francia Italia
 ## Sexo Respuestas                             
 ## H    No                 0.125   0.000  0.250
@@ -746,7 +773,7 @@ con la misma sintaxis que para matrices; véase la próxima sección.</p>
 <ul>
 <li>Sumamos los números de respuestas agrupando por combinaciones (sexo,país):</li>
 </ul>
-<div class="sourceCode" id="cb1275"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1275-1" data-line-number="1"><span class="kw">apply</span>(<span class="kw">table</span>(Sexo,Respuestas,Pais), <span class="dt">MARGIN=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>), <span class="dt">FUN=</span>sum)</a></code></pre></div>
+<div class="sourceCode" id="cb1313"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1313-1" data-line-number="1"><span class="kw">apply</span>(<span class="kw">table</span>(Sexo,Respuestas,Pais), <span class="dt">MARGIN=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>), <span class="dt">FUN=</span>sum)</a></code></pre></div>
 <pre><code>##     Pais
 ## Sexo Alemania Francia Italia
 ##    H        1       1      3
@@ -754,22 +781,22 @@ con la misma sintaxis que para matrices; véase la próxima sección.</p>
 <ul>
 <li>Sumamos los números de respuestas agrupando por sexos:</li>
 </ul>
-<div class="sourceCode" id="cb1277"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1277-1" data-line-number="1"><span class="kw">apply</span>(<span class="kw">table</span>(Sexo,Respuestas,Pais), <span class="dt">MARGIN=</span><span class="dv">2</span>, <span class="dt">FUN=</span>sum)</a></code></pre></div>
+<div class="sourceCode" id="cb1315"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1315-1" data-line-number="1"><span class="kw">apply</span>(<span class="kw">table</span>(Sexo,Respuestas,Pais), <span class="dt">MARGIN=</span><span class="dv">2</span>, <span class="dt">FUN=</span>sum)</a></code></pre></div>
 <pre><code>## No Sí 
 ##  5  3</code></pre>
 <p>Hasta ahora hemos manipulado tablas de frecuencias que hemos construido nosotros mismos a partir de variables cualitativas. Todo lo que hemos hecho con estas tablas se puede también hacer con las tablas de frecuencias que lleva R predefinidas o que obtengamos de otra manera. Veamos un ejemplo.</p>
 
 <div class="example">
-<p><span id="exm:HairEyeColor" class="example"><strong>Ejemplo 9.3  </strong></span>El objeto de datos <code>HairEyeColor</code> que lleva predefinido R es una tabla las frecuencias absolutas, en una muestra de personas, de tres variables cualitativas: color de cabello, <code>Hair</code>, color de los ojos, <code>Eye</code>, y sexo, <code>Sex</code>, en este orden.</p>
+<p><span id="exm:HairEyeColor" class="example"><strong>Ejemplo 10.3  </strong></span>El objeto de datos <code>HairEyeColor</code> que lleva predefinido R es una tabla las frecuencias absolutas, en una muestra de personas, de tres variables cualitativas: color de cabello, <code>Hair</code>, color de los ojos, <code>Eye</code>, y sexo, <code>Sex</code>, en este orden.</p>
 </div>
 
-<div class="sourceCode" id="cb1279"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1279-1" data-line-number="1"><span class="kw">str</span>(HairEyeColor)</a></code></pre></div>
+<div class="sourceCode" id="cb1317"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1317-1" data-line-number="1"><span class="kw">str</span>(HairEyeColor)</a></code></pre></div>
 <pre><code>##  &#39;table&#39; num [1:4, 1:4, 1:2] 32 53 10 3 11 50 10 30 10 25 ...
 ##  - attr(*, &quot;dimnames&quot;)=List of 3
 ##   ..$ Hair: chr [1:4] &quot;Black&quot; &quot;Brown&quot; &quot;Red&quot; &quot;Blond&quot;
 ##   ..$ Eye : chr [1:4] &quot;Brown&quot; &quot;Blue&quot; &quot;Hazel&quot; &quot;Green&quot;
 ##   ..$ Sex : chr [1:2] &quot;Male&quot; &quot;Female&quot;</code></pre>
-<div class="sourceCode" id="cb1281"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1281-1" data-line-number="1"><span class="kw">ftable</span>(HairEyeColor)</a></code></pre></div>
+<div class="sourceCode" id="cb1319"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1319-1" data-line-number="1"><span class="kw">ftable</span>(HairEyeColor)</a></code></pre></div>
 <pre><code>##             Sex Male Female
 ## Hair  Eye                  
 ## Black Brown       32     36
@@ -792,12 +819,12 @@ con la misma sintaxis que para matrices; véase la próxima sección.</p>
 <ul>
 <li>Número total de individuos en la muestra:</li>
 </ul>
-<div class="sourceCode" id="cb1283"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1283-1" data-line-number="1"><span class="kw">sum</span>(HairEyeColor)</a></code></pre></div>
+<div class="sourceCode" id="cb1321"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1321-1" data-line-number="1"><span class="kw">sum</span>(HairEyeColor)</a></code></pre></div>
 <pre><code>## [1] 592</code></pre>
 <ul>
 <li>Subtabla de hombres:</li>
 </ul>
-<div class="sourceCode" id="cb1285"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1285-1" data-line-number="1">HairEyeColor[ , ,<span class="st">&quot;Male&quot;</span>]</a></code></pre></div>
+<div class="sourceCode" id="cb1323"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1323-1" data-line-number="1">HairEyeColor[ , ,<span class="st">&quot;Male&quot;</span>]</a></code></pre></div>
 <pre><code>##        Eye
 ## Hair    Brown Blue Hazel Green
 ##   Black    32   11    10     3
@@ -807,7 +834,7 @@ con la misma sintaxis que para matrices; véase la próxima sección.</p>
 <ul>
 <li>Frecuencias relativas de las combinaciones (color de cabello, color de ojos) en cada sexo:</li>
 </ul>
-<div class="sourceCode" id="cb1287"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1287-1" data-line-number="1"><span class="kw">round</span>(<span class="kw">prop.table</span>(HairEyeColor, <span class="dt">margin=</span><span class="dv">3</span>), <span class="dv">3</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1325"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1325-1" data-line-number="1"><span class="kw">round</span>(<span class="kw">prop.table</span>(HairEyeColor, <span class="dt">margin=</span><span class="dv">3</span>), <span class="dv">3</span>)</a></code></pre></div>
 <pre><code>## , , Sex = Male
 ## 
 ##        Eye
@@ -828,7 +855,7 @@ con la misma sintaxis que para matrices; véase la próxima sección.</p>
 <ul>
 <li>Frecuencias relativas de los sexos en cada combinación (color de cabello, color de ojos)</li>
 </ul>
-<div class="sourceCode" id="cb1289"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1289-1" data-line-number="1"><span class="kw">round</span>(<span class="kw">prop.table</span>(HairEyeColor, <span class="dt">margin=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)), <span class="dv">3</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1327"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1327-1" data-line-number="1"><span class="kw">round</span>(<span class="kw">prop.table</span>(HairEyeColor, <span class="dt">margin=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)), <span class="dv">3</span>)</a></code></pre></div>
 <pre><code>## , , Sex = Male
 ## 
 ##        Eye
@@ -847,9 +874,9 @@ con la misma sintaxis que para matrices; véase la próxima sección.</p>
 ##   Red   0.615 0.412 0.500 0.500
 ##   Blond 0.571 0.681 0.500 0.500</code></pre>
 <p>Para cambiar el orden de las variables en una <code>tabla</code> multidimensional, se puede usar la instrucción</p>
-<div class="sourceCode" id="cb1291"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1291-1" data-line-number="1"><span class="kw">aperm</span>(tabla, <span class="dt">perm=</span>...)</a></code></pre></div>
+<div class="sourceCode" id="cb1329"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1329-1" data-line-number="1"><span class="kw">aperm</span>(tabla, <span class="dt">perm=</span>...)</a></code></pre></div>
 <p>igualando el parámetro <code>perm</code> a la lista de las variables en el orden deseado. Por ejemplo, si queremos una tabla equivalente a <code>HairEyeColor</code>, pero con primera variable <code>Sex</code>, segunda variable <code>Hair</code> y tercera variable <code>Eye</code>, podemos hacer:</p>
-<div class="sourceCode" id="cb1292"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1292-1" data-line-number="1"><span class="kw">aperm</span>(HairEyeColor, <span class="dt">perm=</span><span class="kw">c</span>(<span class="st">&quot;Sex&quot;</span>, <span class="st">&quot;Hair&quot;</span>, <span class="st">&quot;Eye&quot;</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb1330"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1330-1" data-line-number="1"><span class="kw">aperm</span>(HairEyeColor, <span class="dt">perm=</span><span class="kw">c</span>(<span class="st">&quot;Sex&quot;</span>, <span class="st">&quot;Hair&quot;</span>, <span class="st">&quot;Eye&quot;</span>))</a></code></pre></div>
 <pre><code>## , , Eye = Brown
 ## 
 ##         Hair
@@ -879,18 +906,18 @@ con la misma sintaxis que para matrices; véase la próxima sección.</p>
 ##   Female     2    14   7     8</code></pre>
 </div>
 <div id="tablas-a-partir-de-data-frames-de-variables-cualitativas" class="section level2">
-<h2><span class="header-section-number">9.5</span> Tablas a partir de <em>data frames</em> de variables cualitativas</h2>
+<h2><span class="header-section-number">10.5</span> Tablas a partir de <em>data frames</em> de variables cualitativas</h2>
 <p>Como ya hemos comentado en varias ocasiones, la manera natural de organizar datos multidimensionales en R es en forma de <em>data frame</em>. En esta sección explicaremos algunas instrucciones para calcular tablas de frecuencias absolutas a partir de un <em>data frame</em> de variables cualitativas. Para ilustrarla, usaremos el fichero que se encuentra en el <code>url</code> <a href="http://aprender.uib.es/Rdir/bebenerg.txt">http://aprender.uib.es/Rdir/bebenerg.txt</a>.</p>
 <p>Este fichero consiste en una tabla de datos con la siguiente información sobre 122 estudiantes de la Escuela Politécnica Superior de la UIB: su sexo (variable <code>sexo</code>), el grado en el que están matriculados
 (variable <code>estudio</code>) y si consumen habitualmente bebidas energéticas (variable <code>bebe</code>). Como contiene letras acentuadas, al llerla con <code>read.table</code> vamos a usar el parámetro <code>encoding</code>.</p>
-<div class="sourceCode" id="cb1294"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1294-1" data-line-number="1">Beb_Energ=<span class="kw">read.table</span>(<span class="st">&quot;http://aprender.uib.es/Rdir/bebenerg.txt&quot;</span>,  <span class="dt">header=</span><span class="ot">TRUE</span>, </a>
-<a class="sourceLine" id="cb1294-2" data-line-number="2">                     <span class="dt">encoding=</span><span class="st">&quot;UTF-8&quot;</span>)</a>
-<a class="sourceLine" id="cb1294-3" data-line-number="3"><span class="kw">str</span>(Beb_Energ)</a></code></pre></div>
+<div class="sourceCode" id="cb1332"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1332-1" data-line-number="1">Beb_Energ=<span class="kw">read.table</span>(<span class="st">&quot;http://aprender.uib.es/Rdir/bebenerg.txt&quot;</span>,  <span class="dt">header=</span><span class="ot">TRUE</span>, </a>
+<a class="sourceLine" id="cb1332-2" data-line-number="2">                     <span class="dt">encoding=</span><span class="st">&quot;UTF-8&quot;</span>)</a>
+<a class="sourceLine" id="cb1332-3" data-line-number="3"><span class="kw">str</span>(Beb_Energ)</a></code></pre></div>
 <pre><code>## &#39;data.frame&#39;:    122 obs. of  3 variables:
 ##  $ estudio: Factor w/ 4 levels &quot;Informática&quot;,..: 1 3 2 1 2 3 1 2 1 1 ...
 ##  $ bebe   : Factor w/ 2 levels &quot;No&quot;,&quot;Sí&quot;: 1 1 2 2 1 1 2 1 1 1 ...
 ##  $ sexo   : Factor w/ 2 levels &quot;Hombre&quot;,&quot;Mujer&quot;: 2 1 2 1 2 2 1 1 1 1 ...</code></pre>
-<div class="sourceCode" id="cb1296"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1296-1" data-line-number="1"><span class="kw">head</span>(Beb_Energ)</a></code></pre></div>
+<div class="sourceCode" id="cb1334"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1334-1" data-line-number="1"><span class="kw">head</span>(Beb_Energ)</a></code></pre></div>
 <pre><code>##          estudio bebe   sexo
 ## 1    Informática   No  Mujer
 ## 2    Matemáticas   No Hombre
@@ -899,18 +926,18 @@ con la misma sintaxis que para matrices; véase la próxima sección.</p>
 ## 5 Ing.Industrial   No  Mujer
 ## 6    Matemáticas   No  Mujer</code></pre>
 <p>Aplicando la función <code>summary</code> a un <em>data frame</em> de variables cualitativas, obtenemos, a modo de resumen, una tabla con las frecuencias absolutas de cada variable.</p>
-<div class="sourceCode" id="cb1298"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1298-1" data-line-number="1"><span class="kw">summary</span>(Beb_Energ)</a></code></pre></div>
+<div class="sourceCode" id="cb1336"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1336-1" data-line-number="1"><span class="kw">summary</span>(Beb_Energ)</a></code></pre></div>
 <pre><code>##            estudio   bebe        sexo   
 ##  Informática   :53   No:97   Hombre:83  
 ##  Ing.Industrial:37   Sí:25   Mujer :39  
 ##  Matemáticas   :16                      
 ##  Telemática    :16</code></pre>
 <p>Esta tabla sólo sirve para ver la información, porque sus entradas son palabras.</p>
-<div class="sourceCode" id="cb1300"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1300-1" data-line-number="1"><span class="kw">summary</span>(Beb_Energ)[,<span class="dv">2</span>]</a></code></pre></div>
+<div class="sourceCode" id="cb1338"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1338-1" data-line-number="1"><span class="kw">summary</span>(Beb_Energ)[,<span class="dv">2</span>]</a></code></pre></div>
 <pre><code>##                                         
 ## &quot;No:97  &quot; &quot;Sí:25  &quot;        NA        NA</code></pre>
 <p>Para calcular en un solo paso la <code>table</code> de cada variable, podemos usar la función <code>sapply</code> de la manera siguiente:</p>
-<div class="sourceCode" id="cb1302"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1302-1" data-line-number="1"><span class="kw">sapply</span>(Beb_Energ, <span class="dt">FUN=</span>table)</a></code></pre></div>
+<div class="sourceCode" id="cb1340"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1340-1" data-line-number="1"><span class="kw">sapply</span>(Beb_Energ, <span class="dt">FUN=</span>table)</a></code></pre></div>
 <pre><code>## $estudio
 ## 
 ##    Informática Ing.Industrial    Matemáticas     Telemática 
@@ -926,16 +953,16 @@ con la misma sintaxis que para matrices; véase la próxima sección.</p>
 ## Hombre  Mujer 
 ##     83     39</code></pre>
 <p>De esta manera, hemos obtenido una <code>list</code> cuyas componentes son las tablas que queríamos.</p>
-<div class="sourceCode" id="cb1304"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1304-1" data-line-number="1"><span class="kw">sapply</span>(Beb_Energ, <span class="dt">FUN=</span>table)<span class="op">$</span>sexo</a></code></pre></div>
+<div class="sourceCode" id="cb1342"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1342-1" data-line-number="1"><span class="kw">sapply</span>(Beb_Energ, <span class="dt">FUN=</span>table)<span class="op">$</span>sexo</a></code></pre></div>
 <pre><code>## 
 ## Hombre  Mujer 
 ##     83     39</code></pre>
-<div class="sourceCode" id="cb1306"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1306-1" data-line-number="1"><span class="kw">table</span>(Beb_Energ<span class="op">$</span>sexo)</a></code></pre></div>
+<div class="sourceCode" id="cb1344"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1344-1" data-line-number="1"><span class="kw">table</span>(Beb_Energ<span class="op">$</span>sexo)</a></code></pre></div>
 <pre><code>## 
 ## Hombre  Mujer 
 ##     83     39</code></pre>
 <p>Si aplicamos la función <code>table</code> a un <em>data frame</em> de variables cualitativas, obtenemos su tabla de frecuencias absolutas, con las variables ordenadas tal y como aparecen en el <em>data frame</em></p>
-<div class="sourceCode" id="cb1308"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1308-1" data-line-number="1"><span class="kw">table</span>(Beb_Energ)</a></code></pre></div>
+<div class="sourceCode" id="cb1346"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1346-1" data-line-number="1"><span class="kw">table</span>(Beb_Energ)</a></code></pre></div>
 <pre><code>## , , sexo = Hombre
 ## 
 ##                 bebe
@@ -953,7 +980,7 @@ con la misma sintaxis que para matrices; véase la próxima sección.</p>
 ##   Ing.Industrial 10  2
 ##   Matemáticas     6  1
 ##   Telemática      3  1</code></pre>
-<div class="sourceCode" id="cb1310"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1310-1" data-line-number="1"><span class="kw">table</span>(Beb_Energ[<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>)])</a></code></pre></div>
+<div class="sourceCode" id="cb1348"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1348-1" data-line-number="1"><span class="kw">table</span>(Beb_Energ[<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>)])</a></code></pre></div>
 <pre><code>##                 sexo
 ## estudio          Hombre Mujer
 ##   Informática        37    16
@@ -961,7 +988,7 @@ con la misma sintaxis que para matrices; véase la próxima sección.</p>
 ##   Matemáticas         9     7
 ##   Telemática         12     4</code></pre>
 <p>Otra opción es usar la función <code>ftable</code>, que produce la misma tabla de frecuencias pero en formato plano.</p>
-<div class="sourceCode" id="cb1312"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1312-1" data-line-number="1"><span class="kw">ftable</span>(Beb_Energ)</a></code></pre></div>
+<div class="sourceCode" id="cb1350"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1350-1" data-line-number="1"><span class="kw">ftable</span>(Beb_Energ)</a></code></pre></div>
 <pre><code>##                     sexo Hombre Mujer
 ## estudio        bebe                  
 ## Informática    No            30    11
@@ -973,7 +1000,7 @@ con la misma sintaxis que para matrices; véase la próxima sección.</p>
 ## Telemática     No            10     3
 ##                Sí             2     1</code></pre>
 <p>Las frecuencias relativas globales y marginales se obtienen aplicando <code>prop.table</code> como hasta ahora. Por ejemplo, las frecuencias relativas de bebedores y no bebedores para cada combinación (sexo, estudio) se obtienen con la función siguiente. Observad cómo cambiamos el orden de las variables para facilitar la comprensión: la primera tabla son las frecuencias relativas de no bebedores, la segunda de sí bebedores.</p>
-<div class="sourceCode" id="cb1314"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1314-1" data-line-number="1"><span class="kw">round</span>(<span class="kw">aperm</span>(<span class="kw">prop.table</span>(<span class="kw">table</span>(Beb_Energ), <span class="dt">margin=</span><span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">1</span>)), <span class="dt">perm=</span><span class="kw">c</span>(<span class="st">&quot;sexo&quot;</span>,<span class="st">&quot;estudio&quot;</span>,<span class="st">&quot;bebe&quot;</span>)), <span class="dv">3</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1352"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1352-1" data-line-number="1"><span class="kw">round</span>(<span class="kw">aperm</span>(<span class="kw">prop.table</span>(<span class="kw">table</span>(Beb_Energ), <span class="dt">margin=</span><span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">1</span>)), <span class="dt">perm=</span><span class="kw">c</span>(<span class="st">&quot;sexo&quot;</span>,<span class="st">&quot;estudio&quot;</span>,<span class="st">&quot;bebe&quot;</span>)), <span class="dv">3</span>)</a></code></pre></div>
 <pre><code>## , , bebe = No
 ## 
 ##         estudio
@@ -989,14 +1016,14 @@ con la misma sintaxis que para matrices; véase la próxima sección.</p>
 ##   Mujer        0.312          0.167       0.143      0.250</code></pre>
 </div>
 <div id="diagramas-de-barras" class="section level2">
-<h2><span class="header-section-number">9.6</span> Diagramas de barras</h2>
-<p>El tipo de gráfico más usado para representar variables cualitativas son los diagramas de barras (<em>bar plots</em>). Como su nombre indica, un <strong>diagrama de barras</strong> contiene, para cada nivel de la variable cualitativa, una barra de altura su frecuencia; por ejemplo, la Figura <a href="chap-edqual.html#fig:F1601">9.1</a> es un diagrama de barras de las frecuencias absolutas de los dos niveles de la muestra de sexos del Ejemplo <a href="chap-edqual.html#exm:ex1601">9.1</a>. El código que lo produce, y que explicaremos en esta sección, es el siguiente:</p>
-<div class="sourceCode" id="cb1316"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1316-1" data-line-number="1"><span class="kw">barplot</span>(<span class="kw">table</span>(Sexo_Ger), <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;lightblue&quot;</span>,<span class="st">&quot;pink&quot;</span>), </a>
-<a class="sourceLine" id="cb1316-2" data-line-number="2">        <span class="dt">main=</span><span class="st">&quot;Diagrama de barras de las frecuencias absolutas</span><span class="ch">\n</span><span class="st"> de la variable </span><span class="ch">\&quot;</span><span class="st">Sexo_Ger</span><span class="ch">\&quot;</span><span class="st">&quot;</span>)</a></code></pre></div>
+<h2><span class="header-section-number">10.6</span> Diagramas de barras</h2>
+<p>El tipo de gráfico más usado para representar variables cualitativas son los diagramas de barras (<em>bar plots</em>). Como su nombre indica, un <strong>diagrama de barras</strong> contiene, para cada nivel de la variable cualitativa, una barra de altura su frecuencia; por ejemplo, la Figura <a href="chap-edqual.html#fig:F1601">10.1</a> es un diagrama de barras de las frecuencias absolutas de los dos niveles de la muestra de sexos del Ejemplo <a href="chap-edqual.html#exm:ex1601">10.1</a>. El código que lo produce, y que explicaremos en esta sección, es el siguiente:</p>
+<div class="sourceCode" id="cb1354"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1354-1" data-line-number="1"><span class="kw">barplot</span>(<span class="kw">table</span>(Sexo_Ger), <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;lightblue&quot;</span>,<span class="st">&quot;pink&quot;</span>), </a>
+<a class="sourceLine" id="cb1354-2" data-line-number="2">        <span class="dt">main=</span><span class="st">&quot;Diagrama de barras de las frecuencias absolutas</span><span class="ch">\n</span><span class="st"> de la variable </span><span class="ch">\&quot;</span><span class="st">Sexo_Ger</span><span class="ch">\&quot;</span><span class="st">&quot;</span>)</a></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:F1601"></span>
 <img src="AprendeR-Parte-I_files/figure-html/F1601-1.png" alt="Diagrama de barras de las frecuencias absolutas de los datos  del Ejemplo \@ref(exm:ex1601)." width="480" />
 <p class="caption">
-Figura 9.1: Diagrama de barras de las frecuencias absolutas de los datos del Ejemplo <a href="chap-edqual.html#exm:ex1601">9.1</a>.
+Figura 10.1: Diagrama de barras de las frecuencias absolutas de los datos del Ejemplo <a href="chap-edqual.html#exm:ex1601">10.1</a>.
 </p>
 </div>
 <p>Antes de continuar con los diagramas de barras, vamos a comentar dos <em>trucos</em> usados en el título de este gráfico. Por un laod, la marca <code>\n</code> dentro de una frase entrada entre comillas introduce un cambio de línea. El mismo efecto se obtiene con un cambio de línea. Id con cuidado, porque ambos efectos se acumulan, así que si cambiais de línea después del <code>\n</code>, obtendréis una línea en blanco. Por otro lado, <code>\\&quot;</code> escribe unas comillas en el texto entrado entre comillas.</p>
@@ -1009,20 +1036,20 @@ Figura 9.1: Diagrama de barras de las frecuencias absolutas de los datos del Eje
 \end{figure}
 -->
 <p>La manera más sencilla de dibujar un diagrama de barras de las frecuencias absolutas o relativas de una variable cualitativa es usando la instrucción <code>barplot</code> aplicada a la tabla correspondiente. Veamos dos ejemplos más de diagramas de barras, uno de frecuencias absolutas y uno de relativas:</p>
-<div class="sourceCode" id="cb1317"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1317-1" data-line-number="1">x=<span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb1317-2" data-line-number="2">Respuestas=<span class="kw">c</span>(<span class="st">&quot;No&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;Sí&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;Sí&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;Sí&quot;</span>)</a>
-<a class="sourceLine" id="cb1317-3" data-line-number="3"><span class="kw">barplot</span>(<span class="kw">table</span>(x), <span class="dt">main=</span><span class="st">&quot;Diagrama de barras de frecuencias absolutas de la variable </span><span class="ch">\&quot;</span><span class="st">x</span><span class="ch">\&quot;</span><span class="st">&quot;</span>)</a></code></pre></div>
-<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-461-1.png" width="480" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb1318"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1318-1" data-line-number="1"><span class="kw">barplot</span>(<span class="kw">prop.table</span>(<span class="kw">table</span>(Respuestas)), </a>
-<a class="sourceLine" id="cb1318-2" data-line-number="2">        <span class="dt">main=</span><span class="st">&quot;Diagrama de barras de frecuencias relativas</span><span class="ch">\n</span><span class="st"> de la variable </span><span class="ch">\&quot;</span><span class="st">Respuestas</span><span class="ch">\&quot;</span><span class="st">&quot;</span>)</a></code></pre></div>
-<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-462-1.png" width="480" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb1355"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1355-1" data-line-number="1">x=<span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb1355-2" data-line-number="2">Respuestas=<span class="kw">c</span>(<span class="st">&quot;No&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;Sí&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;Sí&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;Sí&quot;</span>)</a>
+<a class="sourceLine" id="cb1355-3" data-line-number="3"><span class="kw">barplot</span>(<span class="kw">table</span>(x), <span class="dt">main=</span><span class="st">&quot;Diagrama de barras de frecuencias absolutas de la variable </span><span class="ch">\&quot;</span><span class="st">x</span><span class="ch">\&quot;</span><span class="st">&quot;</span>)</a></code></pre></div>
+<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-488-1.png" width="480" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb1356"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1356-1" data-line-number="1"><span class="kw">barplot</span>(<span class="kw">prop.table</span>(<span class="kw">table</span>(Respuestas)), </a>
+<a class="sourceLine" id="cb1356-2" data-line-number="2">        <span class="dt">main=</span><span class="st">&quot;Diagrama de barras de frecuencias relativas</span><span class="ch">\n</span><span class="st"> de la variable </span><span class="ch">\&quot;</span><span class="st">Respuestas</span><span class="ch">\&quot;</span><span class="st">&quot;</span>)</a></code></pre></div>
+<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-489-1.png" width="480" style="display: block; margin: auto;" /></p>
 <p><strong>¡Atención!</strong> Como pasaba con <code>prop.table</code>, el argumento de <code>barplot</code> ha de ser una tabla, y, por consiguiente, se ha de aplicar al resultado de <code>table</code> o de <code>prop.table</code>, nunca al vector de datos original.</p>
 <p>Habréis observado que en las funciones <code>barplot</code> anteriores hemos usado el parámetro <code>main</code> para poner título a los diagramas; en general, la función <code>barplot</code> admite los parámetros de <code>plot</code> que tienen sentido en el contexto de los diagramas de barras: <code>xlab</code>, <code>ylab</code>, <code>main</code>, etc. Los parámetros disponibles se pueden consultar en la Ayuda de <code>barplot</code>. Aquí sólo vamos a comentar algunos.</p>
 <p>Se pueden especificar los colores de las barras usando el parámetro <code>col</code>. Si se iguala a un solo color, todas las barras serán de este color, pero también se puede especificar un color para cada barra, igualando <code>col</code> a un vector de colores. Veamos un ejemplo de cada.</p>
-<div class="sourceCode" id="cb1319"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1319-1" data-line-number="1"><span class="kw">barplot</span>(<span class="kw">table</span>(Respuestas), <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;green&quot;</span>))</a></code></pre></div>
-<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-463-1.png" width="480" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb1320"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1320-1" data-line-number="1"><span class="kw">barplot</span>(<span class="kw">table</span>(Respuestas), <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;red&quot;</span>,<span class="st">&quot;blue&quot;</span>))</a></code></pre></div>
-<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-464-1.png" width="480" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb1357"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1357-1" data-line-number="1"><span class="kw">barplot</span>(<span class="kw">table</span>(Respuestas), <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;green&quot;</span>))</a></code></pre></div>
+<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-490-1.png" width="480" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb1358"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1358-1" data-line-number="1"><span class="kw">barplot</span>(<span class="kw">table</span>(Respuestas), <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;red&quot;</span>,<span class="st">&quot;blue&quot;</span>))</a></code></pre></div>
+<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-491-1.png" width="480" style="display: block; margin: auto;" /></p>
 <p>En un diagrama con muchas barras, es conveniente usar un esquema adecuado de colores para ellas. Para ello se puede usar el paquete <strong>RColorBrewer</strong>, del que hablaremos en detalle en la Sección <a href="#sec:grmulti"><strong>??</strong></a>.</p>
 <!--
 
@@ -1044,12 +1071,12 @@ knitr::include_graphics(c("images/barplotyverd.png","images/barploty2col.png"))
 \caption{Ejemplos de diagramas de barras de colores.}\label{fig:16.5}
 \end{figure}
 -->
-<p>Una opción interesante es dibujar las barras horizontales en vez de verticales: para hacerlo, se tiene que añadir el parámetro <code>horiz=TRUE</code>. Así, la Figura <a href="chap-edqual.html#fig:F1606">9.2</a> se obtiene con la siguiente instrucción:</p>
-<div class="sourceCode" id="cb1321"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1321-1" data-line-number="1"><span class="kw">barplot</span>(<span class="kw">table</span>(x), <span class="dt">horiz=</span><span class="ot">TRUE</span>)</a></code></pre></div>
+<p>Una opción interesante es dibujar las barras horizontales en vez de verticales: para hacerlo, se tiene que añadir el parámetro <code>horiz=TRUE</code>. Así, la Figura <a href="chap-edqual.html#fig:F1606">10.2</a> se obtiene con la siguiente instrucción:</p>
+<div class="sourceCode" id="cb1359"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1359-1" data-line-number="1"><span class="kw">barplot</span>(<span class="kw">table</span>(x), <span class="dt">horiz=</span><span class="ot">TRUE</span>)</a></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:F1606"></span>
 <img src="AprendeR-Parte-I_files/figure-html/F1606-1.png" alt="Un diagrama de barras horizontales." width="480" />
 <p class="caption">
-Figura 9.2: Un diagrama de barras horizontales.
+Figura 10.2: Un diagrama de barras horizontales.
 </p>
 </div>
 <!--
@@ -1062,22 +1089,22 @@ Figura 9.2: Un diagrama de barras horizontales.
 \caption{Un diagrama de barras horizontales.}\label{fig:16.6}
 \end{figure}
 -->
-<p>Si se aplica <code>barplot</code> a una tabla bidimensional, por defecto dibuja las barras de la segunda variable cortadas por la frecuencia de la primera variable: se le llama un <strong>diagrama de barras apiladas</strong>. Por ejemplo, la función <code>barplot</code> del bloque de código siguiente produce la Figura <a href="chap-edqual.html#fig:F1607">9.3</a>.</p>
-<div class="sourceCode" id="cb1322"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1322-1" data-line-number="1">Respuestas=<span class="kw">c</span>(<span class="st">&quot;No&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;Sí&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;Sí&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;Sí&quot;</span>)</a>
-<a class="sourceLine" id="cb1322-2" data-line-number="2">Sexo=<span class="kw">c</span>(<span class="st">&quot;M&quot;</span>,<span class="st">&quot;M&quot;</span>,<span class="st">&quot;M&quot;</span>,<span class="st">&quot;H&quot;</span>,<span class="st">&quot;H&quot;</span>,<span class="st">&quot;H&quot;</span>,<span class="st">&quot;H&quot;</span>,<span class="st">&quot;H&quot;</span>)</a>
-<a class="sourceLine" id="cb1322-3" data-line-number="3"><span class="kw">table</span>(Sexo,Respuestas)</a></code></pre></div>
+<p>Si se aplica <code>barplot</code> a una tabla bidimensional, por defecto dibuja las barras de la segunda variable cortadas por la frecuencia de la primera variable: se le llama un <strong>diagrama de barras apiladas</strong>. Por ejemplo, la función <code>barplot</code> del bloque de código siguiente produce la Figura <a href="chap-edqual.html#fig:F1607">10.3</a>.</p>
+<div class="sourceCode" id="cb1360"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1360-1" data-line-number="1">Respuestas=<span class="kw">c</span>(<span class="st">&quot;No&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;Sí&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;Sí&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;Sí&quot;</span>)</a>
+<a class="sourceLine" id="cb1360-2" data-line-number="2">Sexo=<span class="kw">c</span>(<span class="st">&quot;M&quot;</span>,<span class="st">&quot;M&quot;</span>,<span class="st">&quot;M&quot;</span>,<span class="st">&quot;H&quot;</span>,<span class="st">&quot;H&quot;</span>,<span class="st">&quot;H&quot;</span>,<span class="st">&quot;H&quot;</span>,<span class="st">&quot;H&quot;</span>)</a>
+<a class="sourceLine" id="cb1360-3" data-line-number="3"><span class="kw">table</span>(Sexo,Respuestas)</a></code></pre></div>
 <pre><code>##     Respuestas
 ## Sexo No Sí
 ##    H  3  2
 ##    M  2  1</code></pre>
-<div class="sourceCode" id="cb1324"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1324-1" data-line-number="1"><span class="kw">barplot</span>(<span class="kw">table</span>(Sexo,Respuestas))</a></code></pre></div>
+<div class="sourceCode" id="cb1362"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1362-1" data-line-number="1"><span class="kw">barplot</span>(<span class="kw">table</span>(Sexo,Respuestas))</a></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:F1607"></span>
 <img src="AprendeR-Parte-I_files/figure-html/F1607-1.png" alt="Un diagrama de barras apiladas." width="480" />
 <p class="caption">
-Figura 9.3: Un diagrama de barras apiladas.
+Figura 10.3: Un diagrama de barras apiladas.
 </p>
 </div>
-<p>En un diagrama de barras apiladas, las barras globales corresponden a los niveles de la variable que definen las columnas de la tabla, es decir, la segunda variable especificada dentro de <code>table</code>: en el de la Figura <a href="chap-edqual.html#fig:F1607">9.3</a>, se trata de la variable <code>Respuestas</code>, de niveles <code>No</code> y <code>Si</code>. Cada una de estas barras se divide verticalmente en sectores que representan los niveles de la otra variable, en orden ascendente: en el ejemplo que nos ocupa, la zona inferior de cada barra representa el nivel <code>H</code> de la variable <code>Sexo</code> y la zona superior su nivel <code>M</code>.</p>
+<p>En un diagrama de barras apiladas, las barras globales corresponden a los niveles de la variable que definen las columnas de la tabla, es decir, la segunda variable especificada dentro de <code>table</code>: en el de la Figura <a href="chap-edqual.html#fig:F1607">10.3</a>, se trata de la variable <code>Respuestas</code>, de niveles <code>No</code> y <code>Si</code>. Cada una de estas barras se divide verticalmente en sectores que representan los niveles de la otra variable, en orden ascendente: en el ejemplo que nos ocupa, la zona inferior de cada barra representa el nivel <code>H</code> de la variable <code>Sexo</code> y la zona superior su nivel <code>M</code>.</p>
 <!--
 \begin{figure}[htb]
 \begin{center}
@@ -1087,26 +1114,26 @@ Figura 9.3: Un diagrama de barras apiladas.
 \end{figure}
 -->
 <p>En vez de organizar las barras de la primera variable en una sola barra vertical, se pueden dibujar una junto a la otra añadiendo el parámetro <code>beside=TRUE</code>, obteniéndose de esta manera un <strong>diagrama de barras por bloques</strong>. Así,</p>
-<div class="sourceCode" id="cb1325"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1325-1" data-line-number="1"><span class="kw">barplot</span>(<span class="kw">table</span>(Sexo,Respuestas), <span class="dt">beside=</span><span class="ot">TRUE</span>)</a></code></pre></div>
-<p>produce el diagrama de barras de la Figura <a href="chap-edqual.html#fig:F1608a">9.4</a>.
+<div class="sourceCode" id="cb1363"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1363-1" data-line-number="1"><span class="kw">barplot</span>(<span class="kw">table</span>(Sexo,Respuestas), <span class="dt">beside=</span><span class="ot">TRUE</span>)</a></code></pre></div>
+<p>produce el diagrama de barras de la Figura <a href="chap-edqual.html#fig:F1608a">10.4</a>.
 En este diagrama, cada bloque de barras representa un nivel de la variable de las columnas (<code>No</code> y <code>Si</code>), y en cada uno de estos bloques las barras representan los niveles de las filas en su orden (en cada bloque, la barra de la izquierda corresponde a <code>H</code> y la de la derecha a <code>M</code>).</p>
 <div class="figure" style="text-align: center"><span id="fig:F1608a"></span>
 <img src="AprendeR-Parte-I_files/figure-html/F1608a-1.png" alt="Un diagrama de barras por bloques." width="480" />
 <p class="caption">
-Figura 9.4: Un diagrama de barras por bloques.
+Figura 10.4: Un diagrama de barras por bloques.
 </p>
 </div>
 <p>Los diagramas de barras tienen que mostrar la información de la manera más adecuada. Por ejemplo, si lo que nos interesa es la distribución de las respuestas por sexo, los bloques de barras tienen que corresponder a los sexos y las barras dentro de cada bloque a las respuestas. En este caso, convendría cambiar el orden de los vectores dentro de la <code>table</code> a la que aplicamos <code>barplot</code>, o trasponer la tabla antes de aplicarle <code>barplot</code>.</p>
-<div class="sourceCode" id="cb1326"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1326-1" data-line-number="1"><span class="kw">barplot</span>(<span class="kw">table</span>(Respuestas,Sexo), <span class="dt">beside=</span><span class="ot">TRUE</span>)</a></code></pre></div>
-<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-466-1.png" width="480" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb1364"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1364-1" data-line-number="1"><span class="kw">barplot</span>(<span class="kw">table</span>(Respuestas,Sexo), <span class="dt">beside=</span><span class="ot">TRUE</span>)</a></code></pre></div>
+<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-493-1.png" width="480" style="display: block; margin: auto;" /></p>
 <p>Suele ser conveniente añadir a un diagrama de barras de dos variables una leyenda que indique qué nivel representa cada sector (en los diagramas de barras apiladas) o cada barra (en los diagramas de barras por bloques). Esto se puede realizar entrando el parámetro <code>legend.text</code> igualado a <code>TRUE</code>, si no queremos modificar los nombres de los niveles de las filas, o igualado a un vector con los nombres que les queremos asignar (en el orden que toque).
 Por ejemplo,</p>
-<div class="sourceCode" id="cb1327"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1327-1" data-line-number="1"><span class="kw">barplot</span>(<span class="kw">table</span>(Sexo,Respuestas), <span class="dt">beside=</span><span class="ot">TRUE</span>, <span class="dt">legend.text=</span><span class="ot">TRUE</span>)</a></code></pre></div>
-<p>produce el diagrama de la Figura <a href="chap-edqual.html#fig:F1608b">9.5</a>, con el formato de leyenda por defecto.</p>
+<div class="sourceCode" id="cb1365"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1365-1" data-line-number="1"><span class="kw">barplot</span>(<span class="kw">table</span>(Sexo,Respuestas), <span class="dt">beside=</span><span class="ot">TRUE</span>, <span class="dt">legend.text=</span><span class="ot">TRUE</span>)</a></code></pre></div>
+<p>produce el diagrama de la Figura <a href="chap-edqual.html#fig:F1608b">10.5</a>, con el formato de leyenda por defecto.</p>
 <div class="figure" style="text-align: center"><span id="fig:F1608b"></span>
 <img src="AprendeR-Parte-I_files/figure-html/F1608b-1.png" alt="Un diagrama de barras por bloques con una leyenda." width="480" />
 <p class="caption">
-Figura 9.5: Un diagrama de barras por bloques con una leyenda.
+Figura 10.5: Un diagrama de barras por bloques con una leyenda.
 </p>
 </div>
 <!--
@@ -1122,13 +1149,13 @@ Figura 9.5: Un diagrama de barras por bloques con una leyenda.
 Podéis consultar los parámetros disponibles en la Ayuda de <code>legend</code>.</p>
 <p>Se pueden cambiar los colores de las barras usando el parámetro <code>col</code> como en los diagramas de barras de tablas unidimensionales. La función <code>legend.text</code> importa estos colores, no hace falta especificarlos en el <code>args.legend</code>.</p>
 <p>También puede ser conveniente poner nombres más informativos a los niveles de las variables. El parámetro <code>names</code> dentro de <code>barplot</code> permite cambiar los nombres de los niveles que muestra debajo del eje horizontal: en un diagrama de barras de una variable, los de sus niveles, y en un diagrama bidimensional, los de los niveles de la variable de las columnas.</p>
-<p>Veamos un ejemplo usando <code>col</code> y con los nombres que se muestran de los niveles de ambas variables traducidos al inglés; el resultado es la Figura <a href="chap-edqual.html#fig:F16011">9.6</a>.</p>
-<div class="sourceCode" id="cb1328"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1328-1" data-line-number="1"><span class="kw">barplot</span>(<span class="kw">table</span>(Respuestas,Sexo), <span class="dt">beside=</span><span class="ot">TRUE</span>, <span class="dt">names=</span><span class="kw">c</span>(<span class="st">&quot;Men&quot;</span>,<span class="st">&quot;Women&quot;</span>),</a>
-<a class="sourceLine" id="cb1328-2" data-line-number="2">        <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;red&quot;</span>,<span class="st">&quot;blue&quot;</span>), <span class="dt">legend.text=</span><span class="kw">c</span>(<span class="st">&quot;No&quot;</span>,<span class="st">&quot;Yes&quot;</span>))</a></code></pre></div>
+<p>Veamos un ejemplo usando <code>col</code> y con los nombres que se muestran de los niveles de ambas variables traducidos al inglés; el resultado es la Figura <a href="chap-edqual.html#fig:F16011">10.6</a>.</p>
+<div class="sourceCode" id="cb1366"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1366-1" data-line-number="1"><span class="kw">barplot</span>(<span class="kw">table</span>(Respuestas,Sexo), <span class="dt">beside=</span><span class="ot">TRUE</span>, <span class="dt">names=</span><span class="kw">c</span>(<span class="st">&quot;Men&quot;</span>,<span class="st">&quot;Women&quot;</span>),</a>
+<a class="sourceLine" id="cb1366-2" data-line-number="2">        <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;red&quot;</span>,<span class="st">&quot;blue&quot;</span>), <span class="dt">legend.text=</span><span class="kw">c</span>(<span class="st">&quot;No&quot;</span>,<span class="st">&quot;Yes&quot;</span>))</a></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:F16011"></span>
 <img src="AprendeR-Parte-I_files/figure-html/F16011-1.png" alt="Diagrama de barras para visualizar la distribución de las respuestas por sexo." width="480" />
 <p class="caption">
-Figura 9.6: Diagrama de barras para visualizar la distribución de las respuestas por sexo.
+Figura 10.6: Diagrama de barras para visualizar la distribución de las respuestas por sexo.
 </p>
 </div>
 <!--
@@ -1141,17 +1168,17 @@ Figura 9.6: Diagrama de barras para visualizar la distribución de las respuesta
 -->
 </div>
 <div id="otros-graficos-para-datos-cualitativos" class="section level2">
-<h2><span class="header-section-number">9.7</span> Otros gráficos para datos cualitativos</h2>
+<h2><span class="header-section-number">10.7</span> Otros gráficos para datos cualitativos</h2>
 <p>Un tipo muy popular de representación gráfica de variables cualitativas son los diagramas circulares. En un <strong>diagrama circular</strong> (<em>pie chart</em>) se representan los niveles de una variable cualitativa como sectores circulares de un círculo, de manera que el ángulo (o equivalentemente, el área) de cada sector sea proporcional a la frecuencia del nivel al que corresponde. Con R, este tipo de diagramas se producen con la instrucción <code>pie</code>, de nuevo aplicada a una tabla de frecuencias y no al vector original. La función <code>pie</code> admite muchos parámetros para modificar el resultado: se pueden cambiar los colores con <code>col</code>, se pueden cambiar los nombres de los niveles con <code>names</code>, se puede poner un título con <code>main</code>, etc.;
 podéis consultar la lista completa de parámetros en su Ayuda.
 Así, por ejemplo,</p>
-<div class="sourceCode" id="cb1329"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1329-1" data-line-number="1">Respuestas=<span class="kw">c</span>(<span class="st">&quot;No&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;Sí&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;Sí&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;Sí&quot;</span>)</a>
-<a class="sourceLine" id="cb1329-2" data-line-number="2"><span class="kw">pie</span>(<span class="kw">table</span>(Respuestas), <span class="dt">main=</span><span class="st">&quot;Diagrama circular de la variable </span><span class="ch">\&quot;</span><span class="st">Respuestas</span><span class="ch">\&quot;</span><span class="st">&quot;</span>)</a></code></pre></div>
-<p>produce el diagrama de la Figura <a href="chap-edqual.html#fig:F16012">9.7</a>.</p>
+<div class="sourceCode" id="cb1367"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1367-1" data-line-number="1">Respuestas=<span class="kw">c</span>(<span class="st">&quot;No&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;Sí&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;Sí&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;Sí&quot;</span>)</a>
+<a class="sourceLine" id="cb1367-2" data-line-number="2"><span class="kw">pie</span>(<span class="kw">table</span>(Respuestas), <span class="dt">main=</span><span class="st">&quot;Diagrama circular de la variable </span><span class="ch">\&quot;</span><span class="st">Respuestas</span><span class="ch">\&quot;</span><span class="st">&quot;</span>)</a></code></pre></div>
+<p>produce el diagrama de la Figura <a href="chap-edqual.html#fig:F16012">10.7</a>.</p>
 <div class="figure" style="text-align: center"><span id="fig:F16012"></span>
 <img src="AprendeR-Parte-I_files/figure-html/F16012-1.png" alt="Un diagrama circular." width="480" />
 <p class="caption">
-Figura 9.7: Un diagrama circular.
+Figura 10.7: Un diagrama circular.
 </p>
 </div>
 <!--
@@ -1163,12 +1190,12 @@ Figura 9.7: Un diagrama circular.
 \caption{Diagramas circulares.}\label{fig:16.12}
 \end{figure}
 -->
-<p>Pese a su popularidad, es poco recomendable usar diagramas circulares cuando manejamos más de dos niveles, porque a veces es difícil, a simple vista, comprender las relaciones entre las frecuencias que representan. Para convencerse, basta comparar los diagramas de barras y los diagramas circulares de la Figura <a href="chap-edqual.html#fig:wiki">9.8</a> (extraída de la
+<p>Pese a su popularidad, es poco recomendable usar diagramas circulares cuando manejamos más de dos niveles, porque a veces es difícil, a simple vista, comprender las relaciones entre las frecuencias que representan. Para convencerse, basta comparar los diagramas de barras y los diagramas circulares de la Figura <a href="chap-edqual.html#fig:wiki">10.8</a> (extraída de la
 <a href="http://en.wikipedia.org/wiki/Pie_chart">entrada sobre diagramas circulares de la <em>Wikipedia</em></a>).</p>
 <div class="figure" style="text-align: center"><span id="fig:wiki"></span>
 <img src="AprendeR-Parte-I_files/figure-html/wikipc.png" alt="Diagramas de barras *versus* diagramas circulares."  />
 <p class="caption">
-Figura 9.8: Diagramas de barras <em>versus</em> diagramas circulares.
+Figura 10.8: Diagramas de barras <em>versus</em> diagramas circulares.
 </p>
 </div>
 <!--
@@ -1183,24 +1210,24 @@ Figura 9.8: Diagramas de barras <em>versus</em> diagramas circulares.
 <p>Otra representación de las tablas multidimensionales de frecuencias son los <strong>diagramas de mosaico</strong>. Estos gráficos se obtienen sustituyendo cada entrada de la tabla de frecuencias por una región rectangular de área proporcional a su valor. En concreto, para obtener el diagrama de mosaico de una tabla bidimensional, se parte de un cuadrado de lado 1,
 primero se divide en barras verticales de amplitudes iguales a las frecuencias relativas de una variable, y luego cada barra se divide, a lo alto, en regiones de alturas proporcionales a las frecuencias relativas marginales de cada nivel de la otra variable dentro del nivel correspondiente de la primera variable.</p>
 <p>Un diagrama de mosaico de una tabla se obtiene con R aplicando la función <code>plot</code> a la tabla, o también la función <code>mosaicplot</code>; esta última también se puede aplicar a matrices. Por ejemplo,</p>
-<div class="sourceCode" id="cb1330"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1330-1" data-line-number="1">Respuestas=<span class="kw">c</span>(<span class="st">&quot;No&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;Sí&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;Sí&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;Sí&quot;</span>)</a>
-<a class="sourceLine" id="cb1330-2" data-line-number="2">Sexo=<span class="kw">c</span>(<span class="st">&quot;M&quot;</span>,<span class="st">&quot;M&quot;</span>,<span class="st">&quot;M&quot;</span>,<span class="st">&quot;H&quot;</span>,<span class="st">&quot;H&quot;</span>,<span class="st">&quot;H&quot;</span>,<span class="st">&quot;H&quot;</span>,<span class="st">&quot;H&quot;</span>)</a>
-<a class="sourceLine" id="cb1330-3" data-line-number="3"><span class="kw">plot</span>(<span class="kw">table</span>(Sexo,Respuestas), <span class="dt">main=</span><span class="st">&quot;Diagrama de mosaico de las variables </span><span class="ch">\&quot;</span><span class="st">Sexo</span><span class="ch">\&quot;</span><span class="st"> y </span><span class="ch">\&quot;</span><span class="st">Respuestas</span><span class="ch">\&quot;</span><span class="st">&quot;</span>)</a></code></pre></div>
-<p>produce el diagrama de mosaico de la Figura <a href="chap-edqual.html#fig:mosaic1a">9.9</a>.</p>
+<div class="sourceCode" id="cb1368"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1368-1" data-line-number="1">Respuestas=<span class="kw">c</span>(<span class="st">&quot;No&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;Sí&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;Sí&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;No&quot;</span>,<span class="st">&quot;Sí&quot;</span>)</a>
+<a class="sourceLine" id="cb1368-2" data-line-number="2">Sexo=<span class="kw">c</span>(<span class="st">&quot;M&quot;</span>,<span class="st">&quot;M&quot;</span>,<span class="st">&quot;M&quot;</span>,<span class="st">&quot;H&quot;</span>,<span class="st">&quot;H&quot;</span>,<span class="st">&quot;H&quot;</span>,<span class="st">&quot;H&quot;</span>,<span class="st">&quot;H&quot;</span>)</a>
+<a class="sourceLine" id="cb1368-3" data-line-number="3"><span class="kw">plot</span>(<span class="kw">table</span>(Sexo,Respuestas), <span class="dt">main=</span><span class="st">&quot;Diagrama de mosaico de las variables </span><span class="ch">\&quot;</span><span class="st">Sexo</span><span class="ch">\&quot;</span><span class="st"> y </span><span class="ch">\&quot;</span><span class="st">Respuestas</span><span class="ch">\&quot;</span><span class="st">&quot;</span>)</a></code></pre></div>
+<p>produce el diagrama de mosaico de la Figura <a href="chap-edqual.html#fig:mosaic1a">10.9</a>.</p>
 <div class="figure" style="text-align: center"><span id="fig:mosaic1a"></span>
 <img src="AprendeR-Parte-I_files/figure-html/mosaic1a-1.png" alt="Un diagrama de mosaico bidimendiol." width="480" />
 <p class="caption">
-Figura 9.9: Un diagrama de mosaico bidimendiol.
+Figura 10.9: Un diagrama de mosaico bidimendiol.
 </p>
 </div>
 <p>En el diagrama de mosaico de una tabla tridimensional, primero se divide el cuadrado en barras verticales de amplitudes iguales a las frecuencias relativas de una variable; luego, cada barra se divide, a lo alto, en regiones de alturas proporcionales a las frecuencias relativas marginales de cada nivel de una segunda variable dentro del nivel correspondiente de la primera variable; y, finalmente, cada sector rectangular se vuelve a dividir a lo ancho en regiones de amplitudes proporcionales a las frecuencias relativas marginales de cada nivel de la tercera variable dentro de la combinación correspondiente de niveles de las otras dos. Por ejemplo,</p>
-<div class="sourceCode" id="cb1331"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1331-1" data-line-number="1"><span class="kw">plot</span>(HairEyeColor,  <span class="dt">main=</span><span class="st">&quot;Diagrama de mosaico de la tabla </span><span class="ch">\&quot;</span><span class="st">HairEyeColor</span><span class="ch">\&quot;</span><span class="st">&quot;</span>, </a>
-<a class="sourceLine" id="cb1331-2" data-line-number="2">     <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;pink&quot;</span>,<span class="st">&quot;lightblue&quot;</span>))</a></code></pre></div>
-<p>produce el gráfico de la Figura <a href="chap-edqual.html#fig:mosaic1b">9.10</a>.</p>
+<div class="sourceCode" id="cb1369"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1369-1" data-line-number="1"><span class="kw">plot</span>(HairEyeColor,  <span class="dt">main=</span><span class="st">&quot;Diagrama de mosaico de la tabla </span><span class="ch">\&quot;</span><span class="st">HairEyeColor</span><span class="ch">\&quot;</span><span class="st">&quot;</span>, </a>
+<a class="sourceLine" id="cb1369-2" data-line-number="2">     <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;pink&quot;</span>,<span class="st">&quot;lightblue&quot;</span>))</a></code></pre></div>
+<p>produce el gráfico de la Figura <a href="chap-edqual.html#fig:mosaic1b">10.10</a>.</p>
 <div class="figure" style="text-align: center"><span id="fig:mosaic1b"></span>
 <img src="AprendeR-Parte-I_files/figure-html/mosaic1b-1.png" alt="Un diagrama de mosaico tridimendiol." width="480" />
 <p class="caption">
-Figura 9.10: Un diagrama de mosaico tridimendiol.
+Figura 10.10: Un diagrama de mosaico tridimendiol.
 </p>
 </div>
 <!--
@@ -1243,24 +1270,24 @@ El parámetro `dir` es el equivalente del parámetro homónimo en `mosaicplot` (
 \end{figure}
 -->
 <p>Este paquete <strong>vcd</strong> también incluye la función <code>cotabplot</code> que produce un diagrama de mosaico para cada nivel de la tercera variable. Por ejemplo,</p>
-<div class="sourceCode" id="cb1332"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1332-1" data-line-number="1"><span class="kw">library</span>(vcd)</a>
-<a class="sourceLine" id="cb1332-2" data-line-number="2"><span class="kw">cotabplot</span>(<span class="kw">table</span>(Sexo,Respuestas,Pais))</a></code></pre></div>
-produce el gráfico de la Figura <a href="chap-edqual.html#fig:extresquala">9.11</a>.
+<div class="sourceCode" id="cb1370"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1370-1" data-line-number="1"><span class="kw">library</span>(vcd)</a>
+<a class="sourceLine" id="cb1370-2" data-line-number="2"><span class="kw">cotabplot</span>(<span class="kw">table</span>(Sexo,Respuestas,Pais))</a></code></pre></div>
+produce el gráfico de la Figura <a href="chap-edqual.html#fig:extresquala">10.11</a>.
 <div class="figure" style="text-align: center"><span id="fig:extresquala"></span>
 <img src="AprendeR-Parte-I_files/figure-html/extresquala-1.png" alt="Diagrama de mosaico producido con `cotabplot`." width="480" />
 <p class="caption">
-Figura 9.11: Diagrama de mosaico producido con <code>cotabplot</code>.
+Figura 10.11: Diagrama de mosaico producido con <code>cotabplot</code>.
 </p>
 </div>
 <p>Finalmente, el paquete <strong>vcdExtra</strong> incluye la función <code>mosaic3d</code> que produce un diagrama de mosaico tridimensional en una ventana de una aplicación para gráficos 3D interactivos. Por ejemplo, el bloque de código</p>
-<div class="sourceCode" id="cb1333"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1333-1" data-line-number="1"><span class="kw">library</span>(vcdExtra)</a>
-<a class="sourceLine" id="cb1333-2" data-line-number="2"><span class="kw">mosaic3d</span>(HairEyeColor, <span class="dt">type=</span><span class="st">&quot;expected&quot;</span>, <span class="dt">box=</span><span class="ot">TRUE</span>, <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;pink&quot;</span>,<span class="st">&quot;lightblue&quot;</span>))</a></code></pre></div>
-<p>produce el gráfico 3D de la Figura <a href="chap-edqual.html#fig:extresqualb">9.12</a> en una ventana de gráficos interactivos donde lo podréis rotar, ampliar, etc.</p>
-<div class="sourceCode" id="cb1334"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1334-1" data-line-number="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;AprendeR-Parte-I_files/figure-html/exmosaic3d.png&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1371"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1371-1" data-line-number="1"><span class="kw">library</span>(vcdExtra)</a>
+<a class="sourceLine" id="cb1371-2" data-line-number="2"><span class="kw">mosaic3d</span>(HairEyeColor, <span class="dt">type=</span><span class="st">&quot;expected&quot;</span>, <span class="dt">box=</span><span class="ot">TRUE</span>, <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;pink&quot;</span>,<span class="st">&quot;lightblue&quot;</span>))</a></code></pre></div>
+<p>produce el gráfico 3D de la Figura <a href="chap-edqual.html#fig:extresqualb">10.12</a> en una ventana de gráficos interactivos donde lo podréis rotar, ampliar, etc.</p>
+<div class="sourceCode" id="cb1372"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1372-1" data-line-number="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;AprendeR-Parte-I_files/figure-html/exmosaic3d.png&quot;</span>)</a></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:extresqualb"></span>
 <img src="AprendeR-Parte-I_files/figure-html/exmosaic3d.png" alt="Diagrama de mosaico 3D producido con `mosaic3d`."  />
 <p class="caption">
-Figura 9.12: Diagrama de mosaico 3D producido con <code>mosaic3d</code>.
+Figura 10.12: Diagrama de mosaico 3D producido con <code>mosaic3d</code>.
 </p>
 </div>
 <!--
@@ -1274,10 +1301,10 @@ Figura 9.12: Diagrama de mosaico 3D producido con <code>mosaic3d</code>.
 -->
 </div>
 <div id="sec:exqual" class="section level2">
-<h2><span class="header-section-number">9.8</span> Un ejemplo completo</h2>
+<h2><span class="header-section-number">10.8</span> Un ejemplo completo</h2>
 <p>Vamos a llevar a cabo un análisis completo de un ejemplo con lo que hemos aprendido en esta lección. Como ya hemos comentado, el objeto de datos <code>HairEyeColor</code> que lleva predefinido R es una tabla de frecuencias absolutas de tres variables cualitativas: <code>Hair</code>, <code>Eye</code> y <code>Sex</code>. Vamos a extraer de esta tabla una tabla bidimensional de frecuencias absolutas de las variables <code>Eye</code> y <code>Hair</code>, sin distinguir según el sexo. La manera más sencilla de obtener esta tabla es combinando la función <code>apply</code> con <code>as.table</code>, para que el resultado final sea una tabla de contingencia (sin esta instrucción, el resultado sería una matriz), de la manera siguiente:</p>
-<div class="sourceCode" id="cb1335"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1335-1" data-line-number="1">HEC=<span class="kw">as.table</span>(<span class="kw">apply</span>(HairEyeColor, <span class="dt">MARGIN=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="dt">FUN=</span>sum))</a>
-<a class="sourceLine" id="cb1335-2" data-line-number="2">HEC</a></code></pre></div>
+<div class="sourceCode" id="cb1373"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1373-1" data-line-number="1">HEC=<span class="kw">as.table</span>(<span class="kw">apply</span>(HairEyeColor, <span class="dt">MARGIN=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="dt">FUN=</span>sum))</a>
+<a class="sourceLine" id="cb1373-2" data-line-number="2">HEC</a></code></pre></div>
 <pre><code>##        Eye
 ## Hair    Brown Blue Hazel Green
 ##   Black    68   20    15     5
@@ -1286,15 +1313,15 @@ Figura 9.12: Diagrama de mosaico 3D producido con <code>mosaic3d</code>.
 ##   Blond     7   94    10    16</code></pre>
 <p>Vamos a traducir al castellano los nombres de las variables de esta tabla y de sus niveles. Esto lo podemos llevar a cabo en un solo paso con la función <code>dimnames</code> que ya usamos sobre <em>data frames</em>.
 El resultado de aplicar esta función a una <code>table</code> es una <code>list</code> cuyas componentes son los niveles de cada variable.</p>
-<div class="sourceCode" id="cb1337"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1337-1" data-line-number="1"><span class="kw">dimnames</span>(HEC)</a></code></pre></div>
+<div class="sourceCode" id="cb1375"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1375-1" data-line-number="1"><span class="kw">dimnames</span>(HEC)</a></code></pre></div>
 <pre><code>## $Hair
 ## [1] &quot;Black&quot; &quot;Brown&quot; &quot;Red&quot;   &quot;Blond&quot;
 ## 
 ## $Eye
 ## [1] &quot;Brown&quot; &quot;Blue&quot;  &quot;Hazel&quot; &quot;Green&quot;</code></pre>
 <p>Por lo tanto, para reescribir los nombres de las variables y sus niveles, basta redefinir esta <code>list</code> de la manera siguiente:</p>
-<div class="sourceCode" id="cb1339"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1339-1" data-line-number="1"><span class="kw">dimnames</span>(HEC)=<span class="kw">list</span>(<span class="dt">Cabello=</span><span class="kw">c</span>(<span class="st">&quot;Negro&quot;</span>,<span class="st">&quot;Castaño&quot;</span>,<span class="st">&quot;Rojo&quot;</span>,<span class="st">&quot;Rubio&quot;</span>), <span class="dt">Ojos=</span><span class="kw">c</span>(<span class="st">&quot;Marrones&quot;</span>,<span class="st">&quot;Azules&quot;</span>,<span class="st">&quot;Pardos&quot;</span>,<span class="st">&quot;Verdes&quot;</span>))</a>
-<a class="sourceLine" id="cb1339-2" data-line-number="2">HEC</a></code></pre></div>
+<div class="sourceCode" id="cb1377"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1377-1" data-line-number="1"><span class="kw">dimnames</span>(HEC)=<span class="kw">list</span>(<span class="dt">Cabello=</span><span class="kw">c</span>(<span class="st">&quot;Negro&quot;</span>,<span class="st">&quot;Castaño&quot;</span>,<span class="st">&quot;Rojo&quot;</span>,<span class="st">&quot;Rubio&quot;</span>), <span class="dt">Ojos=</span><span class="kw">c</span>(<span class="st">&quot;Marrones&quot;</span>,<span class="st">&quot;Azules&quot;</span>,<span class="st">&quot;Pardos&quot;</span>,<span class="st">&quot;Verdes&quot;</span>))</a>
+<a class="sourceLine" id="cb1377-2" data-line-number="2">HEC</a></code></pre></div>
 <pre><code>##          Ojos
 ## Cabello   Marrones Azules Pardos Verdes
 ##   Negro         68     20     15      5
@@ -1302,8 +1329,8 @@ El resultado de aplicar esta función a una <code>table</code> es una <code>list
 ##   Rojo          26     17     14     14
 ##   Rubio          7     94     10     16</code></pre>
 <p>Vamos a dibujar un diagrama de mosaico de esta tabla.</p>
-<div class="sourceCode" id="cb1341"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1341-1" data-line-number="1"><span class="kw">plot</span>(HEC,<span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;lightblue&quot;</span>),</a>
-<a class="sourceLine" id="cb1341-2" data-line-number="2">     <span class="dt">main=</span><span class="st">&quot;Diagrama de mosaico de la tabla bidimensional de frecuencias</span><span class="ch">\n</span><span class="st"> de colores de cabellos y ojos&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1379"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1379-1" data-line-number="1"><span class="kw">plot</span>(HEC,<span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;lightblue&quot;</span>),</a>
+<a class="sourceLine" id="cb1379-2" data-line-number="2">     <span class="dt">main=</span><span class="st">&quot;Diagrama de mosaico de la tabla bidimensional de frecuencias</span><span class="ch">\n</span><span class="st"> de colores de cabellos y ojos&quot;</span>)</a></code></pre></div>
 <p><img src="AprendeR-Parte-I_files/figure-html/HECmosaic-1.png" width="480" style="display: block; margin: auto;" />
 A simple vista, vemos que las combinaciones de colores de cabellos y ojos más frecuentes son
 los cabellos castaños con los ojos marrones, y los cabellos rubios con los ojos azules.</p>
@@ -1319,44 +1346,44 @@ los cabellos castaños con los ojos marrones, y los cabellos rubios con los ojos
 <ul>
 <li>Número total de individuos:</li>
 </ul>
-<div class="sourceCode" id="cb1342"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1342-1" data-line-number="1"><span class="kw">sum</span>(HEC)</a></code></pre></div>
+<div class="sourceCode" id="cb1380"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1380-1" data-line-number="1"><span class="kw">sum</span>(HEC)</a></code></pre></div>
 <pre><code>## [1] 592</code></pre>
 <ul>
 <li>Tabla de frecuencias absolutas de colores de ojos:</li>
 </ul>
-<div class="sourceCode" id="cb1344"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1344-1" data-line-number="1"><span class="kw">colSums</span>(HEC)</a></code></pre></div>
+<div class="sourceCode" id="cb1382"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1382-1" data-line-number="1"><span class="kw">colSums</span>(HEC)</a></code></pre></div>
 <pre><code>## Marrones   Azules   Pardos   Verdes 
 ##      220      215       93       64</code></pre>
 <ul>
 <li>Tabla de frecuencias absolutas de colores de cabello:</li>
 </ul>
-<div class="sourceCode" id="cb1346"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1346-1" data-line-number="1"><span class="kw">rowSums</span>(HEC)       </a></code></pre></div>
+<div class="sourceCode" id="cb1384"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1384-1" data-line-number="1"><span class="kw">rowSums</span>(HEC)       </a></code></pre></div>
 <pre><code>##   Negro Castaño    Rojo   Rubio 
 ##     108     286      71     127</code></pre>
 <ul>
 <li>Tabla de frecuencias relativas de colores de ojos:</li>
 </ul>
-<div class="sourceCode" id="cb1348"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1348-1" data-line-number="1"><span class="kw">round</span>(<span class="kw">prop.table</span>(<span class="kw">colSums</span>(HEC)),<span class="dv">3</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1386"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1386-1" data-line-number="1"><span class="kw">round</span>(<span class="kw">prop.table</span>(<span class="kw">colSums</span>(HEC)),<span class="dv">3</span>)</a></code></pre></div>
 <pre><code>## Marrones   Azules   Pardos   Verdes 
 ##    0.372    0.363    0.157    0.108</code></pre>
 <ul>
 <li>Tabla de frecuencias absolutas de colores de cabello:</li>
 </ul>
-<div class="sourceCode" id="cb1350"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1350-1" data-line-number="1"><span class="kw">round</span>(<span class="kw">prop.table</span>(<span class="kw">rowSums</span>(HEC)),<span class="dv">3</span>)   <span class="co">#Frec. rel. de Cabello</span></a></code></pre></div>
+<div class="sourceCode" id="cb1388"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1388-1" data-line-number="1"><span class="kw">round</span>(<span class="kw">prop.table</span>(<span class="kw">rowSums</span>(HEC)),<span class="dv">3</span>)   <span class="co">#Frec. rel. de Cabello</span></a></code></pre></div>
 <pre><code>##   Negro Castaño    Rojo   Rubio 
 ##   0.182   0.483   0.120   0.215</code></pre>
 <ul>
 <li>Diagrama de barras de frecuencias relativas de colores de ojos:</li>
 </ul>
-<div class="sourceCode" id="cb1352"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1352-1" data-line-number="1"><span class="kw">barplot</span>(<span class="kw">prop.table</span>(<span class="kw">colSums</span>(HEC)), <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.4</span>),</a>
-<a class="sourceLine" id="cb1352-2" data-line-number="2">  <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;burlywood4&quot;</span>,<span class="st">&quot;lightblue&quot;</span>,<span class="st">&quot;orange3&quot;</span>,<span class="st">&quot;lightgreen&quot;</span>))</a></code></pre></div>
-<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-481-1.png" width="480" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb1390"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1390-1" data-line-number="1"><span class="kw">barplot</span>(<span class="kw">prop.table</span>(<span class="kw">colSums</span>(HEC)), <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.4</span>),</a>
+<a class="sourceLine" id="cb1390-2" data-line-number="2">  <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;burlywood4&quot;</span>,<span class="st">&quot;lightblue&quot;</span>,<span class="st">&quot;orange3&quot;</span>,<span class="st">&quot;lightgreen&quot;</span>))</a></code></pre></div>
+<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-508-1.png" width="480" style="display: block; margin: auto;" /></p>
 <ul>
 <li>Diagrama de barras de frecuencias relativas de colores de cabello:</li>
 </ul>
-<div class="sourceCode" id="cb1353"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1353-1" data-line-number="1"><span class="kw">barplot</span>(<span class="kw">prop.table</span>(<span class="kw">rowSums</span>(HEC)),</a>
-<a class="sourceLine" id="cb1353-2" data-line-number="2">  <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;black&quot;</span>,<span class="st">&quot;brown&quot;</span>,<span class="st">&quot;red&quot;</span>,<span class="st">&quot;gold&quot;</span>), <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.5</span>))</a></code></pre></div>
-<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-482-1.png" width="480" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb1391"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1391-1" data-line-number="1"><span class="kw">barplot</span>(<span class="kw">prop.table</span>(<span class="kw">rowSums</span>(HEC)),</a>
+<a class="sourceLine" id="cb1391-2" data-line-number="2">  <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;black&quot;</span>,<span class="st">&quot;brown&quot;</span>,<span class="st">&quot;red&quot;</span>,<span class="st">&quot;gold&quot;</span>), <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.5</span>))</a></code></pre></div>
+<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-509-1.png" width="480" style="display: block; margin: auto;" /></p>
 <p>Vemos que el color dominante de cabellos es el castaño, mientras que en el color de ojos el marrón y el azul están prácticamente empatados.</p>
 <!--
 \begin{figure}[ht]
@@ -1371,7 +1398,7 @@ los cabellos castaños con los ojos marrones, y los cabellos rubios con los ojos
 <ul>
 <li>Tabla de frecuencias relativas globales:</li>
 </ul>
-<div class="sourceCode" id="cb1354"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1354-1" data-line-number="1"><span class="kw">round</span>(<span class="kw">prop.table</span>(HEC), <span class="dv">3</span>)  </a></code></pre></div>
+<div class="sourceCode" id="cb1392"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1392-1" data-line-number="1"><span class="kw">round</span>(<span class="kw">prop.table</span>(HEC), <span class="dv">3</span>)  </a></code></pre></div>
 <pre><code>##          Ojos
 ## Cabello   Marrones Azules Pardos Verdes
 ##   Negro      0.115  0.034  0.025  0.008
@@ -1381,7 +1408,7 @@ los cabellos castaños con los ojos marrones, y los cabellos rubios con los ojos
 <ul>
 <li>Tabla de frecuencias relativas de los colores de cabello dentro de cada color de ojos:</li>
 </ul>
-<div class="sourceCode" id="cb1356"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1356-1" data-line-number="1"><span class="kw">round</span>(<span class="kw">prop.table</span>(HEC, <span class="dt">margin=</span><span class="dv">1</span>), <span class="dv">3</span>)  </a></code></pre></div>
+<div class="sourceCode" id="cb1394"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1394-1" data-line-number="1"><span class="kw">round</span>(<span class="kw">prop.table</span>(HEC, <span class="dt">margin=</span><span class="dv">1</span>), <span class="dv">3</span>)  </a></code></pre></div>
 <pre><code>##          Ojos
 ## Cabello   Marrones Azules Pardos Verdes
 ##   Negro      0.630  0.185  0.139  0.046
@@ -1391,7 +1418,7 @@ los cabellos castaños con los ojos marrones, y los cabellos rubios con los ojos
 <ul>
 <li>Tabla de frecuencias relativas de los colores de ojos dentro de cada color de cabellos:</li>
 </ul>
-<div class="sourceCode" id="cb1358"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1358-1" data-line-number="1"><span class="kw">round</span>(<span class="kw">prop.table</span>(HEC, <span class="dt">margin=</span><span class="dv">2</span>), <span class="dv">3</span>)   </a></code></pre></div>
+<div class="sourceCode" id="cb1396"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1396-1" data-line-number="1"><span class="kw">round</span>(<span class="kw">prop.table</span>(HEC, <span class="dt">margin=</span><span class="dv">2</span>), <span class="dv">3</span>)   </a></code></pre></div>
 <pre><code>##          Ojos
 ## Cabello   Marrones Azules Pardos Verdes
 ##   Negro      0.309  0.093  0.161  0.078
@@ -1401,16 +1428,16 @@ los cabellos castaños con los ojos marrones, y los cabellos rubios con los ojos
 <ul>
 <li>Diagrama de barras de frecuencias relativas de los colores de cabello dentro de cada color de ojos:</li>
 </ul>
-<div class="sourceCode" id="cb1360"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1360-1" data-line-number="1"><span class="kw">barplot</span>(<span class="kw">prop.table</span>(HEC, <span class="dt">margin=</span><span class="dv">1</span>), <span class="dt">beside=</span><span class="ot">TRUE</span>, <span class="dt">legend.text=</span><span class="ot">TRUE</span>,</a>
-<a class="sourceLine" id="cb1360-2" data-line-number="2">   <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;black&quot;</span>,<span class="st">&quot;brown&quot;</span>,<span class="st">&quot;red&quot;</span>,<span class="st">&quot;gold&quot;</span>), <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.8</span>))</a></code></pre></div>
-<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-486-1.png" width="480" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb1398"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1398-1" data-line-number="1"><span class="kw">barplot</span>(<span class="kw">prop.table</span>(HEC, <span class="dt">margin=</span><span class="dv">1</span>), <span class="dt">beside=</span><span class="ot">TRUE</span>, <span class="dt">legend.text=</span><span class="ot">TRUE</span>,</a>
+<a class="sourceLine" id="cb1398-2" data-line-number="2">   <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;black&quot;</span>,<span class="st">&quot;brown&quot;</span>,<span class="st">&quot;red&quot;</span>,<span class="st">&quot;gold&quot;</span>), <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.8</span>))</a></code></pre></div>
+<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-513-1.png" width="480" style="display: block; margin: auto;" /></p>
 <ul>
 <li>Diagrama de barras de frecuencias relativas de los colores de ojos dentro de cada color de cabello:</li>
 </ul>
-<div class="sourceCode" id="cb1361"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1361-1" data-line-number="1"><span class="kw">barplot</span>(<span class="kw">t</span>(<span class="kw">prop.table</span>(HEC, <span class="dt">margin=</span><span class="dv">2</span>)), <span class="dt">beside=</span><span class="ot">TRUE</span>,</a>
-<a class="sourceLine" id="cb1361-2" data-line-number="2">   <span class="dt">legend.text=</span><span class="ot">TRUE</span>, <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.6</span>),</a>
-<a class="sourceLine" id="cb1361-3" data-line-number="3">   <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;burlywood4&quot;</span>,<span class="st">&quot;lightblue&quot;</span>,<span class="st">&quot;orange3&quot;</span>,<span class="st">&quot;lightgreen&quot;</span>))</a></code></pre></div>
-<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-487-1.png" width="480" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb1399"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1399-1" data-line-number="1"><span class="kw">barplot</span>(<span class="kw">t</span>(<span class="kw">prop.table</span>(HEC, <span class="dt">margin=</span><span class="dv">2</span>)), <span class="dt">beside=</span><span class="ot">TRUE</span>,</a>
+<a class="sourceLine" id="cb1399-2" data-line-number="2">   <span class="dt">legend.text=</span><span class="ot">TRUE</span>, <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.6</span>),</a>
+<a class="sourceLine" id="cb1399-3" data-line-number="3">   <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;burlywood4&quot;</span>,<span class="st">&quot;lightblue&quot;</span>,<span class="st">&quot;orange3&quot;</span>,<span class="st">&quot;lightgreen&quot;</span>))</a></code></pre></div>
+<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-514-1.png" width="480" style="display: block; margin: auto;" /></p>
 <p>Vemos, por ejemplo, que entre las personas de ojos azules, los cabellos rubios son los más frecuentes, y que entre las personas castañas el color de ojos más frecuente es el pardo.</p>
 <!--
 \begin{figure}[ht]
@@ -1422,8 +1449,8 @@ los cabellos castaños con los ojos marrones, y los cabellos rubios con los ojos
 \end{figure}
 -->
 </div>
-<div id="guia-rapida-de-funciones-3" class="section level2">
-<h2><span class="header-section-number">9.9</span> Guía rápida de funciones</h2>
+<div id="guia-rapida-de-funciones-4" class="section level2">
+<h2><span class="header-section-number">10.9</span> Guía rápida de funciones</h2>
 <ul>
 <li><code>table</code> calcula la tabla de frecuencias absolutas de un vector o un factor.</li>
 <li><code>as.table</code> convierte un objeto (por ejemplo, una matriz) en una tabla de contingencia.</li>
@@ -1468,9 +1495,9 @@ los cabellos castaños con los ojos marrones, y los cabellos rubios con los ojos
 <li><code>\&quot;</code> escribe unas comillas en el texto de un título o etiqueta.</li>
 </ul>
 </div>
-<div id="ejercicios-7" class="section level2">
-<h2><span class="header-section-number">9.10</span> Ejercicios</h2>
-<div id="test-6" class="section level3 unnumbered">
+<div id="ejercicios-8" class="section level2">
+<h2><span class="header-section-number">10.10</span> Ejercicios</h2>
+<div id="test-7" class="section level3 unnumbered">
 <h3>Test</h3>
 <p><em>(1)</em> Dad una instrucción que defina la tabla de frecuencias absolutas de un vector llamado <code>flores</code>.</p>
 <p><em>(2)</em> Dad una instrucción que defina la tabla de frecuencias relativas de un vector llamado <code>flores</code> usando la función <code>prop.table</code>.</p>
@@ -1484,7 +1511,7 @@ los cabellos castaños con los ojos marrones, y los cabellos rubios con los ojos
 <p><em>(10)</em> La tabla <code>DNase</code> es uno de los <em>data frames</em> que lleva predefinidos R. Dad una instrucción que dibuje un diagrama de barras básico de la variable <em>density</em> de este <em>data frame</em>. Y antes de contestar, comprobad que funciona.</p>
 <p><em>(11)</em> Considerad el objeto de datos <code>HairEyeColor</code> que lleva predefinido R y que ya hemos usado en esta lección. ¿Qué porcentaje de hombres en esta tabla son pelirrojos y tienen los ojos verdes? Dad el valor del porcentaje redondeado a dos cifras decimales y sin el signo %.</p>
 </div>
-<div id="ejercicio-6" class="section level3 unnumbered">
+<div id="ejercicio-7" class="section level3 unnumbered">
 <h3>Ejercicio</h3>
 <p>Instalad y cargad el paquete <strong>MASS</strong>. Este paquete lleva una tabla de datos llamada <code>birthwt</code> sobre factores que pueden incidir en el peso de los niños al nacer. Antes de empezar, con <code>str</code>, <code>View</code>, <code>head</code> … explorad su estructura y consultad en su Ayuda el significado de cada variable.</p>
 <p><em>(a)</em> Calculad una tabla bidimensional de frecuencias relativas marginales de los pares (raza de la madre, peso inferior a 2.5 kg o no) que permita ver, fácilmente, si la raza de la madre influye en el peso del bebé. Dibujad un diagrama de mosaico de esta tabla.</p>
@@ -1493,7 +1520,7 @@ los cabellos castaños con los ojos marrones, y los cabellos rubios con los ojos
 <p><em>(c)</em> Calculad una tabla de frecuencias relativas marginales de las ternas (raza de la madre, madre fumadora o no, peso inferior a 2.5 kg o no) que permita ver, fácilmente, si la combinación de la raza de la madre y su condición de fumadora o no fumadora influye en el peso del bebé. Dibujad un diagrama de mosaico de esta tabla tridimensional.</p>
 <p>Asimismo, dibujad un diagrama de barras por bloques que permita visualizar esta información (pensad cómo pasaréis de la tabla tridimensional a un diagrama de barras bidimensional que muestre la información deseada). Poned nombres adecuados a los bloques, colores a las barras, y añadid una leyenda que explique qué representa cada barra. ¿Se puede obtener alguna conclusión de esta tabla y de este diagrama de barras?</p>
 </div>
-<div id="respuestas-al-test-6" class="section level3 unnumbered">
+<div id="respuestas-al-test-7" class="section level3 unnumbered">
 <h3>Respuestas al test</h3>
 <p><em>(1)</em> <code>table(flores)</code></p>
 <p><em>(2)</em> <code>prop.table(table(flores))</code></p>
@@ -1546,8 +1573,8 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": null,
-"text": null
+"link": "https://github.com/RicUIB/AprendeR2.1/edit/master/10chap10_Descripción_cualitativos.Rmd",
+"text": "Edit"
 },
 "history": {
 "link": null,
