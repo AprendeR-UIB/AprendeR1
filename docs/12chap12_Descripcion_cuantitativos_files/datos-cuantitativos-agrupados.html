@@ -1,0 +1,1928 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Lección 13 Datos cuantitativos agrupados | AprendeR: Parte I</title>
+  <meta name="description" content="Apuntes AprendeR bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Lección 13 Datos cuantitativos agrupados | AprendeR: Parte I" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Apuntes AprendeR bookdown::gitbook." />
+  <meta name="github-repo" content="AprendeR-UIB/AprendeR1" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Lección 13 Datos cuantitativos agrupados | AprendeR: Parte I" />
+  
+  <meta name="twitter:description" content="Apuntes AprendeR bookdown::gitbook." />
+  
+
+<meta name="author" content="The UIB-AprendeR team" />
+
+
+<meta name="date" content="2020-03-05" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="chap-quan.html"/>
+<link rel="next" href="graficos-avanzados.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="libs/d3-3.5.3/d3.min.js"></script>
+<link href="libs/colorbrewer-1/colorbrewer.css" rel="stylesheet" />
+<script src="libs/colorbrewer-1/colorbrewer.js"></script>
+<link href="libs/streamgraph-1/streamgraph.css" rel="stylesheet" />
+<script src="libs/streamgraph-binding-0.9.0/streamgraph.js"></script>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">AprendeR: Parte I</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Presentación</a></li>
+<li class="part"><span><b>Parte I: R básico</b></span></li>
+<li class="chapter" data-level="1" data-path="chap-0.html"><a href="chap-0.html"><i class="fa fa-check"></i><b>1</b> Logística de R</a><ul>
+<li class="chapter" data-level="1.1" data-path="chap-0.html"><a href="chap-0.html#como-instalar-r-y-rstudio"><i class="fa fa-check"></i><b>1.1</b> Cómo instalar R y <em>RStudio</em></a></li>
+<li class="chapter" data-level="1.2" data-path="chap-0.html"><a href="chap-0.html#sec:guardar"><i class="fa fa-check"></i><b>1.2</b> Cómo guardar el trabajo realizado</a></li>
+<li class="chapter" data-level="1.3" data-path="chap-0.html"><a href="chap-0.html#sec:guiones"><i class="fa fa-check"></i><b>1.3</b> Cómo trabajar con guiones y otros ficheros</a></li>
+<li class="chapter" data-level="1.4" data-path="chap-0.html"><a href="chap-0.html#sec:help"><i class="fa fa-check"></i><b>1.4</b> Cómo obtener ayuda</a></li>
+<li class="chapter" data-level="1.5" data-path="chap-0.html"><a href="chap-0.html#sec:paquetes"><i class="fa fa-check"></i><b>1.5</b> Cómo instalar y cargar paquetes</a></li>
+<li class="chapter" data-level="1.6" data-path="chap-0.html"><a href="chap-0.html#guia-rapida"><i class="fa fa-check"></i><b>1.6</b> Guía rápida</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="chap-calc.html"><a href="chap-calc.html"><i class="fa fa-check"></i><b>2</b> La calculadora</a><ul>
+<li class="chapter" data-level="2.1" data-path="chap-calc.html"><a href="chap-calc.html#numeros-reales-operaciones-y-funciones-basicas"><i class="fa fa-check"></i><b>2.1</b> Números reales: operaciones y funciones básicas</a></li>
+<li class="chapter" data-level="2.2" data-path="chap-calc.html"><a href="chap-calc.html#cifras-significativas-y-redondeos"><i class="fa fa-check"></i><b>2.2</b> Cifras significativas y redondeos</a></li>
+<li class="chapter" data-level="2.3" data-path="chap-calc.html"><a href="chap-calc.html#definicion-de-variables"><i class="fa fa-check"></i><b>2.3</b> Definición de variables</a></li>
+<li class="chapter" data-level="2.4" data-path="chap-calc.html"><a href="chap-calc.html#definicion-de-funciones"><i class="fa fa-check"></i><b>2.4</b> Definición de funciones</a></li>
+<li class="chapter" data-level="2.5" data-path="chap-calc.html"><a href="chap-calc.html#numeros-complejos-opcional"><i class="fa fa-check"></i><b>2.5</b> Números complejos (opcional)</a></li>
+<li class="chapter" data-level="2.6" data-path="chap-calc.html"><a href="chap-calc.html#guia-rapida-1"><i class="fa fa-check"></i><b>2.6</b> Guía rápida</a></li>
+<li class="chapter" data-level="2.7" data-path="chap-calc.html"><a href="chap-calc.html#ejercicios"><i class="fa fa-check"></i><b>2.7</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-calc.html"><a href="chap-calc.html#test"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-calc.html"><a href="chap-calc.html#ejercicio"><i class="fa fa-check"></i>Ejercicio</a></li>
+<li class="chapter" data-level="" data-path="chap-calc.html"><a href="chap-calc.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="chap-lm.html"><a href="chap-lm.html"><i class="fa fa-check"></i><b>3</b> Un aperitivo: Introducción a la regresión lineal</a><ul>
+<li class="chapter" data-level="3.1" data-path="chap-lm.html"><a href="chap-lm.html#sec:introlm"><i class="fa fa-check"></i><b>3.1</b> Cálculo de rectas de regresión</a></li>
+<li class="chapter" data-level="3.2" data-path="chap-lm.html"><a href="chap-lm.html#rectas-de-regresion-y-transformaciones-logaritmicas"><i class="fa fa-check"></i><b>3.2</b> Rectas de regresión y transformaciones logarítmicas</a></li>
+<li class="chapter" data-level="3.3" data-path="chap-lm.html"><a href="chap-lm.html#guia-rapida-2"><i class="fa fa-check"></i><b>3.3</b> Guía rápida</a></li>
+<li class="chapter" data-level="3.4" data-path="chap-lm.html"><a href="chap-lm.html#ejercicios-1"><i class="fa fa-check"></i><b>3.4</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-lm.html"><a href="chap-lm.html#ejercicio-1"><i class="fa fa-check"></i>Ejercicio</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="chap-vect.html"><a href="chap-vect.html"><i class="fa fa-check"></i><b>4</b> Vectores y otros tipos de listas</a><ul>
+<li class="chapter" data-level="4.1" data-path="chap-vect.html"><a href="chap-vect.html#sec:vect"><i class="fa fa-check"></i><b>4.1</b> Construcción de vectores</a></li>
+<li class="chapter" data-level="4.2" data-path="chap-vect.html"><a href="chap-vect.html#operaciones-con-vectores"><i class="fa fa-check"></i><b>4.2</b> Operaciones con vectores</a></li>
+<li class="chapter" data-level="4.3" data-path="chap-vect.html"><a href="chap-vect.html#entradas-y-trozos-de-vectores"><i class="fa fa-check"></i><b>4.3</b> Entradas y trozos de vectores</a></li>
+<li class="chapter" data-level="4.4" data-path="chap-vect.html"><a href="chap-vect.html#subsec:factor"><i class="fa fa-check"></i><b>4.4</b> Factores</a></li>
+<li class="chapter" data-level="4.5" data-path="chap-vect.html"><a href="chap-vect.html#sec:lists"><i class="fa fa-check"></i><b>4.5</b> Listas heterogéneas</a></li>
+<li class="chapter" data-level="4.6" data-path="chap-vect.html"><a href="chap-vect.html#guia-rapida-de-funciones"><i class="fa fa-check"></i><b>4.6</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="4.7" data-path="chap-vect.html"><a href="chap-vect.html#ejercicios-2"><i class="fa fa-check"></i><b>4.7</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-vect.html"><a href="chap-vect.html#test-1"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-vect.html"><a href="chap-vect.html#ejercicio-2"><i class="fa fa-check"></i>Ejercicio</a></li>
+<li class="chapter" data-level="" data-path="chap-vect.html"><a href="chap-vect.html#respuestas-al-test-1"><i class="fa fa-check"></i>Respuestas al test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="chap-matrix.html"><a href="chap-matrix.html"><i class="fa fa-check"></i><b>5</b> Matrices</a><ul>
+<li class="chapter" data-level="5.1" data-path="chap-matrix.html"><a href="chap-matrix.html#construccion-de-matrices"><i class="fa fa-check"></i><b>5.1</b> Construcción de matrices</a></li>
+<li class="chapter" data-level="5.2" data-path="chap-matrix.html"><a href="chap-matrix.html#sec:entrmatr"><i class="fa fa-check"></i><b>5.2</b> Acceso a entradas y submatrices</a></li>
+<li class="chapter" data-level="5.3" data-path="chap-matrix.html"><a href="chap-matrix.html#algunas-funciones-para-matrices"><i class="fa fa-check"></i><b>5.3</b> Algunas funciones para matrices</a></li>
+<li class="chapter" data-level="5.4" data-path="chap-matrix.html"><a href="chap-matrix.html#calculo-matricial"><i class="fa fa-check"></i><b>5.4</b> Cálculo matricial</a></li>
+<li class="chapter" data-level="5.5" data-path="chap-matrix.html"><a href="chap-matrix.html#valores-y-vectores-propios"><i class="fa fa-check"></i><b>5.5</b> Valores y vectores propios</a></li>
+<li class="chapter" data-level="5.6" data-path="chap-matrix.html"><a href="chap-matrix.html#matrices-complejas-opcional"><i class="fa fa-check"></i><b>5.6</b> Matrices complejas (opcional)</a></li>
+<li class="chapter" data-level="5.7" data-path="chap-matrix.html"><a href="chap-matrix.html#guia-rapida-de-funciones-1"><i class="fa fa-check"></i><b>5.7</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="5.8" data-path="chap-matrix.html"><a href="chap-matrix.html#ejercicios-3"><i class="fa fa-check"></i><b>5.8</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-matrix.html"><a href="chap-matrix.html#test-2"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-matrix.html"><a href="chap-matrix.html#ejercicio-3"><i class="fa fa-check"></i>Ejercicio</a></li>
+<li class="chapter" data-level="" data-path="chap-matrix.html"><a href="chap-matrix.html#respuestas-al-test-2"><i class="fa fa-check"></i>Respuestas al test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="chap-df.html"><a href="chap-df.html"><i class="fa fa-check"></i><b>6</b> <em>Data frames</em></a><ul>
+<li class="chapter" data-level="6.1" data-path="chap-df.html"><a href="chap-df.html#estructura-de-un-data-frame"><i class="fa fa-check"></i><b>6.1</b> Estructura de un <em>data frame</em></a></li>
+<li class="chapter" data-level="6.2" data-path="chap-df.html"><a href="chap-df.html#como-importar-y-exportar-data-frames"><i class="fa fa-check"></i><b>6.2</b> Cómo importar y exportar <em>data frames</em></a></li>
+<li class="chapter" data-level="6.3" data-path="chap-df.html"><a href="chap-df.html#como-crear-data-frames"><i class="fa fa-check"></i><b>6.3</b> Cómo crear <em>data frames</em></a></li>
+<li class="chapter" data-level="6.4" data-path="chap-df.html"><a href="chap-df.html#sec:moddf"><i class="fa fa-check"></i><b>6.4</b> Cómo modificar un <em>data frame</em></a></li>
+<li class="chapter" data-level="6.5" data-path="chap-df.html"><a href="chap-df.html#sec:dfaf"><i class="fa fa-check"></i><b>6.5</b> Cómo añadir filas y columnas a un <em>data frame</em></a></li>
+<li class="chapter" data-level="6.6" data-path="chap-df.html"><a href="chap-df.html#como-seleccionar-trozos-de-un-data-frame"><i class="fa fa-check"></i><b>6.6</b> Cómo seleccionar trozos de un <em>data frame</em></a></li>
+<li class="chapter" data-level="6.7" data-path="chap-df.html"><a href="chap-df.html#como-aplicar-una-funcion-a-las-variables-de-un-data-frame"><i class="fa fa-check"></i><b>6.7</b> Cómo aplicar una función a las variables de un <em>data frame</em></a></li>
+<li class="chapter" data-level="6.8" data-path="chap-df.html"><a href="chap-df.html#sub:attach"><i class="fa fa-check"></i><b>6.8</b> Cómo añadir las variables de un <em>data frame</em> al entorno global</a></li>
+<li class="chapter" data-level="6.9" data-path="chap-df.html"><a href="chap-df.html#guia-rapida-de-funciones-2"><i class="fa fa-check"></i><b>6.9</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="6.10" data-path="chap-df.html"><a href="chap-df.html#ejercicios-4"><i class="fa fa-check"></i><b>6.10</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-df.html"><a href="chap-df.html#test-3"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-df.html"><a href="chap-df.html#ejercicio-4"><i class="fa fa-check"></i>Ejercicio</a></li>
+<li class="chapter" data-level="" data-path="chap-df.html"><a href="chap-df.html#respuestas-al-test-3"><i class="fa fa-check"></i>Respuestas al test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="chap-plot.html"><a href="chap-plot.html"><i class="fa fa-check"></i><b>7</b> Gráficos básicos</a><ul>
+<li class="chapter" data-level="7.1" data-path="chap-plot.html"><a href="chap-plot.html#la-funcion-plot"><i class="fa fa-check"></i><b>7.1</b> La función <code>plot</code></a></li>
+<li class="chapter" data-level="7.2" data-path="chap-plot.html"><a href="chap-plot.html#parametros-de-plot"><i class="fa fa-check"></i><b>7.2</b> Parámetros de <code>plot</code></a></li>
+<li class="chapter" data-level="7.3" data-path="chap-plot.html"><a href="chap-plot.html#como-anadir-elementos-a-un-grafico"><i class="fa fa-check"></i><b>7.3</b> Cómo añadir elementos a un gráfico</a></li>
+<li class="chapter" data-level="7.4" data-path="chap-plot.html"><a href="chap-plot.html#guia-rapida-3"><i class="fa fa-check"></i><b>7.4</b> Guía rápida</a></li>
+<li class="chapter" data-level="7.5" data-path="chap-plot.html"><a href="chap-plot.html#ejercicios-5"><i class="fa fa-check"></i><b>7.5</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-plot.html"><a href="chap-plot.html#test-4"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-plot.html"><a href="chap-plot.html#ejercicio-5"><i class="fa fa-check"></i>Ejercicio</a></li>
+<li class="chapter" data-level="" data-path="chap-plot.html"><a href="chap-plot.html#respuestas-al-test-4"><i class="fa fa-check"></i>Respuestas al test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="chap-for.html"><a href="chap-for.html"><i class="fa fa-check"></i><b>8</b> Estructuras de control básicas</a><ul>
+<li class="chapter" data-level="8.1" data-path="chap-for.html"><a href="chap-for.html#bucles-de-tipo-for"><i class="fa fa-check"></i><b>8.1</b> Bucles de tipo “for”</a></li>
+<li class="chapter" data-level="8.2" data-path="chap-for.html"><a href="chap-for.html#bucles-de-tipo-while"><i class="fa fa-check"></i><b>8.2</b> Bucles de tipo “while”</a></li>
+<li class="chapter" data-level="8.3" data-path="chap-for.html"><a href="chap-for.html#estructuras-condicionales"><i class="fa fa-check"></i><b>8.3</b> Estructuras condicionales</a></li>
+<li class="chapter" data-level="8.4" data-path="chap-for.html"><a href="chap-for.html#guia-rapida-de-funciones-3"><i class="fa fa-check"></i><b>8.4</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="8.5" data-path="chap-for.html"><a href="chap-for.html#ejercicios-6"><i class="fa fa-check"></i><b>8.5</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-for.html"><a href="chap-for.html#test-5"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-for.html"><a href="chap-for.html#ejercicio-6"><i class="fa fa-check"></i>Ejercicio</a></li>
+<li class="chapter" data-level="" data-path="chap-for.html"><a href="chap-for.html#respuestas-al-test-5"><i class="fa fa-check"></i>Respuestas al test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="chap-distr.html"><a href="chap-distr.html"><i class="fa fa-check"></i><b>9</b> Distribuciones de probabilidad</a><ul>
+<li class="chapter" data-level="9.1" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios-7"><i class="fa fa-check"></i><b>9.1</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#test-6"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#problemas"><i class="fa fa-check"></i>Problemas</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test-6"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#soluciones-sucintas-de-los-problemas"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>Parte II: Estadística descriptiva</b></span></li>
+<li class="chapter" data-level="10" data-path="chap-edqual.html"><a href="chap-edqual.html"><i class="fa fa-check"></i><b>10</b> Descripción de datos cualitativos</a><ul>
+<li class="chapter" data-level="10.1" data-path="chap-edqual.html"><a href="chap-edqual.html#sec:edqual"><i class="fa fa-check"></i><b>10.1</b> Frecuencias</a></li>
+<li class="chapter" data-level="10.2" data-path="chap-edqual.html"><a href="chap-edqual.html#tablas-unidimensionales-de-frecuencias"><i class="fa fa-check"></i><b>10.2</b> Tablas unidimensionales de frecuencias</a></li>
+<li class="chapter" data-level="10.3" data-path="chap-edqual.html"><a href="chap-edqual.html#tablas-bidimensionales-de-frecuencias"><i class="fa fa-check"></i><b>10.3</b> Tablas bidimensionales de frecuencias</a></li>
+<li class="chapter" data-level="10.4" data-path="chap-edqual.html"><a href="chap-edqual.html#tablas-multidimensionales-de-frecuencias"><i class="fa fa-check"></i><b>10.4</b> Tablas multidimensionales de frecuencias</a></li>
+<li class="chapter" data-level="10.5" data-path="chap-edqual.html"><a href="chap-edqual.html#tablas-a-partir-de-data-frames-de-variables-cualitativas"><i class="fa fa-check"></i><b>10.5</b> Tablas a partir de <em>data frames</em> de variables cualitativas</a></li>
+<li class="chapter" data-level="10.6" data-path="chap-edqual.html"><a href="chap-edqual.html#diagramas-de-barras"><i class="fa fa-check"></i><b>10.6</b> Diagramas de barras</a></li>
+<li class="chapter" data-level="10.7" data-path="chap-edqual.html"><a href="chap-edqual.html#otros-graficos-para-datos-cualitativos"><i class="fa fa-check"></i><b>10.7</b> Otros gráficos para datos cualitativos</a></li>
+<li class="chapter" data-level="10.8" data-path="chap-edqual.html"><a href="chap-edqual.html#sec:exqual"><i class="fa fa-check"></i><b>10.8</b> Un ejemplo completo</a></li>
+<li class="chapter" data-level="10.9" data-path="chap-edqual.html"><a href="chap-edqual.html#guia-rapida-de-funciones-4"><i class="fa fa-check"></i><b>10.9</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="10.10" data-path="chap-edqual.html"><a href="chap-edqual.html#ejercicios-8"><i class="fa fa-check"></i><b>10.10</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-edqual.html"><a href="chap-edqual.html#test-7"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-edqual.html"><a href="chap-edqual.html#ejercicio-7"><i class="fa fa-check"></i>Ejercicio</a></li>
+<li class="chapter" data-level="" data-path="chap-edqual.html"><a href="chap-edqual.html#respuestas-al-test-7"><i class="fa fa-check"></i>Respuestas al test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="chap-ord.html"><a href="chap-ord.html"><i class="fa fa-check"></i><b>11</b> Descripción de datos ordinales</a><ul>
+<li class="chapter" data-level="11.1" data-path="chap-ord.html"><a href="chap-ord.html#frecuencias-para-datos-ordinales"><i class="fa fa-check"></i><b>11.1</b> Frecuencias para datos ordinales</a></li>
+<li class="chapter" data-level="11.2" data-path="chap-ord.html"><a href="chap-ord.html#descripcion-de-datos-ordinales-con-r"><i class="fa fa-check"></i><b>11.2</b> Descripción de datos ordinales con R</a></li>
+<li class="chapter" data-level="11.3" data-path="chap-ord.html"><a href="chap-ord.html#guia-rapida-de-funciones-5"><i class="fa fa-check"></i><b>11.3</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="11.4" data-path="chap-ord.html"><a href="chap-ord.html#ejercicios-9"><i class="fa fa-check"></i><b>11.4</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-ord.html"><a href="chap-ord.html#test-8"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-ord.html"><a href="chap-ord.html#ejercicio-8"><i class="fa fa-check"></i>Ejercicio</a></li>
+<li class="chapter" data-level="" data-path="chap-ord.html"><a href="chap-ord.html#respuestas-al-test-8"><i class="fa fa-check"></i>Respuestas al test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="chap-quan.html"><a href="chap-quan.html"><i class="fa fa-check"></i><b>12</b> Descripción de datos cuantitativos</a><ul>
+<li class="chapter" data-level="12.1" data-path="chap-quan.html"><a href="chap-quan.html#sec:quan"><i class="fa fa-check"></i><b>12.1</b> Frecuencias</a></li>
+<li class="chapter" data-level="12.2" data-path="chap-quan.html"><a href="chap-quan.html#medidas-de-tendencia-central"><i class="fa fa-check"></i><b>12.2</b> Medidas de tendencia central</a></li>
+<li class="chapter" data-level="12.3" data-path="chap-quan.html"><a href="chap-quan.html#medidas-de-posicion"><i class="fa fa-check"></i><b>12.3</b> Medidas de posición</a></li>
+<li class="chapter" data-level="12.4" data-path="chap-quan.html"><a href="chap-quan.html#medidas-de-dispersion"><i class="fa fa-check"></i><b>12.4</b> Medidas de dispersión</a></li>
+<li class="chapter" data-level="12.5" data-path="chap-quan.html"><a href="chap-quan.html#diagramas-de-caja"><i class="fa fa-check"></i><b>12.5</b> Diagramas de caja</a></li>
+<li class="chapter" data-level="12.6" data-path="chap-quan.html"><a href="chap-quan.html#guia-rapida-de-funciones-6"><i class="fa fa-check"></i><b>12.6</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="12.7" data-path="chap-quan.html"><a href="chap-quan.html#ejercicios-10"><i class="fa fa-check"></i><b>12.7</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-quan.html"><a href="chap-quan.html#test-9"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-quan.html"><a href="chap-quan.html#ejercicio-9"><i class="fa fa-check"></i>Ejercicio</a></li>
+<li class="chapter" data-level="" data-path="chap-quan.html"><a href="chap-quan.html#respuestas-al-test-9"><i class="fa fa-check"></i>Respuestas al test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="datos-cuantitativos-agrupados.html"><a href="datos-cuantitativos-agrupados.html"><i class="fa fa-check"></i><b>13</b> Datos cuantitativos agrupados</a><ul>
+<li class="chapter" data-level="13.1" data-path="datos-cuantitativos-agrupados.html"><a href="datos-cuantitativos-agrupados.html#como-agrupar-datos"><i class="fa fa-check"></i><b>13.1</b> Cómo agrupar datos</a></li>
+<li class="chapter" data-level="13.2" data-path="datos-cuantitativos-agrupados.html"><a href="datos-cuantitativos-agrupados.html#sec:agrupR"><i class="fa fa-check"></i><b>13.2</b> Agrupamiento de datos con R</a></li>
+<li class="chapter" data-level="13.3" data-path="datos-cuantitativos-agrupados.html"><a href="datos-cuantitativos-agrupados.html#estadisticos-para-datos-agrupados"><i class="fa fa-check"></i><b>13.3</b> Estadísticos para datos agrupados</a></li>
+<li class="chapter" data-level="13.4" data-path="datos-cuantitativos-agrupados.html"><a href="datos-cuantitativos-agrupados.html#sec:hist"><i class="fa fa-check"></i><b>13.4</b> Histogramas</a></li>
+<li class="chapter" data-level="13.5" data-path="datos-cuantitativos-agrupados.html"><a href="datos-cuantitativos-agrupados.html#guia-rapida-de-funciones-7"><i class="fa fa-check"></i><b>13.5</b> Guía rápida de funciones</a></li>
+<li class="chapter" data-level="13.6" data-path="datos-cuantitativos-agrupados.html"><a href="datos-cuantitativos-agrupados.html#ejercicios-11"><i class="fa fa-check"></i><b>13.6</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="datos-cuantitativos-agrupados.html"><a href="datos-cuantitativos-agrupados.html#test-10"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="datos-cuantitativos-agrupados.html"><a href="datos-cuantitativos-agrupados.html#ejercicio-10"><i class="fa fa-check"></i>Ejercicio</a></li>
+<li class="chapter" data-level="" data-path="datos-cuantitativos-agrupados.html"><a href="datos-cuantitativos-agrupados.html#respuestas-al-test-10"><i class="fa fa-check"></i>Respuestas al test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="graficos-avanzados.html"><a href="graficos-avanzados.html"><i class="fa fa-check"></i><b>14</b> Gráficos avanzados</a><ul>
+<li class="chapter" data-level="14.1" data-path="graficos-avanzados.html"><a href="graficos-avanzados.html#nubes-de-palabras-o-de-etiquetas-word-clouds"><i class="fa fa-check"></i><b>14.1</b> Nubes de palabras o de etiquetas (<em>word clouds</em>)</a></li>
+<li class="chapter" data-level="14.2" data-path="graficos-avanzados.html"><a href="graficos-avanzados.html#mapa-de-calor-o-heatmap"><i class="fa fa-check"></i><b>14.2</b> Mapa de calor o <em>heatmap</em></a></li>
+<li class="chapter" data-level="14.3" data-path="graficos-avanzados.html"><a href="graficos-avanzados.html#dendrogramas"><i class="fa fa-check"></i><b>14.3</b> Dendrogramas</a></li>
+<li class="chapter" data-level="14.4" data-path="graficos-avanzados.html"><a href="graficos-avanzados.html#graficos-de-burbujas-o-bubbles"><i class="fa fa-check"></i><b>14.4</b> Gráficos de burbujas o <em>bubbles</em></a></li>
+<li class="chapter" data-level="14.5" data-path="graficos-avanzados.html"><a href="graficos-avanzados.html#graficos-de-corrientes-o-streamgraphs"><i class="fa fa-check"></i><b>14.5</b> Gráficos de corrientes o <em>streamgraphs</em></a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/RicUIB/AprendeR2.1" target="blank">Publicado con  bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">AprendeR: Parte I</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="datos-cuantitativos-agrupados" class="section level1">
+<h1><span class="header-section-number">Lección 13</span> Datos cuantitativos agrupados</h1>
+<p>En nuestro lenguaje cotidiano, solemos agrupar datos cuantitativos sin que seamos conscientes de ello. Cuando decimos, por ejemplo, que la edad de alguien es de 18 años, no queremos decir que nació justo hoy hace 18 años, sino que ya ha cumplido los 18 años, pero aún no ha cumplido los 19; es decir, que agrupamos todas las edades que caen dentro del intervalo [18,19) en una misma clase, que llamamos “18 años”. Del mismo modo, que alguien mida 1.72 no significa que esta sea su altura exacta, con la precisión del grueso de un cabello, sino que su altura pertenece a un intervalo de valores en torno a 1.72 metros que identificamos con “1.72”. Bajo la calificación de “aprobado” agrupamos todas las notas mayores o iguales que 5 y menores que 7. Y estamos seguros de que se os ocurren otros ejemplos.</p>
+<p>Cuando trabajamos en estadística con datos cuantitativos, puede haber varios motivos por los que nos interese agruparlos. Una posibilidad es que queramos estudiar la distribución de una cierta variable (pongamos, la altura) en una muestra de individuos, y que los valores que pueda tomar esta variable sean muy heterogéneos; en esta situación, lo normal sería que obtuviéramos muy pocas repeticiones, por lo que las frecuencias de los valores individuales serían muy bajas y por lo tanto muy similares. Esto daría lugar a un diagrama de barras difícil de interpretar.</p>
+<p>Veamos un ejemplo: consideremos la siguiente muestra de 30 alturas de estudiantes:</p>
+<div class="sourceCode" id="cb1601"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1601-1" data-line-number="1">alturas=<span class="kw">c</span>(<span class="fl">1.71</span>,<span class="fl">1.62</span>,<span class="fl">1.72</span>,<span class="fl">1.76</span>,<span class="fl">1.78</span>,<span class="fl">1.73</span>,<span class="fl">1.67</span>,<span class="fl">1.64</span>,<span class="fl">1.63</span>,<span class="fl">1.68</span>,<span class="fl">1.68</span>,<span class="fl">1.70</span>,<span class="fl">1.67</span>,</a>
+<a class="sourceLine" id="cb1601-2" data-line-number="2">  <span class="fl">1.56</span>,<span class="fl">1.66</span>,<span class="fl">1.57</span>,<span class="fl">1.69</span>,<span class="fl">1.68</span>,<span class="fl">1.67</span>,<span class="fl">1.75</span>,<span class="fl">1.61</span>,<span class="fl">1.60</span>,<span class="fl">1.74</span>,<span class="fl">1.70</span>,<span class="fl">1.65</span>,<span class="fl">1.55</span>,<span class="fl">1.82</span>,<span class="fl">1.70</span>,<span class="fl">1.69</span>,<span class="fl">1.81</span>)</a></code></pre></div>
+<p>El gráfico siguiente muestra el diagrama de barras de sus frecuencias, tomando como posibles niveles todas las alturas entre su mínimo y su máximo, redondeadas a cm. Todas la barras tienen alturas entre 0 y 3, y salvo una mayor presencia de los valores centrales (entre 1.67 y 1.70), no hay mucho más que salte a la vista en este gráfico.</p>
+<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-612-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p>En situaciones como esta, es recomendable dividir los posibles valores de la variable en intervalos y contar cuántos datos caen dentro de cada intervalo: habitualmente, las frecuencias que se obtienen de esta manera son más fáciles de interpretar que las de los datos individuales. Así, siguiendo con nuestro ejemplo de las alturas, el diagrama de barras siguiente representa sus frecuencias cuando las agrupamos en intervalos de 5 cm. La distribución de estas alturas es mucho más fácil de entender mediante este gráfico que con el primero.</p>
+<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-613-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p>Otro motivo por el que puede ser conveniente agrupar datos es la imposibilidad física de medir de manera exacta algunas magnitudes continuas como alturas, pesos o tiempos; esto hace que los datos obtenidos sean sólo aproximaciones o redondeos de los valores reales y que cada medida diferente represente todo un intervalo de posibles valores.</p>
+<p>En general, hay tres situaciones concretas en las cuales conviene agrupar datos cuantitativos en intervalos de valores, también llamados <strong>clases</strong>:</p>
+<ul>
+<li><p>Cuando los datos son continuos y no se pueden medir de manera exacta: su redondeo ya define un agrupamiento</p></li>
+<li><p>Cuando los datos son discretos, pero con un número muy grande de posibles valores: números de aminoácidos en proteínas, números de bases en cadenas de ADN…</p></li>
+<li><p>Cuando tenemos muchos datos y nos interesa estudiar las frecuencias de sus valores; hay autores que consideran que <em>muchos</em>, en este contexto, significa “a partir de 30”</p></li>
+</ul>
+<div id="como-agrupar-datos" class="section level2">
+<h2><span class="header-section-number">13.1</span> Cómo agrupar datos</h2>
+<p>El paso previo al estudio de unos datos agrupados es, naturalmente, agruparlos. El proceso es el siguiente:</p>
+<ol style="list-style-type: decimal">
+<li>Se decide el número de intervalos que se van a usar.</li>
+<li>Se decide su amplitud.</li>
+<li>Se calculan los extremos de los intervalos.</li>
+<li>Finalmente, en algunas aplicaciones, se calcula un valor representativo de cada intervalo, llamado su <strong>marca de clase</strong>.</li>
+</ol>
+<p>No hay una manera de agrupar datos mejor que otra; por ejemplo, para estudiar las calificaciones de un curso podemos agruparlas en Suspenso, [0,5), Aprobado, [5,7) Notable, [7,9), y Sobresaliente, [9,10], o podemos redondear por defecto las notas a su parte entera y usar los intervalos [0,1), [1,2), …, [9,10]. Podría ser que cada uno de estos agrupamientos saque a la luz características diferentes del conjunto de datos.</p>
+<p>La función básica de R para estudiar datos agrupados, <code>hist</code>, implementa todo el proceso: si le entramos el vector de datos y el número de intervalos, o el método para determinarlo (véase más adelante), agrupará los datos en, más o menos, el número de clases que le hemos especificado, sin ningún control por nuestra parte sobre los intervalos que produce. Para un análisis somero de los datos, esto suele ser más que suficiente, pero para una descripción más cuidadosa es conveniente que seamos nosotros quienes controlemos el proceso de agrupamiento, y en particular que calculemos los extremos de los intervalos, en lugar de dejárselos calcular a R.
+En esta sección explicamos <strong>nuestra receta</strong> para agrupar datos y calcular marcas de clase; no es ni mejor ni peor que otras, pero es la que os recomendamos que uséis, sobre todo en el test si queréis obtener las respuestas correctas.</p>
+<p>Lo primero que tenemos que hacer es establecer el número <span class="math inline">\(k\)</span> de clases en las que vamos a dividir el conjunto de datos, al que denotaremos en lo que sigue por <span class="math inline">\(x\)</span>. Podemos decidir este número de clases en función de nuestros intereses concretos, o podemos usar alguna de las reglas que se han propuesto con este fin; las más populares son las siguientes, donde <span class="math inline">\(n\)</span> denota el número de datos en la muestra (recordad en lo que sigue que <span class="math inline">\(\lceil x \rceil\)</span> denota el menor entero que es mayor o igual que <span class="math inline">\(x\)</span>, y que con R se calcula mediante la función <code>ceiling</code>):</p>
+<ul>
+<li><p><strong>Regla de la raíz cuadrada</strong>: <span class="math inline">\(k=\big\lceil \sqrt{n}\big\rceil\)</span>.</p></li>
+<li><p><strong>Regla de Sturges</strong>: <span class="math inline">\(k= \big\lceil 1+\log_{2}(n)\big\rceil.\)</span></p></li>
+<li><p><strong>Regla de Scott</strong>: Se determina primero la <strong>amplitud teórica</strong> <span class="math inline">\(A_S\)</span> de las clases mediante la fórmula
+<span class="math display">\[
+A_S= 3.5\cdot \widetilde{s}\cdot n^{-\frac{1}{3}}
+\]</span>
+(donde <span class="math inline">\(\widetilde{s}\)</span> es la desviación típica muestral del conjunto de datos), y entonces se toma
+<span class="math display">\[
+k=\left\lceil
+\frac{\max(x) -\min(x)}{A_S}\right\rceil.
+\]</span></p></li>
+<li><p><strong>Regla de Freedman-Diaconis</strong>: Se determina primero la <strong>amplitud teórica</strong> <span class="math inline">\(A_{FD}\)</span> de las clases por medio de la fórmula
+<span class="math display">\[
+A_{FD}= 2 \cdot (Q_{0.75}-Q_{0.25}) \cdot n^{-\frac{1}{3}}
+\]</span>
+(recordad que <span class="math inline">\(Q_{0.75}-Q_{0.25}\)</span> es el rango intercuartílico), y entonces se toma de nuevo
+<span class="math display">\[
+k= \left\lceil \frac{\max(x) -\min(x)}{A_{FD}}\right\rceil.
+\]</span></p></li>
+</ul>
+<p>Como podéis ver, las dos primeras sólo dependen de <span class="math inline">\(n\)</span>, mientras que las dos últimas tienen en cuenta, de maneras diferentes, su dispersión. No hay una regla mejor que las otras y, además, números de clases diferentes pueden revelar características diferentes de los datos. Las tres últimas reglas están implementadas en las funciones <code>nclass.Sturges</code>, <code>nclass.scott</code> y <code>nclass.FD</code> de R, respectivamente.</p>
+
+<div class="example">
+<p><span id="exm:alerg" class="example"><strong>Ejemplo 13.1  </strong></span>Mucha gente manifiesta reacciones alérgicas sistémicas a las picaduras de insecto. Estas reacciones varían entre pacientes, no sólo en lo que se refiere a la gravedad de la reacción, sino también en el tiempo que tarda en manifestarse. En un estudio se midió, en 40 pacientes que experimentaron una reacción alérgica a una picadura de abeja, el tiempo de inicio de esta reacción desde la picadura, y se obtuvieron los datos siguientes, que expresamos en minutos:</p>
+</div>
+
+<div class="sourceCode" id="cb1602"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1602-1" data-line-number="1">alergia=<span class="kw">c</span>(<span class="fl">10.5</span>,<span class="fl">11.2</span>,<span class="fl">9.9</span>,<span class="fl">15.0</span>,<span class="fl">11.4</span>,<span class="fl">12.7</span>,<span class="fl">16.5</span>,<span class="fl">10.1</span>,<span class="fl">12.7</span>,<span class="fl">11.4</span>,<span class="fl">11.6</span>,<span class="fl">6.2</span>,<span class="fl">7.9</span>,</a>
+<a class="sourceLine" id="cb1602-2" data-line-number="2">  <span class="fl">8.3</span>,<span class="fl">10.9</span>,<span class="fl">8.1</span>,<span class="fl">3.8</span>,<span class="fl">10.5</span>,<span class="fl">11.7</span>,<span class="fl">8.4</span>,<span class="fl">12.5</span>,<span class="fl">11.2</span>,<span class="fl">9.1</span>,<span class="fl">10.4</span>,<span class="fl">9.1</span>,<span class="fl">13.4</span>,<span class="fl">12.3</span>,<span class="fl">5.9</span>,<span class="fl">11.4</span>,</a>
+<a class="sourceLine" id="cb1602-3" data-line-number="3">  <span class="fl">8.8</span>,<span class="fl">7.4</span>,<span class="fl">8.6</span>,<span class="fl">13.6</span>,<span class="fl">14.7</span>,<span class="fl">11.5</span>,<span class="fl">11.5</span>,<span class="fl">10.9</span>,<span class="fl">9.8</span>,<span class="fl">12.9</span>,<span class="fl">9.9</span>)</a></code></pre></div>
+<p>Vamos a dar los números de intervalos en los que tendríamos que dividir estos datos según las diferentes reglas que hemos explicado. Antes, vamos a calcular los estadísticos de este conjunto de datos que vamos a usar:</p>
+<div class="sourceCode" id="cb1603"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1603-1" data-line-number="1"><span class="kw">length</span>(alergia)  <span class="co">#Número de datos</span></a></code></pre></div>
+<pre><code>## [1] 40</code></pre>
+<div class="sourceCode" id="cb1605"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1605-1" data-line-number="1"><span class="kw">sd</span>(alergia) <span class="co">#Desviación típica muestral</span></a></code></pre></div>
+<pre><code>## [1] 2.533609</code></pre>
+<div class="sourceCode" id="cb1607"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1607-1" data-line-number="1"><span class="kw">diff</span>(<span class="kw">range</span>(alergia))  <span class="co">#Rango de valores</span></a></code></pre></div>
+<pre><code>## [1] 12.7</code></pre>
+<div class="sourceCode" id="cb1609"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1609-1" data-line-number="1"><span class="kw">IQR</span>(alergia) <span class="co"># Rango intercuartílico</span></a></code></pre></div>
+<pre><code>## [1] 2.825</code></pre>
+<ul>
+<li><p><strong>Regla de la raíz cuadrada</strong>: <span class="math inline">\(k= \lceil \sqrt{40} \rceil =\lceil 6.3245\rceil=7\)</span></p></li>
+<li><p><strong>Regla de Sturges</strong>: <span class="math inline">\(k= \lceil 1+\log_{2}(40)\rceil= \lceil 6.321928\rceil=7\)</span>. Con R:</p></li>
+</ul>
+<div class="sourceCode" id="cb1611"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1611-1" data-line-number="1"><span class="kw">nclass.Sturges</span>(alergia)</a></code></pre></div>
+<pre><code>## [1] 7</code></pre>
+<ul>
+<li><strong>Regla de Scott</strong>: <span class="math inline">\(A_{S}= 3.5\cdot \widetilde{s}\cdot n^{-\frac{1}{3}}=3.5\cdot 2.533609 \cdot 40^{-\frac{1}{3}}= 2.592911\)</span> y entonces, como el rango del conjunto de datos es 12.7, tenemos que <span class="math inline">\(k=\lceil {12.7}/{2.592911}\rceil=\lceil 4.89797\rceil=5\)</span>. Con R:</li>
+</ul>
+<div class="sourceCode" id="cb1613"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1613-1" data-line-number="1"><span class="kw">nclass.scott</span>(alergia)</a></code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<ul>
+<li><strong>Regla de Freedman-Diaconis</strong>: <span class="math inline">\(A_{FD}= 2 \cdot (Q_{0.75}-Q_{0.25}) \cdot n^{-\frac{1}{3}}=2\cdot 2.825 \cdot 40^{-\frac{1}{3}}=1.65207\)</span> y por lo tanto <span class="math inline">\(k= \lceil {12.7}/{1.65207}\rceil=\lceil 7.687\rceil=8\)</span>. Con R:</li>
+</ul>
+<div class="sourceCode" id="cb1615"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1615-1" data-line-number="1"><span class="kw">nclass.FD</span>(alergia)</a></code></pre></div>
+<pre><code>## [1] 8</code></pre>
+<p>Como podéis ver, reglas diferentes pueden dar valores diferentes, y puede que no.</p>
+<p>Una vez determinado el número <span class="math inline">\(k\)</span> de clases, tenemos que decidir su amplitud. La forma más sencilla, y que adoptaremos por defecto, es tomar todos los intervalos de la misma amplitud (aunque no es la única forma posible de hacerlo, naturalmente: recordad, por ejemplo, el agrupamiento de las calificaciones en Suspenso, Aprobado, Notable y Sobresaliente, que representan intervalos de notas de amplitudes diferentes). Para calcular esta amplitud, <span class="math inline">\(A\)</span>, dividiremos el rango de los datos entre el número <span class="math inline">\(k\)</span> de clases y redondearemos por exceso a un valor de la precisión de la medida: si medimos edades con una precisión de años, redondearemos este cociente por exceso a años, si medimos alturas con una precisión de centímetros, redondearemos por exceso a centímetros, etc. En el caso improbable de que el cociente del rango entre el número de clases dé un valor exacto en la precisión de la medida, tomaremos como <span class="math inline">\(A\)</span> este cociente más una unidad de precisión; así, por ejemplo, si hemos medido unas alturas en metros con una precisión de centímetros y obtenemos que el cociente del rango entre <span class="math inline">\(k\)</span> da un número exacto de centímetros, tomaremos como amplitud <span class="math inline">\(A\)</span> este cociente más 1 cm.</p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-619" class="example"><strong>Ejemplo 13.2  </strong></span>Seguimos con el Ejemplo <a href="datos-cuantitativos-agrupados.html#exm:alerg">13.1</a>; vamos a continuar el proceso de agrupamiento de los datos en <span class="math inline">\(k=7\)</span> clases. Recordemos que el rango del conjunto de datos en cuestión es 12.7 y que los datos están expresados en minutos con una precisión de una cifra decimal; por lo tanto, la amplitud será el cociente <span class="math inline">\(12.7/7=1.8143\)</span> redondeado por exceso a una cifra decimal: <span class="math inline">\(A=1.9\)</span>.</p>
+</div>
+
+<p>Ahora hemos de calcular los extremos de los intervalos. En este curso, tomaremos estos intervalos siempre cerrados a la izquierda y abiertos a la derecha, y los denotaremos por
+<span class="math display">\[
+[L_1,L_2),[L_2,L_3),\ldots, [L_k,L_{k+1}).
+\]</span>
+Sin entrar en detalles, el motivo por el que tomamos los intervalos de esta forma y no al revés (abiertos por la izquierda y cerrados por la derecha, que es como los construye R por defecto) es porque así es como se usan en Teoría de Probabilidades al definir la distribución de una variable aleatoria discreta, y también en muchas situaciones cotidianas (calificaciones, edades…). En todo caso, queremos haceros notar que, con la regla que explicamos a continuación, los extremos de los intervalos nunca van a coincidir con valores del conjunto de datos. Por lo tanto, si la usáis, tanto dará si consideráis los intervalos abiertos o cerrados en sus extremos.</p>
+<p>Los extremos <span class="math inline">\(L_1,\ldots,L_{k+1}\)</span> de estos intervalos se calculan de la manera siguiente: tomamos como extremo izquierdo <span class="math inline">\(L_1\)</span> del primer intervalo el valor
+<span class="math display">\[
+L_1=\min(x)-\frac{1}{2}\cdot \text{precisión} 
+\]</span>
+Es decir, si la precisión son las unidades en las que hemos medido los datos, <span class="math inline">\(L_1=\min(x)-0.5\)</span>; si la precisión son décimas de unidad, <span class="math inline">\(L_1=\min(x)-0.05\)</span>; etc. A partir de este extremo inferior, cada uno de los extremos siguientes se obtiene sumando la amplitud al extremo anterior: <span class="math inline">\(L_2=L_1+A\)</span>, <span class="math inline">\(L_3=L_{2}+A\)</span> y así sucesivamente, hasta llegar a <span class="math inline">\(L_{k+1}=L_{k}+A\)</span>. Por consiguiente, estos extremos forman una progresión aritmética de paso <span class="math inline">\(A\)</span>:
+<span class="math display">\[
+L_i=L_1+(i-1)A,\quad i=2,\ldots,k+1.
+\]</span>
+Como decíamos, de esta manera se garantiza que los extremos de los intervalos nunca coincidan con valores del conjunto de datos: por ejemplo, si los datos están expresados con una sola cifra decimal, estos extremos tienen todos un 5 en su segunda cifra decimal.</p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-620" class="example"><strong>Ejemplo 13.3  </strong></span>Continuemos con el Ejemplo <a href="datos-cuantitativos-agrupados.html#exm:alerg">13.1</a> y <span class="math inline">\(k=7\)</span>; hemos visto que tenemos que tomar <span class="math inline">\(A=1.9\)</span>. El valor mínimo del conjunto de datos es:</p>
+</div>
+
+<div class="sourceCode" id="cb1617"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1617-1" data-line-number="1"><span class="kw">min</span>(alergia)</a></code></pre></div>
+<pre><code>## [1] 3.8</code></pre>
+<p>Además, los datos están expresados con una precisión de décimas de unidad. El extremo inferior del primer intervalo será, entonces, <span class="math inline">\(L_1=3.8-0.05=3.75\)</span>, y a partir de aquí obtendremos el resto de extremos mediante una progresión aritmética de paso 1.9:
+<span class="math display">\[
+\begin{array}{l}
+L_1=3.75\\
+L_2=3.75+1.9=5.65\\ 
+L_3=3.75+2\cdot 1.9 = 7.55\\ 
+L_4= 3.75+3\cdot 1.9 = 9.45\\ 
+L_5= 3.75+4\cdot 1.9 = 11.35\\ 
+L_6= 3.75+5\cdot 1.9 = 13.25\\
+L_7= 3.75+6\cdot 1.9 = 15.15\\
+ L_8= 3.75+7\cdot 1.9 = 17.05
+\end{array}
+\]</span>
+Los intervalos son, por lo tanto,
+<span class="math display">\[
+\begin{array}{l}
+[3.75,5.65),\ [5.65,7.55),\ [7.55,9.45),\ [9.45, 11.35),\ [11.35 ,13.25),\\{}
+[13.25,15.15),\ [15.15,17.05).
+\end{array}
+\]</span></p>
+<p>Finalmente, hemos de determinar la <strong>marca de clase</strong> <span class="math inline">\(X_i\)</span> de cada intervalo <span class="math inline">\([L_i,L_{i+1})\)</span>; se trata de un valor del intervalo que usaremos para identificar la clase y para calcular algunos estadísticos. Como regla general, en este curso marcaremos el punto medio del intervalo,
+<span class="math display">\[
+X_i=\frac{L_{i}+L_{i+1}}{2};
+\]</span>
+de esta manera, el error máximo que se comete al describir cualquier elemento del intervalo por medio de su marca de clase es mínimo e igual a la mitad de la amplitud del intervalo.</p>
+<p>Como todos los intervalos tienen la misma amplitud <span class="math inline">\(A\)</span>, la diferencia entre dos puntos medios consecutivos será también <span class="math inline">\(A\)</span>, y por consiguiente las marcas de clase formarán de nuevo una progresión aritmética de paso <span class="math inline">\(A\)</span>:
+<span class="math display">\[
+X_1=\frac{L_1+L_2}{2}\quad \text{ y }\quad X_i=X_1+(i-1)A, \quad i=2,\ldots,k.
+\]</span></p>
+
+<div class="example">
+<span id="exm:unnamed-chunk-622" class="example"><strong>Ejemplo 13.4  </strong></span>Continuemos con el Ejemplo <a href="datos-cuantitativos-agrupados.html#exm:alerg">13.1</a> para <span class="math inline">\(k=7\)</span>. Las marcas de clase serán los puntos medios de los intervalos que hemos determinado en el ejemplo anterior; como hemos visto, formarán una progresión aritmética de origen el punto medio del primer intervalo y paso la amplitud de las clases:
+<span class="math display">\[
+\begin{array}{l}
+X_1=(3.75+5.65)/2=4.7\\
+X_2= 4.7 +1.9= 6.6\\
+X_3= 4.7 + 2\cdot 1.9 = 8.5\\
+X_4= 4.7 + 3\cdot 1.9= 10.4\\
+X_5= 4.7 + 4\cdot 1.9= 12.3\\
+X_6=4.7 + 5\cdot 1.9= 14.2\\
+X_7= 4.7 + 6\cdot 1.9= 16.1
+\end{array}
+\]</span>
+</div>
+
+
+<div class="example">
+<p><span id="exm:alerg7cl" class="example"><strong>Ejemplo 13.5  </strong></span>Volvamos a la situación inicial del Ejemplo <a href="datos-cuantitativos-agrupados.html#exm:alerg">13.1</a>, y esta vez vamos a agrupar los datos siguiendo la regla de Scott.
+Ya calculamos en su momento que, con esta regla, tenemos que usar <span class="math inline">\(k=5\)</span> intervalos. Como el rango de los datos es 12.7 y <span class="math inline">\(12.7/5=2.54\)</span>, redondeando por exceso este cociente a una décima obtenemos que la amplitud de los intervalos ha de ser <span class="math inline">\(A=2.6\)</span>.</p>
+</div>
+
+<p>Calculemos los extremos de los intervalos: el extremo inferior del primero es, de nuevo, <span class="math inline">\(L_1=3.8-0.05=3.75\)</span>, y a partir de este valor, los otros extremos se obtienen sumando consecutivamente la amplitud hasta llegar a <span class="math inline">\(L_6\)</span>:</p>
+<div class="sourceCode" id="cb1619"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1619-1" data-line-number="1">L=<span class="fl">3.75+2.6</span><span class="op">*</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb1619-2" data-line-number="2">L</a></code></pre></div>
+<pre><code>## [1]  3.75  6.35  8.95 11.55 14.15 16.75</code></pre>
+<p>Los intervalos son, por lo tanto,
+<span class="math display">\[
+[3.75, 6.35),\ [6.35,8.95),\ [8.95,11.55),\ [11.55, 14.15),\ [14.15 ,16.75).
+\]</span></p>
+<p>La marca de clase del primer intervalo es su punto medio:
+<span class="math display">\[
+X_1=\frac{3.75+ 6.35}{2}= 5.05.
+\]</span>
+A partir de este valor, las otras marcas se obtienen sumando consecutivamente la amplitud hasta llegar a <span class="math inline">\(X_5\)</span>:</p>
+<div class="sourceCode" id="cb1621"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1621-1" data-line-number="1">X=<span class="fl">5.05+2.6</span><span class="op">*</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb1621-2" data-line-number="2">X</a></code></pre></div>
+<pre><code>## [1]  5.05  7.65 10.25 12.85 15.45</code></pre>
+<p>También podríamos haber calculado estas marcas de clase definiéndolas directamente como los puntos medios de los intervalos:</p>
+<div class="sourceCode" id="cb1623"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1623-1" data-line-number="1">X=(L[<span class="op">-</span><span class="kw">length</span>(L)]<span class="op">+</span>L[<span class="op">-</span><span class="dv">1</span>])<span class="op">/</span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb1623-2" data-line-number="2">X</a></code></pre></div>
+<pre><code>## [1]  5.05  7.65 10.25 12.85 15.45</code></pre>
+<p>Observad que, en esta última construcción, <code>L[-length(L)]</code> es el vector <span class="math inline">\(L_1,L_2,\ldots,L_k\)</span> (obtenido a partir de <span class="math inline">\(L_1,L_2,\ldots,L_k,L_{k+1}\)</span> eliminando su último elemento) y
+<code>L[-1]</code> es el vector <span class="math inline">\(L_2,L_3,\ldots,L_{k+1}\)</span> (obtenido a partir de <span class="math inline">\(L_1,L_2,\ldots,L_k,L_{k+1}\)</span> eliminando su primer elemento), por lo que</p>
+<div class="sourceCode" id="cb1625"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1625-1" data-line-number="1">(L[<span class="op">-</span><span class="kw">length</span>(L)]<span class="op">+</span>L[<span class="op">-</span><span class="dv">1</span>]])<span class="op">/</span><span class="dv">2</span></a></code></pre></div>
+<p>define el vector
+<span class="math display">\[
+\frac{L_1+L_2}{2},\frac{L_2+L_3}{2},\ldots,\frac{L_k+L_{k+1}}{2}
+\]</span>
+formado por las marcas de clase.</p>
+<p>Una vez agrupados los datos, ya podemos empezar a estudiarlos. Una primera posibilidad es considerar las clases como los niveles de una variable ordinal y calcular sus frecuencias; así,</p>
+<ul>
+<li><p>la <strong>frecuencia absoluta</strong> de una clase será el número de datos originales que pertenecen a esta clase</p></li>
+<li><p>la <strong>frecuencia absoluta acumulada</strong> de una clase será el número de datos originales que pertenecen a esta clase o a alguna de las anteriores</p></li>
+<li><p>etc.</p></li>
+</ul>
+<p>La manera usual de representar las frecuencias de un conjunto de datos agrupados es la que mostramos en la tabla siguiente, donde <span class="math inline">\(X_j\)</span> indica la marca de clase, <span class="math inline">\(n_j\)</span> la frecuencia absoluta de la clase, <span class="math inline">\(N_j\)</span> su frecuencia absoluta acumulada, <span class="math inline">\(f_j\)</span> su frecuencia relativa y <span class="math inline">\(F_j\)</span> su frecuencia relativa acumulada. De esta manera, <span class="math inline">\(N_k\)</span> será igual al número total de datos recogidos y <span class="math inline">\(F_k\)</span> siempre valdrá 1.</p>
+<p><span class="math display">\[
+\begin{array}{lccccc}
+\hline \text{clases} &amp; X_j &amp;
+n_j &amp; N_j &amp; f_j &amp; F_j
+\\\hline [L_1,L_2) &amp; X_1 &amp; n_1 &amp; N_1 &amp; f_1 &amp; F_1 \\
+[L_2,L_3) &amp; X_2 &amp; n_2 &amp; N_2 &amp; f_2 &amp; F_2 \\ \quad\ \vdots &amp;
+\vdots &amp;
+\vdots &amp; \vdots &amp; \vdots &amp; \vdots \\ [L_k,L_{k+1}) &amp; X_k &amp;
+n_k &amp;
+N_k &amp; f_k &amp; F_k\\ \hline
+\end{array}
+\]</span></p>
+
+<div class="example">
+<p><span id="exm:table1" class="example"><strong>Ejemplo 13.6  </strong></span>Continuemos con el Ejemplo <a href="datos-cuantitativos-agrupados.html#exm:alerg">13.1</a>. Recordemos los datos, que damos ordenados para facilitar el cálculo de la tabla de frecuencias:</p>
+</div>
+
+<div class="sourceCode" id="cb1626"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1626-1" data-line-number="1"><span class="kw">sort</span>(alergia)</a></code></pre></div>
+<pre><code>##  [1]  3.8  5.9  6.2  7.4  7.9  8.1  8.3  8.4  8.6  8.8  9.1  9.1  9.8  9.9
+## [15]  9.9 10.1 10.4 10.5 10.5 10.9 10.9 11.2 11.2 11.4 11.4 11.4 11.5 11.5
+## [29] 11.6 11.7 12.3 12.5 12.7 12.7 12.9 13.4 13.6 14.7 15.0 16.5</code></pre>
+<p>Las frecuencias de este conjunto de datos para su agrupamiento en 7 clases obtenido en el Ejemplo <a href="datos-cuantitativos-agrupados.html#exm:alerg7cl">13.5</a> se muestran en la tabla siguiente. Para construir esta tabla, primero hemos calculado las frecuencias absolutas de cada clase: sólo hay 1 valor dentro de [3.75, 5.65), por lo que <span class="math inline">\(n_1=1\)</span>; hay 3 valores dentro de [5.65, 7.55), por lo que <span class="math inline">\(n_2=3\)</span>; etc. A partir de estas frecuencias absolutas, hemos calculado el resto de la manera usual.</p>
+<p><span class="math display">\[
+\begin{array}{lrrrrr}
+  \hline
+\text{clases} &amp; X_j &amp; n_j &amp; N_j &amp; f_j &amp; F_j \\ 
+  \hline
+[3.75, 5.65) &amp; 4.7 &amp;   1 &amp;   1 &amp; 0.025 &amp; 0.025 \\ 
+[5.65, 7.55) &amp; 6.6 &amp;   3 &amp;   4 &amp; 0.075 &amp; 0.100 \\ 
+[7.55, 9.45) &amp; 8.5 &amp;   8 &amp;  12 &amp; 0.200 &amp; 0.300 \\ 
+[9.45, 11.35) &amp; 10.4 &amp;  11 &amp;  23 &amp; 0.275 &amp; 0.575 \\ 
+[11.35, 13.25) &amp; 12.3 &amp;  12 &amp;  35 &amp; 0.300 &amp; 0.875 \\ 
+[13.25, 15.15) &amp; 14.2 &amp;   4 &amp;  39 &amp; 0.100 &amp; 0.975 \\ 
+[15.15, 17.05) &amp; 16.1 &amp;   1 &amp;  40 &amp; 0.025 &amp; 1.000 \\ 
+   \hline
+\end{array}
+\]</span></p>
+
+<div class="example">
+<p><span id="exm:fruitals" class="example"><strong>Ejemplo 13.7  </strong></span>Los siguientes valores son números de árboles frutales afectados por la mosca de la fruta en 50 terrenos rústicos de las mismas dimensiones:</p>
+</div>
+
+<div class="sourceCode" id="cb1628"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1628-1" data-line-number="1">fruta=<span class="kw">c</span>(<span class="dv">8</span>,<span class="dv">11</span>,<span class="dv">11</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>,<span class="dv">16</span>,<span class="dv">6</span>,<span class="dv">12</span>,<span class="dv">19</span>,<span class="dv">13</span>,<span class="dv">6</span>,<span class="dv">9</span>,<span class="dv">13</span>,<span class="dv">15</span>,<span class="dv">9</span>,<span class="dv">12</span>,<span class="dv">16</span>,<span class="dv">8</span>,<span class="dv">7</span>,<span class="dv">14</span>,<span class="dv">11</span>,<span class="dv">15</span>,<span class="dv">6</span>,<span class="dv">14</span>,</a>
+<a class="sourceLine" id="cb1628-2" data-line-number="2">  <span class="dv">14</span>,<span class="dv">17</span>,<span class="dv">11</span>,<span class="dv">6</span>,<span class="dv">9</span>,<span class="dv">10</span>,<span class="dv">19</span>,<span class="dv">12</span>,<span class="dv">11</span>,<span class="dv">12</span>,<span class="dv">6</span>,<span class="dv">15</span>,<span class="dv">16</span>,<span class="dv">16</span>,<span class="dv">12</span>,<span class="dv">13</span>,<span class="dv">12</span>,<span class="dv">12</span>,<span class="dv">8</span>,<span class="dv">17</span>,<span class="dv">13</span>,<span class="dv">7</span>,<span class="dv">12</span>,<span class="dv">14</span>,<span class="dv">12</span>)</a></code></pre></div>
+<p>Para estudiar estos valores, vamos a agruparlos; par variar, usaremos la regla de Freedman-Diaconis.</p>
+<div class="sourceCode" id="cb1629"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1629-1" data-line-number="1"><span class="kw">nclass.FD</span>(fruta)</a></code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<div class="sourceCode" id="cb1631"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1631-1" data-line-number="1"><span class="kw">diff</span>(<span class="kw">range</span>(fruta))<span class="op">/</span><span class="dv">5</span></a></code></pre></div>
+<pre><code>## [1] 2.6</code></pre>
+<div class="sourceCode" id="cb1633"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1633-1" data-line-number="1"><span class="kw">min</span>(fruta)</a></code></pre></div>
+<pre><code>## [1] 6</code></pre>
+<p>Por consiguiente, usaremos 5 clases. Como hemos dado las medidas con una precisión de unidades,
+para calcular su amplitud <span class="math inline">\(A\)</span> hemos de redondear por exceso a unidades el cociente entre el rango de la variable y el número de clases; este cociente vale 2.6, y por lo tanto <span class="math inline">\(A=3\)</span>. Recordad que, si la precisión hubiera sido de décimas de unidad, como este cociente ha dado exactamente 2.6, hubiéramos tomado como amplitud el cociente más una unidad de precisión: 2.7.</p>
+<p>El extremo inferior de la primera clase será 6-0.5=5.5, y a partir de aquí calculamos los 5 extremos siguientes sumando sucesivamente la amplitud:</p>
+<div class="sourceCode" id="cb1635"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1635-1" data-line-number="1"><span class="fl">5.5</span><span class="op">+</span><span class="dv">3</span><span class="op">*</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">5</span>)</a></code></pre></div>
+<pre><code>## [1]  5.5  8.5 11.5 14.5 17.5 20.5</code></pre>
+<p>Por consiguiente, los intervalos son
+<span class="math display">\[
+[5.5, 8.5),\ [8.5,11.5),\ [11.5, 14.5),\ [14.5, 17.5),\ [17.5, 20.5).
+\]</span></p>
+<p>Las marcas de clase serán los puntos medios de estos intervalos, que calcularemos sumando múltiplos consecutivos de la amplitud al primer punto medio:</p>
+<div class="sourceCode" id="cb1637"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1637-1" data-line-number="1">(<span class="fl">5.5+8.5</span>)<span class="op">/</span><span class="dv">2</span><span class="op">+</span><span class="dv">3</span><span class="op">*</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">4</span>)</a></code></pre></div>
+<pre><code>## [1]  7 10 13 16 19</code></pre>
+<p>Es decir,
+<span class="math display">\[
+X_1=7,\  X_2=10, \ X_3= 13,\  X_4= 16,\  X_5= 19.
+\]</span></p>
+<p>Finalmente, ordenamos los datos</p>
+<div class="sourceCode" id="cb1639"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1639-1" data-line-number="1"><span class="kw">sort</span>(fruta)</a></code></pre></div>
+<pre><code>##  [1]  6  6  6  6  6  7  7  8  8  8  8  9  9  9  9 10 10 11 11 11 11 11 12
+## [24] 12 12 12 12 12 12 12 12 13 13 13 13 14 14 14 14 15 15 15 16 16 16 16
+## [47] 17 17 19 19</code></pre>
+<p>y contamos cuántos pertenecen a cada clase (serán las frecuencias absolutas) y a partir de aquí calculamos el resto de frecuencias. Al final, obtenemos la tabla siguiente.</p>
+<p><span class="math display">\[
+\begin{array}{lccccc}
+\hline
+\text{clases}  &amp; X_j &amp; n_j &amp; N_j &amp;  f_j &amp;  F_j \\ \hline 
+[5.5,8.5)  &amp; \ 7  &amp; 11 &amp; 11 &amp; 0.22 &amp;  0.22 \\ 
+[8.5,11.5) &amp; 10  &amp; 11  &amp; 22  &amp; 0.22  &amp; 0.44 \\
+[11.5,14.5) &amp; 13 &amp; 17  &amp; 39  &amp; 0.34  &amp; 0.78 \\ 
+[14.5,17.5) &amp; 16 &amp; \ 9  &amp; 48 &amp; 0.18  &amp; 0.96\\
+[17.5,20.5) &amp; 19   &amp; \ 2  &amp; 50 &amp; 0.04  &amp; 1.00 \\ \hline
+\end{array}
+\]</span></p>
+<p>Lo que nos interesa ahora es que R calcule esta tabla por nosotros.</p>
+</div>
+<div id="sec:agrupR" class="section level2">
+<h2><span class="header-section-number">13.2</span> Agrupamiento de datos con R</h2>
+<p>Al agrupar un conjunto de datos con R, lo que hacemos es codificarlos,
+convirtiendo la variable cuantitativa en un factor cuyos niveles son las clases en las que hemos agrupado los valores y asignando cada dato a su clase. Las etiquetas de estos niveles pueden ser de diferentes tipos, en función de los intereses o el gusto del usuario. A modo de ejemplo, supongamos que agrupamos los valores de una variable cuantitativa en los intervalos
+[0.5,3.5), [3.5,6.5) y [6.5,9.5). Los tres tipos de codificación más usuales son:</p>
+<ul>
+<li><strong>Codificación 1</strong>: Codificamos cada intervalo por medio de él mismo: <em>[0.5,3.5), [3.5,6.5), [6.5,9.5)</em></li>
+<li><strong>Codificación 2</strong>: Codificamos cada intervalo por medio de su marca de clase, es decir, su punto medio: <em>2, 5, 8</em></li>
+<li><strong>Codificación 3</strong>: Codificamos cada intervalo por medio de su número de orden: <em>1, 2, 3</em></li>
+</ul>
+<p>Naturalmente, en la práctica podemos usar cualquier otra codificación que se nos ocurra.</p>
+<p>La función básica de R para agrupar un vector de datos numéricos y codificar
+sus valores con las clases a las que pertenecen es</p>
+<div class="sourceCode" id="cb1641"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1641-1" data-line-number="1"><span class="kw">cut</span>(x, <span class="dt">breaks=</span>..., <span class="dt">labels=</span>..., <span class="dt">right=</span><span class="ot">FALSE</span>, <span class="dt">include.lowest=</span><span class="ot">TRUE</span>)</a></code></pre></div>
+<p>donde:</p>
+<ul>
+<li><p><code>x</code> es el vector numérico que contiene los datos</p></li>
+<li><p>El parámetro <code>breaks</code> puede ser un vector numérico formado por los extremos de los intervalos en los que queremos agrupar los datos y que habremos calculado previamente. También podemos igualar este parámetro a un número <span class="math inline">\(k\)</span>, en cuyo caso R agrupa los datos en <span class="math inline">\(k\)</span> clases; para ello, divide el intervalo comprendido entre los valores mínimo y máximo de <span class="math inline">\(x\)</span> en <span class="math inline">\(k\)</span> intervalos y, a continuación, desplaza ligeramente a la izquierda el extremo inferior del primero y a la derecha el extremo superior del último. Por consiguiente, estos intervalos no tienen todos la misma amplitud, y además puede pasar que algún extremo intermedio coincida con algún dato del conjunto.</p></li>
+<li><p>El parámetro <code>labels</code> es un vector con las etiquetas de los intervalos. Su valor por defecto, el que utiliza si no lo especificamos, es la codificación 1: usa como etiquetas los mismos intervalos (aunque puede que escriba sus extremos redondeados, para que muestren todos un número máximo de cifras significativas: por defecto, 3). Si especificamos <code>labels=FALSE</code>, obtenemos la codificación 3: los intervalos se identifican por medio de números naturales correlativos empezando por 1. Para usar como etiquetas las marcas de clase o cualquier otro vector, hay que entrarlo como valor de este parámetro.</p></li>
+<li><p>El parámetro <code>right</code> es un parámetro lógico que permite indicar qué tipo de intervalos queremos. Si usamos intervalos cerrados por la izquierda y abiertos por la derecha, que va a ser la norma en este curso, tenemos que especificar <code>right=FALSE</code>, que <strong>no es el valor por defecto</strong>.</p></li>
+<li><p>Combinado con <code>right=FALSE</code>, <code>include.lowest=TRUE</code> impone que el último intervalo sea cerrado: <span class="math inline">\([L_k,L_{k+1}]\)</span>. De esta manera, si por casualidad (o porque no hemos definido con cuidado las clases) el extremo superior del último intervalo, <span class="math inline">\(L_{k+1}\)</span>, coincide con un valor del conjunto de datos, lo contamos en el último intervalo;
+sin <code>include.lowest=TRUE</code> no tendríamos en cuenta los <span class="math inline">\(L_{k+1}\)</span> del conjunto de datos. Naturalmente, si sabemos que <span class="math inline">\(L_{k+1}\)</span> no pertenece a nuestro conjunto de datos, entonces no hace falta entrar este parámetro.</p></li>
+</ul>
+<p>Podéis consultar la Ayuda de la función para conocer otros parámetros que os puedan ser de utilidad y para saber cómo se pueden especificar otros tipos de intervalos.</p>
+
+<div class="example">
+<p><span id="exm:cut" class="example"><strong>Ejemplo 13.8  </strong></span>En un experimento hemos recogido los datos siguientes:</p>
+</div>
+
+<blockquote>
+<p>10,9,8,7,3,5,6,8,9,5,2,1,3,1,1.</p>
+</blockquote>
+<p>Vamos a agruparlos en los intervalos
+<span class="math display">\[
+[0.5,4.5), [4.5,8.5), [8.5,12.5).
+\]</span></p>
+<p>Son <span class="math inline">\(k=3\)</span> intervalos de amplitud <span class="math inline">\(A=4\)</span>.</p>
+<ul>
+<li>Creamos un vector <code>x</code> con los datos</li>
+</ul>
+<div class="sourceCode" id="cb1642"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1642-1" data-line-number="1">x=<span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">9</span>,<span class="dv">8</span>,<span class="dv">7</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">1</span>)</a></code></pre></div>
+<ul>
+<li>Definimos un vector <code>L</code> con los extremos de los intervalos</li>
+</ul>
+<div class="sourceCode" id="cb1643"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1643-1" data-line-number="1">L=<span class="fl">0.5</span><span class="op">+</span><span class="dv">4</span><span class="op">*</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">3</span>)</a></code></pre></div>
+<ul>
+<li>Definimos <code>x_int</code> como el resultado de la codificación en intervalos empleando como etiquetas los intervalos</li>
+</ul>
+<div class="sourceCode" id="cb1644"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1644-1" data-line-number="1">x_int=<span class="kw">cut</span>(x, <span class="dt">breaks=</span>L, <span class="dt">right=</span><span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb1644-2" data-line-number="2">x_int</a></code></pre></div>
+<pre><code>##  [1] [8.5,12.5) [8.5,12.5) [4.5,8.5)  [4.5,8.5)  [0.5,4.5)  [4.5,8.5) 
+##  [7] [4.5,8.5)  [4.5,8.5)  [8.5,12.5) [4.5,8.5)  [0.5,4.5)  [0.5,4.5) 
+## [13] [0.5,4.5)  [0.5,4.5)  [0.5,4.5) 
+## Levels: [0.5,4.5) [4.5,8.5) [8.5,12.5)</code></pre>
+<ul>
+<li>Definimos <code>x_MC</code> como el resultado de la codificación en intervalos empleando como etiquetas las marcas de clase</li>
+</ul>
+<div class="sourceCode" id="cb1646"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1646-1" data-line-number="1">MC=(L[<span class="dv">1</span>]<span class="op">+</span>L[<span class="dv">2</span>])<span class="op">/</span><span class="dv">2</span><span class="op">+</span><span class="dv">4</span><span class="op">*</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">2</span>)  <span class="co">#Las marcas de clase</span></a>
+<a class="sourceLine" id="cb1646-2" data-line-number="2">x_MC=<span class="kw">cut</span>(x, <span class="dt">breaks=</span>L, <span class="dt">labels=</span>MC, <span class="dt">right=</span><span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb1646-3" data-line-number="3">x_MC</a></code></pre></div>
+<pre><code>##  [1] 10.5 10.5 6.5  6.5  2.5  6.5  6.5  6.5  10.5 6.5  2.5  2.5  2.5  2.5 
+## [15] 2.5 
+## Levels: 2.5 6.5 10.5</code></pre>
+<ul>
+<li>Definimos <code>x_Num</code> como el resultado de la codificación en intervalos empleando como etiquetas 1, 2, 3</li>
+</ul>
+<div class="sourceCode" id="cb1648"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1648-1" data-line-number="1">x_Num=<span class="kw">cut</span>(x, <span class="dt">breaks=</span>L, <span class="dt">labels=</span><span class="ot">FALSE</span>, <span class="dt">right=</span><span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb1648-2" data-line-number="2">x_Num</a></code></pre></div>
+<pre><code>##  [1] 3 3 2 2 1 2 2 2 3 2 1 1 1 1 1</code></pre>
+<p>El resultado de <code>cut</code> ha sido, en cada caso, una lista con los elementos del vector original codificados con las etiquetas de las clases a las que pertenecen. Podemos observar que las dos primeras aplicaciones de <code>cut</code> han producido factores (cuyos niveles son los intervalos y las marcas de clase, respectivamente, en ambos casos ordenados de manera natural), mientras que aplicándola con <code>labels=FALSE</code> hemos obtenido un vector.</p>
+<p>Antes de continuar, ¿que habría pasado si hubiéramos pedido a R que cortase los datos en 3 grupos?</p>
+<div class="sourceCode" id="cb1650"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1650-1" data-line-number="1">x</a></code></pre></div>
+<pre><code>##  [1] 10  9  8  7  3  5  6  8  9  5  2  1  3  1  1</code></pre>
+<div class="sourceCode" id="cb1652"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1652-1" data-line-number="1"><span class="kw">cut</span>(x, <span class="dt">breaks=</span><span class="dv">3</span>, <span class="dt">right=</span><span class="ot">FALSE</span>)</a></code></pre></div>
+<pre><code>##  [1] [7,10)    [7,10)    [7,10)    [7,10)    [0.991,4) [4,7)     [4,7)    
+##  [8] [7,10)    [7,10)    [4,7)     [0.991,4) [0.991,4) [0.991,4) [0.991,4)
+## [15] [0.991,4)
+## Levels: [0.991,4) [4,7) [7,10)</code></pre>
+<p>R ha repartido los datos en tres intervalos de longitud 3, y ha desplazado ligeramente a la izquierda el extremo izquierdo del primer intervalo y a la derecha el extremo derecho del último intervalo; esto último no se ve a simple vista, pero lo podéis deducir del hecho que, según el resultado que muestra R, 10 pertenece a [7,10). Aunque así escrito resulte contradictorio, la realidad es que R ha tomado como extremo derecho del último intervalo el valor 10.009, tal y como se explica en la Ayuda de <code>cut</code>, pero lo ha escrito redondeado a 10.</p>
+<p>Una vez agrupados los datos y codificados con las etiquetas de las clases, ya podemos calcular las tablas de frecuencias absolutas, relativas y acumuladas de los datos agrupados. Una posibilidad es usar las funciones <code>table</code>, <code>prop.table</code> y <code>cumsum</code> tal como lo hacíamos en las Lecciones <a href="chap-edqual.html#chap:edqual">10</a> y <a href="chap-ord.html#chap:ord">11</a>. Otra posibilidad es usar la función <code>hist</code>, a la que dedicaremos la Sección <a href="datos-cuantitativos-agrupados.html#sec:hist">13.4</a>. Esta función sirve para dibujar el <strong>histograma</strong> de la variable cuantitativa agrupada (una especie de diagrama de barras para las clases del agrupamiento), pero internamente da lugar a una <code>list</code> cuya componente <code>count</code> es el vector de frecuencias absolutas de las clases. Por consiguiente, para calcular estas frecuencias absolutas, podemos usar la instrucción</p>
+<div class="sourceCode" id="cb1654"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1654-1" data-line-number="1"><span class="kw">hist</span>(x, <span class="dt">breaks=</span>..., <span class="dt">right=</span><span class="ot">FALSE</span>, <span class="dt">include.lowest=</span><span class="ot">TRUE</span>, <span class="dt">plot=</span><span class="ot">FALSE</span>)<span class="op">$</span>count</a></code></pre></div>
+<p>En esta instrucción, es conveniente igualar el parámetro <code>breaks</code> al vector de los extremos de los intervalos (porque <code>cut</code> y <code>hist</code> usan métodos diferentes para agrupar los datos cuando se especifica sólo el número de clases); el significado de <code>right=FALSE</code> (y, si es necesario, <code>include.lowest=TRUE</code>) es el mismo que en <code>cut</code>; y <code>plot=FALSE</code> impide que se dibuje el histograma. Por ahora es interesante también saber que el resultado de <code>hist</code> incluye la componente <code>mids</code> que contiene el vector de puntos medios de los intervalos, nuestras marcas de clase.</p>
+
+<div class="example">
+<p><span id="exm:notes" class="example"><strong>Ejemplo 13.9  </strong></span>Supongamos que tenemos las 50 calificaciones siguientes, obtenidas por los estudiantes de una asignatura:</p>
+</div>
+
+<div class="sourceCode" id="cb1655"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1655-1" data-line-number="1">Notas=<span class="kw">c</span>(<span class="fl">5.1</span>,<span class="fl">1.1</span>,<span class="fl">6.4</span>,<span class="fl">5.3</span>,<span class="dv">10</span>,<span class="fl">5.4</span>,<span class="fl">1.9</span>,<span class="fl">3.1</span>,<span class="fl">5.1</span>,<span class="fl">0.8</span>,<span class="fl">9.6</span>,<span class="fl">6.6</span>,<span class="fl">7.0</span>,<span class="fl">9.6</span>,</a>
+<a class="sourceLine" id="cb1655-2" data-line-number="2">  <span class="dv">10</span>,<span class="fl">1.2</span>,<span class="fl">4.2</span>,<span class="fl">8.8</span>,<span class="fl">2.4</span>,<span class="fl">1.8</span>,<span class="fl">5.6</span>,<span class="fl">6.8</span>,<span class="fl">6.7</span>,<span class="fl">2.2</span>,<span class="fl">8.6</span>,<span class="fl">3.9</span>,<span class="fl">5.6</span>,<span class="fl">5.9</span>,<span class="fl">8.4</span>,<span class="fl">4.9</span>,</a>
+<a class="sourceLine" id="cb1655-3" data-line-number="3">  <span class="fl">0.7</span>,<span class="fl">8.2</span>,<span class="fl">3.7</span>,<span class="fl">4.8</span>,<span class="fl">5.8</span>,<span class="fl">3.3</span>,<span class="fl">9.7</span>,<span class="fl">7.8</span>,<span class="fl">9.3</span>,<span class="fl">4.5</span>,<span class="fl">6.2</span>,<span class="fl">3.9</span>,<span class="fl">4.7</span>,<span class="fl">6.2</span>,<span class="fl">6.3</span>,<span class="fl">9.4</span>,</a>
+<a class="sourceLine" id="cb1655-4" data-line-number="4">  <span class="fl">9.3</span>,<span class="fl">2.3</span>,<span class="fl">8.5</span>,<span class="fl">1.4</span>)</a></code></pre></div>
+<p>Vamos a agruparlas en Suspenso, Aprobado, Notable, y Sobresaliente, y calcularemos las frecuencias de estas clases. Observad que las clases no tienen la misma amplitud, y que además la última ha de ser cerrada a la derecha (ha de contener los dieces), por lo que tendremos que usar <code>include.lowest=TRUE</code>.</p>
+<div class="sourceCode" id="cb1656"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1656-1" data-line-number="1">Notas_cut=<span class="kw">cut</span>(Notas, <span class="dt">breaks=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">9</span>,<span class="dv">10</span>),</a>
+<a class="sourceLine" id="cb1656-2" data-line-number="2">  <span class="dt">labels=</span><span class="kw">c</span>(<span class="st">&quot;Suspenso&quot;</span>,<span class="st">&quot;Aprobado&quot;</span>,<span class="st">&quot;Notable&quot;</span>,<span class="st">&quot;Sobresaliente&quot;</span>),</a>
+<a class="sourceLine" id="cb1656-3" data-line-number="3">  <span class="dt">right=</span><span class="ot">FALSE</span>, <span class="dt">include.lowest=</span><span class="ot">TRUE</span>)</a></code></pre></div>
+<ul>
+<li>La tabla de frecuencias absolutas:</li>
+</ul>
+<div class="sourceCode" id="cb1657"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1657-1" data-line-number="1"><span class="kw">table</span>(Notas_cut)  </a></code></pre></div>
+<pre><code>## Notas_cut
+##      Suspenso      Aprobado       Notable Sobresaliente 
+##            20            15             7             8</code></pre>
+<ul>
+<li>La tabla de frecuencias absolutas acumuladas:</li>
+</ul>
+<div class="sourceCode" id="cb1659"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1659-1" data-line-number="1"><span class="kw">cumsum</span>(<span class="kw">table</span>(Notas_cut))  </a></code></pre></div>
+<pre><code>##      Suspenso      Aprobado       Notable Sobresaliente 
+##            20            35            42            50</code></pre>
+<ul>
+<li>La tabla de frecuencias relativas:</li>
+</ul>
+<div class="sourceCode" id="cb1661"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1661-1" data-line-number="1"><span class="kw">prop.table</span>(<span class="kw">table</span>(Notas_cut))   </a></code></pre></div>
+<pre><code>## Notas_cut
+##      Suspenso      Aprobado       Notable Sobresaliente 
+##          0.40          0.30          0.14          0.16</code></pre>
+<ul>
+<li>La tabla de frecuencias relativas acumuladas:</li>
+</ul>
+<div class="sourceCode" id="cb1663"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1663-1" data-line-number="1"><span class="kw">cumsum</span>(<span class="kw">prop.table</span>(<span class="kw">table</span>(Notas_cut)))  </a></code></pre></div>
+<pre><code>##      Suspenso      Aprobado       Notable Sobresaliente 
+##          0.40          0.70          0.84          1.00</code></pre>
+<p>También podríamos haber obtenido estas frecuencias usando la función <code>hist</code> para calcular el vector de frecuencias absolutas y luego operando con este vector para obtener el resto:</p>
+<ul>
+<li>La tabla de frecuencias absolutas:</li>
+</ul>
+<div class="sourceCode" id="cb1665"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1665-1" data-line-number="1">frec_abs=<span class="kw">hist</span>(Notas, <span class="dt">breaks=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">9</span>,<span class="dv">10</span>), <span class="dt">right=</span><span class="ot">FALSE</span>,</a>
+<a class="sourceLine" id="cb1665-2" data-line-number="2">   <span class="dt">include.lowest=</span><span class="ot">TRUE</span>, <span class="dt">plot=</span><span class="ot">FALSE</span>)<span class="op">$</span>count </a>
+<a class="sourceLine" id="cb1665-3" data-line-number="3">frec_abs</a></code></pre></div>
+<pre><code>## [1] 20 15  7  8</code></pre>
+<ul>
+<li>La tabla de frecuencias absolutas acumuladas:</li>
+</ul>
+<div class="sourceCode" id="cb1667"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1667-1" data-line-number="1"><span class="kw">cumsum</span>(frec_abs) </a></code></pre></div>
+<pre><code>## [1] 20 35 42 50</code></pre>
+<ul>
+<li>La tabla de frecuencias relativas (ahora no podemos usar <code>prop.table</code>, puesto que <code>frec_abs</code> no es una <code>table</code>):</li>
+</ul>
+<div class="sourceCode" id="cb1669"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1669-1" data-line-number="1">frec_abs<span class="op">/</span><span class="kw">length</span>(Notas)  </a></code></pre></div>
+<pre><code>## [1] 0.40 0.30 0.14 0.16</code></pre>
+<ul>
+<li>La tabla de frecuencias relativas acumuladas:</li>
+</ul>
+<div class="sourceCode" id="cb1671"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1671-1" data-line-number="1"><span class="kw">cumsum</span>(frec_abs<span class="op">/</span><span class="kw">length</span>(Notas))  </a></code></pre></div>
+<pre><code>## [1] 0.40 0.70 0.84 1.00</code></pre>
+<p>Ahora podemos construir un <em>data frame</em> que contenga las frecuencias de estas calificaciones con la estructura de las tablas que hemos dado al final de la sección anterior. Como ya explicamos en el Ejemplo <a href="chap-quan.html#exm:dados">12.2</a>, si calculamos las frecuencias absolutas con <code>table</code>, no es conveniente usar el resultado como columna del <em>data frame</em>: es mejor utilizar el vector que se obtiene al aplicar <code>as.vector</code> al resultado de <code>table</code>, y así no se generan columnas espurias con los nombres de los niveles.</p>
+<div class="sourceCode" id="cb1673"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1673-1" data-line-number="1">intervalos=<span class="kw">c</span>(<span class="st">&quot;[0,5)&quot;</span>,<span class="st">&quot;[5,7)&quot;</span>,<span class="st">&quot;[7,9)&quot;</span>,<span class="st">&quot;[9,10]&quot;</span>)</a>
+<a class="sourceLine" id="cb1673-2" data-line-number="2">calificaciones=<span class="kw">c</span>(<span class="st">&quot;Suspenso&quot;</span>,<span class="st">&quot;Aprobado&quot;</span>,<span class="st">&quot;Notable&quot;</span>,<span class="st">&quot;Sobresaliente&quot;</span>)</a>
+<a class="sourceLine" id="cb1673-3" data-line-number="3">marcas=<span class="kw">c</span>(<span class="fl">2.5</span>,<span class="dv">6</span>,<span class="dv">8</span>,<span class="fl">9.5</span>) <span class="co">#Marcas de clase</span></a>
+<a class="sourceLine" id="cb1673-4" data-line-number="4">f.abs=<span class="kw">as.vector</span>(<span class="kw">table</span>(Notas_cut)) <span class="co">#Frecuencias absolutas</span></a>
+<a class="sourceLine" id="cb1673-5" data-line-number="5">f.abs.cum=<span class="kw">cumsum</span>(f.abs)  <span class="co">#Frecuencias absolutas acumuladas</span></a>
+<a class="sourceLine" id="cb1673-6" data-line-number="6">f.rel=f.abs<span class="op">/</span><span class="kw">length</span>(Notas) <span class="co">#Frecuencias relativas</span></a>
+<a class="sourceLine" id="cb1673-7" data-line-number="7">f.rel.cum=<span class="kw">cumsum</span>(f.rel) <span class="co">#Frecuencias relativas acumuladas</span></a>
+<a class="sourceLine" id="cb1673-8" data-line-number="8">tabla.frec=<span class="kw">data.frame</span>(intervalos, calificaciones, marcas, f.abs, </a>
+<a class="sourceLine" id="cb1673-9" data-line-number="9">   f.abs.cum, f.rel, f.rel.cum)  <span class="co">#Construimos el data frame</span></a>
+<a class="sourceLine" id="cb1673-10" data-line-number="10">tabla.frec</a></code></pre></div>
+<pre><code>##   intervalos calificaciones marcas f.abs f.abs.cum f.rel f.rel.cum
+## 1      [0,5)       Suspenso    2.5    20        20  0.40      0.40
+## 2      [5,7)       Aprobado    6.0    15        35  0.30      0.70
+## 3      [7,9)        Notable    8.0     7        42  0.14      0.84
+## 4     [9,10]  Sobresaliente    9.5     8        50  0.16      1.00</code></pre>
+<p>También hubiéramos podido usar</p>
+<div class="sourceCode" id="cb1675"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1675-1" data-line-number="1">Hist_notas=<span class="kw">hist</span>(Notas, <span class="dt">breaks=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">9</span>,<span class="dv">10</span>), <span class="dt">right=</span><span class="ot">FALSE</span>, </a>
+<a class="sourceLine" id="cb1675-2" data-line-number="2">  <span class="dt">include.lowest=</span><span class="ot">TRUE</span>, <span class="dt">plot=</span><span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb1675-3" data-line-number="3">f.abs=Hist_notas<span class="op">$</span>count  </a>
+<a class="sourceLine" id="cb1675-4" data-line-number="4">marcas=Hist_notas<span class="op">$</span>mids  </a></code></pre></div>
+<p>y usar el vector <code>f.abs</code> como arranque para calcular las columnas de frecuencias del <em>data frame</em> y el vector <code>marcas</code> como columna de marcas de clase.</p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-653" class="example"><strong>Ejemplo 13.10  </strong></span>Continuemos con el Ejemplo <a href="datos-cuantitativos-agrupados.html#exm:cut">13.8</a>; vamos a calcular las diferentes frecuencias para la codificación <code>x_int</code>:</p>
+</div>
+
+<div class="sourceCode" id="cb1676"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1676-1" data-line-number="1">x_int</a></code></pre></div>
+<pre><code>##  [1] [8.5,12.5) [8.5,12.5) [4.5,8.5)  [4.5,8.5)  [0.5,4.5)  [4.5,8.5) 
+##  [7] [4.5,8.5)  [4.5,8.5)  [8.5,12.5) [4.5,8.5)  [0.5,4.5)  [0.5,4.5) 
+## [13] [0.5,4.5)  [0.5,4.5)  [0.5,4.5) 
+## Levels: [0.5,4.5) [4.5,8.5) [8.5,12.5)</code></pre>
+<div class="sourceCode" id="cb1678"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1678-1" data-line-number="1"><span class="kw">table</span>(x_int)</a></code></pre></div>
+<pre><code>## x_int
+##  [0.5,4.5)  [4.5,8.5) [8.5,12.5) 
+##          6          6          3</code></pre>
+<div class="sourceCode" id="cb1680"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1680-1" data-line-number="1"><span class="kw">prop.table</span>(<span class="kw">table</span>(x_int))</a></code></pre></div>
+<pre><code>## x_int
+##  [0.5,4.5)  [4.5,8.5) [8.5,12.5) 
+##        0.4        0.4        0.2</code></pre>
+<div class="sourceCode" id="cb1682"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1682-1" data-line-number="1"><span class="kw">cumsum</span>(<span class="kw">table</span>(x_int))</a></code></pre></div>
+<pre><code>##  [0.5,4.5)  [4.5,8.5) [8.5,12.5) 
+##          6         12         15</code></pre>
+<div class="sourceCode" id="cb1684"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1684-1" data-line-number="1"><span class="kw">cumsum</span>(<span class="kw">prop.table</span>(<span class="kw">table</span>(x_int)))</a></code></pre></div>
+<pre><code>##  [0.5,4.5)  [4.5,8.5) [8.5,12.5) 
+##        0.4        0.8        1.0</code></pre>
+<p>Ahora, vamos a construir un <em>data frame</em> que contenga la tabla de frecuencias de esta variable agrupada:</p>
+<div class="sourceCode" id="cb1686"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1686-1" data-line-number="1">intervalos=<span class="kw">levels</span>(x_int)</a>
+<a class="sourceLine" id="cb1686-2" data-line-number="2">marcas=MC  <span class="co">#Las hemos calculado en un ejemplo anterior</span></a>
+<a class="sourceLine" id="cb1686-3" data-line-number="3">f.abs=<span class="kw">as.vector</span>(<span class="kw">table</span>(x_int))</a>
+<a class="sourceLine" id="cb1686-4" data-line-number="4">f.abs.cum=<span class="kw">cumsum</span>(f.abs)</a>
+<a class="sourceLine" id="cb1686-5" data-line-number="5">f.rel=f.abs<span class="op">/</span><span class="kw">length</span>(x)</a>
+<a class="sourceLine" id="cb1686-6" data-line-number="6">f.rel.cum=<span class="kw">cumsum</span>(f.rel)</a>
+<a class="sourceLine" id="cb1686-7" data-line-number="7">tabla.frec=<span class="kw">data.frame</span>(intervalos, marcas, f.abs, f.abs.cum, f.rel, f.rel.cum)</a>
+<a class="sourceLine" id="cb1686-8" data-line-number="8">tabla.frec</a></code></pre></div>
+<pre><code>##   intervalos marcas f.abs f.abs.cum f.rel f.rel.cum
+## 1  [0.5,4.5)    2.5     6         6   0.4       0.4
+## 2  [4.5,8.5)    6.5     6        12   0.4       0.8
+## 3 [8.5,12.5)   10.5     3        15   0.2       1.0</code></pre>
+<p>Podemos automatizar el cálculo de esta tabla de frecuencias, usando las dos funciones siguientes.
+La primera sirve en el caso en que vayamos a tomar todas las clases de la misma amplitud.
+Sus parámetros son: <span class="math inline">\(x\)</span>, el vector con los datos; <span class="math inline">\(k\)</span>, el número de clases; <span class="math inline">\(A\)</span>, su amplitud; y <span class="math inline">\(p\)</span>, la precisión de los datos (<span class="math inline">\(p=1\)</span> si la precisión son unidades, <span class="math inline">\(p=0.1\)</span> si la precisión son décimas de unidad, etc.).</p>
+<div class="sourceCode" id="cb1688"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1688-1" data-line-number="1">Tabla_frec_agrup=<span class="cf">function</span>(x,k,A,p){</a>
+<a class="sourceLine" id="cb1688-2" data-line-number="2">    L=<span class="kw">min</span>(x)<span class="op">-</span>p<span class="op">/</span><span class="dv">2</span><span class="op">+</span>A<span class="op">*</span>(<span class="dv">0</span><span class="op">:</span>k)</a>
+<a class="sourceLine" id="cb1688-3" data-line-number="3">    x_int=<span class="kw">cut</span>(x, <span class="dt">breaks=</span>L, <span class="dt">right=</span><span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb1688-4" data-line-number="4">    intervalos=<span class="kw">levels</span>(x_int)</a>
+<a class="sourceLine" id="cb1688-5" data-line-number="5">    marcas=(L[<span class="dv">1</span>]<span class="op">+</span>L[<span class="dv">2</span>])<span class="op">/</span><span class="dv">2</span><span class="op">+</span>A<span class="op">*</span>(<span class="dv">0</span><span class="op">:</span>(k<span class="dv">-1</span>))</a>
+<a class="sourceLine" id="cb1688-6" data-line-number="6">    f.abs=<span class="kw">as.vector</span>(<span class="kw">table</span>(x_int))</a>
+<a class="sourceLine" id="cb1688-7" data-line-number="7">    f.rel=f.abs<span class="op">/</span><span class="kw">length</span>(x)</a>
+<a class="sourceLine" id="cb1688-8" data-line-number="8">    f.abs.cum=<span class="kw">cumsum</span>(f.abs)</a>
+<a class="sourceLine" id="cb1688-9" data-line-number="9">    f.rel.cum=<span class="kw">cumsum</span>(f.rel)</a>
+<a class="sourceLine" id="cb1688-10" data-line-number="10">    tabla_x=<span class="kw">data.frame</span>(intervalos, marcas, f.abs, f.abs.cum, f.rel, f.rel.cum)</a>
+<a class="sourceLine" id="cb1688-11" data-line-number="11">    tabla_x</a>
+<a class="sourceLine" id="cb1688-12" data-line-number="12">  }</a></code></pre></div>
+<p>Si de las clases conocemos de entrada sus extremos, podemos usar la función siguiente.
+Sus parámetros son: <span class="math inline">\(x\)</span>, el vector con los datos, y <span class="math inline">\(L\)</span>, el vector de extremos de clases.</p>
+<div class="sourceCode" id="cb1689"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1689-1" data-line-number="1">Tabla_frec_agrup_L=<span class="cf">function</span>(x,L){</a>
+<a class="sourceLine" id="cb1689-2" data-line-number="2">    x_int=<span class="kw">cut</span>(x, <span class="dt">breaks=</span>L, <span class="dt">right=</span><span class="ot">FALSE</span>, <span class="dt">include.lowest=</span><span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb1689-3" data-line-number="3">    intervalos=<span class="kw">levels</span>(x_int)</a>
+<a class="sourceLine" id="cb1689-4" data-line-number="4">    marcas=(L[<span class="op">-</span><span class="kw">length</span>(L)]<span class="op">+</span>L[<span class="op">-</span><span class="dv">1</span>])<span class="op">/</span><span class="dv">2</span></a>
+<a class="sourceLine" id="cb1689-5" data-line-number="5">    f.abs=<span class="kw">as.vector</span>(<span class="kw">table</span>(x_int))</a>
+<a class="sourceLine" id="cb1689-6" data-line-number="6">    f.rel=f.abs<span class="op">/</span><span class="kw">length</span>(x)</a>
+<a class="sourceLine" id="cb1689-7" data-line-number="7">    f.abs.cum=<span class="kw">cumsum</span>(f.abs)</a>
+<a class="sourceLine" id="cb1689-8" data-line-number="8">    f.rel.cum=<span class="kw">cumsum</span>(f.rel)</a>
+<a class="sourceLine" id="cb1689-9" data-line-number="9">    tabla_x=<span class="kw">data.frame</span>(intervalos, marcas, f.abs, f.abs.cum, f.rel, f.rel.cum)</a>
+<a class="sourceLine" id="cb1689-10" data-line-number="10">    tabla_x</a>
+<a class="sourceLine" id="cb1689-11" data-line-number="11">  }</a></code></pre></div>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-658" class="example"><strong>Ejemplo 13.11  </strong></span>Volviendo al Ejemplo <a href="datos-cuantitativos-agrupados.html#exm:alerg">13.1</a>, vamos a calcular, para el agrupamiento en 7 clases, su tabla de frecuencias en forma de <em>data frame</em> usando la función <code>Tabla_frec_agrup</code>. Ya sabemos que <span class="math inline">\(k=7\)</span> y <span class="math inline">\(A=1.9\)</span> y que los datos están expresados con una precisión de décimas de unidad.</p>
+</div>
+
+<div class="sourceCode" id="cb1690"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1690-1" data-line-number="1"><span class="kw">Tabla_frec_agrup</span>(alergia, <span class="dv">7</span>, <span class="fl">1.9</span>, <span class="fl">0.1</span>)</a></code></pre></div>
+<pre><code>##    intervalos marcas f.abs f.abs.cum f.rel f.rel.cum
+## 1 [3.75,5.65)    4.7     1         1 0.025     0.025
+## 2 [5.65,7.55)    6.6     3         4 0.075     0.100
+## 3 [7.55,9.45)    8.5     8        12 0.200     0.300
+## 4 [9.45,11.3)   10.4    11        23 0.275     0.575
+## 5 [11.3,13.2)   12.3    12        35 0.300     0.875
+## 6 [13.2,15.1)   14.2     4        39 0.100     0.975
+## 7   [15.1,17)   16.1     1        40 0.025     1.000</code></pre>
+<p>La ventaja de definir esta tabla de frecuencias mediante un <em>data frame</em> es que podemos usar la función <code>kable</code> del paquete <strong>knitr</strong> o el paquete <em>printr</em> para producirla en formato adecuado en un documento html.</p>
+<div class="sourceCode" id="cb1692"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1692-1" data-line-number="1"><span class="kw">kable</span>(<span class="kw">Tabla_frec_agrup</span>(alergia, <span class="dv">7</span>, <span class="fl">1.9</span>, <span class="fl">0.1</span>))</a></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+intervalos
+</th>
+<th style="text-align:right;">
+marcas
+</th>
+<th style="text-align:right;">
+f.abs
+</th>
+<th style="text-align:right;">
+f.abs.cum
+</th>
+<th style="text-align:right;">
+f.rel
+</th>
+<th style="text-align:right;">
+f.rel.cum
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+[3.75,5.65)
+</td>
+<td style="text-align:right;">
+4.7
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0.025
+</td>
+<td style="text-align:right;">
+0.025
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+[5.65,7.55)
+</td>
+<td style="text-align:right;">
+6.6
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+0.075
+</td>
+<td style="text-align:right;">
+0.100
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+[7.55,9.45)
+</td>
+<td style="text-align:right;">
+8.5
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:right;">
+0.200
+</td>
+<td style="text-align:right;">
+0.300
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+[9.45,11.3)
+</td>
+<td style="text-align:right;">
+10.4
+</td>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:right;">
+23
+</td>
+<td style="text-align:right;">
+0.275
+</td>
+<td style="text-align:right;">
+0.575
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+[11.3,13.2)
+</td>
+<td style="text-align:right;">
+12.3
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:right;">
+35
+</td>
+<td style="text-align:right;">
+0.300
+</td>
+<td style="text-align:right;">
+0.875
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+[13.2,15.1)
+</td>
+<td style="text-align:right;">
+14.2
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+39
+</td>
+<td style="text-align:right;">
+0.100
+</td>
+<td style="text-align:right;">
+0.975
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+[15.1,17)
+</td>
+<td style="text-align:right;">
+16.1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+40
+</td>
+<td style="text-align:right;">
+0.025
+</td>
+<td style="text-align:right;">
+1.000
+</td>
+</tr>
+</tbody>
+</table>
+<p>Observad que, como advertíamos en su momento, ha escrito los extremos de los intervalos redondeados para que tengan como máximo 3 cifras. Esto se puede resolver usando en la función <code>cut</code> el parámetro <code>dig.lab</code>, que permite especificar el número máximo de cifras significativas en los extremos de las etiquetas.</p>
+<div class="sourceCode" id="cb1693"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1693-1" data-line-number="1">L=<span class="fl">3.75+1.9</span><span class="op">*</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">7</span>)</a>
+<a class="sourceLine" id="cb1693-2" data-line-number="2">L</a></code></pre></div>
+<pre><code>## [1]  3.75  5.65  7.55  9.45 11.35 13.25 15.15 17.05</code></pre>
+<div class="sourceCode" id="cb1695"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1695-1" data-line-number="1"><span class="kw">cut</span>(alergia, <span class="dt">breaks=</span>L, <span class="dt">right=</span><span class="ot">FALSE</span>)</a></code></pre></div>
+<pre><code>##  [1] [9.45,11.3) [9.45,11.3) [9.45,11.3) [13.2,15.1) [11.3,13.2)
+##  [6] [11.3,13.2) [15.1,17)   [9.45,11.3) [11.3,13.2) [11.3,13.2)
+## [11] [11.3,13.2) [5.65,7.55) [7.55,9.45) [7.55,9.45) [9.45,11.3)
+## [16] [7.55,9.45) [3.75,5.65) [9.45,11.3) [11.3,13.2) [7.55,9.45)
+## [21] [11.3,13.2) [9.45,11.3) [7.55,9.45) [9.45,11.3) [7.55,9.45)
+## [26] [13.2,15.1) [11.3,13.2) [5.65,7.55) [11.3,13.2) [7.55,9.45)
+## [31] [5.65,7.55) [7.55,9.45) [13.2,15.1) [13.2,15.1) [11.3,13.2)
+## [36] [11.3,13.2) [9.45,11.3) [9.45,11.3) [11.3,13.2) [9.45,11.3)
+## 7 Levels: [3.75,5.65) [5.65,7.55) [7.55,9.45) [9.45,11.3) ... [15.1,17)</code></pre>
+<div class="sourceCode" id="cb1697"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1697-1" data-line-number="1"><span class="kw">cut</span>(alergia, <span class="dt">breaks=</span>L, <span class="dt">right=</span><span class="ot">FALSE</span>, <span class="dt">dig.lab=</span><span class="dv">4</span>)</a></code></pre></div>
+<pre><code>##  [1] [9.45,11.35)  [9.45,11.35)  [9.45,11.35)  [13.25,15.15) [11.35,13.25)
+##  [6] [11.35,13.25) [15.15,17.05) [9.45,11.35)  [11.35,13.25) [11.35,13.25)
+## [11] [11.35,13.25) [5.65,7.55)   [7.55,9.45)   [7.55,9.45)   [9.45,11.35) 
+## [16] [7.55,9.45)   [3.75,5.65)   [9.45,11.35)  [11.35,13.25) [7.55,9.45)  
+## [21] [11.35,13.25) [9.45,11.35)  [7.55,9.45)   [9.45,11.35)  [7.55,9.45)  
+## [26] [13.25,15.15) [11.35,13.25) [5.65,7.55)   [11.35,13.25) [7.55,9.45)  
+## [31] [5.65,7.55)   [7.55,9.45)   [13.25,15.15) [13.25,15.15) [11.35,13.25)
+## [36] [11.35,13.25) [9.45,11.35)  [9.45,11.35)  [11.35,13.25) [9.45,11.35) 
+## 7 Levels: [3.75,5.65) [5.65,7.55) [7.55,9.45) ... [15.15,17.05)</code></pre>
+<p>Por lo tanto, si quisiéramos permitir que los extremos de las etiquetas tuvieran más de 3 cifras significativas, bastaría redefinir la función <code>Tabla_frec_agrup</code> añadiéndole un parámetro <code>dig.lab</code>, que tuviera valor por defecto 3, y que se entrara a la función <code>cut</code>.</p>
+<div class="sourceCode" id="cb1699"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1699-1" data-line-number="1">Tabla_frec_agrup=<span class="cf">function</span>(x,k,A,p,<span class="dt">dig.lab=</span><span class="dv">3</span>){</a>
+<a class="sourceLine" id="cb1699-2" data-line-number="2">    L=<span class="kw">min</span>(x)<span class="op">-</span>p<span class="op">/</span><span class="dv">2</span><span class="op">+</span>A<span class="op">*</span>(<span class="dv">0</span><span class="op">:</span>k)</a>
+<a class="sourceLine" id="cb1699-3" data-line-number="3">    x_int=<span class="kw">cut</span>(x, <span class="dt">breaks=</span>L, <span class="dt">right=</span><span class="ot">FALSE</span>,<span class="dt">dig.lab=</span>dig.lab)</a>
+<a class="sourceLine" id="cb1699-4" data-line-number="4">    intervalos=<span class="kw">levels</span>(x_int)</a>
+<a class="sourceLine" id="cb1699-5" data-line-number="5">    marcas=(L[<span class="dv">1</span>]<span class="op">+</span>L[<span class="dv">2</span>])<span class="op">/</span><span class="dv">2</span><span class="op">+</span>A<span class="op">*</span>(<span class="dv">0</span><span class="op">:</span>(k<span class="dv">-1</span>))</a>
+<a class="sourceLine" id="cb1699-6" data-line-number="6">    f.abs=<span class="kw">as.vector</span>(<span class="kw">table</span>(x_int))</a>
+<a class="sourceLine" id="cb1699-7" data-line-number="7">    f.rel=f.abs<span class="op">/</span><span class="kw">length</span>(x)</a>
+<a class="sourceLine" id="cb1699-8" data-line-number="8">    f.abs.cum=<span class="kw">cumsum</span>(f.abs)</a>
+<a class="sourceLine" id="cb1699-9" data-line-number="9">    f.rel.cum=<span class="kw">cumsum</span>(f.rel)</a>
+<a class="sourceLine" id="cb1699-10" data-line-number="10">    tabla_x=<span class="kw">data.frame</span>(intervalos, marcas, f.abs, f.abs.cum, f.rel, f.rel.cum)</a>
+<a class="sourceLine" id="cb1699-11" data-line-number="11">    tabla_x</a>
+<a class="sourceLine" id="cb1699-12" data-line-number="12">  }</a></code></pre></div>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-663" class="example"><strong>Ejemplo 13.12  </strong></span>Vamos a calcular la tabla de frecuencias de los datos del Ejemplo <a href="datos-cuantitativos-agrupados.html#exm:fruitals">13.7</a> usando la función <code>Tabla_frec_agrup</code>. Ya habíamos decidido que <span class="math inline">\(k=5\)</span> y que en este caso la amplitud era 3. Los datos estaban expresados en unidades.</p>
+</div>
+
+<div class="sourceCode" id="cb1700"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1700-1" data-line-number="1"><span class="kw">Tabla_frec_agrup</span>(fruta, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">1</span>)</a></code></pre></div>
+<pre><code>##    intervalos marcas f.abs f.abs.cum f.rel f.rel.cum
+## 1   [5.5,8.5)      7    11        11  0.22      0.22
+## 2  [8.5,11.5)     10    11        22  0.22      0.44
+## 3 [11.5,14.5)     13    17        39  0.34      0.78
+## 4 [14.5,17.5)     16     9        48  0.18      0.96
+## 5 [17.5,20.5)     19     2        50  0.04      1.00</code></pre>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-665" class="example"><strong>Ejemplo 13.13  </strong></span>Vamos a volver a calcular la tabla de frecuencias de las notas del Ejemplo <a href="datos-cuantitativos-agrupados.html#exm:notes">13.9</a>, usando esta vez una de nuestras funciones. Como las clases tienen amplitudes diferentes, usaremos la función <code>Tabla_frec_agrup_L</code>.</p>
+</div>
+
+<div class="sourceCode" id="cb1702"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1702-1" data-line-number="1"><span class="kw">Tabla_frec_agrup_L</span>(Notas,<span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">9</span>,<span class="dv">10</span>))</a></code></pre></div>
+<pre><code>##   intervalos marcas f.abs f.abs.cum f.rel f.rel.cum
+## 1      [0,5)    2.5    20        20  0.40      0.40
+## 2      [5,7)    6.0    15        35  0.30      0.70
+## 3      [7,9)    8.0     7        42  0.14      0.84
+## 4     [9,10]    9.5     8        50  0.16      1.00</code></pre>
+</div>
+<div id="estadisticos-para-datos-agrupados" class="section level2">
+<h2><span class="header-section-number">13.3</span> Estadísticos para datos agrupados</h2>
+<p>Si tenemos una muestra de datos numéricos, para calcular sus estadísticos es conveniente usar los datos <strong>brutos</strong>, sin agrupar, ya que al agruparlos perdemos información; pero hay ocasiones en que los datos se obtienen ya agrupados: por ejemplo, mediante encuestas en las que se pida marcar un grupo de edad o una franja salarial en una lista de intervalos prefijados. En este tipo de situaciones, sigue siendo posible calcular los estadísticos de la muestra obtenida y usarlos como aproximaciones de los estadísticos de los datos “reales”, que en realidad no conocemos.</p>
+<p>La media <span class="math inline">\(\overline{x}\)</span>, la varianza <span class="math inline">\(s^2\)</span>, la varianza muestral <span class="math inline">\(\tilde{s}^2\)</span>, la desviación típica <span class="math inline">\(s\)</span> y la desviación típica muestral <span class="math inline">\(\tilde{s}\)</span> de un conjunto de datos agrupados se calculan con las mismas fórmulas que para los datos sin agrupar, excepto que sustituimos cada clase por su marca y la contamos con su frecuencia. Supongamos, en concreto, que tenemos <span class="math inline">\(k\)</span> clases, sus respectivas marcas son <span class="math inline">\(X_1,\ldots,X_k\)</span> y sus respectivas frecuencias absolutas son <span class="math inline">\(n_1,\ldots,n_k\)</span>, de manera que la longitud total de la muestra es
+<span class="math inline">\(n=\sum_{i=1}^k n_i\)</span>; entonces
+<span class="math display">\[
+\overline{x}=\frac{\sum_{i=1}^k n_iX_i}{n},\
+s^2=\frac{\sum_{i=1}^k n_iX^2_i}{n}-\overline{x}^2,\
+\tilde{s}^2=\frac{n}{n-1}\cdot s^2,\
+s=\sqrt{s^2},\
+\tilde{s}=\sqrt{\widetilde{s}^2}.
+\]</span>
+Por lo que se refiere a la moda, se sustituye por el <strong>intervalo modal</strong>, que es la clase con mayor frecuencia (absoluta o relativa). Si se desea un valor numérico, se toma su marca de clase.</p>
+
+<div class="example">
+<p><span id="exm:demografia" class="example"><strong>Ejemplo 13.14  </strong></span>Hemos descargado de la <a href="http://www.ine.es/jaxi/tabla.do?path=/t20/e243/e01/a1981/l0/&amp;file=01006.px&amp;type=pcaxis&amp;L=0">web del Instituto Nacional de Estadística</a> una tabla con la población censal española de 1981 por grupos quinquenales de edad y la hemos guardado en un fichero en formato CSV en el <em>url</em> <a href="https://raw.githubusercontent.com/AprendeR-UIB/AprendeR1/master/datos/cens81.csv" class="uri">https://raw.githubusercontent.com/AprendeR-UIB/AprendeR1/master/datos/cens81.csv</a>.</p>
+</div>
+
+<p>Este fichero contiene dos columnas: una con los grupos de edad y otra con las poblaciones.
+Vamos a usar estos datos agrupados para calcular algunos estadísticos de la distribución de la población española por edades en ese año.</p>
+<p>Lo primero que hacemos es importarlo en un <em>data frame</em>; para ello podemos usar la función <code>read.csv</code> o la función <code>read.table</code> con <code>header=TRUE</code> y <code>sep=&quot;,&quot;</code>. Como la variable de grupos de edad tiene todos sus valores diferentes y no la usaremos para clasificar otros valores, la importaremos como un vector de palabras con
+<code>stringsAsFactors=FALSE</code>. Como las etiquetas de los grupos de edad contienen la palabra “años”, para garantizar que las eñes se importan de manera correcta es conveniente incluir <code>encoding=&quot;utf8&quot;</code>.</p>
+<div class="sourceCode" id="cb1704"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1704-1" data-line-number="1">tabla=<span class="kw">read.csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/AprendeR-UIB/AprendeR1/master/datos/cens81.csv&quot;</span>, </a>
+<a class="sourceLine" id="cb1704-2" data-line-number="2">               <span class="dt">stringsAsFactors=</span><span class="ot">FALSE</span>, <span class="dt">encoding=</span><span class="st">&quot;utf8&quot;</span>)</a>
+<a class="sourceLine" id="cb1704-3" data-line-number="3"><span class="kw">str</span>(tabla)</a></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    18 obs. of  2 variables:
+##  $ Edades   : chr  &quot;De 0 a 4 años&quot; &quot;De 5 a 9 años&quot; &quot;De 10 a 14 años&quot; &quot;De 15 a 19 años&quot; ...
+##  $ Población: int  3075352 3308049 3302328 3263312 2942178 2537428 2455314 2245806 2056009 2361225 ...</code></pre>
+<div class="sourceCode" id="cb1706"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1706-1" data-line-number="1">tabla</a></code></pre></div>
+<pre><code>##              Edades Población
+## 1     De 0 a 4 años   3075352
+## 2     De 5 a 9 años   3308049
+## 3   De 10 a 14 años   3302328
+## 4   De 15 a 19 años   3263312
+## 5   De 20 a 24 años   2942178
+## 6   De 25 a 29 años   2537428
+## 7   De 30 a 34 años   2455314
+## 8   De 35 a 39 años   2245806
+## 9   De 40 a 44 años   2056009
+## 10  De 45 a 49 años   2361225
+## 11  De 50 a 54 años   2265091
+## 12  De 55 a 59 años   2038002
+## 13  De 60 a 64 años   1596543
+## 14  De 65 a 69 años   1445606
+## 15  De 70 a 74 años   1213807
+## 16  De 75 a 79 años    852180
+## 17  De 80 a 84 años    461960
+## 18 De 85 y más años    263171</code></pre>
+<p>Hay que tener en cuenta que, en esta tabla, la clase “De 0 a 4 años” representa el intervalo de edades [0,5), la clase “De 5 a 9 años” representa el intervalo de edades [5,10), y así sucesivamente.</p>
+<p>Para calcular las diferentes medidas estadísticas, hemos de asignar a cada grupo de edades un valor numérico como marca de clase: para los 17 primeros grupos, de amplitud 5, tomaremos su punto medio, y para el último, de amplitud indeterminada, tomaremos 90 como marca. Añadiremos estas marcas al <em>data frame</em> anterior como una nueva variable.</p>
+<div class="sourceCode" id="cb1708"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1708-1" data-line-number="1">tabla<span class="op">$</span>Marcas=<span class="kw">c</span>(<span class="fl">2.5</span><span class="op">+</span><span class="dv">5</span><span class="op">*</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">16</span>),<span class="dv">90</span>)</a>
+<a class="sourceLine" id="cb1708-2" data-line-number="2"><span class="kw">head</span>(tabla)</a></code></pre></div>
+<pre><code>##            Edades Población Marcas
+## 1   De 0 a 4 años   3075352    2.5
+## 2   De 5 a 9 años   3308049    7.5
+## 3 De 10 a 14 años   3302328   12.5
+## 4 De 15 a 19 años   3263312   17.5
+## 5 De 20 a 24 años   2942178   22.5
+## 6 De 25 a 29 años   2537428   27.5</code></pre>
+<p>Ahora ya podemos calcular los estadísticos:</p>
+<ul>
+<li>Población total:</li>
+</ul>
+<div class="sourceCode" id="cb1710"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1710-1" data-line-number="1">Total=<span class="kw">sum</span>(tabla<span class="op">$</span>Población)</a>
+<a class="sourceLine" id="cb1710-2" data-line-number="2">Total</a></code></pre></div>
+<pre><code>## [1] 37683361</code></pre>
+<ul>
+<li>Media:</li>
+</ul>
+<div class="sourceCode" id="cb1712"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1712-1" data-line-number="1">Edad.media=<span class="kw">sum</span>(tabla<span class="op">$</span>Población*tabla<span class="op">$</span>Marcas)<span class="op">/</span>Total  </a>
+<a class="sourceLine" id="cb1712-2" data-line-number="2">Edad.media </a></code></pre></div>
+<pre><code>## [1] 33.95994</code></pre>
+<ul>
+<li>Varianza:</li>
+</ul>
+<div class="sourceCode" id="cb1714"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1714-1" data-line-number="1">Edad.varianza=<span class="kw">sum</span>(tabla<span class="op">$</span>Población*tabla<span class="op">$</span>Marcas<span class="op">^</span><span class="dv">2</span>)<span class="op">/</span>Total<span class="op">-</span>Edad.media<span class="op">^</span><span class="dv">2</span> </a>
+<a class="sourceLine" id="cb1714-2" data-line-number="2">Edad.varianza</a></code></pre></div>
+<pre><code>## [1] 505.2943</code></pre>
+<ul>
+<li>Desviación típica:</li>
+</ul>
+<div class="sourceCode" id="cb1716"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1716-1" data-line-number="1">Edad.desv.tip=<span class="kw">sqrt</span>(Edad.varianza)  </a>
+<a class="sourceLine" id="cb1716-2" data-line-number="2">Edad.desv.tip</a></code></pre></div>
+<pre><code>## [1] 22.47875</code></pre>
+<ul>
+<li>Intervalo modal:</li>
+</ul>
+<div class="sourceCode" id="cb1718"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1718-1" data-line-number="1">Int.modal=tabla<span class="op">$</span>Edades[<span class="kw">which</span>(tabla<span class="op">$</span>Población==<span class="kw">max</span>(tabla<span class="op">$</span>Población))]  </a>
+<a class="sourceLine" id="cb1718-2" data-line-number="2">Int.modal</a></code></pre></div>
+<pre><code>## [1] &quot;De 5 a 9 años&quot;</code></pre>
+<p>Por lo tanto, con los datos de los que disponemos, podemos afirmar que la edad media de los españoles censados en 1981 era de unos 34 años, con una desviación típica de unos 22.5 años, y que el grupo de edad más numeroso era el de los niños y niñas de 5 a 9 años.</p>
+<p>Se han propuesto muchos métodos para aproximar la mediana y los otros cuantiles de una variable cuantitativa agrupada a partir de las tablas de frecuencias de sus clases. Aquí explicaremos una de las más sencillas, y la ilustraremos con el ejemplo anterior; para empezar, vamos a completar el <em>data frame</em> con las frecuencias absolutas acumuladas, relativas y relativas acumuladas:</p>
+<div class="sourceCode" id="cb1720"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1720-1" data-line-number="1">tabla<span class="op">$</span>FA.acum=<span class="kw">cumsum</span>(tabla<span class="op">$</span>Población)</a>
+<a class="sourceLine" id="cb1720-2" data-line-number="2">tabla<span class="op">$</span><span class="dt">FR=</span><span class="kw">round</span>(tabla<span class="op">$</span>Población/Total, <span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb1720-3" data-line-number="3">tabla<span class="op">$</span><span class="dt">FR.acum=</span><span class="kw">round</span>(tabla<span class="op">$</span>FA.acum<span class="op">/</span>Total, <span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb1720-4" data-line-number="4">tabla</a></code></pre></div>
+<pre><code>##              Edades Población Marcas  FA.acum    FR FR.acum
+## 1     De 0 a 4 años   3075352    2.5  3075352 0.082   0.082
+## 2     De 5 a 9 años   3308049    7.5  6383401 0.088   0.169
+## 3   De 10 a 14 años   3302328   12.5  9685729 0.088   0.257
+## 4   De 15 a 19 años   3263312   17.5 12949041 0.087   0.344
+## 5   De 20 a 24 años   2942178   22.5 15891219 0.078   0.422
+## 6   De 25 a 29 años   2537428   27.5 18428647 0.067   0.489
+## 7   De 30 a 34 años   2455314   32.5 20883961 0.065   0.554
+## 8   De 35 a 39 años   2245806   37.5 23129767 0.060   0.614
+## 9   De 40 a 44 años   2056009   42.5 25185776 0.055   0.668
+## 10  De 45 a 49 años   2361225   47.5 27547001 0.063   0.731
+## 11  De 50 a 54 años   2265091   52.5 29812092 0.060   0.791
+## 12  De 55 a 59 años   2038002   57.5 31850094 0.054   0.845
+## 13  De 60 a 64 años   1596543   62.5 33446637 0.042   0.888
+## 14  De 65 a 69 años   1445606   67.5 34892243 0.038   0.926
+## 15  De 70 a 74 años   1213807   72.5 36106050 0.032   0.958
+## 16  De 75 a 79 años    852180   77.5 36958230 0.023   0.981
+## 17  De 80 a 84 años    461960   82.5 37420190 0.012   0.993
+## 18 De 85 y más años    263171   90.0 37683361 0.007   1.000</code></pre>
+<p>Llamaremos <strong>intervalo crítico para la mediana</strong> al primer intervalo donde la frecuencia relativa acumulada sea mayor o igual que 0.5.
+En este caso, el intervalo crítico es la clase “De 30 a 34 años”, es decir, <span class="math inline">\([30,35)\)</span>.</p>
+<p>Sean <span class="math inline">\([L_c, L_{c+1})\)</span> este intervalo crítico; <span class="math inline">\(N_{c-1}\)</span>, la frecuencia absoluta acumulada del intervalo anterior al crítico (si el intervalo crítico es el primero, tomamos <span class="math inline">\(N_{c-1}=0\)</span>); <span class="math inline">\(n_c\)</span>, la frecuencia absoluta del intervalo crítico; <span class="math inline">\(A_c=L_{c+1}-L_c\)</span>, su amplitud; y <span class="math inline">\(n\)</span>, el número total de datos. Entonces, la fórmula siguiente nos da una <strong>aproximación</strong> <span class="math inline">\(M\)</span> para la mediana de los datos “reales” a partir de los datos agrupados:
+<span class="math display">\[
+M=L_{c}+A_c\cdot \frac{\frac{n}{2}- N_{c-1}}{n_c}.
+\]</span>
+La justificación de esta fórmula es la siguiente: lo que hacemos es unir con una recta las frecuencias absolutas acumuladas en <span class="math inline">\(L_c\)</span> y en <span class="math inline">\(L_{c+1}\)</span>, y aproximar la mediana por medio de la abscisa del punto sobre esta recta cuya ordenada es <span class="math inline">\(n/2\)</span> (véase la Figura <a href="datos-cuantitativos-agrupados.html#fig:median">13.1</a>).</p>
+<div class="figure" style="text-align: center"><span id="fig:median"></span>
+<img src="AprendeR-Parte-I_files/figure-html/median.png" alt="Aproximación lineal de la mediana a partir de las frecuencias de los datos agrupados." width="60%" />
+<p class="caption">
+Figura 13.1: Aproximación lineal de la mediana a partir de las frecuencias de los datos agrupados.
+</p>
+</div>
+<p>En nuestro ejemplo, <span class="math inline">\(n=37683361\)</span>, <span class="math inline">\(L_c=30\)</span>, <span class="math inline">\(A_c=5\)</span>, <span class="math inline">\(N_{c-1}=18428647\)</span> y <span class="math inline">\(n_c=2455314\)</span>, por lo que
+<span class="math display">\[
+M=30+5\cdot\frac{0.5\cdot 37683361-18428647}{2455314}= 30.8411.
+\]</span>
+Esto nos permite estimar que, en 1981, aproximadamente la mitad de la población española tenía menos de 30 años y 10 meses.</p>
+<p>En general, este método permite aproximar el cuantil <span class="math inline">\(Q_p\)</span> de los datos “reales” a partir de los datos agrupados con la fórmula siguiente:
+<span class="math display">\[
+Q_{p} =L_c + A_c \cdot \frac{p\cdot n-N_{c-1}}{n_c},
+\]</span>
+donde ahora el intervalo crítico <span class="math inline">\([L_c,L_{c+1})\)</span> es el primer intervalo con frecuencia relativa acumulada mayor o igual que <span class="math inline">\(p\)</span>
+y el resto de valores se definen relativos a este intervalo crítico.
+De este modo, en nuestro ejemplo, el intervalo crítico para <span class="math inline">\(Q_{0.25}\)</span> es “De 10 a 14 años”, y en este caso <span class="math inline">\(L_c=10\)</span>, <span class="math inline">\(A_c=5\)</span>, <span class="math inline">\(N_{c-1}=6383401\)</span> y <span class="math inline">\(n_c=3302328\)</span>, por lo que
+<span class="math display">\[
+Q_{0.25}=10+5\cdot\frac{0.25\cdot 37683361-6383401}{3302328}= 14.6.
+\]</span>
+En cuanto al tercer cuantil, <span class="math inline">\(Q_{0.75}\)</span>, el intervalo crítico es “De 50 a 54 años”, por lo que <span class="math inline">\(L_c=50\)</span>, <span class="math inline">\(A_c=5\)</span>, <span class="math inline">\(N_{c-1}=27547001\)</span> y <span class="math inline">\(n_c=2265091\)</span>, y, por consiguiente,
+<span class="math display">\[
+Q_{0.75}=50+5\cdot\frac{0.75\cdot 37683361-27547001}{2265091}=51.58.
+\]</span></p>
+</div>
+<div id="sec:hist" class="section level2">
+<h2><span class="header-section-number">13.4</span> Histogramas</h2>
+<p>Los datos agrupados se describen gráficamente por medio de unos diagramas de barras específicos llamados <strong>histogramas</strong>, donde se dibuja sobre cada clase una barra cuya <strong>área</strong> representa la frecuencia de dicha clase. Queremos recalcar que en los histogramas es el área de las barras, y no su altura, la que en general representa las frecuencias de las clases.</p>
+<p>Veamos un ejemplo.</p>
+
+<div class="example">
+<p><span id="exm:1115" class="example"><strong>Ejemplo 13.15  </strong></span>Supongamos que tenemos los datos</p>
+</div>
+
+<blockquote>
+<p>10,9,8,1,9,8,2,5,7,3,5,6,1,3,7,8,9,8,5,6,2,4,1,3,5,4,6,7,10,8,5,4,2,7,8</p>
+</blockquote>
+<p>y que los agrupamos en los intervalos [0.5,4), [4,7.5) y [7.5,11).
+Calculemos las frecuencias absolutas de estas clases:</p>
+<div class="sourceCode" id="cb1722"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1722-1" data-line-number="1">x=<span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">9</span>,<span class="dv">8</span>,<span class="dv">1</span>,<span class="dv">9</span>,<span class="dv">8</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">8</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">7</span>,</a>
+<a class="sourceLine" id="cb1722-2" data-line-number="2">  <span class="dv">10</span>,<span class="dv">8</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">7</span>,<span class="dv">8</span>)</a>
+<a class="sourceLine" id="cb1722-3" data-line-number="3">L1=<span class="kw">c</span>(<span class="fl">0.5</span>,<span class="dv">4</span>,<span class="fl">7.5</span>,<span class="dv">11</span>)</a>
+<a class="sourceLine" id="cb1722-4" data-line-number="4">x_int=<span class="kw">cut</span>(x,<span class="dt">breaks=</span>L1,<span class="dt">right=</span><span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb1722-5" data-line-number="5"><span class="kw">table</span>(x_int)</a></code></pre></div>
+<pre><code>## x_int
+##  [0.5,4)  [4,7.5) [7.5,11) 
+##        9       15       11</code></pre>
+<div class="sourceCode" id="cb1724"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1724-1" data-line-number="1">x_int</a></code></pre></div>
+<pre><code>##  [1] [7.5,11) [7.5,11) [7.5,11) [0.5,4)  [7.5,11) [7.5,11) [0.5,4) 
+##  [8] [4,7.5)  [4,7.5)  [0.5,4)  [4,7.5)  [4,7.5)  [0.5,4)  [0.5,4) 
+## [15] [4,7.5)  [7.5,11) [7.5,11) [7.5,11) [4,7.5)  [4,7.5)  [0.5,4) 
+## [22] [4,7.5)  [0.5,4)  [0.5,4)  [4,7.5)  [4,7.5)  [4,7.5)  [4,7.5) 
+## [29] [7.5,11) [7.5,11) [4,7.5)  [4,7.5)  [0.5,4)  [4,7.5)  [7.5,11)
+## Levels: [0.5,4) [4,7.5) [7.5,11)</code></pre>
+<p>La Figura <a href="datos-cuantitativos-agrupados.html#fig:201a">13.2</a> muestra un histograma de las frecuencias absolutas de estos datos con este agrupamiento.
+Como todas las clases tienen la misma amplitud, las alturas de estas barras son proporcionales a las frecuencias de sus clases (son estas frecuencias divididas por la amplitud) y las representan correctamente, por lo que hemos marcado sin ningún problema las frecuencias sobre el eje vertical.</p>
+<div class="figure" style="text-align: center"><span id="fig:201a"></span>
+<img src="AprendeR-Parte-I_files/figure-html/201a-1.png" alt="Histograma del Ejemplo ref(exm:1115)." width="50%" />
+<p class="caption">
+Figura 13.2: Histograma del Ejemplo ref(exm:1115).
+</p>
+</div>
+<p>Pero si las amplitudes de las clases no son iguales, las alturas de las barras en un histograma no representan correctamente las frecuencias de las clases. A modo de ejemplo, supongamos que los datos anteriores son notas y que las agrupamos en suspensos, aprobados, notables y sobresalientes: [0,5), [5,7), [7,9) y [9,10]. Recordad que, en este caso, el último intervalo ha de ser cerrado.</p>
+<div class="sourceCode" id="cb1726"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1726-1" data-line-number="1">L2=<span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">9</span>,<span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb1726-2" data-line-number="2">x_int2=<span class="kw">cut</span>(x,<span class="dt">breaks=</span>L2,<span class="dt">right=</span><span class="ot">FALSE</span>,<span class="dt">include.lowest=</span><span class="ot">TRUE</span>) </a>
+<a class="sourceLine" id="cb1726-3" data-line-number="3"><span class="kw">table</span>(x_int2)</a></code></pre></div>
+<pre><code>## x_int2
+##  [0,5)  [5,7)  [7,9) [9,10] 
+##     12      8     10      5</code></pre>
+<div class="sourceCode" id="cb1728"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1728-1" data-line-number="1">x_int2</a></code></pre></div>
+<pre><code>##  [1] [9,10] [9,10] [7,9)  [0,5)  [9,10] [7,9)  [0,5)  [5,7)  [7,9)  [0,5) 
+## [11] [5,7)  [5,7)  [0,5)  [0,5)  [7,9)  [7,9)  [9,10] [7,9)  [5,7)  [5,7) 
+## [21] [0,5)  [0,5)  [0,5)  [0,5)  [5,7)  [0,5)  [5,7)  [7,9)  [9,10] [7,9) 
+## [31] [5,7)  [0,5)  [0,5)  [7,9)  [7,9) 
+## Levels: [0,5) [5,7) [7,9) [9,10]</code></pre>
+<p>En la Figura <a href="datos-cuantitativos-agrupados.html#fig:203">13.3</a> podéis ver un histograma de frecuencias absolutas de estos datos con este agrupamiento. Comprobaréis que las alturas de las barras son las necesarias para que el área de cada barra sea igual a la frecuencia de la clase correspondiente; como las bases son de amplitudes diferentes, estas alturas no son proporcionales a las frecuencias de las clases, por lo que las marcas en el eje de ordenadas no son las frecuencias de las clases, sino los cocientes entre la frecuencia y la amplitud de las clases.</p>
+<div class="figure" style="text-align: center"><span id="fig:203"></span>
+<img src="AprendeR-Parte-I_files/figure-html/203-1.png" alt="Histograma del Ejemplo ref(exm:1115) con clases de diferentes amplitudes." width="50%" />
+<p class="caption">
+Figura 13.3: Histograma del Ejemplo ref(exm:1115) con clases de diferentes amplitudes.
+</p>
+</div>
+<p>También se usan histogramas para representar frecuencias acumuladas de datos agrupados; en este caso, y a diferencia del anterior, las alturas representan las frecuencias independientemente de la base. El motivo es que estas alturas tienen que ir creciendo. Así, los histogramas de frecuencias absolutas acumuladas de nuestros datos para los dos agrupamientos anteriores serían los mostrados en la Figura <a href="datos-cuantitativos-agrupados.html#fig:204">13.4</a>.</p>
+<div class="figure" style="text-align: center"><span id="fig:204"></span>
+<img src="AprendeR-Parte-I_files/figure-html/204-1.png" alt="Histogramas de frecuencias acumuladas de los datos del Ejemplo \@ref(exm:1115) para dos agrupamientos diferentes." width="960" />
+<p class="caption">
+Figura 13.4: Histogramas de frecuencias acumuladas de los datos del Ejemplo <a href="datos-cuantitativos-agrupados.html#exm:1115">13.15</a> para dos agrupamientos diferentes.
+</p>
+</div>
+<p>La Figura <a href="datos-cuantitativos-agrupados.html#fig:205">13.5</a> muestra la estructura básica de dos histogramas, el izquierdo para las frecuencias absolutas y el derecho para las frecuencias absolutas acumuladas. En un histograma, el eje de las abscisas representa los datos, donde marcamos los extremos de las clases, y se dibuja una barra sobre cada clase; esta barra tiene un significado diferente según el tipo de histograma, pero en general representa la frecuencia de su clase:</p>
+<ul>
+<li><p>En los histogramas de frecuencias absolutas, la altura de cada barra es la necesaria para que el área de la barra sea igual a la frecuencia absoluta de la clase. Si todas las clases tienen la misma amplitud, esto implica que las alturas de las barras sean proporcionales a las frecuencias de las clases y que, por tanto, las representen bien; si las clases no son todas de la misma amplitud, estas alturas ya no representan las frecuencias. Tanto en un caso como en otro, para facilitar la comprensión del histograma es conveniente indicar de alguna manera las frecuencias que representan las barras;
+este consejo se extiende a los histogramas de frecuencias relativas.</p></li>
+<li><p>En los histogramas de frecuencias relativas, la altura de cada barra es la necesaria para que el área de la barra sea igual a la frecuencia relativa de la clase; en particular, la suma de las áreas de las barras ha de ser igual a 1. En este contexto, llamamos a las alturas de las barras <strong>densidades</strong>.</p></li>
+<li><p>En los histogramas de frecuencias acumuladas (absolutas o relativas), las alturas de las barras son iguales a las frecuencias acumuladas de la clases, independientemente de su amplitud.</p></li>
+</ul>
+<div class="figure" style="text-align: center"><span id="fig:205"></span>
+<img src="AprendeR-Parte-I_files/figure-html/205-1.png" alt="Estructura básica de un histograma de frecuencias absolutas (izquierda) y absolutas acumuladas (derecha)" width="960" />
+<p class="caption">
+Figura 13.5: Estructura básica de un histograma de frecuencias absolutas (izquierda) y absolutas acumuladas (derecha)
+</p>
+</div>
+<p>De este modo, en el histograma de la izquierda de la Figura <a href="datos-cuantitativos-agrupados.html#fig:205">13.5</a>, el área de la barra sobre cada clase <span class="math inline">\([L_j,L_{j+1})\)</span> es igual a la frecuencia absoluta <span class="math inline">\(n_j\)</span> de esta clase; es decir, el producto de la altura <span class="math inline">\(h_j\)</span> de la barra por la amplitud <span class="math inline">\(L_{j+1}-L_j\)</span> es lo que representa la frecuencia, no la altura de la barra. En cambio, en el histograma de la derecha, la barra sobre cada clase <span class="math inline">\([L_j,L_{j+1})\)</span> tiene una altura igual a la frecuencia absoluta acumulada <span class="math inline">\(N_j\)</span> de esta clase.</p>
+<p>Una observación: en la práctica, no es conveniente que en un histograma aparezcan clases con frecuencia nula, excepto cuando represente dos poblaciones muy diferentes y separadas, sin individuos “intermedios”. Si aparecen clases vacías, conviene usar un número menor de clases o unir las clases vacías con alguna de sus adyacentes, aunque de esta última manera rompamos la regla básica de usar clases de la misma amplitud.</p>
+<p>La función para dibujar histogramas con R es <code>hist</code>. Su estructura básica es</p>
+<div class="sourceCode" id="cb1730"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1730-1" data-line-number="1"><span class="kw">hist</span>(x, <span class="dt">breaks=</span>..., <span class="dt">freq=</span>..., <span class="dt">right=</span><span class="ot">FALSE</span>, <span class="dt">include.lowest=</span><span class="ot">TRUE</span>, ...)</a></code></pre></div>
+<p>donde:</p>
+<ul>
+<li><p><code>x</code> es el vector formado por los datos que queremos representar.</p></li>
+<li><p>El parámetro <code>breaks</code> es similar al de la función <code>cut</code>: con él podemos establecer los valores de los extremos de los intervalos o el número de intervalos; incluso se puede indicar, entre comillas, el método para calcular el número de clases: <code>&quot;Scott&quot;</code>, <code>&quot;Sturges&quot;</code>, etc.</p>
+<p>Ahora bien, tanto si entráis el número de clases como el método para calcularlo, R lo considerará sólo como una sugerencia, por lo que no siempre obtendréis el número deseado de intervalos; además, el método que usa para calcular los intervalos es diferente del usado en <code>cut</code>; por todo ello, os recomendamos que, si queréis tener algún control sobre la producción del histograma, especifiquéis los extremos.</p></li>
+<li><p>El parámetro <code>freq</code> es un parámetro lógico: igualado a <code>TRUE</code> (que es el valor por defecto, por lo que en este caso no hace falta incluirlo), produce el histograma de frecuencias absolutas si los intervalos son todos de la misma longitud, y el de frecuencias relativas en caso contrario; igualado a <code>FALSE</code>, produce en los dos casos el de frecuencias relativas.</p></li>
+<li><p>El parámetro <code>right</code> funciona como en <code>cut</code>: si queremos nuestros intervalos cerrados a la izquierda y abiertos a la derecha, tenemos que especificar <code>right=FALSE</code>.</p></li>
+<li><p>Como ya pasaba en <code>cut</code>, se tiene que añadir <code>include.lowest=TRUE</code> si se ha entrado <code>right=FALSE</code> y el máximo del conjunto de datos coincide con el extremo superior del último intervalo.</p></li>
+<li><p>Aparte, podéis usar los parámetros usuales de la función <code>plot</code> para poner un título, cambiar las etiquetas de los ejes, colorear las barras, etc. Recordad también el parámetro <code>plot</code>, que ha salido hace unas páginas: igualado a <code>FALSE</code>, calcula el histograma, pero no lo dibuja.</p></li>
+</ul>
+<p>Podéis consultar el resto de parámetros en la Ayuda de <code>hist</code>.</p>
+
+<div class="example">
+<p><span id="exm:frut-hist" class="example"><strong>Ejemplo 13.16  </strong></span>Seguimos con el Ejemplo <a href="datos-cuantitativos-agrupados.html#exm:fruitals">13.7</a>, sobre árboles frutales afectados por la mosca de la fruta;
+vamos a producir el histograma por defecto de los datos para dos agrupamientos diferentes: el que dábamos en dicho ejemplo, en tres clases de amplitud 3, y el que los agrupa en las clases
+[5,8), [8,12),[12,14) y [14,20),
+de amplitudes diferentes.</p>
+</div>
+
+<div class="sourceCode" id="cb1731"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1731-1" data-line-number="1">L1=<span class="fl">5.5</span><span class="op">+</span><span class="dv">3</span><span class="op">*</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb1731-2" data-line-number="2"><span class="kw">hist</span>(fruta, <span class="dt">breaks=</span> L1, <span class="dt">right=</span><span class="ot">FALSE</span>)</a></code></pre></div>
+<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-678-1.png" width="480" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb1732"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1732-1" data-line-number="1">L2=<span class="kw">c</span>(<span class="dv">5</span>,<span class="dv">8</span>,<span class="dv">12</span>,<span class="dv">14</span>,<span class="dv">20</span>)</a>
+<a class="sourceLine" id="cb1732-2" data-line-number="2"><span class="kw">hist</span>(fruta, <span class="dt">breaks=</span> L2, <span class="dt">right=</span><span class="ot">FALSE</span>)</a></code></pre></div>
+<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-679-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p>Como podéis ver, <code>hist</code> ha dibujado los ejes y las barras, pero en el eje horizontal no ha marcado los extremos de las clases; por lo que refiere al eje vertical, en el histograma con las clases de las mismas amplitudes, ha marcado las frecuencias absolutas, pero en el otro ha marcado las densidades, lo que puede dificultar su comprensión.
+Además, fijaos en los títulos: <code>hist</code> titula por defecto los histogramas “Histogram of” seguido del nombre del vector de datos, lo que no es muy adecuado si no estáis escribiendo en inglés.</p>
+<p>Por suerte, el resultado de <code>hist</code> contiene mucha información escondida que podemos usar para mejorar estos histogramas. Vamos a consultar el contenido del primer histograma del vector <code>fruta</code>; añadimos <code>plot=FALSE</code> para que no lo dibuje.</p>
+<div class="sourceCode" id="cb1733"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1733-1" data-line-number="1">h=<span class="kw">hist</span>(fruta, <span class="dt">breaks=</span>L1, <span class="dt">right=</span><span class="ot">FALSE</span>, <span class="dt">plot=</span><span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb1733-2" data-line-number="2">h</a></code></pre></div>
+<pre><code>## $breaks
+## [1]  5.5  8.5 11.5 14.5 17.5 20.5
+## 
+## $counts
+## [1] 11 11 17  9  2
+## 
+## $density
+## [1] 0.07333333 0.07333333 0.11333333 0.06000000 0.01333333
+## 
+## $mids
+## [1]  7 10 13 16 19
+## 
+## $xname
+## [1] &quot;fruta&quot;
+## 
+## $equidist
+## [1] TRUE
+## 
+## attr(,&quot;class&quot;)
+## [1] &quot;histogram&quot;</code></pre>
+<p>En concreto:</p>
+<ul>
+<li><p>La componente <code>breaks</code> contiene el vector de extremos de los intervalos: <span class="math inline">\(L_0,L_1,\ldots,L_k\)</span>, <span class="math inline">\(L_{k+1}\)</span>.</p></li>
+<li><p>La componente <code>mids</code> contiene el vector de puntos medios de los intervalos (que usamos como marcas de clase): <span class="math inline">\(X_1,X_2, \ldots,X_k\)</span>.</p></li>
+<li><p>La componente <code>counts</code> contiene el vector de frecuencias absolutas de los intervalos: <span class="math inline">\(n_1,n_2,\ldots,n_k\)</span>.</p></li>
+<li><p>La componente <code>density</code> contiene el vector de las densidades de los intervalos. Estas densidades son las alturas de las barras del histograma de frecuencias relativas; por lo tanto, la densidad de cada intervalo es su frecuencia relativa dividida por su amplitud.</p></li>
+</ul>
+<p>Podemos servirnos de toda esta información para mejorar el histograma producido por defecto.</p>
+<p>Por ejemplo, para histogramas de frecuencias absolutas, podéis usar la función siguiente; sus parámetros son: <span class="math inline">\(x\)</span>, el vector de datos, y <span class="math inline">\(L\)</span>, el vector de extremos de los intervalos.</p>
+<div class="sourceCode" id="cb1735"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1735-1" data-line-number="1">hist_abs=<span class="cf">function</span>(x,L){</a>
+<a class="sourceLine" id="cb1735-2" data-line-number="2"><span class="cf">if</span> (<span class="kw">sum</span>(<span class="kw">diff</span>(<span class="kw">diff</span>(L)))<span class="op">==</span><span class="dv">0</span>){ </a>
+<a class="sourceLine" id="cb1735-3" data-line-number="3">h=<span class="kw">hist</span>(x, <span class="dt">breaks=</span>L, <span class="dt">right=</span><span class="ot">FALSE</span>, <span class="dt">include.lowest=</span><span class="ot">TRUE</span>,</a>
+<a class="sourceLine" id="cb1735-4" data-line-number="4">    <span class="dt">xaxt=</span><span class="st">&quot;n&quot;</span>, <span class="dt">col=</span><span class="st">&quot;lightgray&quot;</span>,</a>
+<a class="sourceLine" id="cb1735-5" data-line-number="5">    <span class="dt">main=</span><span class="st">&quot;Histograma de frecuencias absolutas&quot;</span>,</a>
+<a class="sourceLine" id="cb1735-6" data-line-number="6">    <span class="dt">xlab=</span><span class="st">&quot;Intervalos&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;Frecuencias absolutas&quot;</span>)</a>
+<a class="sourceLine" id="cb1735-7" data-line-number="7">}</a>
+<a class="sourceLine" id="cb1735-8" data-line-number="8">  <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb1735-9" data-line-number="9"> h=<span class="kw">hist</span>(x, <span class="dt">breaks=</span>L, <span class="dt">right=</span><span class="ot">FALSE</span>, <span class="dt">include.lowest=</span><span class="ot">TRUE</span>,</a>
+<a class="sourceLine" id="cb1735-10" data-line-number="10">    <span class="dt">axes=</span><span class="ot">FALSE</span>, <span class="dt">col=</span><span class="st">&quot;lightgray&quot;</span>,</a>
+<a class="sourceLine" id="cb1735-11" data-line-number="11">    <span class="dt">main=</span><span class="st">&quot;Histograma de frecuencias absolutas&quot;</span>,</a>
+<a class="sourceLine" id="cb1735-12" data-line-number="12">    <span class="dt">xlab=</span><span class="st">&quot;Intervalos&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;&quot;</span>)</a>
+<a class="sourceLine" id="cb1735-13" data-line-number="13"> <span class="kw">text</span>(h<span class="op">$</span>mids, h<span class="op">$</span>density<span class="op">/</span><span class="dv">2</span>, <span class="dt">labels=</span>h<span class="op">$</span>counts, <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>, <span class="dt">cex=</span><span class="fl">0.75</span>)</a>
+<a class="sourceLine" id="cb1735-14" data-line-number="14">}</a>
+<a class="sourceLine" id="cb1735-15" data-line-number="15"><span class="kw">axis</span>(<span class="dv">1</span>, <span class="dt">at=</span>L)}</a></code></pre></div>
+<p>Si la aplicamos a los valores de <code>fruta</code> y <code>L1</code> o <code>L2</code> anteriores, obtenemos los dos histogramas siguientes</p>
+<div class="sourceCode" id="cb1736"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1736-1" data-line-number="1"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb1736-2" data-line-number="2"><span class="kw">hist_abs</span>(fruta, L1)</a>
+<a class="sourceLine" id="cb1736-3" data-line-number="3"><span class="kw">hist_abs</span>(fruta, L2)</a>
+<a class="sourceLine" id="cb1736-4" data-line-number="4"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</a></code></pre></div>
+<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-682-1.png" width="960" style="display: block; margin: auto;" /></p>
+<p>Algunos comentarios sobre la manera como hemos definido esta función, para que la podáis modificar:</p>
+<ul>
+<li><p>La condición <code>sum(diff(diff(L)))==0</code> es equivalente a que los intervalos definidos por los elementos de <code>L</code> tengan todos la misma amplitud, y por lo tanto tenga sentido marcar las frecuencias en el eje de ordenadas.</p></li>
+<li><p>El parámetro <code>axes=FALSE</code> especifica que no se dibujen los ejes, y los parámetros <code>xaxt=&quot;n&quot;</code> e <code>yaxt=&quot;n&quot;</code> especifican, respectivamente, que no se dibuje el eje de abscisas y que no se dibuje el eje de ordenadas.</p></li>
+<li><p>La instrucción <code>axis(i, at=..., labels=...)</code> dibuja el eje correspondiente al valor de <span class="math inline">\(i\)</span> (<span class="math inline">\(i=1\)</span>, el de abscisas; <span class="math inline">\(i=2\)</span>, el de ordenadas) con marcas en los lugares indicados por el vector definido mediante <code>at</code> y etiquetas en las marcas indicadas por el valor de <code>labels</code>; si este último parámetro no se usa, las etiquetas son los valores de las marcas. Por lo tanto, la instrucción <code>axis(1, at=L)</code> añade un eje de abscisas (que no habíamos dibujado) con marcas en los extremos de las clases.</p></li>
+</ul>
+<p>Naturalmente, podéis adaptar a vuestro gusto esta función <code>hist_abs</code> o las otras que daremos: podéis cambiar el título, cambiar los colores, la etiqueta del eje de abscisas, etc.</p>
+<p>Otra posibilidad para indicar las frecuencias absolutas de las barras es usar la función <code>rug</code>, que permite añadir al histograma una “alfombra” con marcas en todos los valores del vector; el grosor de cada marca es proporcional a la frecuencia del valor que representa.
+Veamos un ejemplo:</p>
+<div class="sourceCode" id="cb1737"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1737-1" data-line-number="1"><span class="kw">hist_abs</span>(fruta, L1)</a>
+<a class="sourceLine" id="cb1737-2" data-line-number="2"><span class="kw">rug</span>(fruta)</a></code></pre></div>
+<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-683-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p>Notaréis que, en este histograma, es difícil deducir de la “alfombra” que la tercera clase tiene una frecuencia mayor que las dos primeras debido a un mayor número de empates. Si encontráis difícil ver los empates, la Ayuda de <code>rug</code> os recomienda combinar <code>rug</code> con la función <code>jitter</code>, que añade un poco de “ruido” a los datos de un vector, deshaciendo empates. Veamos su uso en el histograma anterior:</p>
+<div class="sourceCode" id="cb1738"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1738-1" data-line-number="1"><span class="kw">hist_abs</span>(fruta, L1)</a>
+<a class="sourceLine" id="cb1738-2" data-line-number="2"><span class="kw">rug</span>(<span class="kw">jitter</span>(fruta))</a></code></pre></div>
+<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-684-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p>Para dibujar histogramas de frecuencias absolutas acumuladas, podéis usar la función:</p>
+<div class="sourceCode" id="cb1739"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1739-1" data-line-number="1">hist_abs.cum=<span class="cf">function</span>(x,L){</a>
+<a class="sourceLine" id="cb1739-2" data-line-number="2">h=<span class="kw">hist</span>(x, <span class="dt">breaks=</span>L, <span class="dt">right=</span><span class="ot">FALSE</span>, <span class="dt">include.lowest=</span><span class="ot">TRUE</span>, <span class="dt">plot=</span><span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb1739-3" data-line-number="3">h<span class="op">$</span>density=<span class="kw">cumsum</span>(h<span class="op">$</span>density)</a>
+<a class="sourceLine" id="cb1739-4" data-line-number="4"><span class="kw">plot</span>(h, <span class="dt">freq=</span><span class="ot">FALSE</span>, <span class="dt">axes=</span><span class="ot">FALSE</span>, <span class="dt">col=</span><span class="st">&quot;lightgray&quot;</span>,</a>
+<a class="sourceLine" id="cb1739-5" data-line-number="5">  <span class="dt">main=</span><span class="st">&quot;Histograma de frecuencias absolutas acumuladas&quot;</span>, </a>
+<a class="sourceLine" id="cb1739-6" data-line-number="6">  <span class="dt">xlab=</span><span class="st">&quot;Intervalos&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;&quot;</span>)</a>
+<a class="sourceLine" id="cb1739-7" data-line-number="7"><span class="kw">axis</span>(<span class="dv">1</span>, <span class="dt">at=</span>L)</a>
+<a class="sourceLine" id="cb1739-8" data-line-number="8"><span class="kw">text</span>(h<span class="op">$</span>mids, h<span class="op">$</span>density<span class="op">/</span><span class="dv">2</span>, <span class="dt">labels=</span><span class="kw">cumsum</span>(h<span class="op">$</span>counts), <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>, <span class="dt">cex=</span><span class="fl">0.75</span>)</a>
+<a class="sourceLine" id="cb1739-9" data-line-number="9">}</a></code></pre></div>
+<p>Aplicándola a los valores de <code>fruta</code> y <code>L1</code> anteriores:</p>
+<div class="sourceCode" id="cb1740"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1740-1" data-line-number="1"><span class="kw">hist_abs.cum</span>(fruta,L1)</a></code></pre></div>
+<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-686-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p>Con esta función producimos el histograma “básico” de los datos, sin dibujarlo, y a continuación
+modificamos su componente <code>density</code> para que contenga las sumas acumuladas de la componente <code>density</code> del histograma original. Luego dibujamos el nuevo histograma resultante, aplicándole la función <code>plot</code>; los parámetros del gráfico se tienen que añadir a este <code>plot</code>, no al histograma original. Finalmente, completamos el gráfico añadiendo el eje de abscisas y las frecuencias acumuladas en el interior de las barras. También podéis añadir un eje de ordenadas con marcas de frecuencias, por ejemplo añadiendo una instrucción del estilo de</p>
+<div class="sourceCode" id="cb1741"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1741-1" data-line-number="1"><span class="kw">axis</span>(<span class="dv">2</span>,<span class="dt">at=</span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="kw">max</span>(h<span class="op">$</span>density),<span class="dt">length.out=</span>...),<span class="dt">labels=</span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="kw">length</span>(x),<span class="dt">length.out=</span>...))</a></code></pre></div>
+<p>con el número de marcas (indicado por los <code>length.out</code>) a vuestro gusto: pueden ser un parámetro de la nueva función que defináis. Por ejemplo</p>
+<div class="sourceCode" id="cb1742"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1742-1" data-line-number="1">hist_abs.cum<span class="fl">.2</span>=<span class="cf">function</span>(x,L,m){</a>
+<a class="sourceLine" id="cb1742-2" data-line-number="2">h=<span class="kw">hist</span>(x, <span class="dt">breaks=</span>L, <span class="dt">right=</span><span class="ot">FALSE</span>, <span class="dt">include.lowest=</span><span class="ot">TRUE</span>, <span class="dt">plot=</span><span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb1742-3" data-line-number="3">h<span class="op">$</span>density=<span class="kw">cumsum</span>(h<span class="op">$</span>density)</a>
+<a class="sourceLine" id="cb1742-4" data-line-number="4"><span class="kw">plot</span>(h, <span class="dt">freq=</span><span class="ot">FALSE</span>, <span class="dt">axes=</span><span class="ot">FALSE</span>, <span class="dt">col=</span><span class="st">&quot;lightgray&quot;</span>,</a>
+<a class="sourceLine" id="cb1742-5" data-line-number="5">  <span class="dt">main=</span><span class="st">&quot;Histograma de frecuencias absolutas acumuladas&quot;</span>, </a>
+<a class="sourceLine" id="cb1742-6" data-line-number="6">  <span class="dt">xlab=</span><span class="st">&quot;Intervalos&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;&quot;</span>)</a>
+<a class="sourceLine" id="cb1742-7" data-line-number="7"><span class="kw">axis</span>(<span class="dv">1</span>, <span class="dt">at=</span>L)</a>
+<a class="sourceLine" id="cb1742-8" data-line-number="8"><span class="kw">axis</span>(<span class="dv">2</span>,<span class="dt">at=</span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="kw">max</span>(h<span class="op">$</span>density),<span class="dt">length.out=</span>m),<span class="dt">labels=</span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="kw">length</span>(x),<span class="dt">length.out=</span>m))</a>
+<a class="sourceLine" id="cb1742-9" data-line-number="9">}</a>
+<a class="sourceLine" id="cb1742-10" data-line-number="10"><span class="kw">hist_abs.cum.2</span>(fruta,L1,<span class="dv">11</span>)</a></code></pre></div>
+<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-688-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p>Pasemos a los histogramas de frecuencias relativas. En ellos, es costumbre superponer una curva que estime la <strong>densidad</strong> de la
+distribución de la variable definida por la característica que medimos.</p>
+<p>La densidad de una variable es una curva tal que el área comprendida entre el eje de abscisas y la curva sobre un intervalo es igual a la fracción de individuos de la población que caen dentro de ese intervalo. Visualmente,
+imaginemos que vamos aumentando el tamaño de la muestra y que agrupamos los datos
+en una familia cada vez mayor de intervalos; si el rango de los datos se mantiene más o menos constante, la amplitud de los
+intervalos del histograma irá decreciendo; cuando el tamaño del conjunto de datos tiende a infinito,
+los intervalos tienden a ser puntos y, las barras, a ser líneas verticales. Los extremos superiores de estas líneas dibujarán una curva: ésta es la densidad de la variable.</p>
+<p>La densidad más famosa es la llamada <strong>campana de Gauss</strong>, y corresponde a una variable que tenga una <strong>distribución normal</strong> (véase la Figura <a href="datos-cuantitativos-agrupados.html#fig:norm">13.6</a>). La forma concreta de la campana depende de dos parámetros: el valor medio <span class="math inline">\(\mu\)</span> de la variable y su desviación típica <span class="math inline">\(\sigma\)</span>.</p>
+<div class="figure" style="text-align: center"><span id="fig:norm"></span>
+<img src="AprendeR-Parte-I_files/figure-html/gauss.png" alt="Campana de Gauss." width="100%" />
+<p class="caption">
+Figura 13.6: Campana de Gauss.
+</p>
+</div>
+<p>Hay muchos métodos para estimar la densidad de la distribución a partir de una muestra; la manera más sencilla de hacerlo con R es usar la función <code>density</code>. Cuando aplicamos esta función, con sus parámetros por defecto, a un vector númerico, produce una <code>list</code> que incluye los vectores <code>x</code> e <code>y</code> de primeras y segundas coordenadas de una secuencia de puntos <span class="math inline">\((x,y)\)</span> sobre la curva densidad estimada. Aplicando <code>plot</code>, con <code>type=&quot;l&quot;</code>, o <code>lines</code> (si hay que añadirla a un gráfico anterior) al resultado de <code>density</code>, obtenemos el gráfico de esta curva. (Explicar el método que usa esta función <code>density</code> para estimar la densidad cae fuera del nivel de este curso. Los curiosos pueden consultar <a href="http://en.wikipedia.org/wiki/Kernel_density_estimation">este artículo de la Wikipedia</a> y luego la Ayuda de la función.)</p>
+<p>La instrucción siguiente produce el gráfico de la densidad estimada de la variable que ha producido el vector <code>fruta</code>:</p>
+<div class="sourceCode" id="cb1743"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1743-1" data-line-number="1"><span class="kw">plot</span>(<span class="kw">density</span>(fruta), <span class="dt">type=</span><span class="st">&quot;l&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Número de árboles&quot;</span>,</a>
+<a class="sourceLine" id="cb1743-2" data-line-number="2">  <span class="dt">ylab=</span><span class="st">&quot;Densidad&quot;</span>, <span class="dt">main=</span><span class="st">&quot;Densidad de la variable </span><span class="ch">\&quot;</span><span class="st">fruta</span><span class="ch">\&quot;</span><span class="st">&quot;</span>)</a></code></pre></div>
+<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-689-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p>La estructura del resultado de <code>density(fruta)</code> es la siguiente:</p>
+<div class="sourceCode" id="cb1744"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1744-1" data-line-number="1"><span class="kw">str</span>(<span class="kw">density</span>(fruta))</a></code></pre></div>
+<pre><code>## List of 7
+##  $ x        : num [1:512] 1.69 1.73 1.78 1.82 1.86 ...
+##  $ y        : num [1:512] 0.000326 0.000356 0.000388 0.000424 0.000462 ...
+##  $ bw       : num 1.44
+##  $ n        : int 50
+##  $ call     : language density.default(x = fruta)
+##  $ data.name: chr &quot;fruta&quot;
+##  $ has.na   : logi FALSE
+##  - attr(*, &quot;class&quot;)= chr &quot;density&quot;</code></pre>
+<p>Destacamos en particular sus componentes <code>density(fruta)$x</code> y <code>density(fruta)$y</code>, que nos dan las abscisas y las ordenadas de los puntos usados para dibujar su gráfico, y que usaremos más adelante.</p>
+<p>Para dibujar un histograma de frecuencias relativas más informativo que el que produce R por defecto y que incluya la estimación de la densidad, podéis usar la función siguiente:</p>
+<div class="sourceCode" id="cb1746"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1746-1" data-line-number="1">hist_rel=<span class="cf">function</span>(x,L){</a>
+<a class="sourceLine" id="cb1746-2" data-line-number="2">h=<span class="kw">hist</span>(x, <span class="dt">breaks=</span>L, <span class="dt">right=</span><span class="ot">FALSE</span>, <span class="dt">plot=</span><span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb1746-3" data-line-number="3">t=<span class="kw">round</span>(<span class="fl">1.1</span><span class="op">*</span><span class="kw">max</span>(<span class="kw">max</span>(<span class="kw">density</span>(x)[[<span class="dv">2</span>]]),h<span class="op">$</span>density),<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb1746-4" data-line-number="4"><span class="kw">plot</span>(h, <span class="dt">freq=</span><span class="ot">FALSE</span>, <span class="dt">col=</span><span class="st">&quot;lightgray&quot;</span>,</a>
+<a class="sourceLine" id="cb1746-5" data-line-number="5"> <span class="dt">main=</span><span class="st">&quot;Histograma de frec. relativas y curva de densidad estimada&quot;</span>,</a>
+<a class="sourceLine" id="cb1746-6" data-line-number="6"> <span class="dt">xaxt=</span><span class="st">&quot;n&quot;</span>, <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,t), <span class="dt">xlab=</span><span class="st">&quot;Intervalos&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Densidades&quot;</span>)</a>
+<a class="sourceLine" id="cb1746-7" data-line-number="7"><span class="kw">axis</span>(<span class="dv">1</span>, <span class="dt">at=</span>L)</a>
+<a class="sourceLine" id="cb1746-8" data-line-number="8"><span class="kw">text</span>(h<span class="op">$</span>mids, h<span class="op">$</span>density<span class="op">/</span><span class="dv">2</span>, <span class="dt">labels=</span><span class="kw">round</span>(h<span class="op">$</span>counts<span class="op">/</span><span class="kw">length</span>(x),<span class="dv">2</span>), <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>, <span class="dt">cex=</span><span class="fl">0.75</span>)</a>
+<a class="sourceLine" id="cb1746-9" data-line-number="9"><span class="kw">lines</span>(<span class="kw">density</span>(x), <span class="dt">col=</span><span class="st">&quot;red&quot;</span>, <span class="dt">lwd=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb1746-10" data-line-number="10">}</a></code></pre></div>
+<p>Si la aplicamos a los valores de <code>fruta</code> y <code>L1</code> anteriores:</p>
+<div class="sourceCode" id="cb1747"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1747-1" data-line-number="1"><span class="kw">hist_rel</span>(fruta, L1)</a></code></pre></div>
+<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-692-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p>En los histogramas de frecuencias relativas acumuladas, se puede superponer una curva que estime la <strong>función de distribución</strong> de la variable definida por la característica que medimos. Esta función de distribución de una variable nos da, en cada punto, la fracción de individuos de la población que caen a la izquierda de este punto, es decir, la frecuencia relativa acumulada de la variable sobre la población en ese punto. En general, la función de distribución en un valor determinado es igual al área de la región, a la izquierda de la vertical definida por dicho valor, delimitada por la función de densidad y el eje de abscisas.</p>
+<p>Para dibujar un histograma de frecuencias relativas acumuladas que incluya la función de distribución estimada, podéis usar la función siguiente:</p>
+<div class="sourceCode" id="cb1748"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1748-1" data-line-number="1">hist_rel.cum=<span class="cf">function</span>(x,L){</a>
+<a class="sourceLine" id="cb1748-2" data-line-number="2">h=<span class="kw">hist</span>(x, <span class="dt">breaks=</span>L, <span class="dt">right=</span><span class="ot">FALSE</span>, <span class="dt">plot=</span><span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb1748-3" data-line-number="3">h<span class="op">$</span>density=<span class="kw">cumsum</span>(h<span class="op">$</span>counts)<span class="op">/</span><span class="kw">length</span>(x) <span class="co">#calculamos las f. relativas</span></a>
+<a class="sourceLine" id="cb1748-4" data-line-number="4"><span class="kw">plot</span>(h, <span class="dt">freq=</span><span class="ot">FALSE</span>, <span class="dt">main=</span><span class="st">&quot;Histograma de frec. rel. acumuladas</span><span class="ch">\n</span><span class="st"> y </span></a>
+<a class="sourceLine" id="cb1748-5" data-line-number="5"><span class="st">  curva de distribución estimada&quot;</span>, <span class="dt">xaxt=</span><span class="st">&quot;n&quot;</span>, <span class="dt">col=</span><span class="st">&quot;lightgray&quot;</span>,</a>
+<a class="sourceLine" id="cb1748-6" data-line-number="6">  <span class="dt">xlab=</span><span class="st">&quot;Intervalos&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Frec. relativas acumuladas&quot;</span>)</a>
+<a class="sourceLine" id="cb1748-7" data-line-number="7"><span class="kw">axis</span>(<span class="dv">1</span>, <span class="dt">at=</span>L)</a>
+<a class="sourceLine" id="cb1748-8" data-line-number="8"><span class="kw">text</span>(h<span class="op">$</span>mids, h<span class="op">$</span>density<span class="op">/</span><span class="dv">2</span>,<span class="dt">labels=</span><span class="kw">round</span>(h<span class="op">$</span>density,<span class="dv">2</span>), <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>, <span class="dt">cex=</span><span class="fl">0.75</span>)</a>
+<a class="sourceLine" id="cb1748-9" data-line-number="9">dens.x=<span class="kw">density</span>(x)</a>
+<a class="sourceLine" id="cb1748-10" data-line-number="10">dens.x<span class="op">$</span>y=<span class="kw">cumsum</span>(dens.x<span class="op">$</span>y)<span class="op">*</span>(dens.x<span class="op">$</span>x[<span class="dv">2</span>]<span class="op">-</span>dens.x<span class="op">$</span>x[<span class="dv">1</span>]) </a>
+<a class="sourceLine" id="cb1748-11" data-line-number="11"><span class="kw">lines</span>(dens.x,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">lwd=</span><span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb1748-12" data-line-number="12">}</a></code></pre></div>
+<p>Aplicándola a los valores de <code>fruta</code> y <code>L1</code> anteriores:</p>
+<div class="sourceCode" id="cb1749"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1749-1" data-line-number="1"><span class="kw">hist_rel.cum</span>(fruta,L1)</a></code></pre></div>
+<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-694-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p>Veamos otro ejemplo.</p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-695" class="example"><strong>Ejemplo 13.17  </strong></span>Consideremos los datos de tiempos de inicio de reacción alérgica a una picadura del Ejemplo <a href="datos-cuantitativos-agrupados.html#exm:alerg">13.1</a>. Queremos dibujar los histogramas de frecuencias relativas y relativas acumuladas para el agrupamiento según la regla de Sturges. Por completitud, empezaremos de cero.</p>
+</div>
+
+<div class="sourceCode" id="cb1750"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1750-1" data-line-number="1">alergia=<span class="kw">c</span>(<span class="fl">10.5</span>,<span class="fl">11.2</span>,<span class="fl">9.9</span>,<span class="fl">15.0</span>,<span class="fl">11.4</span>,<span class="fl">12.7</span>,<span class="fl">16.5</span>,<span class="fl">10.1</span>,<span class="fl">12.7</span>,<span class="fl">11.4</span>,<span class="fl">11.6</span>,</a>
+<a class="sourceLine" id="cb1750-2" data-line-number="2">  <span class="fl">6.2</span>,<span class="fl">7.9</span>,<span class="fl">8.3</span>,<span class="fl">10.9</span>,<span class="fl">8.1</span>,<span class="fl">3.8</span>,<span class="fl">10.5</span>,<span class="fl">11.7</span>,<span class="fl">8.4</span>,<span class="fl">12.5</span>,<span class="fl">11.2</span>,<span class="fl">9.1</span>,<span class="fl">10.4</span>,<span class="fl">9.1</span>,</a>
+<a class="sourceLine" id="cb1750-3" data-line-number="3">  <span class="fl">13.4</span>,<span class="fl">12.3</span>,<span class="fl">5.9</span>,<span class="fl">11.4</span>,<span class="fl">8.8</span>,<span class="fl">7.4</span>,<span class="fl">8.6</span>,<span class="fl">13.6</span>,<span class="fl">14.7</span>,<span class="fl">11.5</span>,<span class="fl">11.5</span>,<span class="fl">10.9</span>,<span class="fl">9.8</span>,</a>
+<a class="sourceLine" id="cb1750-4" data-line-number="4">  <span class="fl">12.9</span>,<span class="fl">9.9</span>)</a>
+<a class="sourceLine" id="cb1750-5" data-line-number="5"><span class="kw">nclass.Sturges</span>(alergia)</a></code></pre></div>
+<pre><code>## [1] 7</code></pre>
+<div class="sourceCode" id="cb1752"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1752-1" data-line-number="1"><span class="kw">diff</span>(<span class="kw">range</span>(alergia))</a></code></pre></div>
+<pre><code>## [1] 12.7</code></pre>
+<div class="sourceCode" id="cb1754"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1754-1" data-line-number="1"><span class="fl">12.7</span><span class="op">/</span><span class="dv">7</span></a></code></pre></div>
+<pre><code>## [1] 1.814286</code></pre>
+<p>Por lo tanto, tomamos A=1.9.</p>
+<div class="sourceCode" id="cb1756"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1756-1" data-line-number="1">L.al=<span class="kw">min</span>(alergia)<span class="op">-</span><span class="fl">0.05+1.9</span><span class="op">*</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">7</span>) </a>
+<a class="sourceLine" id="cb1756-2" data-line-number="2">L.al</a></code></pre></div>
+<pre><code>## [1]  3.75  5.65  7.55  9.45 11.35 13.25 15.15 17.05</code></pre>
+<p>Y ahora usamos las funciones que hemos definido:</p>
+<div class="sourceCode" id="cb1758"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1758-1" data-line-number="1"><span class="kw">hist_rel</span>(alergia, L.al)</a>
+<a class="sourceLine" id="cb1758-2" data-line-number="2"><span class="kw">hist_rel.cum</span>(alergia, L.al)</a></code></pre></div>
+<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-698-1.png" width="480" style="display: block; margin: auto;" /><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-698-2.png" width="480" style="display: block; margin: auto;" /></p>
+<p>Veamos un último ejemplo.</p>
+
+<div class="example">
+<p><span id="exm:crab" class="example"><strong>Ejemplo 13.18  </strong></span>El fichero <code>datacrab.txt</code>, del cual hemos guardado una copia en el url <a href="https://raw.githubusercontent.com/AprendeR-UIB/AprendeR1/master/datos/datacrab.txt" class="uri">https://raw.githubusercontent.com/AprendeR-UIB/AprendeR1/master/datos/datacrab.txt</a>, recoge los datos sobre hembras de límula del Atlántico analizadas en el artículo “Satellite male groups in horseshoe crabs, <em>Limulus polyphemus</em>” de H. J. Brockmann (<em>Ethology</em> 102 (1996), pp. 1-21). Una de las variables que incluye esta tabla de datos es la amplitud, <code>width</code>, de los especímenes analizados.</p>
+</div>
+
+<p>Vamos a dibujar un histograma de las frecuencias relativas de estas amplitudes que incluya su curva de densidad estimada; esta vez agruparemos estas amplitudes usando la regla de Scott. Aprovecharemos para calcular la tabla de frecuencias de este agrupamiento.</p>
+<p>Empezamos importando esta tabla en un <em>data frame</em> y definiendo un vector con la variable correspondiente a la amplitud.</p>
+<div class="sourceCode" id="cb1759"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1759-1" data-line-number="1">crab=<span class="kw">read.table</span>(<span class="st">&quot;https://raw.githubusercontent.com/AprendeR-UIB/AprendeR1/master/datos/datacrab.txt&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb1759-2" data-line-number="2"><span class="kw">str</span>(crab)</a></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    173 obs. of  5 variables:
+##  $ input      : int  3 4 2 4 4 3 2 4 3 4 ...
+##  $ color.spine: int  3 3 1 3 3 3 1 2 1 3 ...
+##  $ width      : num  28.3 22.5 26 24.8 26 23.8 26.5 24.7 23.7 25.6 ...
+##  $ satell     : int  8 0 9 0 4 0 0 0 0 0 ...
+##  $ weight     : int  3050 1550 2300 2100 2600 2100 2350 1900 1950 2150 ...</code></pre>
+<div class="sourceCode" id="cb1761"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1761-1" data-line-number="1">crw=crab<span class="op">$</span>width</a></code></pre></div>
+<p>Observamos que las amplitudes están expresadas con una precisión de décimas de unidad.
+A continuación, determinamos el número de clases, amplitud, etc. del agrupamiento de este vector <code>crw</code> siguiendo la regla de Scott.</p>
+<div class="sourceCode" id="cb1762"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1762-1" data-line-number="1"><span class="kw">nclass.scott</span>(crw)</a></code></pre></div>
+<pre><code>## [1] 10</code></pre>
+<div class="sourceCode" id="cb1764"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1764-1" data-line-number="1"><span class="kw">diff</span>(<span class="kw">range</span>(crw))<span class="op">/</span><span class="dv">10</span></a></code></pre></div>
+<pre><code>## [1] 1.25</code></pre>
+<p>Por lo tanto, tomamos A=1.3.</p>
+<div class="sourceCode" id="cb1766"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1766-1" data-line-number="1">L.cr=<span class="kw">min</span>(crw)<span class="op">-</span><span class="fl">0.05+1.3</span><span class="op">*</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb1766-2" data-line-number="2">L.cr</a></code></pre></div>
+<pre><code>##  [1] 20.95 22.25 23.55 24.85 26.15 27.45 28.75 30.05 31.35 32.65 33.95</code></pre>
+<div class="sourceCode" id="cb1768"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1768-1" data-line-number="1">crw_int=<span class="kw">cut</span>(crw, <span class="dt">breaks=</span>L.cr, <span class="dt">right=</span><span class="ot">FALSE</span>)</a></code></pre></div>
+<p>Ahora calcularemos la tabla de frecuencias para este agrupamiento <code>crw_int</code>. Usaremos la función
+<code>Tabla_frec_agrup</code> que hemos definido al final de la Sección <a href="datos-cuantitativos-agrupados.html#sec:agrupR">13.2</a>.</p>
+<div class="sourceCode" id="cb1769"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1769-1" data-line-number="1"><span class="kw">kable</span>(<span class="kw">Tabla_frec_agrup</span>(crw,<span class="dv">10</span>,<span class="fl">1.3</span>,<span class="fl">0.1</span>,<span class="dt">dig.lab=</span><span class="dv">4</span>))</a></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+intervalos
+</th>
+<th style="text-align:right;">
+marcas
+</th>
+<th style="text-align:right;">
+f.abs
+</th>
+<th style="text-align:right;">
+f.abs.cum
+</th>
+<th style="text-align:right;">
+f.rel
+</th>
+<th style="text-align:right;">
+f.rel.cum
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+[20.95,22.25)
+</td>
+<td style="text-align:right;">
+21.6
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0.0115607
+</td>
+<td style="text-align:right;">
+0.0115607
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+[22.25,23.55)
+</td>
+<td style="text-align:right;">
+22.9
+</td>
+<td style="text-align:right;">
+14
+</td>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:right;">
+0.0809249
+</td>
+<td style="text-align:right;">
+0.0924855
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+[23.55,24.85)
+</td>
+<td style="text-align:right;">
+24.2
+</td>
+<td style="text-align:right;">
+27
+</td>
+<td style="text-align:right;">
+43
+</td>
+<td style="text-align:right;">
+0.1560694
+</td>
+<td style="text-align:right;">
+0.2485549
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+[24.85,26.15)
+</td>
+<td style="text-align:right;">
+25.5
+</td>
+<td style="text-align:right;">
+44
+</td>
+<td style="text-align:right;">
+87
+</td>
+<td style="text-align:right;">
+0.2543353
+</td>
+<td style="text-align:right;">
+0.5028902
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+[26.15,27.45)
+</td>
+<td style="text-align:right;">
+26.8
+</td>
+<td style="text-align:right;">
+34
+</td>
+<td style="text-align:right;">
+121
+</td>
+<td style="text-align:right;">
+0.1965318
+</td>
+<td style="text-align:right;">
+0.6994220
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+[27.45,28.75)
+</td>
+<td style="text-align:right;">
+28.1
+</td>
+<td style="text-align:right;">
+31
+</td>
+<td style="text-align:right;">
+152
+</td>
+<td style="text-align:right;">
+0.1791908
+</td>
+<td style="text-align:right;">
+0.8786127
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+[28.75,30.05)
+</td>
+<td style="text-align:right;">
+29.4
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+167
+</td>
+<td style="text-align:right;">
+0.0867052
+</td>
+<td style="text-align:right;">
+0.9653179
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+[30.05,31.35)
+</td>
+<td style="text-align:right;">
+30.7
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+170
+</td>
+<td style="text-align:right;">
+0.0173410
+</td>
+<td style="text-align:right;">
+0.9826590
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+[31.35,32.65)
+</td>
+<td style="text-align:right;">
+32.0
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+172
+</td>
+<td style="text-align:right;">
+0.0115607
+</td>
+<td style="text-align:right;">
+0.9942197
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+[32.65,33.95)
+</td>
+<td style="text-align:right;">
+33.3
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+173
+</td>
+<td style="text-align:right;">
+0.0057803
+</td>
+<td style="text-align:right;">
+1.0000000
+</td>
+</tr>
+</tbody>
+</table>
+<p>Por lo que se refiere al histograma, es</p>
+<div class="sourceCode" id="cb1770"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1770-1" data-line-number="1"><span class="kw">hist_rel</span>(crw, L.cr)</a></code></pre></div>
+<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-703-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p>La curva de densidad que obtenemos en este gráfico tiene una forma de campana que nos recuerda la campana de Gauss. Para explorar este parecido, vamos a añadir al histograma la gráfica de la función densidad de una distribución normal de media y desviación típica la media y la desviación típica muestral del conjunto de datos original, respectivamente. Esta función se define mediante</p>
+<div class="sourceCode" id="cb1771"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1771-1" data-line-number="1"><span class="kw">dnorm</span>(x, <span class="dt">mu=</span>..., <span class="dt">sd=</span>...)</a></code></pre></div>
+<p>entrando como valores de <code>mu</code> y <code>sd</code> la media y la desviación típica deseadas, respectivamente.</p>
+<div class="sourceCode" id="cb1772"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1772-1" data-line-number="1"><span class="kw">hist_rel</span>(crw, L.cr)</a>
+<a class="sourceLine" id="cb1772-2" data-line-number="2"><span class="kw">curve</span>(<span class="kw">dnorm</span>(x, <span class="kw">mean</span>(crw), <span class="kw">sd</span>(crw)), <span class="dt">col=</span><span class="st">&quot;purple&quot;</span>, <span class="dt">lty=</span><span class="dv">3</span>, <span class="dt">lwd=</span><span class="dv">2</span>, <span class="dt">add=</span><span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb1772-3" data-line-number="3"><span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="dt">lwd=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>), <span class="dt">lty=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;red&quot;</span>,<span class="st">&quot;purple&quot;</span>),</a>
+<a class="sourceLine" id="cb1772-4" data-line-number="4">  <span class="dt">legend=</span><span class="kw">c</span>(<span class="st">&quot;densidad estimada&quot;</span>,<span class="st">&quot;densidad normal&quot;</span>), <span class="dt">cex=</span><span class="fl">0.7</span>)</a></code></pre></div>
+<p><img src="AprendeR-Parte-I_files/figure-html/unnamed-chunk-705-1.png" width="480" style="display: block; margin: auto;" />
+Se observa un ligero desplazamiento a la izquierda de la densidad estimada respecto de la campana de Gauss.</p>
+</div>
+<div id="guia-rapida-de-funciones-7" class="section level2">
+<h2><span class="header-section-number">13.5</span> Guía rápida de funciones</h2>
+<ul>
+<li><p><code>nclass.Sturges</code> calcula el número de clases de un agrupamiento según la regla de Sturges.</p></li>
+<li><p><code>nclass.scott</code> calcula el número de clases de un agrupamiento según la regla de Scott.</p></li>
+<li><p><code>nclass.FD</code> calcula el número de clases de un agrupamiento según la regla de Freedman-Diaconis.</p></li>
+<li><p><code>cut</code> sirve para agrupar un vector numérico y codificar sus valores con las clases a las que pertenecen. Algunos parámetros importantes:</p>
+<ul>
+<li><code>breaks</code>: sirve para especificar los puntos de corte, o el número de clases.</li>
+<li><code>labels</code>: sirve para especificar las etiquetas de las clases.</li>
+<li><code>right=FALSE</code>: especifica que las clases son intervalos cerrados a la izquierda y abiertos a la derecha.</li>
+<li><code>include.lowest=TRUE</code>: combinado con el anterior, impone que la última clase se tome cerrada a ambos lados.</li>
+<li><code>dig.lab</code>: permite especificar el número de cifras significativas en los extremos de las clases cuando se toma el valor por defecto de <code>labels</code>.</li>
+</ul></li>
+<li><p><code>hist</code> dibuja un histograma de un vector numérico. Algunos parámetros importantes:</p>
+<ul>
+<li><p><code>breaks</code>: sirve para especificar los puntos de corte, el número de clases, o el método para calcularlo; en estos dos últimos casos, no siempre se obtiene el número de clases especificado.</p></li>
+<li><p><code>freq</code>: igualado a <code>TRUE</code>, produce el histograma de frecuencias absolutas si los intervalos son todos de la misma amplitud, y el de frecuencias relativas en caso contrario; igualado a <code>FALSE</code>, produce siempre el de frecuencias relativas.</p></li>
+<li><p><code>plot</code>: igualado a <code>FALSE</code>, impide que se dibuje el histograma.</p></li>
+<li><p><code>right</code> y <code>include.lowest</code> tienen el mismo significado que en <code>cut</code>.</p></li>
+</ul>
+<p>Internamente, el resultado de <code>hist</code> es una <code>list</code> que incluye los siguientes vectores:</p>
+<ul>
+<li><p><code>breaks</code>: los extremos de los intervalos.</p></li>
+<li><p><code>mids</code>: los puntos medios de los intervalos.</p></li>
+<li><p><code>counts</code>: las frecuencias absolutas de los intervalos.</p></li>
+<li><p><code>density</code>: las densidades de los intervalos.</p></li>
+</ul></li>
+<li><p><code>axis</code> añade a un gráfico un eje, con marcas en los lugares indicados por el vector entrado en el parámetro <code>at</code>.</p></li>
+<li><p><code>rug</code> permite añadir una “alfombra” a un histograma.</p></li>
+<li><p><code>jitter</code> añade “ruido” estocástico a los datos de un vector numérico.</p></li>
+<li><p><code>density</code> calcula una secuencia de puntos sobre la curva de densidad estimada a partir de un vector numérico.</p></li>
+<li><p><code>dnorm</code> define la curva de densidad de una distribución normal. Tiene los dos parámetros siguientes:</p>
+<ul>
+<li><code>mu</code>: la media.</li>
+<li><code>sd</code>: la desviación típica.</li>
+</ul></li>
+</ul>
+</div>
+<div id="ejercicios-11" class="section level2">
+<h2><span class="header-section-number">13.6</span> Ejercicios</h2>
+<div id="test-10" class="section level3 unnumbered">
+<h3>Test</h3>
+<p><em>(1)</em> Supongamos que tenemos un conjunto de 80 datos expresados con una precisión de una décima de unidad. Su valor mínimo es 15 y el máximo, 83. Su desviación típica muestral es 2.5623 y su rango intercuartílico 3.1721. Según la regla de Scott, ¿en cuántas clases los tendríamos que agrupar y qué amplitud tendrían estas clases? Dad estos dos valores en este orden, separados por un único espacio en blanco.</p>
+<p><em>(2)</em> Considerad el mismo conjunto de datos que en la pregunta anterior. Si los agrupamos según la regla de Freedman-Diaconis, ¿qué valdría el extremo izquierdo del tercer intervalo que obtendríamos?</p>
+<p><em>(3)</em> Agrupad según la regla de Freedman-Diaconis los datos de la variable <code>uptake</code> del <em>data frame</em> <code>CO2</code> que lleva predefinido R (están expresados con una precisión de una cifra decimal). ¿Qué vale el extremo izquierdo del cuarto intervalo que habéis obtenido?</p>
+<p><em>(4)</em> Agrupad según la regla de Freedman-Diaconis los datos de la variable <code>uptake</code> del <em>data frame</em> <code>CO2</code> que lleva predefinido R (están expresados con una precisión de una cifra decimal). ¿Cuál es la frecuencia relativa de su tercer intervalo, redondeada a 3 cifras decimales?</p>
+<p><em>(5)</em> Supongamos que tenemos un vector de datos llamado <em>alturas</em>. Dad una instrucción que agrupe estos datos en intervalos con extremos dados por un vector llamado <em>Extremos</em> y codificando cada intervalo por él mismo, y llame <em>alturas_cut</em> al factor resultante. Los intervalos resultantes tienen que ser todos cerrados a la izquierda y abiertos a la derecha. Entrad los parámetros en orden alfabético y no dejéis espacios en blanco innecesarios.</p>
+<p><em>(6)</em> Definid un <em>data frame</em> con la tabla <a href="https://raw.githubusercontent.com/AprendeR-UIB/AprendeR1/master/datos/ESD.txt" class="uri">https://raw.githubusercontent.com/AprendeR-UIB/AprendeR1/master/datos/ESD.txt</a>. A continuación, agrupad los valores de su variable <code>MB</code> según la regla de Sturges (mirad antes con qué precisión están dadas sus entradas). ¿Cuál es la frecuencia absoluta del intervalo modal de este agrupamiento?</p>
+<p><em>(7)</em> Definid un <em>data frame</em> con la tabla <a href="https://raw.githubusercontent.com/AprendeR-UIB/AprendeR1/master/datos/ESD.txt" class="uri">https://raw.githubusercontent.com/AprendeR-UIB/AprendeR1/master/datos/ESD.txt</a>. A continuación, agrupad los valores de su variable <code>MB</code> según la regla de Sturges (mirad antes con qué precisión están dadas sus entradas). ¿Cuánto vale la densidad del tercer intervalo, redondeada a 3 cifras decimales?</p>
+</div>
+<div id="ejercicio-10" class="section level3 unnumbered">
+<h3>Ejercicio</h3>
+<p>La tabla <code>lobsters.txt</code>, que hemos guardado en el url <a href="https://raw.githubusercontent.com/AprendeR-UIB/AprendeR1/master/datos/lobsters.txt" class="uri">https://raw.githubusercontent.com/AprendeR-UIB/AprendeR1/master/datos/lobsters.txt</a>, está formada por los pesos de langostas capturadas en dos zonas; estos pesos están expresados en kg, con una precisión de 0.01 kg. Las separaciones entre columnas son espacios en blanco y tiene una primera fila con los nombres de las columnas.</p>
+<p>Definid un <em>data frame</em> con esta tabla. Echadle un vistazo (y comprobad que se ha importado correctamente). Definid dos vectores con los pesos de las langostas de la zona 1 y de la zona 2, respectivamente.</p>
+<p><em>(a)</em> Agrupad los pesos de la zona 1 y de la zona 2 siguiendo la regla de Scott.</p>
+<p><em>(b)</em> Para cada zona, y con este agrupamiento, construid un <em>data frame</em> que contenga la tabla de frecuencias agrupadas.</p>
+<p><em>(c)</em> Para cada zona, y con este mismo agrupamiento, dibujad el correspondiente histograma de frecuencias relativas incluyendo la curva de densidad estimada. Comparad los dos histogramas: ¿se observa alguna diferencia?</p>
+</div>
+<div id="respuestas-al-test-10" class="section level3 unnumbered">
+<h3>Respuestas al test</h3>
+<p><em>(1)</em> 33 2.1</p>
+<p><em>(2)</em> 17.95</p>
+<p><em>(3)</em> 30.45</p>
+<p><em>(4)</em> 0.143</p>
+<p><em>(5)</em> <code>alturas_cut=cut(alturas,breaks=Extremos,right=FALSE)</code></p>
+<p><em>(6)</em> 48</p>
+<p><em>(7)</em> 0.033</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="chap-quan.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="graficos-avanzados.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/RicUIB/AprendeR2.1/edit/master/13chap13_Agrupados.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["AprendeR-Parte-I.pdf", "AprendeR-Parte-I.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
